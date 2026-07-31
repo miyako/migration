@@ -7,17 +7,24 @@ Resources for porting database applications to 4D
 
 [**Nova**](https://nova.app) is a native macOS code editor made by Panic, the indie software studio behind apps like Transmit and Coda. Designed specifically for the Mac, Nova takes advantage of native macOS frameworks to deliver a fast, polished editing experience with features like built-in Git integration, a task runner, extensions, and support for multiple panes and tabs.
 
-- Extension: [language-4dm-nova](https://github.com/miyako/language-4dm-nova)
-  - Tree-Sitter Syntax Highlight
-  - LSP Integration
+- [language-4dm-nova](https://github.com/miyako/language-4dm-nova)
+
+|Feature|Implementation|
+|-|-|
+|Syntax Highlight|`tree-sitter` |
+|LSP|`tool4d`|
+
 
 ### Zed
 
 [**Zed**](https://zed.dev) is a modern code editor built from the ground up for speed and collaboration, created by the team behind Atom and Tree-sitter. Written in Rust, it's designed to take full advantage of multi-core processors and GPU rendering, resulting in near-instant startup times and buttery-smooth scrolling and typing, even in large codebases.
 
-- Extension: [language-4dm-zed](https://github.com/miyako/language-4dm-zed)
-  - Tree-Sitter Syntax Highlight
-  - LSP Integration
+- [language-4dm-zed](https://github.com/miyako/language-4dm-zed)
+
+|Feature|Implementation|
+|-|-|
+|Syntax Highlight|`tree-sitter` |
+|LSP|`tool4d`|
 
 ## Platforms
 
