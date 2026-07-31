@@ -3,6 +3,16 @@ Resources for porting database applications to 4D
 
 ## Code Editor Extensions
 
+### TextMate 2
+
+[**TextMate 2**](https://macromates.com) is a general-purpose text editor for macOS, built around fast, keyboard-driven editing and an extensible bundle system.
+
+- [4D.tmbundle](https://github.com/miyako/4D.tmbundle)
+
+|Feature|Implementation|
+|-|-|
+|Syntax Highlight|`tmLanguage` |
+
 ### Nova
 
 [**Nova**](https://nova.app) is a native macOS code editor made by Panic, the indie software studio behind apps like Transmit and Coda. Designed specifically for the Mac, Nova takes advantage of native macOS frameworks to deliver a fast, polished editing experience with features like built-in Git integration, a task runner, extensions, and support for multiple panes and tabs.
