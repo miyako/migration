@@ -26,6 +26,8 @@ Resources for porting database applications to 4D
 
 ### VS Code
 
+[**Visual Studio Code**](https://code.visualstudio.com) is Microsoft's free, open-source code editor, built around a lightweight core with a large extension ecosystem.
+
 - [language-4dm-vscode](https://github.com/miyako/language-4dm-vscode)
 
 |Feature|Implementation|
