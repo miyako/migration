@@ -26,7 +26,21 @@ Resources for porting database applications to 4D
 
 ### VS Code
 
-[**Visual Studio Code**](https://code.visualstudio.com) is Microsoft's free, open-source code editor, built around a lightweight core with a large extension ecosystem.
+[**Visual Studio Code**](https://code.visualstudio.com) is Microsoft's free, open-source code editor, built around a lightweight core with a large extension ecosystem. It includes core features like smart code completion (IntelliSense), built-in debugging tools, and an integrated terminal.
+
+- [4D-Analyzer](https://marketplace.visualstudio.com/items?itemName=4D.4d-analyzer) 
+
+|Feature|Implementation|
+|-|-|
+|LSP|`tool4d`|
+|Syntax Check|`tool4d`|
+|Package Manager|
+
+- [4D-Debugger](https://marketplace.visualstudio.com/items?itemName=4D.4d-debugger)
+
+|Feature|Implementation|
+|-|-|
+|Remote Debugger|`4D Server`
 
 - [language-4dm-vscode](https://github.com/miyako/language-4dm-vscode)
 
