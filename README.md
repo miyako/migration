@@ -16,7 +16,7 @@ Resources for porting database applications to 4D
 
 ### TextMate 2
 
-[**TextMate 2**](https://macromates.com) is a general-purpose text editor for macOS, built around fast, keyboard-driven editing and an extensible bundle system.
+[**TextMate 2**](https://macromates.com) is a powerful, open-source, native text and code editor designed exclusively for macOS. It features multiple carets, advanced file search, and extensible bundles for programming languages.
 
 - [4D.tmbundle](https://github.com/miyako/4D.tmbundle)
 
