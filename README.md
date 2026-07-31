@@ -1,6 +1,12 @@
 # migration
 Resources for porting database applications to 4D
 
+## Database Connectors
+
+### PostgreSQL
+
+- [4d-plugin-simple-postgres-client](https://github.com/miyako/4d-plugin-simple-postgres-client)
+
 ## Code Editor Extensions
 
 ### Nova
