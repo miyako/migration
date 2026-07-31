@@ -20,6 +20,10 @@ Resources for porting database applications to 4D
 
 - [4D.tmbundle](https://github.com/miyako/4D.tmbundle)
 
+### VS Code
+
+- [language-4dm-vscode](https://github.com/miyako/language-4dm-vscode)
+
 |Feature|Implementation|
 |-|-|
 |Syntax Highlight|`tmLanguage` |
