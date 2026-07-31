@@ -28,6 +28,8 @@ Resources for porting database applications to 4D
 
 [**Visual Studio Code**](https://code.visualstudio.com) is Microsoft's free, open-source code editor, built around a lightweight core with a large extension ecosystem. It includes core features like smart code completion (IntelliSense), built-in debugging tools, and an integrated terminal.
 
+- [4D](https://marketplace.visualstudio.com/items?itemName=4D.4d)
+
 - [4D-Analyzer](https://marketplace.visualstudio.com/items?itemName=4D.4d-analyzer) 
 
 |Feature|Implementation|
