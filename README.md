@@ -3,6 +3,10 @@ Resources for porting database applications to 4D
 
 ## Database Connectors
 
+### SQLite
+
+- [4d-plugin-simple-sqlite-client](https://github.com/miyako/4d-plugin-simple-sqlite-client)
+
 ### PostgreSQL
 
 - [4d-plugin-simple-postgres-client](https://github.com/miyako/4d-plugin-simple-postgres-client)
