@@ -1,6 +1,7 @@
 [
   {
     "id": "chg-colon-identifiers",
+    "complexity": {"level": "unknown"},
     "identifiers": [":", "ternary operator"],
     "threshold": {"exact": "19 R4", "bucket": "v20", "kind": "introduced"},
     "applies_until": null,
@@ -14,11 +15,11 @@
     "action": "Rename affected identifiers to remove ':' and update their references before validating syntax in the target release.",
     "action_basis": "Editorial recommendation derived from the documented prohibition; not a verbatim official instruction.",
     "localizations": {
-      "en": {"one_line": "Remove colons from affected identifiers", "paragraph": "Since 19 R4 (upgrade bucket v20), colons are prohibited in variable, field, constant, function, plugin and project method names. If present, rename the affected identifiers and update references before syntax validation. The v20 source does not specify a platform; this candidate is not a complete syntax audit.", "provenance": "generated_candidate"},
-      "fr": {"one_line": "Retirer les deux-points des identifiants concernés", "paragraph": "Depuis 19 R4 (palier de migration v20), les deux-points sont interdits dans les noms de variables, champs, constantes, fonctions, plug-ins et méthodes projet. S'ils sont présents, renommez les identifiants et mettez à jour les références avant la validation syntaxique. La source v20 ne précise pas de plateforme ; cette fiche candidate ne constitue pas un audit syntaxique complet.", "provenance": "generated_candidate"},
-      "de": {"one_line": "Doppelpunkte aus betroffenen Bezeichnern entfernen", "paragraph": "Seit 19 R4 (Upgrade-Stufe v20) sind Doppelpunkte in Namen von Variablen, Feldern, Konstanten, Funktionen, Plug-ins und Projektmethoden unzulässig. Benennen Sie betroffene Bezeichner um und aktualisieren Sie die Verweise vor der Syntaxprüfung. Die v20-Quelle nennt keine Plattform; dieser ungeprüfte Eintrag ist keine vollständige Syntaxprüfung.", "provenance": "generated_candidate"},
-      "es": {"one_line": "Eliminar los dos puntos de los identificadores afectados", "paragraph": "Desde 19 R4 (grupo de migración v20), los nombres de variables, campos, constantes, funciones, plug-ins y métodos de proyecto no pueden contener dos puntos. Si los contienen, cambie los nombres y actualice las referencias antes de validar la sintaxis. La fuente v20 no especifica plataforma; esta ficha candidata no es una auditoría sintáctica completa.", "provenance": "generated_candidate"},
-      "ja": {"one_line": "該当する識別子からコロンを取り除く", "paragraph": "19 R4（移行区分 v20）以降、変数・フィールド・定数・関数・プラグイン・プロジェクトメソッドの名前にコロンは使用できません。該当する名前を変更し、参照箇所を更新してから構文を確認してください。出典の v20 文書には対象プラットフォームの指定がありません。この未レビューの候補だけで構文上の問題を網羅できるわけではありません。", "provenance": "generated_candidate"}
+      "en": {"one_line": "Remove colons from affected identifiers", "paragraph": "Since 19 R4 (upgrade bucket v20), colons are prohibited in variable, field, constant, function, plugin and project method names. If present, rename the affected identifiers and update references before syntax validation. The v20 source does not specify a platform; verify applicability in your target release.", "provenance": "generated_candidate"},
+      "fr": {"one_line": "Retirer les deux-points des identifiants concernés", "paragraph": "Depuis 19 R4 (palier de migration v20), les deux-points sont interdits dans les noms de variables, champs, constantes, fonctions, plug-ins et méthodes projet. S'ils sont présents, renommez les identifiants et mettez à jour les références avant la validation syntaxique. La source v20 ne précise pas de plateforme ; vérifiez l’applicabilité à votre version cible.", "provenance": "generated_candidate"},
+      "de": {"one_line": "Doppelpunkte aus betroffenen Bezeichnern entfernen", "paragraph": "Seit 19 R4 (Upgrade-Stufe v20) sind Doppelpunkte in Namen von Variablen, Feldern, Konstanten, Funktionen, Plug-ins und Projektmethoden unzulässig. Benennen Sie betroffene Bezeichner um und aktualisieren Sie die Verweise vor der Syntaxprüfung. Die v20-Quelle nennt keine Plattform; prüfen Sie die Anwendbarkeit auf Ihre Zielversion.", "provenance": "generated_candidate"},
+      "es": {"one_line": "Eliminar los dos puntos de los identificadores afectados", "paragraph": "Desde 19 R4 (grupo de migración v20), los nombres de variables, campos, constantes, funciones, plug-ins y métodos de proyecto no pueden contener dos puntos. Si los contienen, cambie los nombres y actualice las referencias antes de validar la sintaxis. La fuente v20 no especifica plataforma; verifique la aplicabilidad a su versión de destino.", "provenance": "generated_candidate"},
+      "ja": {"one_line": "該当する識別子からコロンを取り除く", "paragraph": "19 R4（移行区分 v20）以降、変数・フィールド・定数・関数・プラグイン・プロジェクトメソッドの名前にコロンは使用できません。該当する名前を変更し、参照箇所を更新してから構文を確認してください。出典の v20 文書には対象プラットフォームの指定がありません。移行先のバージョンへの適用可否を確認してください。", "provenance": "generated_candidate"}
     },
     "evidence": [
       {"source_id": "legacy-v20-deprecated-en", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6259897", "heading": "Colon no longer supported in identifiers", "excerpt": "the colon \":\" is no longer allowed in variable, field, constant, function, plugin and project method names.", "block_id": "3025cc5e083ddf18", "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"},
@@ -30,6 +31,7 @@
   },
   {
     "id": "chg-pdfcreator-driver-deprecation",
+    "complexity": {"level": "unknown"},
     "identifiers": ["PDFCreator", "PDFCreator Printer name", "_o_PDFCreator Printer name"],
     "threshold": {"exact": "20", "bucket": "v20", "kind": "introduced"},
     "applies_until": null,
@@ -59,6 +61,7 @@
   },
   {
     "id": "chg-bundled-php-dom-removal",
+    "complexity": {"level": "unknown"},
     "identifiers": ["PHP", "DOM", "FastCGI"],
     "threshold": {"exact": "20", "bucket": "v20", "kind": "introduced"},
     "applies_until": null,

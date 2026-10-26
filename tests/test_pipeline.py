@@ -481,6 +481,26 @@ class Publication(unittest.TestCase):
         build()
         self.assertEqual(before, path.read_bytes())
 
+    def test_remediation_complexity_is_independent_and_evidence_backed(self):
+        self.assertTrue(all(c["complexity"] == {"level": "unknown"} for c in self.document["changes"]))
+        for level in ("simple", "moderate", "complex", "unknown"):
+            doc = deepcopy(self.document)
+            change = doc["changes"][0]
+            change["complexity"] = {"level": level, "basis": "Documented remediation procedure.",
+                                    "evidence_source_ids": [change["evidence"][0]["source_id"]]}
+            validate(doc)
+        doc = deepcopy(self.document)
+        del doc["changes"][0]["complexity"]
+        validate(doc)  # Existing schema-v1 records without a classification remain unknown.
+        for invalid in (None, [], "simple", {"level": "easy"}, {"level": "simple"},
+                        {"level": "moderate", "basis": " ", "evidence_source_ids": []},
+                        {"level": "complex", "basis": "Reason", "evidence_source_ids": ["unrelated"]},
+                        {"level": "simple", "basis": "Reason", "evidence_source_ids": [None]}):
+            doc = deepcopy(self.document)
+            doc["changes"][0]["complexity"] = invalid
+            with self.subTest(invalid=invalid), self.assertRaisesRegex(ValueError, "complexity"):
+                validate(doc)
+
     def test_repeated_editions_deduplicate_by_stable_id(self):
         original = deepcopy(self.document["changes"][0])
         other = deepcopy(original)
@@ -570,6 +590,7 @@ class Publication(unittest.TestCase):
             nodes = list(DOM(html).root.walk())
             assets = [n.attrs.get("src") for n in nodes if n.tag == "script" and n.attrs.get("src")]
             assets += [n.attrs.get("href") for n in nodes if n.tag == "link" and n.attrs.get("rel") == "stylesheet"]
+            assets += [n.attrs["href"].split("#")[0] for n in nodes if n.tag == "use"]
             self.assertTrue(assets, "Expected local script/style assets")
             for asset in assets:
                 self.assertFalse(asset.startswith(("/", "http:", "https:")), "Assets must use Pages-safe relative URLs")

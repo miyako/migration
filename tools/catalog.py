@@ -16,6 +16,7 @@ from .discover_archive import document_identity
 BUCKETS = [f"v{major}" for major in range(16, 22)] + ["latest"]
 STAGES = ["syntax", "compilation", "runtime", "modernization", "unknown"]
 CRITICALITIES = ["blocking", "high", "medium", "low", "unknown"]
+COMPLEXITIES = ["simple", "moderate", "complex", "unknown"]
 
 
 def bucket(release, current_major=21):
@@ -196,6 +197,16 @@ def validate(document):
             require(change["applies_until"] in BUCKETS, "Invalid applies_until bucket")
         require(change["stage"] in STAGES, "Invalid stage")
         require(change["criticality"] in CRITICALITIES, "Invalid criticality")
+        complexity = change.get("complexity", {"level": "unknown"})
+        require(isinstance(complexity, dict) and complexity.get("level") in COMPLEXITIES,
+                "Invalid remediation complexity")
+        if complexity["level"] != "unknown":
+            references = complexity.get("evidence_source_ids")
+            require(nonempty(complexity.get("basis")) and isinstance(references, list) and bool(references)
+                    and all(isinstance(source_id, str) and
+                            any(e["source_id"] == source_id for e in change["evidence"])
+                            for source_id in references),
+                    "Known remediation complexity requires a documented basis and supporting change evidence")
         require(change["review_status"] in {"candidate", "reviewed"}, "Invalid review status")
         if change["review_status"] == "reviewed":
             require(nonempty(change.get("reviewed_by")) and nonempty(change.get("reviewed_at")),
