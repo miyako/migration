@@ -7,6 +7,164 @@ evidence that the model makes reliable migration decisions or translations.**
 The held-out failures below are important limitations, not successful refusals
 by a factual-entailment checker.
 
+## Reliability follow-up
+
+The original `dcdbb22` four-case capture is retained unchanged in
+`tests/fixtures/authoring-model-run.json`. The follow-up freezes its exact inputs
+plus six predeclared cases in `authoring-evaluation-cases.json`; the separate
+`authoring-reserve-cases.json` was declared before the final decoding experiment.
+Expectations are source-based evaluation data, **never prompts**. Input hashes,
+actual outcomes and candid source-inspection assessments are recorded in
+`authoring-reliability-results.json`. There is no model-as-judge service.
+
+The active pipeline now separates change-type classification, exact supporting
+quote selection, explicitly dated release selection and action/modality selection.
+Short `E1` references cannot smuggle a source edition into a claim. Insufficient
+evidence returns a structured `insufficient` decision and **no prose or patch**;
+this is a correct task outcome only when the source-based expectation agrees.
+Specific/action/threshold references are independently bound to the exact input
+quotes and immutable citation keys. Type is a proposal; severity, platform and
+complexity remain explicitly unknown.
+
+English authoring then runs separately from translation. Each target locale has
+a focused title request followed by a body request. Protected-token lists contain
+only tokens actually present in those fields; absent tokens must not be added.
+Prose citations are attached deterministically to the supplied bounded evidence,
+not rediscovered by a translator. This establishes reference identity, **not
+factual entailment**. Optional-action checks reject English mandatory wording.
+Japanese checks now also reject isolated untranslated descriptive English words,
+not just multiword phrases. English fields cannot silently echo Japanese prose
+from Japanese evidence. These are narrow script/word heuristics, not complete
+language identification. A refusal at one field cannot silently become an empty
+successful translation.
+
+First-release uncertainty is explicitly composed using fixed, localized editorial
+sentences. Unknown-remedy action/rationale sentences are likewise schema-constrained
+editorial text in all five locales. These sentences are **not claimed as model
+generation** or a substantive source fact. The raw generated bodies remain intact
+in the run records; composition does not rewrite a bad factual sentence into a
+good one. This reduces an avoidable instruction-following burden without relaxing
+the version, citation, command or field/precondition checks.
+
+Explicit first-release cues now recognize French `depuis`, Japanese `以降` and
+corresponding supported English/German/Spanish cues; source editions alone still
+do not establish a cutoff. Cue coverage is not exhaustive. Action candidate
+selection is also deliberately bounded: positive English/French/Japanese
+instruction cues are eligible; a negative "not recommended" is not silently
+promoted into a positive replacement instruction. Unrecognized or ambiguous
+wording remains a limitation rather than an invented mandatory remedy.
+
+The single higher-precision alternative used the **same 4B model/revision**:
+`Qwen3-4B-Instruct-2507-Q8_0.gguf`, 4,280,405,600 bytes, SHA-256
+`391c1e410fd9f4cf2de2b510273b56a84c19ce18f4fa3bfb3774031dac4ef068`.
+It was public/ungated, Apache-2.0, downloaded and verified, and actually executed
+with the pinned native runtime. It did not improve development completion over
+the decomposed Q4 protocol: one generated draft, one correct insufficient decision,
+two task failures. The four-case run took 74.87 seconds with about 5.95 GB maximum
+RSS. Q4 remains the default; no architecture/model sweep or external inference
+was used.
+
+The exact upstream revision's model card recommends temperature 0.7, top-p 0.8,
+top-k 20 and min-p 0. One real, fixed-seed experiment tested those settings.
+It did not solve untranslated Japanese or optional-guard semantic distortion.
+The best measured earlier protocol was selected instead of shipping that
+regression; default decoding remains the committed greedy configuration. Neither
+the precision nor sampling experiment is presented as a head-to-head benchmark
+of every final pipeline variant.
+
+Manual evaluation is explicit and never invoked by CI:
+
+```sh
+python3 -m tools.authoring_evaluate --label unique-experiment-name
+python3 -m tools.authoring_evaluate --label unique-reserve-name \
+  --definitions tests/fixtures/authoring-reserve-cases.json
+```
+
+Labels cannot overwrite a previous experiment. Each evaluation saves frozen
+definitions/input/config/code fingerprints, per-case status/latency, complete
+results and run-directory references under `.cache/authoring/evaluations/`.
+Matching expected machine decision fields is not a semantic/translation pass.
+Use the source-based expectations to inspect every generated field in every
+locale, including optionality and affected input types. Failed development
+iterations and valid-but-wrong bodies remain part of the record.
+
+The six expansion cases were declared before tuning but were subsequently
+inspected during development; they are **not an untouched final test set**.
+The four reserve inputs were declared before the sampling experiment and first
+executed after protocol selection. Their failures were not used for prompt/model
+tuning. Repeated verification is not another independent generalization trial.
+
+### Measured outcome, not publication readiness
+
+| Frozen suite | Reproduced `dcdbb22` baseline | Selected protocol, final native verification |
+|---|---|---|
+| Original four | 1 draft, 0 correct insufficient, 3 failures | 1 draft, 1 correct insufficient, 2 failures |
+| Six expansion cases | 1 draft, 1 correct insufficient, 4 failures | 1 draft, 2 correct insufficient, 3 failures |
+| Ten-case total | **3/10 completed tasks** | **5/10 completed tasks**: 2 drafts + 3 correct insufficient |
+| Fresh four-case reserve | Not used for baseline/tuning | **2/4 completed tasks**: 1 draft + 1 correct insufficient, 2 failures |
+
+The original Base64 behavior and the reserve OK-variable behavior produced
+five-locale, 25-field proposals. The material-delta case repeats Base64 and
+**is not an independent generative-quality success**. Insufficient introduction,
+negative requirement, irrelevant lead-in and recommendation-only inputs correctly
+produced no prose or patch. The improvement is principally evidence decisions
+and reduced instruction-following burden, **not broadly reliable prose**.
+
+The final ten-case native run took **163.95 s**, maximum RSS **4,079,026,176
+bytes**; the reserve took **56.53 s**, maximum RSS **4,066,869,248 bytes**.
+These `/usr/bin/time -l` process-tree measurements are approximate, not precise
+unified-memory accounting. Base64 took **26.82 s** versus initial observed
+56-74 s; this is a small fixture observation, not a standardized speed benchmark.
+All **96** final native responses were parseable and schema-shaped; **16 stage
+attempts were refused**. Neither statistic measures semantic accuracy.
+
+Remaining failures are deliberately not hidden:
+
+| Case | Source inspection and actual refusal |
+|---|---|
+| Unknown command detail | Release/remedy now correctly unknown; Japanese title still retains `Invalid` on both attempts. |
+| Optional list-box guard | Optional action extraction improves, but English still says the handler **must** check. Literal `optional`/`E1` action/rationale are not useful prose. The numeric-reference guard stopped it; that guard did not prove the semantic distortion. |
+| French restriction | Correct restriction/19 R4 extraction. Japanese uses `3項演算子` for “ternary operator”; the digit-only support heuristic rejects `3`. This is a **validator false positive**, not evidence that the translation invented a cutoff. No complete proposal is produced. |
+| Japanese events | Correct behavior-change/18 R6 extraction, but English authoring echoes Japanese on both attempts. The explicit English-script guard now catches that actual localization failure, rather than a later German-title rule. |
+| Undated deprecation | Appropriate deprecation/unknown-release decision, awkward English and an English title copied into German. |
+| Reserve French PDFCreator | Incorrect restriction type, missed explicit `à partir de 4D v20`, and “no longer supports/replaced” instead of deprecated. Wrong-locale constant alias is the observed guard refusal, not verification of those semantic errors. |
+| Reserve empty aggregates | Functional Undefined-versus-Null meaning is correct, but `prior to v18 R6` is not recognized as a cutoff and the paragraph omits exact `entitySelection`. Identifier refusal is not proof the functional summary is false. |
+
+Accepted drafts also need editing: Base64 Spanish says `el entrada`; OK-variable
+French/German/Japanese phrasing is awkward, including Japanese wording closer
+to “not further changed” than “no longer changed.” No output has named human
+review. Platform, severity/criticality and complexity remain deliberately unknown;
+these runs do not establish extraction accuracy for known values. Numeric/cue/
+language heuristics have both false positives and false negatives. The bounds
+were not relaxed to turn failures into successful authoring.
+
+`tests/fixtures/authoring-reliability-results.json` is the readable per-case
+assessment and timing report. `authoring-reliability-native.json.gz` is a
+lossless, checksum-pinned archive of **13 experiments / 76 unique runs**,
+including intermediate failures, exact requests/configs, raw bodies, stage
+refusals/timings, runtime/template metadata and accepted proposals. It contains
+no weights or executables. The unselected 4B Q8 weight was checksum-verified and
+removed after evaluation; its provenance and raw experiment records remain.
+Inspect a complete actual run without inference:
+
+```sh
+python3 - <<'PY'
+import gzip, json
+with gzip.open("tests/fixtures/authoring-reliability-native.json.gz", "rt") as f:
+    capture = json.load(f)
+evaluation = capture["evaluations"]["reliability-verified"]
+case = next(c for c in evaluation["outcomes"] if c["name"] == "base64")
+print(json.dumps(capture["runs"][case["run"]], ensure_ascii=False, indent=2))
+PY
+```
+
+Final local regression commands were the offline authoring suites (**45 tests**),
+full Python discovery (**157 tests, 9 existing skips**), search-runtime build,
+`npm test` (**48 tests**), `python3 -m tools.publish`, and `git diff --check`.
+Actual CLI cache revalidation, matching proposal preconditions and unchanged-input
+`no_material_change` were also exercised. Protected catalog/site/search/workflow/
+package files and the original authored/curated/model-run fixtures are unchanged.
+
 ## Pinned dependencies and setup
 
 Requires Python 3.12 and **macOS arm64**. The initial implementation deliberately
@@ -159,8 +317,8 @@ still needs independent source, scope, condition, remedy and five-language
 review. No output here has named human review.
 
 Cache keys include input, previous evidence, selected fields, target-authored
-fingerprint, all protected `data/*.json` hashes, config, and implementation hash
-(which covers prompts/schema/validation). Cache hits are revalidated. Changing a
+fingerprint, all protected `data/*.json` hashes, config, and core/stage implementation
+hashes (which cover prompts/schema/validation). Cache hits are revalidated. Changing a
 model/prompt/schema can create a new proposal cache but never invalidates or
 rewrites authored catalog inputs. When previous evidence is unchanged, even a
 changed prompt does not trigger generation.
@@ -175,7 +333,7 @@ surface rather than becoming empty success results. Input trust failures occur
 before any runtime is started. These ignored local artifacts may contain private
 future evidence; do not upload them indiscriminately.
 
-## Actual local evaluation and limitations
+## Initial local evaluation and limitations (`dcdbb22`)
 
 Measured on Apple M1 Pro / 16 GiB, macOS 26.7, using the pinned native Metal
 backend (37/37 layers offloaded). The successful Base64 run took approximately
@@ -236,7 +394,7 @@ authoritative facts or used to assert the model generalizes. Ordinary CI runs
 offline tests and replay validation only:
 
 ```sh
-python3 -m unittest tests.test_authoring -v
+python3 -m unittest tests.test_authoring tests.test_authoring_reliability -v
 python3 -m unittest discover -s tests -v
 npm ci --no-audit --no-fund
 npm run build:search-runtime

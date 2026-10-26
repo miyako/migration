@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "declared_before_tuning": "Before the single upstream-recommended sampling experiment; no reserve model outputs had been observed.",
+  "policy": "The original ten-case definitions remain byte-frozen. These four are a fresh reserve, not additional tuning cases.",
+  "cases": [
+    {"name": "ok-variable", "split": "reserve", "target_id": "chg-base64-encode-ok", "select": [{"source_id": "legacy-v19-changes-en", "block_id": "8cf50551bc00b333"}, {"source_id": "legacy-v19-changes-en", "block_id": "620d16bb22ea1fa3"}], "expected": {"disposition": "draft", "threshold": "18 R4", "remedy": "unknown", "meaning": "Both referenced commands no longer modify the OK system variable; no invented command identity or replacement instruction."}},
+    {"name": "french-pdf-deprecation", "split": "reserve", "target_id": "chg-pdfcreator-driver-deprecation", "select": [{"source_id": "legacy-v20-deprecated-fr", "block_id": "b336f2de6108bed3"}], "expected": {"disposition": "draft", "threshold": "20", "remedy": "unknown", "meaning": "PDFCreator driver is deprecated, not removed; Windows10+ has native PDF driver; exact old/new constant names must be preserved. Not a mandatory replacement instruction."}},
+    {"name": "empty-aggregate-results", "split": "reserve", "target_id": "chg-entity-min-empty-undefined", "select": [{"source_id": "legacy-v19-changes-en", "block_id": "9b1c0e6311b0a5ab"}], "expected": {"disposition": "draft", "threshold": "18 R6", "remedy": "unknown", "meaning": "min/max/average now return Undefined on empty selections, previously Null before18R6. Preserve function identities, input condition and output values, no invented workaround."}},
+    {"name": "recommendation-only", "split": "reserve", "target_id": "chg-interprocess-variable-deprecation", "select": [{"source_id": "legacy-v20-deprecated-en", "block_id": "6cf144ac84ca286f", "contains": "strongly recommend"}], "expected": {"disposition": "insufficient", "meaning": "Advice to share object/collection values using shared objects/collections/Storage alone does not establish a newly changed migration fact, version, deprecation or removal."}}
+  ]
+}

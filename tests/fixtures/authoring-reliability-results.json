@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "human_reviewed": false,
+  "definitions_sha256": "fa4492c3e6c6ae7bdbb6b375275069eabaa4945bebe3ade0e526915835a3ef6f",
+  "frozen_input_sha256": {
+    "base64": "72e1fb2fe08e6207b64f4fff6eefe115d2c99ef5df4cb4a6b53ad42defe08726",
+    "unknown": "f589faa811d2f97ccd3e3dfe65e1001f97c3b276147c5560ab8376bc7487f78d",
+    "insufficient": "2fcc780686554b65c270c11cd526e2e5c6428612e7e9dd43b3b43f2724c99fbc",
+    "listbox": "56a1a689679a3788960c728374ff46ba6c96c3e6c70d9e571cb98a8c998cdfde",
+    "french-restriction": "5b38ccece1a5df73c8568f8b1335f3949c2219ad5bf038dda13bde960dbed2d7",
+    "japanese-events": "e6bf409066e219c8e7fd8a3f9a6f8c7c49d969b98efcef77edf65285ac178d05",
+    "optional-not-mandatory": "4418e8f98327a7c4ecbe41b9f278f2ed8310321ed3ac732d45fd265898b2689a",
+    "undated-deprecation": "96078724ddc4392972766586f9ca0e95ded273193fcde5cc7e7ced1ee3ce3b2c",
+    "irrelevant-context": "e9a1b549d0d419b55b9d95e17f63a124b801e6e648bbaa32b0a278768c7ca407",
+    "material-delta": "4826dcbdcbf15aa77a5a08d05593ffa8767ef0cdec5cc69ece5d4b88ab8df157"
+  },
+  "baseline": {
+    "commit": "dcdbb22fbf4c84027aa42c6fd892ebe4e3c239e4",
+    "evaluation": ".cache/authoring/evaluations/reliability-baseline",
+    "note": "Base64 reused the actual previously measured native result; all other cases executed natively again. Completion includes correct no-draft insufficient decisions, not only generated proposals.",
+    "complete_cases": 3,
+    "generated_proposals": 2,
+    "correct_insufficient_decisions": 1,
+    "refused_cases": 7,
+    "original_task_successes": 1,
+    "heldout_task_successes": 2,
+    "cases": [
+      {"name": "base64", "status": "complete", "cache_hit": true, "seconds": 0.16, "run": "5af7593d44a16f1e906f869cb8513e54071bdc8c1fb98230c8a26d086e2c5349", "task_success": true},
+      {"name": "unknown", "status": "refused", "seconds": 21.19, "run": "4b48b6f7e8e20fa458e210f879c32487e0bc106ca2af90c47e945fc7f6e3d81e", "task_success": false, "reason": "English omitted explicit first-release uncertainty."},
+      {"name": "insufficient", "status": "refused", "seconds": 55.60, "run": "b48ede0d0f95ad464e9c267fff4467e12f8ec8360802257d6cd8c41e3dc3edd3", "task_success": false, "reason": "Incorrect draft decision; separate downstream placeholder refusal."},
+      {"name": "listbox", "status": "refused", "seconds": 30.92, "run": "814b18c970b85acf3e23b09cee428e5d453069d9a49f8760962b0dfd4923071c", "task_success": false, "reason": "Optional guard misread; unknown-release omission refused."},
+      {"name": "french-restriction", "status": "refused", "seconds": 10.82, "run": "c14f385e60abe90dde7db49dec22471e207cc8d949a7c911a53894e4b4c16814", "task_success": false, "reason": "English-only validator rejected a French explicitly dated release."},
+      {"name": "japanese-events", "status": "refused", "seconds": 10.87, "run": "71141c9f9be0e62bc998176a93aa435d46cdda194b53f6af49f9b6fd4919f631", "task_success": false, "reason": "English-only validator rejected a Japanese explicitly dated release."},
+      {"name": "optional-not-mandatory", "status": "refused", "seconds": 18.24, "run": "1e44db085b20f71a474d2c7681ba991d3fbc37e82c6cf8f18e64216fb291bda1", "task_success": false, "reason": "Negative requirement statement alone incorrectly drafted."},
+      {"name": "undated-deprecation", "status": "refused", "seconds": 20.44, "run": "7943c509547d3dbe07324221c64d3ce4c36a28e042066d08ae2ebc01fbd79781", "task_success": false, "reason": "Unknown first-release prose requirement not met."},
+      {"name": "irrelevant-context", "status": "complete", "seconds": 6.46, "run": "05b4a6963d3475a60a8af294181dff97b6df27e6ff8e28a1566b010b0ff6f2a0", "task_success": true, "reason": "Correct insufficient decision; no draft."},
+      {"name": "material-delta", "status": "complete", "seconds": 55.34, "run": "eb548cf27afbe157c86b0d34bd407b58ad5b2d42b7749a9df9e1bd38643f68e1", "task_success": true, "reason": "Actual newly queued behavior excerpt; same semantic content as Base64, not an independent quality case."}
+    ]
+  },
+  "native_capture": {
+    "path": "tests/fixtures/authoring-reliability-native.json.gz",
+    "sha256": "e94034244bfedf161abaf725e8a1641d4cedd7c98939390c5293e255d772b45b",
+    "uncompressed_sha256": "547f1970bd20cc6f1d8bcd2cad24cb820141780e659230c2de3299c6de25b702",
+    "bytes": 769487,
+    "experiments": 13,
+    "unique_runs": 76,
+    "contents": "Lossless exact requests, raw responses, refusals, timings, runtime metadata, inputs/config/code fingerprints and accepted candidate proposals, including all intermediate semantic failures. No weights or native binaries."
+  },
+  "scoring": {
+    "human_reviewed": false,
+    "method": "Agent inspection against the frozen committed source excerpts, not another model or exact-text matching. Machine completion is required for task success but does not prove semantic/localization quality.",
+    "split_caveat": "The original four were development cases. Six expansion inputs were predeclared but subsequently inspected during development, so are no longer untouched. Four fresh reserve inputs first ran after protocol selection; their failures did not drive prompt/model tuning. Reverification is not an independent trial.",
+    "global_bounds": "Platform, severity/criticality and complexity are deliberately unknown by construction; these runs do not evaluate reliable extraction of known values. No source establishes a new canonical fact.",
+    "draft_review": "Base64 and OK-variable prose preserves the inspected behavior/input scope, but still needs human review in all five languages. Spanish Base64 has 'el entrada'; French OK has 'lorsqu'exécutent ces commandes' and Japanese OK uses awkward 'further changed' phrasing. Do not equate complete proposals with publication-ready translations.",
+    "duplicate": "Material-delta repeats Base64 content and is a delta-routing case, not an independent generative-quality success."
+  },
+  "selected": {
+    "evaluation": ".cache/authoring/evaluations/reliability-verified",
+    "implementation_sha256": "3feffacfae5a682821a362dc63c82b31240f9cfc9a8ce46c5ba5f21fa59f9d87",
+    "stages_sha256": "b6038da94b37501d7eb8599b7f80fc10c0e42b482367e99da447f4c6b16af7ab",
+    "config_sha256": "cb4843bfc5b73e52ddc352f982958973c9060bf655f9b0ceb9dcf128a6120b17",
+    "total_seconds": 163.95,
+    "max_rss_bytes": 4079026176,
+    "complete_cases": 5,
+    "generated_proposals": 2,
+    "correct_insufficient_decisions": 3,
+    "refused_cases": 5,
+    "original_task_successes": 2,
+    "expansion_task_successes": 3,
+    "raw_responses": 73,
+    "parseable_and_schema_shaped": 73,
+    "rejected_stage_attempts": 12,
+    "cases": [
+      {"name": "base64", "status": "complete", "seconds": 26.82, "run": "a3b2983c5faa58bf62d5f9cf8c9b6dbe7851e52d7e4460c88d5390271850db54", "task_success": true, "assessment": "Behavior-change, 18 R4, invalid single-BLOB scope and no documented remedy match evidence. Five locales/25 fields, official French alias; awkward Spanish grammar still requires review."},
+      {"name": "unknown", "status": "refused", "seconds": 20.28, "run": "1e7696fe6b6df9c29f84139fd5a11a768bff73c8deca232e18894d3e7d27a2a7", "task_success": false, "assessment": "Behavior-change and unknown release/remedy are now correct. English correctly describes empty text/blob for invalid toDecode. Japanese title retains Invalid on both attempts; no complete localization or patch."},
+      {"name": "insufficient", "status": "complete", "seconds": 3.27, "run": "58d3051e541d37f6cc9deffc29de7d6ef46f5650765ba4db913ed2864b2a0686", "task_success": true, "assessment": "Correct insufficient decision on a generic introduction; all metadata unknown, no prose/patch. Previously incorrectly drafted."},
+      {"name": "listbox", "status": "refused", "seconds": 14.13, "run": "7cd80cedb2b23427ab05718aeb0ad733422cea2165f14605688ec00d29922b5c", "task_success": false, "assessment": "Extraction correctly identifies optional documented action and unknown release. English still says handler must verify editing state, contradicting optional evidence; action is literally optional and rationale E1 instead of useful prose. Numeric-reference refusal is not an entailment check or a correct semantic decision."},
+      {"name": "french-restriction", "status": "refused", "seconds": 34.43, "run": "5133c462148d1d0a815e6dfb3ac662d3e6c502ba3ac98c54485950e0b35c041d", "task_success": false, "assessment": "Restriction and explicit 19 R4 now recognized. Japanese translates ternary operator as 3項演算子; the strict numeric heuristic rejects 3 absent as a source digit. This is a validator false positive, not evidence of an unsupported threshold/model semantic error; no completed proposal."},
+      {"name": "japanese-events", "status": "refused", "seconds": 18.50, "run": "07bb3ad03759c35e86dc8c45db7ae2b5d743e41d4d085dc449ade928f8451ab9", "task_success": false, "assessment": "Behavior-change/18 R6 extraction correct; English authoring echoes Japanese on both attempts. Explicit English script refusal now catches the actual localization failure. Earlier selected run instead stopped downstream on a German title length rule; neither is a quality pass."},
+      {"name": "optional-not-mandatory", "status": "complete", "seconds": 3.23, "run": "c50609349c82db2a26d5040974cfdcc0b32c265bed3e58e91b695de3a345ac13", "task_success": true, "assessment": "Correct insufficient decision: replacement-not-required alone is no new change. Previously incorrectly drafted."},
+      {"name": "undated-deprecation", "status": "refused", "seconds": 12.29, "run": "b22facbcba44481c786709b898a0039526295959c48a51f4b8671af1e3fefd42", "task_success": false, "assessment": "Deprecation, unknown release/remedy are appropriate. English is awkward/incomplete; German title copies English on both attempts. No full five-locale draft."},
+      {"name": "irrelevant-context", "status": "complete", "seconds": 3.31, "run": "9b0aaacd60f4487b10e81d31030d37d05df828c50132ae9dd88ea22b19f0dc94", "task_success": true, "assessment": "Correct insufficient decision; rhetorical lead-in alone produces no prose/patch."},
+      {"name": "material-delta", "status": "complete", "seconds": 26.20, "run": "3f38370d6466433b0a56b6f97ec32e07bc0cf810de0a17602883e250d9f8d885", "task_success": true, "assessment": "Correct material_change routing and bounded draft. Localization bodies are identical to Base64, so not an independent semantic success."}
+    ]
+  },
+  "reserve": {
+    "evaluation": ".cache/authoring/evaluations/reliability-reserve-verified",
+    "definitions_sha256": "b650e5775108ac3222a828c47dc23f6266b77419ea3aa25633c41803995d7435",
+    "frozen_input_sha256": {
+      "ok-variable": "f3d2369e94ace57c7901045d6ef5ad14a973108ae6796e13eb29916c141421f6",
+      "french-pdf-deprecation": "2ca59c87bc28f40217a47f00f1206f3ad30bd2acfa7298a65f3b2a89d420127a",
+      "empty-aggregate-results": "73a9216999b9f13b178f3461b9a74e6f1305778e5e4da63ad0df8c16952938fa",
+      "recommendation-only": "34fdac0e3e8a234aa21b29bea34603adc6f6ce3ad0bb9a11e97a6c40aaf11d79"
+    },
+    "total_seconds": 56.53,
+    "max_rss_bytes": 4066869248,
+    "complete_cases": 2,
+    "generated_proposals": 1,
+    "correct_insufficient_decisions": 1,
+    "refused_cases": 2,
+    "raw_responses": 23,
+    "parseable_and_schema_shaped": 23,
+    "rejected_stage_attempts": 4,
+    "cases": [
+      {"name": "ok-variable", "status": "complete", "seconds": 26.67, "run": "211f8341b563a0c9b7dc63fdd445c971fbbac1bd5857d26052e9f41e7de55316", "task_success": true, "assessment": "Behavior-change/18 R4, commands no longer setting OK, no invented command identity or remedy. Five locales/25 fields; French/German/Japanese phrasing needs editorial review."},
+      {"name": "french-pdf-deprecation", "status": "refused", "seconds": 14.09, "run": "22d4babc7b23e5655bcb9613f1b67ff2ba66a1d749803266bf357908a9cdd89d", "task_success": false, "assessment": "Wrong restriction type (expected deprecation), false unknown cutoff (missed à partir de 4D v20), and English says no longer supports/replaced instead of deprecated. Wrong-locale constant alias is the observed guard refusal, not verification of those semantic errors."},
+      {"name": "empty-aggregate-results", "status": "refused", "seconds": 11.89, "run": "8398a6223284f3420b5800d0bab6bdaac04620c952f2cf84dfe55b26b91ee05e", "task_success": false, "assessment": "Correct behavior-change and empty-selection Undefined versus prior Null meaning; false unknown cutoff because prior to v18 R6 is not recognized. Paragraph omits exact entitySelection identifier despite correct title; contract refusal, not proof functional summary is false."},
+      {"name": "recommendation-only", "status": "complete", "seconds": 3.24, "run": "9143816710a5c3cac9b3b2a50ae391ba8bb7edb01c5c056a547e9aa3acc95a7a", "task_success": true, "assessment": "Correct insufficient decision on advice without a changed fact; no prose/patch."}
+    ]
+  },
+  "unselected_development": {
+    "extraction_v1_v2_v3_v4_v5_original_complete_cases": [0, 1, 0, 2, 2],
+    "broader_protocol_ten_case_completions": 4,
+    "selected_before_final_language_guard_ten_case_completions": 5,
+    "note": "The earlier combined-English/separate-title-body protocol performed best on inspected development cases. Intermediate focused-action/native-locale variants were not shipped. All generated failures and exact prompts/configs remain in the native archive."
+  },
+  "sampling_experiment": {
+    "evaluation": ".cache/authoring/evaluations/sampling-original",
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "top_k": 20,
+    "min_p": 0,
+    "seed": 42,
+    "total_seconds": 102.06,
+    "max_rss_bytes": 4493082624,
+    "complete_cases": 1,
+    "generated_proposals": 0,
+    "correct_insufficient_decisions": 1,
+    "refused_cases": 3,
+    "selected": false,
+    "note": "Upstream-recommended sampling did not improve original-four outcomes. Base64 retained When in Japanese, unknown retained Invalid, insufficient was correct, list-box failed Spanish translation. Not used on reserve for tuning."
+  },
+  "bounded_precision_experiment": {
+    "evaluation": ".cache/authoring/evaluations/q8-original",
+    "repository": "unsloth/Qwen3-4B-Instruct-2507-GGUF",
+    "revision": "a06e946bb6b655725eafa393f4a9745d460374c9",
+    "file": "Qwen3-4B-Instruct-2507-Q8_0.gguf",
+    "sha256": "391c1e410fd9f4cf2de2b510273b56a84c19ce18f4fa3bfb3774031dac4ef068",
+    "bytes": 4280405600,
+    "license": "Apache-2.0",
+    "max_rss_bytes": 5951143936,
+    "four_case_seconds": 74.87,
+    "complete_cases": 2,
+    "generated_proposals": 1,
+    "correct_insufficient_decisions": 1,
+    "refused_cases": 2,
+    "selected": false,
+    "note": "Same instruction model/revision, one higher-precision alternative. No observed development-case completion gain over decomposed Q4; still untranslated Japanese and event-generation distortion. Q4 retained for smaller resource footprint. This experiment predates the final token-list/native-locale prompt correction and is not a head-to-head final-pipeline quality benchmark.",
+    "unknown_actual_one_line": "Invalid base64 in __CMD_0__ は空のテキストまたはブロブを生成する",
+    "listbox_actual_action": "You can add the test 'If ( Not ( Is editing text ))' in your code to ensure that events are only generated for text input cells when they are not in edition."
+  }
+}

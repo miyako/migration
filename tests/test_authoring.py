@@ -7,6 +7,7 @@ import unittest
 from unittest.mock import patch
 
 from tools import authoring as a
+from tools import authoring_stages as stages
 from tools.ingest import ROOT, load
 
 
@@ -36,19 +37,26 @@ class MockClient:
 
     def generate(self, stage, instruction, data, schema):
         self.calls.append(stage)
-        if stage == "decision":
-            return {"disposition": "draft", "threshold": "18 R4", "platforms": ["unknown"],
-                    "remedy": "unknown", "complexity": "unknown",
-                    "citations": [a.citation_key(e) for e in self.value["evidence"]]}
-        result = prose(stage, self.value["evidence"])
-        if stage != "en":
+        if stage == "classify_change":
+            return {"type": "behavior-change"}
+        if stage == "select_change":
+            return {"quote": self.value["evidence"][1]["quote"]}
+        if stage == "select_release":
+            return {"release": "18 R4"}
+        language = stage.split(".")[0]
+        result = prose(language, self.value["evidence"])
+        if language != "en":
             _, mapping = a.protect_identifiers(prose("en", self.value["evidence"]),
                                                self.value["evidence"])
             glossary = {row["en"]: row["fr"] for row in load(ROOT / "data/glossary.json")["command_names"]}
             for token, name in mapping.items():
-                alias = glossary[name] if stage == "fr" else name
+                alias = glossary[name] if language == "fr" else name
                 result = a.map_strings(result, lambda text: text.replace(alias, token))
-        return result
+            result["action"], result["action_basis"] = stages.NO_REMEDY[language]
+        result["citations"] = [f"E{i+1}" for i in range(len(self.value["evidence"]))]
+        if stage.endswith(".one_line"):
+            return {"text": result["one_line"]}
+        return {key: result[key] for key in schema["required"]}
 
     def reject(self, stage, error):
         self.calls.append("refused:" + stage)
@@ -130,7 +138,10 @@ class AuthoringTests(unittest.TestCase):
         self.input["fields"] = ["one_line", "conditions"]
         result = a.generate(self.input, self.config, self.client)
         a.validate_result(result, self.input)
-        self.assertEqual(self.client.calls, ["decision", "en", "fr", "de", "es", "ja"])
+        self.assertEqual(self.client.calls, ["classify_change", "select_change", "select_release",
+                                           "en", "fr.one_line", "fr.body",
+                                           "de.one_line", "de.body", "es.one_line", "es.body",
+                                           "ja.one_line", "ja.body"])
         self.assertEqual(len(result["patch"]), 10)
         self.assertEqual({p["field"] for p in result["patch"]}, {"one_line", "conditions"})
 
@@ -258,8 +269,8 @@ class AuthoringTests(unittest.TestCase):
         client = Broken(self.input)
         with self.assertRaises(ValueError):
             a.generate(self.input, self.config, client)
-        self.assertEqual(client.calls, ["decision", "refused:decision",
-                                       "decision.retry-2", "refused:decision.retry-2"])
+        self.assertEqual(client.calls, ["classify_change", "refused:classify_change",
+                                       "classify_change.retry-2", "refused:classify_change.retry-2"])
 
     def test_unknown_remedy_schema_does_not_constrain_other_authored_fields(self):
         schema = a.english_schema_for({"remedy": "unknown"}, a.schemas(["q"])[1])

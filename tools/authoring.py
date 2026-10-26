@@ -34,42 +34,6 @@ Do not invent platforms, replacements, mandatory work, or complexity.
 Keep code/API identifiers exactly as the supplied glossary specifies.
 Return only the requested JSON object. All prose requires manual review.
 /no_think"""
-DECIDE = """Evaluate only this evidence. disposition is draft if it describes a
-concrete change (before/after behavior, restriction, removal, deprecation),
-otherwise insufficient. A generic announcement of unspecified updates alone is
-insufficient. threshold is an explicitly stated first release (e.g. 18 R4).
-"updated in 4D v18 R4" explicitly establishes threshold "18 R4".
-If no such statement occurs in quote text, use unknown.
-platforms must remain unknown in this slice.
-remedy is documented only if these quotes actually describe a remedy, else unknown.
-Select supporting citation keys. Do not treat absence of evidence as removal."""
-AUTHOR = """Write concise English candidate prose grounded ONLY in these quotes
-and the decision. Include one_line (max 240 chars), paragraph (2-3 short sentences),
-conditions (1-3 applicability conditions), action and action_basis.
-one_line summarizes the concrete behavior CHANGE, not the missing remedy.
-For example: "Invalid single-BLOB decoding now produces an empty BLOB".
-Paraphrase rather than concatenate quotations.
-When remedy is unknown explicitly say the remedy is not established by the
-provided evidence; do NOT recommend a replacement, test, or edit.
-When threshold is unknown explicitly say its first release is unknown.
-Do not call a proposal official, human-reviewed, published or verified.
-Mention each required identifier in paragraph. Cite evidence using citation keys.
-Put citation keys ONLY in the citations array, never in prose fields.
-Do not add release numbers, platforms or unsupported conditions.
-Citation keys are opaque references, NOT source text. Never derive versions from
-keys or guess that a command is critical. Conditions describe only the affected
-call/input/context stated in the quote, not generic compatibility warnings.
-Example for an unknown remedy: action="The supplied evidence does not establish
-a remedy." action_basis="No remediation instruction is stated in these quotes."
-Describe the actual before/after behavior directly, not its speculative impact."""
-TRANSLATE = """Translate the English draft into the requested language only.
-Preserve its uncertainty, meaning, numbers and scope; add no new facts.
-The __CMD_N__ tokens are protected code identifiers, NOT natural language.
-Copy them byte-for-byte wherever they occur, including in paragraph.
-Never translate, expand or remove these tokens. An explicit glossary-backed
-mapping will restore the official locale-specific identifiers after generation.
-Translate ALL five authored fields, not just paragraph. Keep only the citation
-keys and protected tokens unchanged. Do not retain any English prose field."""
 
 
 def require(condition, message):
@@ -231,6 +195,18 @@ def validate_schema(value, schema, label="response"):
 
 
 def validate_decision(value, schema, evidence):
+    if "extraction" in value:
+        from . import authoring_stages as stages
+        labeled = {f"E{i+1}": item for i, item in enumerate(evidence)}
+        extraction = value["extraction"]
+        exact_keys(extraction, (*stages.extraction_schema(list(labeled))["required"], "evidence"),
+                   "decision extraction")
+        require(extraction["evidence"] == {key: citation_key(item) for key, item in labeled.items()},
+                "Extraction evidence reference map was altered")
+        raw = {key: val for key, val in extraction.items() if key != "evidence"}
+        stages.validate_extraction(raw, stages.extraction_schema(list(labeled)), labeled)
+        require(value == stages.decision_from(raw, labeled), "Decision differs from its evidence extraction")
+        value = {key: value[key] for key in schema["required"]}
     validate_schema(value, schema)
     text = " ".join(e["quote"] for e in evidence if citation_key(e) in value["citations"])
     threshold = value["threshold"]
@@ -238,15 +214,21 @@ def validate_decision(value, schema, evidence):
             (re.fullmatch(r"\d{2}(?:\.\d+)?(?: R\d+)?", threshold) and threshold in text),
             "Unsupported threshold: use unknown without an explicit cited first release")
     if threshold != "unknown":
-        require(re.search(r"(?:since|as of|in 4D v|updated in).*?" + re.escape(threshold),
-                          text, re.I), "Source edition is not evidence of a first release")
-        releases = set(re.findall(
-            r"(?:since|as of|updated in)\s+(?:4D\s+)?v?(\d{2}(?:\.\d+)?(?: R\d+)?)",
-            text, re.I))
+        releases = explicit_releases(text)
+        require(threshold in releases, "Source edition is not evidence of a first release")
         require(len(releases) <= 1, "Conflicting explicit thresholds must remain unknown")
     if value["remedy"] == "documented":
-        require(re.search(r"\b(?:recommend|replace|use|add|must)\b", text, re.I),
+        require(re.search(r"\b(?:recommend|replace|use|add|must|pouvez|recommand|ajouter)\b|"
+                          r"(?:できます|追加することができます)", text, re.I),
                 "Remedy lacks an explicit instruction in cited evidence")
+
+
+def explicit_releases(text):
+    release = r"(\d{2}(?:\.\d+)?(?: R\d+)?)"
+    before = (r"(?:since|as of|updated in|depuis|seit|desde)\s*"
+              r"(?:4D\s*)?v?\s*" + release)
+    after = r"(?:4D\s*)?v?\s*" + release + r"\s*以降"
+    return set(re.findall(before, text, re.I) + re.findall(after, text, re.I))
 
 
 def identifiers(evidence, language):
@@ -277,6 +259,12 @@ def validate_prose(value, schema, language, evidence, english=None):
             all(name not in combined or name in quote for name in ("Windows", "macOS", "Linux")),
             "Unsupported platform claim")
     expected = identifiers(evidence, language)
+    if language == "en":
+        descriptive = combined
+        for name in expected:
+            descriptive = descriptive.replace(name, "")
+        require(not re.search(r"[\u3040-\u30ff]", descriptive),
+                "English authored fields contain untranslated Japanese prose")
     require(all(name in value["paragraph"] for name in expected),
             f"Missing exact {language} command identifier in paragraph: {expected}")
     for row in load(ROOT / "data/glossary.json")["command_names"]:
@@ -295,15 +283,19 @@ def validate_prose(value, schema, language, evidence, english=None):
         labels = ["one_line", "paragraph", *[f"conditions[{i}]" for i in range(len(value["conditions"]))],
                   "action", "action_basis"]
         for label, text in zip(labels, strings):
-            require(re.search(r"[\u3040-\u30ff]", text),
-                    f"Japanese {label} lacks Japanese prose; translate this entire field into Japanese")
-            descriptive = text
-            for name in expected:
-                descriptive = descriptive.replace(name, "")
-            descriptive = re.sub(r"\b(?:Base64|base64|BLOB|blob|4D)\b", "", descriptive)
-            phrase = re.search(r"[A-Za-z]{2,}\s+[A-Za-z]{2,}", descriptive)
-            require(phrase is None, f"Japanese {label} contains untranslated English: "
-                    f"{phrase[0] if phrase else ''}; translate the descriptive words into Japanese")
+            validate_japanese_text(text, label, expected)
+
+
+def validate_japanese_text(text, label, identifiers):
+    require(re.search(r"[\u3040-\u30ff]", text),
+            f"Japanese {label} lacks Japanese prose; translate this entire field into Japanese")
+    descriptive = text
+    for name in identifiers:
+        descriptive = descriptive.replace(name, "")
+    descriptive = re.sub(r"\b(?:Base64|BLOB|4D)\b", "", descriptive, flags=re.I)
+    phrase = re.search(r"\b[A-Za-z]{3,}\b", descriptive)
+    require(phrase is None, f"Japanese {label} contains untranslated English: "
+            f"{phrase[0] if phrase else ''}; translate the descriptive words into Japanese")
 
 
 def map_strings(value, transform):
@@ -348,6 +340,7 @@ def prepare(value, previous, config):
     provenance = {
         "input": value, "previous": previous, "config": config,
         "implementation_sha256": file_hash(Path(__file__)),
+        "stages_sha256": file_hash(ROOT / "tools/authoring_stages.py"),
         "protected_sha256": snapshot(),
         "target_authored_sha256": digest(target["localizations"]) if target else None}
     return digest(provenance), provenance, classify(value, previous)
@@ -453,7 +446,8 @@ class Client:
             "response_format": {"type": "json_schema",
                                 "json_schema": {"name": stage, "strict": True, "schema": schema}},
             "chat_template_kwargs": {"enable_thinking": settings["enable_thinking"]},
-            **{key: settings[key] for key in ("seed", "temperature", "top_p", "max_tokens")}}
+            **{key: settings[key] for key in ("seed", "temperature", "top_p", "max_tokens")},
+            **{key: settings[key] for key in ("top_k", "min_p") if key in settings}}
         write(self.folder / f"{stage}.request.json", payload)
         started = time.monotonic()
         response = http_json(self.base + "/v1/chat/completions", payload,
@@ -489,48 +483,8 @@ def checked_generate(client, stage, instruction, data, schema, validator, config
 
 
 def generate(value, config, client):
-    evidence = value["evidence"]
-    refs = [citation_key(e) for e in evidence]
-    decision_schema, prose_schema = schemas(refs)
-    data = {"evidence": [{"quote": e["quote"], "citation_key": citation_key(e)}
-                         for e in evidence]}
-    decision = checked_generate(client, "decision", DECIDE, data, decision_schema,
-                                lambda result: validate_decision(result, decision_schema, evidence), config)
-    if decision["disposition"] == "insufficient":
-        return {"decision": decision, "localizations": {}, "patch": []}
-    localizations = {}
-    data["decision"] = decision
-    data["required_identifiers"] = identifiers(evidence, "en")
-    english_schema = english_schema_for(decision, prose_schema)
-    def validate_english(result):
-        validate_prose(result, english_schema, "en", evidence)
-        if decision["threshold"] == "unknown":
-            require(re.search(r"first (?:release|version).{0,30}unknown", result["paragraph"], re.I),
-                    'English paragraph must explicitly state "The first release is unknown."')
-
-    english = checked_generate(client, "en", AUTHOR, data, english_schema,
-                               validate_english, config)
-    localizations["en"] = english
-    protected, mapping = protect_identifiers(english, evidence)
-    language_names = {"fr": "French", "de": "German", "es": "Spanish", "ja": "Japanese"}
-    for language in LANGUAGES[1:]:
-        instruction = (TRANSLATE + f"\nTarget language: {language_names[language]} ({language}). "
-                       f"Every prose field MUST be written in {language_names[language]}.")
-        if language == "ja":
-            instruction += ("\nUse Japanese for ALL descriptive words, not English phrases "
-                            "such as 'Invalid input'. Only protected code tokens and "
-                            "technical names such as Base64/BLOB remain unchanged.")
-        def validate_translation(result):
-            validate_schema(result, prose_schema)
-            restored = restore_identifiers(result, mapping, language, evidence)
-            validate_prose(restored, prose_schema, language, evidence, english)
-
-        translated = checked_generate(client, language, instruction, {
-            "language": language, "english": protected}, prose_schema, validate_translation, config)
-        translated = restore_identifiers(translated, mapping, language, evidence)
-        localizations[language] = translated
-    return {"decision": decision, "localizations": localizations,
-            "patch": patch_entries(value, localizations)}
+    from .authoring_stages import generate as generate_stages
+    return generate_stages(value, config, client)
 
 
 def patch_entries(value, localizations):
@@ -558,7 +512,13 @@ def validate_result(result, value):
         return
     require(set(result["localizations"]) == set(LANGUAGES), "Missing proposal locale")
     for language, prose in result["localizations"].items():
-        schema = english_schema_for(result["decision"], prose_schema) if language == "en" else prose_schema
+        if "extraction" in result["decision"]:
+            from .authoring_stages import prose_schema as localized_schema, validate_modality
+            schema = localized_schema(prose_schema, result["decision"], language)
+            if language == "en":
+                validate_modality(prose, result["decision"])
+        else:
+            schema = english_schema_for(result["decision"], prose_schema) if language == "en" else prose_schema
         validate_prose(prose, schema, language, value["evidence"],
                        result["localizations"]["en"] if language != "en" else None)
     if result["decision"]["threshold"] == "unknown":
