@@ -11,17 +11,18 @@ Binary-to-project conversion is not assumed to be mandatory.
 
 ## What is actually covered
 
-The current snapshot covers **22 supplied English seeds**: 13 legacy documentation
+The current snapshot covers **35 supplied English seeds**: 26 legacy documentation
 pages (including the distinct **Upgrade** family) and 9 official blog overviews.
 Each legacy seed's four other languages are located through actual archive
-directory links, for **74 registered source URLs**:
+directory links, for **139 registered source URLs**:
 
 | Publication snapshot, 2026-10-26 | Count |
 |---|---:|
-| Available structural extracts | 74 |
+| Available structural extracts | 139 |
+| Article surfaces / generated navigation index views | 84 / 55 |
 | Currently unavailable registered source URLs | 0 |
 | Superseded guessed URLs that returned 404, retained as history | 34 |
-| Bounded archive navigation indexes traced, separate from sources | 19 |
+| Bounded archive directory indexes traced, separate from sources | 21 |
 | Actual blog language links queued for review, not fetched | 27 |
 | Candidate actionable changes | 3 |
 | Human-reviewed changes | **0** |
@@ -41,14 +42,45 @@ translated slugs. For example, French v20 is
 not the English slug with `.fr.html`. All 34 failed guesses have now been replaced
 with verified linked locations under the same stable source IDs. Their real 404
 results remain in `url_history`; they are **not missing translations**. Including
-those superseded attempts, 108 distinct source URL locations have been checked
-over time (74 current + 34 superseded), separate from navigation indexes.
+those superseded attempts, 173 distinct source URL locations have been checked
+over time (139 current + 34 superseded), separate from archive directory indexes.
 
 The added **4D v16 - Upgrade** overview and all four localized counterparts are
 available and structurally extracted. The overview describes features added since
 v15 R5 and links existing conversion/deprecation sources. New-feature headings
 do not automatically establish migration requirements; no new actionable records
 or human-review claims were added for this source.
+
+The latest registry expansion adds **13 English seeds and 52 verified locale
+counterparts**, with **no missing counterparts** in this snapshot:
+
+| Manual | Section family | Exact English editions | Registered URLs |
+|---|---|---|---:|
+| Language Reference | What's new | 16.3, 17.4, 18, 19, 20.1 | 25 |
+| Design Reference | What's new | 17.4, 18, 19 | 15 |
+| Language Reference | Obsolete / deprecated commands | 16.3, 17.4, 18, 19, 20.1 | 25 |
+
+These are distinct sources, **not new catalog records**. Manual identity is
+explicit, with same-edition parent-manual links verified from each page.
+The full numeric **type + ID** is significant: `901-3651020` (What's new) and
+`906-3651020` (Obsolete commands) share a manual ID but are different sections.
+Likewise, Language and Design What's new pages are not duplicates.
+
+Of these 65 added pages, **55 are generated navigation-index views**, not prose
+release notes, and 10 are ordinary deprecated-command articles. The extractor
+isolates `Title_list` entry labels, destinations and update markers, retaining tab
+order/selection without pulling in the outer layout table, manual menus or
+footer. It never executes legacy JavaScript. A valid empty index can be available
+without pretending it contains catalog evidence.
+
+Only the server-selected tab is extracted: for example, the **16.3 document**
+What's new page initially selects a **16.2 tab**. Both facts are preserved and
+neither is assumed to be a change's introduction threshold. Other tabs and linked
+command pages are recorded as links, not automatically fetched or cataloged.
+Obsolete/deprecated commands are **not automatically removed or syntax blockers**.
+No actionable records have been cataloged from these newly added sources; the
+catalog stays at three candidates from two partially used pages, with zero
+human-reviewed changes.
 
 Fetching or extracting a document does **not** mean its changes were all cataloged.
 The remaining available pages, other removed PHP modules, compiler requirements,
@@ -190,7 +222,7 @@ directories, and matches the document's numeric type/ID plus language independen
 of its translated slug. It never substitutes only the language suffix.
 Different editions, document types, languages such as `fe` versus `fr`, or
 ambiguous duplicate slugs are not silently merged. Navigation is limited to 24
-index pages (19 currently needed), with conditional fetching and local ignored
+index pages (21 currently needed), with conditional fetching and local ignored
 index snapshots. Missing directory links or ambiguous matches fail explicitly;
 unresolved locale matches are recorded without fabricating a URL. New seeds can
 be registered in English before locale discovery, but additional languages are

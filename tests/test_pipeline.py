@@ -34,6 +34,54 @@ class Versions(unittest.TestCase):
 
 
 class Extraction(unittest.TestCase):
+    def test_generated_navigation_is_content_not_layout_or_soft404(self):
+        html = """<html lang="en"><title>Language - What's new</title>
+        <table><tr><td>Global manual navigation noise</td><td>
+        <h1 id="newListTitle">Language - What's new</h1><div id="Title_list">
+        <div class="home_tabs"><ul>
+        <li class="selected"><a href="What-s-new.901-42.en.10.html">16.2</a></li>
+        <li><a href="What-s-new.901-42.en.11.html">16.0</a></li>
+        </ul></div><div id="TitreTitle99"><p><a href="API.301-99.en.html">API</a>
+        <span class="tdc_toc_upd">Updated 16.2</span></p></div></div>
+        </td></tr></table><footer><p>Footer noise</p></footer></html>"""
+        result = extract(html, "https://example.test/doc/4Dv16/4D/16.3/What-s-new.901-42.en.html")
+        self.assertEqual(result["content_kind"], "navigation_index")
+        self.assertEqual(availability(result, "en"), "available")
+        self.assertEqual(len(result["blocks"]), 1)
+        block = result["blocks"][0]
+        self.assertEqual(block["kind"], "navigation_entry")
+        self.assertEqual(block["label"], "API")
+        self.assertEqual(block["markers"], ["Updated 16.2"])
+        self.assertEqual(block["headings"], ["Language - What's new"])
+        self.assertEqual(block["anchor"], "TitreTitle99")
+        self.assertTrue(block["url"].endswith("#TitreTitle99"))
+        self.assertTrue(block["target_url"].endswith("/16.3/API.301-99.en.html"))
+        self.assertNotIn("Global manual", block["text"])
+        self.assertEqual([tab["label"] for tab in result["navigation"]["tabs"]], ["16.2", "16.0"])
+        self.assertTrue(result["navigation"]["tabs"][0]["selected"])
+        empty = extract('<html lang="ja"><title>新機能</title><h1 id="newListTitle">新機能</h1><div id="Title_list"></div></html>',
+                        "https://example.test/index")
+        self.assertEqual(availability(empty, "ja"), "available")
+        self.assertEqual(empty["blocks"], [])
+
+    def test_manual_parent_is_verified_from_same_edition_links(self):
+        entry = {"id": "manual", "url": "https://example.test/doc/4D/16.3/What-s-new.901-42.en.html",
+                 "manual": "language-reference", "manual_document_key": "100-42",
+                 "language": "en", "fetch": {"status": "not_fetched"}}
+        headers = Message()
+        headers["Content-Type"] = "text/html"
+        for path, expected in (("Manual.100-42.en.html", "available"),
+                               ("Manual.100-43.en.html", "manual_unverified"),
+                               ("../16/Manual.100-42.en.html", "manual_unverified")):
+            body = f'<html lang="en"><title>Index</title><p>Entries.</p><a href="{path}">Manual</a></html>'.encode()
+            response = CurlResponse(body, {"http_code": 200, "url_effective": entry["url"]}, headers)
+            with tempfile.TemporaryDirectory() as directory, patch("tools.ingest.CACHE", Path(directory)):
+                with patch("tools.ingest.open_source", return_value=response):
+                    result, _ = fetch_one(entry)
+            self.assertEqual(result["fetch"]["status"], expected)
+            if expected != "available":
+                self.assertIn("same-edition manual", result["fetch"]["error"])
+
     def test_heading_table_code_anchor_and_relative_urls(self):
         html = """<html lang="fr"><title>Guide</title><h1>Guide</h1>
         <h4><a name="42">Introduced in 18 R6</a></h4>
@@ -130,15 +178,15 @@ class Extraction(unittest.TestCase):
 
 
 class Registry(unittest.TestCase):
-    def test_all_22_seeds_and_verified_legacy_locations(self):
+    def test_all_35_seeds_and_verified_legacy_locations(self):
         config = load(ROOT / "data/sources.json")
         locations = load(ROOT / "data/source-locations.json")["locations"]
         entries = initial_registry(config, locations)
-        self.assertEqual(len(config["seeds"]), 22)
-        self.assertEqual(len(entries), 74)
-        self.assertEqual(len({e["id"] for e in entries}), 74)
+        self.assertEqual(len(config["seeds"]), 35)
+        self.assertEqual(len(entries), 139)
+        self.assertEqual(len({e["id"] for e in entries}), 139)
         for language in ("en", "fr", "de", "es", "ja"):
-            self.assertEqual(sum(e["language"] == language for e in entries), 22 if language == "en" else 13)
+            self.assertEqual(sum(e["language"] == language for e in entries), 35 if language == "en" else 26)
         self.assertEqual(sum(e["family"] == "blog-overview" for e in entries), 9)
         self.assertEqual(sum(e["family"] == "upgrade" for e in entries), 5)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["edition"], "18.2")
@@ -147,7 +195,13 @@ class Registry(unittest.TestCase):
         self.assertTrue(french["url"].endswith("/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"))
         self.assertEqual(french["discovery"]["chain"][0], config["archive_root"])
         self.assertEqual(french["discovery"]["chain"][-1], french["url"])
-        self.assertEqual(len(initial_registry(config)), 22, "Never fabricate untraced locale URLs")
+        self.assertEqual(len(initial_registry(config)), 35, "Never fabricate untraced locale URLs")
+        self.assertEqual(sum(e.get("manual") == "language-reference" for e in entries), 50)
+        self.assertEqual(sum(e.get("manual") == "design-reference" for e in entries), 15)
+        self.assertEqual(sum(e["family"] == "whats-new" for e in entries), 40)
+        self.assertEqual(sum(e["family"] == "obsolete-deprecated-commands" for e in entries), 25)
+        self.assertEqual(next(e for e in entries if e["id"] == "legacy-design-v17-whats-new-en")["edition"], "17.4")
+        self.assertEqual(next(e for e in entries if e["id"] == "legacy-language-v20-whats-new-en")["edition"], "20.1")
 
     def test_corrected_url_keeps_stable_id_and_failed_attempt(self):
         original = {"id": "legacy-fr", "url": "https://example.test/English.fr.html",
@@ -164,6 +218,15 @@ class Registry(unittest.TestCase):
 
 
 class ArchiveDiscovery(unittest.TestCase):
+    def test_generated_types_and_manual_ids_are_not_deduplicated(self):
+        directory = "https://example.test/doc/4D/16.3/"
+        links = [directory + path for path in (
+            "Nouveautes.901-42.fr.html", "Commandes.906-42.fr.html",
+            "Design.901-43.fr.html", "Manual.100-42.fr.html")]
+        self.assertEqual(matching_documents(links, directory, "901-42", "fr"), [links[0]])
+        self.assertEqual(matching_documents(links, directory, "906-42", "fr"), [links[1]])
+        self.assertEqual(matching_documents(links, directory, "901-43", "fr"), [links[2]])
+
     def test_index_fetch_is_cached_conditional_and_page_bounded(self):
         from urllib.error import HTTPError
         root = "https://example.test/doc/"
@@ -242,9 +305,10 @@ class Publication(unittest.TestCase):
 
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
-        self.assertEqual(self.document["coverage"]["english_seeds"], 22)
-        self.assertEqual(self.document["coverage"]["registered_sources"], 74)
-        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 74})
+        self.assertEqual(self.document["coverage"]["english_seeds"], 35)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 139)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 139})
+        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 84, "navigation_index": 55})
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")

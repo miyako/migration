@@ -22,7 +22,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache"
 LANGUAGES = ("en", "fr", "de", "es", "ja")
-EXTRACTOR_VERSION = 1
+EXTRACTOR_VERSION = 2
 
 
 def load(path):
@@ -104,8 +104,14 @@ def extract(html, url):
     scope = next((n for n in nodes if "entry-content" in n.attrs.get("class", "").split()), None)
     if scope is None:
         scope = next((n for n in nodes if n.tag == "article"), dom)
+    navigation_scope = next((n for n in nodes if n.attrs.get("id") == "Title_list"), None)
+    navigation_heading = next((n.text() for n in nodes if n.attrs.get("id") == "newListTitle"), "")
+    navigation_index = navigation_scope is not None and bool(navigation_heading)
+    if navigation_index:
+        scope = navigation_scope
     legacy = any(n.attrs.get("id", "").startswith("Paragraph_text_") for n in nodes)
-    headings, blocks, links, alternates = [], [], [], []
+    headings = [(1, navigation_heading)] if navigation_index else []
+    blocks, links, alternates, tabs = [], [], [], []
     for n in nodes:
         href = n.attrs.get("href")
         if href and n.tag in {"a", "link"}:
@@ -117,6 +123,15 @@ def extract(html, url):
                 if lang in LANGUAGES and "alternate" in n.attrs.get("rel", "").split():
                     alternates.append({"language": lang, "url": resolved})
     active = set(scope.walk())
+    if navigation_index:
+        for n in nodes:
+            if n not in active:
+                continue
+            if n.tag == "li" and n.parent and n.parent.parent and "home_tabs" in n.parent.parent.attrs.get("class", "").split():
+                target = next((a for a in n.walk() if a.tag == "a" and a.attrs.get("href")), None)
+                if target:
+                    tabs.append({"label": target.text(), "url": urljoin(url, target.attrs["href"]),
+                                 "selected": "selected" in n.attrs.get("class", "").split()})
     for n in nodes:
         if n not in active:
             continue
@@ -134,6 +149,12 @@ def extract(html, url):
                 continue
         else:
             ancestor = n
+        if navigation_index:
+            ancestor = n.parent
+            while ancestor and not ancestor.attrs.get("id", "").startswith("TitreTitle"):
+                ancestor = ancestor.parent
+            if ancestor is None:
+                continue
         # A p wrapping a table in legacy HTML is not a standalone paragraph.
         if n.tag == "p" and any(c.tag in {"table", "tr", "pre"} for c in n.walk() if c is not n):
             continue
@@ -149,15 +170,24 @@ def extract(html, url):
             first = next((r for r in table.walk() if r.tag == "tr"), None)
             if first:
                 header = [c.text() for c in first.children if isinstance(c, Node) and c.tag in {"td", "th"}]
-        anchor = ancestor.attrs.get("id", "").removeprefix("Paragraph_text_") if legacy else n.attrs.get("id", "")
+        anchor = (ancestor.attrs.get("id", "") if navigation_index else
+                  ancestor.attrs.get("id", "").removeprefix("Paragraph_text_") if legacy else n.attrs.get("id", ""))
         block_id = hashlib.sha256(("\n".join(t for _, t in headings) + "\n" + n.tag + "\n" + text).encode()).hexdigest()[:16]
-        blocks.append({
+        block = {
             "id": block_id, "kind": {"p": "paragraph", "tr": "table_row", "pre": "code"}[n.tag],
             "headings": [t for _, t in headings], "text": text, "cells": cells,
             "table_header": header, "anchor": anchor,
             "url": url.split("#")[0] + ("#" + anchor if anchor else ""),
-        })
+        }
+        if navigation_index:
+            target = next((a for a in n.walk() if a.tag == "a" and a.attrs.get("href")), None)
+            block.update(kind="navigation_entry", label=target.text() if target else text,
+                         target_url=urljoin(url, target.attrs["href"]) if target else None,
+                         markers=[span.text() for span in n.walk() if "tdc_toc_upd" in span.attrs.get("class", "").split()])
+        blocks.append(block)
     return {"extractor_version": EXTRACTOR_VERSION, "title": title, "language": language,
+            "content_kind": "navigation_index" if navigation_index else "article",
+            "navigation": {"heading": navigation_heading, "tabs": tabs} if navigation_index else None,
             "blocks": blocks, "links": links, "alternates": alternates}
 
 
@@ -166,13 +196,28 @@ def availability(extracted, expected_language):
     if any(term in title for term in ("404", "not found", "page introuvable", "seite nicht gefunden",
                                       "página no encontrada", "ページが見つかりません")):
         return "soft_404"
-    if not extracted["blocks"]:
+    if not extracted["blocks"] and extracted.get("content_kind") != "navigation_index":
         return "unrecognized_content"
     if not extracted["language"]:
         return "language_unverified"
     if extracted["language"] != expected_language:
         return "language_mismatch"
     return "available"
+
+
+def extraction_metadata(extracted, entry):
+    metadata = {"block_count": len(extracted["blocks"]), "detected_language": extracted["language"],
+                "content_kind": extracted["content_kind"]}
+    if extracted["content_kind"] == "navigation_index":
+        metadata["navigation_entry_count"] = len(extracted["blocks"])
+        metadata["selected_tab"] = next((tab["label"] for tab in extracted["navigation"]["tabs"] if tab["selected"]), None)
+    if entry.get("manual_document_key"):
+        pattern = "." + entry["manual_document_key"] + "." + entry["language"] + ".html"
+        metadata["manual_document_urls"] = sorted({link["url"] for link in extracted["links"]
+                                                  if link["url"].endswith(pattern)
+                                                  and urlsplit(link["url"]).path.rsplit("/", 1)[0] ==
+                                                  urlsplit(entry.get("resolved_url", entry["url"])).path.rsplit("/", 1)[0]})
+    return metadata
 
 
 def initial_registry(config, locations=None):
@@ -313,7 +358,11 @@ def fetch_one(entry, refresh=False, transport="urllib"):
                 "detected_language": extracted["language"],
                 "previous_sha256": old.get("sha256") if digest != old.get("sha256") else old.get("previous_sha256"),
                 "block_count": len(extracted["blocks"]),
+                **extraction_metadata(extracted, entry),
             }
+            if status == "available" and entry.get("manual_document_key") and not entry["fetch"]["manual_document_urls"]:
+                entry["fetch"]["status"] = "manual_unverified"
+                entry["fetch"]["error"] = f"Expected same-edition manual parent {entry['manual_document_key']} is not linked"
             return entry, extracted["alternates"]
     except HTTPError as error:
         if error.code == 304:
@@ -325,8 +374,12 @@ def fetch_one(entry, refresh=False, transport="urllib"):
                 save(extracted_path, extracted)
                 entry["fetch"]["block_count"] = len(extracted["blocks"])
             entry["fetch"]["status"] = availability(extracted, entry["language"])
-            entry["fetch"]["detected_language"] = extracted["language"]
-            entry["fetch"].pop("error", None)
+            entry["fetch"].update(extraction_metadata(extracted, entry))
+            if entry["fetch"]["status"] == "available" and entry.get("manual_document_key") and not entry["fetch"]["manual_document_urls"]:
+                entry["fetch"]["status"] = "manual_unverified"
+                entry["fetch"]["error"] = f"Expected same-edition manual parent {entry['manual_document_key']} is not linked"
+            else:
+                entry["fetch"].pop("error", None)
             return entry, extracted["alternates"]
         entry["resolved_url"] = error.url
         entry["fetch"] = {**old, "status": "unavailable" if error.code in {404, 410} else "http_error",

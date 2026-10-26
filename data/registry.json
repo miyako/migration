@@ -23,7 +23,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484",
       "etag": "\"ec96-60985da6ada00\"",
@@ -32,7 +32,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 117,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html",
     "title": "DEPRECATED OR REMOVED FEATURES"
@@ -61,16 +62,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce",
       "etag": "\"10a78-60985d7cb7700\"",
       "last_modified": "Tue, 07 Nov 2023 01:25:16 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 118
+      "block_count": 118,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -117,16 +119,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "848f401bc81ca606b5ce4af68521396b007a841c251e548210c839a6f26ffd55",
       "etag": "\"f7ac-60985dcaeaf80\"",
       "last_modified": "Tue, 07 Nov 2023 01:26:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 120
+      "block_count": 120,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -173,16 +176,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "dcce70a06d680494dc0eb310d8f9162c482d7e9780557a5727b622233e14b0db",
       "etag": "\"f887-60985de96f780\"",
       "last_modified": "Tue, 07 Nov 2023 01:27:10 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 114
+      "block_count": 114,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -229,7 +233,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "b65438b76ed30410c239e268d59d39af2499cafcea10c1fad718f27d0f40f0d5",
       "etag": "\"10e84-60985e2c31500\"",
@@ -238,7 +242,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 117,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html",
     "title": "廃止予定または削除された機能"
@@ -267,7 +272,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "9d005c0da4af201d8c4678297d4e78ab8a54bed13945fbbc59d743c17ed50e96",
       "etag": "\"e1eb-5ce2371719680\"",
@@ -276,7 +281,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 119,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html",
     "title": "Deprecated or removed features"
@@ -305,16 +311,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "66f5afc6267e602f6dec0690f84eeb9db10aba368355fdc2ae1c7fd646c7480f",
       "etag": "\"114f1-5ce2371160900\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:00 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 170
+      "block_count": 170,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -361,16 +368,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "83b41b93d535458419d00261ac850a16425ab9b102248a88c3efee9c8bbe98e2",
       "etag": "\"fd2e-5ce2371ae9f80\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:10 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 159
+      "block_count": 159,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -417,16 +425,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "517ea64d5bfe99e04c3652e86871f51e68b4a47082d25e3afcd6e328ae86a545",
       "etag": "\"1026c-5ce23720a2d00\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:16 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 160
+      "block_count": 160,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -473,7 +482,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "5781a7b37b9b29a06f7fb54bc90e5779fbdaf321dafecb0b5918e70edb884a3a",
       "etag": "\"feec-5ce2372a2c380\"",
@@ -482,7 +491,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 119,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.ja.html",
     "title": "廃止予定または削除された機能"
@@ -511,7 +521,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b",
       "etag": "\"132dd-5a7a0577d7900\"",
@@ -520,7 +530,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 213,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html",
     "title": "Deprecated or removed features"
@@ -549,16 +560,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8",
       "etag": "\"153c7-5a7a03583f680\"",
       "last_modified": "Tue, 09 Jun 2020 05:43:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 208
+      "block_count": 208,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -605,16 +617,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "60fbfb20a7953a81b9c054041b8d14ac1900741fdfdffc685c08b4c9e9edee55",
       "etag": "\"13f8e-5a7a073dca800\"",
       "last_modified": "Tue, 09 Jun 2020 06:01:04 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 210
+      "block_count": 210,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -661,16 +674,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "adf49879185c02e6f4a24f4ce26ab578e47df0300fce33a5728f12ac474787ed",
       "etag": "\"14c10-5a7a08fa34080\"",
       "last_modified": "Tue, 09 Jun 2020 06:08:50 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 207
+      "block_count": 207,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -717,7 +731,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "86e0d9bf533f698aa7b0ec7e9c05648b938a1bd63dad16cf8ed700106e106e02",
       "etag": "\"153ef-5a7a0c8249580\"",
@@ -726,7 +740,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 205,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.ja.html",
     "title": "廃止予定または削除された機能"
@@ -755,7 +770,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "19e0b4b11be79cecc75c64523c0ce5a08e95f89a6d768a42adf79252539a9375",
       "etag": "\"692f-5a456503ef800\"",
@@ -764,7 +779,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 7,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html",
     "title": "DEPRECATED AND REMOVED FEATURES"
@@ -793,16 +809,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "a8d37ed97ae66498bc6e842a40a6fc1d9f6bfcfd5a49dcfa5d0db83a9ec1999f",
       "etag": "\"6ba3-5a4564e56b000\"",
       "last_modified": "Tue, 28 Apr 2020 09:17:52 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 6
+      "block_count": 6,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -849,16 +866,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "60d8c76599354e217d268a143677ea6200c7390e6606132a6247cdb733ff9b9a",
       "etag": "\"69ab-5a4565245c480\"",
       "last_modified": "Tue, 28 Apr 2020 09:18:58 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 7
+      "block_count": 7,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -905,16 +923,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:56+00:00",
       "sha256": "069df32ad20161cc25584873c1a8e2c972567da7c31dcea3a6981e25a5d8d786",
       "etag": "\"6a1e-5a45653f10380\"",
       "last_modified": "Tue, 28 Apr 2020 09:19:26 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 7
+      "block_count": 7,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -961,7 +980,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:56+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "99996acb6300ba6fe60be8e07d544dd366991150182d303ae559ea513e93d3b7",
       "etag": "\"6d2a-5a45657660600\"",
@@ -970,7 +989,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 6,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.ja.html",
     "title": "廃止予定の機能と削除された機能"
@@ -999,7 +1019,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "fde6d90c4dc9f24e5eb428ad4973aeef76d45e30415473fad10552d3f1ba85f6",
       "etag": "\"6bbf-5648295f5e700\"",
@@ -1008,7 +1028,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 7,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html",
     "title": "DEPRECATED AND REMOVED FEATURES"
@@ -1037,16 +1058,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "812047677b91938366c964aba9055d292e268d2d8585917d175557f5fa391a54",
       "etag": "\"6e5b-5648293ef1a80\"",
       "last_modified": "Tue, 06 Feb 2018 03:14:34 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 6
+      "block_count": 6,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1093,16 +1115,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "b497f904c328a56638df2061a75ec40b7b9b1267a0fc1110271fa687f599cb3f",
       "etag": "\"6c79-5648297bfaa80\"",
       "last_modified": "Tue, 06 Feb 2018 03:15:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 7
+      "block_count": 7,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1149,16 +1172,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "8433a8e55a95d5ca2b6039e61c47db1bc5da0b7fa58d895a0763fafb7d47ac05",
       "etag": "\"6cc0-56482996ae980\"",
       "last_modified": "Tue, 06 Feb 2018 03:16:06 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 7
+      "block_count": 7,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1205,7 +1229,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "6d27356047127990480c0ab62d93b5edf95b274cec12c66306fe658b3551728e",
       "etag": "\"6fa0-564829cfe7080\"",
@@ -1214,7 +1238,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 6,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.ja.html",
     "title": "廃止予定の機能と削除された機能"
@@ -1243,7 +1268,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d",
       "etag": "\"cdb1-5ce2371901b00\"",
@@ -1252,7 +1277,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 56,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html",
     "title": "Changes and updates"
@@ -1281,16 +1307,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9",
       "etag": "\"e44a-5ce2371348d80\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:02 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 56
+      "block_count": 56,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1337,16 +1364,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:02+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "8e1046dfb2716b8a8cb21bcc808903ef94e40a194e6b12431a85bdb12b08f8a6",
       "etag": "\"d632-5ce2371cd2400\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:12 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 56
+      "block_count": 56,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1393,16 +1421,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "3092a62583b5515434670c7270785b8ae50270e98af347cc3c05e6ceb574a82e",
       "etag": "\"d97e-5ce237228b180\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:18 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 56
+      "block_count": 56,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1449,7 +1478,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "4796aa788fabd4562a76437f8a82c92209f79966ebcd0aeb5f92f26204ff10ea",
       "etag": "\"eca8-5ce2372c14800\"",
@@ -1458,7 +1487,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 56,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html",
     "title": "変更点とアップデートについて"
@@ -1487,7 +1517,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf",
       "etag": "\"127d6-5a7a0575ef480\"",
@@ -1496,7 +1526,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 32,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html",
     "title": "Changes and updates"
@@ -1525,16 +1556,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c",
       "etag": "\"24b0c-5a7a035657200\"",
       "last_modified": "Tue, 09 Jun 2020 05:43:36 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 32
+      "block_count": 32,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1581,16 +1613,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "6448e4a46c8c207d6bceb49ec3df31fb71c988a9bbdd97184a2ef4a0547828fe",
       "etag": "\"12eb7-5a7a073be2380\"",
       "last_modified": "Tue, 09 Jun 2020 06:01:02 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 32
+      "block_count": 32,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1637,16 +1670,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "1ef0f9cb7b6d9d34ca5100b9f1233e7130874b4a29804365634e697edf119059",
       "etag": "\"12f3e-5a7a08f84bc00\"",
       "last_modified": "Tue, 09 Jun 2020 06:08:48 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 32
+      "block_count": 32,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1693,7 +1727,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "1c9c7c0745deb9412f5850c675634950b90f1881f970de40a7a9bd5b042f4c79",
       "etag": "\"13997-5a7a0c8061100\"",
@@ -1702,7 +1736,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 32,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.ja.html",
     "title": "変更点とアップデートについて"
@@ -1731,7 +1766,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e",
       "etag": "\"6c00-5a45686026580\"",
@@ -1740,7 +1775,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 17,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html",
     "title": "Quick table"
@@ -1769,16 +1805,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb",
       "etag": "\"702a-5a4565c864780\"",
       "last_modified": "Tue, 28 Apr 2020 09:21:50 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 16
+      "block_count": 16,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1825,16 +1862,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "f6d493738aab9ef501758be8f6364059db3b74e16dae16beae70328e52656f68",
       "etag": "\"6c50-5a456a355b880\"",
       "last_modified": "Tue, 28 Apr 2020 09:41:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 15
+      "block_count": 15,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -1881,7 +1919,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "d6ddeb54d90d4dff8524c27a5fd36f3e5fd85f9a69d1c80f4860ff8cab950aed",
       "etag": "\"6c63-5a456c0c79000\"",
@@ -1890,7 +1928,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 15,
-      "detected_language": "es"
+      "detected_language": "es",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.es.html",
     "title": "Quick table"
@@ -1919,7 +1958,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "ea0841b612ca801f03c6de448f5d89bdaaa03707850f7e5f9b0ec6f1e0b3de18",
       "etag": "\"6ff1-5a456fc625a00\"",
@@ -1928,7 +1967,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 16,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.ja.html",
     "title": "早見表"
@@ -1957,7 +1997,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "06d8094a2775b0be65d88acdc45d29d8f3c7f1b5f303badbb1849c22ab3cbbb4",
       "etag": "\"6661-56482ce1bae80\"",
@@ -1966,7 +2006,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 14,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html",
     "title": "Quick table"
@@ -1995,16 +2036,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "2bc3c457ba0639ff37eb00622d9951b3907d4122b36bca1fa0e07e930c8ec477",
       "etag": "\"688a-56482a5d0bd80\"",
       "last_modified": "Tue, 06 Feb 2018 03:19:34 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 14
+      "block_count": 14,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2051,16 +2093,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "74dae928a478a253c9f8981eabe96ffe860c6a2ded4e88acebedef9656055f5b",
       "etag": "\"6771-56482eb137400\"",
       "last_modified": "Tue, 06 Feb 2018 03:38:56 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 13
+      "block_count": 13,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2107,7 +2150,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "38422ea1565c60d6dd807fb1a5a92a42c5bc97f221328d30c6fb064502dd15d8",
       "etag": "\"68f9-5648308484280\"",
@@ -2116,7 +2159,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 15,
-      "detected_language": "es"
+      "detected_language": "es",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.es.html",
     "title": "Quick table"
@@ -2145,7 +2189,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "843cf9ee788464cf11286f8baeef6bc0f61b434f540aa378929ddbc3570c0fad",
       "etag": "\"69d3-564834368fa80\"",
@@ -2154,7 +2198,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 14,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.ja.html",
     "title": "早見表"
@@ -2183,7 +2228,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "d3bb536dace82e62955bd9b7473c692a56b18eb45c92c361c376c61056e024ad",
       "etag": "\"7502-5a7a015914080\"",
@@ -2192,7 +2237,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 4,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.en.html",
     "title": "CONVERSION TO 4D V18"
@@ -2221,16 +2267,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "887b60e794070b32c04aef2253298f1bdf96967ff42e4d4a98cd082aa854b713",
       "etag": "\"757c-5a7a013c77d00\"",
       "last_modified": "Tue, 09 Jun 2020 05:34:12 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 4
+      "block_count": 4,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2277,16 +2324,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "be91c6ad82c075fc59e58acf618838069406c8aaba322139d8334b685173eee9",
       "etag": "\"763a-5a7a0171dfb00\"",
       "last_modified": "Tue, 09 Jun 2020 05:35:08 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 4
+      "block_count": 4,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2333,16 +2381,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "dc305927c5fdcb3ebc11551081cc9fe6cc00fe03db56acc1da4268d89df244e3",
       "etag": "\"75dc-5a7a018aab580\"",
       "last_modified": "Tue, 09 Jun 2020 05:35:34 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 5
+      "block_count": 5,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2389,7 +2438,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "bc21678fa21f1f0a76d483d8db17fd55847b5a0168518acc89665e7d5bc562b8",
       "etag": "\"7663-5a7a01bc42a80\"",
@@ -2398,7 +2447,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 4,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.ja.html",
     "title": "4D V18への変換"
@@ -2427,7 +2477,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "14d56a4c8a453dcc302e4f1c5a704868163000de5bae8a4a64f5f5ac474c8754",
       "etag": "\"7bc3-5a45651331c00\"",
@@ -2436,7 +2486,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 5,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.en.html",
     "title": "CONVERSION TO 4D V17"
@@ -2465,16 +2516,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "aab82321ab9b7532652351e0a414a682756203938396b83d65602138b40eea82",
       "etag": "\"78e4-5a4564f2c4f80\"",
       "last_modified": "Tue, 28 Apr 2020 09:18:06 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 5
+      "block_count": 5,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2521,16 +2573,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "3f92e9767bb0667a39a12f8b270940fa14994a72efb6cf385f0b0b4829e6c03f",
       "etag": "\"7b0b-5a45652de5b00\"",
       "last_modified": "Tue, 28 Apr 2020 09:19:08 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 5
+      "block_count": 5,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2577,16 +2630,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "be397d50d4f01bcb75818912159302310f3c5076d6ab12672aed068b82eb4a3f",
       "etag": "\"7b4d-5a45654a81e80\"",
       "last_modified": "Tue, 28 Apr 2020 09:19:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 5
+      "block_count": 5,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2633,7 +2687,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "f951f6cf4d8e12887defb6e75547f3f1230a55f1538818e473e4446f4873dd54",
       "etag": "\"7e22-5a45657fe9c80\"",
@@ -2642,7 +2696,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 5,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.ja.html",
     "title": "4D V17への変換"
@@ -2671,7 +2726,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "bce8fe753502796f85dff5c69002f1880adb677aa1c08efe8557474274b84811",
       "etag": "\"785e-56482968e7d80\"",
@@ -2680,7 +2735,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 5,
-      "detected_language": "en"
+      "detected_language": "en",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.en.html",
     "title": "CONVERSION TO 4D V16"
@@ -2709,16 +2765,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "20db5d6024d797bd70075ed2cf089a9895e948673aa281489b8dea574b18865d",
       "etag": "\"7709-5648294a63580\"",
       "last_modified": "Tue, 06 Feb 2018 03:14:46 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 5
+      "block_count": 5,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2765,16 +2822,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:57+00:00",
       "sha256": "9a2d837aa8d85af917195027f87cd7f293af663558254c67e2fdcc8686791438",
       "etag": "\"790d-564829839bc80\"",
       "last_modified": "Tue, 06 Feb 2018 03:15:46 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 5
+      "block_count": 5,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2821,16 +2879,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:45:58+00:00",
       "sha256": "2a58bccba62429bba59ae51ff65f7e4351945f96d99108eeba1561f15165e144",
       "etag": "\"78a9-564829a038000\"",
       "last_modified": "Tue, 06 Feb 2018 03:16:16 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 6
+      "block_count": 6,
+      "content_kind": "article"
     },
     "url_history": [
       {
@@ -2877,7 +2936,7 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "b66206209342665b2d4d20cb523f3c30e2512241c812df061dc848b491c9ce8d",
       "etag": "\"7b33-564829d970700\"",
@@ -2886,7 +2945,8 @@
       "redirected": false,
       "previous_sha256": null,
       "block_count": 5,
-      "detected_language": "ja"
+      "detected_language": "ja",
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.ja.html",
     "title": "4D V16への変換"
@@ -2915,16 +2975,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:46:57+00:00",
       "sha256": "8bd90c9e690863802923c184225b6ebdcf2dbb3db13e380f011db38acb3fd39b",
       "etag": "\"91f0-56482968e7d80\"",
       "last_modified": "Tue, 06 Feb 2018 03:15:18 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "en",
       "previous_sha256": null,
-      "block_count": 19
+      "block_count": 19,
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html",
     "title": "4D V16 - UPGRADE"
@@ -2953,16 +3014,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:46:57+00:00",
       "sha256": "602efd6dac94f9873d5f88a05171a12b0b00b13eda5002d1b3b5bd8cd2b154ac",
       "etag": "\"942e-5648294a63580\"",
       "last_modified": "Tue, 06 Feb 2018 03:14:46 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 19
+      "block_count": 19,
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Mise-a-jour.100-3102365.fr.html",
     "title": "4D V16 - MISE À JOUR"
@@ -2991,16 +3053,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:46:57+00:00",
       "sha256": "3c3e028bcfc0214390c1ef061101f3a01af6a1d70bb542419cc5c9cfcd178015",
       "etag": "\"93d6-5648298584100\"",
       "last_modified": "Tue, 06 Feb 2018 03:15:48 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 18
+      "block_count": 18,
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.de.html",
     "title": "4D V16 - UPGRADE"
@@ -3029,16 +3092,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:46:57+00:00",
       "sha256": "30ca9a8021a54474e0adb70d35f2e5303df7f95664c1e5606debb3df6cae8634",
       "etag": "\"96ee-564829a220480\"",
       "last_modified": "Tue, 06 Feb 2018 03:16:18 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 17
+      "block_count": 17,
+      "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Actualizacion.100-3102365.es.html",
     "title": "4D V16 - ACTUALIZACIÓN"
@@ -3067,19 +3131,2990 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:57+00:00",
+      "checked_at": "2026-10-26T10:58:03+00:00",
       "fetched_at": "2026-10-26T10:46:57+00:00",
       "sha256": "5a41f3c28dee85f2b8473b54c10702076184ac25edf496603b863f1c82629013",
       "etag": "\"99cd-564829d970700\"",
       "last_modified": "Tue, 06 Feb 2018 03:17:16 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 19,
+      "content_kind": "article"
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html",
+    "title": "4D V16 - アップグレード"
+  },
+  {
+    "id": "legacy-language-v16-whats-new-en",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/What-s-new.901-3651020.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/What-s-new.901-3651020.en.html"
+      ],
+      "document_key": "901-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:01:12+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "df962b3e688397eaa8c4abfde2b77ad6218fe8818190a90763f4c6d0fd4f5ac8",
+      "etag": "\"62bf-56482db389d80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:34:30 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "16.2",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Language-Reference.100-3651020.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/What-s-new.901-3651020.en.html",
+    "title": "4D Language Reference - What's new"
+  },
+  {
+    "id": "legacy-language-v16-whats-new-fr",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Liste-des-nouveautes.901-3651020.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Liste-des-nouveautes.901-3651020.fr.html"
+      ],
+      "document_key": "901-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "3c711464f624e5ed5791b476aae85ca3e40d9ecb907a5f665a34d4993007f938",
+      "etag": "\"62dd-56482b6fb4580\"",
+      "last_modified": "Tue, 06 Feb 2018 03:24:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "16.2",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Langage.100-3651020.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Liste-des-nouveautes.901-3651020.fr.html",
+    "title": "4D - Langage - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-language-v16-whats-new-de",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Neuerungen-der-Version.901-3651020.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Neuerungen-der-Version.901-3651020.de.html"
+      ],
+      "document_key": "901-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "06e2309cfbdb74bdc7783d8b4ae50aeaa7660eea177b80813047dd8606111df8",
+      "etag": "\"6343-56482f86d6c00\"",
+      "last_modified": "Tue, 06 Feb 2018 03:42:40 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "16.2",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Programmiersprache.100-3651020.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Neuerungen-der-Version.901-3651020.de.html",
+    "title": "4D Programmiersprache - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-language-v16-whats-new-es",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Novedades.901-3651020.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Novedades.901-3651020.es.html"
+      ],
+      "document_key": "901-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "80980438734504cf52cc89e3f5adfbd06d6dc31296d167fae76edc6b782dae1c",
+      "etag": "\"62d6-5648315df4380\"",
+      "last_modified": "Tue, 06 Feb 2018 03:50:54 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "16.2",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Manual-de-lenguaje-4D.100-3651020.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Novedades.901-3651020.es.html",
+    "title": "Manual de lenguaje 4D - Novedades"
+  },
+  {
+    "id": "legacy-language-v16-whats-new-ja",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/What-s-new.901-3651020.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/What-s-new.901-3651020.ja.html"
+      ],
+      "document_key": "901-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "03e0cc035f37aa9763fb8cf00176e52657af02320bd6db9df16262a2432075b0",
+      "etag": "\"63a9-56483511e8000\"",
+      "last_modified": "Tue, 06 Feb 2018 04:07:28 GMT",
       "http_status": 200,
       "redirected": false,
       "detected_language": "ja",
       "previous_sha256": null,
-      "block_count": 19
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "16.2",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Language-Reference.100-3651020.ja.html"
+      ]
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html",
-    "title": "4D V16 - アップグレード"
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/What-s-new.901-3651020.ja.html",
+    "title": "ランゲージリファレンス - 新着"
+  },
+  {
+    "id": "legacy-language-v17-whats-new-en",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4881732.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4881732.en.html"
+      ],
+      "document_key": "901-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "dba68c87b7c93cf359eb6cfcec36559e75a6722018a214d160049b7ceaac8cf2",
+      "etag": "\"c3f5-5a45696b2db80\"",
+      "last_modified": "Tue, 28 Apr 2020 09:38:06 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 81,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 81,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Language-Reference.100-4881732.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4881732.en.html",
+    "title": "4D Language Reference - What's new"
+  },
+  {
+    "id": "legacy-language-v17-whats-new-fr",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Liste-des-nouveautes.901-4881732.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Liste-des-nouveautes.901-4881732.fr.html"
+      ],
+      "document_key": "901-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "a8df47e71a1276d49bb2da21a27b825d87ba5f4beffc11eb951902c28bd411e2",
+      "etag": "\"c632-5a45672387a80\"",
+      "last_modified": "Tue, 28 Apr 2020 09:27:54 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 81,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 81,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Langage.100-4881732.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Liste-des-nouveautes.901-4881732.fr.html",
+    "title": "4D - Langage - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-language-v17-whats-new-de",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Neuerungen-der-Version.901-4881732.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Neuerungen-der-Version.901-4881732.de.html"
+      ],
+      "document_key": "901-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "f0bdd365b2133fcf8e30479f9f37d6a205f435ec89ae3a44f998d62fe304867f",
+      "etag": "\"c419-5a456b4433780\"",
+      "last_modified": "Tue, 28 Apr 2020 09:46:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 81,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 81,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Programmiersprache.100-4881732.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Neuerungen-der-Version.901-4881732.de.html",
+    "title": "4D Programmiersprache - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-language-v17-whats-new-es",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Novedades.901-4881732.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Novedades.901-4881732.es.html"
+      ],
+      "document_key": "901-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:03+00:00",
+      "fetched_at": "2026-10-26T10:58:03+00:00",
+      "sha256": "ece96b0060136e0025f3ddb832632ac4a13cd05ec7de2ea88d3cb69b5f0edaba",
+      "etag": "\"c42a-5a456d1d39380\"",
+      "last_modified": "Tue, 28 Apr 2020 09:54:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 81,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 81,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Manual-de-lenguaje-4D.100-4881732.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Novedades.901-4881732.es.html",
+    "title": "Manual de lenguaje 4D - Novedades"
+  },
+  {
+    "id": "legacy-language-v17-whats-new-ja",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4881732.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4881732.ja.html"
+      ],
+      "document_key": "901-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "8181f6e60de569bf6261c4394d0970de21b0c3f180227662fad2c2509e2524cd",
+      "etag": "\"c53d-5a4570d8ce200\"",
+      "last_modified": "Tue, 28 Apr 2020 10:11:20 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 81,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 81,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Language-Reference.100-4881732.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4881732.ja.html",
+    "title": "ランゲージリファレンス - 新着"
+  },
+  {
+    "id": "legacy-language-v18-whats-new-en",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4504285.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4504285.en.html"
+      ],
+      "document_key": "901-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "498909854e3be6a8c45033dadeb0e35e3902e3c82471747bb5ec670f8ffb116f",
+      "etag": "\"7bd3-5a7a0560f4300\"",
+      "last_modified": "Tue, 09 Jun 2020 05:52:44 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 26,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Language-Reference.100-4504285.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4504285.en.html",
+    "title": "4D Language Reference - What's new"
+  },
+  {
+    "id": "legacy-language-v18-whats-new-fr",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Liste-des-nouveautes.901-4504285.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Liste-des-nouveautes.901-4504285.fr.html"
+      ],
+      "document_key": "901-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "02a70b8ac757a8040566fddff44b01002080357f514017a7a799b87fad9fd042",
+      "etag": "\"7c6f-5a7a0337d2a00\"",
+      "last_modified": "Tue, 09 Jun 2020 05:43:04 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 26,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Langage.100-4504285.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Liste-des-nouveautes.901-4504285.fr.html",
+    "title": "4D - Langage - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-language-v18-whats-new-de",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Neuerungen-der-Version.901-4504285.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Neuerungen-der-Version.901-4504285.de.html"
+      ],
+      "document_key": "901-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "b4db6bb74ea05af095f7482edf0a7fac3dd4731508ab6e811d50c0050819db79",
+      "etag": "\"7bf9-5a7a0726e7200\"",
+      "last_modified": "Tue, 09 Jun 2020 06:00:40 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 26,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Programmiersprache.100-4504285.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Neuerungen-der-Version.901-4504285.de.html",
+    "title": "4D Programmiersprache - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-language-v18-whats-new-es",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Novedades.901-4504285.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Novedades.901-4504285.es.html"
+      ],
+      "document_key": "901-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "85861d936be5838f0f1ffa28b2da52fc593e6cf9da0cab3e3bdfddc365529c3f",
+      "etag": "\"7bd4-5a7a08e909800\"",
+      "last_modified": "Tue, 09 Jun 2020 06:08:32 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 26,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Manual-de-lenguaje-4D.100-4504285.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Novedades.901-4504285.es.html",
+    "title": "Manual de lenguaje 4D - Novedades"
+  },
+  {
+    "id": "legacy-language-v18-whats-new-ja",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4504285.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4504285.ja.html"
+      ],
+      "document_key": "901-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "b73ab059e48642285cd961d90945522be7a575334fdec88aa182cad38c8dc35c",
+      "etag": "\"7cd9-5a7a0c6d4e400\"",
+      "last_modified": "Tue, 09 Jun 2020 06:24:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 26,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Language-Reference.100-4504285.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4504285.ja.html",
+    "title": "ランゲージリファレンス - 新着"
+  },
+  {
+    "id": "legacy-language-v19-whats-new-en",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5391516.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5391516.en.html"
+      ],
+      "document_key": "901-5391516",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "5ee5a5ba80802838fd2413773d9a2fcb63caff6c4dc683b30b46ca99eb539a2d",
+      "etag": "\"66d8-5ce2394baca80\"",
+      "last_modified": "Tue, 12 Oct 2021 08:24:58 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 9,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Language-Reference.100-5391516.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5391516.en.html",
+    "title": "4D Language Reference - What's new"
+  },
+  {
+    "id": "legacy-language-v19-whats-new-fr",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Liste-des-nouveautes.901-5391516.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Liste-des-nouveautes.901-5391516.fr.html"
+      ],
+      "document_key": "901-5391516",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "5b137bb35c1809c61c076e3e52b8d18f45d92a8be861cc75312c1722e2a41ae0",
+      "etag": "\"6723-5ce2370036080\"",
+      "last_modified": "Tue, 12 Oct 2021 08:14:42 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 9,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Langage.100-5391516.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Liste-des-nouveautes.901-5391516.fr.html",
+    "title": "4D - Langage - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-language-v19-whats-new-de",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Neuerungen-der-Version.901-5391516.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Neuerungen-der-Version.901-5391516.de.html"
+      ],
+      "document_key": "901-5391516",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "923b415ad636ff6ba6295652adfea19a4c3be4f3b3e0cc165839e4a7766c424f",
+      "etag": "\"672f-5ce23b1387e00\"",
+      "last_modified": "Tue, 12 Oct 2021 08:32:56 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 9,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Programmiersprache.100-5391516.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Neuerungen-der-Version.901-5391516.de.html",
+    "title": "4D Programmiersprache - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-language-v19-whats-new-es",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Novedades.901-5391516.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Novedades.901-5391516.es.html"
+      ],
+      "document_key": "901-5391516",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "68cb8de9f375b5dea3c746d1b3fb32df06a43eff900ca0e458e2446e1a463d2c",
+      "etag": "\"66d3-5ce23cd97ad00\"",
+      "last_modified": "Tue, 12 Oct 2021 08:40:52 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 9,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Manual-de-lenguaje-4D.100-5391516.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Novedades.901-5391516.es.html",
+    "title": "Manual de lenguaje 4D - Novedades"
+  },
+  {
+    "id": "legacy-language-v19-whats-new-ja",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5391516.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5391516.ja.html"
+      ],
+      "document_key": "901-5391516",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "8c58f3329925419a61385b4ebe94a279835b1c40d1bad01e093881ee00b4259c",
+      "etag": "\"67d1-5ce24074a2f00\"",
+      "last_modified": "Tue, 12 Oct 2021 08:57:00 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 9,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Language-Reference.100-5391516.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5391516.ja.html",
+    "title": "ランゲージリファレンス - 新着"
+  },
+  {
+    "id": "legacy-language-v20-whats-new-en",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/What-s-new.901-6479538.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/What-s-new.901-6479538.en.html"
+      ],
+      "document_key": "901-6479538",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "47a5881f691897e388aafee31deb36d9958636e5eb999fa817597ebea3fa5641",
+      "etag": "\"5b81-6098624353b80\"",
+      "last_modified": "Tue, 07 Nov 2023 01:46:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 1,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 1,
+      "selected_tab": "20.1",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Language-Reference.100-6479538.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/What-s-new.901-6479538.en.html",
+    "title": "4D Language Reference - What's new"
+  },
+  {
+    "id": "legacy-language-v20-whats-new-fr",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Liste-des-nouveautes.901-6479538.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Liste-des-nouveautes.901-6479538.fr.html"
+      ],
+      "document_key": "901-6479538",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "cf3ee73acb3a9063359989e666fb54701808f1362142cbb75fb2e18fcf84d998",
+      "etag": "\"5b8b-60985ff40c880\"",
+      "last_modified": "Tue, 07 Nov 2023 01:36:18 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 1,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 1,
+      "selected_tab": "20.1",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Langage.100-6479538.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Liste-des-nouveautes.901-6479538.fr.html",
+    "title": "4D - Langage - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-language-v20-whats-new-de",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Neuerungen-der-Version.901-6479538.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Neuerungen-der-Version.901-6479538.de.html"
+      ],
+      "document_key": "901-6479538",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "dc694036dcb6a185e3722a1bace4d133910e20a5b09162c2f4f8391cc6030c73",
+      "etag": "\"5be5-6098642f6c480\"",
+      "last_modified": "Tue, 07 Nov 2023 01:55:14 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 1,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 1,
+      "selected_tab": "20.1",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Programmiersprache.100-6479538.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Neuerungen-der-Version.901-6479538.de.html",
+    "title": "4D Programmiersprache - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-language-v20-whats-new-es",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Novedades.901-6479538.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Novedades.901-6479538.es.html"
+      ],
+      "document_key": "901-6479538",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "8ceda33a2d39ed5be8e878a10d87a47522095728652d08e149da7b4831660d6c",
+      "etag": "\"5b9d-6098661b84d80\"",
+      "last_modified": "Tue, 07 Nov 2023 02:03:50 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 1,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 1,
+      "selected_tab": "20.1",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Manual-de-lenguaje-4D.100-6479538.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Novedades.901-6479538.es.html",
+    "title": "Manual de lenguaje 4D - Novedades"
+  },
+  {
+    "id": "legacy-language-v20-whats-new-ja",
+    "family": "whats-new",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/What-s-new.901-6479538.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/What-s-new.901-6479538.ja.html"
+      ],
+      "document_key": "901-6479538",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "4c0ddbb54aad826bce98bf23a89f1786e2ef444d5cf75a42e644bcdc0d1ab92a",
+      "etag": "\"5c6a-609869ff27a80\"",
+      "last_modified": "Tue, 07 Nov 2023 02:21:14 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 1,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 1,
+      "selected_tab": "20.1",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Language-Reference.100-6479538.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/What-s-new.901-6479538.ja.html",
+    "title": "ランゲージリファレンス - 新着"
+  },
+  {
+    "id": "legacy-design-v19-whats-new-en",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-5416591",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5416591.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5416591.en.html"
+      ],
+      "document_key": "901-5416591",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "be1cdbd04ac540c86198b036550908890b7596e27d783f850364b28418dd985a",
+      "etag": "\"5f11-5ce2387f96900\"",
+      "last_modified": "Tue, 12 Oct 2021 08:21:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 3,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 3,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Design-Reference.100-5416591.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5416591.en.html",
+    "title": "4D Design Reference - What's new"
+  },
+  {
+    "id": "legacy-design-v19-whats-new-fr",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-5416591",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Liste-des-nouveautes.901-5416591.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Liste-des-nouveautes.901-5416591.fr.html"
+      ],
+      "document_key": "901-5416591",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "4030e5901cdf29b2d7eaef0d0590f9c30802f939910f110c9c8843b8c9687232",
+      "etag": "\"5f9d-5ce2360a29c00\"",
+      "last_modified": "Tue, 12 Oct 2021 08:10:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 3,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 3,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Mode-Developpement.100-5416591.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Liste-des-nouveautes.901-5416591.fr.html",
+    "title": "4D - Mode Développement - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-design-v19-whats-new-de",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-5416591",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Neuerungen-der-Version.901-5416591.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Neuerungen-der-Version.901-5416591.de.html"
+      ],
+      "document_key": "901-5416591",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "51199a2de9362f631812a9de15aabd46582d452f78a37e61a306c8ad8c6aeba5",
+      "etag": "\"5f55-5ce23a4589800\"",
+      "last_modified": "Tue, 12 Oct 2021 08:29:20 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 3,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 3,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Designmodus.100-5416591.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Neuerungen-der-Version.901-5416591.de.html",
+    "title": "4D Designmodus - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-design-v19-whats-new-es",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-5416591",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Novedades.901-5416591.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Novedades.901-5416591.es.html"
+      ],
+      "document_key": "901-5416591",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "77148b1e83d82e9784af4218ad64256564098c7faf775fbdef75628ab7303713",
+      "etag": "\"5f36-5ce23c0994280\"",
+      "last_modified": "Tue, 12 Oct 2021 08:37:14 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 3,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 3,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Manual-de-Diseno.100-5416591.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Novedades.901-5416591.es.html",
+    "title": "Manual de Diseño - Novedades"
+  },
+  {
+    "id": "legacy-design-v19-whats-new-ja",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-5416591",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5416591.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5416591.ja.html"
+      ],
+      "document_key": "901-5416591",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "3f1ae3dad270185d41a1d3fcceced205488d421d5da0b3a0f503990086fe5874",
+      "etag": "\"602c-5ce23fa2d4000\"",
+      "last_modified": "Tue, 12 Oct 2021 08:53:20 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 3,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 3,
+      "selected_tab": "19.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Design-Reference.100-5416591.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/What-s-new.901-5416591.ja.html",
+    "title": "デザインリファレンス - 新着"
+  },
+  {
+    "id": "legacy-design-v18-whats-new-en",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4575411",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4575411.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4575411.en.html"
+      ],
+      "document_key": "901-4575411",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "9dc0be1d67794e02e22f1804639052bf54c9f467e7b61e509000326944e61d6a",
+      "etag": "\"5f62-5a7a04a608a00\"",
+      "last_modified": "Tue, 09 Jun 2020 05:49:28 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Design-Reference.100-4575411.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4575411.en.html",
+    "title": "4D Design Reference - What's new"
+  },
+  {
+    "id": "legacy-design-v18-whats-new-fr",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4575411",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Liste-des-nouveautes.901-4575411.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Liste-des-nouveautes.901-4575411.fr.html"
+      ],
+      "document_key": "901-4575411",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "0fa96e868f76670ca1e42aca835d0f4bd1d7d52bf87afc78e8ba5b1509e0fc44",
+      "etag": "\"5f9a-5a7a024b4fc00\"",
+      "last_modified": "Tue, 09 Jun 2020 05:38:56 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Mode-Developpement.100-4575411.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Liste-des-nouveautes.901-4575411.fr.html",
+    "title": "4D - Mode Développement - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-design-v18-whats-new-de",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4575411",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Neuerungen-der-Version.901-4575411.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Neuerungen-der-Version.901-4575411.de.html"
+      ],
+      "document_key": "901-4575411",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "501131dda77eefafdc5c57614e889e69951416ff683cdd0b495204e6e31c246c",
+      "etag": "\"5f7b-5a7a066a13480\"",
+      "last_modified": "Tue, 09 Jun 2020 05:57:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Designmodus.100-4575411.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Neuerungen-der-Version.901-4575411.de.html",
+    "title": "4D Designmodus - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-design-v18-whats-new-es",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4575411",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Novedades.901-4575411.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Novedades.901-4575411.es.html"
+      ],
+      "document_key": "901-4575411",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "8e85c919d7511c06f9675b92bd89cc12a8bb0e6a55a9c928aba7f1097a3b2759",
+      "etag": "\"5f44-5a7a082a4d600\"",
+      "last_modified": "Tue, 09 Jun 2020 06:05:12 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Manual-de-Diseno.100-4575411.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Novedades.901-4575411.es.html",
+    "title": "Manual de Diseño - Novedades"
+  },
+  {
+    "id": "legacy-design-v18-whats-new-ja",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4575411",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4575411.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4575411.ja.html"
+      ],
+      "document_key": "901-4575411",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "a7237434931bc964898dfba2f0c44d60ffef5d73af1a1f700636cf7d7a61782b",
+      "etag": "\"607e-5a7a0baca9d80\"",
+      "last_modified": "Tue, 09 Jun 2020 06:20:54 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 4,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 4,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Design-Reference.100-4575411.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/What-s-new.901-4575411.ja.html",
+    "title": "デザインリファレンス - 新着"
+  },
+  {
+    "id": "legacy-design-v17-whats-new-en",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4880454",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4880454.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4880454.en.html"
+      ],
+      "document_key": "901-4880454",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "357e33abcd2bdd4f9c8a007e57ee82dcda293a35847250d52fbe9b7a15ff4f35",
+      "etag": "\"68fe-5a4568b22a700\"",
+      "last_modified": "Tue, 28 Apr 2020 09:34:52 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 11,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 11,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Design-Reference.100-4880454.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4880454.en.html",
+    "title": "4D Design Reference - What's new"
+  },
+  {
+    "id": "legacy-design-v17-whats-new-fr",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4880454",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Liste-des-nouveautes.901-4880454.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Liste-des-nouveautes.901-4880454.fr.html"
+      ],
+      "document_key": "901-4880454",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:01:12+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "5df9ef47e06902cafd8e715506541ccee65fa9c157950873584b042a8262f379",
+      "etag": "\"69ed-5a4566351c800\"",
+      "last_modified": "Tue, 28 Apr 2020 09:23:44 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 11,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 11,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Mode-Developpement.100-4880454.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Liste-des-nouveautes.901-4880454.fr.html",
+    "title": "4D - Mode Développement - Liste des nouveautés"
+  },
+  {
+    "id": "legacy-design-v17-whats-new-de",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4880454",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Neuerungen-der-Version.901-4880454.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Neuerungen-der-Version.901-4880454.de.html"
+      ],
+      "document_key": "901-4880454",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "b2f4a7ac8c6d828108471662f3fe5de0902f6256ab63231c8f2f7432cb45595f",
+      "etag": "\"6931-5a456a8947e80\"",
+      "last_modified": "Tue, 28 Apr 2020 09:43:06 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 11,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 11,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Designmodus.100-4880454.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Neuerungen-der-Version.901-4880454.de.html",
+    "title": "4D Designmodus - Neuerungen der Version"
+  },
+  {
+    "id": "legacy-design-v17-whats-new-es",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4880454",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Novedades.901-4880454.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Novedades.901-4880454.es.html"
+      ],
+      "document_key": "901-4880454",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "48f608cca158072934a8ca0a74a0f0709b1527b6904c6c7d2897daf5629e1b07",
+      "etag": "\"694f-5a456c6065600\"",
+      "last_modified": "Tue, 28 Apr 2020 09:51:20 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 11,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 11,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Manual-de-Diseno.100-4880454.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Novedades.901-4880454.es.html",
+    "title": "Manual de Diseño - Novedades"
+  },
+  {
+    "id": "legacy-design-v17-whats-new-ja",
+    "family": "whats-new",
+    "manual": "design-reference",
+    "manual_document_key": "100-4880454",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4880454.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4880454.ja.html"
+      ],
+      "document_key": "901-4880454",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "82facf42e3b81758cafcda5e8f8ab57f61942d2d4dc11896bcb10a8d93a8115e",
+      "etag": "\"6a4b-5a45701829b80\"",
+      "last_modified": "Tue, 28 Apr 2020 10:07:58 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 11,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 11,
+      "selected_tab": "17.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Design-Reference.100-4880454.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/What-s-new.901-4880454.ja.html",
+    "title": "デザインリファレンス - 新着"
+  },
+  {
+    "id": "legacy-language-v16-obsolete-commands-en",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Obsolete-commands.906-3651020.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Obsolete-commands.906-3651020.en.html"
+      ],
+      "document_key": "906-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:01:12+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "4eadc9aa632135aa3f8376932a7780c53bd62f8043b8797c7d75b4cde1152bc7",
+      "etag": "\"a637-56482db75a680\"",
+      "last_modified": "Tue, 06 Feb 2018 03:34:34 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 62,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 62,
+      "selected_tab": "16.3",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Language-Reference.100-3651020.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Obsolete-commands.906-3651020.en.html",
+    "title": "4D Language Reference - Obsolete commands"
+  },
+  {
+    "id": "legacy-language-v16-obsolete-commands-fr",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Commandes-obsoletes.906-3651020.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Commandes-obsoletes.906-3651020.fr.html"
+      ],
+      "document_key": "906-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "5021c2636ed777394768811f828ebbacdbbacd2083c4a09da71ee94d0054cb84",
+      "etag": "\"a859-56482b719ca00\"",
+      "last_modified": "Tue, 06 Feb 2018 03:24:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 62,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 62,
+      "selected_tab": "16.3",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Langage.100-3651020.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Commandes-obsoletes.906-3651020.fr.html",
+    "title": "4D - Langage - Commandes obsolètes"
+  },
+  {
+    "id": "legacy-language-v16-obsolete-commands-de",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Uberholte-Befehle.906-3651020.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Uberholte-Befehle.906-3651020.de.html"
+      ],
+      "document_key": "906-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "c9b3be1d62bbb6590c0837a71c1c1585d754337a8f21c37ff48c5f9cfeb6f80c",
+      "etag": "\"a66f-56482f8aa7500\"",
+      "last_modified": "Tue, 06 Feb 2018 03:42:44 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 62,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 62,
+      "selected_tab": "16.3",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Programmiersprache.100-3651020.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Uberholte-Befehle.906-3651020.de.html",
+    "title": "4D Programmiersprache - Überholte Befehle"
+  },
+  {
+    "id": "legacy-language-v16-obsolete-commands-es",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Comandos-obsoletos.906-3651020.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Comandos-obsoletos.906-3651020.es.html"
+      ],
+      "document_key": "906-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "1cd1e23a585a2d76312e59457e93534237f5ca463ff62826c30651663a5ce061",
+      "etag": "\"a66b-56483161c4c80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:50:58 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 62,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 62,
+      "selected_tab": "16.3",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Manual-de-lenguaje-4D.100-3651020.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Comandos-obsoletos.906-3651020.es.html",
+    "title": "Manual de lenguaje 4D - Comandos obsoletos"
+  },
+  {
+    "id": "legacy-language-v16-obsolete-commands-ja",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-3651020",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Obsolete-commands.906-3651020.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Obsolete-commands.906-3651020.ja.html"
+      ],
+      "document_key": "906-3651020",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "74c13b3329870913f1bc13e0a0144e2f5c1870d66188b56ba810bc5fae13ec90",
+      "etag": "\"a75d-56483513d0480\"",
+      "last_modified": "Tue, 06 Feb 2018 04:07:30 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 62,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 62,
+      "selected_tab": "16.3",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Language-Reference.100-3651020.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Obsolete-commands.906-3651020.ja.html",
+    "title": "ランゲージリファレンス - 廃止予定コマンド"
+  },
+  {
+    "id": "legacy-language-v17-obsolete-commands-en",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Obsolete-commands.906-4881732.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Obsolete-commands.906-4881732.en.html"
+      ],
+      "document_key": "906-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:04+00:00",
+      "fetched_at": "2026-10-26T10:58:04+00:00",
+      "sha256": "c124f90d85547fe471cbe5ef3306f38bd754ef307e72877a13a81e6609fe2d4e",
+      "etag": "\"af39-5a45696efe480\"",
+      "last_modified": "Tue, 28 Apr 2020 09:38:10 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 71,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 71,
+      "selected_tab": "17.4",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Language-Reference.100-4881732.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Obsolete-commands.906-4881732.en.html",
+    "title": "4D Language Reference - Obsolete commands"
+  },
+  {
+    "id": "legacy-language-v17-obsolete-commands-fr",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Commandes-obsoletes.906-4881732.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Commandes-obsoletes.906-4881732.fr.html"
+      ],
+      "document_key": "906-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "2d21ef56f994ca5f3506fb81035d5117f55e2a1ad7489ebd409f4998be231f97",
+      "etag": "\"b16e-5a45672758380\"",
+      "last_modified": "Tue, 28 Apr 2020 09:27:58 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 71,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 71,
+      "selected_tab": "17.4",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Langage.100-4881732.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Commandes-obsoletes.906-4881732.fr.html",
+    "title": "4D - Langage - Commandes obsolètes"
+  },
+  {
+    "id": "legacy-language-v17-obsolete-commands-de",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Uberholte-Befehle.906-4881732.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Uberholte-Befehle.906-4881732.de.html"
+      ],
+      "document_key": "906-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "77575e3dbdfe3ef99575bd58b243db9ea49fe2004e916c33c841edb6aec9a668",
+      "etag": "\"af47-5a456b4804080\"",
+      "last_modified": "Tue, 28 Apr 2020 09:46:26 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 71,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 71,
+      "selected_tab": "17.4",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Programmiersprache.100-4881732.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Uberholte-Befehle.906-4881732.de.html",
+    "title": "4D Programmiersprache - Überholte Befehle"
+  },
+  {
+    "id": "legacy-language-v17-obsolete-commands-es",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Comandos-obsoletos.906-4881732.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Comandos-obsoletos.906-4881732.es.html"
+      ],
+      "document_key": "906-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "b292d93b7a2e38f0a6ef8b159bb84febfbaa708c2ce34fbee7bfcff28b5b5c3f",
+      "etag": "\"af54-5a456d1f21800\"",
+      "last_modified": "Tue, 28 Apr 2020 09:54:40 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 71,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 71,
+      "selected_tab": "17.4",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Manual-de-lenguaje-4D.100-4881732.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Comandos-obsoletos.906-4881732.es.html",
+    "title": "Manual de lenguaje 4D - Comandos obsoletos"
+  },
+  {
+    "id": "legacy-language-v17-obsolete-commands-ja",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4881732",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Obsolete-commands.906-4881732.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Obsolete-commands.906-4881732.ja.html"
+      ],
+      "document_key": "906-4881732",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "d0128e089f0000bf5108ade964f98ee4ef17e0aa85f372dbee0d23deb605ae02",
+      "etag": "\"b06c-5a4570dc9eb00\"",
+      "last_modified": "Tue, 28 Apr 2020 10:11:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 71,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 71,
+      "selected_tab": "17.4",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Language-Reference.100-4881732.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Obsolete-commands.906-4881732.ja.html",
+    "title": "ランゲージリファレンス - 廃止予定コマンド"
+  },
+  {
+    "id": "legacy-language-v18-obsolete-commands-en",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Obsolete-commands.906-4504285.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Obsolete-commands.906-4504285.en.html"
+      ],
+      "document_key": "906-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "e8c8e810aff0c4b5469fa71eb3a9f2614af5dae5e65a06b22ac9a43cde52e952",
+      "etag": "\"95be-5a7a0564c4c00\"",
+      "last_modified": "Tue, 09 Jun 2020 05:52:48 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 51,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 51,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Language-Reference.100-4504285.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Obsolete-commands.906-4504285.en.html",
+    "title": "4D Language Reference - Obsolete commands"
+  },
+  {
+    "id": "legacy-language-v18-obsolete-commands-fr",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Commandes-obsoletes.906-4504285.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Commandes-obsoletes.906-4504285.fr.html"
+      ],
+      "document_key": "906-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "cd2e2d0487ae90ee4fe421393d53b76ff5a20a50e8c5f849fefe8f199ece9e9e",
+      "etag": "\"97dd-5a7a0339bae80\"",
+      "last_modified": "Tue, 09 Jun 2020 05:43:06 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 51,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 51,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Langage.100-4504285.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Commandes-obsoletes.906-4504285.fr.html",
+    "title": "4D - Langage - Commandes obsolètes"
+  },
+  {
+    "id": "legacy-language-v18-obsolete-commands-de",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Uberholte-Befehle.906-4504285.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Uberholte-Befehle.906-4504285.de.html"
+      ],
+      "document_key": "906-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "a587e95190c51bb1ff0ae606e1ea17ebbaf102fe10d84f1ea5024bd9534a90b8",
+      "etag": "\"95b8-5a7a072ab7b00\"",
+      "last_modified": "Tue, 09 Jun 2020 06:00:44 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 51,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 51,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Programmiersprache.100-4504285.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Uberholte-Befehle.906-4504285.de.html",
+    "title": "4D Programmiersprache - Überholte Befehle"
+  },
+  {
+    "id": "legacy-language-v18-obsolete-commands-es",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Comandos-obsoletos.906-4504285.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Comandos-obsoletos.906-4504285.es.html"
+      ],
+      "document_key": "906-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "cc63be37290cc8afaf0d1f3daef75f1cfc453a588b742b29379f2b91b799d5fc",
+      "etag": "\"95ce-5a7a08eaf1c80\"",
+      "last_modified": "Tue, 09 Jun 2020 06:08:34 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 51,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 51,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Manual-de-lenguaje-4D.100-4504285.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Comandos-obsoletos.906-4504285.es.html",
+    "title": "Manual de lenguaje 4D - Comandos obsoletos"
+  },
+  {
+    "id": "legacy-language-v18-obsolete-commands-ja",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-4504285",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Obsolete-commands.906-4504285.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Obsolete-commands.906-4504285.ja.html"
+      ],
+      "document_key": "906-4504285",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "ded36448727efd791bde5d77ad5cabaa23d0521b7709b67e795dc9ea6a994539",
+      "etag": "\"96dd-5a7a0c6f36880\"",
+      "last_modified": "Tue, 09 Jun 2020 06:24:18 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 51,
+      "content_kind": "navigation_index",
+      "navigation_entry_count": 51,
+      "selected_tab": "18.0",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Language-Reference.100-4504285.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Obsolete-commands.906-4504285.ja.html",
+    "title": "ランゲージリファレンス - 廃止予定コマンド"
+  },
+  {
+    "id": "legacy-language-v19-deprecated-commands-en",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-Commands.200-5391529.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-Commands.200-5391529.en.html"
+      ],
+      "document_key": "200-5391529",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "43358d6e2cf807c5411af05c76dfd56fea0226fb08920288b3cc12327606f30d",
+      "etag": "\"dba4-5ce2389c32c80\"",
+      "last_modified": "Tue, 12 Oct 2021 08:21:54 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Language-Reference.100-5391516.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-Commands.200-5391529.en.html",
+    "title": "Deprecated Commands"
+  },
+  {
+    "id": "legacy-language-v19-deprecated-commands-fr",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Commandes-obsoletes.200-5391529.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Commandes-obsoletes.200-5391529.fr.html"
+      ],
+      "document_key": "200-5391529",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "31e083f2f0644e0604946e5724ea5f292115ea58be683d2c09bb4647f05f0af9",
+      "etag": "\"e0c2-5ce23650bc280\"",
+      "last_modified": "Tue, 12 Oct 2021 08:11:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Langage.100-5391516.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Commandes-obsoletes.200-5391529.fr.html",
+    "title": "Commandes obsolètes"
+  },
+  {
+    "id": "legacy-language-v19-deprecated-commands-de",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-Befehle.200-5391529.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-Befehle.200-5391529.de.html"
+      ],
+      "document_key": "200-5391529",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "3a49fa73a664d85c055d486ac88f72bafd96612ddf0e0d3b50c85e8a88ab1ffa",
+      "etag": "\"dcb8-5ce23a6225b80\"",
+      "last_modified": "Tue, 12 Oct 2021 08:29:50 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Programmiersprache.100-5391516.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-Befehle.200-5391529.de.html",
+    "title": "Überholte Befehle"
+  },
+  {
+    "id": "legacy-language-v19-deprecated-commands-es",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Comandos-obsoletos.200-5391529.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Comandos-obsoletos.200-5391529.es.html"
+      ],
+      "document_key": "200-5391529",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "1be790d7ac61197f5ebadc0cca80182ac2ef0e9cda7bd6258abddf3184f41440",
+      "etag": "\"de1f-5ce23c2818a80\"",
+      "last_modified": "Tue, 12 Oct 2021 08:37:46 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Manual-de-lenguaje-4D.100-5391516.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Comandos-obsoletos.200-5391529.es.html",
+    "title": "Comandos obsoletos"
+  },
+  {
+    "id": "legacy-language-v19-deprecated-commands-ja",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-5391516",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-Commands.200-5391529.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-Commands.200-5391529.ja.html"
+      ],
+      "document_key": "200-5391529",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "49fe0f740902d024b0da143a07b0d56bb956895cdc6d270d297d3c68598e1c94",
+      "etag": "\"df3f-5ce23fc158800\"",
+      "last_modified": "Tue, 12 Oct 2021 08:53:52 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Language-Reference.100-5391516.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-Commands.200-5391529.ja.html",
+    "title": "廃止予定のコマンド"
+  },
+  {
+    "id": "legacy-language-v20-deprecated-commands-en",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Deprecated-Commands.200-6479550.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Deprecated-Commands.200-6479550.en.html"
+      ],
+      "document_key": "200-6479550",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "1589160e363f56093e64d94682efbc828d3a587414cf774b477747143d37de00",
+      "etag": "\"dd28-60986180c7080\"",
+      "last_modified": "Tue, 07 Nov 2023 01:43:14 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Language-Reference.100-6479538.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Deprecated-Commands.200-6479550.en.html",
+    "title": "Deprecated Commands"
+  },
+  {
+    "id": "legacy-language-v20-deprecated-commands-fr",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Commandes-obsoletes.200-6479550.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Commandes-obsoletes.200-6479550.fr.html"
+      ],
+      "document_key": "200-6479550",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "a62d28a7a9aa6583a71d6a9f9b600ae3e42a6b9982b91fe2e5d00e686f3d47fb",
+      "etag": "\"e246-60985f2f97900\"",
+      "last_modified": "Tue, 07 Nov 2023 01:32:52 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Langage.100-6479538.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Commandes-obsoletes.200-6479550.fr.html",
+    "title": "Commandes obsolètes"
+  },
+  {
+    "id": "legacy-language-v20-deprecated-commands-de",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Uberholte-Befehle.200-6479550.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Uberholte-Befehle.200-6479550.de.html"
+      ],
+      "document_key": "200-6479550",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "45f2c190d2f4d485551c22db6eaf93075bac2c520c3a6169a1ef13667a07b7cf",
+      "etag": "\"de3c-6098636af7500\"",
+      "last_modified": "Tue, 07 Nov 2023 01:51:48 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Programmiersprache.100-6479538.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Uberholte-Befehle.200-6479550.de.html",
+    "title": "Überholte Befehle"
+  },
+  {
+    "id": "legacy-language-v20-deprecated-commands-es",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Comandos-obsoletos.200-6479550.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Comandos-obsoletos.200-6479550.es.html"
+      ],
+      "document_key": "200-6479550",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "e0d2a284c36eb7c04f80633441b6219c957c15254cff914f2a863e80059cf12f",
+      "etag": "\"dfa3-609865570fe00\"",
+      "last_modified": "Tue, 07 Nov 2023 02:00:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Manual-de-lenguaje-4D.100-6479538.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Comandos-obsoletos.200-6479550.es.html",
+    "title": "Comandos obsoletos"
+  },
+  {
+    "id": "legacy-language-v20-deprecated-commands-ja",
+    "family": "obsolete-deprecated-commands",
+    "manual": "language-reference",
+    "manual_document_key": "100-6479538",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Deprecated-Commands.200-6479550.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Deprecated-Commands.200-6479550.ja.html"
+      ],
+      "document_key": "200-6479550",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "204d697d8bd76d4a30b9f5cb2a6e4bd907feb716eb5739348f480d2d8da24037",
+      "etag": "\"e0c3-60986936e2200\"",
+      "last_modified": "Tue, 07 Nov 2023 02:17:44 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 2,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Language-Reference.100-6479538.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Deprecated-Commands.200-6479550.ja.html",
+    "title": "廃止予定のコマンド"
   },
   {
     "id": "blog-v20-en",
@@ -3096,16 +6131,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
-      "fetched_at": "2026-10-26T10:45:58+00:00",
-      "sha256": "a2c81c8fc143b3c91ce9c6a676ec02d3bb8a8f9586f46bce219af88b7c6fd044",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "25b4321d201e6c55d2c2bbb5372e645b4c3e69ec9d5300cecc5afb7b3df5627c",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "af1eaeb02b4bd124595e784941a38912f58ba511e003baf3d5a5eb209a5fcd48",
-      "block_count": 303
+      "previous_sha256": "a2c81c8fc143b3c91ce9c6a676ec02d3bb8a8f9586f46bce219af88b7c6fd044",
+      "block_count": 303,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v20/",
     "title": "What’s new in 4D v20 - 4D Blog"
@@ -3125,16 +6161,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
-      "fetched_at": "2026-10-26T10:45:58+00:00",
-      "sha256": "daf8d3c85bad57a14db96f9920e4a703ad0f777c07065663b65e41be192f1513",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "06e57bbdf72505fc3331a897f61025b82c6f9b635f2bafd32cfbe5f186bebacd",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "bc580f909cd939ca81c01bb73d5c35299b517260c3e49fef68d385bece0b3e1e",
-      "block_count": 252
+      "previous_sha256": "daf8d3c85bad57a14db96f9920e4a703ad0f777c07065663b65e41be192f1513",
+      "block_count": 252,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v19/",
     "title": "What’s new in 4D v19 - 4D Blog"
@@ -3154,16 +6191,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
-      "fetched_at": "2026-10-26T10:45:58+00:00",
-      "sha256": "c517c549b2489b29d0229b0b3a1b3cc93ba9147997a83812d0fdcdae81c6c88d",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "74ad84dfcc2fe15595b3dba44804ea61fb609ff87b7afffe4b0f0a2a238e52b8",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "2de86d01dac201ffc63c17c36f17ca525bd9576002d936d1894646d34c7362c3",
-      "block_count": 239
+      "previous_sha256": "c517c549b2489b29d0229b0b3a1b3cc93ba9147997a83812d0fdcdae81c6c88d",
+      "block_count": 239,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v18/",
     "title": "What’s new in 4D v18 - 4D Blog"
@@ -3183,16 +6221,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
-      "fetched_at": "2026-10-26T10:45:58+00:00",
-      "sha256": "a3245c4b0a1a9ef6c3630029029e6430ba10501103d7969adaa3b2d28fd6439e",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "02112183f4b1670c74e42492b885277e1718ae6471e17ef749d13918d66eb4f1",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "2d198b7866274957cb3260b1469ca0f233f0afd7e247ec13a4cdd95bfb4b759d",
-      "block_count": 161
+      "previous_sha256": "a3245c4b0a1a9ef6c3630029029e6430ba10501103d7969adaa3b2d28fd6439e",
+      "block_count": 161,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v17/",
     "title": "What’s new in 4D v17 - 4D Blog"
@@ -3212,16 +6251,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
-      "fetched_at": "2026-10-26T10:45:58+00:00",
-      "sha256": "9e2135db7809273ddf60087c80224620ba23135f9933bdd3e9a48c3a23c49397",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "118cef747190a90cdb5778ee057af8a55befe9b5b31e2791eba49ef87ae46174",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "fd3ed32abd394863857aafbba46b526484e40f34be4705c73cd8b75d9a6f6ae9",
-      "block_count": 16
+      "previous_sha256": "9e2135db7809273ddf60087c80224620ba23135f9933bdd3e9a48c3a23c49397",
+      "block_count": 16,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r6/",
     "title": "What's new in 4D v16 R6 - 4D Blog"
@@ -3241,16 +6281,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:45:58+00:00",
-      "fetched_at": "2026-10-26T10:45:58+00:00",
-      "sha256": "0f8728378026fcca1b07d0512108c44e21058365a83a83366bde2c0a88aa26ea",
+      "checked_at": "2026-10-26T10:58:05+00:00",
+      "fetched_at": "2026-10-26T10:58:05+00:00",
+      "sha256": "1acd1ae3206134b4c49e5a95e68fa4fbf0b753f2e118420fd3cfa736ae05b3ae",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "f3c5aaaba19896e82bcc82c8707e553310588860ed7101e2ca5656d3116f9c9b",
-      "block_count": 22
+      "previous_sha256": "0f8728378026fcca1b07d0512108c44e21058365a83a83366bde2c0a88aa26ea",
+      "block_count": 22,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r5/",
     "title": "What's new in 4D v16 R5 - 4D Blog"
@@ -3270,16 +6311,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:00+00:00",
-      "fetched_at": "2026-10-26T10:46:00+00:00",
-      "sha256": "9aa8140b6c6d0b2548cf7fb3d3dee802a70c1591b1a3223b39bf8e64e370550b",
+      "checked_at": "2026-10-26T10:58:07+00:00",
+      "fetched_at": "2026-10-26T10:58:07+00:00",
+      "sha256": "574be3e65ce982297d44607a29f231891ff7b70a5d4fbe805ee1fc03c5c672f8",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "b5af03b3c273645ea1a820afe85162cdc6b2f39b246d3d2a5e04ad05c2ee7059",
-      "block_count": 31
+      "previous_sha256": "9aa8140b6c6d0b2548cf7fb3d3dee802a70c1591b1a3223b39bf8e64e370550b",
+      "block_count": 31,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r4/",
     "title": "What's new in 4D v16 R4 - 4D Blog"
@@ -3299,16 +6341,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:00+00:00",
-      "fetched_at": "2026-10-26T10:46:00+00:00",
-      "sha256": "31d57496636d36d193c9488bcb6c31e822c08b6f107d2a5a6044d8446e85f020",
+      "checked_at": "2026-10-26T10:58:07+00:00",
+      "fetched_at": "2026-10-26T10:58:07+00:00",
+      "sha256": "111c787adaae54bb7c31cb0d2e8525895d2816e471cbc27376ff2bd671b4eab6",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "b8c503563f2ceaf8a665a0a0a68cd2238e1ea2a7bb03e002ae6d115f5d2d544d",
-      "block_count": 9
+      "previous_sha256": "31d57496636d36d193c9488bcb6c31e822c08b6f107d2a5a6044d8446e85f020",
+      "block_count": 9,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r3/",
     "title": "What's new in 4D v16 R3 - 4D Blog"
@@ -3328,16 +6371,17 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:46:00+00:00",
-      "fetched_at": "2026-10-26T10:46:00+00:00",
-      "sha256": "9f762d8faf6fba96d6dc39daf6a2c8a15c565d719c05de4caa4afa9a9354ca0d",
+      "checked_at": "2026-10-26T10:58:07+00:00",
+      "fetched_at": "2026-10-26T10:58:07+00:00",
+      "sha256": "5da693da7954ea9a32af100dc273a5edf6631f426ac446438445533024fbe93e",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "3aa571d22742ac30d6cbe2464b287cba92707f69abd8d7ba5d3795ec636da79e",
-      "block_count": 26
+      "previous_sha256": "9f762d8faf6fba96d6dc39daf6a2c8a15c565d719c05de4caa4afa9a9354ca0d",
+      "block_count": 26,
+      "content_kind": "article"
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r2/",
     "title": "What's new in 4D v16 R2 - 4D Blog"

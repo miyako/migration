@@ -104,6 +104,20 @@ def validate(document):
             require(field in source, f"Source missing {field}")
         require(source["language"] in LANGUAGES and url(source["url"]), "Invalid source language/URL")
         require(nonempty(source["fetch"]["status"]), "Missing source fetch status")
+        if source.get("manual"):
+            require(nonempty(source["manual"]) and re.fullmatch(r"100-\d+", source.get("manual_document_key", "")),
+                    "Manual identity requires a manual-root document key")
+            if source["fetch"]["status"] == "available":
+                parents = source["fetch"].get("manual_document_urls", [])
+                require(bool(parents) and all(url(parent) and document_identity(parent) ==
+                                             (source["manual_document_key"], source["language"]) and
+                                             urlsplit(parent).path.rsplit("/", 1)[0] ==
+                                             urlsplit(source["resolved_url"]).path.rsplit("/", 1)[0]
+                                             for parent in parents),
+                        "Available manual source requires verified same-edition parent links")
+        if source["fetch"].get("content_kind") == "navigation_index":
+            require(source["fetch"].get("navigation_entry_count") == source["fetch"]["block_count"],
+                    "Navigation entry counts must match the extracted index view")
         if source["discovery"]["method"] == "archive_directory_link":
             discovery = source["discovery"]
             chain = discovery["chain"]
@@ -260,6 +274,7 @@ def build(verify=False):
         "superseded_url_probes": sum(attempt["disposition"] == "superseded_url_probe"
                                       for source in registry for attempt in source.get("url_history", [])),
         "fetch_status": dict(sorted(Counter(s["fetch"]["status"] for s in registry).items())),
+        "extraction_surfaces": dict(sorted(Counter(s["fetch"].get("content_kind", "unknown") for s in registry).items())),
         "processed_source_ids": sorted({e["source_id"] for c in changes for e in c["evidence"]}),
         "candidate_changes": sum(c["review_status"] == "candidate" for c in changes),
         "reviewed_changes": sum(c["review_status"] == "reviewed" for c in changes),

@@ -129,6 +129,8 @@ function renderCoverage() {
   area.append(metrics);
   area.append(line('fetchStatus', Object.entries(coverage.fetch_status ?? {})
     .map(([status, count]) => `${valueLabel(status)}: ${count}`).join(' · ') || t('unknown')));
+  if (coverage.extraction_surfaces) area.append(line('contentKind', Object.entries(coverage.extraction_surfaces)
+    .map(([kind, count]) => `${valueLabel(kind)}: ${count}`).join(' · ')));
   if (coverage.superseded_url_probes) area.append(line('urlHistory', coverage.superseded_url_probes));
   if (Array.isArray(state.catalog.discoveries)) {
     const counts = new Map();
@@ -325,6 +327,13 @@ function renderSources() {
     detail(dl, 'sourceEdition', source.edition);
     detail(dl, 'sourceLanguage', source.language);
     detail(dl, 'family', valueLabel(source.family));
+    if (source.manual) detail(dl, 'manual', valueLabel(source.manual));
+    if (source.fetch?.content_kind) detail(dl, 'contentKind', valueLabel(source.fetch.content_kind));
+    if (source.fetch?.navigation_entry_count !== undefined) detail(dl, 'navigationEntries', source.fetch.navigation_entry_count);
+    if (source.fetch?.selected_tab) detail(dl, 'selectedTab', source.fetch.selected_tab);
+    if (source.fetch?.manual_document_urls?.length) {
+      detail(dl, 'manualParent', link(source.fetch.manual_document_urls[0], source.fetch.manual_document_urls[0]));
+    }
     if (source.publisher) detail(dl, 'publisher', source.publisher);
     if (source.authority) detail(dl, 'authority', valueLabel(source.authority));
     if (source.host_operator) detail(dl, 'hostOperator', source.host_operator);
@@ -336,6 +345,7 @@ function renderSources() {
     if (source.fetch?.error) detail(dl, 'fetchError', source.fetch.error);
     detail(dl, 'checksum', source.fetch?.sha256);
     card.append(dl);
+    if (source.fetch?.content_kind === 'navigation_index') card.append(node('p', t('navigationNote')));
     if (source.discovery?.chain?.length) {
       const trace = node('details');
       trace.append(node('summary', t('archiveTrace')));
