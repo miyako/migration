@@ -520,7 +520,7 @@ class Publication(unittest.TestCase):
                                        for change in self.document["changes"] for evidence in change["evidence"])]))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
-        self.assertEqual(self.document["semantic_search"]["status"], "opt-in")
+        self.assertEqual(self.document["semantic_search"]["status"], "automatic")
         self.assertEqual(len(self.document["changes"]), 202)
         self.assertEqual(self.document["coverage"]["atomic_changes"], 276)
         self.assertEqual(self.document["coverage"]["visible_entities"], 202)
@@ -584,6 +584,7 @@ class Publication(unittest.TestCase):
             lambda d: d["changes"][0]["evidence"][0].update(source_id="invented"),
             lambda d: d["latest"].update(status="unverified"),
             lambda d: d["semantic_search"].update(status="available"),
+            lambda d: d["semantic_search"].update(status="opt-in"),
         ):
             doc = deepcopy(self.document)
             mutate(doc)

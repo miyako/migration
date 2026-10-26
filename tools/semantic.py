@@ -1,4 +1,4 @@
-"""Offline validation of the opt-in model contract and precomputed search assets."""
+"""Offline validation of the automatic model contract and precomputed search assets."""
 import hashlib
 import json
 import math
@@ -15,7 +15,7 @@ CONTRACT = ("model", "revision", "runtime", "precision", "dimensions", "max_toke
 def validate_config(config):
     if config.get("status") == "unavailable" and config.get("model") is None:
         return
-    if not (config.get("status") == "opt-in"
+    if not (config.get("status") == "automatic"
             and config.get("model") == "onnx-community/embeddinggemma-2-ONNX"
             and config.get("revision") == "daa72c51243991dfcaf9f9137d2c573d8f7790c0"
             and config.get("dimensions") == 768 and config.get("precision") == "q4"

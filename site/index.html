@@ -38,10 +38,10 @@
         <h2 id="filters-heading" data-i18n="filters">Filters</h2>
         <label class="search-field"><span data-i18n="search">Keyword or exact identifier</span><input id="search" type="search" maxlength="1000" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Command, identifier, or keyword"></label>
         <div class="meaning-search">
-          <label><input id="meaning-enable" type="checkbox"><span id="meaning-label"></span></label>
-          <p id="meaning-budget" class="muted"></p>
+          <p id="meaning-notice" class="muted"></p>
           <p id="meaning-status" class="muted" role="status" aria-live="polite"></p>
-          <button id="meaning-cancel" type="button" class="secondary" hidden></button>
+          <progress id="meaning-progress" max="100" aria-label="Loading semantic search" hidden></progress>
+          <button id="meaning-retry" type="button" class="secondary" hidden></button>
         </div>
         <fieldset id="platform" class="filter-group">
           <legend data-i18n="platform">Platform</legend>

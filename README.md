@@ -4,8 +4,8 @@ An evidence-backed, **partial** quick directory of 4D upgrade changes after succ
 conversion/opening. A shared static interface supports English, French, German,
 Spanish and Japanese. It runs on GitHub Pages without a backend, accounts, paid
 services, external fonts, analytics, runtime GitHub API calls or external inference.
-Keyword search works immediately; optional meaning search runs a text embedding
-model locally in a WebGPU-capable browser after explicit opt-in.
+Keyword search works immediately; semantic search automatically loads a local
+text embedding model on the first visit in a WebGPU-capable browser.
 
 **This is not a planner, an exhaustive migration checklist, or a support/troubleshooting tool.**
 If conversion or opening fails, contact [official 4D Support](https://www.4d.com/support).
@@ -556,7 +556,8 @@ Open `http://127.0.0.1:8000/`. Use HTTP, not `file://`, because the app fetches 
 local published JSON. App/asset/data URLs are relative and support `/migration/`
 or another GitHub Pages subpath. There is no service worker/offline-install claim;
 keyword search requires no model or network after the page and local assets have
-loaded. Optional meaning search has a separate opt-in model download.
+loaded. Semantic search downloads its pinned model automatically after checking
+WebGPU support, with visible loading progress and Cache Storage reuse.
 
 `.github/workflows/pages.yml` builds and validates pull requests without fetching
 sources. Pushes to `main` deploy the `_site/` artifact using GitHub Pages Actions.
@@ -589,7 +590,7 @@ source development; publish `_site/`, not the unversioned source directory.
 | `data/kb-audit.json` | Bounded KB discovery/research counts, original PDF provenance, selected-note uses, exclusions and reasoned protected-field edits |
 | `data/clarifications.json` | Curated confirmed-error register with evidence and dispositions |
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
-| `data/semantic-search.json` | Opt-in text encoder, immutable revisions, runtime and retrieval contract |
+| `data/semantic-search.json` | Automatic text encoder, immutable revisions, runtime and retrieval contract |
 | `data/search/` | Five precomputed atomic-fact vector indexes and corpus/model/checksum provenance |
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
 | `tools/kb.py` | Original KB landing/ZIP-PDF adapter; physical-page evidence and ignored original-document caches |
@@ -702,7 +703,8 @@ independently verify behavior in every later release.
 
 ## Reproducible ingestion and editorial updates
 
-All network access is an explicit **publication-time** operation:
+Source ingestion network access is an explicit **publication-time** operation,
+separate from automatic browser model downloads:
 
 ```sh
 # Initial/full registered scan; never crawls arbitrary related pages
@@ -868,7 +870,7 @@ artifacts must retain stable source/fact IDs and source hashes plus pinned model
 and tokenizer revisions, prompt/schema versions and generation parameters.
 Removing a source must remove unsupported published claims while preserving
 historical provenance and any independently supported multi-source facts.
-Deterministic validation remains mandatory. Optional browser query embeddings
+Deterministic validation remains mandatory. Browser query embeddings
 are implemented separately below, not as part of content-generation inference.
 
 The site is a quick directory, not a planner: no completion checkboxes, editable
@@ -879,9 +881,16 @@ or cleared. Unrelated browser preferences remain untouched.
 Do not put credentials, customer source, private support material or personal
 notes in catalog commits or public issues.
 
-## Optional local semantic search
+## Automatic local semantic search
 
-Keyword/exact identifier search needs **no model download**. Optional meaning
+Keyword/exact identifier search needs **no model download** and remains available
+throughout loading or failure. Semantic search loads automatically once per page
+after the catalog and a successful WebGPU capability check, without a visitor
+checkbox or confirmation. Real per-file download progress (indeterminate when
+the size is unknown), ready, unavailable and actionable error states are localized
+in all five UI languages. When ready, it searches the current text and language,
+including edits made during loading. Locale, theme and filter changes do not
+reload the model; explicit Retry is available only after failure. Semantic
 search is implemented using the **270M text/code component of EmbeddingGemma 2**,
 not the original 300M EmbeddingGemma or the full 740M multimodal model.
 
@@ -914,7 +923,7 @@ actual path-eligible members. Version/citation projection and platform/topic
 eligibility precede semantic inclusion. Keyword/identifier matches are always
 retained; other eligible entities must reach cosine **0.74**. There is no top-N
 cutoff or invisible semantic ordering: Severity or Complexity still orders every
-visible card. Empty query, clear, reset and disable retain normal directory
+visible card. Empty query, clear and reset retain normal directory
 behavior; empty checkbox sets still produce none. While inference is pending,
 the status explicitly says that keyword results are being shown.
 
@@ -974,9 +983,10 @@ WebKit 26.0 on this machine exposes no WebGPU; the real browser check confirms
 the explicit unavailable message and functioning lexical directory. This is
 not a claim of Safari semantic support. There is no silent model substitution
 or pretend WASM fallback. Network, model/index and resource failures have
-localized retry/disable guidance and preserve keyword results, never a semantic
+localized manual-retry guidance and preserve keyword results, never a semantic
 success status. Loading/query deadlines and worker termination bound stalled
-work. Opt-in is not persisted across page visits.
+work. There are no automatic retry loops. Leaving the page terminates the worker;
+restoring a page from the back/forward cache starts a new worker.
 
 Cache Storage successfully retained the five immutable model files and a new
 worker queried successfully with their network blocked. This verifies **model
@@ -1016,6 +1026,12 @@ an intentional content edit even when publication correctly rejects old vectors.
 local bytes while still running actual WebGPU inference; default browser tests
 exercise real public downloads. An installed Chrome is used;
 `WEBKIT_EXECUTABLE_PATH` can select an available Playwright WebKit launcher.
+The automatic-loading regression checks first-visit progress, edits and locale
+changes during loading, current-query inference on readiness, one worker across
+renders, localized errors/manual retry, and cached reload with model networking
+blocked. Unsupported-browser checks assert that neither runtime nor weights are
+requested; the separate keyword/browser suite retains its network-failure checks
+in a deliberately WebGPU-unavailable context.
 No scheduled workflow or external inference endpoint is added. A later
 on-demand Actions index job remains separate work.
 

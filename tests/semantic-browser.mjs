@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 import { loadEncoder } from '../tools/search-encoder.mjs';
 import { downloadModel, modelArtifacts } from '../tools/search-download.mjs';
 import { createHash } from 'node:crypto';
+import { searchLabels } from '../site/search-labels.mjs';
 
 const root = new URL('../', import.meta.url);
 const config = JSON.parse(await readFile(new URL('data/semantic-search.json', root)));
@@ -64,7 +65,7 @@ try {
     peak = Math.max(peak, rows.reduce((sum,value) => sum+value,0));
     } catch(error) {console.error('Memory measurement unavailable',String(error));}
   }, 1000);
-  const context = await browser.newContext();
+  const context = await browser.newContext({locale:'en-US'});
   const requests = [];
   context.on('request', request => {
     const url = new URL(request.url());
@@ -89,7 +90,23 @@ try {
         headers:{location:`${origin}/models/${config.revision}/${file}`,'Access-Control-Allow-Origin':'*'}});
     });
   }
+  let releaseWorker;
+  const workerGate = new Promise(resolve => { releaseWorker = resolve; });
+  await context.route('**/search-worker.mjs', async route => {
+    await workerGate;
+    await route.continue();
+  });
   const page = await context.newPage();
+  let appWorkers = 0;
+  page.on('worker', () => appWorkers++);
+  await page.addInitScript(() => {
+    window.loadingProgress = [];
+    new MutationObserver(() => {
+      const progress = document.querySelector('#meaning-progress');
+      if (progress && !progress.hidden && progress.hasAttribute('value'))
+        window.loadingProgress.push({value:progress.value,text:document.querySelector('#meaning-status').textContent});
+    }).observe(document,{subtree:true,attributes:true,childList:true});
+  });
   if (process.env.SEARCH_DEBUG === '1') {
     page.on('console',message => console.error('BROWSER',message.text().slice(0,400)));
     page.on('worker',worker => {
@@ -102,10 +119,35 @@ try {
   page.on('pageerror', error => errors.push(String(error)));
   await page.goto(`${origin}/migration/`);
   await page.waitForSelector('[data-change-id]');
-  assert.equal(requests.length,0,'No external requests before opt-in');
+  await waitState(page,'loading');
+  assert.equal(await page.locator('#meaning-enable').count(),0,'No opt-in checkbox');
+  assert.equal(await page.locator('#meaning-budget').count(),0,'No visitor budget banner');
+  assert.ok(await page.locator('#meaning-progress').isVisible());
+  await page.locator('#search').fill('PHP');
+  assert.ok(await page.locator('[data-change-id]').count(),'Keyword search works during loading');
+  for (const language of ['fr','de','es','ja','en']) {
+    await page.locator('#language').selectOption(language);
+    assert.equal(await page.locator('#meaning-notice').textContent(),searchLabels[language].notice);
+    assert.equal(await page.locator('#meaning-status').textContent(),searchLabels[language].loading);
+  }
+  await page.locator('#theme').selectOption('dark');
+  await page.locator('#sort').selectOption('complexity');
+  const currentQuery = 'I need to replace the scripting interpreter that was bundled with 4D';
+  await page.locator('#search').fill('outdated query during loading');
+  await page.locator('#search').fill(currentQuery);
+  assert.equal(await page.locator('[data-change-id]').count(),0);
   const start = Date.now();
-  await page.locator('#meaning-enable').check();
+  releaseWorker();
   await waitState(page,'ready');
+  assert.equal(appWorkers,1,'Only one initialization across renders, typing and locale changes');
+  assert.ok(requests.length,'First visit automatically requested the pinned model');
+  assert.ok(await page.locator('[data-change-id]').count(),'Current query reruns automatically when model is ready');
+  assert.equal(await page.locator('#search').inputValue(),currentQuery);
+  assert.ok((await page.evaluate(() => window.loadingProgress)).some(p => p.value > 0 && p.value <= 100),
+    'Real model download reports onscreen percentage progress');
+  report.first_visit_progress = await page.evaluate(() => window.loadingProgress.slice(-5));
+  await context.unroute('**/search-worker.mjs');
+  await page.locator('#sort').selectOption('severity');
   report.load_ms = Date.now()-start;
   console.error('Model loaded', report.load_ms);
   report.browser = await browser.version();
@@ -120,6 +162,7 @@ try {
       ['es','El cliente de un proyecto y el servidor están en el mismo equipo, pero ya no aparecen los complementos que antes se copiaban desde el servidor.'],
       ['ja','DISABLE BUTTONでボタンを操作不能にする古い処理が、コンパイルできるのに実行時エラーになります。有効状態の切り替えは何に移しますか？'],
     ]) {
+      const workersBeforeLocale = appWorkers;
       await page.locator('#language').selectOption(language);
       const beforeQuery = requests.length;
       const queryStart = Date.now();
@@ -135,6 +178,8 @@ try {
       }
       assert.equal(requests.length,beforeQuery,'Query inference must not request any external service');
       assert.ok(await page.locator('[data-change-id]').count(),language);
+      assert.equal(await page.locator('#meaning-status').textContent(),searchLabels[language].ready);
+      assert.equal(appWorkers,workersBeforeLocale,'Ready-model locale and query changes reuse the worker');
       if (!report.approx_single_model_chrome_rss_mb) report.approx_single_model_chrome_rss_mb = peak/1024;
       const result = await page.evaluate(async ({workerUrl,config,language,query}) => {
         const catalog = await (await fetch(new URL('./data/catalog.json',workerUrl))).json();
@@ -179,37 +224,61 @@ try {
       assert.deepEqual(actual,allowed.filter(id => actual.includes(id)),'Semantic matches respect path and selected sort');
     }
   }
-  const lexicalAfterDisable = async () => {
-    await page.locator('#meaning-cancel').click();
-    assert.equal(await page.locator('#meaning-status').getAttribute('data-state'),'off');
-    return page.locator('[data-change-id]').evaluateAll(cards => cards.map(c => c.dataset.changeId));
-  };
-  const first = await lexicalAfterDisable();
-  await page.locator('#meaning-enable').check();
+  await page.locator('#search').fill('');
   await waitState(page,'ready');
-  await page.locator('#search').fill('PHP');
-  await waitState(page,'ready');
-  await page.locator('#meaning-cancel').click();
   await page.route('**/data/search/manifest.json', route => route.fulfill({
     contentType:'application/json',body:JSON.stringify({model:'stale'}),
   }));
-  await page.locator('#meaning-enable').check();
+  await page.reload();
   await page.waitForFunction(() => document.querySelector('#meaning-status')?.dataset.state === 'error');
-  assert.match(await page.locator('#meaning-status').textContent(),/retry|réessayez|erneut|reintente|再試行/);
+  assert.match(await page.locator('#meaning-status').textContent(),/retry/i);
+  assert.ok(await page.locator('#meaning-retry').isVisible());
+  for (const language of ['fr','de','es','ja','en']) {
+    await page.locator('#language').selectOption(language);
+    assert.ok((await page.locator('#meaning-status').textContent()).startsWith(searchLabels[language].error));
+    assert.equal(await page.locator('#meaning-retry').textContent(),searchLabels[language].retry);
+  }
   assert.ok(await page.locator('[data-change-id]').count(),'Explicit failure retains keyword matches');
+  const failedWorkers = appWorkers;
+  await page.waitForTimeout(500);
+  assert.equal(appWorkers,failedWorkers,'No automatic retry loop after failure or locale changes');
   await page.unroute('**/data/search/manifest.json');
+  await page.locator('#meaning-retry').click();
+  await waitState(page,'ready');
+  assert.equal(appWorkers,failedWorkers+1,'Manual retry creates one new worker');
+  assert.ok(await page.locator('#meaning-retry').isHidden());
   const unsupported = await browser.newContext();
   await unsupported.addInitScript(() => Object.defineProperty(navigator,'gpu',{value:undefined}));
+  const unsupportedRequests = [];
+  unsupported.on('request', request => unsupportedRequests.push(request.url()));
   const up = await unsupported.newPage();
   await up.goto(`${origin}/migration/`);
   await up.waitForSelector('[data-change-id]');
-  await up.locator('#meaning-enable').check();
   await waitState(up,'unavailable');
-  assert.ok(await up.locator('[data-change-id]').count());
+  for (const language of ['en','fr','de','es','ja']) {
+    await up.locator('#language').selectOption(language);
+    assert.equal(await up.locator('#meaning-status').textContent(),searchLabels[language].unavailable);
+    await up.locator('#search').fill('PHP');
+    assert.ok(await up.locator('[data-change-id]').count());
+  }
+  assert.ok(unsupportedRequests.every(url => url.startsWith(origin)), 'No external requests without WebGPU');
+  assert.ok(unsupportedRequests.every(url => !/search-worker|search-runtime|\/models\//.test(url)),
+    'No large runtime or model downloads without WebGPU');
+  assert.equal(await up.locator('#meaning-retry').isVisible(),false);
   await unsupported.close();
-  assert.deepEqual(await lexicalAfterDisable(),first);
-  await page.locator('#meaning-enable').check();
-  await waitState(page,'ready');
+  const broken = await browser.newContext({locale:'en-US'});
+  const brokenRequests = [];
+  broken.on('request', request => brokenRequests.push(request.url()));
+  await broken.route('**/search-runtime/transformers.mjs', route => route.abort('failed'));
+  const bp = await broken.newPage();
+  await bp.goto(`${origin}/migration/`);
+  await bp.waitForFunction(() => document.querySelector('#meaning-status')?.dataset.state === 'error');
+  assert.ok((await bp.locator('#meaning-status').textContent()).startsWith(searchLabels.en.error));
+  assert.ok(await bp.locator('#meaning-retry').isVisible());
+  await bp.locator('#search').fill('PHP');
+  assert.ok(await bp.locator('[data-change-id]').count(),'A real runtime network failure preserves keyword search');
+  assert.ok(brokenRequests.every(url => url.startsWith(origin)), 'Runtime failure stops before model download');
+  await broken.close();
   await page.locator('[data-group="platforms"][data-select="none"]').click();
   assert.equal(await page.locator('[data-change-id]').count(),0);
   await page.locator('#reset').click();
@@ -220,13 +289,6 @@ try {
     await page.setViewportSize({width:390,height:844});
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
   }
-  // Cancel kills the dedicated worker, including in-flight inference and downloads.
-  await page.locator('#meaning-cancel').click();
-  await page.locator('#meaning-enable').check();
-  await page.locator('#meaning-cancel').click();
-  assert.equal(await page.locator('#meaning-status').getAttribute('data-state'),'off');
-  await page.waitForTimeout(300);
-  assert.equal(await page.locator('#meaning-status').getAttribute('data-state'),'off');
   assert.deepEqual(errors,[]);
   report.network = [...new Map(requests.map(r => [r.host+r.path,r])).values()];
   report.approx_peak_chrome_tree_rss_mb = peak/1024;
@@ -242,12 +304,13 @@ try {
   // Pages HTML/runtime retention is not promised by this app.
   await context.unroute('https://huggingface.co/**');
   await context.route('https://huggingface.co/**', route => route.abort('internetdisconnected'));
-  await page.locator('#meaning-enable').check();
   const warmStart = Date.now();
+  await page.reload();
   await waitState(page,'ready');
   report.cached_model_load_ms = Date.now()-warmStart;
   await page.locator('#search').fill('PHP');
   await waitState(page,'ready');
+  assert.deepEqual(errors,[]);
   await context.close();
   try {
     const wk = await webkit.launch({headless:true,
@@ -255,7 +318,6 @@ try {
     const wp = await wk.newPage();
     await wp.goto(`${origin}/migration/`);
     await wp.waitForSelector('[data-change-id]');
-    await wp.locator('#meaning-enable').check();
     await wp.waitForFunction(() => ['ready','unavailable','error'].includes(
       document.querySelector('#meaning-status')?.dataset.state),null,{timeout:180000});
     report.webkit = {version:wk.version(),state:await wp.locator('#meaning-status').getAttribute('data-state'),
