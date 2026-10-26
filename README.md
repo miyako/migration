@@ -7,6 +7,10 @@ services, external fonts, analytics, runtime GitHub API calls or external infere
 Keyword search works immediately; semantic search automatically loads a local
 text embedding model on the first visit in a WebGPU-capable browser.
 
+An optional [local authoring prototype](tools/AUTHORING.md) runs manually on the
+developer machine, not in visitors' browsers. It produces unverified,
+review-required draft proposals only; it never updates or publishes this catalog.
+
 **This is not a planner, an exhaustive migration checklist, or a support/troubleshooting tool.**
 If conversion or opening fails, contact [official 4D Support](https://www.4d.com/support).
 Binary-to-project conversion is not assumed to be mandatory.

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-10-27",
+  "human_reviewed": false,
+  "purpose": "Actual local inference capture, not authoritative catalog input or a general quality benchmark.",
+  "config_sha256": "cb4843bfc5b73e52ddc352f982958973c9060bf655f9b0ceb9dcf128a6120b17",
+  "implementation_sha256": "f3507d48bcf9928a546dd3e0f0388de08ad50984ee34c00644aa41daf5af5e79",
+  "proposal_id": "proposal-24c419c3a27d9734d30a47e5cdd2ae140868bd306e2cd972d51868820e472a67",
+  "template_sha256": "c979e0e71a3e21b8f208e6ab120d5cb29327885f29d2a8b18fda67a723798e18",
+  "backend": "Metal, Apple M1 Pro, 37/37 layers offloaded",
+  "elapsed_seconds": 73.79,
+  "max_rss_bytes": 4006674432,
+  "case": "base64",
+  "decision": {
+    "disposition": "draft",
+    "threshold": "18 R4",
+    "platforms": ["unknown"],
+    "remedy": "unknown",
+    "complexity": "unknown",
+    "citations": [
+      "legacy-v19-changes-en:8cf50551bc00b333:9196e0ef3fd1834ba467423664c4e21cd2b34b873e8e9bf6280f0a2927607c11",
+      "legacy-v19-changes-en:65de3a0bd804962e:665598b9d074346f6760cee75fd7796150dd720836b7d025296108ecae81c7c1"
+    ]
+  },
+  "localizations": {
+    "en": {
+      "one_line": "Invalid Base64 input to BASE64 DECODE now returns an empty blob instead of leaving it unchanged.",
+      "paragraph": "The behavior of the BASE64 DECODE command has been changed so that when given invalid Base64 format input, it no longer preserves the original blob. Instead, it returns an empty blob. This change is documented in the provided evidence and affects the command's output under malformed input conditions.",
+      "conditions": ["The input is a single blob parameter", "The blob contains invalid Base64 format", "The command is BASE64 DECODE"],
+      "action": "The supplied evidence does not establish a remedy.",
+      "action_basis": "No remediation instruction is stated in these quotes.",
+      "citations": ["legacy-v19-changes-en:65de3a0bd804962e:665598b9d074346f6760cee75fd7796150dd720836b7d025296108ecae81c7c1"]
+    },
+    "fr": {
+      "one_line": "Entrée Base64 invalide pour DECODER BASE64 retourne maintenant un blob vide au lieu de la laisser inchangée.",
+      "paragraph": "Le comportement de la commande DECODER BASE64 a été modifié de telle sorte qu'en cas d'entrée en format Base64 invalide, elle ne conserve plus le blob d'origine. Elle retourne désormais un blob vide. Ce changement est documenté dans les preuves fournies et affecte la sortie de la commande sous conditions d'entrée malformée.",
+      "conditions": ["L'entrée est un paramètre unique de blob", "Le blob contient un format Base64 invalide", "La commande est DECODER BASE64"],
+      "action": "Les preuves fournies ne permettent pas d'identifier une mesure corrective.",
+      "action_basis": "Aucune instruction de remédiation n'est indiquée dans ces citations.",
+      "citations": ["legacy-v19-changes-en:65de3a0bd804962e:665598b9d074346f6760cee75fd7796150dd720836b7d025296108ecae81c7c1"]
+    },
+    "de": {
+      "one_line": "Ungültige Base64-Eingabe für BASE64 DECODE gibt nun einen leeren Blob zurück anstelle des Erhaltens des ursprünglichen Blobs.",
+      "paragraph": "Das Verhalten des Befehls BASE64 DECODE wurde geändert, sodass bei ungültiger Base64-Format-Eingabe der ursprüngliche Blob nicht mehr beibehalten wird. Stattdessen wird ein leerer Blob zurückgegeben. Diese Änderung ist in den bereitgestellten Beweisen dokumentiert und wirkt sich auf das Befehlsausgabeverhalten bei fehlerhaften Eingaben aus.",
+      "conditions": ["Die Eingabe ist ein einzelner Blob-Parameter", "Der Blob enthält ein ungültiges Base64-Format", "Der Befehl ist BASE64 DECODE"],
+      "action": "Die bereitgestellten Beweise legen keine Behebung fest.",
+      "action_basis": "Keine Behebungsanweisung wird in diesen Zitaten angegeben.",
+      "citations": ["legacy-v19-changes-en:65de3a0bd804962e:665598b9d074346f6760cee75fd7796150dd720836b7d025296108ecae81c7c1"]
+    },
+    "es": {
+      "one_line": "Entrada inválida de Base64 a BASE64 DECODE ahora devuelve un blob vacío en lugar de dejarlo sin modificar.",
+      "paragraph": "El comportamiento del comando BASE64 DECODE ha sido modificado de manera que, al recibir una entrada en formato Base64 inválido, ya no conserva el blob original. En su lugar, devuelve un blob vacío. Este cambio está documentado en la evidencia proporcionada y afecta la salida del comando en condiciones de entrada malformada.",
+      "conditions": ["El input es un parámetro único de blob", "El blob contiene formato Base64 inválido", "El comando es BASE64 DECODE"],
+      "action": "La evidencia proporcionada no establece una medida correctiva.",
+      "action_basis": "No se indica ninguna instrucción de remediación en estos fragmentos.",
+      "citations": ["legacy-v19-changes-en:65de3a0bd804962e:665598b9d074346f6760cee75fd7796150dd720836b7d025296108ecae81c7c1"]
+    },
+    "ja": {
+      "one_line": "無効なBase64入力に対してBASE64 DECODEに空のBlobを返すようになり、元のBlobを保持しなくなりました。",
+      "paragraph": " BASE64 DECODE コマンドの動作が変更され、無効なBase64形式の入力が与えられた場合、元のblobを保持せず、空のblobを返すようになりました。この変更は提供された証拠に記載されており、不正入力条件でのコマンドの出力に影響を与えます。",
+      "conditions": ["入力が1つのblobパラメータである", "blobに無効なBase64形式が含まれている", "コマンドがBASE64 DECODEである"],
+      "action": "提供された証拠には、解決策が確立されていません。",
+      "action_basis": "これらの引用には、修正の指示が記載されていません。",
+      "citations": ["legacy-v19-changes-en:65de3a0bd804962e:665598b9d074346f6760cee75fd7796150dd720836b7d025296108ecae81c7c1"]
+    }
+  },
+  "raw_response_sha256": {
+    "decision": "d9e0e5c9664849d9898a0a378b5f7df4f181daac3918f0c2284dc851559a83d4",
+    "en": "83fb8fdd84b30e8f21320ddc56cbb81b8092679dbce7feff4ffe230717061cf5",
+    "fr": "4cbffab7b528d65eb92baa6eea8e8193f552f302332b63130a7e698492673ae9",
+    "de": "2a3268acf5068c7e6a3d1d02c7da54101cf8f4af8d17844531226226a0280f22",
+    "es": "a3bca3f7d332f887c7984539d4c43204f4d12cc37bba7b9b110cde97770f3eab",
+    "ja_refused": "b9906c7d300317972729ef91bab3ba50390dbd969dfbdb663d5a04eaabe12e38",
+    "ja_retry": "cd87447ae271f2b1d9415b6d24fccbff050cb013580a33d983af6b37103dffe4"
+  },
+  "refused_japanese_one_line": "Invalid Base64 input to __CMD_0__ now returns an empty blob instead of leaving it unchanged。",
+  "batch": {
+    "generation_implementation_sha256": "d2406b139aba6f893f33efa7f35bb55657f6a085b841664c15bee3d812d7c7c5",
+    "note": "Before adding reviewer field preconditions; generation prompts/settings unchanged in the subsequent successful capture above.",
+    "complete_proposals": 1,
+    "refused_cases": 3,
+    "model_cases": 4,
+    "json_responses": 20,
+    "parseable_json_responses": 20,
+    "base64_run": "27040ed79367e52e6f9c486e71b6a445d9ebcea8bc86185bf2c19457194e6ec5",
+    "unknown": {
+      "run": "cd01f97b7319787da926ecb479701ff523dfbea0f7147520504ee211a5411ae8",
+      "elapsed_seconds": 20.26,
+      "expected": "unknown first release, platform and remedy; English paragraph explicitly acknowledges unknown first release",
+      "actual_decision": {"disposition": "draft", "threshold": "unknown", "platforms": ["unknown"], "remedy": "unknown", "complexity": "unknown"},
+      "actual_english_retry_paragraph": "When the input parameter toDecode contains invalid base64 contents, the decoding process returns an empty text or blob value. This behavior is specified in the evidence and directly applies to the toDecode parameter. The outcome is consistent across all invalid base64 formats as described in the provided quote.",
+      "refusal": "English paragraph must explicitly state \"The first release is unknown.\"",
+      "attempts": 2,
+      "quality_pass": false
+    },
+    "insufficient": {
+      "run": "dfc857a62779d5abce8cd9c95afe148544442d2a13b161d43f3c0da7f5a9b531",
+      "elapsed_seconds": 55.37,
+      "expected": "insufficient",
+      "actual_disposition": "draft",
+      "actual_japanese_action": "__CMD_N__",
+      "refusal": "Unresolved identifier placeholder",
+      "attempts": 2,
+      "quality_pass": false,
+      "note": "Downstream structural refusal is NOT a correct insufficiency decision."
+    },
+    "listbox": {
+      "run": "51913aa1e488d6bc7f55ff37f24b29857a632d2a063c7ed14b0352b35fe5c54d",
+      "elapsed_seconds": 31.70,
+      "expected": "optional documented guard, unknown first release/platform",
+      "actual_remedy": "unknown",
+      "actual_english_retry_paragraph": "In list box objects or list box columns, when a FORM Event with On Clicked or On Double Clicked is triggered, a check for 'Is editing text' must be added to ensure events are only fired when the cell is not in editing mode. This behavior was previously restricted to non-editing cells to avoid interface inconsistencies, as noted in the legacy release documentation and code example. The condition is explicitly defined in the provided code snippet and cited requirement.",
+      "refusal": "English paragraph must explicitly state \"The first release is unknown.\"",
+      "attempts": 2,
+      "quality_pass": false,
+      "note": "Optional-to-mandatory distortion and misunderstanding the guard remain semantic failures; the validator refused on a separate uncertainty rule."
+    }
+  },
+  "initial_model_failures": {
+    "model": "Qwen/Qwen3-1.7B-GGUF",
+    "revision": "90862c4b9d2787eaed51d12237eafdfe7c5f6077",
+    "file": "Qwen3-1.7B-Q8_0.gguf",
+    "sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+    "actual_french_one_line": "BASE64 DECODE maintenant retourne un blob vide sur un entrée de blob invalide.",
+    "actual_english_action": "BASE64 DECODE now returns an empty blob on invalid single-BLOB input.",
+    "note": "Wrong French alias and behavior mislabeled as remediation. Initial flat-schema wire-format failure and shared-schema-object implementation bug were separately fixed, not counted as final model quality."
+  }
+}
