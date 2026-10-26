@@ -2080,7 +2080,264 @@
         "document_key": "200-6479550",
         "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
       }
+    },
+    "docs-current-release-notes-en": {
+      "url": "https://developer.4d.com/docs/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "en",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-current-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "fr",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-current-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "es",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-current-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "ja",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-v21-release-notes-en": {
+      "url": "https://developer.4d.com/docs/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "en",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v21-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "fr",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v21-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "es",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v21-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "ja",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v20-release-notes-en": {
+      "url": "https://developer.4d.com/docs/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "en",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v20-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "fr",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v20-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "es",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v20-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "ja",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v19-release-notes-en": {
+      "url": "https://developer.4d.com/docs/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "en",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
+    "docs-v19-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "fr",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
+    "docs-v19-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "es",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
+    "docs-v19-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "ja",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
     }
   },
-  "unresolved": []
+  "unresolved": [
+    {
+      "id": "docs-current-release-notes-de",
+      "language": "de",
+      "parent": "https://developer.4d.com/docs/Notes/updates",
+      "status": "not_linked",
+      "checked_at": "2026-10-26T11:30:40+00:00",
+      "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+      "supported_site_languages": [
+        "en",
+        "es",
+        "fr",
+        "ja",
+        "pt"
+      ],
+      "reason": "No official hreflang counterpart in this edition's navigation; no URL guessed or English fallback registered."
+    },
+    {
+      "id": "docs-v21-release-notes-de",
+      "language": "de",
+      "parent": "https://developer.4d.com/docs/21/Notes/updates",
+      "status": "not_linked",
+      "checked_at": "2026-10-26T11:30:41+00:00",
+      "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+      "supported_site_languages": [
+        "en",
+        "es",
+        "fr",
+        "ja",
+        "pt"
+      ],
+      "reason": "No official hreflang counterpart in this edition's navigation; no URL guessed or English fallback registered."
+    },
+    {
+      "id": "docs-v20-release-notes-de",
+      "language": "de",
+      "parent": "https://developer.4d.com/docs/20/Notes/updates",
+      "status": "not_linked",
+      "checked_at": "2026-10-26T11:30:42+00:00",
+      "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+      "supported_site_languages": [
+        "en",
+        "es",
+        "fr",
+        "ja",
+        "pt"
+      ],
+      "reason": "No official hreflang counterpart in this edition's navigation; no URL guessed or English fallback registered."
+    },
+    {
+      "id": "docs-v19-release-notes-de",
+      "language": "de",
+      "parent": "https://developer.4d.com/docs/19/Notes/updates",
+      "status": "not_linked",
+      "checked_at": "2026-10-26T11:30:43+00:00",
+      "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+      "supported_site_languages": [
+        "en",
+        "es",
+        "fr",
+        "ja",
+        "pt"
+      ],
+      "reason": "No official hreflang counterpart in this edition's navigation; no URL guessed or English fallback registered."
+    }
+  ]
 }

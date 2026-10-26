@@ -288,6 +288,8 @@ function renderSources() {
     card.append(node('h3', source.id || t('unknown')));
     const dl = node('dl', undefined, 'detail-content');
     detail(dl, 'sourceEdition', source.edition);
+    if (source.documentation_channel) detail(dl, 'documentationChannel', valueLabel(source.documentation_channel));
+    if (source.fetch?.documentation?.channel_label) detail(dl, 'observedVersionLabel', source.fetch.documentation.channel_label);
     detail(dl, 'sourceLanguage', source.language);
     detail(dl, 'family', valueLabel(source.family));
     if (source.manual) detail(dl, 'manual', valueLabel(source.manual));
@@ -334,6 +336,20 @@ function renderSources() {
       card.append(history);
     }
     area.append(card);
+  }
+  const unlinked = state.catalog.archive_unresolved?.filter(item => item.status === 'not_linked') ?? [];
+  if (unlinked.length) {
+    const disclosure = node('details', undefined, 'card');
+    disclosure.append(node('summary', `${t('unlinkedLocales')} (${unlinked.length})`), node('p', t('unlinkedLocalesNote')));
+    const list = node('ul', undefined, 'evidence-list');
+    for (const entry of unlinked) {
+      const item = node('li');
+      item.append(node('span', `${entry.language} · `), link(entry.parent, entry.parent),
+        node('p', `${t('siteLanguages')}: ${entry.supported_site_languages.join(' · ')}`));
+      list.append(item);
+    }
+    disclosure.append(list);
+    area.append(disclosure);
   }
   const discoveries = state.catalog.discoveries;
   if (Array.isArray(discoveries) && discoveries.length) {

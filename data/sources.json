@@ -2,6 +2,10 @@
   "schema_version": 1,
   "archive_root": "https://library.4d-japan.com/doc/",
   "seeds": [
+    {"id":"docs-current-release-notes","family":"documentation-release-notes","edition":"unknown","documentation_channel":"moving-current","url":"https://developer.4d.com/docs/Notes/updates"},
+    {"id":"docs-v21-release-notes","family":"documentation-release-notes","edition":"21","documentation_channel":"versioned","url":"https://developer.4d.com/docs/21/Notes/updates"},
+    {"id":"docs-v20-release-notes","family":"documentation-release-notes","edition":"20","documentation_channel":"versioned","url":"https://developer.4d.com/docs/20/Notes/updates"},
+    {"id":"docs-v19-release-notes","family":"documentation-release-notes","edition":"19","documentation_channel":"versioned","url":"https://developer.4d.com/docs/19/Notes/updates"},
     {"id":"legacy-v20-deprecated","family":"deprecated-removed","edition":"20","url":"https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html"},
     {"id":"legacy-v19-deprecated","family":"deprecated-removed","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html"},
     {"id":"legacy-v18-deprecated","family":"deprecated-removed","edition":"18.2","url":"https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html"},

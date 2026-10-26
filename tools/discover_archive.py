@@ -127,9 +127,11 @@ def main():
     navigation_path = ROOT / "data/archive-navigation.json"
     previous = load(navigation_path)["pages"] if navigation_path.exists() else []
     navigator = ArchiveNavigator(config["archive_root"], args.transport, previous)
-    locations, unresolved = {}, []
+    prior_locations = load(ROOT / "data/source-locations.json")
+    locations = {key: value for key, value in prior_locations["locations"].items() if not key.startswith("legacy-")}
+    unresolved = [item for item in prior_locations["unresolved"] if not item["id"].startswith("legacy-")]
     for seed in config["seeds"]:
-        if seed["family"] != "blog-overview":
+        if seed["family"] not in {"blog-overview", "documentation-release-notes"}:
             found, pending = navigator.resolve(seed)
             locations.update(found)
             unresolved.extend(pending)

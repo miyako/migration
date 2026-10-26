@@ -1,5 +1,1589 @@
 [
   {
+    "id": "docs-current-release-notes-en",
+    "family": "documentation-release-notes",
+    "edition": "21 R5",
+    "documentation_channel": "moving-current",
+    "url": "https://developer.4d.com/docs/Notes/updates",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "parent": null,
+      "method": "provided_seed"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:40+00:00",
+      "fetched_at": "2026-10-26T11:27:05+00:00",
+      "sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+      "etag": "\"6ad0a924-ae20\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 82,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R5",
+        "locale": "en",
+        "canonical_url": "https://developer.4d.com/docs/Notes/updates",
+        "channel_label": "Version: 21 R5 BETA",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R5",
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "Library table"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          }
+        ]
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-current-release-notes-fr",
+    "family": "documentation-release-notes",
+    "edition": "21 R5",
+    "documentation_channel": "moving-current",
+    "url": "https://developer.4d.com/docs/fr/Notes/updates",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/Notes/updates",
+      "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+      "checked_at": "2026-10-26T11:30:40+00:00",
+      "language": "fr",
+      "requested_channel": "moving-current",
+      "requested_version": null
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:44+00:00",
+      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "sha256": "44ee53c91af63ebed8307f987b4b81742099909ebccde3e67f49cf7830202806",
+      "etag": "\"6ad0a926-b3b1\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 77,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R5",
+        "locale": "fr",
+        "canonical_url": "https://developer.4d.com/docs/fr/Notes/updates",
+        "channel_label": "Version : 21 R5 BETA",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R5",
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "Tableau des bibliothèques"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-current-release-notes-en",
+        "english_content_sha256": "a83119a9ae5f39f0bfd8916c11ac8f259d7cb9c346a727a47e50cc6d9ad09ee7",
+        "localized_content_sha256": "29ddc4338d1a19d078b065bd168735ae738aef0de1824f6cba6920f746d429bf",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/fr/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-current-release-notes-es",
+    "family": "documentation-release-notes",
+    "edition": "21 R5",
+    "documentation_channel": "moving-current",
+    "url": "https://developer.4d.com/docs/es/Notes/updates",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/Notes/updates",
+      "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+      "checked_at": "2026-10-26T11:30:40+00:00",
+      "language": "es",
+      "requested_channel": "moving-current",
+      "requested_version": null
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:44+00:00",
+      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "sha256": "7cd670d3c2b18d5e342fd2bc26a70524128c4e5d0c8c356b6c017edaebb26c20",
+      "etag": "\"6ad0a923-b189\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 77,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R5",
+        "locale": "es",
+        "canonical_url": "https://developer.4d.com/docs/es/Notes/updates",
+        "channel_label": "Versión: 21 R5 BETA",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R5",
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "Tabla de la librería"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-current-release-notes-en",
+        "english_content_sha256": "a83119a9ae5f39f0bfd8916c11ac8f259d7cb9c346a727a47e50cc6d9ad09ee7",
+        "localized_content_sha256": "f21615d42589fc72fd55ed9664de0d39a07dfae07fd7c1d57c1248ae2d79f05f",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/es/Notes/updates",
+    "title": "Notas del lanzamiento | 4D Docs"
+  },
+  {
+    "id": "docs-current-release-notes-ja",
+    "family": "documentation-release-notes",
+    "edition": "21 R5",
+    "documentation_channel": "moving-current",
+    "url": "https://developer.4d.com/docs/ja/Notes/updates",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/Notes/updates",
+      "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+      "checked_at": "2026-10-26T11:30:40+00:00",
+      "language": "ja",
+      "requested_channel": "moving-current",
+      "requested_version": null
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:44+00:00",
+      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "sha256": "be142f6c71eee6cc4322ce82b274f438eaabd266ca555f9f56e5a72bf52a4cae",
+      "etag": "\"6ad0a922-c593\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:22 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 77,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R5",
+        "locale": "ja",
+        "canonical_url": "https://developer.4d.com/docs/ja/Notes/updates",
+        "channel_label": "バージョン: 21 R5 BETA",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R5",
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "ライブラリの一覧"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-current-release-notes-en",
+        "english_content_sha256": "a83119a9ae5f39f0bfd8916c11ac8f259d7cb9c346a727a47e50cc6d9ad09ee7",
+        "localized_content_sha256": "52bbbab91841ba24795701e3ecb15134532f53a7b1df0094759b0f975db0b73d",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/ja/Notes/updates",
+    "title": "リリースノート | 4D Docs"
+  },
+  {
+    "id": "docs-v21-release-notes-en",
+    "family": "documentation-release-notes",
+    "edition": "21",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/21/Notes/updates",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "parent": null,
+      "method": "provided_seed"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:41+00:00",
+      "fetched_at": "2026-10-26T11:27:07+00:00",
+      "sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+      "etag": "\"6ad0a928-1343d\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:28 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 198,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21",
+        "locale": "en",
+        "canonical_url": "https://developer.4d.com/docs/21/Notes/updates",
+        "channel_label": "Version: 21",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21.2 LTS",
+          "4D 21.1 LTS",
+          "4D 21 LTS",
+          "Library table (4D 21 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          }
+        ]
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/21/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-v21-release-notes-fr",
+    "family": "documentation-release-notes",
+    "edition": "21",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/fr/21/Notes/updates",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/21/Notes/updates",
+      "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+      "checked_at": "2026-10-26T11:30:41+00:00",
+      "language": "fr",
+      "requested_channel": "versioned",
+      "requested_version": "21"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:44+00:00",
+      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "sha256": "ae25278208e069202b91c6b38a14cbb61449b6297b3eba7a7f149ea979d0edea",
+      "etag": "\"6ad0a926-14f26\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 198,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21",
+        "locale": "fr",
+        "canonical_url": "https://developer.4d.com/docs/fr/21/Notes/updates",
+        "channel_label": "Version : 21",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21.2 LTS",
+          "4D 21.1 LTS",
+          "4D 21 LTS",
+          "Tableau des bibliothèques (4D 21 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v21-release-notes-en",
+        "english_content_sha256": "b879f526e02c1599db29fb99b5714f7a4d050135d5cc6f974941a6fa63542ba1",
+        "localized_content_sha256": "9c7960ae9cf434a9b55a665eff351edb27b206c5065f3ffd0c63ec1b77740d0b",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/fr/21/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-v21-release-notes-es",
+    "family": "documentation-release-notes",
+    "edition": "21",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/es/21/Notes/updates",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/21/Notes/updates",
+      "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+      "checked_at": "2026-10-26T11:30:41+00:00",
+      "language": "es",
+      "requested_channel": "versioned",
+      "requested_version": "21"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:45+00:00",
+      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "sha256": "f2cbbaf8dc7bf968e1c5dac8a729c759f7bf21ab3e09a4b829829072d9fb69e5",
+      "etag": "\"6ad0a924-14745\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 198,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21",
+        "locale": "es",
+        "canonical_url": "https://developer.4d.com/docs/es/21/Notes/updates",
+        "channel_label": "Versión: 21",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21.2 LTS",
+          "4D 21.1 LTS",
+          "4D 21 LTS",
+          "Tabla de librerías (4D v21 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v21-release-notes-en",
+        "english_content_sha256": "b879f526e02c1599db29fb99b5714f7a4d050135d5cc6f974941a6fa63542ba1",
+        "localized_content_sha256": "dae55a38e66c6206e48e138f28d8130356709a022cc84ee05c89c6773ca9929d",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/es/21/Notes/updates",
+    "title": "Notas del lanzamiento | 4D Docs"
+  },
+  {
+    "id": "docs-v21-release-notes-ja",
+    "family": "documentation-release-notes",
+    "edition": "21",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/ja/21/Notes/updates",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/21/Notes/updates",
+      "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+      "checked_at": "2026-10-26T11:30:41+00:00",
+      "language": "ja",
+      "requested_channel": "versioned",
+      "requested_version": "21"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:45+00:00",
+      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "sha256": "67ae7e32484fe722f215d781917ef8a2d50ad3acced9baa6eeb283ca7bcdd23a",
+      "etag": "\"6ad0a923-17d2c\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 198,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21",
+        "locale": "ja",
+        "canonical_url": "https://developer.4d.com/docs/ja/21/Notes/updates",
+        "channel_label": "バージョン: 21",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21.2 LTS",
+          "4D 21.1 LTS",
+          "4D 21 LTS",
+          "ライブラリの一覧 (4D 21 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v21-release-notes-en",
+        "english_content_sha256": "b879f526e02c1599db29fb99b5714f7a4d050135d5cc6f974941a6fa63542ba1",
+        "localized_content_sha256": "82c2661de27e9c6e0925ec37e58abeaa23a80d7f89b41ff1c58e9b2753f5f379",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/ja/21/Notes/updates",
+    "title": "リリースノート | 4D Docs"
+  },
+  {
+    "id": "docs-v20-release-notes-en",
+    "family": "documentation-release-notes",
+    "edition": "20",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/20/Notes/updates",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "parent": null,
+      "method": "provided_seed"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:42+00:00",
+      "fetched_at": "2026-10-26T11:27:09+00:00",
+      "sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+      "etag": "\"6ad0a921-13bad\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 175,
+      "content_kind": "article",
+      "documentation": {
+        "version": "20",
+        "locale": "en",
+        "canonical_url": "https://developer.4d.com/docs/20/Notes/updates",
+        "channel_label": "Version: 20",
+        "article_scope": true,
+        "release_headings": [
+          "4D 20.9 LTS",
+          "4D 20.8 LTS",
+          "4D 20.7 LTS",
+          "4D 20.6 LTS",
+          "4D 20.5 LTS",
+          "4D 20.4 LTS",
+          "4D 20.3 LTS",
+          "4D 20.2 LTS",
+          "4D 20.1 LTS",
+          "4D 20 LTS",
+          "Library table (4D 20 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/20/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          }
+        ]
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/20/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-v20-release-notes-fr",
+    "family": "documentation-release-notes",
+    "edition": "20",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/fr/20/Notes/updates",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/20/Notes/updates",
+      "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+      "checked_at": "2026-10-26T11:30:42+00:00",
+      "language": "fr",
+      "requested_channel": "versioned",
+      "requested_version": "20"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:45+00:00",
+      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "sha256": "8e2820fb299ff446b5afe7abf013721090712ed7ee6b5b5a6da76b9071385e0e",
+      "etag": "\"6ad0a925-1563e\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:25 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 176,
+      "content_kind": "article",
+      "documentation": {
+        "version": "20",
+        "locale": "fr",
+        "canonical_url": "https://developer.4d.com/docs/fr/20/Notes/updates",
+        "channel_label": "Version : 20",
+        "article_scope": true,
+        "release_headings": [
+          "4D 20.9 LTS",
+          "4D 20.8 LTS",
+          "4D 20.7 LTS",
+          "4D 20.6 LTS",
+          "4D 20.5 LTS",
+          "4D 20.4 LTS",
+          "4D 20.3 LTS",
+          "4D 20.2 LTS",
+          "4D 20.1 LTS",
+          "4D 20 LTS",
+          "Tableau des bibliothèques (4D 20 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/20/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v20-release-notes-en",
+        "english_content_sha256": "ad1f8e5e9a724768865bef2e154300c669a871acd9868bb8a87292654625ec4c",
+        "localized_content_sha256": "79aa5527a0f791da1d9d4c0e399957e314ddac57ecb045d67407d82c13ba52fb",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/fr/20/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-v20-release-notes-es",
+    "family": "documentation-release-notes",
+    "edition": "20",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/es/20/Notes/updates",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/20/Notes/updates",
+      "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+      "checked_at": "2026-10-26T11:30:42+00:00",
+      "language": "es",
+      "requested_channel": "versioned",
+      "requested_version": "20"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:45+00:00",
+      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "sha256": "6ca537ff9fcc07a6fcd91170c3d0c2d49440948a6fb64bc6080941db25dfc7ca",
+      "etag": "\"6ad0a923-14ee6\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 178,
+      "content_kind": "article",
+      "documentation": {
+        "version": "20",
+        "locale": "es",
+        "canonical_url": "https://developer.4d.com/docs/es/20/Notes/updates",
+        "channel_label": "Versión: 20",
+        "article_scope": true,
+        "release_headings": [
+          "4D 20.9 LTS",
+          "4D 20.8 LTS",
+          "4D 20.7 LTS",
+          "4D 20.6 LTS",
+          "4D 20.5 LTS",
+          "4D 20.4 LTS",
+          "4D 20.3 LTS",
+          "4D 20.2 LTS",
+          "4D 20.1 LTS",
+          "4D 20 LTS",
+          "Tabla de librerías (4D v20 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/20/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v20-release-notes-en",
+        "english_content_sha256": "ad1f8e5e9a724768865bef2e154300c669a871acd9868bb8a87292654625ec4c",
+        "localized_content_sha256": "6b9820dd94d18d3b710bd51ce4876f8289320f8531ab3c502b54fceee8c6a3fd",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/es/20/Notes/updates",
+    "title": "Notas del lanzamiento | 4D Docs"
+  },
+  {
+    "id": "docs-v20-release-notes-ja",
+    "family": "documentation-release-notes",
+    "edition": "20",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/ja/20/Notes/updates",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/20/Notes/updates",
+      "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+      "checked_at": "2026-10-26T11:30:42+00:00",
+      "language": "ja",
+      "requested_channel": "versioned",
+      "requested_version": "20"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:46+00:00",
+      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "sha256": "cb84c8812e2ad0f0c5e837e5ccbc4222531c11de5ca208d8e0ccc81e9ffde467",
+      "etag": "\"6ad0a921-1797c\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 178,
+      "content_kind": "article",
+      "documentation": {
+        "version": "20",
+        "locale": "ja",
+        "canonical_url": "https://developer.4d.com/docs/ja/20/Notes/updates",
+        "channel_label": "バージョン: 20",
+        "article_scope": true,
+        "release_headings": [
+          "4D 20.9 LTS",
+          "4D 20.8 LTS",
+          "4D 20.7 LTS",
+          "4D 20.6 LTS",
+          "4D 20.5 LTS",
+          "4D 20.4 LTS",
+          "4D 20.3 LTS",
+          "4D 20.2 LTS",
+          "4D 20.1 LTS",
+          "4D 20 LTS",
+          "ライブラリの一覧 (4D 20 LTS)"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/20/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v20-release-notes-en",
+        "english_content_sha256": "ad1f8e5e9a724768865bef2e154300c669a871acd9868bb8a87292654625ec4c",
+        "localized_content_sha256": "97e440a009272eadc2f13ef5132699723f9a5c74f0a5d9ad6749985b26c70f13",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/ja/20/Notes/updates",
+    "title": "リリースノート | 4D Docs"
+  },
+  {
+    "id": "docs-v19-release-notes-en",
+    "family": "documentation-release-notes",
+    "edition": "19",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/19/Notes/updates",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "parent": null,
+      "method": "provided_seed"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:43+00:00",
+      "fetched_at": "2026-10-26T11:27:11+00:00",
+      "sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+      "etag": "\"6ad0a922-8a17\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:22 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 33,
+      "content_kind": "article",
+      "documentation": {
+        "version": "19",
+        "locale": "en",
+        "canonical_url": "https://developer.4d.com/docs/19/Notes/updates",
+        "channel_label": "Version: 19",
+        "article_scope": true,
+        "release_headings": [
+          "4D 19.8 LTS",
+          "4D 19.7 LTS",
+          "4D 19.6 LTS",
+          "4D 19.5 LTS",
+          "4D 19.x LTS",
+          "Previous releases",
+          "Library table"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/19/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          }
+        ]
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/19/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-v19-release-notes-fr",
+    "family": "documentation-release-notes",
+    "edition": "19",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/fr/19/Notes/updates",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/19/Notes/updates",
+      "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+      "checked_at": "2026-10-26T11:30:43+00:00",
+      "language": "fr",
+      "requested_channel": "versioned",
+      "requested_version": "19"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:46+00:00",
+      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "sha256": "208646aa9d00ab9eae638ef74b261bc7680501de51f1959f35d96bdb08ad0dae",
+      "etag": "\"6ad0a926-8e0d\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 33,
+      "content_kind": "article",
+      "documentation": {
+        "version": "19",
+        "locale": "fr",
+        "canonical_url": "https://developer.4d.com/docs/fr/19/Notes/updates",
+        "channel_label": "Version : 19",
+        "article_scope": true,
+        "release_headings": [
+          "4D 19.8 LTS",
+          "4D 19.7 LTS",
+          "4D 19.6 LTS",
+          "4D 19.5 LTS",
+          "4D 19.x LTS",
+          "Versions précédentes",
+          "Tableau des bibliothèques"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/19/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v19-release-notes-en",
+        "english_content_sha256": "98bc3d7774afb97865a11f1f341cfec3f12eb6495215de92162ff6e4cc933fd8",
+        "localized_content_sha256": "08cad46cdf9f28ee2b5f4bcf553474eee22e3b939283db759d2ae9829e874b2e",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/fr/19/Notes/updates",
+    "title": "Release Notes | 4D Docs"
+  },
+  {
+    "id": "docs-v19-release-notes-es",
+    "family": "documentation-release-notes",
+    "edition": "19",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/es/19/Notes/updates",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/19/Notes/updates",
+      "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+      "checked_at": "2026-10-26T11:30:43+00:00",
+      "language": "es",
+      "requested_channel": "versioned",
+      "requested_version": "19"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:46+00:00",
+      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "sha256": "8bf7499298254a2235dfa39567c95ade706fb0f478c2736765313f31efe8929c",
+      "etag": "\"6ad0a924-8ca6\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 35,
+      "content_kind": "article",
+      "documentation": {
+        "version": "19",
+        "locale": "es",
+        "canonical_url": "https://developer.4d.com/docs/es/19/Notes/updates",
+        "channel_label": "Versión: 19",
+        "article_scope": true,
+        "release_headings": [
+          "4D 19.8 LTS",
+          "4D 19.7 LTS",
+          "4D 19.6 LTS",
+          "4D 19.5 LTS",
+          "4D 19.x LTS",
+          "Lanzamientos anteriores",
+          "Tabla de la librería"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/19/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v19-release-notes-en",
+        "english_content_sha256": "98bc3d7774afb97865a11f1f341cfec3f12eb6495215de92162ff6e4cc933fd8",
+        "localized_content_sha256": "043d8b5f0c2111e75abab927a797143177cde8afc925cc097e31b1eedd634804",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/es/19/Notes/updates",
+    "title": "Notas del lanzamiento | 4D Docs"
+  },
+  {
+    "id": "docs-v19-release-notes-ja",
+    "family": "documentation-release-notes",
+    "edition": "19",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/ja/19/Notes/updates",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/19/Notes/updates",
+      "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+      "checked_at": "2026-10-26T11:30:43+00:00",
+      "language": "ja",
+      "requested_channel": "versioned",
+      "requested_version": "19"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T11:30:46+00:00",
+      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "sha256": "2c0c68b60005fe006812ca26cf681eb461d9a13e49ad3449aae3578dc46193f2",
+      "etag": "\"6ad0a921-92dc\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
+      "http_status": 304,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 33,
+      "content_kind": "article",
+      "documentation": {
+        "version": "19",
+        "locale": "ja",
+        "canonical_url": "https://developer.4d.com/docs/ja/19/Notes/updates",
+        "channel_label": "バージョン: 19",
+        "article_scope": true,
+        "release_headings": [
+          "4D 19.8 LTS",
+          "4D 19.7 LTS",
+          "4D 19.6 LTS",
+          "4D 19.5 LTS",
+          "4D 19.x LTS",
+          "過去のリリース",
+          "ライブラリの一覧"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/19/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-v19-release-notes-en",
+        "english_content_sha256": "98bc3d7774afb97865a11f1f341cfec3f12eb6495215de92162ff6e4cc933fd8",
+        "localized_content_sha256": "5ddef1430b256610eb26a4d0db80fbab0cc5da9c3485d924bfa6eba5e48b84c0",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/ja/19/Notes/updates",
+    "title": "リリースノート | 4D Docs"
+  },
+  {
     "id": "legacy-v20-deprecated-en",
     "family": "deprecated-removed",
     "edition": "20",
