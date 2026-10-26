@@ -1,0 +1,42 @@
+export const searchLabels = {
+  en: {
+    enable: 'Enable meaning search (WebGPU)',
+    budget: 'Optional: about 236 MB on first use; around 2 GB browser memory in a desktop test. The text model runs on this device; your query is not sent to a service. Exact search works without it.',
+    off: 'Meaning search is off.', loading: 'Loading local search model…', ready: 'Meaning search ready. Matches include exact text or similarity ≥ {threshold}; your selected sort is unchanged.',
+    searching: 'Finding related changes… Keyword matches are shown until ready.',
+    cancel: 'Cancel / disable', unavailable: 'Meaning search needs WebGPU. Use a WebGPU-capable browser or keep using keyword search.',
+    error: 'Meaning search failed. Disable and retry, check your connection and available memory, or use keyword search.',
+  },
+  fr: {
+    enable: 'Activer la recherche par sens (WebGPU)',
+    budget: 'Facultatif : environ 236 Mo au premier usage ; environ 2 Go de mémoire navigateur dans un test sur ordinateur. Le modèle de texte fonctionne sur cet appareil ; votre requête n’est pas envoyée à un service. La recherche exacte reste disponible.',
+    off: 'Recherche par sens désactivée.', loading: 'Chargement du modèle local…', ready: 'Recherche par sens prête. Correspondance exacte ou similarité ≥ {threshold} ; le tri choisi est conservé.',
+    searching: 'Recherche de changements associés… Les résultats par mots-clés restent affichés en attendant.',
+    cancel: 'Annuler / désactiver', unavailable: 'La recherche par sens nécessite WebGPU. Utilisez un navigateur compatible ou la recherche par mots-clés.',
+    error: 'Échec de la recherche par sens. Désactivez puis réessayez, vérifiez la connexion et la mémoire disponible, ou utilisez les mots-clés.',
+  },
+  de: {
+    enable: 'Bedeutungssuche aktivieren (WebGPU)',
+    budget: 'Optional: beim ersten Aufruf etwa 236 MB; im Desktop-Test rund 2 GB Browserspeicher. Das Textmodell läuft auf diesem Gerät; Ihre Anfrage wird an keinen Dienst gesendet. Die exakte Suche funktioniert ohne Modell.',
+    off: 'Bedeutungssuche ausgeschaltet.', loading: 'Lokales Suchmodell wird geladen…', ready: 'Bedeutungssuche bereit. Exakter Text oder Ähnlichkeit ≥ {threshold}; die gewählte Sortierung bleibt erhalten.',
+    searching: 'Verwandte Änderungen werden gesucht… Bis dahin werden Stichworttreffer angezeigt.',
+    cancel: 'Abbrechen / deaktivieren', unavailable: 'Die Bedeutungssuche benötigt WebGPU. Verwenden Sie einen kompatiblen Browser oder die Stichwortsuche.',
+    error: 'Bedeutungssuche fehlgeschlagen. Deaktivieren und erneut versuchen, Verbindung und freien Speicher prüfen oder Stichwörter verwenden.',
+  },
+  es: {
+    enable: 'Activar búsqueda por significado (WebGPU)',
+    budget: 'Opcional: unos 236 MB en el primer uso; unos 2 GB de memoria del navegador en una prueba de escritorio. El modelo de texto se ejecuta en este dispositivo; la consulta no se envía a un servicio. La búsqueda exacta funciona sin él.',
+    off: 'Búsqueda por significado desactivada.', loading: 'Cargando el modelo local…', ready: 'Búsqueda por significado lista. Texto exacto o similitud ≥ {threshold}; se conserva el orden elegido.',
+    searching: 'Buscando cambios relacionados… Mientras tanto se muestran las coincidencias por palabras clave.',
+    cancel: 'Cancelar / desactivar', unavailable: 'La búsqueda por significado requiere WebGPU. Use un navegador compatible o la búsqueda por palabras clave.',
+    error: 'Falló la búsqueda por significado. Desactive y reintente, compruebe la conexión y la memoria disponible, o use palabras clave.',
+  },
+  ja: {
+    enable: '意味検索を有効にする（WebGPU）',
+    budget: '任意：初回は約236 MBのダウンロードが必要です。デスクトップでの試験ではブラウザーのメモリ使用量は約2 GBでした。テキストモデルは端末内で動作し、検索文は外部サービスに送信されません。完全一致検索はモデルなしで使えます。',
+    off: '意味検索は無効です。', loading: 'ローカル検索モデルを読み込み中…', ready: '意味検索の準備ができました。文字列一致または類似度 {threshold} 以上を表示し、選択した並び順を維持します。',
+    searching: '関連する変更を検索中… 準備ができるまでキーワードの一致を表示します。',
+    cancel: 'キャンセル／無効にする', unavailable: '意味検索にはWebGPUが必要です。対応ブラウザーかキーワード検索をご利用ください。',
+    error: '意味検索に失敗しました。無効にして再試行するか、接続と空きメモリを確認してください。キーワード検索は利用できます。',
+  },
+};

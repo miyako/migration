@@ -503,7 +503,11 @@ def run(base, screenshots, published):
         assert ids(page) == []
         page.unroute("**/data/catalog.json")
         page.route("**/data/catalog.json", lambda route: route.fulfill(status=503, body="Unavailable"))
-        page.reload()
+        with page.expect_response("**/data/catalog.json") as failed_response:
+            page.reload()
+        # The app rejects the status before consuming this deliberately failed
+        # response. Let its body finish before the next test navigates away.
+        assert failed_response.value.body() == b"Unavailable"
         page.wait_for_selector("#message.error")
         assert "reload" in page.locator("#message").inner_text()
         assert ids(page) == []

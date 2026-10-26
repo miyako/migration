@@ -2,8 +2,12 @@
 
 For source development, serve this directory after `python3 -m tools.catalog`.
 For publication, run `python3 -m tools.publish` and serve/upload `_site/` instead.
-No build dependencies, external assets, backend, or runtime AI/GitHub requests are
-required. `./data/catalog.json`, scripts, styles, and the version SVG use relative
+Keyword search requires no model, external assets, backend, or runtime AI/GitHub
+API requests. Optional meaning search needs explicit opt-in and a WebGPU
+text encoder; see the measured model contract and limitations in the root README.
+Run `npm ci && npm run build:search-runtime` before publication. Model weights
+are public, pinned external downloads; queries never leave the browser.
+`./data/catalog.json`, scripts, styles, and the version SVG use relative
 URLs, including under a GitHub Pages `/migration/` subpath. Missing or invalid
 data displays a localized actionable error, never a successful empty directory.
 
@@ -23,6 +27,7 @@ users seeing the old failure may need one force refresh after deployment.
 
 ```sh
 node --test site/logic.test.mjs
+npm run test:search
 python3 -m unittest discover -s tests
 ```
 
@@ -100,6 +105,19 @@ counts, review state, and clarification register) stays in repository data and
 the root README, not in visitor navigation. No source data is removed.
 
 ## Version semantics and state
+
+The small meaning-search control uses the same search field, with localized
+download/memory guidance, progress, cancellation, pending and failure states.
+It is off on every new page visit; language/theme remain the only preferences
+stored by the app. Model downloads may be retained separately in browser Cache
+Storage. Keyword matching is never gated by model loading. Meaning search adds
+path-eligible atomic-member matches at cosine 0.74 or above without changing the
+selected sort; exact text and bilingual command aliases remain included.
+Search input is limited to 1,000 characters, and encoder inputs to 512 tokens.
+Empty text restores the directory. Reset clears text/filters, not a loaded model;
+Cancel / disable terminates the worker and returns to keyword behavior.
+No WebGPU or a model/index failure is explicitly reported, not called semantic
+success. There is no working quantized WASM fallback for this export.
 
 Original exact release and source edition stay distinct from migration buckets.
 Historical R cycles map to the next major; current-cycle R releases map to latest.

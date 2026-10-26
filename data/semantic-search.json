@@ -1,12 +1,28 @@
 {
-  "status": "unavailable",
-  "reason": "EmbeddingGemma 2 has a verified 270M text-only configuration and a community browser export. Five-language retrieval quality, selective text-only loading and actual browser resource use are not yet validated in this app. No inference is integrated; keyword and exact identifier search need no model.",
-  "model": null,
-  "revision": null,
-  "dimensions": null,
-  "normalization": null,
-  "query_prefix": null,
-  "document_prefix": null,
+  "status": "opt-in",
+  "reason": "Optional browser-local text-only query embeddings require WebGPU. Quantized WASM fails on GatherBlockQuantized; keyword search remains available without downloads.",
+  "model": "onnx-community/embeddinggemma-2-ONNX",
+  "revision": "daa72c51243991dfcaf9f9137d2c573d8f7790c0",
+  "dimensions": 768,
+  "normalization": "l2",
+  "pooling": "exported sentence_embedding: attention-mask mean pooling",
+  "query_prefix": "task: search result | query: ",
+  "document_prefix": "title: {one_line} | text: {paragraph}\\n{identifiers}\\n{action}",
+  "precision": "q4",
+  "max_tokens": 512,
+  "threshold": 0.74,
+  "runtime": {
+    "transformers": "4.3.1",
+    "onnxruntime": "1.31.0-dev.20260914-8d85527a0"
+  },
+  "backend": "webgpu",
+  "artifacts_sha256": {
+    "config.json": "8d011bfe08b5e345bbe0b81e5c6fd02c381920b345b986047bc2a33ce7b90d1d",
+    "tokenizer.json": "4d777ef5bdc1aa36227abdfb77c3e49e7b9c892d16e1b6bda41c393504828be4",
+    "tokenizer_config.json": "17bd5d6e9364ca49a534e1502076593317c298d4a663623091ed45388f004874",
+    "onnx/model_q4.onnx": "f9eeba97acddf139b8ee2ddf04bc30dceafa88de93fadf74d7644e0d61a477a9",
+    "onnx/model_q4.onnx_data": "c3975f2d1ab7a1878ae31a7d7a9b7804a827aff3800b60dfceafce21cac3df49"
+  },
   "config_version": 1,
   "candidate": {
     "identity": "270M text-only configuration of google/embeddinggemma-2, not a separately named checkpoint",
@@ -16,7 +32,7 @@
     "export_revision": "daa72c51243991dfcaf9f9137d2c573d8f7790c0",
     "license_declared": "Apache-2.0",
     "language_evidence": "100+ languages claimed by the official model card; specific five-language coverage and quality not verified in this bounded research.",
-    "runtime_evidence": "Community card documents Transformers.js WebGPU/WASM, but execution was not tested. Generic feature-extraction loads all encoders; selective text-only loading is required.",
+    "runtime_evidence": "Actual pinned q4 text-only export runs in Chrome 155 WebGPU and Node CPU with five-language vector parity. Quantized WASM fails on GatherBlockQuantized. Tested WebKit 26 has no WebGPU and stays on explicit keyword search. Generic feature-extraction loads every encoder and is not used.",
     "verified_at": "2026-10-26",
     "sources": [
       "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",

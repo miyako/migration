@@ -12,6 +12,7 @@ from urllib.parse import urlsplit
 
 from .ingest import CACHE, LANGUAGES, ROOT, documentation_route, load, save
 from .discover_archive import document_identity
+from .semantic import validate_config, publish_index
 
 BUCKETS = [f"v{major}" for major in range(16, 22)] + ["latest"]
 STAGES = ["syntax", "compilation", "runtime", "modernization", "unknown"]
@@ -510,8 +511,7 @@ def validate(document):
     else:
         require(latest["status"] == "unverified", "Unverified latest must not resolve to a release")
     semantic = document["semantic_search"]
-    require(semantic["status"] == "unavailable" and semantic["model"] is None,
-            "Semantic inference is not implemented; never publish a pretend available state")
+    validate_config(semantic)
     for disposition in document["dispositions"]:
         require(disposition["source_id"] in sources and nonempty(disposition["reason"])
                 and url(disposition["url"]), "Disposition requires source, URL and reason")
@@ -579,7 +579,7 @@ def verify_evidence(document):
             require(evidence["url"] == block["url"], "Evidence URL/anchor does not match resolved source")
 
 
-def build(verify=False):
+def catalog_document(verify=False):
     registry = load(ROOT / "data/registry.json")
     atomic = apply_overrides(merge_candidates(load(ROOT / "data/changes.json")),
                              load(ROOT / "data/overrides.json"))
@@ -625,9 +625,16 @@ def build(verify=False):
     validate(document)
     if verify:
         verify_evidence(document)
+    return document
+
+
+def build(verify=False):
+    document = catalog_document(verify)
+    publish_index(document, ROOT / "data/search", ROOT / "site/data/search")
     save(ROOT / "site/data/catalog.json", document)
-    print(f"Published {len(changes)} entities from {len(atomic)} atomic facts ({coverage['reviewed_changes']} reviewed); "
-          f"{len(registry)} registered sources. Partial coverage.")
+    coverage = document["coverage"]
+    print(f"Published {len(document['changes'])} entities from {coverage['atomic_changes']} atomic facts "
+          f"({coverage['reviewed_changes']} reviewed); {len(document['sources'])} registered sources. Partial coverage.")
     return document
 
 

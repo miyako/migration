@@ -20,8 +20,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build:search-runtime
       - run: python3 -m unittest discover -s tests -v
-      - run: node --test site/logic.test.mjs
+      - run: npm test
       - run: python3 -m tools.publish
       - uses: actions/upload-pages-artifact@v3
         with:

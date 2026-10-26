@@ -3,7 +3,9 @@
 An evidence-backed, **partial** quick directory of 4D upgrade changes after successful
 conversion/opening. A shared static interface supports English, French, German,
 Spanish and Japanese. It runs on GitHub Pages without a backend, accounts, paid
-services, external fonts, analytics, runtime GitHub API calls or AI calls.
+services, external fonts, analytics, runtime GitHub API calls or external inference.
+Keyword search works immediately; optional meaning search runs a text embedding
+model locally in a WebGPU-capable browser after explicit opt-in.
 
 **This is not a planner, an exhaustive migration checklist, or a support/troubleshooting tool.**
 If conversion or opening fails, contact [official 4D Support](https://www.4d.com/support).
@@ -538,10 +540,12 @@ publication snapshot, not a live promise.
 
 ## Run, validate, publish
 
-Requirements: Python 3.12+ and Node 22+ for tests; **no package install** is needed.
-The browser uses only native ES modules, CSS, and local JSON.
+Requirements: Python 3.12+ and Node 22+. The optional browser encoder runtime is
+bundled from pinned npm dependencies; ordinary validation does not run a model.
 
 ```sh
+npm ci
+npm run build:search-runtime
 python3 -m tools.publish
 python3 -m unittest discover -s tests -v
 node --test site/logic.test.mjs
@@ -551,7 +555,8 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory _site
 Open `http://127.0.0.1:8000/`. Use HTTP, not `file://`, because the app fetches its
 local published JSON. App/asset/data URLs are relative and support `/migration/`
 or another GitHub Pages subpath. There is no service worker/offline-install claim;
-search requires no model or network after the page and local assets have loaded.
+keyword search requires no model or network after the page and local assets have
+loaded. Optional meaning search has a separate opt-in model download.
 
 `.github/workflows/pages.yml` builds and validates pull requests without fetching
 sources. Pushes to `main` deploy the `_site/` artifact using GitHub Pages Actions.
@@ -584,7 +589,8 @@ source development; publish `_site/`, not the unversioned source directory.
 | `data/kb-audit.json` | Bounded KB discovery/research counts, original PDF provenance, selected-note uses, exclusions and reasoned protected-field edits |
 | `data/clarifications.json` | Curated confirmed-error register with evidence and dispositions |
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
-| `data/semantic-search.json` | Explicit unavailable state and pinned research provenance |
+| `data/semantic-search.json` | Opt-in text encoder, immutable revisions, runtime and retrieval contract |
+| `data/search/` | Five precomputed atomic-fact vector indexes and corpus/model/checksum provenance |
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
 | `tools/kb.py` | Original KB landing/ZIP-PDF adapter; physical-page evidence and ignored original-document caches |
 | `tools/discover_docs.py` | Four-seed bounded modern discovery/fetch, plus an explicitly requested advertised public revision; actual locale links only |
@@ -818,9 +824,10 @@ manual GitHub Actions dispatch and/or path-scoped changes to source-registry URL
 and editorial overrides are the intended triggers. Small local model(s) would run
 on the publishing/Actions runner for classification, summaries, translation and
 embeddings, with no paid external/cloud inference. An embedder is not a generator;
-different tasks may use different models. No model is selected, installed or
-executed by this content batch, and this automated inference pipeline does **not**
-exist yet. Current agent-authored content is explicitly identified as such.
+different tasks may use different models. The content-generation inference
+pipeline does **not** exist yet. Current agent-authored content is explicitly
+identified as such. The separately implemented search encoder below does not
+generate or modify that content.
 
 **The version-controlled authored catalog is the authoritative baseline**, not
 disposable output to regenerate when a local model is introduced. This includes
@@ -862,7 +869,7 @@ and tokenizer revisions, prompt/schema versions and generation parameters.
 Removing a source must remove unsupported published claims while preserving
 historical provenance and any independently supported multi-source facts.
 Deterministic validation remains mandatory. Optional browser query embeddings
-are a separate, deferred concern—not an implicit part of publication inference.
+are implemented separately below, not as part of content-generation inference.
 
 The site is a quick directory, not a planner: no completion checkboxes, editable
 notes, effort estimates, or planner JSON import/export. Only language/theme
@@ -872,31 +879,145 @@ or cleared. Unrelated browser preferences remain untouched.
 Do not put credentials, customer source, private support material or personal
 notes in catalog commits or public issues.
 
-## Semantic search: deliberately not integrated
+## Optional local semantic search
 
-Keyword/exact identifier search is real and needs **no model download**.
-Semantic search is visibly unavailable, not a different name for keyword search.
+Keyword/exact identifier search needs **no model download**. Optional meaning
+search is implemented using the **270M text/code component of EmbeddingGemma 2**,
+not the original 300M EmbeddingGemma or the full 740M multimodal model.
 
-Bounded research verified the proposed **EmbeddingGemma 2 270M text-only
-configuration**, not a separate `embeddinggemma-2-270m` checkpoint:
+**Exact model contract.** The [official card](https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2)
+and [Google checkpoint](https://huggingface.co/google/embeddinggemma-2/tree/914f7f89142e33e77833254d9c9b90c3cef7303b)
+declare Apache-2.0. Upstream revision is
+`914f7f89142e33e77833254d9c9b90c3cef7303b`; the actual public, ungated
+[ONNX export](https://huggingface.co/onnx-community/embeddinggemma-2-ONNX/tree/daa72c51243991dfcaf9f9137d2c573d8f7790c0)
+is pinned to `daa72c51243991dfcaf9f9137d2c573d8f7790c0`.
+Only `model_q4.onnx` and its external text weights are loaded, with
+`vision_config` and `audio_config` removed before model construction.
+No vision/audio encoder, generator, translation or regrouping pipeline is used.
+The matching BPE tokenizer inserts BOS=2 and EOS=1. Queries use
+`task: search result | query: `; documents use the localized one-line title,
+paragraph, identifiers and action. Both use at most 512 tokens, the exported
+attention-mask mean-pooled `sentence_embedding`, all 768 dimensions and explicit
+L2 normalization. q4 uses float32 activations, not fp16. Transformers.js `4.3.1`,
+ONNX Runtime Web `1.31.0-dev.20260914-8d85527a0`, and transitive dependencies are
+locked in `package-lock.json`. The URL template is pinned as well as `revision`:
+4.3.1's tokenizer metadata probe otherwise queries `main`.
 
-- [Official model card](https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2)
-  describes a 740M total model with a modular 270M text/code component and claims
-  100+ languages. That does not establish quality for each of en/fr/de/es/ja.
-- [Google checkpoint, pinned revision](https://huggingface.co/google/embeddinggemma-2/blob/914f7f89142e33e77833254d9c9b90c3cef7303b/README.md)
-  declares Apache-2.0.
-- [Community ONNX export, pinned revision](https://huggingface.co/onnx-community/embeddinggemma-2-ONNX/blob/daa72c51243991dfcaf9f9137d2c573d8f7790c0/README.md)
-  documents Transformers.js WebGPU/WASM and selective text-only loading.
-  Generic feature-extraction loads every encoder; the stated ~175 MB q4 text
-  component is **not** total browser memory.
+**Corpus and filtering.** Five locale indexes cover the same 276 stable atomic
+IDs. No authored text, source, translation, grouping or evidence is regenerated.
+Model/tokenizer SHA-256s, corpus fingerprints, IDs, vector checksums and
+configuration are recorded in `data/search/manifest.json`. Offline publication
+rejects stale/mismatched/nonfinite/unnormalized vectors. Document embeddings are
+computed locally with the same JS model/tokenizer and q4 export, using Node CPU;
+browser queries use WebGPU. Matching scores are rolled up only from a group's
+actual path-eligible members. Version/citation projection and platform/topic
+eligibility precede semantic inclusion. Keyword/identifier matches are always
+retained; other eligible entities must reach cosine **0.74**. There is no top-N
+cutoff or invisible semantic ordering: Severity or Complexity still orders every
+visible card. Empty query, clear, reset and disable retain normal directory
+behavior; empty checkbox sets still produce none. While inference is pending,
+the status explicitly says that keyword results are being shown.
 
-No weights were downloaded and browser inference was not tested. Five-language
-retrieval quality, browser memory/latency, selective loading and runtime/export
-license review remain integration gates. E5-small and Ruri-v3 Japanese are only
-fallback benchmark candidates, not selected dependencies. No external AI API is
-called. Before any future integration, version the corpus and query **same**
-checkpoint/export revision, tokenizer, dimensions, normalization, prefixes and
-configuration; benchmark all five languages and preserve model-free search.
+**Measured quality, 2026-10-27.** `tests/fixtures/semantic-retrieval.json` contains
+40 catalog-grounded cases with stable expected IDs and rationales: 30 positive
+paraphrases (six per language) and ten negative/near-miss cases. These are
+editorial assertions grounded in the catalog, not relevance labels emitted by
+the encoder or independently human-reviewed judgments. Related translations
+and overlapping concepts make this a small engineering check, not an independent
+benchmark. The split is 15 positives + five negatives each for development and
+holdout. Diagnostic semantic top-five retrieval includes the expected entity
+in **30/30**, versus **0/30** for full-query lexical matching. This baseline is
+deliberately paraphrase-heavy; exact-alias regression tests separately protect
+keyword strengths. At threshold 0.74, the actual hybrid filter includes
+**26/30** expected entities (en 6/6, fr 6/6, de 5/6, es 4/6, ja 5/6).
+All 26 are also within the first five displayed hybrid results under the
+default Severity order, not merely somewhere in the matching set.
+Development: 12/15 positives, 0/5 negatives matched; holdout: 14/15 positives,
+1/5 negatives matched. The threshold was raised from 0.70, whose broader filter
+matched all positives but also eight of ten negatives, to favor fewer unrelated
+cards. No language-specific threshold or hand-written query special case is used.
+
+Inspected misses are empty-selection aggregates in German/Spanish/Japanese
+(scores 0.7381/0.7250/0.7260) and Spanish macOS text LF behavior (0.7229).
+The remaining near-miss is a Japanese archive-encryption question retrieving the
+related Mac client archive-build card, which does **not** answer encryption.
+Another short Japanese PHP paraphrase tried during browser work scored below
+the filter threshold. Thus "no results" is not proof of no migration issue;
+exact commands or simpler wording can help. A related card is not an answer or
+a new claim: original summaries, applicability and citations remain authoritative.
+
+**Actual browser/resource evidence.** Tested on an Apple M1 Pro / 16 GB,
+macOS 26.7, Chrome 155.0.8059.85. Public unauthenticated HTTPS downloads and
+GitHub Pages-origin CORS were verified. The five model/tokenizer files total
+**206,696,682 bytes**, including **174,519,542 bytes** for q4 text graph+weights.
+The observed browser runtime path adds **27,460,856 bytes**, plus a
+**847,872-byte** locale index and the small manifest: about **236 MB** initially,
+not 175 MB total. Weights stay on the immutable Hugging Face/CDN URLs, not in
+Git or a Pages file. All Pages runtime files are below 100 MB.
+
+Two cold public download/load runs took **19.3–33.8 s**; cached model reload with
+Hugging Face blocked took **1.26–1.49 s**. Complete UI queries measured
+**457–488 ms** first and **335–346 ms** warm, including the 250 ms debounce.
+Five representative local query computations in warmed browser workers took
+about **65–94 ms**. CPU/browser vector cosines were above **0.9999999**, with
+maximum absolute component difference **1.8e-7**, across all five languages.
+Sampled Chrome browser/renderer/GPU-process RSS was about **1.7 GB** for one
+loaded model and first query (up to **2.2 GB** on another run), and **3.5 GB** peak in the test that temporarily
+holds two models for parity. This is a rough process aggregate, not isolated
+model allocation or an exact GPU-memory measurement. Mobile memory/performance,
+other GPU vendors and Firefox have not been established.
+
+**WebGPU is required for this export.** Actual Chrome WASM session creation
+fails with `Could not find an implementation for GatherBlockQuantized(1)`
+at `/model/embed_tokens/Gather_Quant`; the q8 graph uses the same operator.
+WebKit 26.0 on this machine exposes no WebGPU; the real browser check confirms
+the explicit unavailable message and functioning lexical directory. This is
+not a claim of Safari semantic support. There is no silent model substitution
+or pretend WASM fallback. Network, model/index and resource failures have
+localized retry/disable guidance and preserve keyword results, never a semantic
+success status. Loading/query deadlines and worker termination bound stalled
+work. Opt-in is not persisted across page visits.
+
+Cache Storage successfully retained the five immutable model files and a new
+worker queried successfully with their network blocked. This verifies **model
+cache reuse**, not a fully offline site: Pages HTML/runtime retention and browser
+cache quota/eviction remain outside that guarantee. Model revisions select new
+URLs; corpus/runtime changes select new `assets/<sha256>/` namespaces. No
+service worker or automatic cache deletion is introduced. Network traces during
+queries contain no inference requests; external GETs are model/tokenizer
+downloads only, with no query or catalog contents sent to a service.
+
+Reproduce without source ingestion or text regeneration:
+
+```sh
+npm ci
+npm run build:search-runtime
+python3 -m tools.catalog
+# Explicit manual local inference only; downloads checksum-verified text artifacts:
+npm run build:search-index
+python3 -m tools.catalog
+npm run evaluate:search -- .cache/search-evaluation.json
+node --test site/logic.test.mjs site/semantic.test.mjs
+python3 -m unittest discover -s tests
+python3 -m tools.publish
+node tests/semantic-browser.mjs
+```
+
+Index generation is **not** run by ordinary CI. Committed vectors permit offline,
+deterministic catalog/contract validation; npm installs and the runtime bundler
+need no model inference. `SEARCH_MODEL_PATH=/absolute/verified/model/directory/`
+can reuse a local download for builds/evaluation/browser checks.
+An explicit local CPU rebuild reproduced all five vector files byte-for-byte;
+one run took 298 s with about 710 MB maximum Node process RSS.
+The index builder assembles fresh, schema-validated authored records directly,
+not a potentially stale `site/data/catalog.json`; it can therefore rebuild after
+an intentional content edit even when publication correctly rejects old vectors.
+`SEARCH_BROWSER_LOCAL=1` redirects only pinned model downloads to checksum-verified
+local bytes while still running actual WebGPU inference; default browser tests
+exercise real public downloads. An installed Chrome is used;
+`WEBKIT_EXECUTABLE_PATH` can select an available Playwright WebKit launcher.
+No scheduled workflow or external inference endpoint is added. A later
+on-demand Actions index job remains separate work.
 
 ## Reuse and rights
 
