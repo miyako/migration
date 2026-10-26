@@ -2,8 +2,98 @@ import {
   LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
   versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath,
 } from './logic.mjs';
+import { corpusRows, hybridFilter } from './semantic.mjs';
+import { searchLabels } from './search-labels.mjs';
 
 const $ = id => document.getElementById(id);
+const meaning = { worker: null, enabled: false, status: 'off', detail: '', scores: null,
+  sequence: 0, generation: 0, timer: null, deadline: null };
+const meaningText = key => searchLabels[state.language][key]
+  .replace('{threshold}', state.catalog?.semantic_search.threshold ?? '');
+function renderMeaning() {
+  $('meaning-status').dataset.state = meaning.status;
+  $('meaning-label').textContent = meaningText('enable');
+  $('meaning-budget').textContent = meaningText('budget');
+  $('meaning-status').textContent = `${meaningText(meaning.status)}${meaning.detail ? ` ${meaning.detail}` : ''}`;
+  $('meaning-status').classList.toggle('error', ['error', 'unavailable'].includes(meaning.status));
+  $('meaning-cancel').textContent = meaningText('cancel');
+  $('meaning-cancel').hidden = !meaning.enabled;
+  $('meaning-enable').checked = meaning.enabled;
+  $('meaning-enable').disabled = state.catalog?.semantic_search.status !== 'opt-in';
+}
+function failMeaning(detail) {
+  clearTimeout(meaning.deadline);
+  clearTimeout(meaning.timer);
+  meaning.generation++;
+  meaning.status = 'error'; meaning.detail = detail; meaning.scores = null;
+  meaning.worker?.terminate(); meaning.worker = null;
+  renderMeaning(); renderChanges();
+}
+function disableMeaning() {
+  meaning.worker?.terminate();
+  clearTimeout(meaning.timer);
+  clearTimeout(meaning.deadline);
+  Object.assign(meaning, { worker: null, enabled: false, status: 'off', detail: '', scores: null,
+    sequence: meaning.sequence + 1, generation: meaning.generation + 1 });
+  renderMeaning();
+  renderChanges();
+}
+function queryMeaning() {
+  clearTimeout(meaning.timer);
+  if (['ready', 'searching'].includes(meaning.status)) clearTimeout(meaning.deadline);
+  meaning.sequence++;
+  meaning.scores = null;
+  if (!meaning.enabled || !['ready', 'searching'].includes(meaning.status)) return;
+  meaning.status = state.query.trim() ? 'searching' : 'ready';
+  renderMeaning();
+  if (!state.query.trim()) return;
+  const sequence = meaning.sequence;
+  meaning.timer = setTimeout(() => {
+    meaning.deadline = setTimeout(() => failMeaning('Timeout (60 s)'), 60000);
+    meaning.worker?.postMessage({
+      type: 'search', sequence, query: state.query, language: state.language,
+      rows: corpusRows(state.catalog, state.language),
+    });
+  }, 250);
+}
+async function enableMeaning() {
+  disableMeaning();
+  meaning.enabled = true;
+  meaning.status = 'loading';
+  renderMeaning();
+  const generation = meaning.generation;
+  meaning.deadline = setTimeout(() => failMeaning('Timeout (180 s)'), 180000);
+  try {
+    if (!navigator.gpu || !await navigator.gpu.requestAdapter()) {
+      if (generation === meaning.generation) {
+        clearTimeout(meaning.deadline);
+        meaning.status = 'unavailable'; renderMeaning();
+      }
+      return;
+    }
+    if (!meaning.enabled || generation !== meaning.generation) return;
+    meaning.worker = new Worker(new URL('./search-worker.mjs', import.meta.url), { type: 'module' });
+    meaning.worker.onerror = event => failMeaning(event.message);
+    meaning.worker.onmessage = ({ data }) => {
+      if (data.type === 'progress') {
+        meaning.detail = data.file ? `${data.file}${data.progress == null ? '' : ` ${Math.floor(data.progress)}%`}` : '';
+        renderMeaning();
+      } else if (data.type === 'ready') {
+        clearTimeout(meaning.deadline);
+        meaning.status = 'ready'; meaning.detail = '';
+        queryMeaning(); renderMeaning();
+      } else if (data.type === 'results' && data.sequence === meaning.sequence) {
+        clearTimeout(meaning.deadline);
+        meaning.scores = new Map(data.scores); meaning.status = 'ready'; meaning.detail = '';
+        renderMeaning(); renderChanges();
+      } else if (data.type === 'error') failMeaning(data.error);
+    };
+    meaning.worker.postMessage({ type: 'load', config: state.catalog.semantic_search });
+  } catch (error) {
+    if (generation !== meaning.generation) return;
+    failMeaning(String(error.message ?? error));
+  }
+}
 const PREFS = '4d-migration-preferences-v1';
 const state = {
   language: LANGUAGES.includes(navigator.language?.slice(0, 2)) ? navigator.language.slice(0, 2) : 'en',
@@ -199,9 +289,13 @@ function renderChanges() {
   }
   const projected = catalog.changes.map(change =>
     projectChangeForPath(change, catalog.sources, state.source, state.target, catalog.latest)).filter(Boolean);
-  const filtered = filterChanges(projected, {
+  const filters = {
     ...state, platforms: state.platforms ?? optionsFor('platforms'), modules: state.modules ?? optionsFor('modules'),
-  }, catalog.latest);
+  };
+  const lexical = filterChanges(projected, filters, catalog.latest);
+  const filtered = meaning.enabled && meaning.scores && state.query.trim()
+    ? hybridFilter(filterChanges(projected, { ...filters, query: '' }, catalog.latest),
+      lexical, meaning.scores, catalog.semantic_search.threshold) : lexical;
   $('result-count').textContent = t('resultCount', { count: filtered.length, total: catalog.changes.length });
   $('version-warning').hidden = state.target !== state.source;
   if (!filtered.length) {
@@ -221,6 +315,7 @@ function render() {
   renderSelectors();
   renderCheckboxes();
   renderChanges();
+  renderMeaning();
   setMessage(state.message, state.error);
 }
 
@@ -230,6 +325,7 @@ for (const [id, key] of [
 ]) {
   $(id).addEventListener(id === 'search' ? 'input' : 'change', event => {
     state[key] = event.target.value;
+    if (key === 'query') queryMeaning();
     if (key === 'source' || key === 'target') renderSelectors();
     renderChanges();
   });
@@ -244,6 +340,7 @@ for (const button of document.querySelectorAll('[data-group]')) {
 }
 $('language').addEventListener('change', event => {
   state.language = event.target.value;
+  queryMeaning();
   savePreferences();
   render();
 });
@@ -255,11 +352,17 @@ $('theme').addEventListener('change', event => {
 $('reset').addEventListener('click', () => {
   Object.assign(state, { query: '', platforms: null, modules: null, sort: 'severity' });
   $('search').value = '';
+  queryMeaning();
   $('sort').value = state.sort;
   renderCheckboxes();
   renderChanges();
 });
 render();
+$('meaning-enable').addEventListener('change', event => {
+  if (event.target.checked) enableMeaning();
+  else disableMeaning();
+});
+$('meaning-cancel').addEventListener('click', disableMeaning);
 try {
   const response = await fetch(new URL('./data/catalog.json', import.meta.url), { credentials: 'omit' });
   if (!response.ok) throw new Error('loadError');

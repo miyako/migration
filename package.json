@@ -1,0 +1,19 @@
+{
+  "name": "migration-local-search",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test site/logic.test.mjs site/semantic.test.mjs",
+    "build:search-runtime": "node tools/search-runtime.mjs",
+    "build:search-index": "node tools/search-index.mjs",
+    "test:search": "node --test site/semantic.test.mjs",
+    "evaluate:search": "node tools/search-evaluate.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.2",
+    "playwright": "1.56.1"
+  }
+}

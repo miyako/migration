@@ -36,7 +36,13 @@
       <p id="version-warning" class="warning" hidden data-i18n="versionWarning">Choose a later target to see new changes. Existing deprecations and changes with unknown versions remain visible.</p>
       <section class="toolbar" aria-labelledby="filters-heading">
         <h2 id="filters-heading" data-i18n="filters">Filters</h2>
-        <label class="search-field"><span data-i18n="search">Keyword or exact identifier</span><input id="search" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Command, identifier, or keyword"></label>
+        <label class="search-field"><span data-i18n="search">Keyword or exact identifier</span><input id="search" type="search" maxlength="1000" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Command, identifier, or keyword"></label>
+        <div class="meaning-search">
+          <label><input id="meaning-enable" type="checkbox"><span id="meaning-label"></span></label>
+          <p id="meaning-budget" class="muted"></p>
+          <p id="meaning-status" class="muted" role="status" aria-live="polite"></p>
+          <button id="meaning-cancel" type="button" class="secondary" hidden></button>
+        </div>
         <fieldset id="platform" class="filter-group">
           <legend data-i18n="platform">Platform</legend>
           <div class="filter-actions"><button type="button" class="secondary" data-group="platforms" data-select="all" data-i18n="selectAll" data-i18n-aria="selectPlatforms">Select all</button><button type="button" class="secondary" data-group="platforms" data-select="none" data-i18n="unselectAll" data-i18n-aria="unselectPlatforms">Unselect all</button></div>

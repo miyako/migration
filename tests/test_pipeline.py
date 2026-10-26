@@ -520,7 +520,7 @@ class Publication(unittest.TestCase):
                                        for change in self.document["changes"] for evidence in change["evidence"])]))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
-        self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
+        self.assertEqual(self.document["semantic_search"]["status"], "opt-in")
         self.assertEqual(len(self.document["changes"]), 202)
         self.assertEqual(self.document["coverage"]["atomic_changes"], 276)
         self.assertEqual(self.document["coverage"]["visible_entities"], 202)
