@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
   complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor } from './logic.mjs';
@@ -13,11 +14,14 @@ const change = (id, bucket = 'v20', extra = {}) => ({
   ...extra,
 });
 
-const editorialChanges = JSON.parse(await readFile(new URL('../data/changes.json', import.meta.url)));
-const editorialById = new Map(editorialChanges.map(record => [record.id, record]));
+execFileSync('python3', ['-m', 'tools.catalog'], { cwd: new URL('../', import.meta.url) });
+const editorialChanges = JSON.parse(await readFile(new URL('./data/catalog.json', import.meta.url))).changes;
+const editorialById = new Map(editorialChanges.flatMap(record =>
+  [record.id, ...record.member_ids].map(id => [id, record])));
 
 test('real catalog crosses historical removal buckets, not document editions or source-equal thresholds', () => {
-  assert.equal(editorialChanges.length, 68);
+  assert.equal(editorialChanges.length, 73);
+  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 138);
   for (const [id, from, to, included] of [
     ['chg-removed-xslt-apply-transformation', 'v17', 'v18', true],
     ['chg-removed-xslt-apply-transformation', 'v18', 'v20', false],
@@ -30,6 +34,16 @@ test('real catalog crosses historical removal buckets, not document editions or 
     ['chg-pdfcreator-driver-deprecation', 'v20', 'v21', true],
     ['chg-deprecated-c-integer', 'v20', 'v20', true],
     ['chg-project-save-list-call', 'v20', 'v21', true],
+    ['chg-removed-graph-table', 'v16', 'v18', false],
+    ['chg-deprecated-create-user-form', 'v20', 'v20', true],
+    ['chg-http-automatic-variable-assignment', 'v19', 'v20', true],
+    ['chg-form-get-parameter-disabled', 'v17', 'v18', true],
+    ['chg-form-get-parameter-disabled', 'v18', 'v20', false],
+    ['chg-altura-desktop-64bit-removal', 'v16', 'v17', true],
+    ['chg-altura-server-64bit-removal', 'v17', 'v18', false],
+    ['chg-4d-pack-full-screen-unavailable', 'v16', 'v17', true],
+    ['chg-ftp-progress-disabled', 'v17', 'v20', false],
+    ['chg-database-rsr-explicit-open', 'v20', 'v21', true],
   ]) {
     assert.equal(crossesVersion(editorialById.get(id), from, to, { release: '21 R4' }),
       included, `${id}: ${from} → ${to}`);
@@ -39,10 +53,11 @@ test('real catalog crosses historical removal buckets, not document editions or 
 test('real content search, severity and unknown remediation difficulty preserve semantics', () => {
   assert.deepEqual(filterChanges(editorialChanges, {
     source: 'v18', target: 'v19', query: 'OBJET FIXER ACTIVATION',
-  }).map(c => c.id), ['chg-removed-disable-button', 'chg-removed-enable-button']);
+  }).map(c => c.id), ['chg-group-button-enabled-state']);
   const modernPhp = filterChanges(editorialChanges, { source: 'v19', target: 'v20', query: 'PHP' });
-  assert.equal(modernPhp.length, 12);
-  assert.ok(modernPhp.every(c => c.id.startsWith('chg-bundled-php-')));
+  assert.equal(modernPhp.length, 1);
+  assert.equal(modernPhp[0].id, 'chg-group-bundled-php-modules');
+  assert.equal(modernPhp[0].member_ids.length, 12);
   const lingering = filterChanges(editorialChanges, { source: 'v20', target: 'v21' });
   assert.ok(lingering.some(c => c.id === 'chg-pdfcreator-driver-deprecation'));
   assert.ok(!lingering.some(c => c.id.startsWith('chg-removed-')));
@@ -52,6 +67,28 @@ test('real content search, severity and unknown remediation difficulty preserve 
   assert.ok(sorted.every(c => complexityForChange(c) === 'unknown'));
   assert.deepEqual(filterChanges(editorialChanges, { sort: 'complexity' }).map(c => c.id),
     sorted.map(c => c.id));
+});
+
+test('group searches retain individual IDs, command aliases and unique membership', () => {
+  const membership = editorialChanges.flatMap(c => c.member_ids);
+  assert.equal(new Set(membership).size, 138);
+  for (const id of membership) {
+    assert.deepEqual(filterChanges(editorialChanges, { source: 'unknown', query: id }).map(c => c.id),
+      [editorialById.get(id).id], id);
+  }
+  for (const query of ['DOM', 'LibXSLT', 'XMLreader', 'chg-bundled-php-zip-removal']) {
+    assert.deepEqual(filterChanges(editorialChanges, { source: 'v19', target: 'v20', query })
+      .filter(c => c.id === 'chg-group-bundled-php-modules').map(c => c.id),
+    ['chg-group-bundled-php-modules']);
+  }
+  const buttons = editorialById.get('chg-removed-enable-button');
+  assert.equal(buttons.members.length, 2);
+  assert.ok(buttons.evidence.length >= buttons.members[0].evidence.length);
+  const duplicate = structuredClone(buttons);
+  duplicate.id = 'another-group';
+  const document = { schema_version: 1, sources: [], changes: [buttons, duplicate],
+    coverage: {}, latest: {}, semantic_search: {} };
+  assert.throws(() => validateCatalog(document), /invalidCatalog/);
 });
 
 test('release buckets preserve major version and do not invent unknown versions', () => {

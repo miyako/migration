@@ -7,11 +7,26 @@
       "edition": "20",
       "meaning": "Discouraged, potentially removed later; not the same as removed now.",
       "official": {
-        "en": {"text": "Deprecated", "source_id": "legacy-v20-deprecated-en"},
-        "ja": {"text": "廃止予定", "source_id": "legacy-v20-deprecated-ja"},
-        "fr": {"text": "Obsolète", "source_id": "legacy-v20-deprecated-fr"},
-        "de": {"text": "Überholt", "source_id": "legacy-v20-deprecated-de"},
-        "es": {"text": "Obsoleto", "source_id": "legacy-v20-deprecated-es"}
+        "en": {
+          "text": "Deprecated",
+          "source_id": "legacy-v20-deprecated-en"
+        },
+        "ja": {
+          "text": "廃止予定",
+          "source_id": "legacy-v20-deprecated-ja"
+        },
+        "fr": {
+          "text": "Obsolète",
+          "source_id": "legacy-v20-deprecated-fr"
+        },
+        "de": {
+          "text": "Überholt",
+          "source_id": "legacy-v20-deprecated-de"
+        },
+        "es": {
+          "text": "Obsoleto",
+          "source_id": "legacy-v20-deprecated-es"
+        }
       }
     },
     {
@@ -19,11 +34,107 @@
       "edition": "20",
       "meaning": "No longer available in the indicated version; preserve exact release evidence.",
       "official": {
-        "en": {"text": "Removed", "source_id": "legacy-v20-deprecated-en"},
-        "ja": {"text": "削除", "source_id": "legacy-v20-deprecated-ja"},
-        "fr": {"text": "Supprimée", "source_id": "legacy-v20-deprecated-fr"},
-        "de": {"text": "Entfernt", "source_id": "legacy-v20-deprecated-de"},
-        "es": {"text": "Eliminado", "source_id": "legacy-v20-deprecated-es"}
+        "en": {
+          "text": "Removed",
+          "source_id": "legacy-v20-deprecated-en"
+        },
+        "ja": {
+          "text": "削除",
+          "source_id": "legacy-v20-deprecated-ja"
+        },
+        "fr": {
+          "text": "Supprimée",
+          "source_id": "legacy-v20-deprecated-fr"
+        },
+        "de": {
+          "text": "Entfernt",
+          "source_id": "legacy-v20-deprecated-de"
+        },
+        "es": {
+          "text": "Eliminado",
+          "source_id": "legacy-v20-deprecated-es"
+        }
+      }
+    },
+    {
+      "id": "dynamic-forms",
+      "edition": "20",
+      "meaning": "Recommended replacement for legacy user-form editing.",
+      "official": {
+        "en": {
+          "text": "Dynamic Forms",
+          "source_id": "legacy-v20-deprecated-en"
+        },
+        "fr": {
+          "text": "Formulaires dynamiques",
+          "source_id": "legacy-v20-deprecated-fr"
+        },
+        "de": {
+          "text": "Dynamische Formulare",
+          "source_id": "legacy-v20-deprecated-de"
+        },
+        "es": {
+          "text": "-",
+          "source_id": "legacy-v20-deprecated-es"
+        },
+        "ja": {
+          "text": "ダイナミックフォーム",
+          "source_id": "legacy-v20-deprecated-ja"
+        }
+      }
+    },
+    {
+      "id": "path-to-object",
+      "edition": "20",
+      "meaning": "Replacement for legacy pathname metadata handling.",
+      "official": {
+        "en": {
+          "text": "Path to object",
+          "source_id": "legacy-v20-deprecated-en"
+        },
+        "fr": {
+          "text": "Chemin vers objet",
+          "source_id": "legacy-v20-deprecated-fr"
+        },
+        "de": {
+          "text": "Path to object",
+          "source_id": "legacy-v20-deprecated-de"
+        },
+        "es": {
+          "text": "Path to object",
+          "source_id": "legacy-v20-deprecated-es"
+        },
+        "ja": {
+          "text": "Path to object",
+          "source_id": "legacy-v20-deprecated-ja"
+        }
+      }
+    },
+    {
+      "id": "object-to-path",
+      "edition": "20",
+      "meaning": "Replacement for legacy pathname construction.",
+      "official": {
+        "en": {
+          "text": "Object to path",
+          "source_id": "legacy-v20-deprecated-en"
+        },
+        "fr": {
+          "text": "Objet vers chemin",
+          "source_id": "legacy-v20-deprecated-fr"
+        },
+        "de": {
+          "text": "Object to path",
+          "source_id": "legacy-v20-deprecated-de"
+        },
+        "es": {
+          "text": "Object to path",
+          "source_id": "legacy-v20-deprecated-es"
+        },
+        "ja": {
+          "text": "Object to path",
+          "source_id": "legacy-v20-deprecated-ja"
+        }
       }
     }
   ],

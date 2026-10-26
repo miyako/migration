@@ -103,8 +103,10 @@ export function filterChanges(changes, filters = {}, latest = null) {
     if (!matchesOptions(change.platforms, platforms, platformOptions)) return false;
     if (!matchesOptions(change.modules, modules, moduleOptions)) return false;
     const searchable = [
-      change.id, ...(change.identifiers ?? []), change.action, change.threshold?.exact,
+      change.id, ...(change.member_ids ?? []), ...(change.identifiers ?? []), change.action, change.threshold?.exact,
       ...Object.values(change.localizations ?? {}).flatMap(l => [l.one_line, l.paragraph]),
+      ...(change.members ?? []).flatMap(member =>
+        Object.values(member.localizations ?? {}).flatMap(l => [l.one_line, l.paragraph])),
       ...(change.evidence ?? []).flatMap(e => [e.heading, e.excerpt]),
     ].filter(Boolean).join(' ').normalize('NFKC').toLocaleLowerCase();
     return terms.every(term => searchable.includes(term));
@@ -122,6 +124,7 @@ export function validateCatalog(data) {
       !data.coverage || !data.latest || !data.semantic_search ||
       (data.clarifications !== undefined && !Array.isArray(data.clarifications))) throw new Error('invalidCatalog');
   const ids = new Set();
+  const memberIds = new Set();
   for (const change of data.changes) {
     if (!change || typeof change.id !== 'string' || !change.id || ids.has(change.id) ||
         !change.threshold || !change.localizations || typeof change.localizations !== 'object' ||
@@ -129,6 +132,17 @@ export function validateCatalog(data) {
         ['platforms', 'modules', 'identifiers', 'evidence', 'notices'].some(key =>
           change[key] !== undefined && !Array.isArray(change[key]))) throw new Error('invalidCatalog');
     ids.add(change.id);
+    if (change.member_ids !== undefined) {
+      if (!Array.isArray(change.member_ids) || !change.member_ids.length ||
+          change.member_ids.some(id => typeof id !== 'string' || !id || memberIds.has(id)) ||
+          new Set(change.member_ids).size !== change.member_ids.length) throw new Error('invalidCatalog');
+      for (const id of change.member_ids) memberIds.add(id);
+      if (change.member_ids.length > 1 && (!Array.isArray(change.members) ||
+          change.members.length !== change.member_ids.length ||
+          change.members.some((member, index) => member?.id !== change.member_ids[index]))) {
+        throw new Error('invalidCatalog');
+      }
+    }
   }
   if (data.sources.some(source => !source || typeof source.id !== 'string') ||
       (data.clarifications ?? []).some(entry => !entry || typeof entry !== 'object')) throw new Error('invalidCatalog');

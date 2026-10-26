@@ -84,16 +84,22 @@ def run(base, screenshots, published):
         page.wait_for_selector("[data-change-id]")
         cdp.send("Network.setCacheDisabled", {"cacheDisabled": False})
         severity = {"blocking": 0, "high": 1, "medium": 2, "low": 3, "unknown": 4}
+        assert len(catalog["changes"]) == 73
+        assert catalog["coverage"]["atomic_changes"] == 138
+        # The default v16 -> v21 interval must not newly cross v14 disabling.
         expected = [c["id"] for c in sorted(catalog["changes"],
-                    key=lambda c: (severity[c["criticality"]], c["id"]))]
-        assert len(expected) == 68
+                    key=lambda c: (severity[c["criticality"]], c["id"]))
+                    if c["id"] != "chg-removed-graph-table"]
+        assert len(expected) == 72
         assert ids(page) == expected
         assert ids(page)[:2] == ["chg-colon-identifiers", "chg-object-notation-compliance"]
         # Real upgrade searches over the populated publication, not a fixture.
         page.select_option("#source-version", "v17")
         page.select_option("#target-version", "v18")
         page.fill("#search", "_o_XSLT APPLY TRANSFORMATION")
-        assert ids(page) == ["chg-removed-xslt-apply-transformation"]
+        assert ids(page) == ["chg-group-xslt-processing"]
+        page.fill("#search", "chg-removed-xslt-set-parameter")
+        assert ids(page) == ["chg-group-xslt-processing"]
         page.select_option("#target-version", "v20")
         page.select_option("#source-version", "v18")
         page.fill("#search", "_o_NO TRACE")
@@ -101,17 +107,33 @@ def run(base, screenshots, published):
         page.select_option("#source-version", "v19")
         assert ids(page) == []  # Not newly crossed when already at the removal bucket.
         page.fill("#search", "PHP")
-        assert {f"chg-bundled-php-{module}-removal" for module in
-                ("dom", "iconv", "libxml", "libxslt", "simplexml", "gd", "xml",
-                 "xmlreader", "xmlwriter", "wddx", "zlib", "zip")} <= set(ids(page))
-        assert "chg-removed-xslt-apply-transformation" not in ids(page)
+        assert ids(page) == ["chg-group-bundled-php-modules"]
+        page.fill("#search", "chg-bundled-php-zip-removal")
+        assert ids(page) == ["chg-group-bundled-php-modules"]
+        page.fill("#search", "PHP")
+        assert "chg-group-xslt-processing" not in ids(page)
         page.select_option("#source-version", "v20")
         page.fill("#search", "PDFCreator")
         assert ids(page) == ["chg-pdfcreator-driver-deprecation"]  # Continuing, not removed.
         page.select_option("#source-version", "v16")
         page.select_option("#target-version", "v21")
+        page.fill("#search", "_o_GRAPH TABLE")
+        assert ids(page) == []
+        page.fill("#search", "_o_CREATE USER FORM")
+        assert ids(page) == ["chg-group-user-forms"]
+        page.select_option("#source-version", "v20")
+        assert ids(page) == ["chg-group-user-forms"]  # Still a deprecation, not a removal.
+        page.fill("#search", "13.4")
+        assert "chg-http-automatic-variable-assignment" in ids(page)
+        page.select_option("#source-version", "v16")
+        page.select_option("#target-version", "v17")
+        page.fill("#search", "FTP_Progress")
+        assert ids(page) == ["chg-group-ftp-progress"]
+        page.fill("#search", "_o_AP FULL SCREEN")
+        assert ids(page) == ["chg-group-4d-pack-migration"]
+        page.select_option("#target-version", "v21")
         page.fill("#search", "OBJET FIXER ACTIVATION")
-        assert ids(page) == ["chg-removed-disable-button", "chg-removed-enable-button"]
+        assert ids(page) == ["chg-group-button-enabled-state"]
         page.fill("#search", "")
         assert ids(page) == expected
         assert page.locator("#sort option").all_text_contents() == ["Severity", "Complexity"]
@@ -169,10 +191,10 @@ def run(base, screenshots, published):
         # Unknown platforms retain conditional records, not known macOS/Windows ones.
         page.locator('[data-group=platforms][data-select=none]').click()
         page.locator('[name=platforms][value=unknown]').check()
-        assert {"chg-colon-identifiers", "chg-bundled-php-dom-removal",
+        assert {"chg-colon-identifiers", "chg-group-bundled-php-modules",
                 "chg-project-save-list-call"} <= set(ids(page))
         assert "chg-pdfcreator-driver-deprecation" not in ids(page)
-        assert "chg-odbc-driver-macos-removal" not in ids(page)
+        assert "chg-group-macos-native-connectors" not in ids(page)
         page.click("#reset")
         page.locator("[data-change-id]").first.get_by_text("Evidence", exact=True).click()
         assert page.locator(".evidence-list a").first.is_visible()
@@ -231,7 +253,9 @@ def run(base, screenshots, published):
                 ("moderate", "moderate", "low"), ("simple-b", "simple", "high"),
                 ("simple-a", "simple", "high"), ("severity-unknown", "unknown", "unknown")):
             record = deepcopy(catalog["changes"][0])
-            record.update(id=identifier, criticality=severity, platforms=["windows"],
+            record.pop("members", None)
+            record.update(id=identifier, member_ids=[identifier],
+                          criticality=severity, platforms=["windows"],
                           complexity={"level": level, "basis": "Test-only documented procedure.",
                                       "evidence_source_ids": [record["evidence"][0]["source_id"]]})
             fixture["changes"].append(record)

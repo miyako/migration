@@ -37,6 +37,22 @@ class Versions(unittest.TestCase):
 
 
 class Extraction(unittest.TestCase):
+    def test_legacy_bare_lists_inside_layout_tables_keep_context_and_stable_blocks(self):
+        start = """<html lang="en"><title>Guide</title><table><tr><td>
+        <h1>Guide</h1><h4>Scheduling</h4><div id="Paragraph_text_42"><p>Existing rule.</p>"""
+        end = "</div></td></tr></table></html>"
+        original = extract(start + end, "https://example.test/guide.en.html")
+        expanded = extract(start + """<ul><li>Since 16 R2, stop using scheduler selectors.</li>
+        <li>Resource choices:<ul><li>Save text in XLIFF.</li></ul></li></ul>
+        <p>Existing rule.</p>""" + end, "https://example.test/guide.en.html")
+        self.assertEqual(expanded["blocks"][0], original["blocks"][0])
+        self.assertEqual(len([b for b in expanded["blocks"] if b["text"] == "Existing rule."]), 1)
+        lists = [b for b in expanded["blocks"] if b["kind"] == "list_item"]
+        self.assertEqual([b["text"] for b in lists],
+                         ["Since 16 R2, stop using scheduler selectors.", "Resource choices:", "Save text in XLIFF."])
+        self.assertTrue(all(b["headings"] == ["Guide", "Scheduling"] and b["anchor"] == "42"
+                            and b["url"].endswith("#42") for b in lists))
+
     def test_generated_navigation_is_content_not_layout_or_soft404(self):
         html = """<html lang="en"><title>Language - What's new</title>
         <table><tr><td>Global manual navigation noise</td><td>
@@ -336,15 +352,16 @@ class ModernDocumentation(unittest.TestCase):
 
 
 class Registry(unittest.TestCase):
-    def test_all_39_seeds_and_verified_locations(self):
+    def test_all_41_seeds_and_verified_locations(self):
         config = load(ROOT / "data/sources.json")
         locations = load(ROOT / "data/source-locations.json")["locations"]
         entries = initial_registry(config, locations)
-        self.assertEqual(len(config["seeds"]), 39)
-        self.assertEqual(len(entries), 155)
-        self.assertEqual(len({e["id"] for e in entries}), 155)
+        self.assertEqual(len(config["seeds"]), 41)
+        self.assertEqual(len(entries), 165)
+        self.assertEqual(len({e["id"] for e in entries}), 165)
+        self.assertEqual(len({e["url"] for e in entries}), 165)
         for language in ("en", "fr", "de", "es", "ja"):
-            self.assertEqual(sum(e["language"] == language for e in entries), 39 if language == "en" else 26 if language == "de" else 30)
+            self.assertEqual(sum(e["language"] == language for e in entries), 41 if language == "en" else 28 if language == "de" else 32)
         self.assertEqual(sum(e["family"] == "blog-overview" for e in entries), 9)
         self.assertEqual(sum(e["family"] == "upgrade" for e in entries), 5)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["edition"], "18.2")
@@ -353,7 +370,7 @@ class Registry(unittest.TestCase):
         self.assertTrue(french["url"].endswith("/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"))
         self.assertEqual(french["discovery"]["chain"][0], config["archive_root"])
         self.assertEqual(french["discovery"]["chain"][-1], french["url"])
-        self.assertEqual(len(initial_registry(config)), 39, "Never fabricate untraced locale URLs")
+        self.assertEqual(len(initial_registry(config)), 41, "Never fabricate untraced locale URLs")
         self.assertEqual(sum(e.get("manual") == "language-reference" for e in entries), 50)
         self.assertEqual(sum(e.get("manual") == "design-reference" for e in entries), 15)
         self.assertEqual(sum(e["family"] == "whats-new" for e in entries), 40)
@@ -463,19 +480,26 @@ class Publication(unittest.TestCase):
 
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
-        self.assertEqual(self.document["coverage"]["english_seeds"], 39)
-        self.assertEqual(self.document["coverage"]["registered_sources"], 155)
-        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 155})
-        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 100, "navigation_index": 55})
+        self.assertEqual(self.document["coverage"]["english_seeds"], 41)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 165)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 165})
+        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 110, "navigation_index": 55})
         self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 16)
         self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 4)
         self.assertEqual(self.document["coverage"]["processed_source_ids"],
-                         sorted(f"legacy-v{v}-deprecated-{lang}"
-                                for v in (18, 19, 20) for lang in ("en", "fr", "de", "es", "ja")))
+                         sorted([f"legacy-v{v}-deprecated-{lang}"
+                                 for v in (18, 19, 20) for lang in ("en", "fr", "de", "es", "ja")]
+                                + [f"legacy-v{v}-deprecated-features-{lang}"
+                                   for v in (16, 17) for lang in ("en", "fr", "de", "es", "ja")]
+                                + [f"legacy-v{v}-quick-table-{lang}"
+                                   for v in (16, 17) for lang in ("en", "fr", "de", "es", "ja")]))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
-        self.assertEqual(len(self.document["changes"]), 68)
+        self.assertEqual(len(self.document["changes"]), 73)
+        self.assertEqual(self.document["coverage"]["atomic_changes"], 138)
+        self.assertEqual(self.document["coverage"]["visible_entities"], 73)
+        self.assertEqual(self.document["coverage"]["grouped_entities"], 22)
 
     def test_offline_reproducible_build(self):
         path = ROOT / "site/data/catalog.json"
