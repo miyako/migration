@@ -65,17 +65,23 @@ export function validComplexity(change) {
     value.evidence_source_ids.every(id => (change.evidence ?? []).some(e => e.source_id === id));
 }
 
+export function evidenceForLanguage(records, sources, language) {
+  const sourceLanguages = new Map(sources.map(source => [source.id, source.language]));
+  const localized = records.filter(record => sourceLanguages.get(record.source_id) === language);
+  return localized.length ? localized : records.filter(record => sourceLanguages.get(record.source_id) === 'en');
+}
+
 export function filterOptions(changes, key) {
-  const defaults = key === 'platforms' ? ['windows', 'macos', 'linux'] : [];
-  const values = [...new Set([...defaults, ...changes.flatMap(change => change[key] ?? [])])];
+  if (key === 'platforms') return ['windows', 'macos'];
+  const values = [...new Set(changes.flatMap(change => change[key] ?? []))];
   const known = values.filter(value => !['all', 'unknown'].includes(value)).sort();
   return (known.length || !values.includes('all') ? known : ['all']).concat('unknown');
 }
 
-function matchesOptions(values, selected, options) {
+function matchesOptions(values, selected, options, includeUnknown = false) {
   if (!selected.length) return false;
   const applicable = values?.length ? values : ['unknown'];
-  return applicable.some(value => value === 'all'
+  return applicable.some(value => value === 'all' || (includeUnknown && value === 'unknown')
     ? selected.some(option => option !== 'unknown' && options.includes(option))
     : selected.includes(value));
 }
@@ -100,7 +106,8 @@ export function filterChanges(changes, filters = {}, latest = null) {
   const terms = query.normalize('NFKC').toLocaleLowerCase().trim().split(/\s+/u).filter(Boolean);
   return changes.filter(change => {
     if (!crossesVersion(change, source, target, latest)) return false;
-    if (!matchesOptions(change.platforms, platforms, platformOptions)) return false;
+    if (!matchesOptions(change.platforms, platforms.filter(value => platformOptions.includes(value)),
+      platformOptions, true)) return false;
     if (!matchesOptions(change.modules, modules, moduleOptions)) return false;
     const searchable = [
       change.id, ...(change.member_ids ?? []), ...(change.identifiers ?? []), change.action, change.threshold?.exact,
@@ -152,7 +159,7 @@ export function validateCatalog(data) {
 export const translations = {
   en: {
     directoryTitle: 'Find your migration changes', versions: 'Versions', filters: 'Filters', topics: 'Topics',
-    versionDirection: 'From current version to target version', linux: 'Linux',
+    versionDirection: 'From current version to target version', otherTopics: 'Other',
     selectAll: 'Select all', unselectAll: 'Unselect all',
     selectPlatforms: 'Select all platforms', unselectPlatforms: 'Unselect all platforms',
     selectTopics: 'Select all topics', unselectTopics: 'Unselect all topics',
@@ -162,7 +169,7 @@ export const translations = {
     complexityBasis: 'Why this difficulty',
     summaryCaveat: 'This summary has not been independently checked. Verify the instructions in the linked source.',
     sourceCaveat: 'This source could not be checked. Open the link to verify the claim before acting.',
-    detailLanguageNote: 'Supporting details retain their original language.',
+    evidenceUnavailable: 'No evidence is available in this language or English.',
     emptyDirectory: 'Check your versions and filters. No results does not mean there are no migration issues.',
     'documentation-release-notes': 'Current official documentation · Release Notes',
     official_documentation: 'Official documentation', documentationChannel: 'Documentation route',
@@ -180,6 +187,9 @@ export const translations = {
     urlHistory: 'Superseded URL attempts (not missing translations)', archiveTrace: 'Verified archive link path', upgrade: 'Upgrade',
     actionBasis: 'Why this action',
     php: 'PHP', printing: 'Printing', windows: 'Windows', macos: 'macOS',
+    forms: 'Forms', logging: 'Logging', database: 'Database', backup: 'Backup',
+    mail: 'Mail', web: 'Web', 'file I/O': 'File I/O', 'plug-ins': 'Plug-ins',
+    ORDA: 'ORDA', XML: 'XML', '4D Write Pro': '4D Write Pro', '4D View Pro': '4D View Pro',
     latestFeature: 'Latest feature release', latestLts: 'Latest LTS release', releasedAt: 'Released on',
     featureChannelNote: 'Feature-release channel, not LTS or account-only hotfix/build verification.',
     discoveries: 'Discovered URLs (separate from registered sources)', discoveryNote: 'Pending discoveries have not been retrieved or included in registered-source retrieval totals.',
@@ -204,7 +214,7 @@ export const translations = {
   },
   fr: {
     directoryTitle: 'Trouvez les changements pour votre migration', versions: 'Versions', filters: 'Filtres', topics: 'Thèmes',
-    versionDirection: 'De la version actuelle à la version cible', linux: 'Linux',
+    versionDirection: 'De la version actuelle à la version cible', otherTopics: 'Autres',
     selectAll: 'Tout sélectionner', unselectAll: 'Tout désélectionner',
     selectPlatforms: 'Sélectionner toutes les plateformes', unselectPlatforms: 'Désélectionner toutes les plateformes',
     selectTopics: 'Sélectionner tous les thèmes', unselectTopics: 'Désélectionner tous les thèmes',
@@ -214,7 +224,7 @@ export const translations = {
     complexityBasis: 'Justification de la difficulté',
     summaryCaveat: 'Ce résumé n’a pas été vérifié indépendamment. Vérifiez les instructions dans la source liée.',
     sourceCaveat: 'Cette source n’a pas pu être vérifiée. Consultez le lien pour vérifier l’affirmation avant d’agir.',
-    detailLanguageNote: 'Les détails complémentaires conservent leur langue d’origine.',
+    evidenceUnavailable: 'Aucune preuve disponible dans cette langue ou en anglais.',
     emptyDirectory: 'Vérifiez vos versions et filtres. L’absence de résultats ne signifie pas l’absence de problèmes de migration.',
     'documentation-release-notes': 'Documentation officielle actuelle · Notes de version',
     official_documentation: 'Documentation officielle', documentationChannel: 'Route de documentation',
@@ -232,6 +242,9 @@ export const translations = {
     urlHistory: 'Tentatives d’URL remplacées (pas des traductions absentes)', archiveTrace: 'Chemin vérifié des liens de l’archive', upgrade: 'Mise à niveau',
     actionBasis: 'Pourquoi cette action',
     php: 'PHP', printing: 'Impression', windows: 'Windows', macos: 'macOS',
+    forms: 'Formulaires', logging: 'Journaux', database: 'Base de données', backup: 'Sauvegarde',
+    mail: 'Messagerie', web: 'Web', 'file I/O': 'Entrées/sorties de fichiers', 'plug-ins': 'Plug-ins',
+    ORDA: 'ORDA', XML: 'XML', '4D Write Pro': '4D Write Pro', '4D View Pro': '4D View Pro',
     latestFeature: 'Dernière version évolutive', latestLts: 'Dernière version LTS', releasedAt: 'Publié le',
     featureChannelNote: 'Canal des versions évolutives, distinct du LTS et sans vérification des correctifs/builds réservés aux comptes.',
     discoveries: 'URL découvertes (distinctes des sources enregistrées)', discoveryNote: 'Les découvertes en attente ne sont ni récupérées ni incluses dans les totaux de récupération des sources enregistrées.',
@@ -256,7 +269,7 @@ export const translations = {
   },
   de: {
     directoryTitle: 'Änderungen für Ihre Migration finden', versions: 'Versionen', filters: 'Filter', topics: 'Themen',
-    versionDirection: 'Von der aktuellen Version zur Zielversion', linux: 'Linux',
+    versionDirection: 'Von der aktuellen Version zur Zielversion', otherTopics: 'Sonstige',
     selectAll: 'Alle auswählen', unselectAll: 'Alle abwählen',
     selectPlatforms: 'Alle Plattformen auswählen', unselectPlatforms: 'Alle Plattformen abwählen',
     selectTopics: 'Alle Themen auswählen', unselectTopics: 'Alle Themen abwählen',
@@ -266,7 +279,7 @@ export const translations = {
     complexityBasis: 'Begründung der Schwierigkeit',
     summaryCaveat: 'Diese Zusammenfassung wurde nicht unabhängig geprüft. Prüfen Sie die Anweisungen in der verlinkten Quelle.',
     sourceCaveat: 'Diese Quelle konnte nicht geprüft werden. Prüfen Sie die Aussage über den Link, bevor Sie handeln.',
-    detailLanguageNote: 'Ergänzende Details bleiben in ihrer Originalsprache.',
+    evidenceUnavailable: 'Keine Belege in dieser Sprache oder auf Englisch verfügbar.',
     emptyDirectory: 'Prüfen Sie Versionen und Filter. Keine Ergebnisse bedeuten nicht, dass es keine Migrationsprobleme gibt.',
     'documentation-release-notes': 'Aktuelle offizielle Dokumentation · Versionshinweise',
     official_documentation: 'Offizielle Dokumentation', documentationChannel: 'Dokumentationsroute',
@@ -284,6 +297,9 @@ export const translations = {
     urlHistory: 'Ersetzte URL-Versuche (keine fehlenden Übersetzungen)', archiveTrace: 'Verifizierter Linkpfad im Archiv', upgrade: 'Upgrade',
     actionBasis: 'Begründung der Maßnahme',
     php: 'PHP', printing: 'Drucken', windows: 'Windows', macos: 'macOS',
+    forms: 'Formulare', logging: 'Protokollierung', database: 'Datenbank', backup: 'Datensicherung',
+    mail: 'E-Mail', web: 'Web', 'file I/O': 'Datei-Ein-/Ausgabe', 'plug-ins': 'Plug-ins',
+    ORDA: 'ORDA', XML: 'XML', '4D Write Pro': '4D Write Pro', '4D View Pro': '4D View Pro',
     latestFeature: 'Neueste Feature-Version', latestLts: 'Neueste LTS-Version', releasedAt: 'Veröffentlicht am',
     featureChannelNote: 'Feature-Versionskanal, nicht LTS; keine Prüfung kontogebundener Hotfixes/Builds.',
     discoveries: 'Entdeckte URLs (getrennt von registrierten Quellen)', discoveryNote: 'Ausstehende Entdeckungen wurden noch nicht abgerufen und sind nicht in den Abrufzahlen registrierter Quellen enthalten.',
@@ -308,7 +324,7 @@ export const translations = {
   },
   es: {
     directoryTitle: 'Encuentre los cambios para su migración', versions: 'Versiones', filters: 'Filtros', topics: 'Temas',
-    versionDirection: 'De la versión actual a la versión de destino', linux: 'Linux',
+    versionDirection: 'De la versión actual a la versión de destino', otherTopics: 'Otros',
     selectAll: 'Seleccionar todo', unselectAll: 'Deseleccionar todo',
     selectPlatforms: 'Seleccionar todas las plataformas', unselectPlatforms: 'Deseleccionar todas las plataformas',
     selectTopics: 'Seleccionar todos los temas', unselectTopics: 'Deseleccionar todos los temas',
@@ -318,7 +334,7 @@ export const translations = {
     complexityBasis: 'Justificación de la dificultad',
     summaryCaveat: 'Este resumen no se ha verificado de forma independiente. Verifique las instrucciones en la fuente enlazada.',
     sourceCaveat: 'No se pudo verificar esta fuente. Abra el enlace para comprobar la afirmación antes de actuar.',
-    detailLanguageNote: 'Los detalles complementarios conservan su idioma original.',
+    evidenceUnavailable: 'No hay pruebas disponibles en este idioma ni en inglés.',
     emptyDirectory: 'Revise las versiones y los filtros. La ausencia de resultados no significa que no haya problemas de migración.',
     'documentation-release-notes': 'Documentación oficial actual · Notas de versión',
     official_documentation: 'Documentación oficial', documentationChannel: 'Ruta de documentación',
@@ -336,6 +352,9 @@ export const translations = {
     urlHistory: 'Intentos de URL sustituidos (no traducciones ausentes)', archiveTrace: 'Ruta de enlaces del archivo verificada', upgrade: 'Actualización',
     actionBasis: 'Motivo de esta medida',
     php: 'PHP', printing: 'Impresión', windows: 'Windows', macos: 'macOS',
+    forms: 'Formularios', logging: 'Registros', database: 'Base de datos', backup: 'Copia de seguridad',
+    mail: 'Correo', web: 'Web', 'file I/O': 'Entrada/salida de archivos', 'plug-ins': 'Plug-ins',
+    ORDA: 'ORDA', XML: 'XML', '4D Write Pro': '4D Write Pro', '4D View Pro': '4D View Pro',
     latestFeature: 'Última versión de funciones', latestLts: 'Última versión LTS', releasedAt: 'Publicado el',
     featureChannelNote: 'Canal de versiones de funciones, no LTS ni verificación de correcciones/compilaciones exclusivas de cuentas.',
     discoveries: 'URL descubiertas (separadas de las fuentes registradas)', discoveryNote: 'Los descubrimientos pendientes no se han recuperado ni se incluyen en los totales de recuperación de fuentes registradas.',
@@ -360,7 +379,7 @@ export const translations = {
   },
   ja: {
     directoryTitle: '移行に関係する変更を探す', versions: 'バージョン', filters: 'フィルター', topics: '分野',
-    versionDirection: '現在のバージョンから移行先のバージョンへ', linux: 'Linux',
+    versionDirection: '現在のバージョンから移行先のバージョンへ', otherTopics: 'その他',
     selectAll: 'すべて選択', unselectAll: 'すべて選択解除',
     selectPlatforms: 'すべてのプラットフォームを選択', unselectPlatforms: 'すべてのプラットフォームの選択を解除',
     selectTopics: 'すべての分野を選択', unselectTopics: 'すべての分野の選択を解除',
@@ -370,7 +389,7 @@ export const translations = {
     complexityBasis: '難易度の根拠',
     summaryCaveat: 'この要約は第三者による確認を受けていません。リンク先の出典で対応内容を確認してください。',
     sourceCaveat: 'この出典は確認できませんでした。対応する前にリンク先で内容を確認してください。',
-    detailLanguageNote: '補足の詳細は原文の言語で表示します。',
+    evidenceUnavailable: 'この言語または英語の根拠はありません。',
     emptyDirectory: 'バージョンとフィルターを確認してください。結果がなくても移行の問題がないとは限りません。',
     'documentation-release-notes': '現行の公式ドキュメント · リリースノート',
     official_documentation: '公式ドキュメント', documentationChannel: 'ドキュメントの URL 系統',
@@ -388,6 +407,9 @@ export const translations = {
     urlHistory: '置き換え済みの URL 試行（翻訳の欠落ではありません）', archiveTrace: '確認済みのアーカイブ内リンク経路', upgrade: 'アップグレード',
     actionBasis: '対応の根拠',
     php: 'PHP', printing: '印刷', windows: 'Windows', macos: 'macOS',
+    forms: 'フォーム', logging: 'ログ', database: 'データベース', backup: 'バックアップ',
+    mail: 'メール', web: 'Web', 'file I/O': 'ファイル入出力', 'plug-ins': 'プラグイン',
+    ORDA: 'ORDA', XML: 'XML', '4D Write Pro': '4D Write Pro', '4D View Pro': '4D View Pro',
     latestFeature: '最新フィーチャーリリース', latestLts: '最新 LTS リリース', releasedAt: 'リリース日',
     featureChannelNote: 'フィーチャーリリースの公開チャネルです。LTS とは別であり、アカウント限定の修正・ビルドを検証するものではありません。',
     discoveries: '発見された URL（登録済み出典とは別集計）', discoveryNote: '未処理の発見 URL は未取得であり、登録済み出典の取得件数には含まれません。',

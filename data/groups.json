@@ -310,8 +310,8 @@
         },
         "fr": {
           "one_line": "Remplacer les anciennes zones de graphe par du SVG",
-          "paragraph": "C_GRAPHE et la sortie de GRAPHE dans une zone 4D Graph sont obsolètes depuis v12. Générez une image SVG avec GRAPHE au lieu de maintenir l’ancien traitement de zone. GRAPHE n’est pas globalement supprimé et ces obsolescences restent distinctes de la désactivation antérieure de GRAPH TABLE.",
-          "action": "C_GRAPHE et la sortie de GRAPHE dans une zone 4D Graph sont obsolètes depuis v12. Générez une image SVG avec GRAPHE au lieu de maintenir l’ancien traitement de zone. GRAPHE n’est pas globalement supprimé et ces obsolescences restent distinctes de la désactivation antérieure de GRAPH TABLE.",
+          "paragraph": "C_GRAPHE et la sortie de GRAPHE dans une zone 4D Graph sont obsolètes depuis v12. Générez une image SVG avec GRAPHE au lieu de maintenir l’ancien traitement de zone. GRAPHE n’est pas globalement supprimé et ces obsolescences restent distinctes de la désactivation antérieure de GRAPHE SUR TABLE.",
+          "action": "C_GRAPHE et la sortie de GRAPHE dans une zone 4D Graph sont obsolètes depuis v12. Générez une image SVG avec GRAPHE au lieu de maintenir l’ancien traitement de zone. GRAPHE n’est pas globalement supprimé et ces obsolescences restent distinctes de la désactivation antérieure de GRAPHE SUR TABLE.",
           "provenance": "generated_candidate"
         },
         "de": {
@@ -1010,6 +1010,232 @@
           "one_line": "従来の 4D Mobile の REST アクセスを ORDA へ移す",
           "paragraph": "従来の 4D Mobile 機能と MOBILE Return selection は v18 から非推奨です。該当する REST データアクセスを一つの接続機能の移行として ORDA と 4D REST Server へ置き換えてください。モバイル製品全体の削除ではなく、出典には削除バージョンも示されていません。",
           "action": "従来の 4D Mobile 機能と MOBILE Return selection は v18 から非推奨です。該当する REST データアクセスを一つの接続機能の移行として ORDA と 4D REST Server へ置き換えてください。モバイル製品全体の削除ではなく、出典には削除バージョンも示されていません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-v19-compiler-settings",
+      "member_ids": [
+        "chg-v19-compiler-object-notation",
+        "chg-v19-compiler-unicode-methods"
+      ],
+      "evidence_from": [],
+      "reason": "One feature and shared remediation with identical cutoff, type, detection stage, severity, platform and format; every atomic member retains its identifiers and evidence.",
+      "conditions": [
+        "From v19, compilation fails if object notation or Unicode method storage is off. Make the code compliant and enable both Compatibility settings. This compiler requirement is distinct from v20's converted-binary object-notation requirement after successful opening; v18/v19 compatibility manuals already describe Unicode method storage as always active."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Enable object notation and Unicode methods before compilation",
+          "paragraph": "From v19, compilation fails if object notation or Unicode method storage is off. Make the code compliant and enable both Compatibility settings. This compiler requirement is distinct from v20's converted-binary object-notation requirement after successful opening; v18/v19 compatibility manuals already describe Unicode method storage as always active.",
+          "action": "From v19, compilation fails if object notation or Unicode method storage is off. Make the code compliant and enable both Compatibility settings. This compiler requirement is distinct from v20's converted-binary object-notation requirement after successful opening; v18/v19 compatibility manuals already describe Unicode method storage as always active.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Activer notation objet et méthodes Unicode avant compilation",
+          "paragraph": "Depuis v19, la compilation échoue si la notation objet ou l’enregistrement Unicode des méthodes est désactivé. Rendez le code compatible et activez les deux réglages Compatibilité. Cette exigence du compilateur diffère de celle de v20 pour les bases binaires converties après ouverture réussie ; les manuels v18/v19 décrivent déjà l’enregistrement Unicode comme permanent.",
+          "action": "Depuis v19, la compilation échoue si la notation objet ou l’enregistrement Unicode des méthodes est désactivé. Rendez le code compatible et activez les deux réglages Compatibilité. Cette exigence du compilateur diffère de celle de v20 pour les bases binaires converties après ouverture réussie ; les manuels v18/v19 décrivent déjà l’enregistrement Unicode comme permanent.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Objektnotation und Unicode-Methoden vor Kompilierung aktivieren",
+          "paragraph": "Ab v19 scheitert die Kompilierung ohne Objektnotation oder Unicode-Methodenspeicherung. Passen Sie den Code an und aktivieren Sie beide Kompatibilitätseinstellungen. Dies ist von der v20-Anforderung für geöffnete konvertierte Binärdatenbanken getrennt; die v18/v19-Handbücher beschreiben Unicode-Methodenspeicherung bereits als immer aktiv.",
+          "action": "Ab v19 scheitert die Kompilierung ohne Objektnotation oder Unicode-Methodenspeicherung. Passen Sie den Code an und aktivieren Sie beide Kompatibilitätseinstellungen. Dies ist von der v20-Anforderung für geöffnete konvertierte Binärdatenbanken getrennt; die v18/v19-Handbücher beschreiben Unicode-Methodenspeicherung bereits als immer aktiv.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Activar notación objeto y métodos Unicode antes de compilar",
+          "paragraph": "Desde v19, la compilación falla si están desactivadas la notación objeto o la escritura Unicode de métodos. Adapte el código y active ambos ajustes de Compatibilidad. Es distinto del requisito v20 para bases binarias convertidas ya abiertas; los manuales v18/v19 ya describen el guardado Unicode como permanente.",
+          "action": "Desde v19, la compilación falla si están desactivadas la notación objeto o la escritura Unicode de métodos. Adapte el código y active ambos ajustes de Compatibilidad. Es distinto del requisito v20 para bases binarias convertidas ya abiertas; los manuales v18/v19 ya describen el guardado Unicode como permanente.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "コンパイル前にオブジェクト記法と Unicode メソッド保存を有効にする",
+          "paragraph": "v19 以降はオブジェクト記法またはメソッドの Unicode 保存が無効だとコンパイルエラーになります。コードを適合させ、互換性設定を有効にしてください。これは正常に開いた変換済みバイナリに対する v20 の要件とは別です。v18/v19 の互換性マニュアルでは既に Unicode 保存は常時有効と説明されています。",
+          "action": "v19 以降はオブジェクト記法またはメソッドの Unicode 保存が無効だとコンパイルエラーになります。コードを適合させ、互換性設定を有効にしてください。これは正常に開いた変換済みバイナリに対する v20 の要件とは別です。v18/v19 の互換性マニュアルでは既に Unicode 保存は常時有効と説明されています。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-base64-status",
+      "member_ids": [
+        "chg-base64-encode-ok",
+        "chg-base64-decode-ok"
+      ],
+      "evidence_from": [],
+      "reason": "One feature and shared remediation with identical cutoff, type, detection stage, severity, platform and format; every atomic member retains its identifiers and evidence.",
+      "conditions": [
+        "From 18 R4, neither BASE64 ENCODE nor BASE64 DECODE changes OK. Replace tests that assume these commands set that variable with checks appropriate to the expected result; the commands themselves remain available."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Stop using OK as the Base64 result indicator",
+          "paragraph": "From 18 R4, neither BASE64 ENCODE nor BASE64 DECODE changes OK. Replace tests that assume these commands set that variable with checks appropriate to the expected result; the commands themselves remain available.",
+          "action": "From 18 R4, neither BASE64 ENCODE nor BASE64 DECODE changes OK. Replace tests that assume these commands set that variable with checks appropriate to the expected result; the commands themselves remain available.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Ne plus utiliser OK comme résultat Base64",
+          "paragraph": "Depuis 18 R4, ni ENCODER BASE64 ni DECODER BASE64 ne modifie OK. Remplacez les tests supposant que ces commandes définissent cette variable par un contrôle du résultat attendu ; les commandes restent disponibles.",
+          "action": "Depuis 18 R4, ni ENCODER BASE64 ni DECODER BASE64 ne modifie OK. Remplacez les tests supposant que ces commandes définissent cette variable par un contrôle du résultat attendu ; les commandes restent disponibles.",
+          "provenance": "generated_candidate",
+          "conditions": [
+            "From 18 R4, neither ENCODER BASE64 nor DECODER BASE64 changes OK. Replace tests that assume these commands set that variable with checks appropriate to the expected result; the commands themselves remain available."
+          ]
+        },
+        "de": {
+          "one_line": "OK nicht mehr als Base64-Ergebnis verwenden",
+          "paragraph": "Ab 18 R4 ändern weder BASE64 ENCODE noch BASE64 DECODE die Variable OK. Ersetzen Sie davon abhängige Tests durch geeignete Ergebnisprüfungen; die Befehle bleiben verfügbar.",
+          "action": "Ab 18 R4 ändern weder BASE64 ENCODE noch BASE64 DECODE die Variable OK. Ersetzen Sie davon abhängige Tests durch geeignete Ergebnisprüfungen; die Befehle bleiben verfügbar.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "No usar OK como indicador del resultado Base64",
+          "paragraph": "Desde 18 R4, ni BASE64 ENCODE ni BASE64 DECODE modifica OK. Sustituya las pruebas que dependían de esa variable por comprobaciones del resultado esperado; los comandos siguen disponibles.",
+          "action": "Desde 18 R4, ni BASE64 ENCODE ni BASE64 DECODE modifica OK. Sustituya las pruebas que dependían de esa variable por comprobaciones del resultado esperado; los comandos siguen disponibles.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "Base64 処理の結果判定に OK を使わない",
+          "paragraph": "18 R4 以降、BASE64 ENCODE と BASE64 DECODE は OK を変更しません。これらが OK を設定すると仮定する判定を、期待する結果に適した確認へ変更してください。コマンド自体は引き続き利用できます。",
+          "action": "18 R4 以降、BASE64 ENCODE と BASE64 DECODE は OK を変更しません。これらが OK を設定すると仮定する判定を、期待する結果に適した確認へ変更してください。コマンド自体は引き続き利用できます。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-empty-entity-aggregates",
+      "member_ids": [
+        "chg-entity-min-empty-undefined",
+        "chg-entity-max-empty-undefined",
+        "chg-entity-average-empty-undefined"
+      ],
+      "evidence_from": [],
+      "reason": "One feature and shared remediation with identical cutoff, type, detection stage, severity, platform and format; every atomic member retains its identifiers and evidence.",
+      "conditions": [
+        "From 18 R6, min(), max() and average() on an empty entity selection return Undefined instead of Null. Adapt empty-result tests and downstream calculations together; nonempty selections are not described as changed."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Handle Undefined for empty entity-selection aggregates",
+          "paragraph": "From 18 R6, min(), max() and average() on an empty entity selection return Undefined instead of Null. Adapt empty-result tests and downstream calculations together; nonempty selections are not described as changed.",
+          "action": "From 18 R6, min(), max() and average() on an empty entity selection return Undefined instead of Null. Adapt empty-result tests and downstream calculations together; nonempty selections are not described as changed.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Gérer Indéfini pour les agrégats de sélections vides",
+          "paragraph": "Depuis 18 R6, min(), max() et average() sur une sélection d’entités vide renvoient Indéfini au lieu de Null. Adaptez ensemble les tests de résultat vide et les calculs suivants ; aucune modification n’est indiquée pour les sélections non vides.",
+          "action": "Depuis 18 R6, min(), max() et average() sur une sélection d’entités vide renvoient Indéfini au lieu de Null. Adaptez ensemble les tests de résultat vide et les calculs suivants ; aucune modification n’est indiquée pour les sélections non vides.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Undefined bei Aggregaten leerer Entity-Selektionen behandeln",
+          "paragraph": "Ab 18 R6 liefern min(), max() und average() für leere Entity-Selektionen Undefined statt Null. Passen Sie Leerwertprüfungen und Folgeoperationen gemeinsam an; für nichtleere Selektionen ist keine Änderung genannt.",
+          "action": "Ab 18 R6 liefern min(), max() und average() für leere Entity-Selektionen Undefined statt Null. Passen Sie Leerwertprüfungen und Folgeoperationen gemeinsam an; für nichtleere Selektionen ist keine Änderung genannt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Gestionar Undefined en agregados de selecciones vacías",
+          "paragraph": "Desde 18 R6, min(), max() y average() sobre una selección de entidades vacía devuelven Undefined en vez de Null. Adapte las pruebas de resultado vacío y los cálculos posteriores; no se describe un cambio para selecciones no vacías.",
+          "action": "Desde 18 R6, min(), max() y average() sobre una selección de entidades vacía devuelven Undefined en vez de Null. Adapte las pruebas de resultado vacío y los cálculos posteriores; no se describe un cambio para selecciones no vacías.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "空のエンティティセレクション集計で Undefined を扱う",
+          "paragraph": "18 R6 以降、空のエンティティセレクションの min()、max()、average() は Null ではなく Undefined を返します。空の結果判定と後続計算をまとめて対応してください。空でないセレクションの変更は記載されていません。",
+          "action": "18 R6 以降、空のエンティティセレクションの min()、max()、average() は Null ではなく Undefined を返します。空の結果判定と後続計算をまとめて対応してください。空でないセレクションの変更は記載されていません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-requests-log-format",
+      "member_ids": [
+        "chg-requests-log-fields",
+        "chg-requests-log-microseconds"
+      ],
+      "evidence_from": [],
+      "reason": "One feature and shared remediation with identical cutoff, type, detection stage, severity, platform and format; every atomic member retains its identifiers and evidence.",
+      "conditions": [
+        "From 17 R5, 4DRequestsLog adds three fields and expresses durations in microseconds rather than milliseconds. Update affected column mappings and unit conversions in log-analysis tools; no action is required for applications that do not parse these logs."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Update 4DRequestsLog parsers",
+          "paragraph": "From 17 R5, 4DRequestsLog adds three fields and expresses durations in microseconds rather than milliseconds. Update affected column mappings and unit conversions in log-analysis tools; no action is required for applications that do not parse these logs.",
+          "action": "From 17 R5, 4DRequestsLog adds three fields and expresses durations in microseconds rather than milliseconds. Update affected column mappings and unit conversions in log-analysis tools; no action is required for applications that do not parse these logs.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Adapter les analyseurs de 4DRequestsLog",
+          "paragraph": "Depuis 17 R5, 4DRequestsLog ajoute trois champs et exprime les durées en microsecondes au lieu de millisecondes. Adaptez les colonnes et conversions d’unités des outils d’analyse concernés ; aucune action pour les applications qui ne les analysent pas.",
+          "action": "Depuis 17 R5, 4DRequestsLog ajoute trois champs et exprime les durées en microsecondes au lieu de millisecondes. Adaptez les colonnes et conversions d’unités des outils d’analyse concernés ; aucune action pour les applications qui ne les analysent pas.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "4DRequestsLog-Parser anpassen",
+          "paragraph": "Ab 17 R5 enthält 4DRequestsLog drei zusätzliche Felder und Zeitdauern in Mikrosekunden statt Millisekunden. Passen Sie betroffene Spaltenzuordnungen und Einheitenumrechnungen an; ohne eigene Logauswertung ist keine Änderung nötig.",
+          "action": "Ab 17 R5 enthält 4DRequestsLog drei zusätzliche Felder und Zeitdauern in Mikrosekunden statt Millisekunden. Passen Sie betroffene Spaltenzuordnungen und Einheitenumrechnungen an; ohne eigene Logauswertung ist keine Änderung nötig.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Actualizar analizadores de 4DRequestsLog",
+          "paragraph": "Desde 17 R5, 4DRequestsLog añade tres campos y expresa duraciones en microsegundos en vez de milisegundos. Adapte columnas y conversiones de unidades de sus analizadores; no se requiere acción si no analiza esos registros.",
+          "action": "Desde 17 R5, 4DRequestsLog añade tres campos y expresa duraciones en microsegundos en vez de milisegundos. Adapte columnas y conversiones de unidades de sus analizadores; no se requiere acción si no analiza esos registros.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "4DRequestsLog の解析を更新する",
+          "paragraph": "17 R5 以降、4DRequestsLog にはフィールドが三つ追加され、時間の単位はミリ秒からマイクロ秒になります。該当するログ解析ツールのカラム対応と単位換算を更新してください。これらを解析しないアプリケーションには修正は不要です。",
+          "action": "17 R5 以降、4DRequestsLog にはフィールドが三つ追加され、時間の単位はミリ秒からマイクロ秒になります。該当するログ解析ツールのカラム対応と単位換算を更新してください。これらを解析しないアプリケーションには修正は不要です。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-v19-log-format",
+      "member_ids": [
+        "chg-debug-log-columns-v19",
+        "chg-diagnostic-log-name-v19",
+        "chg-log-time-iso8601-v19",
+        "chg-server-log-suffix-v19"
+      ],
+      "evidence_from": [],
+      "reason": "One feature and shared remediation with identical cutoff, type, detection stage, severity, platform and format; every atomic member retains its identifiers and evidence.",
+      "conditions": [
+        "In v19, tabular debug logs gain column names and reordered fields, the diagnostic log becomes 4DDiagnosticLog.txt, all log times use ISO 8601, and server files gain a Server suffix. Update affected parsers and file matching as one logging migration, not the logging code of every application."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Adapt v19 log readers and file discovery",
+          "paragraph": "In v19, tabular debug logs gain column names and reordered fields, the diagnostic log becomes 4DDiagnosticLog.txt, all log times use ISO 8601, and server files gain a Server suffix. Update affected parsers and file matching as one logging migration, not the logging code of every application.",
+          "action": "In v19, tabular debug logs gain column names and reordered fields, the diagnostic log becomes 4DDiagnosticLog.txt, all log times use ISO 8601, and server files gain a Server suffix. Update affected parsers and file matching as one logging migration, not the logging code of every application.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Adapter la lecture et la recherche des journaux v19",
+          "paragraph": "En v19, les journaux de débogage tabulaires reçoivent des noms de colonnes et un ordre modifié ; le diagnostic devient 4DDiagnosticLog.txt, les dates suivent ISO 8601 et les fichiers serveur portent le suffixe Server. Adaptez les analyseurs et recherches concernés, pas toutes les applications.",
+          "action": "En v19, les journaux de débogage tabulaires reçoivent des noms de colonnes et un ordre modifié ; le diagnostic devient 4DDiagnosticLog.txt, les dates suivent ISO 8601 et les fichiers serveur portent le suffixe Server. Adaptez les analyseurs et recherches concernés, pas toutes les applications.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Logleser und Dateisuche für v19 anpassen",
+          "paragraph": "In v19 ändern sich Spaltennamen und Feldreihenfolge tabellarischer Debuglogs; das Diagnoselog heißt 4DDiagnosticLog.txt, alle Logzeiten verwenden ISO 8601 und Serverdateien erhalten den Zusatz Server. Aktualisieren Sie betroffene Parser und Suchmuster gemeinsam.",
+          "action": "In v19 ändern sich Spaltennamen und Feldreihenfolge tabellarischer Debuglogs; das Diagnoselog heißt 4DDiagnosticLog.txt, alle Logzeiten verwenden ISO 8601 und Serverdateien erhalten den Zusatz Server. Aktualisieren Sie betroffene Parser und Suchmuster gemeinsam.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Adaptar lectores y búsqueda de registros v19",
+          "paragraph": "En v19 cambian nombres y orden de columnas del registro tabular, el diagnóstico pasa a 4DDiagnosticLog.txt, las fechas usan ISO 8601 y los archivos de servidor llevan el sufijo Server. Adapte analizadores y patrones afectados como una sola migración de registros.",
+          "action": "En v19 cambian nombres y orden de columnas del registro tabular, el diagnóstico pasa a 4DDiagnosticLog.txt, las fechas usan ISO 8601 y los archivos de servidor llevan el sufijo Server. Adapte analizadores y patrones afectados como una sola migración de registros.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "v19 のログ読み取りとファイル検索を更新する",
+          "paragraph": "v19 では表形式デバッグログのカラム名・順序、診断ログ名 4DDiagnosticLog.txt、全ログの ISO 8601 時刻表記、サーバーログの Server 接尾辞が変更点です。該当する解析とファイル検索を一つのログ移行として更新し、全アプリに修正を要求しないでください。",
+          "action": "v19 では表形式デバッグログのカラム名・順序、診断ログ名 4DDiagnosticLog.txt、全ログの ISO 8601 時刻表記、サーバーログの Server 接尾辞が変更点です。該当する解析とファイル検索を一つのログ移行として更新し、全アプリに修正を要求しないでください。",
           "provenance": "generated_candidate"
         }
       }

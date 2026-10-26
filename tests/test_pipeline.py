@@ -15,7 +15,8 @@ from tools.catalog import apply_overrides, bucket, build, merge_candidates, vali
 from tools.ingest import (availability, CurlResponse, DOM, extract, fetch_one, initial_registry,
                           merge_registry, load, ROOT, documentation_route, source_availability,
                           verify_documentation_locale, save, EXTRACTOR_VERSION)
-from tools.discover_archive import ArchiveNavigator, directory_links, document_identity, matching_documents
+from tools.discover_archive import (ArchiveNavigator, directory_links, document_identity,
+                                    matching_documents, retain_article_discovery)
 from tools.discover_docs import linked_locales
 
 
@@ -352,16 +353,16 @@ class ModernDocumentation(unittest.TestCase):
 
 
 class Registry(unittest.TestCase):
-    def test_all_41_seeds_and_verified_locations(self):
+    def test_all_48_seeds_and_verified_locations(self):
         config = load(ROOT / "data/sources.json")
         locations = load(ROOT / "data/source-locations.json")["locations"]
         entries = initial_registry(config, locations)
-        self.assertEqual(len(config["seeds"]), 41)
-        self.assertEqual(len(entries), 165)
-        self.assertEqual(len({e["id"] for e in entries}), 165)
-        self.assertEqual(len({e["url"] for e in entries}), 165)
+        self.assertEqual(len(config["seeds"]), 48)
+        self.assertEqual(len(entries), 200)
+        self.assertEqual(len({e["id"] for e in entries}), 200)
+        self.assertEqual(len({e["url"] for e in entries}), 200)
         for language in ("en", "fr", "de", "es", "ja"):
-            self.assertEqual(sum(e["language"] == language for e in entries), 41 if language == "en" else 28 if language == "de" else 32)
+            self.assertEqual(sum(e["language"] == language for e in entries), 48 if language == "en" else 35 if language == "de" else 39)
         self.assertEqual(sum(e["family"] == "blog-overview" for e in entries), 9)
         self.assertEqual(sum(e["family"] == "upgrade" for e in entries), 5)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["edition"], "18.2")
@@ -370,9 +371,10 @@ class Registry(unittest.TestCase):
         self.assertTrue(french["url"].endswith("/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"))
         self.assertEqual(french["discovery"]["chain"][0], config["archive_root"])
         self.assertEqual(french["discovery"]["chain"][-1], french["url"])
-        self.assertEqual(len(initial_registry(config)), 41, "Never fabricate untraced locale URLs")
+        self.assertEqual(len(initial_registry(config)), 48, "Never fabricate untraced locale URLs")
         self.assertEqual(sum(e.get("manual") == "language-reference" for e in entries), 50)
         self.assertEqual(sum(e.get("manual") == "design-reference" for e in entries), 15)
+        self.assertEqual(sum(e.get("manual") == "Design Reference" for e in entries), 25)
         self.assertEqual(sum(e["family"] == "whats-new" for e in entries), 40)
         self.assertEqual(sum(e["family"] == "obsolete-deprecated-commands" for e in entries), 25)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-design-v17-whats-new-en")["edition"], "17.4")
@@ -393,6 +395,18 @@ class Registry(unittest.TestCase):
 
 
 class ArchiveDiscovery(unittest.TestCase):
+    def test_directory_refresh_retains_article_link_provenance_only_for_same_url(self):
+        linked = {"url": "https://example.test/Detail.200-42.fr.html",
+                  "discovery": {"method": "legacy_article_link", "parent_source_id": "overview-fr"}}
+        discovered = {"url": linked["url"], "discovery": {"method": "archive_directory_link"}}
+        self.assertEqual(retain_article_discovery({"detail-fr": discovered}, {"detail-fr": linked}),
+                         {"detail-fr": linked})
+        changed = {**discovered, "url": "https://example.test/New.200-42.fr.html"}
+        self.assertEqual(retain_article_discovery({"detail-fr": changed}, {"detail-fr": linked}),
+                         {"detail-fr": changed})
+        self.assertEqual(retain_article_discovery({"detail-fr": discovered}, {}),
+                         {"detail-fr": discovered})
+
     def test_generated_types_and_manual_ids_are_not_deduplicated(self):
         directory = "https://example.test/doc/4D/16.3/"
         links = [directory + path for path in (
@@ -480,10 +494,10 @@ class Publication(unittest.TestCase):
 
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
-        self.assertEqual(self.document["coverage"]["english_seeds"], 41)
-        self.assertEqual(self.document["coverage"]["registered_sources"], 165)
-        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 165})
-        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 110, "navigation_index": 55})
+        self.assertEqual(self.document["coverage"]["english_seeds"], 48)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 200)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 200})
+        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 145, "navigation_index": 55})
         self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 16)
         self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 4)
         self.assertEqual(self.document["coverage"]["processed_source_ids"],
@@ -492,14 +506,21 @@ class Publication(unittest.TestCase):
                                 + [f"legacy-v{v}-deprecated-features-{lang}"
                                    for v in (16, 17) for lang in ("en", "fr", "de", "es", "ja")]
                                 + [f"legacy-v{v}-quick-table-{lang}"
-                                   for v in (16, 17) for lang in ("en", "fr", "de", "es", "ja")]))
+                                   for v in (16, 17) for lang in ("en", "fr", "de", "es", "ja")]
+                                + [f"legacy-v{v}-changes-{lang}"
+                                   for v in (18, 19) for lang in ("en", "fr", "de", "es", "ja")]
+                                + [f"legacy-design-v{v}-compatibility-{lang}"
+                                   for v in (16, 17, 18, 19, 20) for lang in ("en", "fr", "de", "es", "ja")]
+                                + [f"legacy-v19-detail-{detail}-{lang}"
+                                   for detail in ("base64-decode", "is-editing-text")
+                                   for lang in ("en", "fr", "de", "es", "ja")]))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
-        self.assertEqual(len(self.document["changes"]), 73)
-        self.assertEqual(self.document["coverage"]["atomic_changes"], 138)
-        self.assertEqual(self.document["coverage"]["visible_entities"], 73)
-        self.assertEqual(self.document["coverage"]["grouped_entities"], 22)
+        self.assertEqual(len(self.document["changes"]), 119)
+        self.assertEqual(self.document["coverage"]["atomic_changes"], 192)
+        self.assertEqual(self.document["coverage"]["visible_entities"], 119)
+        self.assertEqual(self.document["coverage"]["grouped_entities"], 27)
 
     def test_offline_reproducible_build(self):
         path = ROOT / "site/data/catalog.json"

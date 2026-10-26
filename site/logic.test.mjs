@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
-  complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor } from './logic.mjs';
+  complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor, evidenceForLanguage } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
   id, threshold: { exact: '20 R3', bucket, kind: 'introduced' }, type: 'restriction',
@@ -20,8 +20,8 @@ const editorialById = new Map(editorialChanges.flatMap(record =>
   [record.id, ...record.member_ids].map(id => [id, record])));
 
 test('real catalog crosses historical removal buckets, not document editions or source-equal thresholds', () => {
-  assert.equal(editorialChanges.length, 73);
-  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 138);
+  assert.equal(editorialChanges.length, 119);
+  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 192);
   for (const [id, from, to, included] of [
     ['chg-removed-xslt-apply-transformation', 'v17', 'v18', true],
     ['chg-removed-xslt-apply-transformation', 'v18', 'v20', false],
@@ -62,16 +62,60 @@ test('real content search, severity and unknown remediation difficulty preserve 
   assert.ok(lingering.some(c => c.id === 'chg-pdfcreator-driver-deprecation'));
   assert.ok(!lingering.some(c => c.id.startsWith('chg-removed-')));
   const sorted = filterChanges(editorialChanges);
-  assert.deepEqual(sorted.slice(0, 2).map(c => c.id),
-    ['chg-colon-identifiers', 'chg-object-notation-compliance']);
+  assert.deepEqual(sorted.slice(0, 3).map(c => c.id),
+    ['chg-colon-identifiers', 'chg-group-v19-compiler-settings', 'chg-object-notation-compliance']);
   assert.ok(sorted.every(c => complexityForChange(c) === 'unknown'));
   assert.deepEqual(filterChanges(editorialChanges, { sort: 'complexity' }).map(c => c.id),
     sorted.map(c => c.id));
 });
 
+test('Stage 2 compiler, ORDA and compatibility queries keep release and group boundaries', () => {
+  for (const module of new Set(editorialChanges.flatMap(c => c.modules))) {
+    if (module === 'language') continue;
+    for (const language of LANGUAGES) {
+      assert.ok(Object.hasOwn(translations[language], module), `${language}: ${module}`);
+    }
+  }
+  for (const [id, from, to, included] of [
+    ['chg-v19-compiler-object-notation', 'v18', 'v19', true],
+    ['chg-v19-compiler-unicode-methods', 'v19', 'v20', false],
+    ['chg-object-notation-compliance', 'v19', 'v20', true],
+    ['chg-base64-decode-ok', 'v18', 'v19', true],
+    ['chg-base64-decode-ok', 'v19', 'v20', false],
+    ['chg-entity-min-empty-undefined', 'v18', 'v19', true],
+    ['chg-standard-xpath-option', 'v18', 'v19', true],
+    ['chg-macos-text-lf-option', 'v19', 'v20', true],
+    ['chg-macos-xml-lf-option', 'v20', 'v21', false],
+    ['chg-blob-parameter-type-check', 'v20', 'v21', true],
+    ['chg-mail-attachment-posix-path', 'v20', 'v21', true],
+    ['chg-ole-tools-legacy-removal', 'v20', 'v21', true],
+  ]) {
+    assert.equal(crossesVersion(editorialById.get(id), from, to), included, id);
+  }
+  for (const [query, entity] of [
+    ['entitySelection.average()', 'chg-group-empty-entity-aggregates'],
+    ['chg-v19-compiler-unicode-methods', 'chg-group-v19-compiler-settings'],
+    ['chg-base64-encode-ok', 'chg-group-base64-status'],
+    ['chg-debug-log-columns-v19', 'chg-group-v19-log-format'],
+    ['chg-requests-log-microseconds', 'chg-group-requests-log-format'],
+    ['chg-base64-invalid-blob-empty', 'chg-base64-invalid-blob-empty'],
+  ]) {
+    assert.deepEqual(filterChanges(editorialChanges, { source: 'v17', target: 'v20', query })
+      .map(c => c.id), [entity], query);
+  }
+  const xpath = editorialById.get('chg-standard-xpath-option');
+  assert.equal(xpath.type, 'behavior');
+  assert.match(xpath.localizations.en.paragraph, /off for databases converted/);
+  const directWrite = editorialById.get('chg-windows-directwrite-option');
+  assert.deepEqual(directWrite.platforms, ['windows']);
+  assert.equal(directWrite.complexity.level, 'unknown');
+  const unknownDifficulty = filterChanges(editorialChanges, { sort: 'complexity' });
+  assert.ok(unknownDifficulty.every(c => complexityForChange(c) === 'unknown'));
+});
+
 test('group searches retain individual IDs, command aliases and unique membership', () => {
   const membership = editorialChanges.flatMap(c => c.member_ids);
-  assert.equal(new Set(membership).size, 138);
+  assert.equal(new Set(membership).size, 192);
   for (const id of membership) {
     assert.deepEqual(filterChanges(editorialChanges, { source: 'unknown', query: id }).map(c => c.id),
       [editorialById.get(id).id], id);
@@ -179,7 +223,7 @@ test('offline search matches exact identifiers, multiple words, and all localiza
   assert.equal(filterChanges(records, { query: '   ' }).length, 2);
 });
 
-test('checkboxes have explicit unknowns, union within groups, intersection between groups and empty means none', () => {
+test('two platform choices retain internal unknowns; topics preserve union and intersection semantics', () => {
   const records = [
     change('windows', 'v20', { platforms: ['windows'], modules: ['language'] }),
     change('mac', 'v20', { platforms: ['macos'], modules: ['sql'] }),
@@ -188,14 +232,15 @@ test('checkboxes have explicit unknowns, union within groups, intersection betwe
   ];
   assert.deepEqual(filterChanges(records, { platforms: ['windows'], modules: ['language'] }).map(c => c.id),
     ['windows']);
-  assert.deepEqual(filterChanges(records, { platforms: ['unknown'], modules: ['unknown'] }).map(c => c.id),
+  assert.deepEqual(filterChanges(records, { platforms: ['windows'], modules: ['unknown'] }).map(c => c.id),
     ['missing', 'unknown']);
   assert.deepEqual(filterChanges(records, { platforms: ['windows', 'macos'], modules: ['language', 'sql'] }).map(c => c.id),
     ['mac', 'windows']);
   for (const key of ['platforms', 'modules']) {
     assert.equal(filterChanges(records, { [key]: [] }).length, 0);
-    assert.ok(filterOptions(records, key).includes('unknown'));
   }
+  assert.deepEqual(filterOptions(records, 'platforms'), ['windows', 'macos']);
+  assert.ok(filterOptions(records, 'modules').includes('unknown'));
   const universal = change('universal', 'v20', { platforms: ['all'] });
   assert.equal(filterChanges([universal], { platforms: ['windows'] }).length, 1);
   assert.equal(filterChanges([universal], { platforms: ['unknown'] }).length, 0);
@@ -204,6 +249,82 @@ test('checkboxes have explicit unknowns, union within groups, intersection betwe
   assert.equal(filterChanges([universalModule], { modules: [] }).length, 0);
   assert.equal(filterChanges([universalModule], { modules: ['unknown'] }).length, 0);
   assert.equal(filterChanges(records).length, 4);
+});
+
+test('Windows/macOS-only visitor filters never reassign unknown or Linux-only evidence', () => {
+  const records = [
+    change('windows', 'v20', { platforms: ['windows'] }),
+    change('macos', 'v20', { platforms: ['macos'] }),
+    change('unknown', 'v20', { platforms: ['unknown'] }),
+    change('missing', 'v20', { platforms: [] }),
+    change('all', 'v20', { platforms: ['all'] }),
+    change('linux-only', 'v20', { platforms: ['linux'] }),
+  ];
+  const original = structuredClone(records);
+  assert.deepEqual(filterOptions(records, 'platforms'), ['windows', 'macos']);
+  for (const [platforms, expected] of [
+    [['windows'], ['all', 'missing', 'unknown', 'windows']],
+    [['macos'], ['all', 'macos', 'missing', 'unknown']],
+    [['windows', 'macos'], ['all', 'macos', 'missing', 'unknown', 'windows']],
+    [[], []], [['linux'], []], [['unknown'], []],
+  ]) {
+    const filters = { source: 'v19', target: 'v21', platforms };
+    const before = structuredClone(filters);
+    assert.deepEqual(filterChanges(records, filters).map(c => c.id), expected);
+    assert.deepEqual(filters, before);
+  }
+  assert.deepEqual(records, original);
+  assert.ok(!editorialChanges.some(c => c.platforms.includes('linux')));
+  const other = { en: 'Other', fr: 'Autres', de: 'Sonstige', es: 'Otros', ja: 'その他' };
+  for (const language of LANGUAGES) {
+    assert.equal(translate(language, 'otherTopics'), other[language]);
+    assert.notEqual(translate(language, 'unknown'), other[language]);
+    assert.ok(!Object.hasOwn(translations[language], 'linux'));
+  }
+});
+
+test('evidence uses source locale, English fallback, and retains all substantive member citations', () => {
+  const sources = [{ id: 'modern-en', language: 'en' }, { id: 'legacy-fr', language: 'fr' },
+    { id: 'other', language: 'ja' }];
+  const records = [
+    { source_id: 'modern-en', block_id: 'one', excerpt: 'First English support' },
+    { source_id: 'modern-en', block_id: 'two', excerpt: 'Distinct member support' },
+    { source_id: 'legacy-fr', block_id: 'un', excerpt: 'Preuve française' },
+    { source_id: 'other', block_id: 'jp', excerpt: '日本語の根拠' },
+  ];
+  const before = structuredClone(records);
+  assert.deepEqual(evidenceForLanguage(records, sources, 'en'), records.slice(0, 2));
+  assert.deepEqual(evidenceForLanguage(records, sources, 'de'), records.slice(0, 2));
+  assert.deepEqual(evidenceForLanguage(records, sources, 'fr'), [records[2]]);
+  assert.deepEqual(evidenceForLanguage(records, sources, 'ja'), [records[3]]);
+  assert.deepEqual(evidenceForLanguage([records[2]], sources, 'de'), []);
+  assert.deepEqual(evidenceForLanguage([{ source_id: 'missing' }], sources, 'de'), []);
+  assert.deepEqual(records, before);
+  for (const language of LANGUAGES) {
+    assert.ok(translate(language, 'evidenceUnavailable'));
+    assert.ok(!Object.hasOwn(translations[language], 'detailLanguageNote'));
+  }
+});
+
+test('all five evidence locales retain grouped member support without changing aliases or filtering', async () => {
+  const catalog = JSON.parse(await readFile(new URL('./data/catalog.json', import.meta.url), 'utf8'));
+  const group = catalog.changes.find(c => c.id === 'chg-group-legacy-resource-commands');
+  const sourceLanguages = new Map(catalog.sources.map(s => [s.id, s.language]));
+  const before = structuredClone(group);
+  for (const language of LANGUAGES) {
+    const chosen = evidenceForLanguage(group.evidence, catalog.sources, language);
+    assert.ok(chosen.length >= 11);
+    assert.ok(chosen.every(e => sourceLanguages.get(e.source_id) === language));
+    assert.deepEqual(chosen, group.evidence.filter(e => sourceLanguages.get(e.source_id) === language));
+    for (const query of ['DELETE RESOURCE', 'SUPPRIMER RESSOURCE']) {
+      assert.ok(filterChanges([group], { source: 'v16', target: 'v21', query,
+        platforms: ['windows', 'macos'], modules: filterOptions([group], 'modules') }, catalog.latest).length);
+    }
+    const names = group.localizations[language].identifiers.join(' ');
+    assert.ok(names.includes(language === 'fr' ? '_o_SUPPRIMER RESSOURCE' : '_o_DELETE RESOURCE'));
+    assert.ok(!names.includes(language === 'fr' ? '_o_DELETE RESOURCE' : '_o_SUPPRIMER RESSOURCE'));
+  }
+  assert.deepEqual(group, before);
 });
 
 test('severity is highest first independent of stage, with unknown last and stable ID ties', () => {

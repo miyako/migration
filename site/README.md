@@ -39,9 +39,15 @@ Search, platform/topic checkboxes, and sorting follow the version pair. Each
 group's Select all / Unselect all affects only that group. Empty selection
 means no matches, not all. Reset filters clears search, selects all options,
 and restores Severity without changing versions, language, or theme. Options
-are ORed within each group and ANDed across groups. Unknown applicability has
-an explicit Unknown checkbox; missing/empty applicability uses that option.
-`all` applicability matches selected known options, not the Unknown option.
+are ORed within each group and ANDed across groups. Platforms offer only Windows
+and macOS, never Linux or Unknown. Unknown/missing platform applicability remains
+eligible with either or both OS choices selected; neither selected means no
+results. Evidence metadata is not reassigned. No current catalog fact is Linux-only;
+future Linux-only facts would not match these visitor choices, while their
+provenance remains intact. `all` platform applicability matches either OS.
+The Topics checkbox for internal `unknown` is labeled Other / Autres / Sonstige /
+Otros / その他. Its filtering semantics are unchanged; other Unknown labels,
+including severity, complexity and evidence uncertainty, are not renamed.
 
 The two sort choices are **Severity** (default, highest first, unknown last) and
 **Complexity** (Simple, Moderate, Complex, Unknown). Complexity means difficulty
@@ -66,9 +72,22 @@ One-line and paragraph summaries are available in English, French, German,
 Spanish, and Japanese, with an explicit fallback notice if needed. Unchecked
 summaries have a short, actionable source-verification caveat, not a review
 dashboard. Evidence links and original excerpts remain on each record.
-Supporting conditions, action basis, and complexity rationale retain their
-original language, explicitly labeled. A referenced source's retrieval error
-is shown beside its evidence, rather than silently endorsing an unchecked claim.
+The visible evidence list uses the actual source locale matching the UI, or
+English if there is no evidence in that locale. It retains distinct citations,
+including support for grouped members, rather than choosing only one URL. If
+neither locale nor English evidence exists, a localized unavailable message is
+shown. All evidence in other languages remains in data and searchable provenance;
+source excerpts are not rewritten. A displayed source's retrieval error remains
+contextual to its evidence, rather than endorsing an unchecked claim.
+
+Authored locale fields provide display identifiers and actions, plus localized
+applicability wording where command names differ. French displays official French
+command names; en/de/es/ja display English names. Groups combine their members'
+localized identifier lists, while raw bilingual aliases and member IDs remain
+searchable. The evidence-bound command-name glossary records both official source
+forms; no runtime search-and-replace touches source quotations. Where archive
+spellings do not establish a reliable French name, French prose describes the
+operation without inventing a command identifier.
 
 Technical audit information (source registry/provenance, coverage, pipeline
 counts, review state, and clarification register) stays in repository data and

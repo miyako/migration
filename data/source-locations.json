@@ -1,6 +1,198 @@
 {
   "schema_version": 1,
   "locations": {
+    "docs-current-release-notes-en": {
+      "url": "https://developer.4d.com/docs/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "en",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-current-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "fr",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-current-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "es",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-current-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/Notes/updates",
+        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+        "checked_at": "2026-10-26T11:30:40+00:00",
+        "language": "ja",
+        "requested_channel": "moving-current",
+        "requested_version": null
+      }
+    },
+    "docs-v21-release-notes-en": {
+      "url": "https://developer.4d.com/docs/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "en",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v21-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "fr",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v21-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "es",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v21-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/21/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/21/Notes/updates",
+        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
+        "checked_at": "2026-10-26T11:30:41+00:00",
+        "language": "ja",
+        "requested_channel": "versioned",
+        "requested_version": "21"
+      }
+    },
+    "docs-v20-release-notes-en": {
+      "url": "https://developer.4d.com/docs/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "en",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v20-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "fr",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v20-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "es",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v20-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/20/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/20/Notes/updates",
+        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
+        "checked_at": "2026-10-26T11:30:42+00:00",
+        "language": "ja",
+        "requested_channel": "versioned",
+        "requested_version": "20"
+      }
+    },
+    "docs-v19-release-notes-en": {
+      "url": "https://developer.4d.com/docs/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "en",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
+    "docs-v19-release-notes-fr": {
+      "url": "https://developer.4d.com/docs/fr/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "fr",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
+    "docs-v19-release-notes-es": {
+      "url": "https://developer.4d.com/docs/es/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "es",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
+    "docs-v19-release-notes-ja": {
+      "url": "https://developer.4d.com/docs/ja/19/Notes/updates",
+      "discovery": {
+        "method": "official_docs_hreflang",
+        "parent": "https://developer.4d.com/docs/19/Notes/updates",
+        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
+        "checked_at": "2026-10-26T11:30:43+00:00",
+        "language": "ja",
+        "requested_channel": "versioned",
+        "requested_version": "19"
+      }
+    },
     "legacy-v20-deprecated-en": {
       "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html",
       "discovery": {
@@ -2081,198 +2273,6 @@
         "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
       }
     },
-    "docs-current-release-notes-en": {
-      "url": "https://developer.4d.com/docs/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/Notes/updates",
-        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-        "checked_at": "2026-10-26T11:30:40+00:00",
-        "language": "en",
-        "requested_channel": "moving-current",
-        "requested_version": null
-      }
-    },
-    "docs-current-release-notes-fr": {
-      "url": "https://developer.4d.com/docs/fr/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/Notes/updates",
-        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-        "checked_at": "2026-10-26T11:30:40+00:00",
-        "language": "fr",
-        "requested_channel": "moving-current",
-        "requested_version": null
-      }
-    },
-    "docs-current-release-notes-es": {
-      "url": "https://developer.4d.com/docs/es/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/Notes/updates",
-        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-        "checked_at": "2026-10-26T11:30:40+00:00",
-        "language": "es",
-        "requested_channel": "moving-current",
-        "requested_version": null
-      }
-    },
-    "docs-current-release-notes-ja": {
-      "url": "https://developer.4d.com/docs/ja/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/Notes/updates",
-        "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-        "checked_at": "2026-10-26T11:30:40+00:00",
-        "language": "ja",
-        "requested_channel": "moving-current",
-        "requested_version": null
-      }
-    },
-    "docs-v21-release-notes-en": {
-      "url": "https://developer.4d.com/docs/21/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/21/Notes/updates",
-        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-        "checked_at": "2026-10-26T11:30:41+00:00",
-        "language": "en",
-        "requested_channel": "versioned",
-        "requested_version": "21"
-      }
-    },
-    "docs-v21-release-notes-fr": {
-      "url": "https://developer.4d.com/docs/fr/21/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/21/Notes/updates",
-        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-        "checked_at": "2026-10-26T11:30:41+00:00",
-        "language": "fr",
-        "requested_channel": "versioned",
-        "requested_version": "21"
-      }
-    },
-    "docs-v21-release-notes-es": {
-      "url": "https://developer.4d.com/docs/es/21/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/21/Notes/updates",
-        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-        "checked_at": "2026-10-26T11:30:41+00:00",
-        "language": "es",
-        "requested_channel": "versioned",
-        "requested_version": "21"
-      }
-    },
-    "docs-v21-release-notes-ja": {
-      "url": "https://developer.4d.com/docs/ja/21/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/21/Notes/updates",
-        "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-        "checked_at": "2026-10-26T11:30:41+00:00",
-        "language": "ja",
-        "requested_channel": "versioned",
-        "requested_version": "21"
-      }
-    },
-    "docs-v20-release-notes-en": {
-      "url": "https://developer.4d.com/docs/20/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/20/Notes/updates",
-        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-        "checked_at": "2026-10-26T11:30:42+00:00",
-        "language": "en",
-        "requested_channel": "versioned",
-        "requested_version": "20"
-      }
-    },
-    "docs-v20-release-notes-fr": {
-      "url": "https://developer.4d.com/docs/fr/20/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/20/Notes/updates",
-        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-        "checked_at": "2026-10-26T11:30:42+00:00",
-        "language": "fr",
-        "requested_channel": "versioned",
-        "requested_version": "20"
-      }
-    },
-    "docs-v20-release-notes-es": {
-      "url": "https://developer.4d.com/docs/es/20/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/20/Notes/updates",
-        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-        "checked_at": "2026-10-26T11:30:42+00:00",
-        "language": "es",
-        "requested_channel": "versioned",
-        "requested_version": "20"
-      }
-    },
-    "docs-v20-release-notes-ja": {
-      "url": "https://developer.4d.com/docs/ja/20/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/20/Notes/updates",
-        "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-        "checked_at": "2026-10-26T11:30:42+00:00",
-        "language": "ja",
-        "requested_channel": "versioned",
-        "requested_version": "20"
-      }
-    },
-    "docs-v19-release-notes-en": {
-      "url": "https://developer.4d.com/docs/19/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/19/Notes/updates",
-        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-        "checked_at": "2026-10-26T11:30:43+00:00",
-        "language": "en",
-        "requested_channel": "versioned",
-        "requested_version": "19"
-      }
-    },
-    "docs-v19-release-notes-fr": {
-      "url": "https://developer.4d.com/docs/fr/19/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/19/Notes/updates",
-        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-        "checked_at": "2026-10-26T11:30:43+00:00",
-        "language": "fr",
-        "requested_channel": "versioned",
-        "requested_version": "19"
-      }
-    },
-    "docs-v19-release-notes-es": {
-      "url": "https://developer.4d.com/docs/es/19/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/19/Notes/updates",
-        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-        "checked_at": "2026-10-26T11:30:43+00:00",
-        "language": "es",
-        "requested_channel": "versioned",
-        "requested_version": "19"
-      }
-    },
-    "docs-v19-release-notes-ja": {
-      "url": "https://developer.4d.com/docs/ja/19/Notes/updates",
-      "discovery": {
-        "method": "official_docs_hreflang",
-        "parent": "https://developer.4d.com/docs/19/Notes/updates",
-        "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-        "checked_at": "2026-10-26T11:30:43+00:00",
-        "language": "ja",
-        "requested_channel": "versioned",
-        "requested_version": "19"
-      }
-    },
     "legacy-v16-deprecated-features-en": {
       "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-or-removed-features-in-v16-product-range.200-3072042.en.html",
       "discovery": {
@@ -2371,6 +2371,566 @@
         "parent_source_id": "legacy-v17-deprecated-ja",
         "parent_sha256": "99996acb6300ba6fe60be8e07d544dd366991150182d303ae559ea513e93d3b7",
         "document_key": "200-3761903"
+      }
+    },
+    "legacy-design-v20-compatibility-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html"
+        ],
+        "document_key": "300-6602324",
+        "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+      }
+    },
+    "legacy-design-v20-compatibility-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html"
+        ],
+        "document_key": "300-6602324",
+        "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+      }
+    },
+    "legacy-design-v20-compatibility-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Seite-Kompatibilitat.300-6602324.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Seite-Kompatibilitat.300-6602324.de.html"
+        ],
+        "document_key": "300-6602324",
+        "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+      }
+    },
+    "legacy-design-v20-compatibility-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Pagina-Compatibilidad.300-6602324.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Pagina-Compatibilidad.300-6602324.es.html"
+        ],
+        "document_key": "300-6602324",
+        "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+      }
+    },
+    "legacy-design-v20-compatibility-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.ja.html"
+        ],
+        "document_key": "300-6602324",
+        "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+      }
+    },
+    "legacy-design-v19-compatibility-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html"
+        ],
+        "document_key": "300-5416914",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-design-v19-compatibility-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Page-Compatibilite.300-5416914.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Page-Compatibilite.300-5416914.fr.html"
+        ],
+        "document_key": "300-5416914",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-design-v19-compatibility-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Seite-Kompatibilitat.300-5416914.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Seite-Kompatibilitat.300-5416914.de.html"
+        ],
+        "document_key": "300-5416914",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-design-v19-compatibility-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Pagina-Compatibilidad.300-5416914.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Pagina-Compatibilidad.300-5416914.es.html"
+        ],
+        "document_key": "300-5416914",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-design-v19-compatibility-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.ja.html"
+        ],
+        "document_key": "300-5416914",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-design-v18-compatibility-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html"
+        ],
+        "document_key": "300-4575476",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-design-v18-compatibility-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Page-Compatibilite.300-4575476.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Page-Compatibilite.300-4575476.fr.html"
+        ],
+        "document_key": "300-4575476",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-design-v18-compatibility-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Seite-Kompatibilitat.300-4575476.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Seite-Kompatibilitat.300-4575476.de.html"
+        ],
+        "document_key": "300-4575476",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-design-v18-compatibility-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Pagina-Compatibilidad.300-4575476.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Pagina-Compatibilidad.300-4575476.es.html"
+        ],
+        "document_key": "300-4575476",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-design-v18-compatibility-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.ja.html"
+        ],
+        "document_key": "300-4575476",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-design-v17-compatibility-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html"
+        ],
+        "document_key": "300-4880529",
+        "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+      }
+    },
+    "legacy-design-v17-compatibility-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Page-Compatibilite.300-4880529.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Page-Compatibilite.300-4880529.fr.html"
+        ],
+        "document_key": "300-4880529",
+        "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+      }
+    },
+    "legacy-design-v17-compatibility-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Seite-Kompatibilitat.300-4880529.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Seite-Kompatibilitat.300-4880529.de.html"
+        ],
+        "document_key": "300-4880529",
+        "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+      }
+    },
+    "legacy-design-v17-compatibility-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Pagina-Compatibilidad.300-4880529.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Pagina-Compatibilidad.300-4880529.es.html"
+        ],
+        "document_key": "300-4880529",
+        "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+      }
+    },
+    "legacy-design-v17-compatibility-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.ja.html"
+        ],
+        "document_key": "300-4880529",
+        "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+      }
+    },
+    "legacy-design-v16-compatibility-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html"
+        ],
+        "document_key": "300-3670711",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-design-v16-compatibility-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Page-Compatibilite.300-3670711.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Page-Compatibilite.300-3670711.fr.html"
+        ],
+        "document_key": "300-3670711",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-design-v16-compatibility-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Seite-Kompatibilitat.300-3670711.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Seite-Kompatibilitat.300-3670711.de.html"
+        ],
+        "document_key": "300-3670711",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-design-v16-compatibility-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Pagina-Compatibilidad.300-3670711.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Pagina-Compatibilidad.300-3670711.es.html"
+        ],
+        "document_key": "300-3670711",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-design-v16-compatibility-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.ja.html"
+        ],
+        "document_key": "300-3670711",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-v19-detail-base64-decode-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html"
+        ],
+        "document_key": "301-5392926",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-base64-decode-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html"
+        ],
+        "document_key": "301-5392926",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-base64-decode-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html"
+        ],
+        "document_key": "301-5392926",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-base64-decode-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html"
+        ],
+        "document_key": "301-5392926",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-base64-decode-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html"
+        ],
+        "document_key": "301-5392926",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-is-editing-text-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.en.html"
+        ],
+        "document_key": "301-5392552",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-is-editing-text-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html"
+        ],
+        "document_key": "301-5392552",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-is-editing-text-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.de.html"
+        ],
+        "document_key": "301-5392552",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-is-editing-text-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.es.html"
+        ],
+        "document_key": "301-5392552",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-detail-is-editing-text-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html"
+        ],
+        "document_key": "301-5392552",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
       }
     }
   },

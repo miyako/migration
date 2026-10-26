@@ -121,6 +121,10 @@ def group_entities(changes, config):
                                    key={"low": 0, "medium": 1, "high": 2}.__getitem__)
         entity["identifiers"] = list(dict.fromkeys(
             name for member in members for name in member["identifiers"]))
+        for language, text in entity["localizations"].items():
+            text.setdefault("identifiers", list(dict.fromkeys(
+                name for member in members
+                for name in member["localizations"][language].get("identifiers", member["identifiers"]))))
         entity["modules"] = sorted({module for member in members for module in member["modules"]})
         entity["notices"] = list(dict.fromkeys(n for member in members for n in member["notices"]))
         entity["evidence"] = []
@@ -325,6 +329,16 @@ def validate(document):
                 all(nonempty(x) for x in applicability["conditions"]), "Missing applicability conditions")
         require(set(change["localizations"]) == set(LANGUAGES), f"Missing localization for {identifier}")
         for language, text in change["localizations"].items():
+            if "identifiers" in text:
+                require(isinstance(text["identifiers"], list)
+                        and all(nonempty(name) for name in text["identifiers"]),
+                        "Localized display identifiers must be an explicit list")
+            if "conditions" in text:
+                require(isinstance(text["conditions"], list)
+                        and all(nonempty(condition) for condition in text["conditions"]),
+                        "Localized applicability conditions must be an explicit list")
+            if "action_basis" in text:
+                require(nonempty(text["action_basis"]), "Invalid localized action basis")
             require(all(nonempty(text.get(k)) for k in ("one_line", "paragraph", "provenance")),
                     f"Incomplete {language} localization for {identifier}")
             require(text["provenance"] in {"generated_candidate", "human_reviewed", "official_translation"},
@@ -384,6 +398,19 @@ def validate(document):
             require(source is not None and source["language"] == language
                     and source["edition"] == concept["edition"] and nonempty(term["text"]),
                     "Official glossary term must align source language and edition")
+    for names in document["glossary"].get("command_names", []):
+        require(nonempty(names.get("en")) and nonempty(names.get("fr")),
+                "Command-name mapping requires official English and French names")
+        require(len(names["evidence"]) == 2, "Command-name mapping needs bilingual evidence")
+        for language, evidence in zip(("en", "fr"), names["evidence"]):
+            source = sources.get(evidence["source_id"])
+            require(source is not None and source["language"] == language
+                    and names[language] in evidence["excerpt"] + "\n" + evidence["heading"],
+                    "Command-name mapping must be evidenced in the actual source language")
+            require(len(evidence["excerpt"]) <= 420
+                    and all(nonempty(evidence.get(key)) for key in
+                            ("heading", "excerpt", "block_id", "source_sha256"))
+                    and url(evidence["url"]), "Invalid command-name evidence provenance")
 
 
 def verify_evidence(document):
@@ -396,7 +423,10 @@ def verify_evidence(document):
         require(path.exists(), f"Fetch {parent_id} before linked-detail verification")
         require(any(link["url"] == source["url"] for link in load(path)["links"]),
                 "Legacy detail URL is not actually linked by its recorded parent")
-    for change in document["changes"]:
+    evidence_owners = document["changes"] + [
+        {"id": f"command-name:{names['en']}", "evidence": names["evidence"]}
+        for names in document.get("glossary", {}).get("command_names", [])]
+    for change in evidence_owners:
         for evidence in change["evidence"]:
             source = sources[evidence["source_id"]]
             require(source["fetch"]["status"] == "available", "Cannot verify unavailable evidence")

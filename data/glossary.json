@@ -138,5 +138,2933 @@
       }
     }
   ],
-  "identifier_policy": "Keep official API/command identifiers and historical aliases unchanged. French localized names in candidate prose are anchored to matching official table rows; the English canonical identifier remains searchable. Apparent archive spellings _o_Crer fichier ressources and _o_FIWER TEMPORISATION WEB, and the French _o_Nom de police row aligned with English _o_Font number, are retained only in verbatim evidence, not silently promoted to corrected canonical aliases. New German prose is not historical official terminology. The German source uses both Überholt and Veraltet for deprecated, distinct from Entfernt. No summary is marked as an official or human-reviewed translation."
+  "identifier_policy": "Keep official API/command identifiers and historical aliases unchanged. French localized names in candidate prose are anchored to matching official table rows; the English canonical identifier remains searchable. Apparent archive spellings _o_Crer fichier ressources and _o_FIWER TEMPORISATION WEB, and the French _o_Nom de police row aligned with English _o_Font number, are retained only in verbatim evidence, not silently promoted to corrected canonical aliases. New German prose is not historical official terminology. The German source uses both Überholt and Veraltet for deprecated, distinct from Entfernt. No summary is marked as an official or human-reviewed translation. Visitor command names use authored per-locale identifier lists: official French names in French, English names in en/de/es/ja. command_names records bind each mapping to existing bilingual source evidence; unknown/erroneous French spellings are not invented. Raw aliases remain searchable and source quotations are unchanged.",
+  "command_names": [
+    {
+      "en": "_o_ADD DATA SEGMENT",
+      "fr": "_o_AJOUTER SEGMENT DE DONNEES",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_ADD DATA SEGMENT - v17 R5",
+          "block_id": "82fb2fba91792cf6",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_AJOUTER SEGMENT DE DONNEES - v17 R5",
+          "block_id": "37dd33654687853d",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_GRAPH TABLE",
+      "fr": "_o_GRAPHE SUR TABLE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_GRAPH TABLE Build the data in arrays and call GRAPH in a SVG picture v17 R5",
+          "block_id": "7938637a1ee3e862",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_GRAPHE SUR TABLE Générez les données dans des tableaux et appelez GRAPHE dans une image SVG v17 R5",
+          "block_id": "4064db5297742614",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_PICTURE TYPE LIST",
+      "fr": "_o_LISTE TYPES IMAGES",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_PICTURE TYPE LIST PICTURE CODEC LIST v17 R5",
+          "block_id": "dfed21bfe4fa2650",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_LISTE TYPES IMAGES LISTE CODECS IMAGES v17 R5",
+          "block_id": "c9ed53b831129a2f",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_QT COMPRESS PICTURE",
+      "fr": "_o_QT COMPRESSER IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT COMPRESS PICTURE CONVERT PICTURE v17 R5",
+          "block_id": "bb12e06f32093bb2",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT COMPRESSER IMAGE CONVERTIR IMAGE v17 R5",
+          "block_id": "cc17a93ef03abf7e",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_QT COMPRESS PICTURE FILE",
+      "fr": "_o_QT COMPRESSER FICHIER IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT COMPRESS PICTURE FILE WRITE PICTURE FILE / PICTURE TO BLOB v17 R5",
+          "block_id": "847ce0570d7b6d1a",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT COMPRESSER FICHIER IMAGE ECRIRE FICHIER IMAGE / IMAGE VERS BLOB v17 R5",
+          "block_id": "db8b588b423c81be",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_QT LOAD COMPRESS PICTURE FROM FILE",
+      "fr": "_o_QT CHARGER ET COMPRESSER IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT LOAD COMPRESS PICTURE FROM FILE READ PICTURE FILE / CONVERT PICTURE v17 R5",
+          "block_id": "fa3b43902bc4b752",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT CHARGER ET COMPRESSER IMAGE LIRE FICHIER IMAGE / CONVERTIR IMAGE v17 R5",
+          "block_id": "d293b643f39100a4",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SAVE PICTURE TO FILE",
+      "fr": "_o_ENREGISTRER IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SAVE PICTURE TO FILE WRITE PICTURE FILE v17 R5",
+          "block_id": "d88b7319bd221da1",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ENREGISTRER IMAGE ECRIRE FICHIER IMAGE v17 R5",
+          "block_id": "3ca5014e38ed252f",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_ARRAY TO STRING LIST",
+      "fr": "_o_TABLEAU VERS LISTE DE CHAINES",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_ARRAY TO STRING LIST - v17 R5",
+          "block_id": "729d5215148ad151",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_TABLEAU VERS LISTE DE CHAINES - v17 R5",
+          "block_id": "26bc2ef5312f6d31",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_DELETE RESOURCE",
+      "fr": "_o_SUPPRIMER RESSOURCE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_DELETE RESOURCE - v17 R5",
+          "block_id": "2d235abbe6a0d36f",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_SUPPRIMER RESSOURCE - v17 R5",
+          "block_id": "ae7d69becef6e658",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_Get component resource ID",
+      "fr": "_o_Lire ID ressource composant",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_Get component resource ID - v17 R5",
+          "block_id": "cc01a3961b8a24dc",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_Lire ID ressource composant - v17 R5",
+          "block_id": "4bea720fb66c5536",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET PICTURE RESOURCE",
+      "fr": "_o_ECRIRE RESSOURCE IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET PICTURE RESOURCE - v17 R5",
+          "block_id": "49a09f85f9f80e79",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ECRIRE RESSOURCE IMAGE - v17 R5",
+          "block_id": "8e9a869b15014b57",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET RESOURCE",
+      "fr": "_o_ECRIRE RESSOURCE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET RESOURCE - v17 R5",
+          "block_id": "f88611889916fc79",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ECRIRE RESSOURCE IMAGE - v17 R5",
+          "block_id": "8e9a869b15014b57",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET RESOURCE NAME",
+      "fr": "_o_ECRIRE NOM RESSOURCE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET RESOURCE NAME - v17 R5",
+          "block_id": "71b478ed3683d105",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ECRIRE NOM RESSOURCE - v17 R5",
+          "block_id": "ffdc88ef66ac4a6e",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET RESOURCE PROPERTIES",
+      "fr": "_o_ECRIRE PROPRIETES RESSOURCE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET RESOURCE PROPERTIES - v17 R5",
+          "block_id": "06a32cbcf2468923",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ECRIRE PROPRIETES RESSOURCE - v17 R5",
+          "block_id": "6f9137b009637287",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET STRING RESOURCE",
+      "fr": "_o_ECRIRE RESSOURCE CHAINE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET STRING RESOURCE - v17 R5",
+          "block_id": "90bf608064dab854",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ECRIRE RESSOURCE CHAINE - v17 R5",
+          "block_id": "3da45c3b0fa4baf1",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET TEXT RESOURCE",
+      "fr": "_o_ECRIRE RESSOURCE TEXTE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET TEXT RESOURCE - v17 R5",
+          "block_id": "b46ac4e5bbb65c12",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ECRIRE RESSOURCE TEXTE - v17 R5",
+          "block_id": "8cccd5b3a6270925",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_Convert case",
+      "fr": "_o_Convertir caracteres",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_Convert case CONVERT FROM TEXT / Convert to text when necessary. v17 R5",
+          "block_id": "517bea09c40c555f",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_Convertir caracteres CONVERTIR DEPUIS TEXTE / Convertir vers texte le cas échéant. v17 R5",
+          "block_id": "4158eeeff5d8f36c",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_ISO to Mac",
+      "fr": "_o_ISO vers Mac",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_ISO to Mac Just remove the command from the method if conversion is not necessary v17 R5",
+          "block_id": "cf8f51f3bb3393b6",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_ISO vers Mac Supprimez simplement la commande depuis la méthode, si la conversion n'est pas nécessaire v17 R5",
+          "block_id": "d5a93bc6e53ac8e7",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_Mac to ISO",
+      "fr": "_o_Mac vers ISO",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_Mac to ISO (which means the database runs in Unicode mode) v17 R5",
+          "block_id": "703fc7a24d07995b",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_Mac vers ISO (ce qui signifie que la base est lancée en mode Unicode) v17 R5",
+          "block_id": "29d6ea4e6d3cf315",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_INVERT BACKGROUND",
+      "fr": "_o_INVERSER FOND",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_INVERT BACKGROUND - v17 R5",
+          "block_id": "45b46440c2f9b88f",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_INVERSER FOND - v17 R5",
+          "block_id": "8caea16d3d310c4a",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET CGI EXECUTABLE",
+      "fr": "_o_FIXER EXECUTABLE CGI",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET CGI EXECUTABLE - v17 R5",
+          "block_id": "b9a5e69d3ac37998",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_FIXER EXECUTABLE CGI - v17 R5",
+          "block_id": "10fe2526160fdcec",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET WEB DISPLAY LIMITS",
+      "fr": "_o_FIXER LIMITES AFFICHAGE WEB",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_SET WEB DISPLAY LIMITS - v17 R5",
+          "block_id": "1ed8b0b0aa90f724",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_FIXER LIMITES AFFICHAGE WEB - v17 R5",
+          "block_id": "6f619f9a384634b8",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_Web Context",
+      "fr": "_o_Contexte Web",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_Web Context - v17 R5",
+          "block_id": "b398b48a5548aedd",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_Contexte Web - v17 R5",
+          "block_id": "56a6bc64bb4d7bfd",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_Open external window",
+      "fr": "_o_Creer fenetre externe",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_Open external window - v17 R5",
+          "block_id": "4eb95ed5f74f482e",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_Creer fenetre externe - v17 R5",
+          "block_id": "b3c950013c48faac",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_XSLT APPLY TRANSFORMATION",
+      "fr": "_o_XSLT APPLIQUER TRANSFORMATION",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_XSLT APPLY TRANSFORMATION Use PHP libxslt module or the PROCESS 4D TAGS command v17 R5",
+          "block_id": "15859db7d95d1250",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_XSLT APPLIQUER TRANSFORMATION Utilisez le module PHP libxslt ou la commande TRAITER BALISES 4D v17 R5",
+          "block_id": "a4e75fd0d6312124",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_XSLT GET ERROR",
+      "fr": "_o_XSLT LIRE ERREUR",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "XSLT Use PHP libxslt module or the PROCESS 4D TAGS command Deprecated Removed. _o_XSLT APPLY TRANSFORMATION , _o_XSLT SET PARAMETER , and _o_XSLT GET ERROR do nothing.",
+          "block_id": "a4ab902196de0879",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "XSLT Utilisez le module PHP libxslt ou la commande TRAITER BALISES 4D Obsolète Supprimé. _o_XSLT APPLIQUER TRANSFORMATION , _o_XSLT FIXER PARAMETRE , et _o_XSLT LIRE ERREUR ne font rien.",
+          "block_id": "ed71cdcefb06ccf8",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_XSLT SET PARAMETER",
+      "fr": "_o_XSLT FIXER PARAMETRE",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "XSLT Use PHP libxslt module or the PROCESS 4D TAGS command Deprecated Removed. _o_XSLT APPLY TRANSFORMATION , _o_XSLT SET PARAMETER , and _o_XSLT GET ERROR do nothing.",
+          "block_id": "a4ab902196de0879",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "XSLT Utilisez le module PHP libxslt ou la commande TRAITER BALISES 4D Obsolète Supprimé. _o_XSLT APPLIQUER TRANSFORMATION , _o_XSLT FIXER PARAMETRE , et _o_XSLT LIRE ERREUR ne font rien.",
+          "block_id": "ed71cdcefb06ccf8",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_NO TRACE",
+      "fr": "_o_PAS DE TRACE",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#5432969",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_NO TRACE No trace button in debugger v18 R2",
+          "block_id": "347a73e74883cbc7",
+          "source_sha256": "9d005c0da4af201d8c4678297d4e78ab8a54bed13945fbbc59d743c17ed50e96"
+        },
+        {
+          "source_id": "legacy-v19-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html#5432969",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_PAS DE TRACE Bouton Pas de trace dans le débogueur v18 R2",
+          "block_id": "aed716680cd1af2a",
+          "source_sha256": "66f5afc6267e602f6dec0690f84eeb9db10aba368355fdc2ae1c7fd646c7480f"
+        }
+      ]
+    },
+    {
+      "en": "_o_DISABLE BUTTON",
+      "fr": "_o_INACTIVER BOUTON",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#5432969",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_DISABLE BUTTON / _o_ENABLE BUTTON OBJECT SET ENABLED v18 R2",
+          "block_id": "15db1e0ab416d622",
+          "source_sha256": "9d005c0da4af201d8c4678297d4e78ab8a54bed13945fbbc59d743c17ed50e96"
+        },
+        {
+          "source_id": "legacy-v19-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html#5432969",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_INACTIVER BOUTON / _o_ACTIVER BOUTON OBJET FIXER ACTIVATION v18 R2",
+          "block_id": "4e86fdcdbb00a345",
+          "source_sha256": "66f5afc6267e602f6dec0690f84eeb9db10aba368355fdc2ae1c7fd646c7480f"
+        }
+      ]
+    },
+    {
+      "en": "_o_ENABLE BUTTON",
+      "fr": "_o_ACTIVER BOUTON",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#5432969",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_DISABLE BUTTON / _o_ENABLE BUTTON OBJECT SET ENABLED v18 R2",
+          "block_id": "15db1e0ab416d622",
+          "source_sha256": "9d005c0da4af201d8c4678297d4e78ab8a54bed13945fbbc59d743c17ed50e96"
+        },
+        {
+          "source_id": "legacy-v19-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html#5432969",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_INACTIVER BOUTON / _o_ACTIVER BOUTON OBJET FIXER ACTIVATION v18 R2",
+          "block_id": "4e86fdcdbb00a345",
+          "source_sha256": "66f5afc6267e602f6dec0690f84eeb9db10aba368355fdc2ae1c7fd646c7480f"
+        }
+      ]
+    },
+    {
+      "en": "_o_ARRAY STRING",
+      "fr": "_o_TABLEAU ALPHA",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_ARRAY STRING ARRAY TEXT v12",
+          "block_id": "cb8ad5bdedb430f6",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_TABLEAU ALPHA TABLEAU TEXTE v12",
+          "block_id": "501407b315337726",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_C_GRAPH",
+      "fr": "_o_C_GRAPHE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_C_GRAPH (use SVG with the GRAPH command) v12",
+          "block_id": "a1cda002a4c7bc51",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_C_GRAPHE (utilisez du SVG avec la commande GRAPHE ) v12",
+          "block_id": "9a6f1d961ddd3c6a",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_C_INTEGER",
+      "fr": "_o_C_ENTIER",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_C_INTEGER C_LONGINT v12",
+          "block_id": "ffef58a2890f0f45",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_C_ENTIER C_ENTIER LONG v12",
+          "block_id": "9d0e95afb4e9e89d",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_C_STRING",
+      "fr": "_o_C_ALPHA",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_C_STRING C_TEXT (as soon as database is in Unicode) v12",
+          "block_id": "fdf8b1654bab0803",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_C_ALPHA C_TEXTE (dès que la base de données est en Unicode) v12",
+          "block_id": "5d5c3c7e51383fe0",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_DATA SEGMENT LIST",
+      "fr": "_o_LISTE SEGMENTS DE DONNÉES",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_DATA SEGMENT LIST - v11",
+          "block_id": "afd2710a6b394319",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_LISTE SEGMENTS DE DONNÉES - v11",
+          "block_id": "55eec4bb336133a3",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_INTEGRATE LOG FILE",
+      "fr": "_o_INTEGRER FICHIER HISTORIQUE",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_INTEGRATE LOG FILE INTEGRATE MIRROR LOG FILE v16",
+          "block_id": "0d6e8c5c2376ce00",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_INTEGRER FICHIER HISTORIQUE INTEGRER FICHIER HISTORIQUE MIROIR v16",
+          "block_id": "dfc42d1a80ff1893",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_ADD SUBRECORD",
+      "fr": "_o_AJOUTER SOUS ENREGISTREMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_ADD SUBRECORD ADD RECORD in the n table of a N->1 relation v12",
+          "block_id": "1f6086027391a95d",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_AJOUTER SOUS ENREGISTREMENT AJOUTER ENREGISTREMENT dans la table n d'une relation N->1 v12",
+          "block_id": "95755dc9ea98991d",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_MODIFY SUBRECORD",
+      "fr": "_o_MODIFIER SOUS ENREGISTREMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_MODIFY SUBRECORD MODIFY RECORD in the n table of a N->1 relation v12",
+          "block_id": "cda528fa6b823c4c",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_MODIFIER SOUS ENREGISTREMENT MODIFIER ENREGISTREMENT dans la table n d'une relation N->1 v12",
+          "block_id": "2da2b6b63c879c00",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_DRAG AND DROP PROPERTIES",
+      "fr": "_o_PROPRIETES GLISSER DEPOSER",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_DRAG AND DROP PROPERTIES Commands from the Pasteboard theme v17 R4",
+          "block_id": "ca6a4febc40668c5",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_PROPRIETES GLISSER DEPOSER Les commande du thème Conteneur de données v17 R4",
+          "block_id": "469c553562631291",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_During",
+      "fr": "_o_Pendant",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_During Replace with Form event code and the appropriate event v12",
+          "block_id": "829b1f0f7e6441fd",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Pendant Remplacer par Evenement formulaire code et l'événement approprié v12",
+          "block_id": "6a5102b3ada1a1fc",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_REDRAW LIST",
+      "fr": "_o_REDESSINER LISTE",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_REDRAW LIST Remove in code (does nothing since v11) v11",
+          "block_id": "57b9653d40637714",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_REDESSINER LISTE Supprimer dans le code (ne fait rien depuis la v11) v11",
+          "block_id": "e12a89c3d2b3404f",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_lk footer height",
+      "fr": "_o_lk hauteur pied",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk footer height LISTBOX Get footers height v16 R3",
+          "block_id": "58008ada2802e2c1",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk hauteur pied LISTBOX Lire hauteur pieds v16 R3",
+          "block_id": "42da9efb2b5a4c3c",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_lk header height",
+      "fr": "_o_lk hauteur entête",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk header height LISTBOX Get headers height v16 R3",
+          "block_id": "32e3a13f47b68729",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk hauteur entête LISTBOX Lire hauteur entetes v16 R3",
+          "block_id": "be25ad2792a8b781",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_OBJECT Get action",
+      "fr": "_o_OBJET Lire action",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_OBJECT Get action OBJECT Get action v16 R3",
+          "block_id": "36a2a0008ed08d2d",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_OBJET Lire action OBJET Lire action v16 R3",
+          "block_id": "a01dca20482e6db1",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_OBJECT SET COLOR",
+      "fr": "_o_OBJET FIXER COULEUR",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_OBJECT SET COLOR OBJECT SET RGB COLORS v18",
+          "block_id": "aa3b2afdf2538eb4",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_OBJET FIXER COULEUR OBJET FIXER COULEURS RVB v18",
+          "block_id": "ae76a9cb7490f692",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_PICTURE TO GIF",
+      "fr": "_o_IMAGE VERS GIF",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PICTURE TO GIF PICTURE TO BLOB v16 R5",
+          "block_id": "4012458289d2ba35",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_IMAGE VERS GIF IMAGE VERS BLOB v16 R5",
+          "block_id": "5641170db0f19d46",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_PAGE SETUP",
+      "fr": "_o_UTILISER PARAMETRES IMPRESSION",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PAGE SETUP SET PRINT OPTION , GET PRINT OPTION , Print settings to BLOB , BLOB to print settings v18",
+          "block_id": "a910f5b3333b24ea",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER PARAMETRES IMPRESSION FIXER OPTION IMPRESSION , LIRE OPTION IMPRESSION , Paramètres impression vers BLOB , BLOB vers paramètres impression v18",
+          "block_id": "218f9b6c23695682",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_MOBILE Return selection",
+      "fr": "_o_MOBILE Renvoyer sélection",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_MOBILE Return selection ORDA v18",
+          "block_id": "2c3c36377fa2b515",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_MOBILE Renvoyer sélection ORDA v18",
+          "block_id": "38ae040d901c6f52",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_USE EXTERNAL DATABASE",
+      "fr": "_o_UTILISER BASE EXTERNE",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_USE EXTERNAL DATABASE SQL LOGIN v12",
+          "block_id": "fa4fadddc4d56a9d",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER BASE EXTERNE SQL LOGIN v12",
+          "block_id": "988739c26a89ddcd",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_USE INTERNAL DATABASE",
+      "fr": "_o_UTILISER BASE INTERNE",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_USE INTERNAL DATABASE SQL LOGOUT v12",
+          "block_id": "1470529b3473cd50",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER BASE INTERNE SQL LOGOUT v12",
+          "block_id": "823851bc424ee6da",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_Mac to Win",
+      "fr": "_o_Mac vers Windows",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_Mac to Win v11",
+          "block_id": "a04ab8eebea591b1",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Mac vers Windows v11",
+          "block_id": "d4a11d959aeaad65",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_Win to Mac",
+      "fr": "_o_Windows vers Mac",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_Win to Mac v11",
+          "block_id": "2ffdcb1df5aabad3",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Windows vers Mac v11",
+          "block_id": "aef50323ee7d1cae",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_Document type",
+      "fr": "_o_Type document",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_Document type Path to object v12",
+          "block_id": "ea594d8ed27785bc",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Type document Chemin vers objet v12",
+          "block_id": "d7f3ef6a2dc148c1",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_Document creator",
+      "fr": "_o_Createur document",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "_o_Document type , _o_Document creator , _o_SET DOCUMENT TYPE , _o_SET DOCUMENT CREATOR , _o_MAP FILE TYPES Path to object , Object to path Deprecated Removed (do nothing)",
+          "block_id": "56ad350517a6d3e8",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "_o_Type document , _o_Createur document , _o_CHANGER TYPE DOCUMENT , _o_CHANGER CREATEUR DOCUMENT , _o_ASSOCIER TYPES FICHIER Chemin vers objet , Objet vers chemin Obsolète Supprimé (ne fait rien)",
+          "block_id": "911ced5e8c6a090c",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET DOCUMENT TYPE",
+      "fr": "_o_CHANGER TYPE DOCUMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "_o_Document type , _o_Document creator , _o_SET DOCUMENT TYPE , _o_SET DOCUMENT CREATOR , _o_MAP FILE TYPES Path to object , Object to path Deprecated Removed (do nothing)",
+          "block_id": "56ad350517a6d3e8",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "_o_Type document , _o_Createur document , _o_CHANGER TYPE DOCUMENT , _o_CHANGER CREATEUR DOCUMENT , _o_ASSOCIER TYPES FICHIER Chemin vers objet , Objet vers chemin Obsolète Supprimé (ne fait rien)",
+          "block_id": "911ced5e8c6a090c",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET DOCUMENT CREATOR",
+      "fr": "_o_CHANGER CREATEUR DOCUMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "_o_Document type , _o_Document creator , _o_SET DOCUMENT TYPE , _o_SET DOCUMENT CREATOR , _o_MAP FILE TYPES Path to object , Object to path Deprecated Removed (do nothing)",
+          "block_id": "56ad350517a6d3e8",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "_o_Type document , _o_Createur document , _o_CHANGER TYPE DOCUMENT , _o_CHANGER CREATEUR DOCUMENT , _o_ASSOCIER TYPES FICHIER Chemin vers objet , Objet vers chemin Obsolète Supprimé (ne fait rien)",
+          "block_id": "911ced5e8c6a090c",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_MAP FILE TYPES",
+      "fr": "_o_ASSOCIER TYPES FICHIER",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "_o_Document type , _o_Document creator , _o_SET DOCUMENT TYPE , _o_SET DOCUMENT CREATOR , _o_MAP FILE TYPES Path to object , Object to path Deprecated Removed (do nothing)",
+          "block_id": "56ad350517a6d3e8",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "_o_Type document , _o_Createur document , _o_CHANGER TYPE DOCUMENT , _o_CHANGER CREATEUR DOCUMENT , _o_ASSOCIER TYPES FICHIER Chemin vers objet , Objet vers chemin Obsolète Supprimé (ne fait rien)",
+          "block_id": "911ced5e8c6a090c",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_Font name",
+      "fr": "_o_Nom de police",
+      "evidence": [
+        {
+          "source_id": "legacy-v16-deprecated-features-en",
+          "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-or-removed-features-in-v16-product-range.200-3072042.en.html#3079518",
+          "heading": "Language: deprecated and/or removed commands",
+          "excerpt": "_o_Font number QuickDraw is deprecated, so the _o_Font name and _o_Font number commands are deprecated. v14 Deprecated",
+          "block_id": "b32db140f94599ba",
+          "source_sha256": "622be32db31962a2b103826510a29d824d2ca8a3fc31986ab8fe22eaa37c307f"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_Nom de police Utilisez les identifiants de police v17 R5",
+          "block_id": "d9dde167b1695564",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "_o_PLATFORM PROPERTIES",
+      "fr": "_o_PROPRIETES PLATE FORME",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PLATFORM PROPERTIES Get system info / Is macOS / Is Windows v17",
+          "block_id": "328e0d0ce7745809",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_PROPRIETES PLATE FORME Lire information systeme / Sur macOS / Sur Windows v17",
+          "block_id": "792bfc5091ff936f",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_CREATE USER FORM",
+      "fr": "_o_CREER FORMULAIRE UTILISATEUR",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_CREATE USER FORM Dynamic Forms v17 R4",
+          "block_id": "163cadf45b0d6091",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_CREER FORMULAIRE UTILISATEUR Formulaires dynamiques v17 R4",
+          "block_id": "870c832b17c39593",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_DELETE USER FORM",
+      "fr": "_o_SUPPRIMER FORMULAIRE UTILISATEUR",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_DELETE USER FORM Dynamic Forms v17 R4",
+          "block_id": "3a658f9410fccf7b",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_SUPPRIMER FORMULAIRE UTILISATEUR Formulaires dynamiques v17 R4",
+          "block_id": "9edb8dfa2d9ea8e5",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_EDIT FORM",
+      "fr": "_o_MODIFIER FORMULAIRE",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_EDIT FORM Dynamic Forms v17 R4",
+          "block_id": "8006b7ed60ca0543",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_MODIFIER FORMULAIRE Formulaires dynamiques v17 R4",
+          "block_id": "a8d298272b8989dc",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_LIST USER FORMS",
+      "fr": "_o_LISTE FORMULAIRES UTILISATEURS",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_LIST USER FORMS Dynamic Forms v17 R4",
+          "block_id": "51e91cbdf1d64c83",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_LISTE FORMULAIRES UTILISATEURS Formulaires dynamiques v17 R4",
+          "block_id": "591ec5f0d6ab3755",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_O_WEB Get session process count",
+      "fr": "_O_WEB Lire nombre process session",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_O_WEB Get session process count Use scalable sessions v18 R6",
+          "block_id": "ec5b31863e33523c",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_O_WEB Lire nombre process session Utiliser les sessions évolutives v18 R6",
+          "block_id": "2d65f243cb56ff8d",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "GET ICON RESOURCE",
+      "fr": "LIRE RESSOURCE ICONE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "GET ICON RESOURCE - v17 R5",
+          "block_id": "b456c4cf08c691ad",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "LIRE RESSOURCE ICONE - v17 R5",
+          "block_id": "752f7eca9d891725",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "GET PICTURE FROM LIBRARY",
+      "fr": "LIRE IMAGE DANS BIBLIOTHEQUE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801021",
+          "heading": "Toolbox",
+          "excerpt": "GET PICTURE FROM LIBRARY - Do not work - Use READ PICTURE FILE instead",
+          "block_id": "c09eb4fcf397586b",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801021",
+          "heading": "Boîte à outils",
+          "excerpt": "LIRE IMAGE DANS BIBLIOTHEQUE - Non fonctionnel - Utiliser LIRE FICHIER IMAGE à la place",
+          "block_id": "8eaea87c07bb368f",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "GET PICTURE FORMATS",
+      "fr": "LIRE FORMATS IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801027",
+          "heading": "Pictures in PICT format",
+          "excerpt": "The PICT format (deprecated by Apple since 2005) is no longer supported in 4D starting with v17 R5. It means that pictures in PICT format cannot be rendered by any means, they must be converted. Use the GET PICTURE FORMATS command to",
+          "block_id": "52947a8b47bfdb74",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801027",
+          "heading": "Images au format PICT",
+          "excerpt": "ne peuvent en aucun cas être rendues, elles doivent être converties. Utilisez la commande LIRE FORMATS IMAGE pour détecter et filtrer les images au format PICT contenues dans votre fichier de données.",
+          "block_id": "ee0f17100418ff82",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "READ PICTURE FILE",
+      "fr": "LIRE FICHIER IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT LOAD COMPRESS PICTURE FROM FILE READ PICTURE FILE / CONVERT PICTURE v17 R5",
+          "block_id": "fa3b43902bc4b752",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT CHARGER ET COMPRESSER IMAGE LIRE FICHIER IMAGE / CONVERTIR IMAGE v17 R5",
+          "block_id": "d293b643f39100a4",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "WRITE PICTURE FILE",
+      "fr": "ECRIRE FICHIER IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT COMPRESS PICTURE FILE WRITE PICTURE FILE / PICTURE TO BLOB v17 R5",
+          "block_id": "847ce0570d7b6d1a",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT COMPRESSER FICHIER IMAGE ECRIRE FICHIER IMAGE / IMAGE VERS BLOB v17 R5",
+          "block_id": "db8b588b423c81be",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "PICTURE TO BLOB",
+      "fr": "IMAGE VERS BLOB",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT COMPRESS PICTURE FILE WRITE PICTURE FILE / PICTURE TO BLOB v17 R5",
+          "block_id": "847ce0570d7b6d1a",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT COMPRESSER FICHIER IMAGE ECRIRE FICHIER IMAGE / IMAGE VERS BLOB v17 R5",
+          "block_id": "db8b588b423c81be",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "PICTURE CODEC LIST",
+      "fr": "LISTE CODECS IMAGES",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_PICTURE TYPE LIST PICTURE CODEC LIST v17 R5",
+          "block_id": "dfed21bfe4fa2650",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_LISTE TYPES IMAGES LISTE CODECS IMAGES v17 R5",
+          "block_id": "c9ed53b831129a2f",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "CONVERT PICTURE",
+      "fr": "CONVERTIR IMAGE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_QT COMPRESS PICTURE CONVERT PICTURE v17 R5",
+          "block_id": "bb12e06f32093bb2",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_QT COMPRESSER IMAGE CONVERTIR IMAGE v17 R5",
+          "block_id": "cc17a93ef03abf7e",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "PROCESS 4D TAGS",
+      "fr": "TRAITER BALISES 4D",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_XSLT APPLY TRANSFORMATION Use PHP libxslt module or the PROCESS 4D TAGS command v17 R5",
+          "block_id": "15859db7d95d1250",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_XSLT APPLIQUER TRANSFORMATION Utilisez le module PHP libxslt ou la commande TRAITER BALISES 4D v17 R5",
+          "block_id": "a4e75fd0d6312124",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "OBJECT SET ENABLED",
+      "fr": "OBJET FIXER ACTIVATION",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#5432969",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_DISABLE BUTTON / _o_ENABLE BUTTON OBJECT SET ENABLED v18 R2",
+          "block_id": "15db1e0ab416d622",
+          "source_sha256": "9d005c0da4af201d8c4678297d4e78ab8a54bed13945fbbc59d743c17ed50e96"
+        },
+        {
+          "source_id": "legacy-v19-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html#5432969",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_INACTIVER BOUTON / _o_ACTIVER BOUTON OBJET FIXER ACTIVATION v18 R2",
+          "block_id": "4e86fdcdbb00a345",
+          "source_sha256": "66f5afc6267e602f6dec0690f84eeb9db10aba368355fdc2ae1c7fd646c7480f"
+        }
+      ]
+    },
+    {
+      "en": "OBJECT SET FONT",
+      "fr": "OBJET FIXER POLICE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "The OBJECT SET FONT command no longer accepts a LongInt parameter for the font: this parameter is now a String and you must specify the font name.",
+          "block_id": "6c325dc1f2f17519",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "La commande OBJET FIXER POLICE n'accepte plus de paramètre entier long pour la police : ce paramètre est maintenant une chaîne et vous devez spécifier le nom de la police.",
+          "block_id": "0cb1f6608a433bf5",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "SAVE LIST",
+      "fr": "STOCKER LISTE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801021",
+          "heading": "Toolbox",
+          "excerpt": "SAVE LIST - Error at runtime if called from a project",
+          "block_id": "b92524c3ba698445",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801021",
+          "heading": "Boîte à outils",
+          "excerpt": "STOCKER LISTE - Erreur à l'exécution en cas d'appel depuis un projet",
+          "block_id": "1da363d0d4e971f1",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "ARRAY TEXT",
+      "fr": "TABLEAU TEXTE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_ARRAY STRING ARRAY TEXT v12",
+          "block_id": "cb8ad5bdedb430f6",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_TABLEAU ALPHA TABLEAU TEXTE v12",
+          "block_id": "501407b315337726",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "C_LONGINT",
+      "fr": "C_ENTIER LONG",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_C_INTEGER C_LONGINT v12",
+          "block_id": "ffef58a2890f0f45",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_C_ENTIER C_ENTIER LONG v12",
+          "block_id": "9d0e95afb4e9e89d",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "C_TEXT",
+      "fr": "C_TEXTE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_C_STRING C_TEXT (as soon as database is in Unicode) v12",
+          "block_id": "fdf8b1654bab0803",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4840747",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_C_ALPHA C_TEXTE (dès que la base de données est en Unicode) v12",
+          "block_id": "5d5c3c7e51383fe0",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "C_OBJECT",
+      "fr": "C_OBJET",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html#4823658",
+          "heading": "New date format",
+          "excerpt": "To better align with the SpreadJS date format, 4D has changed the way dates and times are stored. Since 4D v17 R2, when converting a 4D view to a 4D View Pro document, dates and times were cast as a C_TEXT. As of 4D v17 R4 dates and times are cast as a C_OBJECT which contains 2 fields: one for the date (C_DATE), the other for the time (C_TIME).",
+          "block_id": "272eda7390836175",
+          "source_sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf"
+        },
+        {
+          "source_id": "legacy-v18-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html#4823658",
+          "heading": "Nouveau format date",
+          "excerpt": "Par souci de cohérence avec le format date SpreadJS, 4D a modifié le stockage des heures et des dates. A compter de 4D v17 R2, lors de la conversion d'un document 4D view vers un 4D View Pro, les heures et les dates étaient présentées sous la forme C_TEXTE. A compter de 4D v17 R4, les heures et les dates sont présentées sous la forme C_OBJET, qui contient 2 dossiers : un dossier pour la date (C_DATE), un autre pour l",
+          "block_id": "a0b1a21d50179b69",
+          "source_sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c"
+        }
+      ]
+    },
+    {
+      "en": "C_TIME",
+      "fr": "C_HEURE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html#4823658",
+          "heading": "New date format",
+          "excerpt": "To better align with the SpreadJS date format, 4D has changed the way dates and times are stored. Since 4D v17 R2, when converting a 4D view to a 4D View Pro document, dates and times were cast as a C_TEXT. As of 4D v17 R4 dates and times are cast as a C_OBJECT which contains 2 fields: one for the date (C_DATE), the other for the time (C_TIME).",
+          "block_id": "272eda7390836175",
+          "source_sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf"
+        },
+        {
+          "source_id": "legacy-v18-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html#4823658",
+          "heading": "Nouveau format date",
+          "excerpt": "rence avec le format date SpreadJS, 4D a modifié le stockage des heures et des dates. A compter de 4D v17 R2, lors de la conversion d'un document 4D view vers un 4D View Pro, les heures et les dates étaient présentées sous la forme C_TEXTE. A compter de 4D v17 R4, les heures et les dates sont présentées sous la forme C_OBJET, qui contient 2 dossiers : un dossier pour la date (C_DATE), un autre pour l'heure (C_HEURE).",
+          "block_id": "a0b1a21d50179b69",
+          "source_sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c"
+        }
+      ]
+    },
+    {
+      "en": "GRAPH",
+      "fr": "GRAPHE",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_GRAPH TABLE Build the data in arrays and call GRAPH in a SVG picture v17 R5",
+          "block_id": "7938637a1ee3e862",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801076",
+          "heading": "Langage : Commandes supprimées",
+          "excerpt": "_o_GRAPHE SUR TABLE Générez les données dans des tableaux et appelez GRAPHE dans une image SVG v17 R5",
+          "block_id": "4064db5297742614",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "INTEGRATE MIRROR LOG FILE",
+      "fr": "INTEGRER FICHIER HISTORIQUE MIROIR",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_INTEGRATE LOG FILE INTEGRATE MIRROR LOG FILE v16",
+          "block_id": "0d6e8c5c2376ce00",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_INTEGRER FICHIER HISTORIQUE INTEGRER FICHIER HISTORIQUE MIROIR v16",
+          "block_id": "dfc42d1a80ff1893",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "ADD RECORD",
+      "fr": "AJOUTER ENREGISTREMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_ADD SUBRECORD ADD RECORD in the n table of a N->1 relation v12",
+          "block_id": "1f6086027391a95d",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_AJOUTER SOUS ENREGISTREMENT AJOUTER ENREGISTREMENT dans la table n d'une relation N->1 v12",
+          "block_id": "95755dc9ea98991d",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "MODIFY RECORD",
+      "fr": "MODIFIER ENREGISTREMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_MODIFY SUBRECORD MODIFY RECORD in the n table of a N->1 relation v12",
+          "block_id": "cda528fa6b823c4c",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_MODIFIER SOUS ENREGISTREMENT MODIFIER ENREGISTREMENT dans la table n d'une relation N->1 v12",
+          "block_id": "2da2b6b63c879c00",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "Form event code",
+      "fr": "Evenement formulaire code",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_During Replace with Form event code and the appropriate event v12",
+          "block_id": "829b1f0f7e6441fd",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Pendant Remplacer par Evenement formulaire code et l'événement approprié v12",
+          "block_id": "6a5102b3ada1a1fc",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "FORM Event",
+      "fr": "FORM Evenement",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5196219",
+          "heading": "On clicked event generated in edited list box cells",
+          "excerpt": "//List box object or list box column method If ( FORM Event .code= On Clicked ) //or On Double Clicked If ( Not ( Is editing text )) //added test //previous code End if End if",
+          "block_id": "d4fbd0e71ab3b0d8",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5196219",
+          "heading": "Evénement Sur clic généré dans les cellules de list box modifiées",
+          "excerpt": "//Objet list box ou méthode de colonne de list box Si ( FORM Evenement .code= Sur clic ) //ou Sur double-clic Si ( Non ( Texte en edition )) //test supplémentaire //code précédent Fin de si Fin de si",
+          "block_id": "9724b825aad6d2a4",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "OBJECT Get action",
+      "fr": "OBJET Lire action",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_OBJECT Get action OBJECT Get action v16 R3",
+          "block_id": "36a2a0008ed08d2d",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_OBJET Lire action OBJET Lire action v16 R3",
+          "block_id": "a01dca20482e6db1",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "OBJECT SET RGB COLORS",
+      "fr": "OBJET FIXER COULEURS RVB",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_OBJECT SET COLOR OBJECT SET RGB COLORS v18",
+          "block_id": "aa3b2afdf2538eb4",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_OBJET FIXER COULEUR OBJET FIXER COULEURS RVB v18",
+          "block_id": "ae76a9cb7490f692",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "LISTBOX Get footers height",
+      "fr": "LISTBOX Lire hauteur pieds",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk footer height LISTBOX Get footers height v16 R3",
+          "block_id": "58008ada2802e2c1",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk hauteur pied LISTBOX Lire hauteur pieds v16 R3",
+          "block_id": "42da9efb2b5a4c3c",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "LISTBOX Get headers height",
+      "fr": "LISTBOX Lire hauteur entetes",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk header height LISTBOX Get headers height v16 R3",
+          "block_id": "32e3a13f47b68729",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk hauteur entête LISTBOX Lire hauteur entetes v16 R3",
+          "block_id": "be25ad2792a8b781",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "SET PRINT OPTION",
+      "fr": "FIXER OPTION IMPRESSION",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PAGE SETUP SET PRINT OPTION , GET PRINT OPTION , Print settings to BLOB , BLOB to print settings v18",
+          "block_id": "a910f5b3333b24ea",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER PARAMETRES IMPRESSION FIXER OPTION IMPRESSION , LIRE OPTION IMPRESSION , Paramètres impression vers BLOB , BLOB vers paramètres impression v18",
+          "block_id": "218f9b6c23695682",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "GET PRINT OPTION",
+      "fr": "LIRE OPTION IMPRESSION",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PAGE SETUP SET PRINT OPTION , GET PRINT OPTION , Print settings to BLOB , BLOB to print settings v18",
+          "block_id": "a910f5b3333b24ea",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER PARAMETRES IMPRESSION FIXER OPTION IMPRESSION , LIRE OPTION IMPRESSION , Paramètres impression vers BLOB , BLOB vers paramètres impression v18",
+          "block_id": "218f9b6c23695682",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "Print settings to BLOB",
+      "fr": "Paramètres impression vers BLOB",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PAGE SETUP SET PRINT OPTION , GET PRINT OPTION , Print settings to BLOB , BLOB to print settings v18",
+          "block_id": "a910f5b3333b24ea",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER PARAMETRES IMPRESSION FIXER OPTION IMPRESSION , LIRE OPTION IMPRESSION , Paramètres impression vers BLOB , BLOB vers paramètres impression v18",
+          "block_id": "218f9b6c23695682",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "BLOB to print settings",
+      "fr": "BLOB vers paramètres impression",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_PAGE SETUP SET PRINT OPTION , GET PRINT OPTION , Print settings to BLOB , BLOB to print settings v18",
+          "block_id": "a910f5b3333b24ea",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_UTILISER PARAMETRES IMPRESSION FIXER OPTION IMPRESSION , LIRE OPTION IMPRESSION , Paramètres impression vers BLOB , BLOB vers paramètres impression v18",
+          "block_id": "218f9b6c23695682",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "Path to object",
+      "fr": "Chemin vers objet",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_Document type Path to object v12",
+          "block_id": "ea594d8ed27785bc",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Type document Chemin vers objet v12",
+          "block_id": "d7f3ef6a2dc148c1",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "Object to path",
+      "fr": "Objet vers chemin",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "_o_Document type , _o_Document creator , _o_SET DOCUMENT TYPE , _o_SET DOCUMENT CREATOR , _o_MAP FILE TYPES Path to object , Object to path Deprecated Removed (do nothing)",
+          "block_id": "56ad350517a6d3e8",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "_o_Type document , _o_Createur document , _o_CHANGER TYPE DOCUMENT , _o_CHANGER CREATEUR DOCUMENT , _o_ASSOCIER TYPES FICHIER Chemin vers objet , Objet vers chemin Obsolète Supprimé (ne fait rien)",
+          "block_id": "911ced5e8c6a090c",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "Get system info",
+      "fr": "Lire information systeme",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_Gestalt Get system info / Is macOS / Is Windows v17",
+          "block_id": "3edaabe79a238851",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_Gestalt Lire information systeme / Sur macOS / Sur Windows v17",
+          "block_id": "91cb3f1f92411ca4",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "LISTBOX Get property",
+      "fr": "LISTBOX Lire propriete",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "LISTBOX Get property constants:",
+          "block_id": "5d1744046a1ce21b",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "Constantes LISTBOX Lire propriete :",
+          "block_id": "74e7f61d940dd1b1",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "OBJECT GET SCROLLBAR",
+      "fr": "OBJET LIRE BARRES DEFILEMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk display hor scrollbar / _o_lk display ver scrollbar OBJECT GET SCROLLBAR v16 R3",
+          "block_id": "e45404521f87d1e7",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk affichage barre déf hor / _o_lk affichage barre déf ver OBJET LIRE BARRES DEFILEMENT v16 R3",
+          "block_id": "2371f9c9266226d7",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "OBJECT GET SCROLL POSITION",
+      "fr": "OBJET LIRE DEFILEMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk hor scrollbar position / _o_lk ver scrollbar position OBJECT GET SCROLL POSITION v16 R3",
+          "block_id": "212d447fd4746e98",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk position barre déf hor / _o_lk position barre déf ver OBJET LIRE DEFILEMENT v16 R3",
+          "block_id": "67676e0b33bb0219",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "SET DATABASE PARAMETER",
+      "fr": "FIXER PARAMETRE BASE",
+      "evidence": [
+        {
+          "source_id": "legacy-v16-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html#3081797",
+          "heading": "Quick table",
+          "excerpt": "QuickTime support (compatibility option available using SET DATABASE PARAMETER ( QuickTimeSupport ;1)) Use native formats Deprecated Removed",
+          "block_id": "d29d7c98ce9a4973",
+          "source_sha256": "06d8094a2775b0be65d88acdc45d29d8f3c7f1b5f303badbb1849c22ab3cbbb4"
+        },
+        {
+          "source_id": "legacy-v16-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html#3081797",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "Support de QuickTime (option de compatibilité en utilisant FIXER PARAMETRE BASE ( Prise en charge QuickTime ;1)) Utilisez les formats natifs Obsolète Supprimé",
+          "block_id": "55e45fb6bc6bd5a1",
+          "source_sha256": "2bc3c457ba0639ff37eb00622d9951b3907d4122b36bca1fa0e07e930c8ec477"
+        }
+      ]
+    },
+    {
+      "en": "Current resources folder",
+      "fr": "Dossier Resources courant",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801058",
+          "heading": "Mac Resources",
+          "excerpt": "Use the “Resources” folder to store your resources. Use Get 4D folder ( Current resources folder ) to dynamically get the parent path for your resources.",
+          "block_id": "92be0cc865979af1",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#4801058",
+          "heading": "Ressources Mac",
+          "excerpt": "ces\" pour stocker vos ressources. Pour récupérer dynamiquement le chemin d'accès à vos ressources, utilisez Dossier 4D (Dossier Resources courant) .",
+          "block_id": "21af173dd5ea4922",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "Open resource file",
+      "fr": "Ouvrir fichier ressources",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "Mac Resources Use \"Resources\" folder. For compatibility, you can still use it in converted databases. We no longer support write access commands. OS OS (cicn icons, GET ICON RESOURCE command: removed.) Database .RSR files are not opened automatically. You need to use Open resource file .",
+          "block_id": "df587d77b62ca730",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "Ressources Mac Utilisez le dossier \"Resources\". Par compatibilité, vous pouvez encore les utiliser dans les bases converties. Nous ne supportons plus les commandes permettant d'accéder en écriture aux ressources. OS OS (icônes cicn, commande LIRE RESSOURCE ICONE : supprimés.) Les fichiers Database.RSR ne sont pas ouverts automatiquement. Vous devez utiliser Ouvrir fichier ressources .",
+          "block_id": "d3b8fd869821e434",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "_o_Get platform interface",
+      "fr": "_o_Lire interface",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-deprecated-features-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.en.html#3762076",
+          "heading": "Language: deprecated and/or removed commands",
+          "excerpt": "_o_Get platform interface / _o_SET PLATFORM INTERFACE Can be used only for converted application; with the Automatic Platform constant v12 Deprecated",
+          "block_id": "5eddcbfcb4b50910",
+          "source_sha256": "1c0f5354d9d95e11ea5723f63867f83dbcc88dc97a42cbce48cdd854f92accdc"
+        },
+        {
+          "source_id": "legacy-v17-deprecated-features-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees-dans-la-gamme-v17.200-3761903.fr.html#3762076",
+          "heading": "Langage : commandes obsolètes et/ou supprimées",
+          "excerpt": "_o_Lire interface / _o_FIXER INTERFACE Peut être utilisé seulement pour les bases converties ; avec la constante Plate forme automatique v12 Obsolète",
+          "block_id": "8e187d7369bb1836",
+          "source_sha256": "112c1acb6815d8ff9b8881ad677ec12fa5867174d18b65abde3a0603bcb5c0fc"
+        }
+      ]
+    },
+    {
+      "en": "_o_SET PLATFORM INTERFACE",
+      "fr": "_o_FIXER INTERFACE",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-deprecated-features-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.en.html#3762076",
+          "heading": "Language: deprecated and/or removed commands",
+          "excerpt": "_o_Get platform interface / _o_SET PLATFORM INTERFACE Can be used only for converted application; with the Automatic Platform constant v12 Deprecated",
+          "block_id": "5eddcbfcb4b50910",
+          "source_sha256": "1c0f5354d9d95e11ea5723f63867f83dbcc88dc97a42cbce48cdd854f92accdc"
+        },
+        {
+          "source_id": "legacy-v17-deprecated-features-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees-dans-la-gamme-v17.200-3761903.fr.html#3762076",
+          "heading": "Langage : commandes obsolètes et/ou supprimées",
+          "excerpt": "_o_Lire interface / _o_FIXER INTERFACE Peut être utilisé seulement pour les bases converties ; avec la constante Plate forme automatique v12 Obsolète",
+          "block_id": "8e187d7369bb1836",
+          "source_sha256": "112c1acb6815d8ff9b8881ad677ec12fa5867174d18b65abde3a0603bcb5c0fc"
+        }
+      ]
+    },
+    {
+      "en": "_o_Font number",
+      "fr": "_o_Numéro de police",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+          "heading": "Language: removed commands",
+          "excerpt": "_o_Font number Use font identifiers v17 R5",
+          "block_id": "72da9f157875c9fc",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v16-deprecated-features-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees-dans-la-gamme-v16.200-3072042.fr.html#3079518",
+          "heading": "Langage : commandes obsolètes et/ou supprimées",
+          "excerpt": "_o_Numéro de police QuickDraw est obsolète, donc les commandes _o_Nom de police et _o_Numéro de police sont obsolètes. v14 Obsolète",
+          "block_id": "dc63eed9d06a2819",
+          "source_sha256": "18e98bf065885313d8cba2b42777592bcb8129d1dfcee58bf69cfc30d6c851d1"
+        }
+      ]
+    },
+    {
+      "en": "_o_lk display hor scrollbar",
+      "fr": "_o_lk affichage barre déf hor",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk display hor scrollbar / _o_lk display ver scrollbar OBJECT GET SCROLLBAR v16 R3",
+          "block_id": "e45404521f87d1e7",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk affichage barre déf hor / _o_lk affichage barre déf ver OBJET LIRE BARRES DEFILEMENT v16 R3",
+          "block_id": "2371f9c9266226d7",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_lk display ver scrollbar",
+      "fr": "_o_lk affichage barre déf ver",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk display hor scrollbar / _o_lk display ver scrollbar OBJECT GET SCROLLBAR v16 R3",
+          "block_id": "e45404521f87d1e7",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk affichage barre déf hor / _o_lk affichage barre déf ver OBJET LIRE BARRES DEFILEMENT v16 R3",
+          "block_id": "2371f9c9266226d7",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_lk hor scrollbar position",
+      "fr": "_o_lk position barre déf hor",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk hor scrollbar position / _o_lk ver scrollbar position OBJECT GET SCROLL POSITION v16 R3",
+          "block_id": "212d447fd4746e98",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk position barre déf hor / _o_lk position barre déf ver OBJET LIRE DEFILEMENT v16 R3",
+          "block_id": "67676e0b33bb0219",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_lk ver scrollbar position",
+      "fr": "_o_lk position barre déf ver",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+          "heading": "Language: deprecated commands",
+          "excerpt": "_o_lk hor scrollbar position / _o_lk ver scrollbar position OBJECT GET SCROLL POSITION v16 R3",
+          "block_id": "212d447fd4746e98",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#5802169",
+          "heading": "Langage : commandes obsolètes",
+          "excerpt": "_o_lk position barre déf hor / _o_lk position barre déf ver OBJET LIRE DEFILEMENT v16 R3",
+          "block_id": "67676e0b33bb0219",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "_o_PDFCreator Printer name",
+      "fr": "_o_PDFCreator Nom imprimante",
+      "evidence": [
+        {
+          "source_id": "legacy-v20-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6259904",
+          "heading": "PDFCreator Driver",
+          "excerpt": "The PDFCreator driver is deprecated as of 4D v20. Windows 10 and higher releases include a native PDF driver. The PDFCreator Printer name constant has been renamed _o_PDFCreator Printer name .",
+          "block_id": "18ec3dfe896e1d37",
+          "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"
+        },
+        {
+          "source_id": "legacy-v20-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html#6259904",
+          "heading": "PDFCreator Driver",
+          "excerpt": "Le PDFCreator driver est obsolète à partir de 4D v20. Les versions de Windows 10 et supérieures incluent un PDF driver natif. La constante du nom de l'imprimante PDFCreator a été renommée _o_PDFCreator Nom imprimante .",
+          "block_id": "b336f2de6108bed3",
+          "source_sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce"
+        }
+      ]
+    },
+    {
+      "en": "BASE64 ENCODE",
+      "fr": "ENCODER BASE64",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5170682",
+          "heading": "BASE64 ENCODE and BASE64 DECODE",
+          "excerpt": "These commands have been updated in 4D v18 R4. Some non-documented behaviors have been modified, which could bring compatibility issues in existing applications.",
+          "block_id": "8cf50551bc00b333",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5170682",
+          "heading": "ENCODER BASE64 et DECODER BASE64",
+          "excerpt": "Ces commandes ont été mises à jour dans 4D v18 R4. Certains comportements non documentés ont été modifiés, ce qui pourrait entraîner des problèmes de compatibilité dans les applications existantes.",
+          "block_id": "47c0444b8d67ecc4",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "BASE64 DECODE",
+      "fr": "DECODER BASE64",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5170682",
+          "heading": "BASE64 ENCODE and BASE64 DECODE",
+          "excerpt": "These commands have been updated in 4D v18 R4. Some non-documented behaviors have been modified, which could bring compatibility issues in existing applications.",
+          "block_id": "8cf50551bc00b333",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5170682",
+          "heading": "ENCODER BASE64 et DECODER BASE64",
+          "excerpt": "Ces commandes ont été mises à jour dans 4D v18 R4. Certains comportements non documentés ont été modifiés, ce qui pourrait entraîner des problèmes de compatibilité dans les applications existantes.",
+          "block_id": "47c0444b8d67ecc4",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "On Clicked",
+      "fr": "Sur clic",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5196219",
+          "heading": "On clicked event generated in edited list box cells",
+          "excerpt": "As of 4D v18 R6, the On Clicked and On Double Clicked event are generated when a click occurs in a text input cell while the cell is being edited . This feature allows displaying pop-up menus after a Contextual click for example. The event is generated in the column and in the list box object (in that order).",
+          "block_id": "40f1268cbdb5fc2a",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5196219",
+          "heading": "Evénement Sur clic généré dans les cellules de list box modifiées",
+          "excerpt": "A partir de 4D v18 R6, les événements Sur clic et Sur double clic sont générés lorsqu'un clic est effectué sur une cellule de saisie de texte durant la modification de la cellule . Cette fonctionnalité permet d'afficher des menu pop-ups après Clic contextuel par exemple. L'événement est généré dans la colonne et dans l'objet list box (dans cet ordre).",
+          "block_id": "4e05ae2cc51bdde1",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "On Double Clicked",
+      "fr": "Sur double clic",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5196219",
+          "heading": "On clicked event generated in edited list box cells",
+          "excerpt": "As of 4D v18 R6, the On Clicked and On Double Clicked event are generated when a click occurs in a text input cell while the cell is being edited . This feature allows displaying pop-up menus after a Contextual click for example. The event is generated in the column and in the list box object (in that order).",
+          "block_id": "40f1268cbdb5fc2a",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5196219",
+          "heading": "Evénement Sur clic généré dans les cellules de list box modifiées",
+          "excerpt": "A partir de 4D v18 R6, les événements Sur clic et Sur double clic sont générés lorsqu'un clic est effectué sur une cellule de saisie de texte durant la modification de la cellule . Cette fonctionnalité permet d'afficher des menu pop-ups après Clic contextuel par exemple. L'événement est généré dans la colonne et dans l'objet list box (dans cet ordre).",
+          "block_id": "4e05ae2cc51bdde1",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "Is editing text",
+      "fr": "Texte en edition",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5196219",
+          "heading": "On clicked event generated in edited list box cells",
+          "excerpt": "//List box object or list box column method If ( FORM Event .code= On Clicked ) //or On Double Clicked If ( Not ( Is editing text )) //added test //previous code End if End if",
+          "block_id": "d4fbd0e71ab3b0d8",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5196219",
+          "heading": "Evénement Sur clic généré dans les cellules de list box modifiées",
+          "excerpt": "//Objet list box ou méthode de colonne de list box Si ( FORM Evenement .code= Sur clic ) //ou Sur double-clic Si ( Non ( Texte en edition )) //test supplémentaire //code précédent Fin de si Fin de si",
+          "block_id": "9724b825aad6d2a4",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "Path all objects",
+      "fr": "Chemin tous les objets",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#4972659",
+          "heading": "Constant value change",
+          "excerpt": "Path all objects 31 -1",
+          "block_id": "c62b0bc418c0b48d",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#4972659",
+          "heading": "Valeur de constante modifiée",
+          "excerpt": "Chemin tous les objets 31 -1",
+          "block_id": "b1a777aed702359d",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "SET ALLOWED METHODS",
+      "fr": "FIXER METHODES AUTORISEES",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#4833990",
+          "heading": "Commands and methods not filtered in formulas",
+          "excerpt": "SET ALLOWED METHODS command",
+          "block_id": "6b6abbb2455e3418",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#4833990",
+          "heading": "Commandes et méthodes non filtrées dans les formules",
+          "excerpt": "La commande FIXER METHODES AUTORISEES",
+          "block_id": "4ac3c135259fc05b",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "EDIT FORMULA",
+      "fr": "EDITER FORMULE",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#4833990",
+          "heading": "Commands and methods not filtered in formulas",
+          "excerpt": "Note that the filtering still applies to the Formula editor called with the EDIT FORMULA .",
+          "block_id": "6223cd9d90969209",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#4833990",
+          "heading": "Commandes et méthodes non filtrées dans les formules",
+          "excerpt": "A noter que le fitrage continue de s'appliquer à l'éditeur de formules appelé avec EDITER FORMULE .",
+          "block_id": "777d39e3fc0a70cd",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "ST FREEZE EXPRESSIONS",
+      "fr": "ST FIGER EXPRESSIONS",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#4833999",
+          "heading": "ST FREEZE EXPRESSIONS does not always recaculate expressions",
+          "excerpt": "In previous versions, the ST FREEZE EXPRESSIONS command always computed expressions before executing in 4D Write Pro documents. As of 4D v18 R2, it only computes expressions if they were not already computed (except if the * parameter was used).",
+          "block_id": "661dea16d99309bc",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#4833999",
+          "heading": "Pas de recalcul systématique pour ST FIGER EXPRESSIONS",
+          "excerpt": "Dans les versions précédentes, la commande ST FIGER EXPRESSIONS calculait toujours les expressions avant de s'exécuter dans les documents 4D Write Pro. A partir de 4D v18 R2, les expressions sont calculées uniquement si cela n'a pas déjà été fait (excepté lorsque le paramètre * a été utilisé).",
+          "block_id": "5d2722dc6382a808",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "GET SYSTEM FORMAT",
+      "fr": "LIRE FORMATAGE SYSTEME",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5171995",
+          "heading": "4D Write Pro decimal tab separator",
+          "excerpt": "When importing legacy 4D Write plug-in documents, 4D Write Pro now uses by default the system separator (returned by GET SYSTEM FORMAT ) as decimal separator for decimal tabs. You can change this parameter using the WP SET ATTRIBUTES command.",
+          "block_id": "bebd425502c33265",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5171995",
+          "heading": "Séparateur des tabulations décimales de 4D Write Pro",
+          "excerpt": "Lors de l'importation d'anciens documents du plug-in 4D Write, 4D Write Pro utilise désormais par défaut le séparateur du système (retourné par LIRE FORMATAGE SYSTEME ) comme séparateur décimal pour les tabulations décimales. Vous pouvez modifier ce paramètre à l'aide de la commande WP FIXER ATTRIBUTS .",
+          "block_id": "3ef4d371f84123f5",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "WP SET ATTRIBUTES",
+      "fr": "WP FIXER ATTRIBUTS",
+      "evidence": [
+        {
+          "source_id": "legacy-v19-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html#5171995",
+          "heading": "4D Write Pro decimal tab separator",
+          "excerpt": "When importing legacy 4D Write plug-in documents, 4D Write Pro now uses by default the system separator (returned by GET SYSTEM FORMAT ) as decimal separator for decimal tabs. You can change this parameter using the WP SET ATTRIBUTES command.",
+          "block_id": "bebd425502c33265",
+          "source_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d"
+        },
+        {
+          "source_id": "legacy-v19-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html#5171995",
+          "heading": "Séparateur des tabulations décimales de 4D Write Pro",
+          "excerpt": "Lors de l'importation d'anciens documents du plug-in 4D Write, 4D Write Pro utilise désormais par défaut le séparateur du système (retourné par LIRE FORMATAGE SYSTEME ) comme séparateur décimal pour les tabulations décimales. Vous pouvez modifier ce paramètre à l'aide de la commande WP FIXER ATTRIBUTS .",
+          "block_id": "3ef4d371f84123f5",
+          "source_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9"
+        }
+      ]
+    },
+    {
+      "en": "On Timer",
+      "fr": "Sur minuteur",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html#4822684",
+          "heading": "On Timer no longer triggered when resizing a form",
+          "excerpt": "Because the On Resize event is now triggered when a subform is resized, the On Timer form event is no longer triggered in this case to prevent conflicts. Previously, this event could be triggered in but with a non-reliable frequency.",
+          "block_id": "dae8587cfeccf24e",
+          "source_sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf"
+        },
+        {
+          "source_id": "legacy-v18-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html#4822684",
+          "heading": "Arrêt du déclenchement de l'évenement Sur minuteur lors du redimensionnement d'un formulaire",
+          "excerpt": "Parce que l'événement Sur redimensionnement est désormais déclenché lorsqu'un sous-formulaire est redimensionné, l'événement formulaire Sur minuteur n'est plus déclenché dans ce cas pour éviter les conflits. Antérieurement, cet événement pouvait être déclenché, mais à une fréquence peu fiable.",
+          "block_id": "c66e6a8a7f0c7b58",
+          "source_sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c"
+        }
+      ]
+    },
+    {
+      "en": "On Resize",
+      "fr": "Sur redimensionnement",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html#4822684",
+          "heading": "On Timer no longer triggered when resizing a form",
+          "excerpt": "Because the On Resize event is now triggered when a subform is resized, the On Timer form event is no longer triggered in this case to prevent conflicts. Previously, this event could be triggered in but with a non-reliable frequency.",
+          "block_id": "dae8587cfeccf24e",
+          "source_sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf"
+        },
+        {
+          "source_id": "legacy-v18-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html#4822684",
+          "heading": "Arrêt du déclenchement de l'évenement Sur minuteur lors du redimensionnement d'un formulaire",
+          "excerpt": "Parce que l'événement Sur redimensionnement est désormais déclenché lorsqu'un sous-formulaire est redimensionné, l'événement formulaire Sur minuteur n'est plus déclenché dans ce cas pour éviter les conflits. Antérieurement, cet événement pouvait être déclenché, mais à une fréquence peu fiable.",
+          "block_id": "c66e6a8a7f0c7b58",
+          "source_sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c"
+        }
+      ]
+    },
+    {
+      "en": "On Data Change",
+      "fr": "Sur données modifiées",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-changes-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html#4800984",
+          "heading": "On data Change event not triggered anymore",
+          "excerpt": "4D events in 4D View Pro have been refactored, and the event On Data Change is not triggered anymore.",
+          "block_id": "ea1c321d05e562a7",
+          "source_sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf"
+        },
+        {
+          "source_id": "legacy-v18-changes-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html#4800984",
+          "heading": "Arrêt du déclenchement de l'événement Sur données modifiées",
+          "excerpt": "Les événements 4D dans 4D View Pro ont été repensés, et l'événement Sur données modifiées ne se déclenche plus.",
+          "block_id": "2c5df4d14199830b",
+          "source_sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c"
+        }
+      ]
+    },
+    {
+      "en": "DOM Find XML element",
+      "fr": "DOM Chercher element XML",
+      "evidence": [
+        {
+          "source_id": "legacy-design-v20-compatibility-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html#6292632",
+          "heading": "Compatibility page",
+          "excerpt": "Although not standard, you might want to keep using these features so that your code continues to work as before -- in this case, just set the option unchecked . On the other hand, if your code does not rely on the non-standard implementation and if you want to benefit from the extended XPath features in your databases (as described in the DOM Find XML element command), make sure the Use standard XPath option is chec",
+          "block_id": "bd35ecf734fd7b57",
+          "source_sha256": "66cb1918a05d2a6529a76f073adb64eba91bcee400fdb494e822931aa6661333"
+        },
+        {
+          "source_id": "legacy-design-v20-compatibility-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html#6292632",
+          "heading": "Page Compatibilité",
+          "excerpt": "Même si ces fonctionnalités ne sont pas standard, vous pouvez continuer de les utiliser afin que votre code continue de fonctionner -- dans ce cas, l'option doit simplement être décochée . Par ailleurs, si votre code ne dépend pas de l'implémentation non standard et si vous souhaitez profiter des fonctionnalités XPath avancées dans vos bases (cf. commande DOM Chercher element XML ), assurez-vous que l'option Utiliser",
+          "block_id": "64896709ea968897",
+          "source_sha256": "79790de2e82c53d10d4a8de20ba62f66d81c458b5d7c765e018a95873e1e0ae8"
+        }
+      ]
+    },
+    {
+      "en": "TEXT TO DOCUMENT",
+      "fr": "TEXTE VERS DOCUMENT",
+      "evidence": [
+        {
+          "source_id": "legacy-design-v20-compatibility-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html#6292632",
+          "heading": "Compatibility page",
+          "excerpt": "Use LF for end of line on macOS: Starting with 4D v19 R2 (and 4D v19 R3 for XML files), 4D writes text files with line feed (LF) as default end of line (EOL) character instead of CR (CRLF for xml SAX) on macOS in new projects. If you want to benefit from this new behavior on projects converted from previous 4D versions, check this option. See TEXT TO DOCUMENT , Document to text , and XML SET OPTIONS .",
+          "block_id": "333b150f50c93545",
+          "source_sha256": "66cb1918a05d2a6529a76f073adb64eba91bcee400fdb494e822931aa6661333"
+        },
+        {
+          "source_id": "legacy-design-v20-compatibility-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html#6292632",
+          "heading": "Page Compatibilité",
+          "excerpt": "gne sur macOS : À compter de 4D v19 R2, 4D écrit les fichiers texte avec un caractère LF ( line feed ou \"saut de ligne\") comme caractère de fin de ligne par défaut au lieu de Retour Chariot dans les nouveaux projets sur macOS. Si vous souhaitez bénéficier de ce nouveau comportement dans les projets convertis à partir de versions antérieures de 4D, cochez cette option. Voir TEXTE VERS DOCUMENT et Document vers texte .",
+          "block_id": "b326213693e42357",
+          "source_sha256": "79790de2e82c53d10d4a8de20ba62f66d81c458b5d7c765e018a95873e1e0ae8"
+        }
+      ]
+    },
+    {
+      "en": "Document to text",
+      "fr": "Document vers texte",
+      "evidence": [
+        {
+          "source_id": "legacy-design-v20-compatibility-en",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html#6292632",
+          "heading": "Compatibility page",
+          "excerpt": "Use LF for end of line on macOS: Starting with 4D v19 R2 (and 4D v19 R3 for XML files), 4D writes text files with line feed (LF) as default end of line (EOL) character instead of CR (CRLF for xml SAX) on macOS in new projects. If you want to benefit from this new behavior on projects converted from previous 4D versions, check this option. See TEXT TO DOCUMENT , Document to text , and XML SET OPTIONS .",
+          "block_id": "333b150f50c93545",
+          "source_sha256": "66cb1918a05d2a6529a76f073adb64eba91bcee400fdb494e822931aa6661333"
+        },
+        {
+          "source_id": "legacy-design-v20-compatibility-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html#6292632",
+          "heading": "Page Compatibilité",
+          "excerpt": "gne sur macOS : À compter de 4D v19 R2, 4D écrit les fichiers texte avec un caractère LF ( line feed ou \"saut de ligne\") comme caractère de fin de ligne par défaut au lieu de Retour Chariot dans les nouveaux projets sur macOS. Si vous souhaitez bénéficier de ce nouveau comportement dans les projets convertis à partir de versions antérieures de 4D, cochez cette option. Voir TEXTE VERS DOCUMENT et Document vers texte .",
+          "block_id": "b326213693e42357",
+          "source_sha256": "79790de2e82c53d10d4a8de20ba62f66d81c458b5d7c765e018a95873e1e0ae8"
+        }
+      ]
+    },
+    {
+      "en": "LAUNCH EXTERNAL PROCESS",
+      "fr": "LANCER PROCESS EXTERNE",
+      "evidence": [
+        {
+          "source_id": "legacy-v17-quick-table-en",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html#3610434",
+          "heading": "Quick table",
+          "excerpt": "OLE Tools Web area, LAUNCH EXTERNAL PROCESS Removed Removed",
+          "block_id": "f086223915ce10b7",
+          "source_sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e"
+        },
+        {
+          "source_id": "legacy-v17-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html#3610434",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "OLE Tools Zone Web, LANCER PROCESS EXTERNE Supprimé Supprimé",
+          "block_id": "e148a3368fef567b",
+          "source_sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb"
+        }
+      ]
+    },
+    {
+      "en": "WEB GET VARIABLES",
+      "fr": "WEB LIRE VARIABLES",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801036",
+          "heading": "Dynamic assignment of variables received through HTTP",
+          "excerpt": "For reasons of optimization and control, this principle is not maintained starting with 4D v14: the value of Web variables are no longer automatically assigned to the 4D variables. To recover variables sent using a POST or a GET, you must use the WEB GET VARIABLES command exclusively. To recover the posted files, you must use the WEB GET BODY PART / WEB Get body part count commands.",
+          "block_id": "e42800bdda358de0",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v18-deprecated-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html#4801036",
+          "heading": "Affectation dynamique des variables reçues via HTTP",
+          "excerpt": "Pour des raisons d'optimisation et de contrôle, ce principe n'est plus maintenu à compter de 4Dv14 : la valeur des variables Web n'est plus automatiquement affectée aux variables 4D. La récupération des variables envoyées via un POST ou un GET doit s'effectuer exclusivement à l'aide de la commande WEB LIRE VARIABLES . Les fichiers postés devront, eux, être récupérés à l'aide des commande",
+          "block_id": "7ae9fe927f633a84",
+          "source_sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8"
+        }
+      ]
+    },
+    {
+      "en": "WEB GET BODY PART",
+      "fr": "WEB LIRE PARTIE CORPS",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801036",
+          "heading": "Dynamic assignment of variables received through HTTP",
+          "excerpt": "For reasons of optimization and control, this principle is not maintained starting with 4D v14: the value of Web variables are no longer automatically assigned to the 4D variables. To recover variables sent using a POST or a GET, you must use the WEB GET VARIABLES command exclusively. To recover the posted files, you must use the WEB GET BODY PART / WEB Get body part count commands.",
+          "block_id": "e42800bdda358de0",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-design-v20-compatibility-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html#6292632",
+          "heading": "Page Compatibilité",
+          "excerpt": "ns une méthode projet COMPILER_WEB . A compter de 4D v13.4, ce mécanisme est obsolète et n'est plus disponible dans les nouvelles bases de données. Par compatibilité, il est maintenu dans les bases de données converties mais il est alors possible de le désactiver en désélectionnant cette option de compatibilité. Il est désormais recommandé d'utiliser les commandes dédiées WEB LIRE VARIABLES ou WEB LIRE PARTIE CORPS .",
+          "block_id": "edf6e9b54e10cf2a",
+          "source_sha256": "79790de2e82c53d10d4a8de20ba62f66d81c458b5d7c765e018a95873e1e0ae8"
+        }
+      ]
+    },
+    {
+      "en": "WEB Get body part count",
+      "fr": "WEB Lire nombre parties corps",
+      "evidence": [
+        {
+          "source_id": "legacy-v18-deprecated-en",
+          "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801036",
+          "heading": "Dynamic assignment of variables received through HTTP",
+          "excerpt": "For reasons of optimization and control, this principle is not maintained starting with 4D v14: the value of Web variables are no longer automatically assigned to the 4D variables. To recover variables sent using a POST or a GET, you must use the WEB GET VARIABLES command exclusively. To recover the posted files, you must use the WEB GET BODY PART / WEB Get body part count commands.",
+          "block_id": "e42800bdda358de0",
+          "source_sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b"
+        },
+        {
+          "source_id": "legacy-v16-quick-table-fr",
+          "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html#3081797",
+          "heading": "Tableau récapitulatif",
+          "excerpt": "Affectation dynamique des variables reçues via HTTP (option de compatiblité pour les bases créées avant la version 13.4) Commande WEB LIRE VARIABLES (pour récupérer les variables). Commandes WEB LIRE PARTIE CORPS / WEB Lire nombre parties corps (pour récupérer les fichiers postés) Obsolète Obsolète",
+          "block_id": "9a22d3eed30c7688",
+          "source_sha256": "2bc3c457ba0639ff37eb00622d9951b3907d4122b36bca1fa0e07e930c8ec477"
+        }
+      ]
+    }
+  ]
 }
