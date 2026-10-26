@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "root": "https://library.4d-japan.com/doc/",
+  "pages": [
+    {
+      "url": "https://library.4d-japan.com/doc/",
+      "parent": null,
+      "checked_at": "2026-10-26T10:46:37+00:00",
+      "fetched_at": "2026-10-26T10:46:37+00:00",
+      "http_status": 200,
+      "sha256": "e8a786c156d3f39540f68e63eadcf27362b971055d7d91b667deecdf47ac79a4",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv20/",
+      "parent": "https://library.4d-japan.com/doc/",
+      "checked_at": "2026-10-26T10:46:37+00:00",
+      "fetched_at": "2026-10-26T10:46:37+00:00",
+      "http_status": 200,
+      "sha256": "c70bea2b3a86fe53f57ad360e4aebad102ca194c702f09410ddc57e9710b3a9d",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/",
+      "checked_at": "2026-10-26T10:46:38+00:00",
+      "fetched_at": "2026-10-26T10:46:38+00:00",
+      "http_status": 200,
+      "sha256": "f056a7151e0ccef543b7a7fc13ebc776cd301a898be7befe97aee3331277ab95",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/",
+      "checked_at": "2026-10-26T10:46:38+00:00",
+      "fetched_at": "2026-10-26T10:46:38+00:00",
+      "http_status": 200,
+      "sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv19/",
+      "parent": "https://library.4d-japan.com/doc/",
+      "checked_at": "2026-10-26T10:46:39+00:00",
+      "fetched_at": "2026-10-26T10:46:39+00:00",
+      "http_status": 200,
+      "sha256": "ca4aa6aea1c4b138462378b02d3b26d72b2f3904ed2c5c5018d8ecb51b2b2f80",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/",
+      "checked_at": "2026-10-26T10:46:39+00:00",
+      "fetched_at": "2026-10-26T10:46:39+00:00",
+      "http_status": 200,
+      "sha256": "7ed7696b0be5881b9d4f55dfa7ae7fd7fa1de149119b30afcec7dff9abebac6a",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/",
+      "checked_at": "2026-10-26T10:46:40+00:00",
+      "fetched_at": "2026-10-26T10:46:40+00:00",
+      "http_status": 200,
+      "sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv18/",
+      "parent": "https://library.4d-japan.com/doc/",
+      "checked_at": "2026-10-26T10:46:44+00:00",
+      "fetched_at": "2026-10-26T10:46:44+00:00",
+      "http_status": 200,
+      "sha256": "18f9c33b3ee53a02eae81b6a0f91cb1f4941e5bc7e5dd01b4fed0a568da4a360",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/",
+      "checked_at": "2026-10-26T10:46:44+00:00",
+      "fetched_at": "2026-10-26T10:46:44+00:00",
+      "http_status": 200,
+      "sha256": "bc970faf44d32acc18bd48d2d268a3034850fcb52948d6a2abbf0835783a2923",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/",
+      "checked_at": "2026-10-26T10:46:44+00:00",
+      "fetched_at": "2026-10-26T10:46:44+00:00",
+      "http_status": 200,
+      "sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv17/",
+      "parent": "https://library.4d-japan.com/doc/",
+      "checked_at": "2026-10-26T10:46:44+00:00",
+      "fetched_at": "2026-10-26T10:46:44+00:00",
+      "http_status": 200,
+      "sha256": "d2fe19bacbcb67826888bdb5c5be47bc7d0de92edc22b1abffc41fb476035985",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/",
+      "checked_at": "2026-10-26T10:46:45+00:00",
+      "fetched_at": "2026-10-26T10:46:45+00:00",
+      "http_status": 200,
+      "sha256": "b5a2a0b6ce7808789b3acc6faf9485a24bbe2103ac3d50c44557cafa6ff9cb17",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/",
+      "checked_at": "2026-10-26T10:46:45+00:00",
+      "fetched_at": "2026-10-26T10:46:45+00:00",
+      "http_status": 200,
+      "sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv16/",
+      "parent": "https://library.4d-japan.com/doc/",
+      "checked_at": "2026-10-26T10:46:46+00:00",
+      "fetched_at": "2026-10-26T10:46:46+00:00",
+      "http_status": 200,
+      "sha256": "a2adeabf8d89da7d9311409b47be3bb02ef6a77b1b6ce06809dc47138cba9592",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/",
+      "checked_at": "2026-10-26T10:46:47+00:00",
+      "fetched_at": "2026-10-26T10:46:47+00:00",
+      "http_status": 200,
+      "sha256": "01eeadbf08d0107b48c5784d9e09e748e5fcbfe057b72313edc7f000dd9bc56f",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/",
+      "checked_at": "2026-10-26T10:46:47+00:00",
+      "fetched_at": "2026-10-26T10:46:47+00:00",
+      "http_status": 200,
+      "sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/",
+      "checked_at": "2026-10-26T10:46:49+00:00",
+      "fetched_at": "2026-10-26T10:46:49+00:00",
+      "http_status": 200,
+      "sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/",
+      "checked_at": "2026-10-26T10:46:54+00:00",
+      "fetched_at": "2026-10-26T10:46:54+00:00",
+      "http_status": 200,
+      "sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82",
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/",
+      "checked_at": "2026-10-26T10:46:54+00:00",
+      "fetched_at": "2026-10-26T10:46:54+00:00",
+      "http_status": 200,
+      "sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056",
+      "etag": null,
+      "last_modified": null
+    }
+  ]
+}

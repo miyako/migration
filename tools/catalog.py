@@ -11,6 +11,7 @@ import re
 from urllib.parse import urlsplit
 
 from .ingest import CACHE, LANGUAGES, ROOT, load, save
+from .discover_archive import document_identity
 
 BUCKETS = [f"v{major}" for major in range(16, 22)] + ["latest"]
 STAGES = ["syntax", "compilation", "runtime", "modernization", "unknown"]
@@ -94,11 +95,33 @@ def validate(document):
     require(document["schema_version"] == 1, "Unsupported schema version")
     sources = {s["id"]: s for s in document["sources"]}
     require(len(sources) == len(document["sources"]), "Duplicate source IDs")
+    navigation = document["archive_navigation"]
+    require(navigation["schema_version"] == 1, "Unsupported archive navigation schema")
+    indexes = {page["url"]: page for page in navigation["pages"]}
+    require(len(indexes) == len(navigation["pages"]) <= 24, "Invalid/over-limit archive indexes")
     for source in sources.values():
         for field in ("id", "family", "publisher", "authority", "edition", "language", "url", "discovery", "fetch"):
             require(field in source, f"Source missing {field}")
         require(source["language"] in LANGUAGES and url(source["url"]), "Invalid source language/URL")
         require(nonempty(source["fetch"]["status"]), "Missing source fetch status")
+        if source["discovery"]["method"] == "archive_directory_link":
+            discovery = source["discovery"]
+            chain = discovery["chain"]
+            require(len(chain) >= 2 and chain[0] == navigation["root"] and chain[-1] == source["url"],
+                    "Invalid archive discovery chain")
+            require(chain[-2] == discovery["parent"] and all(item in indexes for item in chain[:-1]),
+                    "Discovery path requires recorded archive indexes")
+            for index, parent in enumerate(chain[:-1]):
+                require(indexes[parent]["parent"] == (chain[index - 1] if index else None),
+                        "Archive index parent does not match traced path")
+            require(discovery["index_sha256"] == indexes[discovery["parent"]]["sha256"],
+                    "Discovery index hash mismatch")
+            require(document_identity(source["url"]) == (discovery["document_key"], source["language"]),
+                    "Discovered document identity/language mismatch")
+        for attempt in source.get("url_history", []):
+            require(url(attempt["url"]) and nonempty(attempt["fetch"]["status"])
+                    and attempt["disposition"] in {"superseded_url_probe", "superseded_location"},
+                    "Historical URL attempt needs URL, recorded status and disposition")
     ids = set()
     for change in document["changes"]:
         for field in ("id", "identifiers", "threshold", "applies_until", "platforms", "modules", "type",
@@ -234,6 +257,8 @@ def build(verify=False):
     coverage = {
         "english_seeds": len(load(ROOT / "data/sources.json")["seeds"]),
         "registered_sources": len(registry),
+        "superseded_url_probes": sum(attempt["disposition"] == "superseded_url_probe"
+                                      for source in registry for attempt in source.get("url_history", [])),
         "fetch_status": dict(sorted(Counter(s["fetch"]["status"] for s in registry).items())),
         "processed_source_ids": sorted({e["source_id"] for c in changes for e in c["evidence"]}),
         "candidate_changes": sum(c["review_status"] == "candidate" for c in changes),
@@ -247,7 +272,9 @@ def build(verify=False):
                 "clarifications": load(ROOT / "data/clarifications.json"),
                 "discoveries": load(ROOT / "data/discoveries.json"),
                 "dispositions": load(ROOT / "data/dispositions.json"),
-                "glossary": load(ROOT / "data/glossary.json")}
+                "glossary": load(ROOT / "data/glossary.json"),
+                "archive_navigation": load(ROOT / "data/archive-navigation.json"),
+                "archive_unresolved": load(ROOT / "data/source-locations.json")["unresolved"]}
     validate(document)
     if verify:
         verify_evidence(document)

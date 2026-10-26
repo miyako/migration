@@ -105,6 +105,7 @@ export function validateCatalog(data) {
 
 export const translations = {
   en: {
+    urlHistory: 'Superseded URL attempts (not missing translations)', archiveTrace: 'Verified archive link path', upgrade: 'Upgrade',
     actionBasis: 'Basis for action (source/editorial metadata)',
     php: 'PHP', printing: 'Printing', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Latest feature release', latestLts: 'Latest LTS release', releasedAt: 'Released on',
@@ -130,6 +131,7 @@ export const translations = {
     blocking: 'Blocking', critical: 'Critical', high: 'High', medium: 'Medium', low: 'Low', informational: 'Informational', restriction: 'Restriction', removed: 'Removed', deprecated: 'Deprecated', deprecation: 'Deprecation', introduced: 'Introduced', behavior: 'Behavior', syntax: 'Syntax', compilation: 'Compilation', runtime: 'Runtime', deployment: 'Deployment', testing: 'Testing', design: 'Design', languageModule: 'Language', all: 'All', binary: 'Binary', project: 'Project', in_scope: 'In scope', out_of_scope: 'Out of scope', conditional: 'Conditional', available: 'Available', failed: 'Failed', pending: 'Pending', resolved: 'Resolved', superseded: 'Superseded', unverified: 'Unverified', verified: 'Verified', missing: 'Missing', blocked: 'Blocked', error: 'Error', fetched: 'Retrieved', partial: 'Partial', not_attempted: 'Not attempted',
   },
   fr: {
+    urlHistory: 'Tentatives d’URL remplacées (pas des traductions absentes)', archiveTrace: 'Chemin vérifié des liens de l’archive', upgrade: 'Mise à niveau',
     actionBasis: 'Fondement de l’action (métadonnées de source/éditoriales)',
     php: 'PHP', printing: 'Impression', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Dernière version évolutive', latestLts: 'Dernière version LTS', releasedAt: 'Publié le',
@@ -155,6 +157,7 @@ export const translations = {
     blocking: 'Bloquant', critical: 'Critique', high: 'Élevé', medium: 'Moyen', low: 'Faible', informational: 'Informatif', restriction: 'Restriction', removed: 'Supprimé', deprecated: 'Déprécié', deprecation: 'Dépréciation', introduced: 'Introduit', behavior: 'Comportement', syntax: 'Syntaxe', compilation: 'Compilation', runtime: 'Exécution', deployment: 'Déploiement', testing: 'Tests', design: 'Conception', languageModule: 'Langage', all: 'Tous', binary: 'Binaire', project: 'Projet', in_scope: 'Dans le périmètre', out_of_scope: 'Hors périmètre', conditional: 'Conditionnel', available: 'Disponible', failed: 'Échec', pending: 'En attente', resolved: 'Résolu', superseded: 'Remplacé', unverified: 'Non vérifié', verified: 'Vérifié', missing: 'Manquant', blocked: 'Bloqué', error: 'Erreur', fetched: 'Récupéré', partial: 'Partiel', not_attempted: 'Non tenté',
   },
   de: {
+    urlHistory: 'Ersetzte URL-Versuche (keine fehlenden Übersetzungen)', archiveTrace: 'Verifizierter Linkpfad im Archiv', upgrade: 'Upgrade',
     actionBasis: 'Grundlage der Maßnahme (Quellen-/Redaktionsmetadaten)',
     php: 'PHP', printing: 'Drucken', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Neueste Feature-Version', latestLts: 'Neueste LTS-Version', releasedAt: 'Veröffentlicht am',
@@ -180,6 +183,7 @@ export const translations = {
     blocking: 'Blockierend', critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig', informational: 'Informativ', restriction: 'Einschränkung', removed: 'Entfernt', deprecated: 'Abgekündigt', deprecation: 'Abkündigung', introduced: 'Eingeführt', behavior: 'Verhalten', syntax: 'Syntax', compilation: 'Kompilierung', runtime: 'Laufzeit', deployment: 'Bereitstellung', testing: 'Tests', design: 'Entwurf', languageModule: 'Sprache', all: 'Alle', binary: 'Binär', project: 'Projekt', in_scope: 'Im Umfang', out_of_scope: 'Außerhalb des Umfangs', conditional: 'Bedingt', available: 'Verfügbar', failed: 'Fehlgeschlagen', pending: 'Ausstehend', resolved: 'Geklärt', superseded: 'Ersetzt', unverified: 'Unverifiziert', verified: 'Verifiziert', missing: 'Fehlend', blocked: 'Blockiert', error: 'Fehler', fetched: 'Abgerufen', partial: 'Teilweise', not_attempted: 'Nicht versucht',
   },
   es: {
+    urlHistory: 'Intentos de URL sustituidos (no traducciones ausentes)', archiveTrace: 'Ruta de enlaces del archivo verificada', upgrade: 'Actualización',
     actionBasis: 'Fundamento de la acción (metadatos de fuente/editoriales)',
     php: 'PHP', printing: 'Impresión', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Última versión de funciones', latestLts: 'Última versión LTS', releasedAt: 'Publicado el',
@@ -205,6 +209,7 @@ export const translations = {
     blocking: 'Bloqueante', critical: 'Crítico', high: 'Alto', medium: 'Medio', low: 'Bajo', informational: 'Informativo', restriction: 'Restricción', removed: 'Eliminado', deprecated: 'Obsoleto', deprecation: 'Obsolescencia', introduced: 'Introducido', behavior: 'Comportamiento', syntax: 'Sintaxis', compilation: 'Compilación', runtime: 'Ejecución', deployment: 'Despliegue', testing: 'Pruebas', design: 'Diseño', languageModule: 'Lenguaje', all: 'Todos', binary: 'Binario', project: 'Proyecto', in_scope: 'Dentro del alcance', out_of_scope: 'Fuera del alcance', conditional: 'Condicional', available: 'Disponible', failed: 'Fallido', pending: 'Pendiente', resolved: 'Resuelto', superseded: 'Sustituido', unverified: 'Sin verificar', verified: 'Verificado', missing: 'Ausente', blocked: 'Bloqueado', error: 'Error', fetched: 'Recuperado', partial: 'Parcial', not_attempted: 'No intentado',
   },
   ja: {
+    urlHistory: '置き換え済みの URL 試行（翻訳の欠落ではありません）', archiveTrace: '確認済みのアーカイブ内リンク経路', upgrade: 'アップグレード',
     actionBasis: '対応の根拠（出典・編集メタデータ）',
     php: 'PHP', printing: '印刷', windows: 'Windows', macos: 'macOS',
     latestFeature: '最新フィーチャーリリース', latestLts: '最新 LTS リリース', releasedAt: 'リリース日',

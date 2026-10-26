@@ -11,14 +11,17 @@ Binary-to-project conversion is not assumed to be mandatory.
 
 ## What is actually covered
 
-Initial ingestion checked **21 supplied English seeds**: 12 legacy documentation
-pages and 9 official blog overviews. Each legacy seed also has four explicit
-language probes, for **69 registered URLs**:
+The current snapshot covers **22 supplied English seeds**: 13 legacy documentation
+pages (including the distinct **Upgrade** family) and 9 official blog overviews.
+Each legacy seed's four other languages are located through actual archive
+directory links, for **74 registered source URLs**:
 
 | Publication snapshot, 2026-10-26 | Count |
 |---|---:|
-| Available structural extracts | 35 |
-| Unavailable URLs (HTTP 404, retained in registry) | 34 |
+| Available structural extracts | 74 |
+| Currently unavailable registered source URLs | 0 |
+| Superseded guessed URLs that returned 404, retained as history | 34 |
+| Bounded archive navigation indexes traced, separate from sources | 19 |
 | Actual blog language links queued for review, not fetched | 27 |
 | Candidate actionable changes | 3 |
 | Human-reviewed changes | **0** |
@@ -32,11 +35,26 @@ languages, with **generated-candidate** provenance. They are not official summar
 or human-reviewed translations. English/Japanese official wording seeds a small
 concept glossary; French/German/Spanish official glossary entries remain unknown.
 
+The earlier suffix-only probe method was incorrect: translated pages also use
+translated slugs. For example, French v20 is
+[`Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html`](https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html),
+not the English slug with `.fr.html`. All 34 failed guesses have now been replaced
+with verified linked locations under the same stable source IDs. Their real 404
+results remain in `url_history`; they are **not missing translations**. Including
+those superseded attempts, 108 distinct source URL locations have been checked
+over time (74 current + 34 superseded), separate from navigation indexes.
+
+The added **4D v16 - Upgrade** overview and all four localized counterparts are
+available and structurally extracted. The overview describes features added since
+v15 R5 and links existing conversion/deprecation sources. New-feature headings
+do not automatically establish migration requirements; no new actionable records
+or human-review claims were added for this source.
+
 Fetching or extracting a document does **not** mean its changes were all cataloged.
 The remaining available pages, other removed PHP modules, compiler requirements,
 conversion-guide child pages, historical deduplication/alignment, and broader
-version/platform coverage still need editorial processing. Missing localized
-pages are not silently replaced with English. No results never means an upgrade
+version/platform coverage still need editorial processing. Unresolved localized
+locations are not guessed or silently replaced with English. No results never means an upgrade
 has no issues. The UI exposes these counts and each source's status.
 
 The verified **latest public feature release** is **4D 21 R4**, released
@@ -76,12 +94,14 @@ is ignored and rebuilt from the committed editorial inputs.
 |---|---|
 | `data/sources.json` | Independent, extensible seed registry: stable ID, family, edition, URL |
 | `data/registry.json` | Checked sources, language, publisher/authority, discovery provenance, fetch dates, HTTP/redirect status, resolved URL and SHA-256 |
+| `data/source-locations.json` | Verified translated document locations, exact document IDs, editions and archive link chains; unresolved discovery is explicit |
+| `data/archive-navigation.json` | Bounded index-fetch provenance and hashes; these navigation pages are not catalog sources |
 | `data/discoveries.json` | Actual bounded `hreflang` discoveries pending/accepted review |
 | `data/changes.json` | Publication-time editorial candidates with stable IDs and evidence |
 | `data/overrides.json` | Manual, reasoned patches applied last; ingestion never rewrites them |
 | `data/glossary.json` | Concept/edition-aligned official wording where verified; unknowns explicit |
 | `data/dispositions.json` | Explicit exclusions and pending editorial questions, not confirmed public errors |
-| `data/clarifications.json` | Curated confirmed-error register, initially empty |
+| `data/clarifications.json` | Curated confirmed-error register with evidence and dispositions |
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
 | `data/semantic-search.json` | Explicit unavailable state and pinned research provenance |
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
@@ -135,12 +155,14 @@ All network access is an explicit **publication-time** operation:
 
 ```sh
 # Initial/full registered scan; never crawls arbitrary related pages
+python3 -m tools.discover_archive
 python3 -m tools.ingest
 # Fetch only affected sources; uses ETag/Last-Modified when locally cached
 python3 -m tools.ingest --id legacy-v20-deprecated-en --id legacy-v20-deprecated-ja
 # Force retrieval if reviewing source changes
 python3 -m tools.ingest --refresh --id legacy-v20-deprecated-en
 # Optional explicit TLS-verifying transport, useful with macOS trust stores
+python3 -m tools.discover_archive --transport curl
 python3 -m tools.ingest --transport curl --id legacy-v20-deprecated-en
 # After reviewing data/discoveries.json: explicitly register same-host blog locales
 python3 -m tools.ingest --accept-discoveries --transport curl
@@ -158,11 +180,25 @@ were recorded, not that every remote URL was available.
 
 Raw pages, structural extracts, and unified source diffs are local/ignored:
 `.cache/raw/`, `.cache/extracts/`, `.cache/diffs/`. Extraction preserves section
-hierarchy, table cells with header context, code blocks, anchors and resolved
+hierarchy; archive navigation snapshots live in `.cache/navigation/`. It preserves
+table cells with header context, code blocks, anchors and resolved
 links; it does not use flattened simplified web text. Root-relative legacy links
 are resolved against the actual fetched URL: `/4Dv20/...` is not blindly rewritten
-to `/doc/4Dv20/...`. Only actual blog `hreflang` links are queued, never invented
-blog translations. No unbounded crawl runs. Conversion landing pages do not
+to `/doc/4Dv20/...`. Legacy locale discovery starts at the configured `/doc/`
+archive root, follows **actual links** through version/product/exact edition
+directories, and matches the document's numeric type/ID plus language independently
+of its translated slug. It never substitutes only the language suffix.
+Different editions, document types, languages such as `fe` versus `fr`, or
+ambiguous duplicate slugs are not silently merged. Navigation is limited to 24
+index pages (19 currently needed), with conditional fetching and local ignored
+index snapshots. Missing directory links or ambiguous matches fail explicitly;
+unresolved locale matches are recorded without fabricating a URL. New seeds can
+be registered in English before locale discovery, but additional languages are
+not invented. Source location corrections preserve earlier attempts under the
+same stable ID.
+
+Only actual blog `hreflang` links are queued, never invented blog translations.
+No unbounded crawl runs. Conversion landing pages do not
 imply their linked details were processed.
 
 Unchanged bodies reuse extraction. Bump `EXTRACTOR_VERSION` when changing the
@@ -202,7 +238,8 @@ manually created GitHub issue and `data/clarifications.json`: stable ID, title,
 pending/resolved/superseded status, affected change IDs, issue URL, evidence and
 disposition. Link the clarification IDs from affected changes' `notices`.
 The app has a separate navigable register without live API access. It starts
-empty because this slice established no confirmed contradiction. Model
+with one resolved clarification documenting the confirmed translated-slug
+discovery error and its correction; this is not a 4D product defect. Model
 suspicions go to an editorial queue first; never automatically post them as
 established 4D bugs. Official support is separate.
 

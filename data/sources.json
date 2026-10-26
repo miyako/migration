@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "archive_root": "https://library.4d-japan.com/doc/",
   "seeds": [
     {"id":"legacy-v20-deprecated","family":"deprecated-removed","edition":"20","url":"https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html"},
     {"id":"legacy-v19-deprecated","family":"deprecated-removed","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html"},
@@ -13,6 +14,7 @@
     {"id":"legacy-v18-conversion","family":"conversion-guide","edition":"18","url":"https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.en.html"},
     {"id":"legacy-v17-conversion","family":"conversion-guide","edition":"17.1","url":"https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.en.html"},
     {"id":"legacy-v16-conversion","family":"conversion-guide","edition":"16.3","url":"https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.en.html"},
+    {"id":"legacy-v16-upgrade","family":"upgrade","edition":"16","url":"https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html"},
     {"id":"blog-v20","family":"blog-overview","edition":"20","url":"https://blog.4d.com/en-whats-new-in-4d-v20/"},
     {"id":"blog-v19","family":"blog-overview","edition":"19","url":"https://blog.4d.com/en-whats-new-in-4d-v19/"},
     {"id":"blog-v18","family":"blog-overview","edition":"18","url":"https://blog.4d.com/en-whats-new-in-4d-v18/"},

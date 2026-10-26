@@ -175,10 +175,11 @@ def availability(extracted, expected_language):
     return "available"
 
 
-def initial_registry(config):
+def initial_registry(config, locations=None):
     if config.get("schema_version") != 1:
         raise ValueError("Unsupported source configuration schema version")
     result = []
+    locations = locations or {}
     identifiers = set()
     for seed in config["seeds"]:
         if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", seed["id"]):
@@ -189,21 +190,42 @@ def initial_registry(config):
         if urlsplit(seed["url"]).scheme != "https" or not urlsplit(seed["url"]).netloc:
             raise ValueError(f"Source must use HTTPS: {seed['id']}")
         if seed["family"] != "blog-overview" and ".en.html" not in seed["url"]:
-            raise ValueError(f"Legacy language probe requires an .en.html seed: {seed['id']}")
+            raise ValueError(f"Legacy discovery requires an .en.html seed: {seed['id']}")
         for language in LANGUAGES if seed["family"] != "blog-overview" else ("en",):
+            identifier = seed["id"] + "-" + language
+            location = locations.get(identifier)
+            if language != "en" and location is None:
+                continue
             entry = dict(seed)
-            entry["id"] = seed["id"] + "-" + language
+            entry["id"] = identifier
             entry["language"] = language
-            entry["url"] = seed["url"].replace(".en.html", f".{language}.html")
+            entry["url"] = location["url"] if location else seed["url"]
             entry.update({
                 "publisher": "4D", "authority": "official_documentation_mirror" if seed["family"] != "blog-overview" else "official_publisher",
                 "host_operator": "4D Japan archive" if seed["family"] != "blog-overview" else "4D",
-                "discovery": {"parent": None if language == "en" else seed["id"] + "-en",
-                              "method": "provided_seed" if language == "en" else "derived_language_probe"},
+                "discovery": location["discovery"] if location else {"parent": None, "method": "provided_seed"},
                 "fetch": {"status": "not_fetched"},
             })
             result.append(entry)
     return result
+
+
+def merge_registry(configured, existing):
+    by_id = {entry["id"]: entry for entry in existing}
+    entries = []
+    for entry in configured:
+        previous = by_id.get(entry["id"], {})
+        if previous.get("url") == entry["url"]:
+            entry = {**previous, **{k: v for k, v in entry.items() if k != "fetch"}}
+        elif previous:
+            entry = {**entry, "url_history": previous.get("url_history", []) + [{
+                "url": previous["url"], "resolved_url": previous.get("resolved_url"),
+                "fetch": previous["fetch"], "discovery": previous["discovery"],
+                "disposition": "superseded_url_probe" if previous["discovery"]["method"] == "derived_language_probe"
+                else "superseded_location",
+            }]}
+        entries.append(entry)
+    return entries + [entry for entry in existing if entry["id"] not in {x["id"] for x in entries}]
 
 
 class CurlResponse(io.BytesIO):
@@ -326,16 +348,9 @@ def main():
     args = parser.parse_args()
     registry_path = ROOT / "data/registry.json"
     existing = load(registry_path) if registry_path.exists() else []
-    by_id = {e["id"]: e for e in existing}
-    entries = []
-    for configured in initial_registry(load(ROOT / "data/sources.json")):
-        previous = by_id.get(configured["id"], {})
-        if previous.get("url") == configured["url"]:
-            entry = {**previous, **{k: v for k, v in configured.items() if k != "fetch"}}
-        else:
-            entry = configured
-        entries.append(entry)
-    entries += [e for e in existing if e["id"] not in {x["id"] for x in entries}]
+    locations_path = ROOT / "data/source-locations.json"
+    locations = load(locations_path)["locations"] if locations_path.exists() else {}
+    entries = merge_registry(initial_registry(load(ROOT / "data/sources.json"), locations), existing)
     queue_path = ROOT / "data/discoveries.json"
     discoveries = load(queue_path) if queue_path.exists() else []
     if args.accept_discoveries:

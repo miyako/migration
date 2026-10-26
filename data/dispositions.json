@@ -1,5 +1,13 @@
 [
   {
+    "id": "queue-v16-upgrade-review",
+    "source_id": "legacy-v16-upgrade-en",
+    "heading": "4D v16 - Upgrade",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html",
+    "status": "pending",
+    "reason": "Upgrade is a distinct source family. The overview describes features added since v15 R5; new-feature headings are not automatically migration requirements or exact introduction thresholds. Structural extraction and linked-section inspection do not mean complete cataloging. Linked conversion/deprecation sources remain distinct; failed conversion/opening stays outside scope."
+  },
+  {
     "id": "scope-successful-opening",
     "source_id": "legacy-v20-deprecated-en",
     "heading": "Non-compliance with object notation",

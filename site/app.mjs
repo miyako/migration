@@ -129,6 +129,7 @@ function renderCoverage() {
   area.append(metrics);
   area.append(line('fetchStatus', Object.entries(coverage.fetch_status ?? {})
     .map(([status, count]) => `${valueLabel(status)}: ${count}`).join(' · ') || t('unknown')));
+  if (coverage.superseded_url_probes) area.append(line('urlHistory', coverage.superseded_url_probes));
   if (Array.isArray(state.catalog.discoveries)) {
     const counts = new Map();
     for (const discovery of state.catalog.discoveries) {
@@ -323,7 +324,7 @@ function renderSources() {
     const dl = node('dl', undefined, 'detail-content');
     detail(dl, 'sourceEdition', source.edition);
     detail(dl, 'sourceLanguage', source.language);
-    detail(dl, 'family', source.family);
+    detail(dl, 'family', valueLabel(source.family));
     if (source.publisher) detail(dl, 'publisher', source.publisher);
     if (source.authority) detail(dl, 'authority', valueLabel(source.authority));
     if (source.host_operator) detail(dl, 'hostOperator', source.host_operator);
@@ -335,6 +336,30 @@ function renderSources() {
     if (source.fetch?.error) detail(dl, 'fetchError', source.fetch.error);
     detail(dl, 'checksum', source.fetch?.sha256);
     card.append(dl);
+    if (source.discovery?.chain?.length) {
+      const trace = node('details');
+      trace.append(node('summary', t('archiveTrace')));
+      const list = node('ol');
+      for (const url of source.discovery.chain) {
+        const item = node('li');
+        item.append(link(url, url));
+        list.append(item);
+      }
+      trace.append(list);
+      card.append(trace);
+    }
+    if (source.url_history?.length) {
+      const history = node('details');
+      history.append(node('summary', t('urlHistory')));
+      for (const attempt of source.url_history) {
+        const entry = node('div', undefined, 'detail-content');
+        entry.append(link(attempt.url, attempt.url), line('fetchStatus', valueLabel(attempt.fetch.status)));
+        if (attempt.fetch.http_status) entry.append(line('httpStatus', attempt.fetch.http_status));
+        if (attempt.fetch.checked_at) entry.append(line('checkedAt', dateLabel(attempt.fetch.checked_at)));
+        history.append(entry);
+      }
+      card.append(history);
+    }
     area.append(card);
   }
   const discoveries = state.catalog.discoveries;

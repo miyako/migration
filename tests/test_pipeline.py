@@ -12,7 +12,8 @@ from urllib.parse import urljoin
 from urllib.request import urlopen
 
 from tools.catalog import apply_overrides, bucket, build, merge_candidates, validate, verify_evidence
-from tools.ingest import availability, CurlResponse, DOM, extract, fetch_one, initial_registry, load, ROOT
+from tools.ingest import availability, CurlResponse, DOM, extract, fetch_one, initial_registry, merge_registry, load, ROOT
+from tools.discover_archive import ArchiveNavigator, directory_links, document_identity, matching_documents
 
 
 class Versions(unittest.TestCase):
@@ -129,17 +130,109 @@ class Extraction(unittest.TestCase):
 
 
 class Registry(unittest.TestCase):
-    def test_all_21_seeds_and_48_legacy_probes(self):
+    def test_all_22_seeds_and_verified_legacy_locations(self):
         config = load(ROOT / "data/sources.json")
-        entries = initial_registry(config)
-        self.assertEqual(len(config["seeds"]), 21)
-        self.assertEqual(len(entries), 69)
-        self.assertEqual(len({e["id"] for e in entries}), 69)
+        locations = load(ROOT / "data/source-locations.json")["locations"]
+        entries = initial_registry(config, locations)
+        self.assertEqual(len(config["seeds"]), 22)
+        self.assertEqual(len(entries), 74)
+        self.assertEqual(len({e["id"] for e in entries}), 74)
         for language in ("en", "fr", "de", "es", "ja"):
-            self.assertEqual(sum(e["language"] == language for e in entries), 21 if language == "en" else 12)
+            self.assertEqual(sum(e["language"] == language for e in entries), 22 if language == "en" else 13)
         self.assertEqual(sum(e["family"] == "blog-overview" for e in entries), 9)
+        self.assertEqual(sum(e["family"] == "upgrade" for e in entries), 5)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["edition"], "18.2")
         self.assertIn(".ja.html", next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["url"])
+        french = next(e for e in entries if e["id"] == "legacy-v20-deprecated-fr")
+        self.assertTrue(french["url"].endswith("/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"))
+        self.assertEqual(french["discovery"]["chain"][0], config["archive_root"])
+        self.assertEqual(french["discovery"]["chain"][-1], french["url"])
+        self.assertEqual(len(initial_registry(config)), 22, "Never fabricate untraced locale URLs")
+
+    def test_corrected_url_keeps_stable_id_and_failed_attempt(self):
+        original = {"id": "legacy-fr", "url": "https://example.test/English.fr.html",
+                    "fetch": {"status": "unavailable", "http_status": 404, "checked_at": "2026-10-26"},
+                    "discovery": {"method": "derived_language_probe"}}
+        configured = {"id": original["id"], "url": "https://example.test/Francais.fr.html",
+                      "fetch": {"status": "not_fetched"}, "discovery": {"method": "archive_directory_link"}}
+        result = merge_registry([configured], [original])
+        self.assertEqual(result[0]["id"], original["id"])
+        self.assertEqual(result[0]["fetch"]["status"], "not_fetched")
+        self.assertEqual(result[0]["url_history"][0]["fetch"], original["fetch"])
+        self.assertEqual(result[0]["url_history"][0]["disposition"], "superseded_url_probe")
+        self.assertEqual(merge_registry([configured], result), result)
+
+
+class ArchiveDiscovery(unittest.TestCase):
+    def test_index_fetch_is_cached_conditional_and_page_bounded(self):
+        from urllib.error import HTTPError
+        root = "https://example.test/doc/"
+        headers = Message()
+        headers["Content-Type"] = "text/html; charset=utf-8"
+        headers["ETag"] = '"index-one"'
+        body = b'<a href="4Dv20/">Version 20</a>'
+        with tempfile.TemporaryDirectory() as directory, patch("tools.discover_archive.CACHE", Path(directory)):
+            navigator = ArchiveNavigator(root, "urllib", limit=1)
+            response = CurlResponse(body, {"http_code": 200, "url_effective": root}, headers)
+            with patch("tools.discover_archive.open_source", return_value=response) as request:
+                self.assertEqual(navigator.read(root), [root + "4Dv20/"])
+                navigator.read(root)
+                self.assertEqual(request.call_count, 1)
+            with self.assertRaisesRegex(ValueError, "bound"):
+                navigator.read(root + "4Dv20/", root)
+            again = ArchiveNavigator(root, "urllib", previous=list(navigator.pages.values()))
+            def not_modified(request, transport):
+                self.assertEqual(request.get_header("If-none-match"), '"index-one"')
+                raise HTTPError(root, 304, "", {}, None)
+            with patch("tools.discover_archive.open_source", side_effect=not_modified):
+                self.assertEqual(again.read(root), [root + "4Dv20/"])
+            self.assertEqual(again.pages[root]["http_status"], 304)
+            self.assertEqual(again.pages[root]["sha256"], hashlib.sha256(body).hexdigest())
+
+    def test_link_resolution_and_matching_are_language_slug_independent(self):
+        base = "https://example.test/doc/4Dv20/4D/20/"
+        html = """<a href="Fonctionnalites.100-42.fr.html">fr</a>
+        <a href="/doc/4Dv20/4D/20/Merkmale.100-42.de.html">de</a>
+        <a href="../20.1/Fonctionnalites.100-42.fr.html">other edition</a>
+        <a href="Wrong.200-42.fr.html">wrong document type</a>
+        <a href="Wrong.100-43.fr.html">wrong ID</a>
+        <a href="Ignored.100-42.fe.html">not French</a>
+        <a href="https://external.test/Fonctionnalites.100-42.fr.html">other host</a>"""
+        links = directory_links(html, base)
+        self.assertEqual(matching_documents(links, base, "100-42", "fr"),
+                         [base + "Fonctionnalites.100-42.fr.html"])
+        self.assertEqual(matching_documents(links, base, "100-42", "de"),
+                         [base + "Merkmale.100-42.de.html"])
+        self.assertEqual(document_identity(base + "Fonctionnalites.100-42.fr.html"), ("100-42", "fr"))
+
+    def test_navigation_traces_each_actual_directory_link_and_never_guesses(self):
+        root = "https://example.test/doc/"
+        directory = root + "4Dv20/4D/20/"
+        chain = [root, root + "4Dv20/", root + "4Dv20/4D/", directory]
+        pages = {chain[i]: [chain[i + 1]] for i in range(3)}
+        pages[directory] = [directory + "English.100-42.en.html", directory + "Francais.100-42.fr.html"]
+        navigator = ArchiveNavigator(root, "urllib")
+        def read(url, parent=None):
+            navigator.pages[url] = {"sha256": "a" * 64}
+            return pages[url]
+        seed = {"id": "example", "url": directory + "English.100-42.en.html"}
+        with patch.object(navigator, "read", side_effect=read) as reader:
+            found, unresolved = navigator.resolve(seed)
+        self.assertEqual([call.args[0] for call in reader.call_args_list], chain)
+        self.assertEqual(found["example-fr"]["discovery"]["chain"], chain + [directory + "Francais.100-42.fr.html"])
+        self.assertEqual({item["language"] for item in unresolved}, {"de", "es", "ja"})
+        self.assertNotIn("example-de", found)
+        pages[root] = []
+        with patch.object(navigator, "read", side_effect=read), self.assertRaisesRegex(ValueError, "not linked"):
+            navigator.resolve(seed)
+
+    def test_ambiguous_locale_does_not_pick_arbitrary_slug(self):
+        root = "https://example.test/doc/"
+        navigator = ArchiveNavigator(root, "urllib")
+        navigator.pages[root] = {"sha256": "a" * 64}
+        with patch.object(navigator, "read", return_value=[root + "A.100-42.fr.html", root + "B.100-42.fr.html"]):
+            with self.assertRaisesRegex(ValueError, "Ambiguous"):
+                navigator.resolve({"id": "example", "url": root + "English.100-42.en.html"})
 
 
 class Publication(unittest.TestCase):
@@ -149,7 +242,10 @@ class Publication(unittest.TestCase):
 
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
-        self.assertEqual(self.document["coverage"]["english_seeds"], 21)
+        self.assertEqual(self.document["coverage"]["english_seeds"], 22)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 74)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 74})
+        self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
         self.assertEqual(len(self.document["changes"]), 3)

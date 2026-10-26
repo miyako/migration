@@ -1,0 +1,1046 @@
+{
+  "schema_version": 1,
+  "locations": {
+    "legacy-v20-deprecated-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html"
+        ],
+        "document_key": "100-6259787",
+        "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
+      }
+    },
+    "legacy-v20-deprecated-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"
+        ],
+        "document_key": "100-6259787",
+        "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
+      }
+    },
+    "legacy-v20-deprecated-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Uberholte-und-entfernte-Funktionalitaten.100-6259787.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/Uberholte-und-entfernte-Funktionalitaten.100-6259787.de.html"
+        ],
+        "document_key": "100-6259787",
+        "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
+      }
+    },
+    "legacy-v20-deprecated-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Funcionalidades-obsoletas-o-eliminadas.100-6259787.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/Funcionalidades-obsoletas-o-eliminadas.100-6259787.es.html"
+        ],
+        "document_key": "100-6259787",
+        "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
+      }
+    },
+    "legacy-v20-deprecated-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+          "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html"
+        ],
+        "document_key": "100-6259787",
+        "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
+      }
+    },
+    "legacy-v19-deprecated-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html"
+        ],
+        "document_key": "200-5418956",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-deprecated-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html"
+        ],
+        "document_key": "200-5418956",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-deprecated-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-und-entfernte-Funktionalitaten.200-5418956.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-und-entfernte-Funktionalitaten.200-5418956.de.html"
+        ],
+        "document_key": "200-5418956",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-deprecated-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Funcionalidades-obsoletas-o-eliminadas.200-5418956.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Funcionalidades-obsoletas-o-eliminadas.200-5418956.es.html"
+        ],
+        "document_key": "200-5418956",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-deprecated-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.ja.html"
+        ],
+        "document_key": "200-5418956",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v18-deprecated-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html"
+        ],
+        "document_key": "200-5049565",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-deprecated-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html"
+        ],
+        "document_key": "200-5049565",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-deprecated-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Uberholte-und-entfernte-Funktionalitaten.200-5049565.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Uberholte-und-entfernte-Funktionalitaten.200-5049565.de.html"
+        ],
+        "document_key": "200-5049565",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-deprecated-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Funcionalidades-obsoletas-o-eliminadas.200-5049565.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Funcionalidades-obsoletas-o-eliminadas.200-5049565.es.html"
+        ],
+        "document_key": "200-5049565",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-deprecated-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.ja.html"
+        ],
+        "document_key": "200-5049565",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v17-deprecated-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html"
+        ],
+        "document_key": "100-3761900",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-deprecated-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html"
+        ],
+        "document_key": "100-3761900",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-deprecated-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html"
+        ],
+        "document_key": "100-3761900",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-deprecated-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html"
+        ],
+        "document_key": "100-3761900",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-deprecated-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.ja.html"
+        ],
+        "document_key": "100-3761900",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v16-deprecated-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html"
+        ],
+        "document_key": "100-3072039",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-deprecated-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html"
+        ],
+        "document_key": "100-3072039",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-deprecated-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html"
+        ],
+        "document_key": "100-3072039",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-deprecated-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html"
+        ],
+        "document_key": "100-3072039",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-deprecated-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.ja.html"
+        ],
+        "document_key": "100-3072039",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v19-changes-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html"
+        ],
+        "document_key": "200-5418950",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-changes-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html"
+        ],
+        "document_key": "200-5418950",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-changes-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html"
+        ],
+        "document_key": "200-5418950",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-changes-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html"
+        ],
+        "document_key": "200-5418950",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v19-changes-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+          "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html"
+        ],
+        "document_key": "200-5418950",
+        "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+      }
+    },
+    "legacy-v18-changes-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html"
+        ],
+        "document_key": "200-5049566",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-changes-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html"
+        ],
+        "document_key": "200-5049566",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-changes-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Anderungen-und-Aktualisierungen.200-5049566.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Anderungen-und-Aktualisierungen.200-5049566.de.html"
+        ],
+        "document_key": "200-5049566",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-changes-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Cambios-y-actualizaciones.200-5049566.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Cambios-y-actualizaciones.200-5049566.es.html"
+        ],
+        "document_key": "200-5049566",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v18-changes-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.ja.html"
+        ],
+        "document_key": "200-5049566",
+        "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
+      }
+    },
+    "legacy-v17-quick-table-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html"
+        ],
+        "document_key": "200-3761902",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-quick-table-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html"
+        ],
+        "document_key": "200-3761902",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-quick-table-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Ubersicht.200-3761902.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Ubersicht.200-3761902.de.html"
+        ],
+        "document_key": "200-3761902",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-quick-table-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.es.html"
+        ],
+        "document_key": "200-3761902",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v17-quick-table-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.ja.html"
+        ],
+        "document_key": "200-3761902",
+        "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
+      }
+    },
+    "legacy-v16-quick-table-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html"
+        ],
+        "document_key": "200-3072041",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-quick-table-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html"
+        ],
+        "document_key": "200-3072041",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-quick-table-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Ubersicht.200-3072041.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Ubersicht.200-3072041.de.html"
+        ],
+        "document_key": "200-3072041",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-quick-table-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.es.html"
+        ],
+        "document_key": "200-3072041",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-quick-table-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.ja.html"
+        ],
+        "document_key": "200-3072041",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v18-conversion-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.en.html"
+        ],
+        "document_key": "100-4688867",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-v18-conversion-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-en-4D-v18.100-4688867.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-en-4D-v18.100-4688867.fr.html"
+        ],
+        "document_key": "100-4688867",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-v18-conversion-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Konvertierung-in-4D-v18.100-4688867.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Konvertierung-in-4D-v18.100-4688867.de.html"
+        ],
+        "document_key": "100-4688867",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-v18-conversion-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-a-4D-v18.100-4688867.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-a-4D-v18.100-4688867.es.html"
+        ],
+        "document_key": "100-4688867",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-v18-conversion-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+          "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.ja.html"
+        ],
+        "document_key": "100-4688867",
+        "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+      }
+    },
+    "legacy-v17-conversion-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.en.html"
+        ],
+        "document_key": "100-4091984",
+        "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
+      }
+    },
+    "legacy-v17-conversion-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-en-4D-v17.100-4091984.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-en-4D-v17.100-4091984.fr.html"
+        ],
+        "document_key": "100-4091984",
+        "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
+      }
+    },
+    "legacy-v17-conversion-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Konvertierung-in-4D-v17.100-4091984.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Konvertierung-in-4D-v17.100-4091984.de.html"
+        ],
+        "document_key": "100-4091984",
+        "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
+      }
+    },
+    "legacy-v17-conversion-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-a-4D-v17.100-4091984.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-a-4D-v17.100-4091984.es.html"
+        ],
+        "document_key": "100-4091984",
+        "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
+      }
+    },
+    "legacy-v17-conversion-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv17/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+          "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.ja.html"
+        ],
+        "document_key": "100-4091984",
+        "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
+      }
+    },
+    "legacy-v16-conversion-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.en.html"
+        ],
+        "document_key": "100-3673248",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-v16-conversion-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-en-4D-v16.100-3673248.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-en-4D-v16.100-3673248.fr.html"
+        ],
+        "document_key": "100-3673248",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-v16-conversion-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Konvertierung-in-4D-v16.100-3673248.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Konvertierung-in-4D-v16.100-3673248.de.html"
+        ],
+        "document_key": "100-3673248",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-v16-conversion-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-a-4D-v16.100-3673248.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-a-4D-v16.100-3673248.es.html"
+        ],
+        "document_key": "100-3673248",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-v16-conversion-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.ja.html"
+        ],
+        "document_key": "100-3673248",
+        "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+      }
+    },
+    "legacy-v16-upgrade-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html"
+        ],
+        "document_key": "100-3102365",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-upgrade-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Mise-a-jour.100-3102365.fr.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Mise-a-jour.100-3102365.fr.html"
+        ],
+        "document_key": "100-3102365",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-upgrade-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.de.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.de.html"
+        ],
+        "document_key": "100-3102365",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-upgrade-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Actualizacion.100-3102365.es.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Actualizacion.100-3102365.es.html"
+        ],
+        "document_key": "100-3102365",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    },
+    "legacy-v16-upgrade-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html",
+      "discovery": {
+        "method": "archive_directory_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "chain": [
+          "https://library.4d-japan.com/doc/",
+          "https://library.4d-japan.com/doc/4Dv16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+          "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html"
+        ],
+        "document_key": "100-3102365",
+        "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+      }
+    }
+  },
+  "unresolved": []
+}

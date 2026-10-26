@@ -9,12 +9,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html"
+      ],
+      "document_key": "100-6259787",
+      "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484",
       "etag": "\"ec96-60985da6ada00\"",
@@ -32,67 +41,169 @@
     "id": "legacy-v20-deprecated-fr",
     "family": "deprecated-removed",
     "edition": "20",
-    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v20-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"
+      ],
+      "document_key": "100-6259787",
+      "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "6057404f8c4b41d2fe10c7bebdcce0ce4bcd0218298f05ed2614e8cd2ec7b9ce",
+      "etag": "\"10a78-60985d7cb7700\"",
+      "last_modified": "Tue, 07 Nov 2023 01:25:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 118
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v20-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html",
+    "title": "FONCTIONNALITÉS OBSOLÈTES OU SUPPRIMÉES"
   },
   {
     "id": "legacy-v20-deprecated-de",
     "family": "deprecated-removed",
     "edition": "20",
-    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Uberholte-und-entfernte-Funktionalitaten.100-6259787.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v20-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/Uberholte-und-entfernte-Funktionalitaten.100-6259787.de.html"
+      ],
+      "document_key": "100-6259787",
+      "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "848f401bc81ca606b5ce4af68521396b007a841c251e548210c839a6f26ffd55",
+      "etag": "\"f7ac-60985dcaeaf80\"",
+      "last_modified": "Tue, 07 Nov 2023 01:26:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 120
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v20-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Uberholte-und-entfernte-Funktionalitaten.100-6259787.de.html",
+    "title": "ÜBERHOLTE UND ENTFERNTE FUNKTIONALITÄTEN"
   },
   {
     "id": "legacy-v20-deprecated-es",
     "family": "deprecated-removed",
     "edition": "20",
-    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Funcionalidades-obsoletas-o-eliminadas.100-6259787.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v20-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/Funcionalidades-obsoletas-o-eliminadas.100-6259787.es.html"
+      ],
+      "document_key": "100-6259787",
+      "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "dcce70a06d680494dc0eb310d8f9162c482d7e9780557a5727b622233e14b0db",
+      "etag": "\"f887-60985de96f780\"",
+      "last_modified": "Tue, 07 Nov 2023 01:27:10 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 114
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v20-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Funcionalidades-obsoletas-o-eliminadas.100-6259787.es.html",
+    "title": "FUNCIONALIDADES OBSOLETAS O ELIMINADAS"
   },
   {
     "id": "legacy-v20-deprecated-ja",
@@ -104,12 +215,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v20-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html"
+      ],
+      "document_key": "100-6259787",
+      "index_sha256": "a9c99175bc5883ccf18834c3a4e50799938f991e72cb6ad8baf35784425fba9e"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "b65438b76ed30410c239e268d59d39af2499cafcea10c1fad718f27d0f40f0d5",
       "etag": "\"10e84-60985e2c31500\"",
@@ -133,12 +253,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html"
+      ],
+      "document_key": "200-5418956",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "9d005c0da4af201d8c4678297d4e78ab8a54bed13945fbbc59d743c17ed50e96",
       "etag": "\"e1eb-5ce2371719680\"",
@@ -156,67 +285,169 @@
     "id": "legacy-v19-deprecated-fr",
     "family": "deprecated-removed",
     "edition": "19",
-    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html"
+      ],
+      "document_key": "200-5418956",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "66f5afc6267e602f6dec0690f84eeb9db10aba368355fdc2ae1c7fd646c7480f",
+      "etag": "\"114f1-5ce2371160900\"",
+      "last_modified": "Tue, 12 Oct 2021 08:15:00 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 170
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v19-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Fonctionnalites-obsoletes-ou-supprimees.200-5418956.fr.html",
+    "title": "Fonctionnalités obsolètes ou supprimées"
   },
   {
     "id": "legacy-v19-deprecated-de",
     "family": "deprecated-removed",
     "edition": "19",
-    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-und-entfernte-Funktionalitaten.200-5418956.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-und-entfernte-Funktionalitaten.200-5418956.de.html"
+      ],
+      "document_key": "200-5418956",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "83b41b93d535458419d00261ac850a16425ab9b102248a88c3efee9c8bbe98e2",
+      "etag": "\"fd2e-5ce2371ae9f80\"",
+      "last_modified": "Tue, 12 Oct 2021 08:15:10 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 159
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v19-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Uberholte-und-entfernte-Funktionalitaten.200-5418956.de.html",
+    "title": "Überholte und entfernte Funktionalitäten"
   },
   {
     "id": "legacy-v19-deprecated-es",
     "family": "deprecated-removed",
     "edition": "19",
-    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Funcionalidades-obsoletas-o-eliminadas.200-5418956.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Funcionalidades-obsoletas-o-eliminadas.200-5418956.es.html"
+      ],
+      "document_key": "200-5418956",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "517ea64d5bfe99e04c3652e86871f51e68b4a47082d25e3afcd6e328ae86a545",
+      "etag": "\"1026c-5ce23720a2d00\"",
+      "last_modified": "Tue, 12 Oct 2021 08:15:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 160
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v19-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Funcionalidades-obsoletas-o-eliminadas.200-5418956.es.html",
+    "title": "Funcionalidades obsoletas o eliminadas"
   },
   {
     "id": "legacy-v19-deprecated-ja",
@@ -228,12 +459,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.ja.html"
+      ],
+      "document_key": "200-5418956",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "5781a7b37b9b29a06f7fb54bc90e5779fbdaf321dafecb0b5918e70edb884a3a",
       "etag": "\"feec-5ce2372a2c380\"",
@@ -257,12 +497,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html"
+      ],
+      "document_key": "200-5049565",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "263523c9aee1abb697d8e4d0a95fd42bded6e44eea8928c815d54149c241408b",
       "etag": "\"132dd-5a7a0577d7900\"",
@@ -280,67 +529,169 @@
     "id": "legacy-v18-deprecated-fr",
     "family": "deprecated-removed",
     "edition": "18.2",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html"
+      ],
+      "document_key": "200-5049565",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "dd2090fbe9a8270e0ee88af7975c518c771e674ce816a6828026df3ac1bc5ed8",
+      "etag": "\"153c7-5a7a03583f680\"",
+      "last_modified": "Tue, 09 Jun 2020 05:43:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 208
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Fonctionnalites-obsoletes-ou-supprimees.200-5049565.fr.html",
+    "title": "Fonctionnalités obsolètes ou supprimées"
   },
   {
     "id": "legacy-v18-deprecated-de",
     "family": "deprecated-removed",
     "edition": "18.2",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Uberholte-und-entfernte-Funktionalitaten.200-5049565.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Uberholte-und-entfernte-Funktionalitaten.200-5049565.de.html"
+      ],
+      "document_key": "200-5049565",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "60fbfb20a7953a81b9c054041b8d14ac1900741fdfdffc685c08b4c9e9edee55",
+      "etag": "\"13f8e-5a7a073dca800\"",
+      "last_modified": "Tue, 09 Jun 2020 06:01:04 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 210
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Uberholte-und-entfernte-Funktionalitaten.200-5049565.de.html",
+    "title": "Überholte und entfernte Funktionalitäten"
   },
   {
     "id": "legacy-v18-deprecated-es",
     "family": "deprecated-removed",
     "edition": "18.2",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Funcionalidades-obsoletas-o-eliminadas.200-5049565.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Funcionalidades-obsoletas-o-eliminadas.200-5049565.es.html"
+      ],
+      "document_key": "200-5049565",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "adf49879185c02e6f4a24f4ce26ab578e47df0300fce33a5728f12ac474787ed",
+      "etag": "\"14c10-5a7a08fa34080\"",
+      "last_modified": "Tue, 09 Jun 2020 06:08:50 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 207
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Funcionalidades-obsoletas-o-eliminadas.200-5049565.es.html",
+    "title": "Funcionalidades obsoletas o eliminadas"
   },
   {
     "id": "legacy-v18-deprecated-ja",
@@ -352,12 +703,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.ja.html"
+      ],
+      "document_key": "200-5049565",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "86e0d9bf533f698aa7b0ec7e9c05648b938a1bd63dad16cf8ed700106e106e02",
       "etag": "\"153ef-5a7a0c8249580\"",
@@ -381,12 +741,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html"
+      ],
+      "document_key": "100-3761900",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "19e0b4b11be79cecc75c64523c0ce5a08e95f89a6d768a42adf79252539a9375",
       "etag": "\"692f-5a456503ef800\"",
@@ -404,67 +773,169 @@
     "id": "legacy-v17-deprecated-fr",
     "family": "deprecated-removed",
     "edition": "17",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html"
+      ],
+      "document_key": "100-3761900",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "a8d37ed97ae66498bc6e842a40a6fc1d9f6bfcfd5a49dcfa5d0db83a9ec1999f",
+      "etag": "\"6ba3-5a4564e56b000\"",
+      "last_modified": "Tue, 28 Apr 2020 09:17:52 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 6
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html",
+    "title": "FONCTIONNALITÉS OBSOLÈTES OU SUPPRIMÉES"
   },
   {
     "id": "legacy-v17-deprecated-de",
     "family": "deprecated-removed",
     "edition": "17",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html"
+      ],
+      "document_key": "100-3761900",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "60d8c76599354e217d268a143677ea6200c7390e6606132a6247cdb733ff9b9a",
+      "etag": "\"69ab-5a4565245c480\"",
+      "last_modified": "Tue, 28 Apr 2020 09:18:58 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 7
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html",
+    "title": "ÜBERHOLTE UND ENTFERNTE FUNKTIONALITÄTEN"
   },
   {
     "id": "legacy-v17-deprecated-es",
     "family": "deprecated-removed",
     "edition": "17",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html"
+      ],
+      "document_key": "100-3761900",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:56+00:00",
+      "fetched_at": "2026-10-26T10:45:56+00:00",
+      "sha256": "069df32ad20161cc25584873c1a8e2c972567da7c31dcea3a6981e25a5d8d786",
+      "etag": "\"6a1e-5a45653f10380\"",
+      "last_modified": "Tue, 28 Apr 2020 09:19:26 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 7
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html",
+    "title": "FUNCIONALIDADES OBSOLETAS Y ELIMINADAS"
   },
   {
     "id": "legacy-v17-deprecated-ja",
@@ -476,12 +947,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.ja.html"
+      ],
+      "document_key": "100-3761900",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:56+00:00",
       "fetched_at": "2026-10-26T10:16:05+00:00",
       "sha256": "99996acb6300ba6fe60be8e07d544dd366991150182d303ae559ea513e93d3b7",
       "etag": "\"6d2a-5a45657660600\"",
@@ -505,12 +985,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html"
+      ],
+      "document_key": "100-3072039",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "fde6d90c4dc9f24e5eb428ad4973aeef76d45e30415473fad10552d3f1ba85f6",
       "etag": "\"6bbf-5648295f5e700\"",
@@ -528,67 +1017,169 @@
     "id": "legacy-v16-deprecated-fr",
     "family": "deprecated-removed",
     "edition": "16",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html"
+      ],
+      "document_key": "100-3072039",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "812047677b91938366c964aba9055d292e268d2d8585917d175557f5fa391a54",
+      "etag": "\"6e5b-5648293ef1a80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:14:34 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 6
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html",
+    "title": "FONCTIONNALITÉS OBSOLÈTES OU SUPPRIMÉES"
   },
   {
     "id": "legacy-v16-deprecated-de",
     "family": "deprecated-removed",
     "edition": "16",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html"
+      ],
+      "document_key": "100-3072039",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "b497f904c328a56638df2061a75ec40b7b9b1267a0fc1110271fa687f599cb3f",
+      "etag": "\"6c79-5648297bfaa80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:15:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 7
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html",
+    "title": "ÜBERHOLTE UND ENTFERNTE FUNKTIONALITÄTEN"
   },
   {
     "id": "legacy-v16-deprecated-es",
     "family": "deprecated-removed",
     "edition": "16",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html"
+      ],
+      "document_key": "100-3072039",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "8433a8e55a95d5ca2b6039e61c47db1bc5da0b7fa58d895a0763fafb7d47ac05",
+      "etag": "\"6cc0-56482996ae980\"",
+      "last_modified": "Tue, 06 Feb 2018 03:16:06 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 7
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-deprecated-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html",
+    "title": "FUNCIONALIDADES OBSOLETAS Y ELIMINADAS"
   },
   {
     "id": "legacy-v16-deprecated-ja",
@@ -600,12 +1191,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-deprecated-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.ja.html"
+      ],
+      "document_key": "100-3072039",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "6d27356047127990480c0ab62d93b5edf95b274cec12c66306fe658b3551728e",
       "etag": "\"6fa0-564829cfe7080\"",
@@ -629,12 +1229,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html"
+      ],
+      "document_key": "200-5418950",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:08+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d",
       "etag": "\"cdb1-5ce2371901b00\"",
@@ -652,67 +1261,169 @@
     "id": "legacy-v19-changes-fr",
     "family": "changes-updates",
     "edition": "19",
-    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html"
+      ],
+      "document_key": "200-5418950",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9",
+      "etag": "\"e44a-5ce2371348d80\"",
+      "last_modified": "Tue, 12 Oct 2021 08:15:02 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 56
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v19-changes-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html",
+    "title": "Mises à jour et modifications"
   },
   {
     "id": "legacy-v19-changes-de",
     "family": "changes-updates",
     "edition": "19",
-    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html"
+      ],
+      "document_key": "200-5418950",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "8e1046dfb2716b8a8cb21bcc808903ef94e40a194e6b12431a85bdb12b08f8a6",
+      "etag": "\"d632-5ce2371cd2400\"",
+      "last_modified": "Tue, 12 Oct 2021 08:15:12 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 56
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v19-changes-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html",
+    "title": "Änderungen und Aktualisierungen"
   },
   {
     "id": "legacy-v19-changes-es",
     "family": "changes-updates",
     "edition": "19",
-    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html"
+      ],
+      "document_key": "200-5418950",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:08+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "3092a62583b5515434670c7270785b8ae50270e98af347cc3c05e6ceb574a82e",
+      "etag": "\"d97e-5ce237228b180\"",
+      "last_modified": "Tue, 12 Oct 2021 08:15:18 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 56
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:08+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v19-changes-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html",
+    "title": "Cambios y actualizaciones"
   },
   {
     "id": "legacy-v19-changes-ja",
@@ -724,12 +1435,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v19-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html"
+      ],
+      "document_key": "200-5418950",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "4796aa788fabd4562a76437f8a82c92209f79966ebcd0aeb5f92f26204ff10ea",
       "etag": "\"eca8-5ce2372c14800\"",
@@ -753,12 +1473,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html"
+      ],
+      "document_key": "200-5049566",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf",
       "etag": "\"127d6-5a7a0575ef480\"",
@@ -776,67 +1505,169 @@
     "id": "legacy-v18-changes-fr",
     "family": "changes-updates",
     "edition": "18.2",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html"
+      ],
+      "document_key": "200-5049566",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c",
+      "etag": "\"24b0c-5a7a035657200\"",
+      "last_modified": "Tue, 09 Jun 2020 05:43:36 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 32
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-changes-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html",
+    "title": "Modifications et mises à jour"
   },
   {
     "id": "legacy-v18-changes-de",
     "family": "changes-updates",
     "edition": "18.2",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Anderungen-und-Aktualisierungen.200-5049566.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Anderungen-und-Aktualisierungen.200-5049566.de.html"
+      ],
+      "document_key": "200-5049566",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "6448e4a46c8c207d6bceb49ec3df31fb71c988a9bbdd97184a2ef4a0547828fe",
+      "etag": "\"12eb7-5a7a073be2380\"",
+      "last_modified": "Tue, 09 Jun 2020 06:01:02 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 32
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-changes-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Anderungen-und-Aktualisierungen.200-5049566.de.html",
+    "title": "Änderungen und Aktualisierungen"
   },
   {
     "id": "legacy-v18-changes-es",
     "family": "changes-updates",
     "edition": "18.2",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Cambios-y-actualizaciones.200-5049566.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Cambios-y-actualizaciones.200-5049566.es.html"
+      ],
+      "document_key": "200-5049566",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "1ef0f9cb7b6d9d34ca5100b9f1233e7130874b4a29804365634e697edf119059",
+      "etag": "\"12f3e-5a7a08f84bc00\"",
+      "last_modified": "Tue, 09 Jun 2020 06:08:48 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 32
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-changes-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Cambios-y-actualizaciones.200-5049566.es.html",
+    "title": "Cambios y actualizaciones"
   },
   {
     "id": "legacy-v18-changes-ja",
@@ -848,12 +1679,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-changes-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.ja.html"
+      ],
+      "document_key": "200-5049566",
+      "index_sha256": "c05d2c6e4f42aad547d0c0d833f2734dda157911cdcd9f32c4b734963218aece"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "1c9c7c0745deb9412f5850c675634950b90f1881f970de40a7a9bd5b042f4c79",
       "etag": "\"13997-5a7a0c8061100\"",
@@ -877,12 +1717,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html"
+      ],
+      "document_key": "200-3761902",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e",
       "etag": "\"6c00-5a45686026580\"",
@@ -900,45 +1749,113 @@
     "id": "legacy-v17-quick-table-fr",
     "family": "changes-updates",
     "edition": "17",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html"
+      ],
+      "document_key": "200-3761902",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb",
+      "etag": "\"702a-5a4565c864780\"",
+      "last_modified": "Tue, 28 Apr 2020 09:21:50 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 16
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-quick-table-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html",
+    "title": "Tableau récapitulatif"
   },
   {
     "id": "legacy-v17-quick-table-de",
     "family": "changes-updates",
     "edition": "17",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Ubersicht.200-3761902.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Ubersicht.200-3761902.de.html"
+      ],
+      "document_key": "200-3761902",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "f6d493738aab9ef501758be8f6364059db3b74e16dae16beae70328e52656f68",
+      "etag": "\"6c50-5a456a355b880\"",
+      "last_modified": "Tue, 28 Apr 2020 09:41:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 15
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-quick-table-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Ubersicht.200-3761902.de.html",
+    "title": "Übersicht"
   },
   {
     "id": "legacy-v17-quick-table-es",
@@ -950,12 +1867,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.es.html"
+      ],
+      "document_key": "200-3761902",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "d6ddeb54d90d4dff8524c27a5fd36f3e5fd85f9a69d1c80f4860ff8cab950aed",
       "etag": "\"6c63-5a456c0c79000\"",
@@ -979,12 +1905,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.ja.html"
+      ],
+      "document_key": "200-3761902",
+      "index_sha256": "7262934ab0fc5fcbe13514ff73fb6292e6ec5a750c2bd6b7015def64a57e14c3"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "ea0841b612ca801f03c6de448f5d89bdaaa03707850f7e5f9b0ec6f1e0b3de18",
       "etag": "\"6ff1-5a456fc625a00\"",
@@ -1008,12 +1943,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html"
+      ],
+      "document_key": "200-3072041",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "06d8094a2775b0be65d88acdc45d29d8f3c7f1b5f303badbb1849c22ab3cbbb4",
       "etag": "\"6661-56482ce1bae80\"",
@@ -1031,45 +1975,113 @@
     "id": "legacy-v16-quick-table-fr",
     "family": "changes-updates",
     "edition": "16",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html"
+      ],
+      "document_key": "200-3072041",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "2bc3c457ba0639ff37eb00622d9951b3907d4122b36bca1fa0e07e930c8ec477",
+      "etag": "\"688a-56482a5d0bd80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:19:34 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 14
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-quick-table-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html",
+    "title": "Tableau récapitulatif"
   },
   {
     "id": "legacy-v16-quick-table-de",
     "family": "changes-updates",
     "edition": "16",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Ubersicht.200-3072041.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Ubersicht.200-3072041.de.html"
+      ],
+      "document_key": "200-3072041",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "74dae928a478a253c9f8981eabe96ffe860c6a2ded4e88acebedef9656055f5b",
+      "etag": "\"6771-56482eb137400\"",
+      "last_modified": "Tue, 06 Feb 2018 03:38:56 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 13
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-quick-table-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Ubersicht.200-3072041.de.html",
+    "title": "Übersicht"
   },
   {
     "id": "legacy-v16-quick-table-es",
@@ -1081,12 +2093,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.es.html"
+      ],
+      "document_key": "200-3072041",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "38422ea1565c60d6dd807fb1a5a92a42c5bc97f221328d30c6fb064502dd15d8",
       "etag": "\"68f9-5648308484280\"",
@@ -1110,12 +2131,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-quick-table-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.ja.html"
+      ],
+      "document_key": "200-3072041",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "843cf9ee788464cf11286f8baeef6bc0f61b434f540aa378929ddbc3570c0fad",
       "etag": "\"69d3-564834368fa80\"",
@@ -1139,12 +2169,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.en.html"
+      ],
+      "document_key": "100-4688867",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "d3bb536dace82e62955bd9b7473c692a56b18eb45c92c361c376c61056e024ad",
       "etag": "\"7502-5a7a015914080\"",
@@ -1162,67 +2201,169 @@
     "id": "legacy-v18-conversion-fr",
     "family": "conversion-guide",
     "edition": "18",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-en-4D-v18.100-4688867.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-en-4D-v18.100-4688867.fr.html"
+      ],
+      "document_key": "100-4688867",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "887b60e794070b32c04aef2253298f1bdf96967ff42e4d4a98cd082aa854b713",
+      "etag": "\"757c-5a7a013c77d00\"",
+      "last_modified": "Tue, 09 Jun 2020 05:34:12 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 4
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-en-4D-v18.100-4688867.fr.html",
+    "title": "CONVERSION EN 4D V18"
   },
   {
     "id": "legacy-v18-conversion-de",
     "family": "conversion-guide",
     "edition": "18",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Konvertierung-in-4D-v18.100-4688867.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Konvertierung-in-4D-v18.100-4688867.de.html"
+      ],
+      "document_key": "100-4688867",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "be91c6ad82c075fc59e58acf618838069406c8aaba322139d8334b685173eee9",
+      "etag": "\"763a-5a7a0171dfb00\"",
+      "last_modified": "Tue, 09 Jun 2020 05:35:08 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 4
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Konvertierung-in-4D-v18.100-4688867.de.html",
+    "title": "KONVERTIERUNG IN 4D V18"
   },
   {
     "id": "legacy-v18-conversion-es",
     "family": "conversion-guide",
     "edition": "18",
-    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-a-4D-v18.100-4688867.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-a-4D-v18.100-4688867.es.html"
+      ],
+      "document_key": "100-4688867",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "dc305927c5fdcb3ebc11551081cc9fe6cc00fe03db56acc1da4268d89df244e3",
+      "etag": "\"75dc-5a7a018aab580\"",
+      "last_modified": "Tue, 09 Jun 2020 05:35:34 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 5
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v18-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-a-4D-v18.100-4688867.es.html",
+    "title": "CONVERSIÓN A 4D V18"
   },
   {
     "id": "legacy-v18-conversion-ja",
@@ -1234,12 +2375,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v18-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.ja.html"
+      ],
+      "document_key": "100-4688867",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "bc21678fa21f1f0a76d483d8db17fd55847b5a0168518acc89665e7d5bc562b8",
       "etag": "\"7663-5a7a01bc42a80\"",
@@ -1263,12 +2413,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.en.html"
+      ],
+      "document_key": "100-4091984",
+      "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "14d56a4c8a453dcc302e4f1c5a704868163000de5bae8a4a64f5f5ac474c8754",
       "etag": "\"7bc3-5a45651331c00\"",
@@ -1286,67 +2445,169 @@
     "id": "legacy-v17-conversion-fr",
     "family": "conversion-guide",
     "edition": "17.1",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-en-4D-v17.100-4091984.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-en-4D-v17.100-4091984.fr.html"
+      ],
+      "document_key": "100-4091984",
+      "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "aab82321ab9b7532652351e0a414a682756203938396b83d65602138b40eea82",
+      "etag": "\"78e4-5a4564f2c4f80\"",
+      "last_modified": "Tue, 28 Apr 2020 09:18:06 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 5
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-en-4D-v17.100-4091984.fr.html",
+    "title": "CONVERSION EN 4D V17"
   },
   {
     "id": "legacy-v17-conversion-de",
     "family": "conversion-guide",
     "edition": "17.1",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Konvertierung-in-4D-v17.100-4091984.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Konvertierung-in-4D-v17.100-4091984.de.html"
+      ],
+      "document_key": "100-4091984",
+      "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "3f92e9767bb0667a39a12f8b270940fa14994a72efb6cf385f0b0b4829e6c03f",
+      "etag": "\"7b0b-5a45652de5b00\"",
+      "last_modified": "Tue, 28 Apr 2020 09:19:08 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 5
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Konvertierung-in-4D-v17.100-4091984.de.html",
+    "title": "KONVERTIERUNG IN 4D V17"
   },
   {
     "id": "legacy-v17-conversion-es",
     "family": "conversion-guide",
     "edition": "17.1",
-    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-a-4D-v17.100-4091984.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-a-4D-v17.100-4091984.es.html"
+      ],
+      "document_key": "100-4091984",
+      "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "be397d50d4f01bcb75818912159302310f3c5076d6ab12672aed068b82eb4a3f",
+      "etag": "\"7b4d-5a45654a81e80\"",
+      "last_modified": "Tue, 28 Apr 2020 09:19:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 5
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v17-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-a-4D-v17.100-4091984.es.html",
+    "title": "CONVERSIÓN A 4D V17"
   },
   {
     "id": "legacy-v17-conversion-ja",
@@ -1358,12 +2619,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v17-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.ja.html"
+      ],
+      "document_key": "100-4091984",
+      "index_sha256": "bae240849c4b16c66ac3fd2a68840fd455e3244fc2aa6f9810449c8d66e9df82"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "f951f6cf4d8e12887defb6e75547f3f1230a55f1538818e473e4446f4873dd54",
       "etag": "\"7e22-5a45657fe9c80\"",
@@ -1387,12 +2657,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": null,
-      "method": "provided_seed"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.en.html"
+      ],
+      "document_key": "100-3673248",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:57+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "bce8fe753502796f85dff5c69002f1880adb677aa1c08efe8557474274b84811",
       "etag": "\"785e-56482968e7d80\"",
@@ -1410,67 +2689,169 @@
     "id": "legacy-v16-conversion-fr",
     "family": "conversion-guide",
     "edition": "16.3",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.fr.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-en-4D-v16.100-3673248.fr.html",
     "language": "fr",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-en-4D-v16.100-3673248.fr.html"
+      ],
+      "document_key": "100-3673248",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "20db5d6024d797bd70075ed2cf089a9895e948673aa281489b8dea574b18865d",
+      "etag": "\"7709-5648294a63580\"",
+      "last_modified": "Tue, 06 Feb 2018 03:14:46 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 5
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.fr.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.fr.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-en-4D-v16.100-3673248.fr.html",
+    "title": "CONVERSION EN 4D V16"
   },
   {
     "id": "legacy-v16-conversion-de",
     "family": "conversion-guide",
     "edition": "16.3",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.de.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Konvertierung-in-4D-v16.100-3673248.de.html",
     "language": "de",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Konvertierung-in-4D-v16.100-3673248.de.html"
+      ],
+      "document_key": "100-3673248",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:57+00:00",
+      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "sha256": "9a2d837aa8d85af917195027f87cd7f293af663558254c67e2fdcc8686791438",
+      "etag": "\"790d-564829839bc80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:15:46 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 5
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.de.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.de.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Konvertierung-in-4D-v16.100-3673248.de.html",
+    "title": "KONVERTIERUNG IN 4D V16"
   },
   {
     "id": "legacy-v16-conversion-es",
     "family": "conversion-guide",
     "edition": "16.3",
-    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.es.html",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-a-4D-v16.100-3673248.es.html",
     "language": "es",
     "publisher": "4D",
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-a-4D-v16.100-3673248.es.html"
+      ],
+      "document_key": "100-3673248",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
     },
     "fetch": {
-      "status": "unavailable",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "error": "HTTP Error 404: curl HTTP response",
-      "http_status": 404,
-      "redirected": false
+      "status": "available",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "2a58bccba62429bba59ae51ff65f7e4351945f96d99108eeba1561f15165e144",
+      "etag": "\"78a9-564829a038000\"",
+      "last_modified": "Tue, 06 Feb 2018 03:16:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 6
     },
-    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.es.html"
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.es.html",
+        "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T10:28:09+00:00",
+          "error": "HTTP Error 404: curl HTTP response",
+          "http_status": 404,
+          "redirected": false
+        },
+        "discovery": {
+          "parent": "legacy-v16-conversion-en",
+          "method": "derived_language_probe"
+        },
+        "disposition": "superseded_url_probe"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-a-4D-v16.100-3673248.es.html",
+    "title": "CONVERSIÓN A 4D V16"
   },
   {
     "id": "legacy-v16-conversion-ja",
@@ -1482,12 +2863,21 @@
     "authority": "official_documentation_mirror",
     "host_operator": "4D Japan archive",
     "discovery": {
-      "parent": "legacy-v16-conversion-en",
-      "method": "derived_language_probe"
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.ja.html"
+      ],
+      "document_key": "100-3673248",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
+      "checked_at": "2026-10-26T10:45:58+00:00",
       "fetched_at": "2026-10-26T10:16:06+00:00",
       "sha256": "b66206209342665b2d4d20cb523f3c30e2512241c812df061dc848b491c9ce8d",
       "etag": "\"7b33-564829d970700\"",
@@ -1500,6 +2890,196 @@
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.ja.html",
     "title": "4D V16への変換"
+  },
+  {
+    "id": "legacy-v16-upgrade-en",
+    "family": "upgrade",
+    "edition": "16",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html"
+      ],
+      "document_key": "100-3102365",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:46:57+00:00",
+      "fetched_at": "2026-10-26T10:46:57+00:00",
+      "sha256": "8bd90c9e690863802923c184225b6ebdcf2dbb3db13e380f011db38acb3fd39b",
+      "etag": "\"91f0-56482968e7d80\"",
+      "last_modified": "Tue, 06 Feb 2018 03:15:18 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 19
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.en.html",
+    "title": "4D V16 - UPGRADE"
+  },
+  {
+    "id": "legacy-v16-upgrade-fr",
+    "family": "upgrade",
+    "edition": "16",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Mise-a-jour.100-3102365.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Mise-a-jour.100-3102365.fr.html"
+      ],
+      "document_key": "100-3102365",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:46:57+00:00",
+      "fetched_at": "2026-10-26T10:46:57+00:00",
+      "sha256": "602efd6dac94f9873d5f88a05171a12b0b00b13eda5002d1b3b5bd8cd2b154ac",
+      "etag": "\"942e-5648294a63580\"",
+      "last_modified": "Tue, 06 Feb 2018 03:14:46 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 19
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Mise-a-jour.100-3102365.fr.html",
+    "title": "4D V16 - MISE À JOUR"
+  },
+  {
+    "id": "legacy-v16-upgrade-de",
+    "family": "upgrade",
+    "edition": "16",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.de.html"
+      ],
+      "document_key": "100-3102365",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:46:57+00:00",
+      "fetched_at": "2026-10-26T10:46:57+00:00",
+      "sha256": "3c3e028bcfc0214390c1ef061101f3a01af6a1d70bb542419cc5c9cfcd178015",
+      "etag": "\"93d6-5648298584100\"",
+      "last_modified": "Tue, 06 Feb 2018 03:15:48 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 18
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.de.html",
+    "title": "4D V16 - UPGRADE"
+  },
+  {
+    "id": "legacy-v16-upgrade-es",
+    "family": "upgrade",
+    "edition": "16",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Actualizacion.100-3102365.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Actualizacion.100-3102365.es.html"
+      ],
+      "document_key": "100-3102365",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:46:57+00:00",
+      "fetched_at": "2026-10-26T10:46:57+00:00",
+      "sha256": "30ca9a8021a54474e0adb70d35f2e5303df7f95664c1e5606debb3df6cae8634",
+      "etag": "\"96ee-564829a220480\"",
+      "last_modified": "Tue, 06 Feb 2018 03:16:18 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 17
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Actualizacion.100-3102365.es.html",
+    "title": "4D V16 - ACTUALIZACIÓN"
+  },
+  {
+    "id": "legacy-v16-upgrade-ja",
+    "family": "upgrade",
+    "edition": "16",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html"
+      ],
+      "document_key": "100-3102365",
+      "index_sha256": "df19257737585cb24f92cb475898fe3f549cfa22f429cb533af70269dceb4ffa"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T10:46:57+00:00",
+      "fetched_at": "2026-10-26T10:46:57+00:00",
+      "sha256": "5a41f3c28dee85f2b8473b54c10702076184ac25edf496603b863f1c82629013",
+      "etag": "\"99cd-564829d970700\"",
+      "last_modified": "Tue, 06 Feb 2018 03:17:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 19
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/4D-v16-Upgrade.100-3102365.ja.html",
+    "title": "4D V16 - アップグレード"
   },
   {
     "id": "blog-v20-en",
@@ -1516,15 +3096,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "fetched_at": "2026-10-26T10:28:09+00:00",
-      "sha256": "af1eaeb02b4bd124595e784941a38912f58ba511e003baf3d5a5eb209a5fcd48",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "a2c81c8fc143b3c91ce9c6a676ec02d3bb8a8f9586f46bce219af88b7c6fd044",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "16f77717881434bb866ad82070a714bd87dc4ba64b6813a86f66b6f95c2fc2d4",
+      "previous_sha256": "af1eaeb02b4bd124595e784941a38912f58ba511e003baf3d5a5eb209a5fcd48",
       "block_count": 303
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v20/",
@@ -1545,15 +3125,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "fetched_at": "2026-10-26T10:28:09+00:00",
-      "sha256": "bc580f909cd939ca81c01bb73d5c35299b517260c3e49fef68d385bece0b3e1e",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "daf8d3c85bad57a14db96f9920e4a703ad0f777c07065663b65e41be192f1513",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "59608ea9e22a81fb38d2ed488faae5f93bb3c6aaf6a153e2f0ee86dd976e209f",
+      "previous_sha256": "bc580f909cd939ca81c01bb73d5c35299b517260c3e49fef68d385bece0b3e1e",
       "block_count": 252
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v19/",
@@ -1574,15 +3154,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "fetched_at": "2026-10-26T10:28:09+00:00",
-      "sha256": "2de86d01dac201ffc63c17c36f17ca525bd9576002d936d1894646d34c7362c3",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "c517c549b2489b29d0229b0b3a1b3cc93ba9147997a83812d0fdcdae81c6c88d",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "c5827e87dccefe88955532fec1f6d3cb4d9c57877c5277c623b830047da0978e",
+      "previous_sha256": "2de86d01dac201ffc63c17c36f17ca525bd9576002d936d1894646d34c7362c3",
       "block_count": 239
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v18/",
@@ -1603,15 +3183,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "fetched_at": "2026-10-26T10:28:09+00:00",
-      "sha256": "2d198b7866274957cb3260b1469ca0f233f0afd7e247ec13a4cdd95bfb4b759d",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "a3245c4b0a1a9ef6c3630029029e6430ba10501103d7969adaa3b2d28fd6439e",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "ce9d48d1d3c7ccb47a95d8dbd29c75f2d08e55c58879f6071e3b820d92281ad3",
+      "previous_sha256": "2d198b7866274957cb3260b1469ca0f233f0afd7e247ec13a4cdd95bfb4b759d",
       "block_count": 161
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v17/",
@@ -1632,15 +3212,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "fetched_at": "2026-10-26T10:28:09+00:00",
-      "sha256": "fd3ed32abd394863857aafbba46b526484e40f34be4705c73cd8b75d9a6f6ae9",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "9e2135db7809273ddf60087c80224620ba23135f9933bdd3e9a48c3a23c49397",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "88f181711fd9fc28d0248f80869ab5819ac84e4941541065f689d3c15e032bcc",
+      "previous_sha256": "fd3ed32abd394863857aafbba46b526484e40f34be4705c73cd8b75d9a6f6ae9",
       "block_count": 16
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r6/",
@@ -1661,15 +3241,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:09+00:00",
-      "fetched_at": "2026-10-26T10:28:09+00:00",
-      "sha256": "f3c5aaaba19896e82bcc82c8707e553310588860ed7101e2ca5656d3116f9c9b",
+      "checked_at": "2026-10-26T10:45:58+00:00",
+      "fetched_at": "2026-10-26T10:45:58+00:00",
+      "sha256": "0f8728378026fcca1b07d0512108c44e21058365a83a83366bde2c0a88aa26ea",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "fdb25044db1840f67722d4e95799f333c087af13be50233a24ad2803c4ec566c",
+      "previous_sha256": "f3c5aaaba19896e82bcc82c8707e553310588860ed7101e2ca5656d3116f9c9b",
       "block_count": 22
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r5/",
@@ -1690,15 +3270,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:12+00:00",
-      "fetched_at": "2026-10-26T10:28:12+00:00",
-      "sha256": "b5af03b3c273645ea1a820afe85162cdc6b2f39b246d3d2a5e04ad05c2ee7059",
+      "checked_at": "2026-10-26T10:46:00+00:00",
+      "fetched_at": "2026-10-26T10:46:00+00:00",
+      "sha256": "9aa8140b6c6d0b2548cf7fb3d3dee802a70c1591b1a3223b39bf8e64e370550b",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "da27dbbddd67c4b66c45b0a1c0b87b36ff9c0066237326dd89d011a6b4957b0b",
+      "previous_sha256": "b5af03b3c273645ea1a820afe85162cdc6b2f39b246d3d2a5e04ad05c2ee7059",
       "block_count": 31
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r4/",
@@ -1719,15 +3299,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:12+00:00",
-      "fetched_at": "2026-10-26T10:28:12+00:00",
-      "sha256": "b8c503563f2ceaf8a665a0a0a68cd2238e1ea2a7bb03e002ae6d115f5d2d544d",
+      "checked_at": "2026-10-26T10:46:00+00:00",
+      "fetched_at": "2026-10-26T10:46:00+00:00",
+      "sha256": "31d57496636d36d193c9488bcb6c31e822c08b6f107d2a5a6044d8446e85f020",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "92dd21d4a1a486ece5b7268e5ee39f72713609edada3fae5e3ae7a77d04b595e",
+      "previous_sha256": "b8c503563f2ceaf8a665a0a0a68cd2238e1ea2a7bb03e002ae6d115f5d2d544d",
       "block_count": 9
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r3/",
@@ -1748,15 +3328,15 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:28:12+00:00",
-      "fetched_at": "2026-10-26T10:28:12+00:00",
-      "sha256": "3aa571d22742ac30d6cbe2464b287cba92707f69abd8d7ba5d3795ec636da79e",
+      "checked_at": "2026-10-26T10:46:00+00:00",
+      "fetched_at": "2026-10-26T10:46:00+00:00",
+      "sha256": "9f762d8faf6fba96d6dc39daf6a2c8a15c565d719c05de4caa4afa9a9354ca0d",
       "etag": null,
       "last_modified": null,
       "http_status": 200,
       "redirected": false,
       "detected_language": "en",
-      "previous_sha256": "3fed8479fa35e76356c222ac1f0ffdc394887ff9124d4a55eb1bf853af8f54c8",
+      "previous_sha256": "3aa571d22742ac30d6cbe2464b287cba92707f69abd8d7ba5d3795ec636da79e",
       "block_count": 26
     },
     "resolved_url": "https://blog.4d.com/en-whats-new-in-4d-v16-r2/",
