@@ -2272,6 +2272,106 @@
         "requested_channel": "versioned",
         "requested_version": "19"
       }
+    },
+    "legacy-v16-deprecated-features-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-or-removed-features-in-v16-product-range.200-3072042.en.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html",
+        "parent_source_id": "legacy-v16-deprecated-en",
+        "parent_sha256": "fde6d90c4dc9f24e5eb428ad4973aeef76d45e30415473fad10552d3f1ba85f6",
+        "document_key": "200-3072042"
+      }
+    },
+    "legacy-v16-deprecated-features-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees-dans-la-gamme-v16.200-3072042.fr.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html",
+        "parent_source_id": "legacy-v16-deprecated-fr",
+        "parent_sha256": "812047677b91938366c964aba9055d292e268d2d8585917d175557f5fa391a54",
+        "document_key": "200-3072042"
+      }
+    },
+    "legacy-v16-deprecated-features-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Anderungen-in-der-Produktreihe-v16.200-3072042.de.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html",
+        "parent_source_id": "legacy-v16-deprecated-de",
+        "parent_sha256": "b497f904c328a56638df2061a75ec40b7b9b1267a0fc1110271fa687f599cb3f",
+        "document_key": "200-3072042"
+      }
+    },
+    "legacy-v16-deprecated-features-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-o-eliminadas-en-la-gama-v16.200-3072042.es.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html",
+        "parent_source_id": "legacy-v16-deprecated-es",
+        "parent_sha256": "8433a8e55a95d5ca2b6039e61c47db1bc5da0b7fa58d895a0763fafb7d47ac05",
+        "document_key": "200-3072042"
+      }
+    },
+    "legacy-v16-deprecated-features-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-or-removed-features-in-v16-product-range.200-3072042.ja.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.ja.html",
+        "parent_source_id": "legacy-v16-deprecated-ja",
+        "parent_sha256": "6d27356047127990480c0ab62d93b5edf95b274cec12c66306fe658b3551728e",
+        "document_key": "200-3072042"
+      }
+    },
+    "legacy-v17-deprecated-features-en": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.en.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html",
+        "parent_source_id": "legacy-v17-deprecated-en",
+        "parent_sha256": "19e0b4b11be79cecc75c64523c0ce5a08e95f89a6d768a42adf79252539a9375",
+        "document_key": "200-3761903"
+      }
+    },
+    "legacy-v17-deprecated-features-fr": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees-dans-la-gamme-v17.200-3761903.fr.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html",
+        "parent_source_id": "legacy-v17-deprecated-fr",
+        "parent_sha256": "a8d37ed97ae66498bc6e842a40a6fc1d9f6bfcfd5a49dcfa5d0db83a9ec1999f",
+        "document_key": "200-3761903"
+      }
+    },
+    "legacy-v17-deprecated-features-de": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Anderungen-in-der-Produktreihe-v17.200-3761903.de.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html",
+        "parent_source_id": "legacy-v17-deprecated-de",
+        "parent_sha256": "60d8c76599354e217d268a143677ea6200c7390e6606132a6247cdb733ff9b9a",
+        "document_key": "200-3761903"
+      }
+    },
+    "legacy-v17-deprecated-features-es": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-o-eliminadas-en-la-gama-v17.200-3761903.es.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html",
+        "parent_source_id": "legacy-v17-deprecated-es",
+        "parent_sha256": "069df32ad20161cc25584873c1a8e2c972567da7c31dcea3a6981e25a5d8d786",
+        "document_key": "200-3761903"
+      }
+    },
+    "legacy-v17-deprecated-features-ja": {
+      "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.ja.html",
+      "discovery": {
+        "method": "legacy_article_link",
+        "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.ja.html",
+        "parent_source_id": "legacy-v17-deprecated-ja",
+        "parent_sha256": "99996acb6300ba6fe60be8e07d544dd366991150182d303ae559ea513e93d3b7",
+        "document_key": "200-3761903"
+      }
     }
   },
   "unresolved": [

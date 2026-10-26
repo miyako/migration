@@ -1,0 +1,1018 @@
+{
+  "schema_version": 1,
+  "groups": [
+    {
+      "id": "chg-group-bundled-php-modules",
+      "member_ids": [
+        "chg-bundled-php-dom-removal",
+        "chg-bundled-php-iconv-removal",
+        "chg-bundled-php-libxml-removal",
+        "chg-bundled-php-libxslt-removal",
+        "chg-bundled-php-simplexml-removal",
+        "chg-bundled-php-gd-removal",
+        "chg-bundled-php-xml-removal",
+        "chg-bundled-php-xmlreader-removal",
+        "chg-bundled-php-xmlwriter-removal",
+        "chg-bundled-php-wddx-removal",
+        "chg-bundled-php-zlib-removal",
+        "chg-bundled-php-zip-removal"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Migrate dependencies on bundled PHP modules",
+          "paragraph": "In v20, the bundled PHP interpreter no longer supplies DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib or Zip. Inventory the affected PHP work as one migration task: use an external FastCGI PHP installation with the required extensions, or replace the operation with a suitable supported API. Old advice to use bundled libxslt is not a final-target v20 solution; PROCESS 4D TAGS is not a general XSLT engine.",
+          "action": "In v20, the bundled PHP interpreter no longer supplies DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib or Zip. Inventory the affected PHP work as one migration task: use an external FastCGI PHP installation with the required extensions, or replace the operation with a suitable supported API. Old advice to use bundled libxslt is not a final-target v20 solution; PROCESS 4D TAGS is not a general XSLT engine.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Migrer les dépendances aux modules PHP intégrés",
+          "paragraph": "En v20, l’interpréteur PHP intégré ne fournit plus DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib ni Zip. Traitez les dépendances comme une seule migration : installez PHP externe via FastCGI avec les extensions requises ou remplacez le traitement par une API prise en charge. L’ancien conseil d’utiliser libxslt intégré n’est pas une solution pour la cible v20 ; TRAITER BALISES 4D n’est pas un moteur XSLT général.",
+          "action": "En v20, l’interpréteur PHP intégré ne fournit plus DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib ni Zip. Traitez les dépendances comme une seule migration : installez PHP externe via FastCGI avec les extensions requises ou remplacez le traitement par une API prise en charge. L’ancien conseil d’utiliser libxslt intégré n’est pas une solution pour la cible v20 ; TRAITER BALISES 4D n’est pas un moteur XSLT général.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Abhängigkeiten von mitgelieferten PHP-Modulen migrieren",
+          "paragraph": "In v20 liefert der integrierte PHP-Interpreter DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib und Zip nicht mehr mit. Erfassen Sie die Abhängigkeiten als gemeinsame Migration: externes PHP über FastCGI mit passenden Erweiterungen oder eine geeignete unterstützte API. Der alte Verweis auf integriertes libxslt löst das Problem in v20 nicht; PROCESS 4D TAGS ist keine allgemeine XSLT-Engine.",
+          "action": "In v20 liefert der integrierte PHP-Interpreter DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib und Zip nicht mehr mit. Erfassen Sie die Abhängigkeiten als gemeinsame Migration: externes PHP über FastCGI mit passenden Erweiterungen oder eine geeignete unterstützte API. Der alte Verweis auf integriertes libxslt löst das Problem in v20 nicht; PROCESS 4D TAGS ist keine allgemeine XSLT-Engine.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Migrar las dependencias de módulos PHP integrados",
+          "paragraph": "En v20, el intérprete PHP integrado deja de suministrar DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib y Zip. Migre las dependencias como una tarea común: PHP externo mediante FastCGI con las extensiones necesarias, o una API admitida apropiada. El antiguo consejo de usar libxslt integrado no resuelve el destino v20; PROCESS 4D TAGS no es un motor XSLT general.",
+          "action": "En v20, el intérprete PHP integrado deja de suministrar DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib y Zip. Migre las dependencias como una tarea común: PHP externo mediante FastCGI con las extensiones necesarias, o una API admitida apropiada. El antiguo consejo de usar libxslt integrado no resuelve el destino v20; PROCESS 4D TAGS no es un motor XSLT general.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "組み込み PHP モジュールへの依存を移行する",
+          "paragraph": "v20 では組み込み PHP に DOM、Iconv、LibXML、LibXSLT、SimpleXML、GD、XML、XMLreader、XMLwriter、WDDX、Zlib、Zip が含まれなくなります。依存する処理を一つの移行作業として調べ、必要な拡張を備えた外部 PHP を FastCGI で使うか、適切なサポート対象 API へ置き換えてください。従来の組み込み libxslt を使う案内は移行先 v20 の解決策にはならず、PROCESS 4D TAGS も汎用 XSLT エンジンではありません。",
+          "action": "v20 では組み込み PHP に DOM、Iconv、LibXML、LibXSLT、SimpleXML、GD、XML、XMLreader、XMLwriter、WDDX、Zlib、Zip が含まれなくなります。依存する処理を一つの移行作業として調べ、必要な拡張を備えた外部 PHP を FastCGI で使うか、適切なサポート対象 API へ置き換えてください。従来の組み込み libxslt を使う案内は移行先 v20 の解決策にはならず、PROCESS 4D TAGS も汎用 XSLT エンジンではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-legacy-resource-commands",
+      "member_ids": [
+        "chg-removed-array-to-string-list",
+        "chg-removed-create-resource-file",
+        "chg-removed-delete-resource",
+        "chg-removed-get-component-resource-id",
+        "chg-removed-get-icon-resource",
+        "chg-removed-set-picture-resource",
+        "chg-removed-set-resource",
+        "chg-removed-set-resource-name",
+        "chg-removed-set-resource-properties",
+        "chg-removed-set-string-resource",
+        "chg-removed-set-text-resource"
+      ],
+      "evidence_from": [
+        "chg-resource-fork-storage"
+      ],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace removed resource-fork command workflows",
+          "paragraph": "These legacy resource commands are formally removed in 17 R5 and can raise runtime error 33 without a syntax or compilation warning. Migrate the affected resource workflow to ordinary Resources files: STR# strings can move to XLIFF, text to text/XLIFF files, and pictures to modern image files. The removal table does not supply a one-for-one API for every call; do not treat all resource reading as removed or assume a replacement for a private resource format.",
+          "action": "These legacy resource commands are formally removed in 17 R5 and can raise runtime error 33 without a syntax or compilation warning. Migrate the affected resource workflow to ordinary Resources files: STR# strings can move to XLIFF, text to text/XLIFF files, and pictures to modern image files. The removal table does not supply a one-for-one API for every call; do not treat all resource reading as removed or assume a replacement for a private resource format.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les traitements de ressources supprimés",
+          "paragraph": "Ces anciennes commandes de ressources sont supprimées en 17 R5 et peuvent produire l’erreur 33 à l’exécution sans alerte de syntaxe ou compilation. Migrez le traitement vers des fichiers ordinaires de Resources : STR# vers XLIFF, textes vers texte/XLIFF, images vers des formats modernes. Le tableau ne donne pas d’équivalent pour chaque appel ; toute lecture de ressources n’est pas supprimée et aucun remplacement d’un format privé n’est présumé.",
+          "action": "Ces anciennes commandes de ressources sont supprimées en 17 R5 et peuvent produire l’erreur 33 à l’exécution sans alerte de syntaxe ou compilation. Migrez le traitement vers des fichiers ordinaires de Resources : STR# vers XLIFF, textes vers texte/XLIFF, images vers des formats modernes. Le tableau ne donne pas d’équivalent pour chaque appel ; toute lecture de ressources n’est pas supprimée et aucun remplacement d’un format privé n’est présumé.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Entfernte Resource-Fork-Befehlsabläufe ersetzen",
+          "paragraph": "Diese alten Ressourcenbefehle werden in 17 R5 formal entfernt und können Laufzeitfehler 33 ohne Syntax- oder Compilerwarnung auslösen. Migrieren Sie den Ablauf zu normalen Resources-Dateien: STR# nach XLIFF, Texte in Text-/XLIFF-Dateien und Bilder in moderne Formate. Die Tabelle nennt nicht für jeden Aufruf einen Ersatz; weder sämtliches Ressourcenlesen noch ein privates Format wird pauschal ersetzt.",
+          "action": "Diese alten Ressourcenbefehle werden in 17 R5 formal entfernt und können Laufzeitfehler 33 ohne Syntax- oder Compilerwarnung auslösen. Migrieren Sie den Ablauf zu normalen Resources-Dateien: STR# nach XLIFF, Texte in Text-/XLIFF-Dateien und Bilder in moderne Formate. Die Tabelle nennt nicht für jeden Aufruf einen Ersatz; weder sämtliches Ressourcenlesen noch ein privates Format wird pauschal ersetzt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir los flujos de recursos eliminados",
+          "paragraph": "Estos comandos de recursos se eliminan formalmente en 17 R5 y pueden causar error 33 en ejecución sin aviso sintáctico ni de compilación. Migre el flujo a archivos normales de Resources: STR# a XLIFF, texto a archivos de texto/XLIFF e imágenes a formatos modernos. La tabla no da equivalencia para cada llamada; no se elimina toda lectura ni se presupone un sustituto de formatos privados.",
+          "action": "Estos comandos de recursos se eliminan formalmente en 17 R5 y pueden causar error 33 en ejecución sin aviso sintáctico ni de compilación. Migre el flujo a archivos normales de Resources: STR# a XLIFF, texto a archivos de texto/XLIFF e imágenes a formatos modernos. La tabla no da equivalencia para cada llamada; no se elimina toda lectura ni se presupone un sustituto de formatos privados.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "削除されたリソースフォーク用コマンドの処理を置き換える",
+          "paragraph": "これらの従来のリソースコマンドは 17 R5 で正式に削除され、構文・コンパイル警告なしに実行時エラー 33 となる場合があります。処理を Resources 内の通常ファイルへ移し、STR# は XLIFF、テキストはテキスト／XLIFF、画像は現行形式へ移行してください。表は全呼び出しの一対一の代替を示していません。リソースの読み取り全体が削除された、あるいは独自形式にも決まった代替があるとは判断できません。",
+          "action": "これらの従来のリソースコマンドは 17 R5 で正式に削除され、構文・コンパイル警告なしに実行時エラー 33 となる場合があります。処理を Resources 内の通常ファイルへ移し、STR# は XLIFF、テキストはテキスト／XLIFF、画像は現行形式へ移行してください。表は全呼び出しの一対一の代替を示していません。リソースの読み取り全体が削除された、あるいは独自形式にも決まった代替があるとは判断できません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-xslt-processing",
+      "member_ids": [
+        "chg-removed-xslt-apply-transformation",
+        "chg-removed-xslt-get-error",
+        "chg-removed-xslt-set-parameter"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace the removed XSLT processing API",
+          "paragraph": "The three XSLT transformation, parameter and error commands are removed in 17 R5. Replace the transformation workflow, not each call with an unrelated workaround. Historical PHP libxslt guidance requires external FastCGI PHP for a v20 target because bundled LibXSLT is removed there. PROCESS 4D TAGS is an option for text/HTML generation, not a general XSLT replacement. Error 33 is a runtime failure, not a compilation check. Earlier Quick tables already mark XSLT unavailable in 64-bit without establishing the first 64-bit cutoff.",
+          "action": "The three XSLT transformation, parameter and error commands are removed in 17 R5. Replace the transformation workflow, not each call with an unrelated workaround. Historical PHP libxslt guidance requires external FastCGI PHP for a v20 target because bundled LibXSLT is removed there. PROCESS 4D TAGS is an option for text/HTML generation, not a general XSLT replacement. Error 33 is a runtime failure, not a compilation check. Earlier Quick tables already mark XSLT unavailable in 64-bit without establishing the first 64-bit cutoff.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer l’API de traitement XSLT supprimée",
+          "paragraph": "Les trois commandes XSLT de transformation, paramètres et erreurs sont supprimées en 17 R5. Remplacez le traitement complet, pas chaque appel par un contournement sans rapport. Pour une cible v20, le conseil PHP libxslt nécessite PHP externe via FastCGI puisque LibXSLT intégré y est supprimé. TRAITER BALISES 4D convient au texte/HTML, pas à tout XSLT. L’erreur 33 relève de l’exécution, pas de la compilation. Les tableaux antérieurs indiquent déjà XSLT indisponible en 64 bits sans dater le premier seuil 64 bits.",
+          "action": "Les trois commandes XSLT de transformation, paramètres et erreurs sont supprimées en 17 R5. Remplacez le traitement complet, pas chaque appel par un contournement sans rapport. Pour une cible v20, le conseil PHP libxslt nécessite PHP externe via FastCGI puisque LibXSLT intégré y est supprimé. TRAITER BALISES 4D convient au texte/HTML, pas à tout XSLT. L’erreur 33 relève de l’exécution, pas de la compilation. Les tableaux antérieurs indiquent déjà XSLT indisponible en 64 bits sans dater le premier seuil 64 bits.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Entfernte XSLT-Verarbeitung ersetzen",
+          "paragraph": "Die drei XSLT-Befehle für Transformation, Parameter und Fehler werden in 17 R5 entfernt. Ersetzen Sie den gesamten Transformationsablauf. Der historische PHP-libxslt-Weg erfordert bei Ziel v20 externes FastCGI-PHP, da das integrierte LibXSLT dort entfällt. PROCESS 4D TAGS eignet sich für Text/HTML, nicht als allgemeiner XSLT-Ersatz. Fehler 33 ist ein Laufzeitfehler, keine Compilerprüfung. Frühere Übersichten nennen XSLT bereits in 64 Bit nicht verfügbar, ohne den ersten Grenztermin zu datieren.",
+          "action": "Die drei XSLT-Befehle für Transformation, Parameter und Fehler werden in 17 R5 entfernt. Ersetzen Sie den gesamten Transformationsablauf. Der historische PHP-libxslt-Weg erfordert bei Ziel v20 externes FastCGI-PHP, da das integrierte LibXSLT dort entfällt. PROCESS 4D TAGS eignet sich für Text/HTML, nicht als allgemeiner XSLT-Ersatz. Fehler 33 ist ein Laufzeitfehler, keine Compilerprüfung. Frühere Übersichten nennen XSLT bereits in 64 Bit nicht verfügbar, ohne den ersten Grenztermin zu datieren.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir la API XSLT eliminada",
+          "paragraph": "Los tres comandos XSLT de transformación, parámetros y errores se eliminan en 17 R5. Sustituya el flujo de transformación completo. Para un destino v20, la alternativa histórica PHP libxslt requiere PHP externo mediante FastCGI, pues LibXSLT integrado se elimina allí. PROCESS 4D TAGS sirve para texto/HTML, no para todo XSLT. El error 33 ocurre en ejecución, no en compilación. Las tablas anteriores ya indican XSLT no disponible en 64 bits sin fechar el primer umbral.",
+          "action": "Los tres comandos XSLT de transformación, parámetros y errores se eliminan en 17 R5. Sustituya el flujo de transformación completo. Para un destino v20, la alternativa histórica PHP libxslt requiere PHP externo mediante FastCGI, pues LibXSLT integrado se elimina allí. PROCESS 4D TAGS sirve para texto/HTML, no para todo XSLT. El error 33 ocurre en ejecución, no en compilación. Las tablas anteriores ya indican XSLT no disponible en 64 bits sin fechar el primer umbral.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "削除された XSLT 処理 API を置き換える",
+          "paragraph": "XSLT の変換・パラメーター・エラー取得の三つのコマンドは 17 R5 で削除されます。個々の呼び出しを無関係な処理へ置き換えるのではなく、変換処理全体を移行してください。v20 では組み込み LibXSLT も削除されるため、従来の PHP libxslt 案を使うには外部 FastCGI PHP が必要です。PROCESS 4D TAGS はテキスト／HTML 生成向けで、汎用 XSLT の代替ではありません。エラー 33 はコンパイルではなく実行時に発生します。 以前の早見表でも XSLT は 64 ビットで利用できませんが、最初の変更時期は特定されていません。",
+          "action": "XSLT の変換・パラメーター・エラー取得の三つのコマンドは 17 R5 で削除されます。個々の呼び出しを無関係な処理へ置き換えるのではなく、変換処理全体を移行してください。v20 では組み込み LibXSLT も削除されるため、従来の PHP libxslt 案を使うには外部 FastCGI PHP が必要です。PROCESS 4D TAGS はテキスト／HTML 生成向けで、汎用 XSLT の代替ではありません。エラー 33 はコンパイルではなく実行時に発生します。 以前の早見表でも XSLT は 64 ビットで利用できませんが、最初の変更時期は特定されていません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-button-enabled-state",
+      "member_ids": [
+        "chg-removed-disable-button",
+        "chg-removed-enable-button"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Use OBJECT SET ENABLED for button state",
+          "paragraph": "DISABLE BUTTON and ENABLE BUTTON are removed in 18 R2. Replace both sides of button-state control with OBJECT SET ENABLED, preserving the intended enabled/disabled state. Removed calls fail at runtime with error 33 rather than being reliably detected by syntax checking or compilation.",
+          "action": "DISABLE BUTTON and ENABLE BUTTON are removed in 18 R2. Replace both sides of button-state control with OBJECT SET ENABLED, preserving the intended enabled/disabled state. Removed calls fail at runtime with error 33 rather than being reliably detected by syntax checking or compilation.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Utiliser OBJET FIXER ACTIVATION pour les boutons",
+          "paragraph": "DESACTIVER BOUTON et ACTIVER BOUTON sont supprimées en 18 R2. Remplacez les deux opérations par OBJET FIXER ACTIVATION en conservant l’état voulu. Les appels supprimés échouent à l’exécution avec l’erreur 33, sans détection fiable par la syntaxe ou la compilation.",
+          "action": "DESACTIVER BOUTON et ACTIVER BOUTON sont supprimées en 18 R2. Remplacez les deux opérations par OBJET FIXER ACTIVATION en conservant l’état voulu. Les appels supprimés échouent à l’exécution avec l’erreur 33, sans détection fiable par la syntaxe ou la compilation.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Schaltflächenstatus mit OBJECT SET ENABLED setzen",
+          "paragraph": "DISABLE BUTTON und ENABLE BUTTON werden in 18 R2 entfernt. Ersetzen Sie beide Zustandswechsel durch OBJECT SET ENABLED und bewahren Sie den gewünschten Aktivierungsstatus. Entfernte Aufrufe erzeugen Laufzeitfehler 33 statt einer verlässlichen Syntax- oder Compilerdiagnose.",
+          "action": "DISABLE BUTTON und ENABLE BUTTON werden in 18 R2 entfernt. Ersetzen Sie beide Zustandswechsel durch OBJECT SET ENABLED und bewahren Sie den gewünschten Aktivierungsstatus. Entfernte Aufrufe erzeugen Laufzeitfehler 33 statt einer verlässlichen Syntax- oder Compilerdiagnose.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Usar OBJECT SET ENABLED para los botones",
+          "paragraph": "DISABLE BUTTON y ENABLE BUTTON se eliminan en 18 R2. Sustituya ambas operaciones por OBJECT SET ENABLED conservando el estado deseado. Las llamadas eliminadas causan error 33 en ejecución, sin detección fiable por sintaxis o compilación.",
+          "action": "DISABLE BUTTON y ENABLE BUTTON se eliminan en 18 R2. Sustituya ambas operaciones por OBJECT SET ENABLED conservando el estado deseado. Las llamadas eliminadas causan error 33 en ejecución, sin detección fiable por sintaxis o compilación.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "ボタンの有効状態を OBJECT SET ENABLED で設定する",
+          "paragraph": "DISABLE BUTTON と ENABLE BUTTON は 18 R2 で削除されます。有効化・無効化の両方を OBJECT SET ENABLED に置き換え、意図した状態を維持してください。削除済みの呼び出しは構文やコンパイルで確実に検出されず、実行時エラー 33 となります。",
+          "action": "DISABLE BUTTON と ENABLE BUTTON は 18 R2 で削除されます。有効化・無効化の両方を OBJECT SET ENABLED に置き換え、意図した状態を維持してください。削除済みの呼び出しは構文やコンパイルで確実に検出されず、実行時エラー 33 となります。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-legacy-picture-apis",
+      "member_ids": [
+        "chg-removed-picture-type-list",
+        "chg-removed-qt-compress-picture",
+        "chg-removed-qt-compress-picture-file",
+        "chg-removed-qt-load-compress-picture-from-file",
+        "chg-removed-save-picture-to-file"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Move legacy picture I/O to native picture APIs",
+          "paragraph": "The listed picture/QuickTime-era calls are removed in 17 R5. Use PICTURE CODEC LIST for codec discovery, CONVERT PICTURE for conversion, READ PICTURE FILE for loading, and WRITE PICTURE FILE or PICTURE TO BLOB for output as appropriate. Preserve each operation's data flow; this is not removal of all picture support. Runtime error 33 may escape syntax checking and compilation.",
+          "action": "The listed picture/QuickTime-era calls are removed in 17 R5. Use PICTURE CODEC LIST for codec discovery, CONVERT PICTURE for conversion, READ PICTURE FILE for loading, and WRITE PICTURE FILE or PICTURE TO BLOB for output as appropriate. Preserve each operation's data flow; this is not removal of all picture support. Runtime error 33 may escape syntax checking and compilation.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Migrer les anciens traitements d’images vers les API natives",
+          "paragraph": "Les appels d’images de l’époque QuickTime listés sont supprimés en 17 R5. Utilisez IMAGE LISTE CODECS pour les codecs, CONVERTIR IMAGE pour la conversion, LIRE FICHIER IMAGE pour la lecture et ECRIRE FICHIER IMAGE ou IMAGE VERS BLOB pour la sortie selon le besoin. Préservez le rôle de chaque traitement ; les images ne sont pas toutes supprimées. L’erreur 33 peut échapper aux vérifications de syntaxe et compilation.",
+          "action": "Les appels d’images de l’époque QuickTime listés sont supprimés en 17 R5. Utilisez IMAGE LISTE CODECS pour les codecs, CONVERTIR IMAGE pour la conversion, LIRE FICHIER IMAGE pour la lecture et ECRIRE FICHIER IMAGE ou IMAGE VERS BLOB pour la sortie selon le besoin. Préservez le rôle de chaque traitement ; les images ne sont pas toutes supprimées. L’erreur 33 peut échapper aux vérifications de syntaxe et compilation.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alte Bild-Ein-/Ausgabe auf native APIs umstellen",
+          "paragraph": "Die aufgeführten Bild-/QuickTime-Altbefehle werden in 17 R5 entfernt. Nutzen Sie PICTURE CODEC LIST zur Codec-Ermittlung, CONVERT PICTURE zur Konvertierung, READ PICTURE FILE zum Laden und WRITE PICTURE FILE oder PICTURE TO BLOB zur Ausgabe. Bewahren Sie den jeweiligen Datenfluss; Bildunterstützung entfällt nicht allgemein. Fehler 33 kann Syntaxprüfung und Kompilierung entgehen.",
+          "action": "Die aufgeführten Bild-/QuickTime-Altbefehle werden in 17 R5 entfernt. Nutzen Sie PICTURE CODEC LIST zur Codec-Ermittlung, CONVERT PICTURE zur Konvertierung, READ PICTURE FILE zum Laden und WRITE PICTURE FILE oder PICTURE TO BLOB zur Ausgabe. Bewahren Sie den jeweiligen Datenfluss; Bildunterstützung entfällt nicht allgemein. Fehler 33 kann Syntaxprüfung und Kompilierung entgehen.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Migrar las operaciones de imagen a API nativas",
+          "paragraph": "Las llamadas de imagen de la época QuickTime indicadas se eliminan en 17 R5. Use PICTURE CODEC LIST para codecs, CONVERT PICTURE para convertir, READ PICTURE FILE para cargar y WRITE PICTURE FILE o PICTURE TO BLOB para salida según proceda. Conserve la función de cada operación; no se elimina todo soporte de imágenes. El error 33 puede no detectarse al compilar.",
+          "action": "Las llamadas de imagen de la época QuickTime indicadas se eliminan en 17 R5. Use PICTURE CODEC LIST para codecs, CONVERT PICTURE para convertir, READ PICTURE FILE para cargar y WRITE PICTURE FILE o PICTURE TO BLOB para salida según proceda. Conserve la función de cada operación; no se elimina todo soporte de imágenes. El error 33 puede no detectarse al compilar.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来の画像入出力をネイティブの画像 API へ移す",
+          "paragraph": "一覧の QuickTime 世代の画像コマンドは 17 R5 で削除されます。コーデックの取得には PICTURE CODEC LIST、変換には CONVERT PICTURE、読み込みには READ PICTURE FILE、出力には目的に応じ WRITE PICTURE FILE や PICTURE TO BLOB を使用してください。画像機能全体の削除ではなく、各処理のデータの流れを維持する移行です。エラー 33 は構文チェックやコンパイルを通過する場合があります。",
+          "action": "一覧の QuickTime 世代の画像コマンドは 17 R5 で削除されます。コーデックの取得には PICTURE CODEC LIST、変換には CONVERT PICTURE、読み込みには READ PICTURE FILE、出力には目的に応じ WRITE PICTURE FILE や PICTURE TO BLOB を使用してください。画像機能全体の削除ではなく、各処理のデータの流れを維持する移行です。エラー 33 は構文チェックやコンパイルを通過する場合があります。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-text-declarations",
+      "member_ids": [
+        "chg-deprecated-array-string",
+        "chg-deprecated-c-string"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace fixed-length string declarations with text",
+          "paragraph": "ARRAY STRING and C_STRING are supported deprecations since v12, not compiler blockers. Use ARRAY TEXT for arrays and C_TEXT for scalar declarations once the database is in Unicode mode. Keep the Unicode condition when updating declarations; no removal release or remediation difficulty is inferred.",
+          "action": "ARRAY STRING and C_STRING are supported deprecations since v12, not compiler blockers. Use ARRAY TEXT for arrays and C_TEXT for scalar declarations once the database is in Unicode mode. Keep the Unicode condition when updating declarations; no removal release or remediation difficulty is inferred.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les déclarations de chaînes fixes par du texte",
+          "paragraph": "TABLEAU ALPHA et C_ALPHA sont obsolètes depuis v12 mais restent compatibles ; ce ne sont pas des blocages du compilateur. Utilisez TABLEAU TEXTE pour les tableaux et C_TEXTE pour les scalaires une fois la base en Unicode. Conservez cette condition ; aucune date de suppression ni difficulté n’est déduite.",
+          "action": "TABLEAU ALPHA et C_ALPHA sont obsolètes depuis v12 mais restent compatibles ; ce ne sont pas des blocages du compilateur. Utilisez TABLEAU TEXTE pour les tableaux et C_TEXTE pour les scalaires une fois la base en Unicode. Conservez cette condition ; aucune date de suppression ni difficulté n’est déduite.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Deklarationen fester Zeichenfolgen durch Text ersetzen",
+          "paragraph": "ARRAY STRING und C_STRING sind seit v12 weiterhin unterstützte Altbefehle, keine Compilersperren. Verwenden Sie ARRAY TEXT für Arrays und C_TEXT für Skalare, sobald die Datenbank im Unicode-Modus arbeitet. Bewahren Sie diese Bedingung; Entfernungsversion und Aufwand werden nicht abgeleitet.",
+          "action": "ARRAY STRING und C_STRING sind seit v12 weiterhin unterstützte Altbefehle, keine Compilersperren. Verwenden Sie ARRAY TEXT für Arrays und C_TEXT für Skalare, sobald die Datenbank im Unicode-Modus arbeitet. Bewahren Sie diese Bedingung; Entfernungsversion und Aufwand werden nicht abgeleitet.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir declaraciones de cadenas fijas por texto",
+          "paragraph": "ARRAY STRING y C_STRING están obsoletos desde v12 pero conservan compatibilidad; no son bloqueos del compilador. Use ARRAY TEXT para arrays y C_TEXT para escalares cuando la base esté en Unicode. Mantenga esta condición; no se infiere fecha de eliminación ni dificultad.",
+          "action": "ARRAY STRING y C_STRING están obsoletos desde v12 pero conservan compatibilidad; no son bloqueos del compilador. Use ARRAY TEXT para arrays y C_TEXT para escalares cuando la base esté en Unicode. Mantenga esta condición; no se infiere fecha de eliminación ni dificultad.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "固定長文字列の宣言をテキスト型に置き換える",
+          "paragraph": "ARRAY STRING と C_STRING は v12 から互換性のためにサポートされる非推奨の宣言であり、コンパイル障害ではありません。Unicode モードになったデータベースで、配列には ARRAY TEXT、スカラーには C_TEXT を使用してください。Unicode の条件を維持し、削除時期や作業難度は推測しないでください。",
+          "action": "ARRAY STRING と C_STRING は v12 から互換性のためにサポートされる非推奨の宣言であり、コンパイル障害ではありません。Unicode モードになったデータベースで、配列には ARRAY TEXT、スカラーには C_TEXT を使用してください。Unicode の条件を維持し、削除時期や作業難度は推測しないでください。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-svg-graphs",
+      "member_ids": [
+        "chg-deprecated-c-graph",
+        "chg-deprecated-graph-area"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace legacy graph areas with SVG graphs",
+          "paragraph": "C_GRAPH and GRAPH output to a 4D Graph area are deprecated since v12. Generate an SVG picture with GRAPH instead of maintaining the old graph-area workflow. GRAPH itself is not globally removed, and these supported deprecations are distinct from GRAPH TABLE's earlier disabling.",
+          "action": "C_GRAPH and GRAPH output to a 4D Graph area are deprecated since v12. Generate an SVG picture with GRAPH instead of maintaining the old graph-area workflow. GRAPH itself is not globally removed, and these supported deprecations are distinct from GRAPH TABLE's earlier disabling.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les anciennes zones de graphe par du SVG",
+          "paragraph": "C_GRAPHE et la sortie de GRAPHE dans une zone 4D Graph sont obsolètes depuis v12. Générez une image SVG avec GRAPHE au lieu de maintenir l’ancien traitement de zone. GRAPHE n’est pas globalement supprimé et ces obsolescences restent distinctes de la désactivation antérieure de GRAPH TABLE.",
+          "action": "C_GRAPHE et la sortie de GRAPHE dans une zone 4D Graph sont obsolètes depuis v12. Générez une image SVG avec GRAPHE au lieu de maintenir l’ancien traitement de zone. GRAPHE n’est pas globalement supprimé et ces obsolescences restent distinctes de la désactivation antérieure de GRAPH TABLE.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alte Diagrammbereiche durch SVG ersetzen",
+          "paragraph": "C_GRAPH und die GRAPH-Ausgabe in einen 4D-Graph-Bereich sind seit v12 veraltet. Erzeugen Sie mit GRAPH ein SVG-Bild statt des alten Bereichsablaufs. GRAPH ist nicht allgemein entfernt; diese unterstützten Altverfahren sind von der früheren GRAPH-TABLE-Deaktivierung getrennt.",
+          "action": "C_GRAPH und die GRAPH-Ausgabe in einen 4D-Graph-Bereich sind seit v12 veraltet. Erzeugen Sie mit GRAPH ein SVG-Bild statt des alten Bereichsablaufs. GRAPH ist nicht allgemein entfernt; diese unterstützten Altverfahren sind von der früheren GRAPH-TABLE-Deaktivierung getrennt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir áreas de gráfico antiguas por SVG",
+          "paragraph": "C_GRAPH y la salida de GRAPH a un área 4D Graph están obsoletos desde v12. Genere una imagen SVG con GRAPH en lugar de conservar ese flujo. GRAPH no se elimina globalmente; estas obsolescencias son distintas de la desactivación anterior de GRAPH TABLE.",
+          "action": "C_GRAPH y la salida de GRAPH a un área 4D Graph están obsoletos desde v12. Genere una imagen SVG con GRAPH en lugar de conservar ese flujo. GRAPH no se elimina globalmente; estas obsolescencias son distintas de la desactivación anterior de GRAPH TABLE.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来のグラフエリアを SVG グラフへ置き換える",
+          "paragraph": "C_GRAPH と 4D Graph エリアへの GRAPH 出力は v12 から非推奨です。従来のグラフエリア処理を保守するのではなく、GRAPH で SVG ピクチャを生成してください。GRAPH 全体の削除ではなく、GRAPH TABLE の以前からの無効化とも別の、互換性が維持される非推奨機能です。",
+          "action": "C_GRAPH と 4D Graph エリアへの GRAPH 出力は v12 から非推奨です。従来のグラフエリア処理を保守するのではなく、GRAPH で SVG ピクチャを生成してください。GRAPH 全体の削除ではなく、GRAPH TABLE の以前からの無効化とも別の、互換性が維持される非推奨機能です。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-listbox-property-access",
+      "member_ids": [
+        "chg-deprecated-listbox-footer-height",
+        "chg-deprecated-listbox-header-height",
+        "chg-deprecated-listbox-display-hor-scrollbar",
+        "chg-deprecated-listbox-display-ver-scrollbar",
+        "chg-deprecated-listbox-hor-scrollbar-position",
+        "chg-deprecated-listbox-ver-scrollbar-position"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Modernize legacy list-box property reads",
+          "paragraph": "Since 16 R3, the listed LISTBOX Get property constants are deprecated. Read horizontal/vertical scrollbar visibility with OBJECT GET SCROLLBAR, positions with OBJECT GET SCROLL POSITION, and header/footer heights with the dedicated LISTBOX height getters. The list box and its scrollbars remain; migrate the property-access API rather than removing the UI.",
+          "action": "Since 16 R3, the listed LISTBOX Get property constants are deprecated. Read horizontal/vertical scrollbar visibility with OBJECT GET SCROLLBAR, positions with OBJECT GET SCROLL POSITION, and header/footer heights with the dedicated LISTBOX height getters. The list box and its scrollbars remain; migrate the property-access API rather than removing the UI.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Moderniser la lecture des propriétés de list box",
+          "paragraph": "Depuis 16 R3, les constantes listées de LISTBOX Lire propriete sont obsolètes. Lisez la visibilité des barres avec OBJET LIRE BARRES DEFILEMENT, leur position avec OBJET LIRE DEFILEMENT et les hauteurs d’en-têtes/pieds avec les fonctions LISTBOX dédiées. La list box et ses barres restent présentes ; changez l’API de lecture, pas l’interface.",
+          "action": "Depuis 16 R3, les constantes listées de LISTBOX Lire propriete sont obsolètes. Lisez la visibilité des barres avec OBJET LIRE BARRES DEFILEMENT, leur position avec OBJET LIRE DEFILEMENT et les hauteurs d’en-têtes/pieds avec les fonctions LISTBOX dédiées. La list box et ses barres restent présentes ; changez l’API de lecture, pas l’interface.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alte Listbox-Eigenschaftsabfragen modernisieren",
+          "paragraph": "Seit 16 R3 sind die aufgeführten LISTBOX-Get-property-Konstanten veraltet. Nutzen Sie OBJECT GET SCROLLBAR für die Sichtbarkeit, OBJECT GET SCROLL POSITION für Positionen und die speziellen LISTBOX-Abfragen für Kopf-/Fußhöhen. Listbox und Bildlaufleisten bleiben bestehen; migrieren Sie den Eigenschaftszugriff statt die Oberfläche zu entfernen.",
+          "action": "Seit 16 R3 sind die aufgeführten LISTBOX-Get-property-Konstanten veraltet. Nutzen Sie OBJECT GET SCROLLBAR für die Sichtbarkeit, OBJECT GET SCROLL POSITION für Positionen und die speziellen LISTBOX-Abfragen für Kopf-/Fußhöhen. Listbox und Bildlaufleisten bleiben bestehen; migrieren Sie den Eigenschaftszugriff statt die Oberfläche zu entfernen.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Modernizar la lectura de propiedades de list box",
+          "paragraph": "Desde 16 R3, las constantes indicadas de LISTBOX Get property están obsoletas. Lea visibilidad con OBJECT GET SCROLLBAR, posiciones con OBJECT GET SCROLL POSITION y alturas de encabezado/pie con los getters LISTBOX específicos. Se conservan el list box y las barras; migre la API de lectura, no elimine la interfaz.",
+          "action": "Desde 16 R3, las constantes indicadas de LISTBOX Get property están obsoletas. Lea visibilidad con OBJECT GET SCROLLBAR, posiciones con OBJECT GET SCROLL POSITION y alturas de encabezado/pie con los getters LISTBOX específicos. Se conservan el list box y las barras; migre la API de lectura, no elimine la interfaz.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来のリストボックスのプロパティ取得を更新する",
+          "paragraph": "16 R3 から、一覧の LISTBOX Get property 定数は非推奨です。水平・垂直スクロールバーの表示状態は OBJECT GET SCROLLBAR、位置は OBJECT GET SCROLL POSITION、ヘッダー・フッターの高さは専用の LISTBOX コマンドで取得してください。リストボックスやスクロールバー自体は残るため、UI を削除するのではなくプロパティ取得 API を移行してください。",
+          "action": "16 R3 から、一覧の LISTBOX Get property 定数は非推奨です。水平・垂直スクロールバーの表示状態は OBJECT GET SCROLLBAR、位置は OBJECT GET SCROLL POSITION、ヘッダー・フッターの高さは専用の LISTBOX コマンドで取得してください。リストボックスやスクロールバー自体は残るため、UI を削除するのではなくプロパティ取得 API を移行してください。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-mac-file-apis",
+      "member_ids": [
+        "chg-deprecated-document-creator",
+        "chg-deprecated-set-document-type",
+        "chg-deprecated-set-document-creator",
+        "chg-deprecated-map-file-types"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace old Mac file type and creator APIs",
+          "paragraph": "The listed Mac OS 9-era file APIs are deprecated in 16 R6 but retained for compatibility. Move pathname handling to Path to object / Object to path and file-type integration to UTIs and Info.plist as appropriate. Document type's earlier v12 deprecation remains a separate fact; grouping does not move its cutoff to 16 R6. The v17 Quick table specifies deprecated 32-bit behavior but unsupported/no-op 64-bit behavior; the first 64-bit cutoff is not dated.",
+          "action": "The listed Mac OS 9-era file APIs are deprecated in 16 R6 but retained for compatibility. Move pathname handling to Path to object / Object to path and file-type integration to UTIs and Info.plist as appropriate. Document type's earlier v12 deprecation remains a separate fact; grouping does not move its cutoff to 16 R6. The v17 Quick table specifies deprecated 32-bit behavior but unsupported/no-op 64-bit behavior; the first 64-bit cutoff is not dated.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les anciennes API Mac de type et créateur",
+          "paragraph": "Les API de fichiers Mac OS 9 listées sont obsolètes en 16 R6 mais maintenues pour compatibilité. Utilisez Chemin vers objet / Objet vers chemin pour les chemins et les UTIs avec Info.plist pour les types de fichiers. L’obsolescence plus ancienne de Type document en v12 reste distincte ; le regroupement ne déplace pas son seuil. Le tableau v17 précise : obsolète en 32 bits, non pris en charge et sans effet en 64 bits ; le premier seuil 64 bits n’est pas daté.",
+          "action": "Les API de fichiers Mac OS 9 listées sont obsolètes en 16 R6 mais maintenues pour compatibilité. Utilisez Chemin vers objet / Objet vers chemin pour les chemins et les UTIs avec Info.plist pour les types de fichiers. L’obsolescence plus ancienne de Type document en v12 reste distincte ; le regroupement ne déplace pas son seuil. Le tableau v17 précise : obsolète en 32 bits, non pris en charge et sans effet en 64 bits ; le premier seuil 64 bits n’est pas daté.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alte Mac-Dateityp- und Ersteller-APIs ersetzen",
+          "paragraph": "Die aufgeführten Mac-OS-9-Datei-APIs sind in 16 R6 veraltet, bleiben aber kompatibel. Nutzen Sie Path to object / Object to path für Pfade sowie UTIs und Info.plist für Dateitypintegration. Die frühere v12-Veraltung von Document type bleibt getrennt; Gruppierung verschiebt deren Grenze nicht. Die v17-Übersicht nennt veraltetes 32-Bit-, aber nicht unterstütztes/wirkungsloses 64-Bit-Verhalten; der erste 64-Bit-Grenztermin bleibt undatiert.",
+          "action": "Die aufgeführten Mac-OS-9-Datei-APIs sind in 16 R6 veraltet, bleiben aber kompatibel. Nutzen Sie Path to object / Object to path für Pfade sowie UTIs und Info.plist für Dateitypintegration. Die frühere v12-Veraltung von Document type bleibt getrennt; Gruppierung verschiebt deren Grenze nicht. Die v17-Übersicht nennt veraltetes 32-Bit-, aber nicht unterstütztes/wirkungsloses 64-Bit-Verhalten; der erste 64-Bit-Grenztermin bleibt undatiert.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir API Mac antiguas de tipo y creador",
+          "paragraph": "Las API de archivos Mac OS 9 indicadas están obsoletas en 16 R6 pero mantienen compatibilidad. Use Path to object / Object to path para rutas y UTIs con Info.plist para tipos de archivo. La obsolescencia anterior de Document type en v12 sigue separada; agrupar no cambia su umbral. La tabla v17 precisa obsolescencia en 32 bits y comportamiento no admitido/sin efecto en 64 bits; no fecha el primer umbral de 64 bits.",
+          "action": "Las API de archivos Mac OS 9 indicadas están obsoletas en 16 R6 pero mantienen compatibilidad. Use Path to object / Object to path para rutas y UTIs con Info.plist para tipos de archivo. La obsolescencia anterior de Document type en v12 sigue separada; agrupar no cambia su umbral. La tabla v17 precisa obsolescencia en 32 bits y comportamiento no admitido/sin efecto en 64 bits; no fecha el primer umbral de 64 bits.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来の Mac ファイルタイプ・クリエーター API を置き換える",
+          "paragraph": "一覧の Mac OS 9 世代のファイル API は 16 R6 で非推奨となりますが、互換性のために維持されます。パス処理には Path to object / Object to path、ファイルタイプの統合には UTI と Info.plist を使用してください。Document type の v12 からの非推奨化は別の事実であり、グループ化で 16 R6 に移すことはありません。 v17 の早見表では、32 ビットでは非推奨、64 ビットではサポートされず何もしないとされ、最初の 64 ビットの変更時期は不明です。",
+          "action": "一覧の Mac OS 9 世代のファイル API は 16 R6 で非推奨となりますが、互換性のために維持されます。パス処理には Path to object / Object to path、ファイルタイプの統合には UTI と Info.plist を使用してください。Document type の v12 からの非推奨化は別の事実であり、グループ化で 16 R6 に移すことはありません。 v17 の早見表では、32 ビットでは非推奨、64 ビットではサポートされず何もしないとされ、最初の 64 ビットの変更時期は不明です。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-user-forms",
+      "member_ids": [
+        "chg-deprecated-create-user-form",
+        "chg-deprecated-delete-user-form",
+        "chg-deprecated-edit-form",
+        "chg-deprecated-list-user-forms"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Move user-form customization to Dynamic Forms",
+          "paragraph": "The User Forms feature and its create/delete/edit/list commands are deprecated from 17 R4, but remain supported for compatibility in these sources. Move customizable interfaces to Dynamic Forms as one feature migration. Do not treat all four calls as independent removals or as new syntax/compilation blockers.",
+          "action": "The User Forms feature and its create/delete/edit/list commands are deprecated from 17 R4, but remain supported for compatibility in these sources. Move customizable interfaces to Dynamic Forms as one feature migration. Do not treat all four calls as independent removals or as new syntax/compilation blockers.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Migrer la personnalisation vers les formulaires dynamiques",
+          "paragraph": "Les formulaires utilisateurs et leurs commandes de création, suppression, édition et liste sont obsolètes depuis 17 R4 mais restent compatibles dans ces sources. Migrez les interfaces personnalisables vers les formulaires dynamiques comme une seule fonctionnalité. Les quatre appels ne sont ni des suppressions indépendantes ni de nouveaux blocages de compilation.",
+          "action": "Les formulaires utilisateurs et leurs commandes de création, suppression, édition et liste sont obsolètes depuis 17 R4 mais restent compatibles dans ces sources. Migrez les interfaces personnalisables vers les formulaires dynamiques comme une seule fonctionnalité. Les quatre appels ne sont ni des suppressions indépendantes ni de nouveaux blocages de compilation.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Benutzerformular-Anpassung auf Dynamic Forms umstellen",
+          "paragraph": "Benutzerformulare und ihre Erstellen-/Löschen-/Bearbeiten-/Listenbefehle sind ab 17 R4 veraltet, werden in diesen Quellen aber weiter unterstützt. Migrieren Sie anpassbare Oberflächen als gemeinsame Funktion zu Dynamic Forms. Die vier Aufrufe sind keine unabhängigen Entfernungen oder neuen Compilersperren.",
+          "action": "Benutzerformulare und ihre Erstellen-/Löschen-/Bearbeiten-/Listenbefehle sind ab 17 R4 veraltet, werden in diesen Quellen aber weiter unterstützt. Migrieren Sie anpassbare Oberflächen als gemeinsame Funktion zu Dynamic Forms. Die vier Aufrufe sind keine unabhängigen Entfernungen oder neuen Compilersperren.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Migrar la personalización a formularios dinámicos",
+          "paragraph": "Los formularios de usuario y sus comandos de creación, borrado, edición y listado están obsoletos desde 17 R4, pero estas fuentes conservan compatibilidad. Migre las interfaces personalizables a formularios dinámicos como una sola función. No son cuatro eliminaciones independientes ni nuevos bloqueos de compilación.",
+          "action": "Los formularios de usuario y sus comandos de creación, borrado, edición y listado están obsoletos desde 17 R4, pero estas fuentes conservan compatibilidad. Migre las interfaces personalizables a formularios dinámicos como una sola función. No son cuatro eliminaciones independientes ni nuevos bloqueos de compilación.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "ユーザーフォームのカスタマイズをダイナミックフォームへ移す",
+          "paragraph": "ユーザーフォーム機能と作成・削除・編集・一覧取得のコマンドは 17 R4 から非推奨ですが、これらの出典では互換性のためにサポートが続きます。カスタマイズ可能なインターフェースを一つの機能移行としてダイナミックフォームへ置き換えてください。四つの独立した削除や、新しい構文・コンパイル障害ではありません。",
+          "action": "ユーザーフォーム機能と作成・削除・編集・一覧取得のコマンドは 17 R4 から非推奨ですが、これらの出典では互換性のためにサポートが続きます。カスタマイズ可能なインターフェースを一つの機能移行としてダイナミックフォームへ置き換えてください。四つの独立した削除や、新しい構文・コンパイル障害ではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-sql-session-commands",
+      "member_ids": [
+        "chg-deprecated-use-external-database",
+        "chg-deprecated-use-internal-database"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Modernize external SQL session switching",
+          "paragraph": "USE EXTERNAL DATABASE and USE INTERNAL DATABASE are supported deprecations since v12. Replace external connection selection with SQL LOGIN and the return/disconnection path with SQL LOGOUT. Keep the application's session lifecycle intact; the source does not claim these deprecated calls are compiler blockers.",
+          "action": "USE EXTERNAL DATABASE and USE INTERNAL DATABASE are supported deprecations since v12. Replace external connection selection with SQL LOGIN and the return/disconnection path with SQL LOGOUT. Keep the application's session lifecycle intact; the source does not claim these deprecated calls are compiler blockers.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Moderniser les changements de session SQL externe",
+          "paragraph": "UTILISER BASE EXTERNE et UTILISER BASE INTERNE sont obsolètes depuis v12 mais restent compatibles. Remplacez la sélection externe par SQL LOGIN et le retour ou la déconnexion par SQL LOGOUT. Conservez le cycle de session ; la source ne décrit pas de blocage du compilateur.",
+          "action": "UTILISER BASE EXTERNE et UTILISER BASE INTERNE sont obsolètes depuis v12 mais restent compatibles. Remplacez la sélection externe par SQL LOGIN et le retour ou la déconnexion par SQL LOGOUT. Conservez le cycle de session ; la source ne décrit pas de blocage du compilateur.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Umschaltung externer SQL-Sitzungen modernisieren",
+          "paragraph": "USE EXTERNAL DATABASE und USE INTERNAL DATABASE sind seit v12 unterstützte Altbefehle. Verwenden Sie SQL LOGIN für die externe Verbindung und SQL LOGOUT für Rückkehr beziehungsweise Abmeldung. Bewahren Sie den Sitzungsablauf; eine Compilersperre ist nicht belegt.",
+          "action": "USE EXTERNAL DATABASE und USE INTERNAL DATABASE sind seit v12 unterstützte Altbefehle. Verwenden Sie SQL LOGIN für die externe Verbindung und SQL LOGOUT für Rückkehr beziehungsweise Abmeldung. Bewahren Sie den Sitzungsablauf; eine Compilersperre ist nicht belegt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Modernizar el cambio de sesiones SQL externas",
+          "paragraph": "USE EXTERNAL DATABASE y USE INTERNAL DATABASE están obsoletos desde v12 pero conservan compatibilidad. Use SQL LOGIN para la conexión externa y SQL LOGOUT para volver o desconectar. Mantenga el ciclo de sesión; no se documenta un bloqueo del compilador.",
+          "action": "USE EXTERNAL DATABASE y USE INTERNAL DATABASE están obsoletos desde v12 pero conservan compatibilidad. Use SQL LOGIN para la conexión externa y SQL LOGOUT para volver o desconectar. Mantenga el ciclo de sesión; no se documenta un bloqueo del compilador.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "外部 SQL セッションの切り替えを更新する",
+          "paragraph": "USE EXTERNAL DATABASE と USE INTERNAL DATABASE は v12 から互換性が維持される非推奨コマンドです。外部接続の選択を SQL LOGIN、戻りや切断の処理を SQL LOGOUT に置き換え、セッションのライフサイクルを維持してください。出典はコンパイル障害とはしていません。",
+          "action": "USE EXTERNAL DATABASE と USE INTERNAL DATABASE は v12 から互換性が維持される非推奨コマンドです。外部接続の選択を SQL LOGIN、戻りや切断の処理を SQL LOGOUT に置き換え、セッションのライフサイクルを維持してください。出典はコンパイル障害とはしていません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-legacy-mac-windows-text",
+      "member_ids": [
+        "chg-deprecated-mac-to-win",
+        "chg-deprecated-win-to-mac"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Review legacy Mac/Windows text conversions",
+          "paragraph": "Mac to Win and Win to Mac are deprecated since v11. Review both directions of the application's old encoding-conversion workflow together. The table gives no direct replacement; removing calls without checking input/output encodings is not a proven safe migration.",
+          "action": "Mac to Win and Win to Mac are deprecated since v11. Review both directions of the application's old encoding-conversion workflow together. The table gives no direct replacement; removing calls without checking input/output encodings is not a proven safe migration.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Revoir les conversions de texte Mac/Windows historiques",
+          "paragraph": "Mac vers Windows et Windows vers Mac sont obsolètes depuis v11. Revoyez ensemble les deux sens de conversion de l’ancien traitement d’encodage. Le tableau ne donne pas de remplacement direct ; supprimer les appels sans vérifier les encodages d’entrée/sortie n’est pas une migration sûre démontrée.",
+          "action": "Mac vers Windows et Windows vers Mac sont obsolètes depuis v11. Revoyez ensemble les deux sens de conversion de l’ancien traitement d’encodage. Le tableau ne donne pas de remplacement direct ; supprimer les appels sans vérifier les encodages d’entrée/sortie n’est pas une migration sûre démontrée.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alte Mac-/Windows-Textkonvertierungen prüfen",
+          "paragraph": "Mac to Win und Win to Mac sind seit v11 veraltet. Prüfen Sie beide Richtungen der alten Zeichenkodierung gemeinsam. Die Tabelle nennt keinen direkten Ersatz; das Löschen ohne Prüfung der Ein-/Ausgabekodierungen ist nicht als sicher belegt.",
+          "action": "Mac to Win und Win to Mac sind seit v11 veraltet. Prüfen Sie beide Richtungen der alten Zeichenkodierung gemeinsam. Die Tabelle nennt keinen direkten Ersatz; das Löschen ohne Prüfung der Ein-/Ausgabekodierungen ist nicht als sicher belegt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Revisar conversiones de texto Mac/Windows heredadas",
+          "paragraph": "Mac to Win y Win to Mac están obsoletos desde v11. Revise conjuntamente ambas direcciones del flujo de codificación antiguo. La tabla no da sustituto directo; eliminar llamadas sin comprobar las codificaciones no es una migración demostrada como segura.",
+          "action": "Mac to Win y Win to Mac están obsoletos desde v11. Revise conjuntamente ambas direcciones del flujo de codificación antiguo. La tabla no da sustituto directo; eliminar llamadas sin comprobar las codificaciones no es una migración demostrada como segura.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来の Mac／Windows 文字コード変換を見直す",
+          "paragraph": "Mac to Win と Win to Mac は v11 から非推奨です。従来の文字コード変換処理を双方向まとめて確認してください。表には直接の代替手段が示されておらず、入力・出力の文字コードを調べずに呼び出しを削除する方法が安全とは限りません。",
+          "action": "Mac to Win と Win to Mac は v11 から非推奨です。従来の文字コード変換処理を双方向まとめて確認してください。表には直接の代替手段が示されておらず、入力・出力の文字コードを調べずに呼び出しを削除する方法が安全とは限りません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-removed-legacy-text-conversions",
+      "member_ids": [
+        "chg-removed-convert-case",
+        "chg-removed-iso-to-mac",
+        "chg-removed-mac-to-iso"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace removed legacy text encoding conversions",
+          "paragraph": "Convert case, ISO to Mac and Mac to ISO are removed in 17 R5. Review this legacy encoding path as one workflow: use CONVERT FROM TEXT / Convert to text where conversion is required, and remove unnecessary conversions only after verifying Unicode handling. Removed calls can fail with runtime error 33 without compilation detection.",
+          "action": "Convert case, ISO to Mac and Mac to ISO are removed in 17 R5. Review this legacy encoding path as one workflow: use CONVERT FROM TEXT / Convert to text where conversion is required, and remove unnecessary conversions only after verifying Unicode handling. Removed calls can fail with runtime error 33 without compilation detection.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les conversions historiques de texte supprimées",
+          "paragraph": "Convertir casse, ISO vers Mac et Mac vers ISO sont supprimées en 17 R5. Revoyez ce traitement d’encodage : utilisez CONVERTIR DEPUIS TEXTE / Convertir vers texte si la conversion reste nécessaire et retirez les conversions inutiles après vérification du mode Unicode. L’erreur 33 peut n’apparaître qu’à l’exécution.",
+          "action": "Convertir casse, ISO vers Mac et Mac vers ISO sont supprimées en 17 R5. Revoyez ce traitement d’encodage : utilisez CONVERTIR DEPUIS TEXTE / Convertir vers texte si la conversion reste nécessaire et retirez les conversions inutiles après vérification du mode Unicode. L’erreur 33 peut n’apparaître qu’à l’exécution.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Entfernte alte Textkonvertierungen ersetzen",
+          "paragraph": "Convert case, ISO to Mac und Mac to ISO werden in 17 R5 entfernt. Prüfen Sie den Kodierungsablauf gemeinsam: CONVERT FROM TEXT / Convert to text bei nötiger Konvertierung; unnötige Umwandlungen erst nach Unicode-Prüfung entfernen. Fehler 33 kann erst zur Laufzeit auftreten.",
+          "action": "Convert case, ISO to Mac und Mac to ISO werden in 17 R5 entfernt. Prüfen Sie den Kodierungsablauf gemeinsam: CONVERT FROM TEXT / Convert to text bei nötiger Konvertierung; unnötige Umwandlungen erst nach Unicode-Prüfung entfernen. Fehler 33 kann erst zur Laufzeit auftreten.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir conversiones de texto antiguas eliminadas",
+          "paragraph": "Convert case, ISO to Mac y Mac to ISO se eliminan en 17 R5. Revise el flujo de codificación: use CONVERT FROM TEXT / Convert to text si hace falta convertir y retire conversiones innecesarias tras comprobar Unicode. El error 33 puede aparecer solo en ejecución.",
+          "action": "Convert case, ISO to Mac y Mac to ISO se eliminan en 17 R5. Revise el flujo de codificación: use CONVERT FROM TEXT / Convert to text si hace falta convertir y retire conversiones innecesarias tras comprobar Unicode. El error 33 puede aparecer solo en ejecución.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "削除された従来の文字コード変換を置き換える",
+          "paragraph": "Convert case、ISO to Mac、Mac to ISO は 17 R5 で削除されます。この文字コード変換を一連の処理として見直し、必要な変換には CONVERT FROM TEXT / Convert to text を使い、Unicode の扱いを確認してから不要な変換を取り除いてください。コンパイルでは検出されず、実行時エラー 33 となる場合があります。",
+          "action": "Convert case、ISO to Mac、Mac to ISO は 17 R5 で削除されます。この文字コード変換を一連の処理として見直し、必要な変換には CONVERT FROM TEXT / Convert to text を使い、Unicode の扱いを確認してから不要な変換を取り除いてください。コンパイルでは検出されず、実行時エラー 33 となる場合があります。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-4d-pack-migration",
+      "member_ids": [
+        "chg-4d-pack-distribution-removal",
+        "chg-4d-pack-blob-to-print-settings-unavailable",
+        "chg-4d-pack-print-settings-to-blob-unavailable",
+        "chg-4d-pack-is-picture-deprecated-unavailable",
+        "chg-4d-pack-normal-screen-unavailable",
+        "chg-4d-pack-full-screen-unavailable",
+        "chg-4d-pack-get-field-infos-unavailable",
+        "chg-4d-pack-get-table-infos-unavailable",
+        "chg-4d-pack-get-tips-state-unavailable",
+        "chg-4d-pack-set-tips-state-unavailable"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace remaining 4D Pack dependencies",
+          "paragraph": "4D Pack is no longer supplied from 16 R2. Migrate the remaining routines together: native BLOB/print-settings commands for printing, GET PICTURE FORMATS for picture checks and EXPORT STRUCTURE for field/table information. The table supplies no replacement for the old screen-mode or tip-state routines; redesign those uses. This dates distribution withdrawal, not a universal per-command disable event, and does not newly date routines already removed before v16.",
+          "action": "4D Pack is no longer supplied from 16 R2. Migrate the remaining routines together: native BLOB/print-settings commands for printing, GET PICTURE FORMATS for picture checks and EXPORT STRUCTURE for field/table information. The table supplies no replacement for the old screen-mode or tip-state routines; redesign those uses. This dates distribution withdrawal, not a universal per-command disable event, and does not newly date routines already removed before v16.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les dépendances restantes à 4D Pack",
+          "paragraph": "4D Pack n’est plus fourni depuis 16 R2. Migrez les routines restantes ensemble : commandes natives BLOB/paramètres d’impression, LIRE FORMATS IMAGE pour les images et EXPORTER STRUCTURE pour les informations de champs/tables. Le tableau ne donne aucun remplacement pour les modes d’écran et l’état des bulles d’aide ; revoyez ces usages. Ce seuil date l’arrêt de distribution, pas une désactivation universelle ni les routines retirées avant v16.",
+          "action": "4D Pack n’est plus fourni depuis 16 R2. Migrez les routines restantes ensemble : commandes natives BLOB/paramètres d’impression, LIRE FORMATS IMAGE pour les images et EXPORTER STRUCTURE pour les informations de champs/tables. Le tableau ne donne aucun remplacement pour les modes d’écran et l’état des bulles d’aide ; revoyez ces usages. Ce seuil date l’arrêt de distribution, pas une désactivation universelle ni les routines retirées avant v16.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Verbleibende 4D-Pack-Abhängigkeiten ersetzen",
+          "paragraph": "4D Pack wird seit 16 R2 nicht mehr ausgeliefert. Migrieren Sie verbleibende Routinen gemeinsam: native BLOB-/Druckeinstellungsbefehle, GET PICTURE FORMATS und EXPORT STRUCTURE für Feld-/Tabelleninformationen. Für alte Bildschirmmodi und Tippzustände nennt die Tabelle keinen Ersatz; gestalten Sie diese Abläufe neu. Die Grenze datiert den Lieferstopp, keine allgemeine Befehlsdeaktivierung oder bereits vor v16 erfolgte Entfernung.",
+          "action": "4D Pack wird seit 16 R2 nicht mehr ausgeliefert. Migrieren Sie verbleibende Routinen gemeinsam: native BLOB-/Druckeinstellungsbefehle, GET PICTURE FORMATS und EXPORT STRUCTURE für Feld-/Tabelleninformationen. Für alte Bildschirmmodi und Tippzustände nennt die Tabelle keinen Ersatz; gestalten Sie diese Abläufe neu. Die Grenze datiert den Lieferstopp, keine allgemeine Befehlsdeaktivierung oder bereits vor v16 erfolgte Entfernung.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir dependencias restantes de 4D Pack",
+          "paragraph": "4D Pack no se suministra desde 16 R2. Migre conjuntamente las rutinas restantes: comandos nativos BLOB/ajustes de impresión, GET PICTURE FORMATS y EXPORT STRUCTURE para información de campos/tablas. La tabla no da sustituto para modos de pantalla ni estado de ayudas; rediseñe esos usos. El umbral fecha el fin de distribución, no una desactivación universal ni rutinas ya retiradas antes de v16.",
+          "action": "4D Pack no se suministra desde 16 R2. Migre conjuntamente las rutinas restantes: comandos nativos BLOB/ajustes de impresión, GET PICTURE FORMATS y EXPORT STRUCTURE para información de campos/tablas. La tabla no da sustituto para modos de pantalla ni estado de ayudas; rediseñe esos usos. El umbral fecha el fin de distribución, no una desactivación universal ni rutinas ya retiradas antes de v16.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "残っている 4D Pack への依存を置き換える",
+          "paragraph": "4D Pack は 16 R2 から配布されていません。残るルーチンをまとめて移行し、印刷にはネイティブの BLOB／印刷設定コマンド、画像判定には GET PICTURE FORMATS、フィールド／テーブル情報には EXPORT STRUCTURE を使用してください。画面モードやチップ状態の旧ルーチンは表に代替がないため、処理を設計し直してください。この時期は配布終了の根拠であり、全コマンドの一律無効化や v16 より前の削除時期を示すものではありません。",
+          "action": "4D Pack は 16 R2 から配布されていません。残るルーチンをまとめて移行し、印刷にはネイティブの BLOB／印刷設定コマンド、画像判定には GET PICTURE FORMATS、フィールド／テーブル情報には EXPORT STRUCTURE を使用してください。画面モードやチップ状態の旧ルーチンは表に代替がないため、処理を設計し直してください。この時期は配布終了の根拠であり、全コマンドの一律無効化や v16 より前の削除時期を示すものではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-scheduler-settings",
+      "member_ids": [
+        "chg-deprecated-remote-scheduler",
+        "chg-deprecated-local-scheduler",
+        "chg-deprecated-server-scheduler"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Remove obsolete scheduler priority tuning",
+          "paragraph": "In 16 R2 the remote, local and server scheduler selectors of SET DATABASE PARAMETER were renamed with _o_ and should no longer be used. Remove custom CPU-priority tuning and return to defaults; the source calls such tuning unnecessary or counterproductive. The separate CPU-priority settings UI has no proven introduction date and is not dated by this group.",
+          "action": "In 16 R2 the remote, local and server scheduler selectors of SET DATABASE PARAMETER were renamed with _o_ and should no longer be used. Remove custom CPU-priority tuning and return to defaults; the source calls such tuning unnecessary or counterproductive. The separate CPU-priority settings UI has no proven introduction date and is not dated by this group.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Retirer les réglages obsolètes d’ordonnancement",
+          "paragraph": "En 16 R2, les sélecteurs d’ordonnancement distant, local et serveur de FIXER PARAMETRE BASE sont préfixés _o_ et ne doivent plus être utilisés. Retirez ces ajustements de priorité CPU et revenez aux valeurs par défaut ; la source les juge inutiles ou contre-productifs. Le changement de l’interface de priorité CPU reste séparément non daté.",
+          "action": "En 16 R2, les sélecteurs d’ordonnancement distant, local et serveur de FIXER PARAMETRE BASE sont préfixés _o_ et ne doivent plus être utilisés. Retirez ces ajustements de priorité CPU et revenez aux valeurs par défaut ; la source les juge inutiles ou contre-productifs. Le changement de l’interface de priorité CPU reste séparément non daté.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Veraltete Scheduler-Prioritätsanpassungen entfernen",
+          "paragraph": "In 16 R2 wurden die Remote-, Local- und Server-Scheduler-Selektoren von SET DATABASE PARAMETER mit _o_ umbenannt und sollen nicht mehr verwendet werden. Entfernen Sie eigene CPU-Prioritätsanpassungen zugunsten der Standardwerte; die Quelle nennt sie unnötig oder kontraproduktiv. Die getrennte CPU-Prioritätsoberfläche wird damit nicht datiert.",
+          "action": "In 16 R2 wurden die Remote-, Local- und Server-Scheduler-Selektoren von SET DATABASE PARAMETER mit _o_ umbenannt und sollen nicht mehr verwendet werden. Entfernen Sie eigene CPU-Prioritätsanpassungen zugunsten der Standardwerte; die Quelle nennt sie unnötig oder kontraproduktiv. Die getrennte CPU-Prioritätsoberfläche wird damit nicht datiert.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Retirar ajustes obsoletos del planificador",
+          "paragraph": "En 16 R2, los selectores de planificador remoto, local y servidor de SET DATABASE PARAMETER pasan a nombres _o_ y no deben usarse. Retire ajustes propios de prioridad CPU y vuelva a valores predeterminados; la fuente los considera innecesarios o contraproducentes. Esto no fecha la interfaz de prioridad CPU, cuyo origen sigue desconocido.",
+          "action": "En 16 R2, los selectores de planificador remoto, local y servidor de SET DATABASE PARAMETER pasan a nombres _o_ y no deben usarse. Retire ajustes propios de prioridad CPU y vuelva a valores predeterminados; la fuente los considera innecesarios o contraproducentes. Esto no fecha la interfaz de prioridad CPU, cuyo origen sigue desconocido.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "非推奨のスケジューラー優先度調整を取り除く",
+          "paragraph": "16 R2 で SET DATABASE PARAMETER の Remote・Local・Server スケジューラー用セレクターは _o_ 付きへ変更され、使用すべきではないとされています。CPU 優先度の独自調整は不要または逆効果とされるため、取り除いて既定値へ戻してください。別項目である CPU 優先度設定 UI の導入時期を、この変更から判断することはできません。",
+          "action": "16 R2 で SET DATABASE PARAMETER の Remote・Local・Server スケジューラー用セレクターは _o_ 付きへ変更され、使用すべきではないとされています。CPU 優先度の独自調整は不要または逆効果とされるため、取り除いて既定値へ戻してください。別項目である CPU 優先度設定 UI の導入時期を、この変更から判断することはできません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-ftp-progress",
+      "member_ids": [
+        "chg-ftp-progress-disabled",
+        "chg-ftp-append-progress-parameter",
+        "chg-ftp-receive-progress-parameter",
+        "chg-ftp-send-progress-parameter"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace the retired FTP progress mechanism",
+          "paragraph": "From 16 R2, FTP_Progress returns an error and the progress parameter of FTP_Append, FTP_Receive and FTP_Send is no longer supported. Review progress reporting as one workflow, separating it from the transfer operation. The source names no replacement progress API; the transfer commands themselves are not removed by this parameter change.",
+          "action": "From 16 R2, FTP_Progress returns an error and the progress parameter of FTP_Append, FTP_Receive and FTP_Send is no longer supported. Review progress reporting as one workflow, separating it from the transfer operation. The source names no replacement progress API; the transfer commands themselves are not removed by this parameter change.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer l’ancien mécanisme de progression FTP",
+          "paragraph": "Depuis 16 R2, FTP_Progress renvoie une erreur et le paramètre progress de FTP_Append, FTP_Receive et FTP_Send n’est plus pris en charge. Revoyez le suivi de progression comme un seul traitement, distinct du transfert. La source ne donne pas d’API de remplacement ; les commandes de transfert elles-mêmes ne sont pas supprimées.",
+          "action": "Depuis 16 R2, FTP_Progress renvoie une erreur et le paramètre progress de FTP_Append, FTP_Receive et FTP_Send n’est plus pris en charge. Revoyez le suivi de progression comme un seul traitement, distinct du transfert. La source ne donne pas d’API de remplacement ; les commandes de transfert elles-mêmes ne sont pas supprimées.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alten FTP-Fortschrittsmechanismus ersetzen",
+          "paragraph": "Ab 16 R2 liefert FTP_Progress einen Fehler; der Parameter progress von FTP_Append, FTP_Receive und FTP_Send wird nicht mehr unterstützt. Prüfen Sie die Fortschrittsanzeige als gemeinsamen Ablauf getrennt von der Übertragung. Eine Ersatz-API wird nicht genannt; die Übertragungsbefehle selbst werden dadurch nicht entfernt.",
+          "action": "Ab 16 R2 liefert FTP_Progress einen Fehler; der Parameter progress von FTP_Append, FTP_Receive und FTP_Send wird nicht mehr unterstützt. Prüfen Sie die Fortschrittsanzeige als gemeinsamen Ablauf getrennt von der Übertragung. Eine Ersatz-API wird nicht genannt; die Übertragungsbefehle selbst werden dadurch nicht entfernt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir el mecanismo antiguo de progreso FTP",
+          "paragraph": "Desde 16 R2, FTP_Progress devuelve un error y no se admite el parámetro progress de FTP_Append, FTP_Receive y FTP_Send. Revise el seguimiento de progreso como un flujo común, separado de la transferencia. No se indica una API alternativa; este cambio no elimina los comandos de transferencia.",
+          "action": "Desde 16 R2, FTP_Progress devuelve un error y no se admite el parámetro progress de FTP_Append, FTP_Receive y FTP_Send. Revise el seguimiento de progreso como un flujo común, separado de la transferencia. No se indica una API alternativa; este cambio no elimina los comandos de transferencia.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "廃止された FTP の進捗通知方式を置き換える",
+          "paragraph": "16 R2 から FTP_Progress はエラーを返し、FTP_Append・FTP_Receive・FTP_Send の progress 引数もサポートされません。進捗表示を一つの処理として見直し、転送処理から分離してください。出典には代替の進捗 API は示されていません。この引数の変更は転送コマンド自体の削除ではありません。",
+          "action": "16 R2 から FTP_Progress はエラーを返し、FTP_Append・FTP_Receive・FTP_Send の progress 引数もサポートされません。進捗表示を一つの処理として見直し、転送処理から分離してください。出典には代替の進捗 API は示されていません。この引数の変更は転送コマンド自体の削除ではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-platform-interface-compatibility",
+      "member_ids": [
+        "chg-get-platform-interface-deprecation",
+        "chg-set-platform-interface-deprecation"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Review legacy platform-interface compatibility",
+          "paragraph": "Get platform interface and SET PLATFORM INTERFACE are documented deprecated since v12, limited to converted applications using Automatic Platform. The v18.2 removal table repeats that compatibility caveat; later runtime availability remains unresolved. Review this dependency together without asserting universal removal, continued target support, or an undocumented replacement.",
+          "action": "Get platform interface and SET PLATFORM INTERFACE are documented deprecated since v12, limited to converted applications using Automatic Platform. The v18.2 removal table repeats that compatibility caveat; later runtime availability remains unresolved. Review this dependency together without asserting universal removal, continued target support, or an undocumented replacement.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Revoir la compatibilité de l’ancienne interface plateforme",
+          "paragraph": "Lire interface plateforme et FIXER INTERFACE PLATEFORME sont documentés obsolètes depuis v12, limités aux applications converties avec Automatic Platform. Le tableau de suppression v18.2 conserve cette réserve ; la disponibilité ultérieure reste indéterminée. Revoyez cette dépendance sans annoncer suppression universelle, maintien garanti ou remplacement non documenté.",
+          "action": "Lire interface plateforme et FIXER INTERFACE PLATEFORME sont documentés obsolètes depuis v12, limités aux applications converties avec Automatic Platform. Le tableau de suppression v18.2 conserve cette réserve ; la disponibilité ultérieure reste indéterminée. Revoyez cette dépendance sans annoncer suppression universelle, maintien garanti ou remplacement non documenté.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Kompatibilität alter Plattformoberflächen prüfen",
+          "paragraph": "Get platform interface und SET PLATFORM INTERFACE sind seit v12 als veraltet dokumentiert, beschränkt auf konvertierte Anwendungen mit Automatic Platform. Die Entfernungstabelle v18.2 wiederholt diesen Hinweis; die spätere Verfügbarkeit bleibt ungeklärt. Prüfen Sie beide Seiten gemeinsam, ohne allgemeine Entfernung, garantierten Fortbestand oder unbelegten Ersatz zu behaupten.",
+          "action": "Get platform interface und SET PLATFORM INTERFACE sind seit v12 als veraltet dokumentiert, beschränkt auf konvertierte Anwendungen mit Automatic Platform. Die Entfernungstabelle v18.2 wiederholt diesen Hinweis; die spätere Verfügbarkeit bleibt ungeklärt. Prüfen Sie beide Seiten gemeinsam, ohne allgemeine Entfernung, garantierten Fortbestand oder unbelegten Ersatz zu behaupten.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Revisar la compatibilidad de interfaz de plataforma antigua",
+          "paragraph": "Get platform interface y SET PLATFORM INTERFACE figuran obsoletos desde v12, limitados a aplicaciones convertidas con Automatic Platform. La tabla de eliminaciones v18.2 conserva esa salvedad; la disponibilidad posterior no está resuelta. Revise la dependencia sin afirmar eliminación universal, continuidad garantizada ni sustituto no documentado.",
+          "action": "Get platform interface y SET PLATFORM INTERFACE figuran obsoletos desde v12, limitados a aplicaciones convertidas con Automatic Platform. La tabla de eliminaciones v18.2 conserva esa salvedad; la disponibilidad posterior no está resuelta. Revise la dependencia sin afirmar eliminación universal, continuidad garantizada ni sustituto no documentado.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来のプラットフォームインターフェースの互換性を確認する",
+          "paragraph": "Get platform interface と SET PLATFORM INTERFACE は v12 から非推奨で、Automatic Platform を使用する変換済みアプリケーションに限定されています。v18.2 の削除表にも同じ但し書きが残り、後の実行時の利用可否は未解決です。両者への依存をまとめて確認し、一律削除、サポート継続、文書にない代替手段は断定しないでください。",
+          "action": "Get platform interface と SET PLATFORM INTERFACE は v12 から非推奨で、Automatic Platform を使用する変換済みアプリケーションに限定されています。v18.2 の削除表にも同じ但し書きが残り、後の実行時の利用可否は未解決です。両者への依存をまとめて確認し、一律削除、サポート継続、文書にない代替手段は断定しないでください。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-macos-native-connectors",
+      "member_ids": [
+        "chg-oci-macos-removal",
+        "chg-odbc-driver-macos-removal"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace removed macOS database connectors",
+          "paragraph": "4D for OCI and 4D ODBC Driver on macOS are removed in v19. Migrate the affected connectivity to the documented built-in ODBC/SQL pass-through or 4D REST API route as appropriate to the component. This group is macOS-only; it does not remove these products on Windows or change the separately scoped all-platform ODBC Pro record.",
+          "action": "4D for OCI and 4D ODBC Driver on macOS are removed in v19. Migrate the affected connectivity to the documented built-in ODBC/SQL pass-through or 4D REST API route as appropriate to the component. This group is macOS-only; it does not remove these products on Windows or change the separately scoped all-platform ODBC Pro record.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer les connecteurs de bases macOS supprimés",
+          "paragraph": "4D for OCI et 4D ODBC Driver sur macOS sont supprimés en v19. Migrez les connexions concernées vers la voie ODBC/SQL intégrée ou l’API REST 4D documentée selon le composant. Ce groupe ne concerne que macOS, pas une suppression sur Windows ni le cas distinct ODBC Pro toutes plateformes.",
+          "action": "4D for OCI et 4D ODBC Driver sur macOS sont supprimés en v19. Migrez les connexions concernées vers la voie ODBC/SQL intégrée ou l’API REST 4D documentée selon le composant. Ce groupe ne concerne que macOS, pas une suppression sur Windows ni le cas distinct ODBC Pro toutes plateformes.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Entfernte macOS-Datenbankkonnektoren ersetzen",
+          "paragraph": "4D for OCI und 4D ODBC Driver auf macOS werden in v19 entfernt. Migrieren Sie die betroffene Anbindung je nach Komponente zu integriertem ODBC/SQL-Pass-through oder der dokumentierten 4D REST API. Diese Gruppe gilt nur für macOS, nicht für Windows oder die separate plattformübergreifende ODBC-Pro-Entfernung.",
+          "action": "4D for OCI und 4D ODBC Driver auf macOS werden in v19 entfernt. Migrieren Sie die betroffene Anbindung je nach Komponente zu integriertem ODBC/SQL-Pass-through oder der dokumentierten 4D REST API. Diese Gruppe gilt nur für macOS, nicht für Windows oder die separate plattformübergreifende ODBC-Pro-Entfernung.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir conectores de bases macOS eliminados",
+          "paragraph": "4D for OCI y 4D ODBC Driver en macOS se eliminan en v19. Migre la conectividad afectada a ODBC/SQL integrado o la API REST de 4D documentada según el componente. El grupo es solo para macOS; no elimina estos productos en Windows ni modifica el registro separado de ODBC Pro.",
+          "action": "4D for OCI y 4D ODBC Driver en macOS se eliminan en v19. Migre la conectividad afectada a ODBC/SQL integrado o la API REST de 4D documentada según el componente. El grupo es solo para macOS; no elimina estos productos en Windows ni modifica el registro separado de ODBC Pro.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "削除された macOS のデータベースコネクターを置き換える",
+          "paragraph": "macOS 版の 4D for OCI と 4D ODBC Driver は v19 で削除されます。コンポーネントに応じ、文書に示された組み込み ODBC／SQL パススルーまたは 4D REST API の経路へ接続を移行してください。このグループは macOS 限定であり、Windows での削除や、別項目の全プラットフォーム向け ODBC Pro の扱いを変更するものではありません。",
+          "action": "macOS 版の 4D for OCI と 4D ODBC Driver は v19 で削除されます。コンポーネントに応じ、文書に示された組み込み ODBC／SQL パススルーまたは 4D REST API の経路へ接続を移行してください。このグループは macOS 限定であり、Windows での削除や、別項目の全プラットフォーム向け ODBC Pro の扱いを変更するものではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-standard-action-strings",
+      "member_ids": [
+        "chg-deprecated-object-get-action",
+        "chg-numeric-standard-actions"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Migrate standard-action handling to strings",
+          "paragraph": "Standard actions were redesigned in 16 R3 around string patterns and ak constants; the obsolete OBJECT Get action belongs to the same migration. Use the current OBJECT Get action and string-based actions rather than numeric action values. Converted forms are transparently remapped, so this supported deprecation is not a blanket form failure.",
+          "action": "Standard actions were redesigned in 16 R3 around string patterns and ak constants; the obsolete OBJECT Get action belongs to the same migration. Use the current OBJECT Get action and string-based actions rather than numeric action values. Converted forms are transparently remapped, so this supported deprecation is not a blanket form failure.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Migrer la gestion des actions standard vers des chaînes",
+          "paragraph": "Les actions standard sont réorganisées en 16 R3 autour de chaînes et constantes ak ; l’ancien OBJET Lire action relève de la même migration. Utilisez la fonction actuelle et les actions chaîne plutôt que les valeurs numériques. Les formulaires convertis sont remappés automatiquement ; cette obsolescence ne bloque pas tous les formulaires.",
+          "action": "Les actions standard sont réorganisées en 16 R3 autour de chaînes et constantes ak ; l’ancien OBJET Lire action relève de la même migration. Utilisez la fonction actuelle et les actions chaîne plutôt que les valeurs numériques. Les formulaires convertis sont remappés automatiquement ; cette obsolescence ne bloque pas tous les formulaires.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Standardaktionsverarbeitung auf Zeichenfolgen umstellen",
+          "paragraph": "Standardaktionen wurden in 16 R3 auf Zeichenfolgenmuster und ak-Konstanten umgestellt; das alte OBJECT Get action gehört zur selben Migration. Verwenden Sie die aktuelle Funktion und Zeichenfolgenaktionen statt numerischer Werte. Konvertierte Formulare werden transparent zugeordnet, nicht pauschal ungültig.",
+          "action": "Standardaktionen wurden in 16 R3 auf Zeichenfolgenmuster und ak-Konstanten umgestellt; das alte OBJECT Get action gehört zur selben Migration. Verwenden Sie die aktuelle Funktion und Zeichenfolgenaktionen statt numerischer Werte. Konvertierte Formulare werden transparent zugeordnet, nicht pauschal ungültig.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Migrar acciones estándar a cadenas",
+          "paragraph": "Las acciones estándar se rediseñan en 16 R3 con cadenas y constantes ak; el antiguo OBJECT Get action pertenece a la misma migración. Use la función actual y acciones de cadena en lugar de valores numéricos. Los formularios convertidos se reasignan automáticamente; no se invalidan todos por esta obsolescencia.",
+          "action": "Las acciones estándar se rediseñan en 16 R3 con cadenas y constantes ak; el antiguo OBJECT Get action pertenece a la misma migración. Use la función actual y acciones de cadena en lugar de valores numéricos. Los formularios convertidos se reasignan automáticamente; no se invalidan todos por esta obsolescencia.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "標準アクションの処理を文字列方式へ移す",
+          "paragraph": "16 R3 で標準アクションは文字列パターンと ak 定数へ再設計され、旧 OBJECT Get action も同じ移行の対象です。数値のアクション値ではなく、現行の OBJECT Get action と文字列の標準アクションを使用してください。変換済みフォームは自動的に対応付けられるため、この非推奨化で一律に動作不能になるわけではありません。",
+          "action": "16 R3 で標準アクションは文字列パターンと ak 定数へ再設計され、旧 OBJECT Get action も同じ移行の対象です。数値のアクション値ではなく、現行の OBJECT Get action と文字列の標準アクションを使用してください。変換済みフォームは自動的に対応付けられるため、この非推奨化で一律に動作不能になるわけではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-related-record-editing",
+      "member_ids": [
+        "chg-deprecated-add-subrecord",
+        "chg-deprecated-modify-subrecord"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Replace subrecord editing with related records",
+          "paragraph": "ADD SUBRECORD and MODIFY SUBRECORD are deprecated since v12. Move creation and editing to ADD RECORD / MODIFY RECORD on the N table of an N-to-1 relation. This is a shared code migration, not proof that all converted subtables were removed in v12; the feature's original deprecation date remains separately unknown.",
+          "action": "ADD SUBRECORD and MODIFY SUBRECORD are deprecated since v12. Move creation and editing to ADD RECORD / MODIFY RECORD on the N table of an N-to-1 relation. This is a shared code migration, not proof that all converted subtables were removed in v12; the feature's original deprecation date remains separately unknown.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Remplacer l’édition de sous-enregistrements par des enregistrements liés",
+          "paragraph": "AJOUTER SOUS ENREGISTREMENT et MODIFIER SOUS ENREGISTREMENT sont obsolètes depuis v12. Créez et modifiez les enregistrements avec AJOUTER ENREGISTREMENT / MODIFIER ENREGISTREMENT dans la table N d’une relation N vers 1. Cela ne prouve pas la suppression de toutes les sous-tables en v12 ; la date initiale de leur obsolescence reste distinctement inconnue.",
+          "action": "AJOUTER SOUS ENREGISTREMENT et MODIFIER SOUS ENREGISTREMENT sont obsolètes depuis v12. Créez et modifiez les enregistrements avec AJOUTER ENREGISTREMENT / MODIFIER ENREGISTREMENT dans la table N d’une relation N vers 1. Cela ne prouve pas la suppression de toutes les sous-tables en v12 ; la date initiale de leur obsolescence reste distinctement inconnue.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Unterdatensatzbearbeitung durch verknüpfte Datensätze ersetzen",
+          "paragraph": "ADD SUBRECORD und MODIFY SUBRECORD sind seit v12 veraltet. Erzeugen und bearbeiten Sie mit ADD RECORD / MODIFY RECORD Datensätze in der N-Tabelle einer N-zu-1-Beziehung. Dies ist keine Entfernung aller konvertierten Untertabellen in v12; deren Veraltungsbeginn bleibt separat unbekannt.",
+          "action": "ADD SUBRECORD und MODIFY SUBRECORD sind seit v12 veraltet. Erzeugen und bearbeiten Sie mit ADD RECORD / MODIFY RECORD Datensätze in der N-Tabelle einer N-zu-1-Beziehung. Dies ist keine Entfernung aller konvertierten Untertabellen in v12; deren Veraltungsbeginn bleibt separat unbekannt.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Sustituir la edición de subregistros por registros relacionados",
+          "paragraph": "ADD SUBRECORD y MODIFY SUBRECORD están obsoletos desde v12. Cree y edite con ADD RECORD / MODIFY RECORD en la tabla N de una relación N a 1. No demuestra que todas las subtablas se eliminaran en v12; la fecha original de obsolescencia de esa función sigue desconocida.",
+          "action": "ADD SUBRECORD y MODIFY SUBRECORD están obsoletos desde v12. Cree y edite con ADD RECORD / MODIFY RECORD en la tabla N de una relación N a 1. No demuestra que todas las subtablas se eliminaran en v12; la fecha original de obsolescencia de esa función sigue desconocida.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "サブレコードの編集を関連レコードの操作へ置き換える",
+          "paragraph": "ADD SUBRECORD と MODIFY SUBRECORD は v12 から非推奨です。作成と編集を、N 対 1 リレーションの N 側テーブルに対する ADD RECORD / MODIFY RECORD へ移行してください。これは共通のコード移行であり、v12 で変換済みサブテーブル全体が削除されたという根拠ではありません。機能自体の非推奨化の開始時期は別途不明です。",
+          "action": "ADD SUBRECORD と MODIFY SUBRECORD は v12 から非推奨です。作成と編集を、N 対 1 リレーションの N 側テーブルに対する ADD RECORD / MODIFY RECORD へ移行してください。これは共通のコード移行であり、v12 で変換済みサブテーブル全体が削除されたという根拠ではありません。機能自体の非推奨化の開始時期は別途不明です。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-system-information",
+      "member_ids": [
+        "chg-deprecated-gestalt",
+        "chg-deprecated-platform-properties"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Use modern system-information queries",
+          "paragraph": "Gestalt and PLATFORM PROPERTIES are deprecated since v17. Replace these legacy environment queries with Get system info, Is macOS or Is Windows according to the information needed. The deprecation table does not establish a new compiler blocker or a removal release.",
+          "action": "Gestalt and PLATFORM PROPERTIES are deprecated since v17. Replace these legacy environment queries with Get system info, Is macOS or Is Windows according to the information needed. The deprecation table does not establish a new compiler blocker or a removal release.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Utiliser les requêtes modernes d’informations système",
+          "paragraph": "Gestalt et PROPRIETES PLATE FORME sont obsolètes depuis v17. Remplacez ces requêtes par Lire informations systeme, Est macOS ou Est Windows selon le besoin. Le tableau n’établit ni nouveau blocage de compilation ni version de suppression.",
+          "action": "Gestalt et PROPRIETES PLATE FORME sont obsolètes depuis v17. Remplacez ces requêtes par Lire informations systeme, Est macOS ou Est Windows selon le besoin. Le tableau n’établit ni nouveau blocage de compilation ni version de suppression.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Moderne Systeminformationsabfragen verwenden",
+          "paragraph": "Gestalt und PLATFORM PROPERTIES sind seit v17 veraltet. Nutzen Sie je nach benötigter Information Get system info, Is macOS oder Is Windows. Die Tabelle belegt weder eine neue Compilersperre noch eine Entfernungsversion.",
+          "action": "Gestalt und PLATFORM PROPERTIES sind seit v17 veraltet. Nutzen Sie je nach benötigter Information Get system info, Is macOS oder Is Windows. Die Tabelle belegt weder eine neue Compilersperre noch eine Entfernungsversion.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Usar consultas modernas de información del sistema",
+          "paragraph": "Gestalt y PLATFORM PROPERTIES están obsoletos desde v17. Sustituya las consultas por Get system info, Is macOS o Is Windows según los datos necesarios. La tabla no establece un bloqueo nuevo del compilador ni una versión de eliminación.",
+          "action": "Gestalt y PLATFORM PROPERTIES están obsoletos desde v17. Sustituya las consultas por Get system info, Is macOS o Is Windows según los datos necesarios. La tabla no establece un bloqueo nuevo del compilador ni una versión de eliminación.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "システム情報を現行の API で取得する",
+          "paragraph": "Gestalt と PLATFORM PROPERTIES は v17 から非推奨です。必要な情報に応じて Get system info、Is macOS、Is Windows へ置き換えてください。非推奨の表は、新しいコンパイル障害や削除バージョンを示すものではありません。",
+          "action": "Gestalt と PLATFORM PROPERTIES は v17 から非推奨です。必要な情報に応じて Get system info、Is macOS、Is Windows へ置き換えてください。非推奨の表は、新しいコンパイル障害や削除バージョンを示すものではありません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    },
+    {
+      "id": "chg-group-legacy-mobile-rest",
+      "member_ids": [
+        "chg-deprecated-mobile-return-selection",
+        "chg-mobile-feature-deprecation"
+      ],
+      "evidence_from": [],
+      "reason": "One feature migration with a shared remediation; member identifiers and evidence remain distinct. No cutoff, status, platform or difficulty is inferred by grouping.",
+      "conditions": [
+        "After successful opening, the application uses one or more of the listed legacy feature members. Member-specific conditions are retained with their provenance."
+      ],
+      "localizations": {
+        "en": {
+          "one_line": "Move legacy 4D Mobile REST access to ORDA",
+          "paragraph": "The historical 4D Mobile feature and MOBILE Return selection are deprecated from v18. Move the affected REST data access to ORDA and 4D REST Server as one connectivity migration. This is not removal of all mobile products, and this source does not specify a removal release.",
+          "action": "The historical 4D Mobile feature and MOBILE Return selection are deprecated from v18. Move the affected REST data access to ORDA and 4D REST Server as one connectivity migration. This is not removal of all mobile products, and this source does not specify a removal release.",
+          "provenance": "generated_candidate"
+        },
+        "fr": {
+          "one_line": "Migrer l’ancien accès REST 4D Mobile vers ORDA",
+          "paragraph": "La fonctionnalité historique 4D Mobile et MOBILE Renvoyer sélection sont obsolètes depuis v18. Migrez l’accès REST concerné vers ORDA et 4D REST Server comme une seule évolution de connectivité. Ce n’est pas la suppression de tous les produits mobiles et la source ne date pas une suppression.",
+          "action": "La fonctionnalité historique 4D Mobile et MOBILE Renvoyer sélection sont obsolètes depuis v18. Migrez l’accès REST concerné vers ORDA et 4D REST Server comme une seule évolution de connectivité. Ce n’est pas la suppression de tous les produits mobiles et la source ne date pas une suppression.",
+          "provenance": "generated_candidate"
+        },
+        "de": {
+          "one_line": "Alten 4D-Mobile-REST-Zugriff auf ORDA umstellen",
+          "paragraph": "Die historische Funktion 4D Mobile und MOBILE Return selection sind ab v18 veraltet. Migrieren Sie den betroffenen REST-Datenzugriff gemeinsam zu ORDA und 4D REST Server. Dies entfernt nicht alle Mobilprodukte; eine Entfernungsversion ist nicht angegeben.",
+          "action": "Die historische Funktion 4D Mobile und MOBILE Return selection sind ab v18 veraltet. Migrieren Sie den betroffenen REST-Datenzugriff gemeinsam zu ORDA und 4D REST Server. Dies entfernt nicht alle Mobilprodukte; eine Entfernungsversion ist nicht angegeben.",
+          "provenance": "generated_candidate"
+        },
+        "es": {
+          "one_line": "Migrar el acceso REST 4D Mobile antiguo a ORDA",
+          "paragraph": "La función histórica 4D Mobile y MOBILE Return selection están obsoletas desde v18. Migre el acceso REST afectado conjuntamente a ORDA y 4D REST Server. No se eliminan todos los productos móviles ni se especifica una versión de eliminación.",
+          "action": "La función histórica 4D Mobile y MOBILE Return selection están obsoletas desde v18. Migre el acceso REST afectado conjuntamente a ORDA y 4D REST Server. No se eliminan todos los productos móviles ni se especifica una versión de eliminación.",
+          "provenance": "generated_candidate"
+        },
+        "ja": {
+          "one_line": "従来の 4D Mobile の REST アクセスを ORDA へ移す",
+          "paragraph": "従来の 4D Mobile 機能と MOBILE Return selection は v18 から非推奨です。該当する REST データアクセスを一つの接続機能の移行として ORDA と 4D REST Server へ置き換えてください。モバイル製品全体の削除ではなく、出典には削除バージョンも示されていません。",
+          "action": "従来の 4D Mobile 機能と MOBILE Return selection は v18 から非推奨です。該当する REST データアクセスを一つの接続機能の移行として ORDA と 4D REST Server へ置き換えてください。モバイル製品全体の削除ではなく、出典には削除バージョンも示されていません。",
+          "provenance": "generated_candidate"
+        }
+      }
+    }
+  ]
+}

@@ -22,7 +22,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache"
 LANGUAGES = ("en", "fr", "de", "es", "ja")
-EXTRACTOR_VERSION = 3
+EXTRACTOR_VERSION = 6
 
 
 def load(path):
@@ -149,15 +149,15 @@ def extract(html, url):
             headings = [(depth, text) for depth, text in headings if depth < level]
             headings.append((level, n.text().replace("\u200b", "").strip() if modern_scope else n.text()))
             heading_anchor = n.attrs.get("id", "")
-        if n.tag not in ({"p", "tr", "pre", "li"} if modern_scope else {"p", "tr", "pre"}):
+        if n.tag not in ({"p", "tr", "pre", "li"} if modern_scope or legacy else {"p", "tr", "pre"}):
             continue
-        if modern_scope:
+        if modern_scope or (legacy and n.tag == "li"):
             ancestors = []
             parent = n.parent
             while parent and parent is not scope:
                 ancestors.append(parent.tag)
                 parent = parent.parent
-            if (n.tag != "tr" and "table" in ancestors) or "pre" in ancestors:
+            if (modern_scope and n.tag != "tr" and "table" in ancestors) or "pre" in ancestors:
                 continue
             if n.tag == "li" and any(c.tag in {"p", "table", "pre"} for c in n.walk() if c is not n):
                 continue
@@ -179,7 +179,7 @@ def extract(html, url):
         if n.tag == "p" and any(c.tag in {"table", "tr", "pre"} for c in n.walk() if c is not n):
             continue
         text = n.code().strip() if n.tag == "pre" else n.text()
-        if modern_scope and n.tag == "li":
+        if (modern_scope or legacy) and n.tag == "li":
             text = re.sub(r"\s+", " ", " ".join(
                 c.text() if isinstance(c, Node) else c for c in n.children
                 if not isinstance(c, Node) or c.tag not in {"ul", "ol"}
@@ -210,7 +210,8 @@ def extract(html, url):
             block.update(kind="navigation_entry", label=target.text() if target else text,
                          target_url=urljoin(url, target.attrs["href"]) if target else None,
                          markers=[span.text() for span in n.walk() if "tdc_toc_upd" in span.attrs.get("class", "").split()])
-        blocks.append(block)
+        if block not in blocks:
+            blocks.append(block)
     metadata = {n.attrs.get("name"): n.attrs.get("content") for n in nodes if n.tag == "meta"}
     documentation = None
     if metadata.get("docusaurus_version"):

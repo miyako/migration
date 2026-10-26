@@ -40,6 +40,8 @@
     {"id":"blog-v16-r5","family":"blog-overview","edition":"16 R5","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r5/"},
     {"id":"blog-v16-r4","family":"blog-overview","edition":"16 R4","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r4/"},
     {"id":"blog-v16-r3","family":"blog-overview","edition":"16 R3","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r3/"},
-    {"id":"blog-v16-r2","family":"blog-overview","edition":"16 R2","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r2/"}
+    {"id":"blog-v16-r2","family":"blog-overview","edition":"16 R2","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r2/"},
+    {"id":"legacy-v16-deprecated-features","family":"deprecated-removed-detail","edition":"16","url":"https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-or-removed-features-in-v16-product-range.200-3072042.en.html"},
+    {"id":"legacy-v17-deprecated-features","family":"deprecated-removed-detail","edition":"17","url":"https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.en.html"}
   ]
 }

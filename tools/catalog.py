@@ -79,6 +79,70 @@ def apply_overrides(candidates, overrides):
     return result
 
 
+def group_entities(changes, config):
+    """Project explicit feature groups without deleting or reclassifying atomic facts."""
+    require(config.get("schema_version") == 1, "Unsupported group schema version")
+    by_id = {c["id"]: c for c in changes}
+    owners, groups = {}, {}
+    compatible = ("threshold", "applies_until", "type", "stage", "criticality", "platforms",
+                  "complexity", "review_status")
+    for definition in config["groups"]:
+        identifier, member_ids = definition["id"], definition["member_ids"]
+        require(identifier not in by_id and identifier not in groups, "Group ID must be unique and distinct from atomic IDs")
+        require(isinstance(member_ids, list) and len(member_ids) >= 2
+                and len(set(member_ids)) == len(member_ids), "A group needs distinct explicit members")
+        require(set(member_ids) <= by_id.keys(), "Group references unknown atomic IDs")
+        require(not (set(member_ids) & owners.keys()), "Atomic fact cannot belong to multiple entities")
+        require(nonempty(definition.get("reason")) and bool(definition.get("conditions")),
+                "Group needs an editorial reason and applicability conditions")
+        members = [by_id[mid] for mid in member_ids]
+        first = members[0]
+        require(all(all(member.get(key) == first.get(key) for key in compatible)
+                    and member["applicability"]["formats"] == first["applicability"]["formats"]
+                    for member in members), "Group members have incompatible cutoff/status/platform/format metadata")
+        require(first.get("complexity", {"level": "unknown"}) == {"level": "unknown"},
+                "Group difficulty needs separate evidence; do not infer it from members")
+        require(first["review_status"] == "candidate", "Authored groups require their own review, not inherited human review")
+        require(set(definition["localizations"]) == set(LANGUAGES)
+                and all(nonempty(text.get("action")) and text.get("provenance") == "generated_candidate"
+                        for text in definition["localizations"].values()),
+                "Group needs complete authored localizations and actions")
+        extra_ids = definition.get("evidence_from", [])
+        require(set(extra_ids) <= by_id.keys(), "Group evidence references an unknown fact")
+        entity = deepcopy(first)
+        entity.update(id=identifier, member_ids=list(member_ids), members=deepcopy(members),
+                      localizations=deepcopy(definition["localizations"]),
+                      action=definition["localizations"]["en"]["action"],
+                      action_basis=definition["reason"])
+        entity.pop("editorial_override", None)
+        entity["applicability"]["conditions"] = list(definition["conditions"])
+        entity["relevance"] = {"status": "conditional", "reason": definition["reason"]}
+        entity["confidence"] = min((m["confidence"] for m in members),
+                                   key={"low": 0, "medium": 1, "high": 2}.__getitem__)
+        entity["identifiers"] = list(dict.fromkeys(
+            name for member in members for name in member["identifiers"]))
+        entity["modules"] = sorted({module for member in members for module in member["modules"]})
+        entity["notices"] = list(dict.fromkeys(n for member in members for n in member["notices"]))
+        entity["evidence"] = []
+        for member in members + [by_id[mid] for mid in extra_ids]:
+            for item in member["evidence"]:
+                if item not in entity["evidence"]:
+                    entity["evidence"].append(deepcopy(item))
+        for member_id in member_ids:
+            owners[member_id] = identifier
+        groups[identifier] = entity
+    result, emitted = [], set()
+    for change in changes:
+        owner = owners.get(change["id"])
+        if owner:
+            if owner not in emitted:
+                result.append(groups[owner])
+                emitted.add(owner)
+        else:
+            result.append({**deepcopy(change), "member_ids": [change["id"]]})
+    return result
+
+
 def require(condition, message):
     if not condition:
         raise ValueError(message)
@@ -171,11 +235,24 @@ def validate(document):
                     "Discovery index hash mismatch")
             require(document_identity(source["url"]) == (discovery["document_key"], source["language"]),
                     "Discovered document identity/language mismatch")
+        if source["discovery"]["method"] == "legacy_article_link":
+            discovery = source["discovery"]
+            parent = sources.get(discovery["parent_source_id"])
+            require(parent is not None and parent["language"] == source["language"]
+                    and parent["edition"] == source["edition"]
+                    and parent["resolved_url"] == discovery["parent"]
+                    and parent["fetch"]["sha256"] == discovery["parent_sha256"],
+                    "Linked legacy detail requires a checked same-edition, same-language parent")
+            require(document_identity(source["url"]) == (discovery["document_key"], source["language"]),
+                    "Linked legacy document identity/language mismatch")
+            require(urlsplit(source["url"]).netloc == urlsplit(discovery["parent"]).netloc
+                    and source["url"].rsplit("/", 1)[0] == discovery["parent"].rsplit("/", 1)[0],
+                    "Linked legacy detail must stay on the parent's archive edition route")
         for attempt in source.get("url_history", []):
             require(url(attempt["url"]) and nonempty(attempt["fetch"]["status"])
                     and attempt["disposition"] in {"superseded_url_probe", "superseded_location"},
                     "Historical URL attempt needs URL, recorded status and disposition")
-    ids = set()
+    ids, member_owners = set(), set()
     for change in document["changes"]:
         for field in ("id", "identifiers", "threshold", "applies_until", "platforms", "modules", "type",
                       "criticality", "stage", "relevance", "applicability", "action", "localizations",
@@ -185,6 +262,24 @@ def validate(document):
         require(bool(re.fullmatch(r"chg-[a-z0-9]+(?:-[a-z0-9]+)*", identifier)), "Invalid stable change ID")
         require(identifier not in ids, f"Duplicate change {identifier}")
         ids.add(identifier)
+        if "member_ids" in change:
+            member_ids = change["member_ids"]
+            require(isinstance(member_ids, list) and bool(member_ids)
+                    and all(nonempty(mid) for mid in member_ids)
+                    and len(member_ids) == len(set(member_ids))
+                    and not (set(member_ids) & member_owners),
+                    "Entity membership must be explicit, unique and non-overlapping")
+            member_owners.update(member_ids)
+            if len(member_ids) > 1:
+                members = change.get("members", [])
+                require([m["id"] for m in members] == member_ids,
+                        "Grouped entity must retain every member's facts in order")
+                require(all(all(m[key] == change[key] for key in
+                                ("threshold", "type", "stage", "criticality", "platforms", "complexity"))
+                            and m["applicability"]["formats"] == change["applicability"]["formats"]
+                            for m in members), "Published group metadata must match every member")
+            else:
+                require(member_ids == [identifier], "Ungrouped entity must retain its stable atomic ID")
         threshold = change["threshold"]
         if threshold["kind"] == "unknown":
             require(threshold["exact"] is None and threshold["bucket"] is None,
@@ -255,13 +350,14 @@ def validate(document):
             require(len(evidence["excerpt"]) <= 420, "Evidence excerpts must be short; link to original instead")
             require(bool(re.fullmatch(r"[a-f0-9]{64}", evidence["source_sha256"])), "Invalid source hash")
         require(isinstance(change["notices"], list), "Invalid notices")
+    atomic_ids = {member_id for change in document["changes"] for member_id in change.get("member_ids", [change["id"]])}
     clarifications = {c["id"]: c for c in document["clarifications"]}
     require(len(clarifications) == len(document["clarifications"]), "Duplicate clarification IDs")
     for item in clarifications.values():
         require(item["status"] in {"pending", "resolved", "superseded"}, "Invalid clarification status")
         require(nonempty(item["title"]) and nonempty(item["disposition"]) and bool(item["evidence"]),
                 "Clarification needs evidence and disposition")
-        require(set(item["change_ids"]) <= ids, "Unknown affected change")
+        require(set(item["change_ids"]) <= ids | atomic_ids, "Unknown affected change")
         require(url(item["issue_url"]), "Confirmed public clarification requires its GitHub issue URL")
     for change in document["changes"]:
         require(set(change["notices"]) <= clarifications.keys(), "Unknown clarification notice")
@@ -292,6 +388,14 @@ def validate(document):
 
 def verify_evidence(document):
     sources = {s["id"]: s for s in document["sources"]}
+    for source in sources.values():
+        if source["discovery"]["method"] != "legacy_article_link":
+            continue
+        parent_id = source["discovery"]["parent_source_id"]
+        path = CACHE / "extracts" / (parent_id + ".json")
+        require(path.exists(), f"Fetch {parent_id} before linked-detail verification")
+        require(any(link["url"] == source["url"] for link in load(path)["links"]),
+                "Legacy detail URL is not actually linked by its recorded parent")
     for change in document["changes"]:
         for evidence in change["evidence"]:
             source = sources[evidence["source_id"]]
@@ -309,8 +413,11 @@ def verify_evidence(document):
 
 def build(verify=False):
     registry = load(ROOT / "data/registry.json")
-    changes = apply_overrides(merge_candidates(load(ROOT / "data/changes.json")),
-                              load(ROOT / "data/overrides.json"))
+    atomic = apply_overrides(merge_candidates(load(ROOT / "data/changes.json")),
+                             load(ROOT / "data/overrides.json"))
+    if verify:
+        verify_evidence({"sources": registry, "changes": atomic})
+    changes = group_entities(atomic, load(ROOT / "data/groups.json"))
     # Reproducible offline builds: derive the publication timestamp from committed
     # inputs, not the current clock. Fetch timestamps still record actual requests.
     timestamps = [s["fetch"].get("checked_at", "") for s in registry]
@@ -327,6 +434,10 @@ def build(verify=False):
         "processed_source_ids": sorted({e["source_id"] for c in changes for e in c["evidence"]}),
         "candidate_changes": sum(c["review_status"] == "candidate" for c in changes),
         "reviewed_changes": sum(c["review_status"] == "reviewed" for c in changes),
+        "atomic_changes": len(atomic),
+        "atomic_candidate_changes": sum(c["review_status"] == "candidate" for c in atomic),
+        "visible_entities": len(changes),
+        "grouped_entities": sum(len(c["member_ids"]) > 1 for c in changes),
         "modern_documentation_sources": sum(s["family"] == "documentation-release-notes" for s in registry),
         "modern_unlinked_locales": sum(item["status"] == "not_linked" for item in
                                       load(ROOT / "data/source-locations.json")["unresolved"]),
@@ -342,11 +453,12 @@ def build(verify=False):
                 "glossary": load(ROOT / "data/glossary.json"),
                 "archive_navigation": load(ROOT / "data/archive-navigation.json"),
                 "archive_unresolved": load(ROOT / "data/source-locations.json")["unresolved"]}
+    validate({**document, "changes": atomic})
     validate(document)
     if verify:
         verify_evidence(document)
     save(ROOT / "site/data/catalog.json", document)
-    print(f"Published {len(changes)} changes ({coverage['reviewed_changes']} reviewed); "
+    print(f"Published {len(changes)} entities from {len(atomic)} atomic facts ({coverage['reviewed_changes']} reviewed); "
           f"{len(registry)} registered sources. Partial coverage.")
     return document
 
