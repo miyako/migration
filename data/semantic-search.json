@@ -1,0 +1,27 @@
+{
+  "status": "unavailable",
+  "reason": "EmbeddingGemma 2 has a verified 270M text-only configuration and a community browser export. Five-language retrieval quality, selective text-only loading and actual browser resource use are not yet validated in this app. No inference is integrated; keyword and exact identifier search need no model.",
+  "model": null,
+  "revision": null,
+  "dimensions": null,
+  "normalization": null,
+  "query_prefix": null,
+  "document_prefix": null,
+  "config_version": 1,
+  "candidate": {
+    "identity": "270M text-only configuration of google/embeddinggemma-2, not a separately named checkpoint",
+    "upstream": "google/embeddinggemma-2",
+    "upstream_revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "export": "onnx-community/embeddinggemma-2-ONNX",
+    "export_revision": "daa72c51243991dfcaf9f9137d2c573d8f7790c0",
+    "license_declared": "Apache-2.0",
+    "language_evidence": "100+ languages claimed by the official model card; specific five-language coverage and quality not verified in this bounded research.",
+    "runtime_evidence": "Community card documents Transformers.js WebGPU/WASM, but execution was not tested. Generic feature-extraction loads all encoders; selective text-only loading is required.",
+    "verified_at": "2026-10-26",
+    "sources": [
+      "https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2",
+      "https://huggingface.co/google/embeddinggemma-2/blob/914f7f89142e33e77833254d9c9b90c3cef7303b/README.md",
+      "https://huggingface.co/onnx-community/embeddinggemma-2-ONNX/blob/daa72c51243991dfcaf9f9137d2c573d8f7790c0/README.md"
+    ]
+  }
+}

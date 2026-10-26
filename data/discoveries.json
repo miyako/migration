@@ -1,0 +1,191 @@
+[
+  {
+    "parent": "blog-v20-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v20/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v20-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v20/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v20-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v20/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v19-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v19/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v19-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v19/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v19-en",
+    "language": "es",
+    "url": "https://blog.4d.com/es/en-whats-new-in-4d-v19/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v19-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v19/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v18-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v18/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v18-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v18/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v18-en",
+    "language": "es",
+    "url": "https://blog.4d.com/es/en-whats-new-in-4d-v18/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v18-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v18/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v17-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v17/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v17-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v17/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v17-en",
+    "language": "es",
+    "url": "https://blog.4d.com/es/en-whats-new-in-4d-v17/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v17-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v17/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r6-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v16-r6/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r6-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v16-r6/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r6-en",
+    "language": "es",
+    "url": "https://blog.4d.com/es/en-whats-new-in-4d-v16-r6/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r6-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v16-r6/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r5-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v16-r5/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r5-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v16-r5/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r5-en",
+    "language": "es",
+    "url": "https://blog.4d.com/es/en-whats-new-in-4d-v16-r5/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r5-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v16-r5/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r4-en",
+    "language": "de",
+    "url": "https://blog.4d.com/de/en-whats-new-in-4d-v16-r4/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r4-en",
+    "language": "fr",
+    "url": "https://blog.4d.com/fr/en-whats-new-in-4d-v16-r4/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r4-en",
+    "language": "es",
+    "url": "https://blog.4d.com/es/en-whats-new-in-4d-v16-r4/",
+    "method": "hreflang",
+    "status": "pending"
+  },
+  {
+    "parent": "blog-v16-r4-en",
+    "language": "ja",
+    "url": "https://blog.4d.com/ja/en-whats-new-in-4d-v16-r4/",
+    "method": "hreflang",
+    "status": "pending"
+  }
+]

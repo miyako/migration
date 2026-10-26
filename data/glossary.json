@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "note": "Concept and edition alignment seed, not a complete official glossary. Null means no official wording verified here. UI labels and candidate summaries are separately authored translations, not official quotations.",
+  "concepts": [
+    {
+      "id": "deprecated",
+      "edition": "20",
+      "meaning": "Discouraged, potentially removed later; not the same as removed now.",
+      "official": {
+        "en": {"text": "Deprecated", "source_id": "legacy-v20-deprecated-en"},
+        "ja": {"text": "廃止予定", "source_id": "legacy-v20-deprecated-ja"},
+        "fr": null,
+        "de": null,
+        "es": null
+      }
+    },
+    {
+      "id": "removed",
+      "edition": "20",
+      "meaning": "No longer available in the indicated version; preserve exact release evidence.",
+      "official": {
+        "en": {"text": "Removed", "source_id": "legacy-v20-deprecated-en"},
+        "ja": {"text": "削除", "source_id": "legacy-v20-deprecated-ja"},
+        "fr": null,
+        "de": null,
+        "es": null
+      }
+    }
+  ],
+  "identifier_policy": "Keep official API/command identifiers and historical aliases unchanged. A French command name can be an official localized identifier, not a generated translation. New German prose is not historical official terminology unless independently sourced."
+}
