@@ -39,6 +39,7 @@ def transition(browser, root, target, expect_failure, previous=None):
         thread = Thread(target=server.serve_forever, daemon=True)
         thread.start()
         context = browser.new_context()
+        context.add_init_script("Object.defineProperty(navigator, 'gpu', {value: undefined})")
         try:
             page = context.new_page()
             errors, responses = [], []

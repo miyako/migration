@@ -6,37 +6,36 @@ import { corpusRows, hybridFilter } from './semantic.mjs';
 import { searchLabels } from './search-labels.mjs';
 
 const $ = id => document.getElementById(id);
-const meaning = { worker: null, enabled: false, status: 'off', detail: '', scores: null,
+const meaning = { worker: null, enabled: false, status: 'loading', detail: '', progress: null, scores: null,
   sequence: 0, generation: 0, timer: null, deadline: null };
-const meaningText = key => searchLabels[state.language][key]
-  .replace('{threshold}', state.catalog?.semantic_search.threshold ?? '');
+const meaningText = key => searchLabels[state.language][key];
 function renderMeaning() {
   $('meaning-status').dataset.state = meaning.status;
-  $('meaning-label').textContent = meaningText('enable');
-  $('meaning-budget').textContent = meaningText('budget');
+  $('meaning-notice').textContent = meaningText('notice');
+  $('meaning-notice').hidden = meaning.status !== 'loading';
   $('meaning-status').textContent = `${meaningText(meaning.status)}${meaning.detail ? ` ${meaning.detail}` : ''}`;
   $('meaning-status').classList.toggle('error', ['error', 'unavailable'].includes(meaning.status));
-  $('meaning-cancel').textContent = meaningText('cancel');
-  $('meaning-cancel').hidden = !meaning.enabled;
-  $('meaning-enable').checked = meaning.enabled;
-  $('meaning-enable').disabled = state.catalog?.semantic_search.status !== 'opt-in';
+  $('meaning-retry').textContent = meaningText('retry');
+  $('meaning-retry').hidden = meaning.status !== 'error';
+  $('meaning-progress').hidden = meaning.status !== 'loading';
+  $('meaning-progress').setAttribute('aria-label', meaningText('loading'));
+  if (meaning.progress === null) $('meaning-progress').removeAttribute('value');
+  else $('meaning-progress').value = meaning.progress;
 }
 function failMeaning(detail) {
   clearTimeout(meaning.deadline);
   clearTimeout(meaning.timer);
   meaning.generation++;
-  meaning.status = 'error'; meaning.detail = detail; meaning.scores = null;
+  meaning.status = 'error'; meaning.detail = detail; meaning.scores = null; meaning.enabled = false;
   meaning.worker?.terminate(); meaning.worker = null;
   renderMeaning(); renderChanges();
 }
-function disableMeaning() {
+function stopMeaning() {
   meaning.worker?.terminate();
   clearTimeout(meaning.timer);
   clearTimeout(meaning.deadline);
-  Object.assign(meaning, { worker: null, enabled: false, status: 'off', detail: '', scores: null,
+  Object.assign(meaning, { worker: null, enabled: false, detail: '', progress: null, scores: null,
     sequence: meaning.sequence + 1, generation: meaning.generation + 1 });
-  renderMeaning();
-  renderChanges();
 }
 function queryMeaning() {
   clearTimeout(meaning.timer);
@@ -49,7 +48,7 @@ function queryMeaning() {
   if (!state.query.trim()) return;
   const sequence = meaning.sequence;
   meaning.timer = setTimeout(() => {
-    meaning.deadline = setTimeout(() => failMeaning('Timeout (60 s)'), 60000);
+    meaning.deadline = setTimeout(() => failMeaning(meaningText('queryTimeout')), 60000);
     meaning.worker?.postMessage({
       type: 'search', sequence, query: state.query, language: state.language,
       rows: corpusRows(state.catalog, state.language),
@@ -57,26 +56,34 @@ function queryMeaning() {
   }, 250);
 }
 async function enableMeaning() {
-  disableMeaning();
+  stopMeaning();
   meaning.enabled = true;
   meaning.status = 'loading';
   renderMeaning();
+  renderChanges();
   const generation = meaning.generation;
-  meaning.deadline = setTimeout(() => failMeaning('Timeout (180 s)'), 180000);
+  meaning.deadline = setTimeout(() => failMeaning(meaningText('loadTimeout')), 180000);
   try {
-    if (!navigator.gpu || !await navigator.gpu.requestAdapter()) {
+    if (state.catalog?.semantic_search.status !== 'automatic' ||
+        !navigator.gpu || !await navigator.gpu.requestAdapter()) {
       if (generation === meaning.generation) {
         clearTimeout(meaning.deadline);
-        meaning.status = 'unavailable'; renderMeaning();
+        meaning.enabled = false; meaning.status = 'unavailable'; renderMeaning();
       }
       return;
     }
     if (!meaning.enabled || generation !== meaning.generation) return;
     meaning.worker = new Worker(new URL('./search-worker.mjs', import.meta.url), { type: 'module' });
-    meaning.worker.onerror = event => failMeaning(event.message);
+    meaning.worker.onerror = event => {
+      if (generation === meaning.generation) failMeaning(event.message);
+    };
     meaning.worker.onmessage = ({ data }) => {
+      if (generation !== meaning.generation) return;
       if (data.type === 'progress') {
-        meaning.detail = data.file ? `${data.file}${data.progress == null ? '' : ` ${Math.floor(data.progress)}%`}` : '';
+        meaning.progress = data.total > 1 && data.loaded > 1
+          ? Math.min(100, Math.floor(data.loaded / data.total * 100)) : null;
+        meaning.detail = data.file
+          ? `${data.file}${meaning.progress === null ? '' : ` ${meaning.progress}%`}` : '';
         renderMeaning();
       } else if (data.type === 'ready') {
         clearTimeout(meaning.deadline);
@@ -358,11 +365,13 @@ $('reset').addEventListener('click', () => {
   renderChanges();
 });
 render();
-$('meaning-enable').addEventListener('change', event => {
-  if (event.target.checked) enableMeaning();
-  else disableMeaning();
+$('meaning-retry').addEventListener('click', () => {
+  if (meaning.status === 'error') enableMeaning();
 });
-$('meaning-cancel').addEventListener('click', disableMeaning);
+window.addEventListener('pagehide', stopMeaning);
+window.addEventListener('pageshow', event => {
+  if (event.persisted && state.catalog) enableMeaning();
+});
 try {
   const response = await fetch(new URL('./data/catalog.json', import.meta.url), { credentials: 'omit' });
   if (!response.ok) throw new Error('loadError');
@@ -372,5 +381,7 @@ try {
   setMessage('loadError', true);
 } finally {
   state.loading = false;
+  if (!state.catalog) meaning.status = 'unavailable';
   render();
 }
+if (state.catalog) enableMeaning();

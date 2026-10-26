@@ -3,7 +3,7 @@
 For source development, serve this directory after `python3 -m tools.catalog`.
 For publication, run `python3 -m tools.publish` and serve/upload `_site/` instead.
 Keyword search requires no model, external assets, backend, or runtime AI/GitHub
-API requests. Optional meaning search needs explicit opt-in and a WebGPU
+API requests. Semantic search loads automatically on the first visit using a WebGPU
 text encoder; see the measured model contract and limitations in the root README.
 Run `npm ci && npm run build:search-runtime` before publication. Model weights
 are public, pinned external downloads; queries never leave the browser.
@@ -106,16 +106,22 @@ the root README, not in visitor navigation. No source data is removed.
 
 ## Version semantics and state
 
-The small meaning-search control uses the same search field, with localized
-download/memory guidance, progress, cancellation, pending and failure states.
-It is off on every new page visit; language/theme remain the only preferences
-stored by the app. Model downloads may be retained separately in browser Cache
-Storage. Keyword matching is never gated by model loading. Meaning search adds
+Semantic search uses the same search field, with a brief localized availability
+notice, actual per-file progress, ready, unsupported and actionable failure states.
+It starts once after catalog loading and WebGPU detection on every new page visit,
+without a permission checkbox; locale/filter/theme renders do not restart it.
+Language/theme remain the only preferences stored by the app. Model downloads
+may be retained separately in browser Cache Storage. Unsupported WebGPU avoids
+the large runtime and model downloads. Keyword matching is never gated by model
+loading; the current query and locale run automatically when ready. Semantic search adds
 path-eligible atomic-member matches at cosine 0.74 or above without changing the
 selected sort; exact text and bilingual command aliases remain included.
 Search input is limited to 1,000 characters, and encoder inputs to 512 tokens.
-Empty text restores the directory. Reset clears text/filters, not a loaded model;
-Cancel / disable terminates the worker and returns to keyword behavior.
+Empty text restores the directory. Reset clears text/filters, not a loaded model.
+Failures offer explicit Retry, never automatic retry loops. Loading/query
+deadlines terminate stalled workers; page exit also cleans up the worker.
+Back/forward-cache restoration restarts it. Download and memory budgets are
+documented in the root README, not visitor banners.
 No WebGPU or a model/index failure is explicitly reported, not called semantic
 success. There is no working quantized WASM fallback for this export.
 

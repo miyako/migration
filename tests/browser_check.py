@@ -85,6 +85,8 @@ def run(base, screenshots, published):
             publish(source, next_release)
             transition(browser, ROOT, next_release, expect_failure=False, previous=published)
         context = browser.new_context(viewport={"width": 1280, "height": 1000}, locale="en")
+        # Exercise deterministic keyword UX without downloading a WebGPU model.
+        context.add_init_script("Object.defineProperty(navigator, 'gpu', {value: undefined})")
         page = context.new_page()
         errors, failed = [], []
         page.on("pageerror", lambda error: errors.append(str(error)))

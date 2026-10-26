@@ -1,6 +1,6 @@
 {
-  "status": "opt-in",
-  "reason": "Optional browser-local text-only query embeddings require WebGPU. Quantized WASM fails on GatherBlockQuantized; keyword search remains available without downloads.",
+  "status": "automatic",
+  "reason": "Browser-local text-only query embeddings load automatically after WebGPU capability detection. Quantized WASM fails on GatherBlockQuantized; keyword search remains available throughout loading or failure.",
   "model": "onnx-community/embeddinggemma-2-ONNX",
   "revision": "daa72c51243991dfcaf9f9137d2c573d8f7790c0",
   "dimensions": 768,
