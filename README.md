@@ -28,17 +28,91 @@ for **155 registered source URLs**:
 | Actual blog language links queued for review, not fetched | 27 |
 | Modern Release Notes URLs, included in available sources | 16 |
 | German modern counterparts not advertised/linked, not HTTP failures | 4 |
-| Candidate actionable changes | 3 |
+| Candidate actionable changes | 68 |
 | Human-reviewed changes | **0** |
-| Source pages used for the candidate sample, partially only | 2 |
+| Source pages used as catalog evidence, partially only | 15 |
+| Deprecated/removed pages fetched and inspected in this content batch | 25 |
 
-The two partially processed pages are the English and Japanese **v20 deprecated /
-removed** editions. The three candidates cover colon restrictions in identifiers,
-the PDFCreator driver deprecation, and removal of the bundled PHP DOM module.
-Every candidate has original one-line and paragraph summaries in all five
-languages, with **generated-candidate** provenance. They are not official summaries
-or human-reviewed translations. English/Japanese official wording seeds a small
-concept glossary; French/German/Spanish official glossary entries remain unknown.
+The first substantive content batch expands the original three stable IDs to
+**68 distinct actionable candidates**: 56 removals, 7 supported deprecations,
+and 5 restrictions. All have independently authored one-line and paragraph
+summaries in en/fr/de/es/ja, with **generated-candidate** provenance.
+Agent fact-checking is not human review. Official localized command names and
+short quotations remain distinct from authored prose; the glossary now records
+verified terminology in all five languages.
+
+### Content batch: deprecated/removed editions
+
+The five registered English editions **v16, v17, v18.2, v19 and v20**, and their
+20 verified fr/de/es/ja counterparts, were fetched from their existing registry
+URLs. The DOM, headings, table cells, narrative lists and actual links were
+inspected; **none of these five manual families is claimed fully cataloged**.
+The v16/v17 registered URLs are overview pages, not the detailed manuals:
+their product-range feature, command-list and quick-table children remain
+unfetched. The v18.2/v19/v20 article pages are partially cataloged in all five
+languages (**15 evidence sources**); the other 10 are overview-only inspections.
+
+| Completed coherent subset | Distinct records | Exact source threshold |
+|---|---:|---|
+| Unambiguous v18.2 removed-command rows, including picture/resource/web/XSLT calls | 31 | 17 R5 → v18 |
+| v19 removed calls: `_o_NO TRACE`, `_o_DISABLE BUTTON`, `_o_ENABLE BUTTON` | 3 | 18 R2 → v19 |
+| Every removed bundled PHP module: DOM, Iconv, LibXML, LibXSLT, SimpleXML, GD, XML, XMLreader, XMLwriter, WDDX, Zlib, Zip | 12 | 20 |
+| 32-bit distribution, QuickTime, Float fields, non-Unicode mode, PICT, DatabaseOutsidePackage, Windows RTL settings | 7 | 17 R4, 17 R5, or 18, individually evidenced |
+| ODBC Pro (all platforms), OCI and ODBC Driver (macOS only) | 3 | 19 |
+| Colon identifiers and post-opening binary object-notation compliance | 2 | 19 R4 → v20; 20 |
+| PDFCreator, interprocess variables and generic Write Pro break controls | 3 | 20; unknown; 19 R4 → v20 |
+| Four supported deprecated Compiler-theme declarations | 4 | Deprecated since 12, not newly removed |
+| `GET PICTURE FROM LIBRARY` and `SAVE LIST` in projects; `OBJECT SET FONT` string parameter | 3 | Unknown, not inferred from edition |
+
+The 31 v18.2 rows exclude the ambiguous combined platform-interface row.
+The two operations in v19's combined enable/disable row are separate atomic
+records. Repeated cumulative rows in other editions/languages add evidence,
+not duplicate records. The original colon, PDFCreator and DOM IDs are preserved.
+Removed-command records explicitly warn that error 33 calls escape syntax
+checking and compilation: those are **runtime** removals, not syntax blockers.
+The Compiler-theme declarations remain supported deprecations, not compiler
+requirements invented from their table category.
+
+Historical XSLT replacement advice is target-aware: the v18.2 bundled PHP
+libxslt workaround is not recommended unchanged for v20, which removes bundled
+LibXSLT. The entries distinguish external FastCGI PHP from the bundled
+interpreter, and limit `PROCESS 4D TAGS` guidance to text/HTML generation rather
+than asserting a general XSLT replacement. Successful opening is the boundary:
+the object-notation code/option requirement is separate from the excluded
+cannot-open/error -10537 path. Project-only runtime restrictions do not imply
+binary-mode removal or compulsory project conversion.
+
+**Explicit remaining bounds and uncertainties** are recorded in
+[`data/dispositions.json`](data/dispositions.json), using the existing
+pending/out-of-scope workflow:
+
+| Edition/section | Disposition |
+|---|---|
+| v16/v17 overview children, all five languages | Pending; actual links inspected, detailed pages not fetched or cataloged |
+| v18.2/v19/v20 remaining deprecated-command rows | Pending; only the four Compiler declarations and font-parameter rule are complete in that section |
+| v18.2 platform-interface removal row | Pending contextual ambiguity: removal table versus converted-application/Automatic Platform caveat |
+| v18.2 project form/structure conversion and compatibility resets | Out of scope as conversion effects; post-opening Toolbox restrictions only partially covered |
+| v18.2 QuickDraw font/API sections | Pending: summary “removed” and detailed compatibility prose need contextual resolution; no universal removal asserted |
+| v18.2 XSLT linked technical PDF | Not fetched; command removals and final-target caveat are cataloged |
+| Cumulative user forms, HTTP variable assignment, subtables, Mac file APIs, numeric standard actions and resource-fork migration | Pending; examined compatibility conditions are preserved, not collapsed into removals |
+| Summary-only 4D Write/View, legacy networking, CPU-priority controls and 4D Mobile | Pending; no document-edition threshold invented |
+| v20 object-notation cannot-open path | Out of scope; contact official 4D Support |
+
+Four exact thresholds remain unknown: interprocess-variable deprecation,
+the two project-only calls, and the `OBJECT SET FONT` signature change.
+The font rule's detection stage is also unknown; the adjacent v14
+`_o_Font name` date does not establish its introduction. Platforms not stated
+by evidence stay **unknown**, as does remediation complexity for **all 68**
+records: no reliable difficulty classification was established. Many removed
+resource/web calls have no documented replacement in the table; the entries
+say so rather than inventing one. Current v21/latest behavior is not independently
+verified by these historical pages.
+
+The German PHP section is English within an otherwise localized page. Its
+evidence is not presented as German official prose. French command spellings
+are anchored to localized rows, while apparent archive typos and the conflicting
+font label stay in verbatim evidence rather than becoming invented aliases.
+These are pending editorial caveats, not speculative public product-error issues.
 
 The earlier suffix-only probe method was incorrect: translated pages also use
 translated slugs. For example, French v20 is
@@ -89,8 +163,9 @@ must differ from its cached English article; this whole-article fallback check
 does **not** claim complete or human-reviewed translation of every paragraph.
 
 These 16 sources are **fetched and structurally extracted, not catalog-processed**.
-No new actionable records, thresholds or review claims were generated: the
-catalog remains **3 candidates, 2 partially used legacy pages, 0 human-reviewed**.
+No actionable records in this batch are derived from modern Release Notes.
+The catalog contains **68 candidates from 15 partially used legacy pages,
+0 human-reviewed**.
 Actionable changes may later deduplicate across sources; provenance never does.
 
 ### Legacy archive coverage
@@ -129,11 +204,11 @@ neither is assumed to be a change's introduction threshold. Other tabs and linke
 command pages are recorded as links, not automatically fetched or cataloged.
 Obsolete/deprecated commands are **not automatically removed or syntax blockers**.
 No actionable records have been cataloged from these newly added sources; the
-catalog stays at three candidates from two partially used pages, with zero
-human-reviewed changes.
+catalog additions in this batch use only the deprecated/removed article family,
+with zero human-reviewed changes.
 
 Fetching or extracting a document does **not** mean its changes were all cataloged.
-The remaining available pages, other removed PHP modules, compiler requirements,
+The remaining available pages, additional compiler requirements,
 conversion-guide child pages, historical deduplication/alignment, and broader
 version/platform coverage still need editorial processing. Unresolved localized
 locations are not guessed or silently replaced with English. No results never means an upgrade
@@ -247,7 +322,7 @@ Sort choices are **Severity** (highest first, unknown last; default) and
 **Complexity** (Simple → Moderate → Complex → Unknown). Complexity is the
 difficulty of applying documented remediation, independent of severity or stage,
 not comprehension difficulty or an effort estimate. Severity ties use stable ID;
-complexity ties use severity then stable ID. All three samples remain Unknown.
+complexity ties use severity then stable ID. All 68 candidates remain Unknown.
 The optional schema-v1 `complexity` object has a typed `level`; known levels
 require a documented `basis` and `evidence_source_ids` referencing the record's
 evidence. Missing metadata means unknown; validators reject unsupported or
@@ -256,7 +331,7 @@ unsubstantiated known classifications. See [UI details](site/README.md).
 Technical coverage, provenance and clarification dashboards are not visitor
 navigation. Each change retains localized summaries and evidence, with concise
 actionable caveats for unchecked text or unavailable sources. No planner features
-are present. Deprecation is not removal. The v20 sample does not
+are present. Deprecation is not removal. The historical content batch does not
 independently verify behavior in every later release.
 
 ## Reproducible ingestion and editorial updates

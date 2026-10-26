@@ -83,8 +83,37 @@ def run(base, screenshots, published):
         page.reload()
         page.wait_for_selector("[data-change-id]")
         cdp.send("Network.setCacheDisabled", {"cacheDisabled": False})
-        assert ids(page) == ["chg-colon-identifiers", "chg-bundled-php-dom-removal",
-                             "chg-pdfcreator-driver-deprecation"]
+        severity = {"blocking": 0, "high": 1, "medium": 2, "low": 3, "unknown": 4}
+        expected = [c["id"] for c in sorted(catalog["changes"],
+                    key=lambda c: (severity[c["criticality"]], c["id"]))]
+        assert len(expected) == 68
+        assert ids(page) == expected
+        assert ids(page)[:2] == ["chg-colon-identifiers", "chg-object-notation-compliance"]
+        # Real upgrade searches over the populated publication, not a fixture.
+        page.select_option("#source-version", "v17")
+        page.select_option("#target-version", "v18")
+        page.fill("#search", "_o_XSLT APPLY TRANSFORMATION")
+        assert ids(page) == ["chg-removed-xslt-apply-transformation"]
+        page.select_option("#target-version", "v20")
+        page.select_option("#source-version", "v18")
+        page.fill("#search", "_o_NO TRACE")
+        assert ids(page) == ["chg-removed-no-trace"]
+        page.select_option("#source-version", "v19")
+        assert ids(page) == []  # Not newly crossed when already at the removal bucket.
+        page.fill("#search", "PHP")
+        assert {f"chg-bundled-php-{module}-removal" for module in
+                ("dom", "iconv", "libxml", "libxslt", "simplexml", "gd", "xml",
+                 "xmlreader", "xmlwriter", "wddx", "zlib", "zip")} <= set(ids(page))
+        assert "chg-removed-xslt-apply-transformation" not in ids(page)
+        page.select_option("#source-version", "v20")
+        page.fill("#search", "PDFCreator")
+        assert ids(page) == ["chg-pdfcreator-driver-deprecation"]  # Continuing, not removed.
+        page.select_option("#source-version", "v16")
+        page.select_option("#target-version", "v21")
+        page.fill("#search", "OBJET FIXER ACTIVATION")
+        assert ids(page) == ["chg-removed-disable-button", "chg-removed-enable-button"]
+        page.fill("#search", "")
+        assert ids(page) == expected
         assert page.locator("#sort option").all_text_contents() == ["Severity", "Complexity"]
         assert page.get_by_role("group", name="Platform", exact=True).count() == 1
         assert page.get_by_role("group", name="Topics", exact=True).count() == 1
@@ -137,15 +166,18 @@ def run(base, screenshots, published):
         after = controls(page)
         assert all(after[key] == before[key] for key in ("source", "target", "language", "theme"))
         assert after["query"] == "" and after["sort"] == "severity"
-        # Only unknown platforms selects the two explicitly unknown sample records.
+        # Unknown platforms retain conditional records, not known macOS/Windows ones.
         page.locator('[data-group=platforms][data-select=none]').click()
         page.locator('[name=platforms][value=unknown]').check()
-        assert ids(page) == ["chg-colon-identifiers", "chg-bundled-php-dom-removal"]
+        assert {"chg-colon-identifiers", "chg-bundled-php-dom-removal",
+                "chg-project-save-list-call"} <= set(ids(page))
+        assert "chg-pdfcreator-driver-deprecation" not in ids(page)
+        assert "chg-odbc-driver-macos-removal" not in ids(page)
         page.click("#reset")
         page.locator("[data-change-id]").first.get_by_text("Evidence", exact=True).click()
         assert page.locator(".evidence-list a").first.is_visible()
         assert page.locator(".evidence-list a").first.get_attribute("href").startswith("https://")
-        assert page.locator(".summary-caveat").count() == 3
+        assert page.locator(".summary-caveat").count() == len(ids(page))
         labels = {"en": ("Filters", "Complexity"), "fr": ("Filtres", "Complexité"),
                   "de": ("Filter", "Komplexität"), "es": ("Filtros", "Complejidad"),
                   "ja": ("フィルター", "対応の難易度")}
