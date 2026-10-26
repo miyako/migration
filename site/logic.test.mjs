@@ -2,26 +2,40 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
-import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, versionChoices, isLatestAvailable, crossesVersion,
+import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, releaseKey, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
-  complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor, evidenceForLanguage } from './logic.mjs';
+  complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor, evidenceForLanguage,
+  sourceMatchesPath, evidenceForPath, projectChangeForPath } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
-  id, threshold: { exact: '20 R3', bucket, kind: 'introduced' }, type: 'restriction',
+  id, threshold: { exact: /^v\d+$/.test(bucket) ? bucket.slice(1) : null, bucket, kind: 'introduced' }, type: 'restriction',
   criticality: 'blocking', platforms: ['all'], modules: ['language'],
-  identifiers: ['OLD COMMAND:42'], localizations: { en: { one_line: 'Use a project', paragraph: 'Opening works.' },
-    ja: { one_line: 'プロジェクトの変更', paragraph: '移行対象' } },
+  identifiers: ['OLD COMMAND:42'], localizations: {
+    en: { one_line: 'Use a project', paragraph: 'Opening works.', action: 'Use a project.',
+      conditions: ['The application uses this command.'], action_basis: 'Based on documented behavior.' },
+    fr: { one_line: 'Utiliser un projet', paragraph: 'L’ouverture fonctionne.', action: 'Utilisez un projet.',
+      conditions: ['L’application utilise cette commande.'], action_basis: 'Fondé sur le comportement documenté.' },
+    de: { one_line: 'Ein Projekt verwenden', paragraph: 'Das Öffnen funktioniert.', action: 'Verwenden Sie ein Projekt.',
+      conditions: ['Die Anwendung verwendet diesen Befehl.'], action_basis: 'Auf Grundlage des dokumentierten Verhaltens.' },
+    es: { one_line: 'Utilizar un proyecto', paragraph: 'La apertura funciona.', action: 'Utilice un proyecto.',
+      conditions: ['La aplicación utiliza este comando.'], action_basis: 'Basado en el comportamiento documentado.' },
+    ja: { one_line: 'プロジェクトの変更', paragraph: '移行対象', action: 'プロジェクトを使用してください。',
+      conditions: ['アプリケーションがこのコマンドを使用しています。'], action_basis: '文書化された動作に基づきます。' },
+  },
   ...extra,
 });
 
 execFileSync('python3', ['-m', 'tools.catalog'], { cwd: new URL('../', import.meta.url) });
-const editorialChanges = JSON.parse(await readFile(new URL('./data/catalog.json', import.meta.url))).changes;
+const editorialCatalog = JSON.parse(await readFile(new URL('./data/catalog.json', import.meta.url)));
+const editorialChanges = editorialCatalog.changes;
 const editorialById = new Map(editorialChanges.flatMap(record =>
   [record.id, ...record.member_ids].map(id => [id, record])));
 
 test('real catalog crosses historical removal buckets, not document editions or source-equal thresholds', () => {
-  assert.equal(editorialChanges.length, 119);
-  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 192);
+  assert.equal(editorialChanges.length, 198);
+  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 272);
+  assert.equal(editorialChanges.filter(c => c.member_ids.length > 1).length, 28);
+  assert.equal(editorialChanges.filter(c => c.member_ids.length > 1).flatMap(c => c.member_ids).length, 102);
   for (const [id, from, to, included] of [
     ['chg-removed-xslt-apply-transformation', 'v17', 'v18', true],
     ['chg-removed-xslt-apply-transformation', 'v18', 'v20', false],
@@ -63,7 +77,7 @@ test('real content search, severity and unknown remediation difficulty preserve 
   assert.ok(!lingering.some(c => c.id.startsWith('chg-removed-')));
   const sorted = filterChanges(editorialChanges);
   assert.deepEqual(sorted.slice(0, 3).map(c => c.id),
-    ['chg-colon-identifiers', 'chg-group-v19-compiler-settings', 'chg-object-notation-compliance']);
+    ['chg-colon-identifiers', 'chg-cs-class-assignment-check', 'chg-group-v19-compiler-settings']);
   assert.ok(sorted.every(c => complexityForChange(c) === 'unknown'));
   assert.deepEqual(filterChanges(editorialChanges, { sort: 'complexity' }).map(c => c.id),
     sorted.map(c => c.id));
@@ -115,10 +129,12 @@ test('Stage 2 compiler, ORDA and compatibility queries keep release and group bo
 
 test('group searches retain individual IDs, command aliases and unique membership', () => {
   const membership = editorialChanges.flatMap(c => c.member_ids);
-  assert.equal(new Set(membership).size, 192);
+  assert.equal(new Set(membership).size, 272);
   for (const id of membership) {
-    assert.deepEqual(filterChanges(editorialChanges, { source: 'unknown', query: id }).map(c => c.id),
-      [editorialById.get(id).id], id);
+    const entity = editorialById.get(id);
+    const target = entity.applicability?.target_releases?.[0] ?? (entity.applies_until ? 'v20' : 'v21');
+    assert.ok(filterChanges(editorialChanges, { source: 'unknown', target, query: id })
+      .some(c => c.id === entity.id), id);
   }
   for (const query of ['DOM', 'LibXSLT', 'XMLreader', 'chg-bundled-php-zip-removal']) {
     assert.deepEqual(filterChanges(editorialChanges, { source: 'v19', target: 'v20', query })
@@ -188,6 +204,332 @@ test('restrictions and removals require crossings; deprecated records accumulate
   assert.equal(crossesVersion(change('future', 'v22', { type: 'deprecated' }), 'v19', 'v21'), false);
   assert.equal(crossesVersion(change('unknown', 'unknown'), 'v19', 'v21'), true);
   assert.equal(crossesVersion(change('unknownSource'), 'unknown', 'v21'), true);
+});
+
+test('exact release ordering preserves patches, R cycles, HF and build provenance', () => {
+  const ordered = ['19.7 build288986', '20', '20.2 build100956', '20.3', '20 R2',
+    '20 R2 HF1 build100440', '20 R3', '21', '21 R3', '21 R4', '21 R5'];
+  const compare = (a, b) => a.map((value, i) => value - b[i]).find(value => value) ?? 0;
+  for (let i = 1; i < ordered.length; i++) {
+    assert.ok(compare(releaseKey(ordered[i - 1]), releaseKey(ordered[i])) < 0);
+  }
+  assert.deepEqual(releaseKey('4D v20R2 HF1 (build 100440)'), releaseKey('20 R2 HF1 build100440'));
+  for (const invalid of ['release 20', '20 R', '20 build1)', '20 beta', null]) {
+    assert.equal(releaseKey(invalid), null);
+  }
+  const latest = { release: '21 R4' };
+  const record = exact => change('exact', 'latest', {
+    threshold: { exact, bucket: exact.startsWith('20 R') ? 'v21' :
+      exact.startsWith('20.') ? 'v20' : 'latest', kind: 'introduced' },
+  });
+  for (const [exact, from, to, expected] of [
+    ['21 R3', 'v21', 'v21', false],
+    ['21 R3', 'v21', 'latest', true],
+    ['21 R5', 'v21', 'latest', false],
+    ['20 R3', 'v21', 'latest', false],
+    ['20 R3', 'v20', 'v21', true],
+    ['20.3', 'v20', 'latest', true],
+    ['20.3', 'v20', 'v20', true],
+    ['20.3', '20.3', 'latest', false],
+    ['20 R2 HF1 build100440', '20 R2 HF1 build100439', '20 R2 HF1 build100440', true],
+    ['20 R2 HF1 build100440', '20 R2 HF1 build100440', 'latest', false],
+  ]) assert.equal(crossesVersion(record(exact), from, to, latest), expected, `${exact}: ${from} → ${to}`);
+});
+
+test('branch cutoffs are alternatives and exclusive bounds concern only the final target', () => {
+  const alternatives = ['19.7 build288986', '20.2 build100956', '20 R2 HF1 build100440', '20 R3'];
+  const branched = change('branches', 'v19', {
+    threshold: { exact: alternatives[0], bucket: 'v19', kind: 'target_requirement', alternatives },
+  });
+  const latest = { release: '21 R4' };
+  assert.equal(crossesVersion(branched, 'v20', 'latest', latest), true);
+  assert.equal(crossesVersion(branched, 'v21', 'latest', latest), false);
+  assert.deepEqual(filterChanges([branched], {
+    source: 'v20', target: 'latest', query: '100440',
+  }, latest).map(c => c.id), ['branches']);
+  assert.deepEqual(branched.threshold.alternatives, alternatives);
+  const workaround = change('workaround', 'v19', { applies_until: '20 R3' });
+  for (const [to, expected] of [['v20', true], ['20 R2', true], ['20 R3', false],
+    ['v21', false], ['latest', false]]) {
+    assert.equal(crossesVersion(workaround, 'v18', to, latest), expected, to);
+  }
+  assert.equal(crossesVersion({ ...workaround, type: 'deprecation' }, 'v20', 'v21', latest), false);
+  assert.equal(crossesVersion({ ...workaround, applies_until: 'v21' }, 'v18', 'v21', latest), false);
+});
+
+test('canonical backports already reached on the source branch are not applied twice', () => {
+  const latest = { release: '21 R4' };
+  // Exact alternatives from the Stage 3 canonical records; source branch matters
+  // even though the visitor UI currently exposes only coarse major selectors.
+  for (const [alternatives, cases] of [
+    [['20.7 HF2', '20 R10'], [
+      ['v20', true], ['20.7 HF1', true], ['20.7 HF2', false], ['20.8', false],
+      ['20 R9', true], ['20 R10', false],
+    ]],
+    [['20.3', '20 R4'], [
+      ['v20', true], ['20.2', true], ['20.3', false], ['20.4', false],
+      ['20 R3', true], ['20 R4', false],
+    ]],
+    [['20.1 HF1', '20.2', '20 R2'], [
+      ['v20', true], ['20.1', true], ['20.1 HF1', false], ['20.2', false],
+      ['20 R1', true], ['20 R2', false],
+    ]],
+    [['19.7 build 288986', '20.2 build 100956', '20 R2 HF1 build 100440', '20 R3'], [
+      ['v19', true], ['19.7 build 288985', true], ['19.7 build 288986', false],
+      ['19.8', false], ['v20', true], ['20.2 build 100955', true],
+      ['20.2 build 100956', false], ['20.3', false], ['20 R2', true],
+      ['20 R2 HF1 build 100439', true], ['20 R2 HF1 build 100440', false],
+      ['20 R3', false], ['20 R4', false],
+    ]],
+  ]) {
+    const record = change('canonical', 'v20', {
+      threshold: { exact: alternatives[0], bucket: alternatives[0].startsWith('19.') ? 'v19' : 'v20',
+        kind: 'introduced', alternatives },
+    });
+    const original = structuredClone(record);
+    for (const [source, expected] of cases) {
+      assert.equal(crossesVersion(record, source, 'latest', latest), expected,
+        `${alternatives.join(' / ')} from ${source}`);
+      assert.equal(crossesVersion({ ...record, type: 'deprecation' }, source, 'latest', latest), true,
+        `deprecation continues from ${source}`);
+    }
+    assert.deepEqual(record, original);
+  }
+});
+
+test('documented exact-target requirements do not force an invented intermediate client/server pair', () => {
+  const record = change('icu-pair', 'v20', {
+    threshold: { exact: '20.1', bucket: 'v20', kind: 'introduced' },
+    applies_until: null, applicability: { target_releases: ['20.1'] },
+  });
+  const latest = { release: '21 R4' };
+  for (const [source, target, expected] of [
+    ['v19', 'v20', true], ['v20', 'v20', true], ['v20', '20.1', true],
+    ['v20', '20.2', false], ['v20', 'v21', false], ['v19', 'latest', false],
+    ['v20', 'latest', false], ['unknown', 'v21', false], ['unknown', 'v20', true],
+  ]) assert.equal(crossesVersion(record, source, target, latest), expected, `${source} → ${target}`);
+  assert.equal(crossesVersion(record, 'v20', 'latest', { release: '20.1' }), true);
+  assert.equal(record.applies_until, null);
+  const catalog = changes => ({ schema_version: 1, coverage: {}, latest: {}, semantic_search: {}, sources: [], changes });
+  validateCatalog(catalog([record]));
+  for (const targets of [null, [], ['latest'], ['20.1', '20.1'], ['invalid'], [20.1]]) {
+    assert.throws(() => validateCatalog(catalog([{ ...record, applicability: { target_releases: targets } }])),
+      /invalidCatalog/);
+  }
+  const members = ['a', 'b'].map(id => ({ ...structuredClone(record), id }));
+  const group = { ...record, id: 'pair-group', members, member_ids: ['a', 'b'] };
+  validateCatalog(catalog([group]));
+  members[1].applicability.target_releases = ['20.2'];
+  assert.throws(() => validateCatalog(catalog([group])), /invalidCatalog/);
+});
+
+test('citation path selection precedes locale selection and retains every distinct English fallback', () => {
+  const sources = [
+    { id: 'old', edition: '16', language: 'en' },
+    { id: 'source', edition: '17', language: 'en' },
+    { id: 'target', edition: '18.2', language: 'en' },
+    { id: 'r-cycle', edition: '17 R5', language: 'en' },
+    { id: 'later-fr', edition: '19', language: 'fr' },
+    { id: 'moving', edition: '18', language: 'fr', documentation_channel: 'moving-current' },
+    { id: 'unknown', edition: 'unverified', language: 'fr' },
+  ];
+  const records = sources.map(source => ({ source_id: source.id, excerpt: source.id }));
+  records.push({ source_id: 'target', excerpt: 'a second distinct supporting block' }, { ...records[2] });
+  const selected = evidenceForPath(records, sources, 'v17', 'v18');
+  assert.deepEqual(selected.map(record => record.source_id), ['target', 'target', 'r-cycle', 'source']);
+  assert.deepEqual(evidenceForLanguage(selected, sources, 'fr'), selected);
+  assert.equal(sourceMatchesPath(sources[2], 'v17', '18.1'), false);
+  assert.equal(sourceMatchesPath(sources[3], 'v17', 'v17'), false);
+  assert.equal(sourceMatchesPath(sources[3], 'v17', 'v18'), true);
+  assert.deepEqual(evidenceForPath(records, sources, 'unknown', 'v18'), []);
+  assert.deepEqual(evidenceForPath(records, sources, 'v19', 'v18'), []);
+  const latest = { release: '21 R4' };
+  assert.equal(sourceMatchesPath({ edition: '21 R4' }, 'v21', 'latest', latest), true);
+  assert.equal(sourceMatchesPath({ edition: '21 R5' }, 'v21', 'latest', latest), false);
+  assert.equal(sourceMatchesPath({ edition: '21 R4', documentation_channel: 'moving-current' },
+    'v21', 'latest', latest), false);
+  assert.equal(sourceMatchesPath({ edition: '21 R4', fetch: { documentation: { channel_label: 'BETA' } } },
+    'v21', 'latest', latest), false);
+  assert.equal(sourceMatchesPath({ edition: '19.7 / 20.2 / 20 R2 HF1 / 20 R3' }, 'v20', 'v21'), true);
+  const unavailable = { id: 'target', edition: '18.2', language: 'en',
+    fetch: { status: 'failed', error: 'Source temporarily unavailable' } };
+  assert.deepEqual(evidenceForPath([records[2]], [unavailable], 'v17', 'v18'), [records[2]]);
+  assert.equal(sourceMatchesPath({ ...unavailable, edition: '19' }, 'v17', 'v18'), false);
+});
+
+test('path projections retain applicable facts, isolate group members and signal unresolved support', () => {
+  const sources = [{ id: 'v18', edition: '18', language: 'en' },
+    { id: 'v19', edition: '19', language: 'fr' }];
+  const first = change('first', 'v18', { evidence: [{ source_id: 'v18', excerpt: 'first' }] });
+  const unresolved = change('unresolved', 'v18', { evidence: [{ source_id: 'v19', excerpt: 'too late' }] });
+  const future = change('future', 'v19', { evidence: [{ source_id: 'v18', excerpt: 'not yet applicable' }] });
+  const group = change('group', 'v18', { members: [first, unresolved, future],
+    member_ids: ['first', 'unresolved', 'future'],
+    evidence: [{ source_id: 'v18', excerpt: 'group-only supplemental workaround' }] });
+  const original = structuredClone(group);
+  const projection = projectChangeForPath(group, sources, 'v17', 'v18');
+  assert.deepEqual(projection.member_ids, original.member_ids);
+  assert.deepEqual(projection.visible_member_ids, ['first', 'unresolved']);
+  assert.deepEqual(projection.members.map(member => member.id), ['first', 'unresolved']);
+  assert.deepEqual(projection.evidence, first.evidence);
+  assert.deepEqual(projection.unresolved_member_ids, ['unresolved']);
+  assert.equal(projection.evidence_disposition, 'partial');
+  assert.equal(projection.evidence_path_unresolved, true);
+  assert.equal(projection.members[1].evidence_disposition, 'unresolved');
+  assert.deepEqual(projection.members[1].evidence, []);
+  assert.deepEqual(filterChanges([projection], { source: 'v17', target: 'v18', query: 'future' }), []);
+  assert.equal(projectChangeForPath(future, sources, 'v17', 'v18'), null);
+  assert.equal(projectChangeForPath(group, sources, 'v18', 'v18'), null);
+  const unsupported = projectChangeForPath(unresolved, sources, 'v17', 'v18');
+  assert.equal(unsupported.id, unresolved.id);
+  assert.deepEqual(unsupported.evidence, []);
+  assert.equal(unsupported.evidence_disposition, 'unresolved');
+  assert.equal(unsupported.evidence_path_unresolved, true);
+  projection.members[0].localizations.en.paragraph = 'modified visible copy';
+  projection.evidence[0].excerpt = 'modified visible citation';
+  projection.member_ids.pop();
+  assert.deepEqual(group, original);
+});
+
+test('live historical XSLT projection never borrows v19/v20 workaround citations for v17 to v18', () => {
+  const original = editorialById.get('chg-removed-xslt-apply-transformation');
+  const before = structuredClone(original);
+  const projected = projectChangeForPath(original, editorialCatalog.sources, 'v17', 'v18', editorialCatalog.latest);
+  assert.ok(projected);
+  assert.equal(projected.evidence_disposition, 'in_path');
+  assert.equal(projected.evidence_path_unresolved, false);
+  assert.ok(projected.evidence.some(record => record.source_id === 'legacy-v18-deprecated-en'));
+  assert.ok(projected.evidence.every(record =>
+    sourceMatchesPath(editorialCatalog.sources.find(source => source.id === record.source_id),
+      'v17', 'v18', editorialCatalog.latest)));
+  assert.ok(!projected.evidence.some(record => /legacy-v(?:19|20)-/.test(record.source_id)));
+  for (const language of LANGUAGES) {
+    const localized = evidenceForLanguage(projected.evidence, editorialCatalog.sources, language);
+    assert.ok(localized.length);
+    assert.ok(localized.every(record => !/legacy-v(?:19|20)-/.test(record.source_id)));
+    assert.equal(editorialCatalog.sources.find(source => source.id === localized[0].source_id).edition, '18.2');
+  }
+  assert.deepEqual(original, before);
+});
+
+test('live later-only support stays explicitly unresolved on earlier migration paths', () => {
+  for (const [id, from, to] of [
+    ['chg-cpu-priority-settings', 'v16', 'v17'],
+    ['chg-interprocess-variable-deprecation', 'v16', 'v17'],
+    ['chg-interprocess-variable-deprecation', 'v17', 'v18'],
+    ['chg-project-save-list-call', 'v16', 'v17'],
+  ]) {
+    const record = editorialById.get(id);
+    assert.equal(record.threshold.kind, 'unknown');
+    assert.equal(crossesVersion(record, from, to, editorialCatalog.latest), true);
+    const projected = projectChangeForPath(record, editorialCatalog.sources, from, to, editorialCatalog.latest);
+    assert.ok(projected, id);
+    assert.equal(projected.evidence_path_unresolved, true, id);
+    assert.equal(projected.evidence_disposition, 'unresolved', id);
+    assert.deepEqual(projected.evidence, [], id);
+    for (const language of LANGUAGES) {
+      assert.deepEqual(evidenceForLanguage(projected.evidence, editorialCatalog.sources, language), []);
+    }
+  }
+});
+
+test('live numeric-action group prefers v18.2 and never borrows future citations on v17 to v18', () => {
+  const record = editorialById.get('chg-numeric-standard-actions');
+  const projected = projectChangeForPath(record, editorialCatalog.sources, 'v17', 'v18', editorialCatalog.latest);
+  assert.ok(projected);
+  assert.equal(projected.evidence_path_unresolved, false);
+  assert.deepEqual(projected.visible_member_ids, record.member_ids);
+  assert.ok(projected.evidence.every(evidence => !/legacy-v(?:19|20)-/.test(evidence.source_id)));
+  for (const language of LANGUAGES) {
+    const selected = evidenceForLanguage(projected.evidence, editorialCatalog.sources, language);
+    assert.ok(selected.length);
+    assert.equal(editorialCatalog.sources.find(source => source.id === selected[0].source_id).edition, '18.2');
+  }
+  assert.equal(projectChangeForPath(editorialById.get('chg-removed-enable-button'),
+    editorialCatalog.sources, 'v17', 'v18', editorialCatalog.latest), null);
+});
+
+test('catalog validates branch lists, exact bounds and complete grouped applicability', () => {
+  const threshold = { exact: '19.7 build288986', bucket: 'v19', kind: 'introduced',
+    alternatives: ['19.7 build288986', '20.2 build100956', '20 R3'] };
+  const record = change('branch', 'v19', { threshold, applies_until: '21 R3' });
+  const catalog = changes => ({ schema_version: 1, coverage: {}, latest: {}, semantic_search: {}, sources: [], changes });
+  assert.equal(validateCatalog(catalog([record])).changes[0], record);
+  assert.throws(() => validateCatalog(catalog([{ ...record,
+    threshold: { ...threshold, exact: '20 R3', bucket: 'v20' } }])), /invalidCatalog/);
+  for (const alternatives of [null, [], '20 R3', ['20 R3'], [threshold.exact, threshold.exact],
+    [threshold.exact, 'garbage']]) {
+    assert.throws(() => validateCatalog(catalog([{ ...record,
+      threshold: { ...threshold, alternatives } }])), /invalidCatalog/);
+  }
+  for (const bound of ['20 R3', '19', '', 'invalid', 21]) {
+    assert.throws(() => validateCatalog(catalog([{ ...record, applies_until: bound }])), /invalidCatalog/);
+  }
+  const members = ['a', 'b'].map(id => ({ ...structuredClone(record), id }));
+  const group = { ...record, id: 'group', members, member_ids: ['a', 'b'] };
+  assert.equal(validateCatalog(catalog([group])).changes[0], group);
+  members[1].applies_until = '21 R4';
+  assert.throws(() => validateCatalog(catalog([group])), /invalidCatalog/);
+  members[1].applies_until = record.applies_until;
+  members[1].threshold.alternatives.pop();
+  assert.throws(() => validateCatalog(catalog([group])), /invalidCatalog/);
+  members[1].threshold = structuredClone(record.threshold);
+  members[1].threshold.bucket = 'v20';
+  assert.throws(() => validateCatalog(catalog([group])), /invalidCatalog/);
+});
+
+test('catalog requires authored localized conditions, actions and applicable rationales', () => {
+  const record = change('localized', 'v20', { action_basis: 'Based on documented behavior.' });
+  const catalog = changes => ({ schema_version: 1, coverage: {}, latest: {}, semantic_search: {}, sources: [], changes });
+  assert.equal(validateCatalog(catalog([record])).changes[0], record);
+  for (const language of LANGUAGES) {
+    for (const [field, value] of [['conditions', undefined], ['conditions', []], ['conditions', [' ']],
+      ['action', undefined], ['action', ' '], ['action_basis', undefined], ['action_basis', ' ']]) {
+      const invalid = structuredClone(record);
+      if (value === undefined) delete invalid.localizations[language][field];
+      else invalid.localizations[language][field] = value;
+      assert.throws(() => validateCatalog(catalog([invalid])), /invalidCatalog/, `${language}: ${field}`);
+    }
+  }
+  for (const field of ['conditions', 'action_basis']) {
+    const invalid = structuredClone(record);
+    invalid.localizations.fr[field] = structuredClone(invalid.localizations.en[field]);
+    assert.throws(() => validateCatalog(catalog([invalid])), /invalidCatalog/);
+  }
+  const invariant = structuredClone(record);
+  for (const text of Object.values(invariant.localizations)) {
+    text.conditions = ['_o_COMMAND', 'OLD COMMAND:42'];
+    text.action_basis = '_o_COMMAND';
+  }
+  assert.equal(validateCatalog(catalog([invariant])).changes[0], invariant);
+  for (const text of Object.values(invariant.localizations)) text.conditions = ['Application uses _o_COMMAND.'];
+  assert.throws(() => validateCatalog(catalog([invariant])), /invalidCatalog/);
+  const group = { ...record, member_ids: ['a', 'b'], members: ['a', 'b'].map(id => ({ ...structuredClone(record), id })) };
+  delete group.members[1].localizations.ja.action;
+  assert.throws(() => validateCatalog(catalog([group])), /invalidCatalog/);
+});
+
+test('path evidence notices and Stage 3 module labels are authored in all five locales', () => {
+  for (const language of LANGUAGES) {
+    const dictionary = translations[language];
+    for (const key of ['pathEvidenceUnavailable', 'JSON', 'SQL', 'network', 'components', 'deployment']) {
+      assert.ok(typeof dictionary[key] === 'string' && dictionary[key].trim(), `${language}: ${key}`);
+    }
+    assert.equal(dictionary.JSON, 'JSON');
+    assert.equal(dictionary.SQL, 'SQL');
+    if (language !== 'en') {
+      for (const key of ['pathEvidenceUnavailable', 'network', 'components', 'deployment']) {
+        assert.notEqual(dictionary[key], translations.en[key], `${language}: ${key}`);
+      }
+    }
+  }
+});
+
+test('exclusive final-target bounds are labelled explicitly in all five locales', () => {
+  for (const [language, expected] of Object.entries({
+    en: 'Before target release', fr: 'Avant la version cible', de: 'Vor Zielversion',
+    es: 'Antes de la versión de destino', ja: 'この移行先バージョンより前まで',
+  })) assert.equal(translate(language, 'appliesUntil'), expected);
 });
 
 test('null release thresholds and unknown actions remain valid and visible without fabricated versions', () => {

@@ -20,7 +20,11 @@
           "en": {
             "one_line": "Replace GRAPH TABLE, already disabled since v14",
             "paragraph": "_o_GRAPH TABLE was already disabled in v14, then formally removed in 17 R5. It is therefore not a newly crossed runtime requirement for an upgrade starting at v16 or later. Build the data in arrays and call GRAPH with an SVG picture. The later removed-command error 33 is not detected by syntax checking or compilation.",
-            "action": "_o_GRAPH TABLE was already disabled in v14, then formally removed in 17 R5. It is therefore not a newly crossed runtime requirement for an upgrade starting at v16 or later. Build the data in arrays and call GRAPH with an SVG picture. The later removed-command error 33 is not detected by syntax checking or compilation."
+            "action": "_o_GRAPH TABLE was already disabled in v14, then formally removed in 17 R5. It is therefore not a newly crossed runtime requirement for an upgrade starting at v16 or later. Build the data in arrays and call GRAPH with an SVG picture. The later removed-command error 33 is not detected by syntax checking or compilation.",
+            "conditions": [
+              "Code contains _o_GRAPH TABLE after successful opening.",
+              "The call was already disabled in v14 and formally removed in 17 R5. It is not a newly crossed requirement for an upgrade starting at v16 or later."
+            ]
           },
           "fr": {
             "one_line": "Remplacer GRAPHE SUR TABLE, déjà désactivé depuis v14",
@@ -34,17 +38,29 @@
           "de": {
             "one_line": "Seit v14 deaktiviertes GRAPH TABLE ersetzen",
             "paragraph": "_o_GRAPH TABLE war bereits in v14 deaktiviert und wurde in 17 R5 formal entfernt. Für ein Upgrade ab v16 ist dies deshalb keine neu überschrittene Laufzeitanforderung. Bereiten Sie Daten in Arrays auf und rufen Sie GRAPH mit einem SVG-Bild auf. Der spätere Fehler 33 wird weder durch Syntaxprüfung noch Kompilierung erkannt.",
-            "action": "_o_GRAPH TABLE war bereits in v14 deaktiviert und wurde in 17 R5 formal entfernt. Für ein Upgrade ab v16 ist dies deshalb keine neu überschrittene Laufzeitanforderung. Bereiten Sie Daten in Arrays auf und rufen Sie GRAPH mit einem SVG-Bild auf. Der spätere Fehler 33 wird weder durch Syntaxprüfung noch Kompilierung erkannt."
+            "action": "_o_GRAPH TABLE war bereits in v14 deaktiviert und wurde in 17 R5 formal entfernt. Für ein Upgrade ab v16 ist dies deshalb keine neu überschrittene Laufzeitanforderung. Bereiten Sie Daten in Arrays auf und rufen Sie GRAPH mit einem SVG-Bild auf. Der spätere Fehler 33 wird weder durch Syntaxprüfung noch Kompilierung erkannt.",
+            "conditions": [
+              "Der Code enthält nach erfolgreichem Öffnen _o_GRAPH TABLE.",
+              "Der Aufruf war bereits in v14 deaktiviert und wurde in 17 R5 formell entfernt. Für ein Upgrade ab v16 oder später stellt er keine neu überschrittene Anforderung dar."
+            ]
           },
           "es": {
             "one_line": "Sustituir GRAPH TABLE, ya desactivado desde v14",
             "paragraph": "_o_GRAPH TABLE ya estaba desactivado en v14 y se eliminó formalmente en 17 R5. No es por tanto una nueva exigencia de ejecución para una migración que parte de v16 o posterior. Prepare los datos en arrays y llame GRAPH con una imagen SVG. El posterior error 33 no se detecta mediante comprobación sintáctica ni compilación.",
-            "action": "_o_GRAPH TABLE ya estaba desactivado en v14 y se eliminó formalmente en 17 R5. No es por tanto una nueva exigencia de ejecución para una migración que parte de v16 o posterior. Prepare los datos en arrays y llame GRAPH con una imagen SVG. El posterior error 33 no se detecta mediante comprobación sintáctica ni compilación."
+            "action": "_o_GRAPH TABLE ya estaba desactivado en v14 y se eliminó formalmente en 17 R5. No es por tanto una nueva exigencia de ejecución para una migración que parte de v16 o posterior. Prepare los datos en arrays y llame GRAPH con una imagen SVG. El posterior error 33 no se detecta mediante comprobación sintáctica ni compilación.",
+            "conditions": [
+              "El código contiene _o_GRAPH TABLE tras una apertura correcta.",
+              "La llamada ya estaba desactivada en v14 y se eliminó formalmente en 17 R5. No es un requisito nuevo para una actualización que parte de v16 o posterior."
+            ]
           },
           "ja": {
             "one_line": "v14 から無効の GRAPH TABLE を置き換える",
             "paragraph": "_o_GRAPH TABLE は v14 ですでに無効となり、17 R5 で正式に削除されました。このため v16 以降を起点とする移行で新しく発生する実行要件ではありません。配列にデータを用意し、SVG ピクチャを指定して GRAPH を呼び出してください。後のエラー 33 は構文チェックやコンパイルでは検出されません。",
-            "action": "_o_GRAPH TABLE は v14 ですでに無効となり、17 R5 で正式に削除されました。このため v16 以降を起点とする移行で新しく発生する実行要件ではありません。配列にデータを用意し、SVG ピクチャを指定して GRAPH を呼び出してください。後のエラー 33 は構文チェックやコンパイルでは検出されません。"
+            "action": "_o_GRAPH TABLE は v14 ですでに無効となり、17 R5 で正式に削除されました。このため v16 以降を起点とする移行で新しく発生する実行要件ではありません。配列にデータを用意し、SVG ピクチャを指定して GRAPH を呼び出してください。後のエラー 33 は構文チェックやコンパイルでは検出されません。",
+            "conditions": [
+              "正常に開けた後のコードに _o_GRAPH TABLE が含まれています。",
+              "この呼び出しは v14 で既に無効になり、17 R5 で正式に削除されました。v16 以降を起点とするアップグレードで新たに発生する要件ではありません。"
+            ]
           }
         }
       }

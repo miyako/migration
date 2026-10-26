@@ -306,7 +306,7 @@ class ModernDocumentation(unittest.TestCase):
 
     def test_committed_modern_provenance_is_separate_from_legacy_content(self):
         entries = [s for s in load(ROOT / "data/registry.json") if s["family"] == "documentation-release-notes"]
-        self.assertEqual(len(entries), 16)
+        self.assertEqual(len(entries), 20)
         self.assertEqual({s["language"] for s in entries}, {"en", "fr", "es", "ja"})
         self.assertTrue(all(s["fetch"]["status"] == "available" for s in entries))
         current = next(s for s in entries if s["id"] == "docs-current-release-notes-en")
@@ -314,8 +314,8 @@ class ModernDocumentation(unittest.TestCase):
         self.assertIn("BETA", current["fetch"]["documentation"]["channel_label"])
         self.assertEqual(load(ROOT / "data/latest.json")["release"], "21 R4")
         self.assertTrue(all(s["authority"] == "official_documentation" and s["host_operator"] == "4D" for s in entries))
-        self.assertFalse(any(e["source_id"].startswith("docs-")
-                             for c in load(ROOT / "data/changes.json") for e in c["evidence"]))
+        self.assertTrue(any(e["source_id"].startswith("docs-")
+                            for c in load(ROOT / "data/changes.json") for e in c["evidence"]))
 
     def test_refresh_configuration_keeps_observed_moving_edition_and_stable_ids(self):
         config = load(ROOT / "data/sources.json")
@@ -495,11 +495,11 @@ class Publication(unittest.TestCase):
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
         self.assertEqual(self.document["coverage"]["english_seeds"], 48)
-        self.assertEqual(self.document["coverage"]["registered_sources"], 200)
-        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 200})
-        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 145, "navigation_index": 55})
-        self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 16)
-        self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 4)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 205)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 205})
+        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 150, "navigation_index": 55})
+        self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 20)
+        self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 5)
         self.assertEqual(self.document["coverage"]["processed_source_ids"],
                          sorted([f"legacy-v{v}-deprecated-{lang}"
                                  for v in (18, 19, 20) for lang in ("en", "fr", "de", "es", "ja")]
@@ -513,14 +513,18 @@ class Publication(unittest.TestCase):
                                    for v in (16, 17, 18, 19, 20) for lang in ("en", "fr", "de", "es", "ja")]
                                 + [f"legacy-v19-detail-{detail}-{lang}"
                                    for detail in ("base64-decode", "is-editing-text")
-                                   for lang in ("en", "fr", "de", "es", "ja")]))
+                                   for lang in ("en", "fr", "de", "es", "ja")]
+                                + [source["id"] for source in self.document["sources"]
+                                   if source["id"].startswith("docs-") and any(
+                                       evidence["source_id"] == source["id"]
+                                       for change in self.document["changes"] for evidence in change["evidence"])]))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
-        self.assertEqual(len(self.document["changes"]), 119)
-        self.assertEqual(self.document["coverage"]["atomic_changes"], 192)
-        self.assertEqual(self.document["coverage"]["visible_entities"], 119)
-        self.assertEqual(self.document["coverage"]["grouped_entities"], 27)
+        self.assertEqual(len(self.document["changes"]), 198)
+        self.assertEqual(self.document["coverage"]["atomic_changes"], 272)
+        self.assertEqual(self.document["coverage"]["visible_entities"], 198)
+        self.assertEqual(self.document["coverage"]["grouped_entities"], 28)
 
     def test_offline_reproducible_build(self):
         path = ROOT / "site/data/catalog.json"

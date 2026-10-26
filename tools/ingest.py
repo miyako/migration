@@ -22,7 +22,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache"
 LANGUAGES = ("en", "fr", "de", "es", "ja")
-EXTRACTOR_VERSION = 6
+EXTRACTOR_VERSION = 8
 
 
 def load(path):
@@ -62,15 +62,49 @@ class Node:
 
 class DOM(HTMLParser):
     VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "wbr"}
+    P_BOUNDARIES = {"address", "article", "aside", "blockquote", "details", "div", "dl",
+                    "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2",
+                    "h3", "h4", "h5", "h6", "header", "hgroup", "hr", "li", "main",
+                    "menu", "nav", "ol", "p", "pre", "section", "table", "td", "th",
+                    "tr", "thead", "tbody", "tfoot", "ul"}
 
-    def __init__(self, html):
+    def __init__(self, html, modern=False):
         super().__init__(convert_charrefs=True)
         self.root = Node()
         self.current = self.root
+        self.modern = modern
         self.feed(html)
         self.close()
 
+    def close_optional(self, tags, barriers, scope):
+        node = self.current
+        while node is not scope:
+            if node.tag in barriers:
+                return
+            if node.tag in tags:
+                self.current = node.parent
+                return
+            node = node.parent
+
     def handle_starttag(self, tag, attrs):
+        # Repair omitted end tags only inside Docusaurus content; legacy trees
+        # deliberately retain their historical malformed nesting and block IDs.
+        scope = self.current
+        if self.modern:
+            while scope.parent and "theme-doc-markdown" not in scope.attrs.get("class", "").split():
+                scope = scope.parent
+            if scope.parent:
+                if tag in self.P_BOUNDARIES:
+                    self.close_optional({"p"}, {"table"}, scope)
+                if tag in {"thead", "tbody", "tfoot"}:
+                    self.close_optional({"tr"}, {"table"}, scope)
+                    self.close_optional({"thead", "tbody", "tfoot"}, {"table"}, scope)
+                elif tag == "tr":
+                    self.close_optional({"tr"}, {"table"}, scope)
+                elif tag in {"td", "th"}:
+                    self.close_optional({"td", "th"}, {"tr", "table"}, scope)
+                elif tag == "li":
+                    self.close_optional({"li"}, {"ul", "ol"}, scope)
         node = Node(tag, attrs, self.current)
         self.current.children.append(node)
         if tag not in self.VOID:
@@ -94,7 +128,7 @@ class DOM(HTMLParser):
 
 
 def extract(html, url):
-    dom = DOM(html).root
+    dom = DOM(html, modern=True).root
     nodes = list(dom.walk())
     title = next((n.text() for n in nodes if n.tag == "title"), "")
     language = next((n.attrs.get("lang", "").split("-")[0].lower()
@@ -102,7 +136,8 @@ def extract(html, url):
     # Legacy DOM contains malformed p/table nesting. Walk in document order rather
     # than relying on well-formed paragraph descendants.
     modern_scope = next((n for n in nodes if "theme-doc-markdown" in n.attrs.get("class", "").split()), None)
-    scope = modern_scope or next((n for n in nodes if "entry-content" in n.attrs.get("class", "").split()), None)
+    blog_scope = next((n for n in nodes if "entry-content" in n.attrs.get("class", "").split()), None)
+    scope = modern_scope or blog_scope
     if scope is None:
         scope = next((n for n in nodes if n.tag == "article"), dom)
     navigation_scope = next((n for n in nodes if n.attrs.get("id") == "Title_list"), None)
@@ -111,6 +146,7 @@ def extract(html, url):
     if navigation_index:
         scope = navigation_scope
     legacy = any(n.attrs.get("id", "").startswith("Paragraph_text_") for n in nodes)
+    atomic_lists = modern_scope is not None or legacy or scope is blog_scope
     headings = [(1, navigation_heading)] if navigation_index else []
     blocks, links, alternates, tabs = [], [], [], []
     for n in nodes:
@@ -149,9 +185,9 @@ def extract(html, url):
             headings = [(depth, text) for depth, text in headings if depth < level]
             headings.append((level, n.text().replace("\u200b", "").strip() if modern_scope else n.text()))
             heading_anchor = n.attrs.get("id", "")
-        if n.tag not in ({"p", "tr", "pre", "li"} if modern_scope or legacy else {"p", "tr", "pre"}):
+        if n.tag not in ({"p", "tr", "pre", "li"} if atomic_lists else {"p", "tr", "pre"}):
             continue
-        if modern_scope or (legacy and n.tag == "li"):
+        if modern_scope or (atomic_lists and n.tag == "li"):
             ancestors = []
             parent = n.parent
             while parent and parent is not scope:
@@ -179,7 +215,7 @@ def extract(html, url):
         if n.tag == "p" and any(c.tag in {"table", "tr", "pre"} for c in n.walk() if c is not n):
             continue
         text = n.code().strip() if n.tag == "pre" else n.text()
-        if (modern_scope or legacy) and n.tag == "li":
+        if atomic_lists and n.tag == "li":
             text = re.sub(r"\s+", " ", " ".join(
                 c.text() if isinstance(c, Node) else c for c in n.children
                 if not isinstance(c, Node) or c.tag not in {"ul", "ol"}

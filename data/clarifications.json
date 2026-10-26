@@ -1,5 +1,31 @@
 [
   {
+    "id": "clar-upgrade-path-and-localized-applicability",
+    "title": "Scope citations to the selected upgrade path and localize applicability prose",
+    "status": "resolved",
+    "change_ids": [
+      "chg-numeric-standard-actions",
+      "chg-removed-xslt-apply-transformation",
+      "chg-removed-xslt-get-error",
+      "chg-removed-xslt-set-parameter",
+      "chg-colon-identifiers"
+    ],
+    "issue_url": "https://github.com/miyako/migration/issues/10",
+    "evidence": [
+      {
+        "source_id": "legacy-v18-deprecated-en",
+        "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html",
+        "heading": "Actual v18.2 evidence exists for the reported v17 to v18 interval"
+      },
+      {
+        "source_id": "legacy-v19-deprecated-en",
+        "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html",
+        "heading": "A later cumulative source edition is not automatically an in-path citation"
+      }
+    ],
+    "disposition": "Confirmed catalog presentation defects, not 4D product bugs. Live Chrome reproduced v19/v20 cumulative citations on v17 to v18 standard-action and XSLT groups, and English Conditions/Why this action bodies in French, Japanese, German and Spanish. Preserve complete provenance and durable curated membership; project applicable members and compatible source/section evidence before locale preference. Later-only support is explicitly unresolved. All existing and modern facts/groups receive precomputed five-language conditions and rationales, validated without raw-English rendering fallback. Exclusive final-target bounds prevent superseded PHP-module work. Regression fixtures and real-browser tests cover the populated catalog; resolution is not human content review. The single Stage 3 PR closes the tracking issue after normal CI."
+  },
+  {
     "id": "clar-graph-table-earlier-disable",
     "title": "GRAPH TABLE was disabled in v14 before its formal 17 R5 removal",
     "status": "resolved",

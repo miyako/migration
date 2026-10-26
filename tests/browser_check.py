@@ -6,6 +6,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 from shutil import copytree
+import subprocess
 import sys
 from threading import Thread
 from tempfile import TemporaryDirectory
@@ -55,6 +56,19 @@ def controls(page):
     })""")
 
 
+def projected_records(catalog, source="v16", target="v21"):
+    script = """import {filterChanges, projectChangeForPath} from './site/logic.mjs';
+      let input = ''; for await (const chunk of process.stdin) input += chunk;
+      const {catalog, source, target} = JSON.parse(input);
+      const records = catalog.changes.map(change =>
+        projectChangeForPath(change, catalog.sources, source, target, catalog.latest)).filter(Boolean);
+      console.log(JSON.stringify(filterChanges(records, {source, target}, catalog.latest)));"""
+    result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=ROOT,
+                            input=json.dumps({"catalog": catalog, "source": source, "target": target}),
+                            text=True, capture_output=True, check=True)
+    return json.loads(result.stdout)
+
+
 def run(base, screenshots, published):
     catalog = json.loads((ROOT / "site/data/catalog.json").read_text())
     with sync_playwright() as playwright:
@@ -84,16 +98,15 @@ def run(base, screenshots, published):
         page.wait_for_selector("[data-change-id]")
         cdp.send("Network.setCacheDisabled", {"cacheDisabled": False})
         severity = {"blocking": 0, "high": 1, "medium": 2, "low": 3, "unknown": 4}
-        assert len(catalog["changes"]) == 119
-        assert catalog["coverage"]["atomic_changes"] == 192
+        assert len(catalog["changes"]) == 198
+        assert catalog["coverage"]["atomic_changes"] == 272
         # The default v16 -> v21 interval must not newly cross v14 disabling.
-        expected = [c["id"] for c in sorted(catalog["changes"],
-                    key=lambda c: (severity[c["criticality"]], c["id"]))
-                    if c["id"] != "chg-removed-graph-table"]
-        assert len(expected) == 118
+        expected = [c["id"] for c in projected_records(catalog)]
+        assert "chg-removed-graph-table" not in expected
+        assert "chg-group-bundled-php-modules" not in expected
         assert ids(page) == expected
-        assert ids(page)[:3] == ["chg-colon-identifiers", "chg-group-v19-compiler-settings",
-                               "chg-object-notation-compliance"]
+        assert ids(page)[:3] == ["chg-colon-identifiers", "chg-cs-class-assignment-check",
+                               "chg-group-v19-compiler-settings"]
         page.select_option("#source-version", "v18")
         page.select_option("#target-version", "v19")
         for query, entity in (
@@ -221,13 +234,13 @@ def run(base, screenshots, published):
         page.locator('[data-group=platforms][data-select=none]').click()
         assert ids(page) == []
         page.locator('[name=platforms][value=windows]').check()
-        assert {"chg-colon-identifiers", "chg-group-bundled-php-modules",
+        assert {"chg-colon-identifiers", "chg-internal-php-interpreter-removal",
                 "chg-project-save-list-call"} <= set(ids(page))
         assert "chg-pdfcreator-driver-deprecation" in ids(page)
         assert "chg-group-macos-native-connectors" not in ids(page)
         page.locator('[name=platforms][value=windows]').uncheck()
         page.locator('[name=platforms][value=macos]').check()
-        assert {"chg-colon-identifiers", "chg-group-bundled-php-modules",
+        assert {"chg-colon-identifiers", "chg-internal-php-interpreter-removal",
                 "chg-project-save-list-call"} <= set(ids(page))
         assert "chg-pdfcreator-driver-deprecation" not in ids(page)
         page.click("#reset")
@@ -241,7 +254,72 @@ def run(base, screenshots, published):
                   "de": ("Filter", "Komplexität"), "es": ("Filtros", "Complejidad"),
                   "ja": ("フィルター", "対応の難易度")}
         source_languages = {s["id"]: s["language"] for s in catalog["sources"]}
-        resource_group = next(c for c in catalog["changes"] if c["id"] == "chg-group-legacy-resource-commands")
+        resource_group = next(c for c in projected_records(catalog) if c["id"] == "chg-group-legacy-resource-commands")
+        # Reproduce the reported live path, checking real citation editions, not only IDs.
+        page.select_option("#source-version", "v17")
+        page.select_option("#target-version", "v18")
+        for query in ("chg-numeric-standard-actions", "chg-removed-xslt-apply-transformation"):
+            page.fill("#search", query)
+            assert len(ids(page)) == 1
+            source_ids = page.locator(".evidence-list > li").evaluate_all(
+                "items => items.map(item => item.dataset.sourceId)")
+            assert source_ids
+            assert all(next(s for s in catalog["sources"] if s["id"] == sid)["edition"].split(".")[0]
+                       in ("17", "18") for sid in source_ids), source_ids
+            assert any("v18-" in sid for sid in source_ids), source_ids
+        page.fill("#search", "chg-removed-enable-button")
+        assert ids(page) == []  # 18 R2 belongs to the next major interval.
+        page.select_option("#source-version", "v16")
+        page.select_option("#target-version", "v17")
+        page.fill("#search", "chg-cpu-priority-settings")
+        assert ids(page) == ["chg-cpu-priority-settings"]
+        assert page.locator(".evidence-list").count() == 0
+        warning = page.locator('[data-evidence-disposition="unresolved"]')
+        assert warning.is_visible() and warning.inner_text() != "pathEvidenceUnavailable"
+        page.select_option("#target-version", "latest")
+        page.select_option("#source-version", "v21")
+        assert not page.locator("#version-warning").is_visible()
+        for identifier in ("chg-json-validate-schema-version", "chg-legacy-network-layer-removal",
+                           "chg-rest-entityset-release-post"):
+            page.fill("#search", identifier)
+            assert identifier in ids(page), identifier
+        page.fill("#search", "chg-internal-php-interpreter-removal")
+        assert ids(page) == []
+        page.select_option("#target-version", "v21")
+        page.fill("#search", "chg-json-validate-schema-version")
+        assert ids(page) == []
+        page.select_option("#source-version", "v20")
+        page.select_option("#target-version", "latest")
+        for identifier in ("chg-time-negative-expression", "chg-open-datastore-password-default",
+                           "chg-tls-authentication-branch-fixes"):
+            page.fill("#search", identifier)
+            assert ids(page) == [identifier]
+        page.fill("#search", "chg-icu-77-index-rebuild")
+        page.select_option("#language", "de")
+        assert ids(page) == ["chg-icu-77-index-rebuild"]
+        shown = page.locator(".evidence-list > li").evaluate_all(
+            "items => items.map(item => [item.dataset.sourceId,item.dataset.blockId,item.dataset.sourceLanguage])")
+        assert len({sid for sid, _, _ in shown}) >= 2
+        assert all(language == "en" for _, _, language in shown)
+        # Actual old singleton and curated-group conditions/rationales in all locales.
+        page.select_option("#source-version", "v16")
+        page.select_option("#target-version", "v21")
+        by_id = {c["id"]: c for c in catalog["changes"]}
+        for locale in ("fr", "ja", "de", "es", "en"):
+            page.select_option("#language", locale)
+            for identifier in ("chg-colon-identifiers", "chg-group-legacy-resource-commands"):
+                page.fill("#search", identifier)
+                card = page.locator(f'[data-change-id="{identifier}"]')
+                card.locator(":scope > details").first.locator(":scope > summary").click()
+                text = card.locator("dl").inner_text()
+                localized = by_id[identifier]["localizations"][locale]
+                assert all(condition in text for condition in localized["conditions"])
+                assert localized["action_basis"] in text
+                if locale != "en":
+                    assert "After successful opening" not in text
+                    assert "Editorial recommendation derived" not in text
+                    assert "One feature migration with a shared remediation" not in text
+        page.fill("#search", "")
         obsolete_details = (
             "Supporting details retain their original language.",
             "Les détails complémentaires conservent leur langue d’origine.",
@@ -263,9 +341,8 @@ def run(base, screenshots, published):
             topic.check()
             assert all(controls(page)[key] == before[key] for key in
                        ("source", "target", "query", "sort", "platforms"))
-            assert set(ids(page)) == {record["id"] for record in catalog["changes"]
-                                     if record["modules"] == ["unknown"]
-                                     and record["id"] != "chg-removed-graph-table"}
+            assert set(ids(page)) == {record["id"] for record in projected_records(catalog)
+                                     if record["modules"] == ["unknown"]}
             page.locator('[data-group=modules][data-select=all]').click()
             assert not any(sentence in page.locator("body").text_content() for sentence in obsolete_details)
             for query in ("DELETE RESOURCE", "SUPPRIMER RESSOURCE"):
@@ -283,7 +360,7 @@ def run(base, screenshots, published):
                 expected = [e for e in resource_group["evidence"] if source_languages[e["source_id"]] == locale]
                 displayed = card.locator(".evidence-list > li").evaluate_all(
                     "items => items.map(item => [item.dataset.sourceId, item.dataset.blockId, item.dataset.sourceLanguage])")
-                assert len(displayed) >= 11
+                assert displayed
                 assert displayed == [[e["source_id"], e["block_id"], locale] for e in expected]
                 assert all(controls(page)[key] == before[key] for key in before if key != "query")
             page.fill("#search", "")
@@ -421,6 +498,7 @@ def run(base, screenshots, published):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--screenshots", type=Path)
+    parser.add_argument("--url", help="Verify an already deployed site against the same local publication inputs")
     args = parser.parse_args()
     if args.screenshots:
         args.screenshots.mkdir(parents=True, exist_ok=True)
@@ -431,7 +509,7 @@ if __name__ == "__main__":
         thread = Thread(target=server.serve_forever, daemon=True)
         thread.start()
         try:
-            run(f"http://127.0.0.1:{server.server_port}/migration/", args.screenshots, published)
+            run(args.url or f"http://127.0.0.1:{server.server_port}/migration/", args.screenshots, published)
         finally:
             server.shutdown()
             server.server_close()
