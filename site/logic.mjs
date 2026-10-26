@@ -1,5 +1,13 @@
 export const LANGUAGES = ['en', 'fr', 'de', 'es', 'ja'];
 export const VERSION_BUCKETS = ['v16', 'v17', 'v18', 'v19', 'v20', 'v21', 'latest'];
+export const VERSION_COLORS = {
+  v15: '#D74635', v16: '#8331AE', v17: '#3E8B93', v18: '#EB8E5F',
+  v19: '#5682DF', v20: '#E23089', v21: '#3B69E9',
+};
+
+export function versionColor(value, latest = null) {
+  return VERSION_COLORS[versionBucket(value === 'latest' ? latest?.release : value)] ?? null;
+}
 
 // Release identity stays in threshold.exact; this is only a major-version bucket.
 export function versionBucket(value) {
@@ -37,6 +45,41 @@ export function stagePriorityForChange(change) {
   return ({ syntax: 0, compilation: 1, runtime: 2, testing: 3, deployment: 4, modernization: 5 })[change.stage] ?? 6;
 }
 
+/** @typedef {'simple' | 'moderate' | 'complex' | 'unknown'} ComplexityLevel */
+/** @typedef {{level: ComplexityLevel, basis?: string, evidence_source_ids?: string[]}} RemediationComplexity */
+export const COMPLEXITY_LEVELS = ['simple', 'moderate', 'complex', 'unknown'];
+
+export function complexityForChange(change) {
+  return change.complexity?.level ?? 'unknown';
+}
+
+export function validComplexity(change) {
+  /** @type {RemediationComplexity | undefined} */
+  const value = change.complexity;
+  if (value === undefined) return true;
+  if (!value || typeof value !== 'object' || Array.isArray(value) ||
+      !COMPLEXITY_LEVELS.includes(value.level)) return false;
+  if (value.level === 'unknown') return true;
+  return typeof value.basis === 'string' && Boolean(value.basis.trim()) &&
+    Array.isArray(value.evidence_source_ids) && value.evidence_source_ids.length > 0 &&
+    value.evidence_source_ids.every(id => (change.evidence ?? []).some(e => e.source_id === id));
+}
+
+export function filterOptions(changes, key) {
+  const defaults = key === 'platforms' ? ['windows', 'macos', 'linux'] : [];
+  const values = [...new Set([...defaults, ...changes.flatMap(change => change[key] ?? [])])];
+  const known = values.filter(value => !['all', 'unknown'].includes(value)).sort();
+  return (known.length || !values.includes('all') ? known : ['all']).concat('unknown');
+}
+
+function matchesOptions(values, selected, options) {
+  if (!selected.length) return false;
+  const applicable = values?.length ? values : ['unknown'];
+  return applicable.some(value => value === 'all'
+    ? selected.some(option => option !== 'unknown' && options.includes(option))
+    : selected.includes(value));
+}
+
 export function crossesVersion(change, source, target, latest = null) {
   const from = versionNumber(source, latest);
   const to = versionNumber(target, latest);
@@ -50,14 +93,15 @@ export function crossesVersion(change, source, target, latest = null) {
 }
 
 export function filterChanges(changes, filters = {}, latest = null) {
-  const { source = 'v16', target = 'v21', platform = 'all', module = 'all', query = '', sort = 'priority' } = filters;
+  const platformOptions = filterOptions(changes, 'platforms');
+  const moduleOptions = filterOptions(changes, 'modules');
+  const { source = 'v16', target = 'v21', platforms = platformOptions,
+    modules = moduleOptions, query = '', sort = 'severity' } = filters;
   const terms = query.normalize('NFKC').toLocaleLowerCase().trim().split(/\s+/u).filter(Boolean);
   return changes.filter(change => {
     if (!crossesVersion(change, source, target, latest)) return false;
-    const platforms = change.platforms ?? ['unknown'];
-    if (platform !== 'all' && platforms.length && !platforms.some(p => ['all', 'unknown', platform].includes(p))) return false;
-    const modules = change.modules ?? ['unknown'];
-    if (module !== 'all' && modules.length && !modules.some(m => ['all', 'unknown', module].includes(m))) return false;
+    if (!matchesOptions(change.platforms, platforms, platformOptions)) return false;
+    if (!matchesOptions(change.modules, modules, moduleOptions)) return false;
     const searchable = [
       change.id, ...(change.identifiers ?? []), change.action, change.threshold?.exact,
       ...Object.values(change.localizations ?? {}).flatMap(l => [l.one_line, l.paragraph]),
@@ -65,10 +109,11 @@ export function filterChanges(changes, filters = {}, latest = null) {
     ].filter(Boolean).join(' ').normalize('NFKC').toLocaleLowerCase();
     return terms.every(term => searchable.includes(term));
   }).sort((a, b) => {
-    const versionOrder = (versionNumber(a.threshold?.bucket, latest) ?? Infinity) - (versionNumber(b.threshold?.bucket, latest) ?? Infinity);
-    return (sort === 'version' ? versionOrder || 0 : stagePriorityForChange(a) - stagePriorityForChange(b) ||
-      priorityForChange(a) - priorityForChange(b)) ||
-      String(a.id).localeCompare(String(b.id));
+    const complexityOrder = COMPLEXITY_LEVELS.indexOf(complexityForChange(a)) -
+      COMPLEXITY_LEVELS.indexOf(complexityForChange(b));
+    const severityOrder = priorityForChange(a) - priorityForChange(b);
+    return (sort === 'complexity' ? complexityOrder || severityOrder : severityOrder) ||
+      (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   });
 }
 
@@ -80,7 +125,7 @@ export function validateCatalog(data) {
   for (const change of data.changes) {
     if (!change || typeof change.id !== 'string' || !change.id || ids.has(change.id) ||
         !change.threshold || !change.localizations || typeof change.localizations !== 'object' ||
-        Array.isArray(change.localizations) ||
+        Array.isArray(change.localizations) || !validComplexity(change) ||
         ['platforms', 'modules', 'identifiers', 'evidence', 'notices'].some(key =>
           change[key] !== undefined && !Array.isArray(change[key]))) throw new Error('invalidCatalog');
     ids.add(change.id);
@@ -92,6 +137,19 @@ export function validateCatalog(data) {
 
 export const translations = {
   en: {
+    directoryTitle: 'Find your migration changes', versions: 'Versions', filters: 'Filters', topics: 'Topics',
+    versionDirection: 'From current version to target version', linux: 'Linux',
+    selectAll: 'Select all', unselectAll: 'Unselect all',
+    selectPlatforms: 'Select all platforms', unselectPlatforms: 'Unselect all platforms',
+    selectTopics: 'Select all topics', unselectTopics: 'Unselect all topics',
+    complexity: 'Complexity', simple: 'Simple', moderate: 'Moderate', complex: 'Complex',
+    severityDirection: 'Highest severity first; unknown last.',
+    complexityDirection: 'Remediation difficulty: Simple → Moderate → Complex; Unknown last.',
+    complexityBasis: 'Why this difficulty',
+    summaryCaveat: 'This summary has not been independently checked. Verify the instructions in the linked source.',
+    sourceCaveat: 'This source could not be checked. Open the link to verify the claim before acting.',
+    detailLanguageNote: 'Supporting details retain their original language.',
+    emptyDirectory: 'Check your versions and filters. No results does not mean there are no migration issues.',
     'documentation-release-notes': 'Current official documentation · Release Notes',
     official_documentation: 'Official documentation', documentationChannel: 'Documentation route',
     'moving-current': 'Moving current (unversioned)', versioned: 'Versioned',
@@ -106,7 +164,7 @@ export const translations = {
     manualParent: 'Linked same-edition manual',
     navigationNote: 'Only this index view was extracted. Entries and other tabs are not automatically followed or cataloged.',
     urlHistory: 'Superseded URL attempts (not missing translations)', archiveTrace: 'Verified archive link path', upgrade: 'Upgrade',
-    actionBasis: 'Basis for action (source/editorial metadata)',
+    actionBasis: 'Why this action',
     php: 'PHP', printing: 'Printing', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Latest feature release', latestLts: 'Latest LTS release', releasedAt: 'Released on',
     featureChannelNote: 'Feature-release channel, not LTS or account-only hotfix/build verification.',
@@ -131,6 +189,19 @@ export const translations = {
     blocking: 'Blocking', critical: 'Critical', high: 'High', medium: 'Medium', low: 'Low', informational: 'Informational', restriction: 'Restriction', removed: 'Removed', deprecated: 'Deprecated', deprecation: 'Deprecation', introduced: 'Introduced', behavior: 'Behavior', syntax: 'Syntax', compilation: 'Compilation', runtime: 'Runtime', deployment: 'Deployment', testing: 'Testing', design: 'Design', languageModule: 'Language', all: 'All', binary: 'Binary', project: 'Project', in_scope: 'In scope', out_of_scope: 'Out of scope', conditional: 'Conditional', available: 'Available', failed: 'Failed', pending: 'Pending', resolved: 'Resolved', superseded: 'Superseded', unverified: 'Unverified', verified: 'Verified', missing: 'Missing', blocked: 'Blocked', error: 'Error', fetched: 'Retrieved', partial: 'Partial', not_attempted: 'Not attempted',
   },
   fr: {
+    directoryTitle: 'Trouvez les changements pour votre migration', versions: 'Versions', filters: 'Filtres', topics: 'Thèmes',
+    versionDirection: 'De la version actuelle à la version cible', linux: 'Linux',
+    selectAll: 'Tout sélectionner', unselectAll: 'Tout désélectionner',
+    selectPlatforms: 'Sélectionner toutes les plateformes', unselectPlatforms: 'Désélectionner toutes les plateformes',
+    selectTopics: 'Sélectionner tous les thèmes', unselectTopics: 'Désélectionner tous les thèmes',
+    complexity: 'Complexité', simple: 'Simple', moderate: 'Modérée', complex: 'Complexe',
+    severityDirection: 'Gravité décroissante ; inconnue en dernier.',
+    complexityDirection: 'Difficulté de mise en œuvre : simple → modérée → complexe ; inconnue en dernier.',
+    complexityBasis: 'Justification de la difficulté',
+    summaryCaveat: 'Ce résumé n’a pas été vérifié indépendamment. Vérifiez les instructions dans la source liée.',
+    sourceCaveat: 'Cette source n’a pas pu être vérifiée. Consultez le lien pour vérifier l’affirmation avant d’agir.',
+    detailLanguageNote: 'Les détails complémentaires conservent leur langue d’origine.',
+    emptyDirectory: 'Vérifiez vos versions et filtres. L’absence de résultats ne signifie pas l’absence de problèmes de migration.',
     'documentation-release-notes': 'Documentation officielle actuelle · Notes de version',
     official_documentation: 'Documentation officielle', documentationChannel: 'Route de documentation',
     'moving-current': 'Version courante évolutive (sans version dans l’URL)', versioned: 'Versionnée',
@@ -145,7 +216,7 @@ export const translations = {
     manualParent: 'Manuel lié de la même édition',
     navigationNote: 'Seule cette vue de l’index a été extraite. Les entrées et autres onglets ne sont pas automatiquement suivis ni catalogués.',
     urlHistory: 'Tentatives d’URL remplacées (pas des traductions absentes)', archiveTrace: 'Chemin vérifié des liens de l’archive', upgrade: 'Mise à niveau',
-    actionBasis: 'Fondement de l’action (métadonnées de source/éditoriales)',
+    actionBasis: 'Pourquoi cette action',
     php: 'PHP', printing: 'Impression', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Dernière version évolutive', latestLts: 'Dernière version LTS', releasedAt: 'Publié le',
     featureChannelNote: 'Canal des versions évolutives, distinct du LTS et sans vérification des correctifs/builds réservés aux comptes.',
@@ -170,6 +241,19 @@ export const translations = {
     blocking: 'Bloquant', critical: 'Critique', high: 'Élevé', medium: 'Moyen', low: 'Faible', informational: 'Informatif', restriction: 'Restriction', removed: 'Supprimé', deprecated: 'Déprécié', deprecation: 'Dépréciation', introduced: 'Introduit', behavior: 'Comportement', syntax: 'Syntaxe', compilation: 'Compilation', runtime: 'Exécution', deployment: 'Déploiement', testing: 'Tests', design: 'Conception', languageModule: 'Langage', all: 'Tous', binary: 'Binaire', project: 'Projet', in_scope: 'Dans le périmètre', out_of_scope: 'Hors périmètre', conditional: 'Conditionnel', available: 'Disponible', failed: 'Échec', pending: 'En attente', resolved: 'Résolu', superseded: 'Remplacé', unverified: 'Non vérifié', verified: 'Vérifié', missing: 'Manquant', blocked: 'Bloqué', error: 'Erreur', fetched: 'Récupéré', partial: 'Partiel', not_attempted: 'Non tenté',
   },
   de: {
+    directoryTitle: 'Änderungen für Ihre Migration finden', versions: 'Versionen', filters: 'Filter', topics: 'Themen',
+    versionDirection: 'Von der aktuellen Version zur Zielversion', linux: 'Linux',
+    selectAll: 'Alle auswählen', unselectAll: 'Alle abwählen',
+    selectPlatforms: 'Alle Plattformen auswählen', unselectPlatforms: 'Alle Plattformen abwählen',
+    selectTopics: 'Alle Themen auswählen', unselectTopics: 'Alle Themen abwählen',
+    complexity: 'Komplexität', simple: 'Einfach', moderate: 'Mittel', complex: 'Komplex',
+    severityDirection: 'Höchster Schweregrad zuerst; unbekannt zuletzt.',
+    complexityDirection: 'Schwierigkeit der Umsetzung: einfach → mittel → komplex; unbekannt zuletzt.',
+    complexityBasis: 'Begründung der Schwierigkeit',
+    summaryCaveat: 'Diese Zusammenfassung wurde nicht unabhängig geprüft. Prüfen Sie die Anweisungen in der verlinkten Quelle.',
+    sourceCaveat: 'Diese Quelle konnte nicht geprüft werden. Prüfen Sie die Aussage über den Link, bevor Sie handeln.',
+    detailLanguageNote: 'Ergänzende Details bleiben in ihrer Originalsprache.',
+    emptyDirectory: 'Prüfen Sie Versionen und Filter. Keine Ergebnisse bedeuten nicht, dass es keine Migrationsprobleme gibt.',
     'documentation-release-notes': 'Aktuelle offizielle Dokumentation · Versionshinweise',
     official_documentation: 'Offizielle Dokumentation', documentationChannel: 'Dokumentationsroute',
     'moving-current': 'Fortlaufend aktuell (unversionierte URL)', versioned: 'Versioniert',
@@ -184,7 +268,7 @@ export const translations = {
     manualParent: 'Verlinktes Handbuch derselben Ausgabe',
     navigationNote: 'Nur diese Indexansicht wurde extrahiert. Einträge und andere Reiter werden nicht automatisch verfolgt oder katalogisiert.',
     urlHistory: 'Ersetzte URL-Versuche (keine fehlenden Übersetzungen)', archiveTrace: 'Verifizierter Linkpfad im Archiv', upgrade: 'Upgrade',
-    actionBasis: 'Grundlage der Maßnahme (Quellen-/Redaktionsmetadaten)',
+    actionBasis: 'Begründung der Maßnahme',
     php: 'PHP', printing: 'Drucken', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Neueste Feature-Version', latestLts: 'Neueste LTS-Version', releasedAt: 'Veröffentlicht am',
     featureChannelNote: 'Feature-Versionskanal, nicht LTS; keine Prüfung kontogebundener Hotfixes/Builds.',
@@ -209,6 +293,19 @@ export const translations = {
     blocking: 'Blockierend', critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig', informational: 'Informativ', restriction: 'Einschränkung', removed: 'Entfernt', deprecated: 'Abgekündigt', deprecation: 'Abkündigung', introduced: 'Eingeführt', behavior: 'Verhalten', syntax: 'Syntax', compilation: 'Kompilierung', runtime: 'Laufzeit', deployment: 'Bereitstellung', testing: 'Tests', design: 'Entwurf', languageModule: 'Sprache', all: 'Alle', binary: 'Binär', project: 'Projekt', in_scope: 'Im Umfang', out_of_scope: 'Außerhalb des Umfangs', conditional: 'Bedingt', available: 'Verfügbar', failed: 'Fehlgeschlagen', pending: 'Ausstehend', resolved: 'Geklärt', superseded: 'Ersetzt', unverified: 'Unverifiziert', verified: 'Verifiziert', missing: 'Fehlend', blocked: 'Blockiert', error: 'Fehler', fetched: 'Abgerufen', partial: 'Teilweise', not_attempted: 'Nicht versucht',
   },
   es: {
+    directoryTitle: 'Encuentre los cambios para su migración', versions: 'Versiones', filters: 'Filtros', topics: 'Temas',
+    versionDirection: 'De la versión actual a la versión de destino', linux: 'Linux',
+    selectAll: 'Seleccionar todo', unselectAll: 'Deseleccionar todo',
+    selectPlatforms: 'Seleccionar todas las plataformas', unselectPlatforms: 'Deseleccionar todas las plataformas',
+    selectTopics: 'Seleccionar todos los temas', unselectTopics: 'Deseleccionar todos los temas',
+    complexity: 'Complejidad', simple: 'Simple', moderate: 'Moderada', complex: 'Compleja',
+    severityDirection: 'Mayor gravedad primero; desconocida al final.',
+    complexityDirection: 'Dificultad de aplicación: simple → moderada → compleja; desconocida al final.',
+    complexityBasis: 'Justificación de la dificultad',
+    summaryCaveat: 'Este resumen no se ha verificado de forma independiente. Verifique las instrucciones en la fuente enlazada.',
+    sourceCaveat: 'No se pudo verificar esta fuente. Abra el enlace para comprobar la afirmación antes de actuar.',
+    detailLanguageNote: 'Los detalles complementarios conservan su idioma original.',
+    emptyDirectory: 'Revise las versiones y los filtros. La ausencia de resultados no significa que no haya problemas de migración.',
     'documentation-release-notes': 'Documentación oficial actual · Notas de versión',
     official_documentation: 'Documentación oficial', documentationChannel: 'Ruta de documentación',
     'moving-current': 'Actual en evolución (URL sin versión)', versioned: 'Versionada',
@@ -223,7 +320,7 @@ export const translations = {
     manualParent: 'Manual enlazado de la misma edición',
     navigationNote: 'Solo se extrajo esta vista del índice. Las entradas y otras pestañas no se siguen ni se catalogan automáticamente.',
     urlHistory: 'Intentos de URL sustituidos (no traducciones ausentes)', archiveTrace: 'Ruta de enlaces del archivo verificada', upgrade: 'Actualización',
-    actionBasis: 'Fundamento de la acción (metadatos de fuente/editoriales)',
+    actionBasis: 'Motivo de esta medida',
     php: 'PHP', printing: 'Impresión', windows: 'Windows', macos: 'macOS',
     latestFeature: 'Última versión de funciones', latestLts: 'Última versión LTS', releasedAt: 'Publicado el',
     featureChannelNote: 'Canal de versiones de funciones, no LTS ni verificación de correcciones/compilaciones exclusivas de cuentas.',
@@ -248,6 +345,19 @@ export const translations = {
     blocking: 'Bloqueante', critical: 'Crítico', high: 'Alto', medium: 'Medio', low: 'Bajo', informational: 'Informativo', restriction: 'Restricción', removed: 'Eliminado', deprecated: 'Obsoleto', deprecation: 'Obsolescencia', introduced: 'Introducido', behavior: 'Comportamiento', syntax: 'Sintaxis', compilation: 'Compilación', runtime: 'Ejecución', deployment: 'Despliegue', testing: 'Pruebas', design: 'Diseño', languageModule: 'Lenguaje', all: 'Todos', binary: 'Binario', project: 'Proyecto', in_scope: 'Dentro del alcance', out_of_scope: 'Fuera del alcance', conditional: 'Condicional', available: 'Disponible', failed: 'Fallido', pending: 'Pendiente', resolved: 'Resuelto', superseded: 'Sustituido', unverified: 'Sin verificar', verified: 'Verificado', missing: 'Ausente', blocked: 'Bloqueado', error: 'Error', fetched: 'Recuperado', partial: 'Parcial', not_attempted: 'No intentado',
   },
   ja: {
+    directoryTitle: '移行に関係する変更を探す', versions: 'バージョン', filters: 'フィルター', topics: '分野',
+    versionDirection: '現在のバージョンから移行先のバージョンへ', linux: 'Linux',
+    selectAll: 'すべて選択', unselectAll: 'すべて選択解除',
+    selectPlatforms: 'すべてのプラットフォームを選択', unselectPlatforms: 'すべてのプラットフォームの選択を解除',
+    selectTopics: 'すべての分野を選択', unselectTopics: 'すべての分野の選択を解除',
+    complexity: '対応の難易度', simple: '簡単', moderate: '中程度', complex: '複雑',
+    severityDirection: '重大度の高い順。不明は最後。',
+    complexityDirection: '対応を実施する難しさ：簡単 → 中程度 → 複雑。不明は最後。',
+    complexityBasis: '難易度の根拠',
+    summaryCaveat: 'この要約は第三者による確認を受けていません。リンク先の出典で対応内容を確認してください。',
+    sourceCaveat: 'この出典は確認できませんでした。対応する前にリンク先で内容を確認してください。',
+    detailLanguageNote: '補足の詳細は原文の言語で表示します。',
+    emptyDirectory: 'バージョンとフィルターを確認してください。結果がなくても移行の問題がないとは限りません。',
     'documentation-release-notes': '現行の公式ドキュメント · リリースノート',
     official_documentation: '公式ドキュメント', documentationChannel: 'ドキュメントの URL 系統',
     'moving-current': '更新される現行版（バージョン指定なし）', versioned: 'バージョン指定版',
@@ -262,7 +372,7 @@ export const translations = {
     manualParent: 'リンクされている同一版のマニュアル',
     navigationNote: 'この索引ビューのみを抽出しました。リンク先の項目や他のタブを自動取得・カタログ化したわけではありません。',
     urlHistory: '置き換え済みの URL 試行（翻訳の欠落ではありません）', archiveTrace: '確認済みのアーカイブ内リンク経路', upgrade: 'アップグレード',
-    actionBasis: '対応の根拠（出典・編集メタデータ）',
+    actionBasis: '対応の根拠',
     php: 'PHP', printing: '印刷', windows: 'Windows', macos: 'macOS',
     latestFeature: '最新フィーチャーリリース', latestLts: '最新 LTS リリース', releasedAt: 'リリース日',
     featureChannelNote: 'フィーチャーリリースの公開チャネルです。LTS とは別であり、アカウント限定の修正・ビルドを検証するものではありません。',

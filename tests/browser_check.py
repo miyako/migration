@@ -1,0 +1,245 @@
+"""Optional real-Chrome regression checks; no browser packages ship with the site."""
+import argparse
+from copy import deepcopy
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+import json
+from pathlib import Path
+from threading import Thread
+
+from playwright.sync_api import sync_playwright
+
+ROOT = Path(__file__).resolve().parents[1]
+CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+PALETTE = {"v16": "#8331AE", "v17": "#3E8B93", "v18": "#EB8E5F",
+           "v19": "#5682DF", "v20": "#E23089", "v21": "#3B69E9"}
+
+
+class Handler(SimpleHTTPRequestHandler):
+    def do_GET(self):
+        if not self.path.startswith("/migration/"):
+            self.send_error(404)
+            return
+        self.path = self.path.removeprefix("/migration")
+        super().do_GET()
+
+    def log_message(self, *args):
+        pass
+
+
+def check(page, condition, message):
+    assert page.evaluate(condition), message
+
+
+def ids(page):
+    return page.locator("[data-change-id]").evaluate_all("(cards) => cards.map(c => c.dataset.changeId)")
+
+
+def controls(page):
+    return page.evaluate("""() => ({
+      source: document.querySelector('#source-version').value,
+      target: document.querySelector('#target-version').value,
+      query: document.querySelector('#search').value,
+      sort: document.querySelector('#sort').value,
+      language: document.querySelector('#language').value,
+      theme: document.querySelector('#theme').value,
+      platforms: [...document.querySelectorAll('[name=platforms]:checked')].map(c => c.value),
+      modules: [...document.querySelectorAll('[name=modules]:checked')].map(c => c.value)
+    })""")
+
+
+def run(base, screenshots):
+    catalog = json.loads((ROOT / "site/data/catalog.json").read_text())
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(
+            executable_path=str(CHROME) if CHROME.exists() else None, headless=True)
+        context = browser.new_context(viewport={"width": 1280, "height": 1000}, locale="en")
+        page = context.new_page()
+        errors, failed = [], []
+        page.on("pageerror", lambda error: errors.append(str(error)))
+        page.on("requestfailed", lambda request: failed.append(request.url))
+        page.goto(base)
+        page.wait_for_selector("[data-change-id]")
+        assert ids(page) == ["chg-colon-identifiers", "chg-bundled-php-dom-removal",
+                             "chg-pdfcreator-driver-deprecation"]
+        assert page.locator("#sort option").all_text_contents() == ["Severity", "Complexity"]
+        assert page.get_by_role("group", name="Platform", exact=True).count() == 1
+        assert page.get_by_role("group", name="Topics", exact=True).count() == 1
+        check(page, r"""() => {
+          const v = document.querySelector('.version-selectors').getBoundingClientRect();
+          const f = document.querySelector('.toolbar').getBoundingClientRect();
+          return v.bottom < f.top &&
+            document.querySelector('#source-version').offsetHeight >
+            document.querySelector('#search').offsetHeight;
+        }""", "Versions must precede filters and have larger controls")
+        check(page, "() => !document.querySelector('#coverage, .view-nav, .scope-notice')",
+              "No operational dashboards or scope banners")
+        assert "Candidate" not in page.locator("body").inner_text()
+        # Verify every version color, not merely the presence of the icon.
+        for version, color in PALETTE.items():
+            page.select_option("#source-version", version)
+            actual = page.locator("#source-icon").evaluate(
+                "el => getComputedStyle(el).color")
+            rgb = tuple(int(color[i:i + 2], 16) for i in (1, 3, 5))
+            assert actual == f"rgb{rgb}"
+            assert page.input_value("#source-version") == version
+        page.select_option("#target-version", "latest")
+        assert "21 R4" in page.locator("#target-version option:checked").inner_text()
+        assert page.locator("#target-icon").evaluate("el => getComputedStyle(el).color") == "rgb(59, 105, 233)"
+        page.select_option("#source-version", "v19")
+        page.fill("#search", "PHP")
+        page.select_option("#sort", "complexity")
+        # Scope isolation assertions compare every unrelated control's exact state.
+        for group in ("platforms", "modules"):
+            other = "modules" if group == "platforms" else "platforms"
+            for action in ("none", "all"):
+                before = controls(page)
+                page.locator(f'[data-group="{group}"][data-select="{action}"]').click()
+                after = controls(page)
+                for key in ("source", "target", "query", "sort", "language", "theme", other):
+                    assert after[key] == before[key], (group, action, key, before, after)
+                count = page.locator(f'[name="{group}"]:checked').count()
+                assert count == (0 if action == "none" else page.locator(f'[name="{group}"]').count())
+                if action == "none":
+                    assert ids(page) == []
+                    assert page.locator(".empty").is_visible()
+            checkbox = page.locator(f'[name="{group}"]').first
+            before = controls(page)
+            checkbox.uncheck()
+            after = controls(page)
+            assert all(after[key] == before[key] for key in before if key != group)
+            checkbox.check()
+        before = controls(page)
+        page.click("#reset")
+        after = controls(page)
+        assert all(after[key] == before[key] for key in ("source", "target", "language", "theme"))
+        assert after["query"] == "" and after["sort"] == "severity"
+        # Only unknown platforms selects the two explicitly unknown sample records.
+        page.locator('[data-group=platforms][data-select=none]').click()
+        page.locator('[name=platforms][value=unknown]').check()
+        assert ids(page) == ["chg-colon-identifiers", "chg-bundled-php-dom-removal"]
+        page.click("#reset")
+        page.locator("[data-change-id]").first.get_by_text("Evidence", exact=True).click()
+        assert page.locator(".evidence-list a").first.is_visible()
+        assert page.locator(".evidence-list a").first.get_attribute("href").startswith("https://")
+        assert page.locator(".summary-caveat").count() == 3
+        labels = {"en": ("Filters", "Complexity"), "fr": ("Filtres", "Complexité"),
+                  "de": ("Filter", "Komplexität"), "es": ("Filtros", "Complejidad"),
+                  "ja": ("フィルター", "対応の難易度")}
+        for locale, (filters, complexity_label) in labels.items():
+            page.select_option("#language", locale)
+            assert page.locator("html").get_attribute("lang") == locale
+            assert page.locator("#filters-heading").inner_text() == filters
+            assert page.locator("#sort option[value=complexity]").inner_text() == complexity_label
+            for theme in ("light", "dark"):
+                page.select_option("#theme", theme)
+                assert page.locator("html").get_attribute("data-theme") == theme
+                check(page, """() => {
+                  const luminance = color => {
+                    const channels = color.match(/\\d+/g).slice(0, 3).map(
+                      x => +x / 255).map(x => x <= .04045 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4);
+                    return channels[0] * .2126 + channels[1] * .7152 + channels[2] * .0722;
+                  };
+                  return [...document.querySelectorAll('button')].every(el => {
+                    const style = getComputedStyle(el);
+                    const a = luminance(style.color), b = luminance(style.backgroundColor);
+                    return (Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5;
+                  });
+                }""", f"Button text contrast: {locale}/{theme}")
+                for width in (1280, 375, 320):
+                    page.set_viewport_size({"width": width, "height": 1000})
+                    check(page, "() => document.documentElement.scrollWidth <= innerWidth",
+                          f"No horizontal overflow: {locale}/{theme}/{width}")
+                    check(page, """() => [...document.querySelectorAll('input,select')].every(
+                      el => el.labels.length && el.labels[0].textContent.trim()) &&
+                      [...document.querySelectorAll('button')].every(
+                      el => el.textContent.trim() && el.getAttribute('aria-label') !== '')""",
+                          f"Accessible control names: {locale}")
+                    assert page.locator(".version-direction").get_attribute("aria-label")
+                if screenshots and locale in ("en", "ja"):
+                    page.screenshot(path=str(screenshots / f"{locale}-{theme}-mobile.png"), full_page=True)
+            before = controls(page)
+            page.reload()
+            page.wait_for_selector("[data-change-id]")
+            assert page.input_value("#language") == before["language"]
+            assert page.input_value("#theme") == before["theme"]
+        page.select_option("#language", "en")
+        page.select_option("#theme", "light")
+        page.set_viewport_size({"width": 1280, "height": 1000})
+        if screenshots:
+            page.screenshot(path=str(screenshots / "en-light-desktop.png"), full_page=True)
+        # Exercise actual render/sort using explicitly documented test-only classifications.
+        fixture = deepcopy(catalog)
+        fixture["changes"] = []
+        for identifier, level, severity in (
+                ("unknown", "unknown", "blocking"), ("complex", "complex", "high"),
+                ("moderate", "moderate", "low"), ("simple-b", "simple", "high"),
+                ("simple-a", "simple", "high"), ("severity-unknown", "unknown", "unknown")):
+            record = deepcopy(catalog["changes"][0])
+            record.update(id=identifier, criticality=severity, platforms=["windows"],
+                          complexity={"level": level, "basis": "Test-only documented procedure.",
+                                      "evidence_source_ids": [record["evidence"][0]["source_id"]]})
+            fixture["changes"].append(record)
+        page.route("**/data/catalog.json", lambda route: route.fulfill(json=fixture))
+        page.reload()
+        page.wait_for_selector("[data-change-id]")
+        assert ids(page) == ["unknown", "complex", "simple-a", "simple-b", "moderate", "severity-unknown"]
+        before = controls(page)
+        page.select_option("#sort", "complexity")
+        assert ids(page) == ["simple-a", "simple-b", "moderate", "complex", "unknown", "severity-unknown"]
+        after = controls(page)
+        assert all(before[key] == after[key] for key in before if key != "sort")
+        assert "Simple" in page.locator(".card").first.inner_text()
+        assert "Unknown last" in page.locator("#sort-hint").inner_text()
+        page.select_option("#sort", "severity")
+        assert ids(page)[0] == "unknown" and ids(page)[-1] == "severity-unknown"
+        fixture["changes"][0].pop("complexity")
+        page.reload()
+        page.wait_for_selector("[data-change-id]")
+        assert "Complexity: Unknown" in page.locator(".card").first.inner_text()
+        # Source errors stay contextual to evidence; invalid data and fetch failures are explicit.
+        source = next(s for s in fixture["sources"] if s["id"] == fixture["changes"][0]["evidence"][0]["source_id"])
+        source["fetch"].update(status="failed", error="Test source unavailable")
+        page.reload()
+        page.wait_for_selector("[data-change-id]")
+        assert page.get_by_text("Test source unavailable", exact=True).first.is_visible()
+        assert page.get_by_text("This source could not be checked.", exact=False).first.is_visible()
+        fixture["changes"][0]["complexity"] = {"level": "invented"}
+        page.reload()
+        page.wait_for_selector("#message.error")
+        assert ids(page) == []
+        page.unroute("**/data/catalog.json")
+        page.route("**/data/catalog.json", lambda route: route.fulfill(status=503, body="Unavailable"))
+        page.reload()
+        page.wait_for_selector("#message.error")
+        assert "reload" in page.locator("#message").inner_text()
+        assert ids(page) == []
+        page.unroute("**/data/catalog.json")
+        page.add_init_script("Storage.prototype.setItem = () => { throw new Error('Denied'); }")
+        page.reload()
+        page.wait_for_selector("[data-change-id]")
+        page.select_option("#language", "en")
+        assert "preferences" in page.locator("#message.error").inner_text()
+        assert errors == [], errors
+        assert failed == [], failed
+        context.close()
+        browser.close()
+    print("Browser checks passed: /migration/, hierarchy, scoped controls, sort, unknowns, "
+          "5 locales, themes, mobile, version icons, persistence and errors.")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--screenshots", type=Path)
+    args = parser.parse_args()
+    if args.screenshots:
+        args.screenshots.mkdir(parents=True, exist_ok=True)
+    server = ThreadingHTTPServer(("127.0.0.1", 0), partial(Handler, directory=ROOT / "site"))
+    thread = Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        run(f"http://127.0.0.1:{server.server_port}/migration/", args.screenshots)
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join()

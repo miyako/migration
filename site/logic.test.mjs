@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, versionChoices, isLatestAvailable, crossesVersion,
-  priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate } from './logic.mjs';
+  priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
+  complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
   id, threshold: { exact: '20 R3', bucket, kind: 'introduced' }, type: 'restriction',
@@ -100,19 +101,34 @@ test('offline search matches exact identifiers, multiple words, and all localiza
   assert.equal(filterChanges(records, { query: '   ' }).length, 2);
 });
 
-test('unknown platform and module remain visible; specific nonmatches are filtered', () => {
+test('checkboxes have explicit unknowns, union within groups, intersection between groups and empty means none', () => {
   const records = [
     change('windows', 'v20', { platforms: ['windows'], modules: ['language'] }),
     change('mac', 'v20', { platforms: ['macos'], modules: ['sql'] }),
     change('unknown', 'v20', { platforms: ['unknown'], modules: ['unknown'] }),
     change('missing', 'v20', { platforms: [], modules: [] }),
   ];
-  assert.deepEqual(filterChanges(records, { platform: 'windows', module: 'language' }).map(c => c.id),
-    ['missing', 'unknown', 'windows']);
+  assert.deepEqual(filterChanges(records, { platforms: ['windows'], modules: ['language'] }).map(c => c.id),
+    ['windows']);
+  assert.deepEqual(filterChanges(records, { platforms: ['unknown'], modules: ['unknown'] }).map(c => c.id),
+    ['missing', 'unknown']);
+  assert.deepEqual(filterChanges(records, { platforms: ['windows', 'macos'], modules: ['language', 'sql'] }).map(c => c.id),
+    ['mac', 'windows']);
+  for (const key of ['platforms', 'modules']) {
+    assert.equal(filterChanges(records, { [key]: [] }).length, 0);
+    assert.ok(filterOptions(records, key).includes('unknown'));
+  }
+  const universal = change('universal', 'v20', { platforms: ['all'] });
+  assert.equal(filterChanges([universal], { platforms: ['windows'] }).length, 1);
+  assert.equal(filterChanges([universal], { platforms: ['unknown'] }).length, 0);
+  const universalModule = change('universal-module', 'v20', { modules: ['all'] });
+  assert.equal(filterChanges([universalModule]).length, 1);
+  assert.equal(filterChanges([universalModule], { modules: [] }).length, 0);
+  assert.equal(filterChanges([universalModule], { modules: ['unknown'] }).length, 0);
   assert.equal(filterChanges(records).length, 4);
 });
 
-test('directory priority sorts stage before severity and leaves input unmodified', () => {
+test('severity is highest first independent of stage, with unknown last and stable ID ties', () => {
   const records = [
     change('low', 'v18', { criticality: 'low', stage: 'syntax' }),
     change('block', 'v20', { criticality: 'blocking', stage: 'testing' }),
@@ -120,8 +136,7 @@ test('directory priority sorts stage before severity and leaves input unmodified
   ];
   assert.equal(priorityForChange(records[1]), 0);
   assert.equal(stagePriorityForChange(records[0]), 0);
-  assert.deepEqual(filterChanges(records).map(c => c.id), ['low', 'block', 'unknown']);
-  assert.deepEqual(filterChanges(records, { sort: 'version' }).map(c => c.id), ['low', 'unknown', 'block']);
+  assert.deepEqual(filterChanges(records).map(c => c.id), ['block', 'low', 'unknown']);
   assert.deepEqual(records.map(c => c.id), ['low', 'block', 'unknown']);
   const withinStage = [
     change('a-low', 'v20', { stage: 'syntax', criticality: 'low' }),
@@ -130,7 +145,56 @@ test('directory priority sorts stage before severity and leaves input unmodified
     change('modernization-block', 'v20', { stage: 'modernization', criticality: 'blocking' }),
   ];
   assert.deepEqual(filterChanges(withinStage).map(c => c.id),
-    ['z-block', 'a-low', 'runtime-block', 'modernization-block']);
+    ['modernization-block', 'runtime-block', 'z-block', 'a-low']);
+  assert.deepEqual(filterChanges([...withinStage].reverse()).map(c => c.id),
+    filterChanges(withinStage).map(c => c.id));
+});
+
+const complexity = level => ({ level, basis: 'Documented replacement procedure.',
+  evidence_source_ids: ['source'] });
+test('complexity is remediation difficulty, simple to complex, unknown last; ties by severity then stable ID', () => {
+  const records = [
+    change('unknown', 'v20', { criticality: 'blocking' }),
+    change('complex', 'v20', { criticality: 'low', complexity: complexity('complex') }),
+    change('moderate', 'v20', { complexity: complexity('moderate') }),
+    change('simple-low', 'v20', { criticality: 'low', complexity: complexity('simple') }),
+    change('simple-a', 'v20', { complexity: complexity('simple') }),
+    change('simple-b', 'v20', { complexity: complexity('simple') }),
+    change('unknown-explicit', 'v20', { complexity: { level: 'unknown' } }),
+  ];
+  assert.deepEqual(COMPLEXITY_LEVELS, ['simple', 'moderate', 'complex', 'unknown']);
+  assert.equal(complexityForChange(records[0]), 'unknown');
+  const filters = { source: 'v19', target: 'v21', platforms: ['windows'], modules: ['language'], sort: 'complexity' };
+  const snapshot = structuredClone(filters);
+  assert.deepEqual(filterChanges(records, filters).map(c => c.id),
+    ['simple-a', 'simple-b', 'simple-low', 'moderate', 'complex', 'unknown', 'unknown-explicit']);
+  assert.deepEqual(filters, snapshot);
+  assert.deepEqual(filterChanges([...records].reverse(), filters), filterChanges(records, filters));
+  assert.equal(filterChanges(records, { ...filters, sort: 'severity' })[0].id, 'moderate');
+});
+
+test('complexity validation requires a supported level and documented evidence for known difficulty', () => {
+  const base = { schema_version: 1, coverage: {}, latest: {}, semantic_search: {}, sources: [], changes: [] };
+  for (const level of COMPLEXITY_LEVELS) {
+    const record = change(level, 'v20', { complexity: complexity(level), evidence: [{ source_id: 'source' }] });
+    assert.equal(validateCatalog({ ...base, changes: [record] }).changes[0], record);
+  }
+  for (const invalid of [null, [], 'simple', { level: 'easy' }, { level: 'simple' },
+    { level: 'moderate', basis: ' ', evidence_source_ids: ['source'] },
+    { level: 'complex', basis: 'Reason', evidence_source_ids: ['unrelated'] }]) {
+    assert.throws(() => validateCatalog({ ...base, changes: [change('bad', 'v20', { complexity: invalid })] }), /invalidCatalog/);
+  }
+});
+
+test('version icons use exact supplied palette, including concrete latest, without invented future colors', () => {
+  assert.deepEqual(VERSION_COLORS, {
+    v15: '#D74635', v16: '#8331AE', v17: '#3E8B93', v18: '#EB8E5F',
+    v19: '#5682DF', v20: '#E23089', v21: '#3B69E9',
+  });
+  for (const [version, color] of Object.entries(VERSION_COLORS)) assert.equal(versionColor(version), color);
+  assert.equal(versionColor('latest', { release: '21 R4' }), VERSION_COLORS.v21);
+  assert.equal(versionColor('latest', { release: '22' }), null);
+  assert.equal(versionColor('latest'), null);
 });
 
 test('directory has no planner controls, API or storage access and retains preferences and filters', async () => {
@@ -139,7 +203,7 @@ test('directory has no planner controls, API or storage access and retains prefe
       readFile(new URL(path, import.meta.url), 'utf8')));
   for (const source of [html, app, logic, css]) {
     assert.doesNotMatch(source, /checklist|textarea|check-label|button-group|\beffort\b|import-file|createObjectURL/i);
-    assert.doesNotMatch(source, /(?:type\s*=\s*["']|\.type\s*=\s*["'])(?:checkbox|file)["']/i);
+    assert.doesNotMatch(source, /(?:type\s*=\s*["']|\.type\s*=\s*["'])file["']/i);
   }
   for (const id of ['search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
     assert.ok(html.includes(`id="${id}"`), id);
@@ -148,6 +212,10 @@ test('directory has no planner controls, API or storage access and retains prefe
   assert.deepEqual([...app.matchAll(/localStorage\.(\w+)\(([^,\n)]+)/g)].map(match => match.slice(1)),
     [['getItem', 'PREFS'], ['setItem', 'PREFS']]);
   assert.match(app, /JSON\.stringify\(\{ language: state\.language, theme: state\.theme \}\)/);
+  assert.match(app, /checkbox\.type = 'checkbox'/);
+  assert.doesNotMatch(html, /id="coverage"|view-nav|scope-notice|semantic-status/);
+  assert.doesNotMatch(app, /renderCoverage|renderSources|renderClarifications/);
+  assert.deepEqual([...html.matchAll(/<option value="(severity|complexity)"/g)].map(m => m[1]), ['severity', 'complexity']);
   for (const language of LANGUAGES) {
     assert.ok(translations[language].preferencesError);
     for (const key of ['checklist', 'localOnly', 'export', 'import', 'complete', 'effort', 'saved',
@@ -178,8 +246,9 @@ test('every declarative HTML label has a translation in each language', async ()
   }
 });
 
-test('known sample module/platform labels are localized and priority matches stage-first sorting', () => {
-  assert.equal(translate('en', 'priority'), 'Stage, then severity');
+test('known sample module/platform and complexity labels are localized', () => {
+  assert.equal(translate('en', 'criticality'), 'Severity');
+  assert.equal(translate('en', 'complexity'), 'Complexity');
   assert.equal(translate('en', 'latestFeature'), 'Latest feature release');
   for (const language of LANGUAGES) {
     assert.equal(translate(language, 'php'), 'PHP');

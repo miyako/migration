@@ -137,7 +137,8 @@ The remaining available pages, other removed PHP modules, compiler requirements,
 conversion-guide child pages, historical deduplication/alignment, and broader
 version/platform coverage still need editorial processing. Unresolved localized
 locations are not guessed or silently replaced with English. No results never means an upgrade
-has no issues. The UI exposes these counts and each source's status.
+has no issues. These audit counts and source statuses remain in repository data
+and this documentation, rather than in the visitor interface.
 
 The verified **latest public feature release** is **4D 21 R4**, released
 2026-10-12, checked 2026-10-26 against the
@@ -228,8 +229,26 @@ document edition. Lingering deprecations and explicit target requirements can
 remain relevant even when introduced before the source version. Optional
 `applies_until` bounds temporary workarounds; do not assume an intermediate
 workaround is required at the final target. Unknown platform/format records
-remain visible for assessment. Prioritize syntax, then compilation, runtime,
-and optional modernization; deprecation is not removal. The v20 sample does not
+remain visible by default through an explicit Unknown checkbox. Unchecking all
+platforms or topics means no matches. Group Select all / Unselect all and Reset
+filters never change versions or language/theme. The version pair is visually
+primary, with the supplied 4D icon colored by version and explicit direction/text.
+Latest uses its resolved concrete major's color, not an invented next version.
+
+Sort choices are **Severity** (highest first, unknown last; default) and
+**Complexity** (Simple → Moderate → Complex → Unknown). Complexity is the
+difficulty of applying documented remediation, independent of severity or stage,
+not comprehension difficulty or an effort estimate. Severity ties use stable ID;
+complexity ties use severity then stable ID. All three samples remain Unknown.
+The optional schema-v1 `complexity` object has a typed `level`; known levels
+require a documented `basis` and `evidence_source_ids` referencing the record's
+evidence. Missing metadata means unknown; validators reject unsupported or
+unsubstantiated known classifications. See [UI details](site/README.md).
+
+Technical coverage, provenance and clarification dashboards are not visitor
+navigation. Each change retains localized summaries and evidence, with concise
+actionable caveats for unchecked text or unavailable sources. No planner features
+are present. Deprecation is not removal. The v20 sample does not
 independently verify behavior in every later release.
 
 ## Reproducible ingestion and editorial updates
