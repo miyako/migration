@@ -8,19 +8,371 @@
     "reason": "Upgrade is a distinct source family. The overview describes features added since v15 R5; new-feature headings are not automatically migration requirements or exact introduction thresholds. Structural extraction and linked-section inspection do not mean complete cataloging. Linked conversion/deprecation sources remain distinct; failed conversion/opening stays outside scope."
   },
   {
-    "id": "scope-successful-opening",
+    "id": "content-v16-overview-children-en",
+    "source_id": "legacy-v16-deprecated-en",
+    "heading": "DEPRECATED AND REMOVED FEATURES",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v16-overview-children-fr",
+    "source_id": "legacy-v16-deprecated-fr",
+    "heading": "FONCTIONNALITÉS OBSOLÈTES OU SUPPRIMÉES",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Fonctionnalites-obsoletes-ou-supprimees.100-3072039.fr.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v16-overview-children-de",
+    "source_id": "legacy-v16-deprecated-de",
+    "heading": "ÜBERHOLTE UND ENTFERNTE FUNKTIONALITÄTEN",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Uberholte-und-entfernte-Funktionalitaten.100-3072039.de.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v16-overview-children-es",
+    "source_id": "legacy-v16-deprecated-es",
+    "heading": "FUNCIONALIDADES OBSOLETAS Y ELIMINADAS",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Funcionalidades-obsoletas-y-eliminadas.100-3072039.es.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v16-overview-children-ja",
+    "source_id": "legacy-v16-deprecated-ja",
+    "heading": "廃止予定の機能と削除された機能",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.ja.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v17-overview-children-en",
+    "source_id": "legacy-v17-deprecated-en",
+    "heading": "DEPRECATED AND REMOVED FEATURES",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v17-overview-children-fr",
+    "source_id": "legacy-v17-deprecated-fr",
+    "heading": "FONCTIONNALITÉS OBSOLÈTES OU SUPPRIMÉES",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Fonctionnalites-obsoletes-ou-supprimees.100-3761900.fr.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v17-overview-children-de",
+    "source_id": "legacy-v17-deprecated-de",
+    "heading": "ÜBERHOLTE UND ENTFERNTE FUNKTIONALITÄTEN",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Uberholte-und-entfernte-Funktionalitaten.100-3761900.de.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v17-overview-children-es",
+    "source_id": "legacy-v17-deprecated-es",
+    "heading": "FUNCIONALIDADES OBSOLETAS Y ELIMINADAS",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Funcionalidades-obsoletas-y-eliminadas.100-3761900.es.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v17-overview-children-ja",
+    "source_id": "legacy-v17-deprecated-ja",
+    "heading": "廃止予定の機能と削除された機能",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.ja.html",
+    "status": "pending",
+    "reason": "The registered page is an overview, not the full detailed manual. Its DOM and actual child links were inspected; the product-range features, deprecated-command list and quick-table child pages have not been fetched or cataloged in this batch. No introduction threshold can be inferred from this overview's edition."
+  },
+  {
+    "id": "content-v18-remaining-deprecated-commands-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Language: deprecated commands",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4840747",
+    "status": "pending",
+    "reason": "Only the four Compiler-theme declarations and the separate OBJECT SET FONT parameter rule are cataloged from this cumulative deprecated-command section. Remaining command rows (backup, data entry, drag/drop, form events/forms, graphs, lists/list-box properties, objects, pictures, printing, mobile, SQL, string conversions, subrecords, document APIs, platform queries, user forms, sessions and mail) remain pending. Obsolete supported commands must not be reclassified as runtime removals."
+  },
+  {
+    "id": "content-v18-user-forms-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "User Forms",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801070",
+    "status": "pending",
+    "reason": "Narrative examined: user forms are deprecated since 17 R4 and explicitly remain supported for compatibility, with Dynamic Forms recommended. Not a removal. Separate feature/command summaries remain pending."
+  },
+  {
+    "id": "content-v18-http-variable-assignment-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Dynamic assignment of variables received through HTTP",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801036",
+    "status": "pending",
+    "reason": "Narrative examined: compatibility-dependent assignment remains enabled by default for databases created before 13.4, even though automatic assignment is not maintained for newer databases. The v14 narrative must not be treated as a global removal. WEB GET VARIABLES and WEB GET BODY PART / WEB Get body part count are documented alternatives; conditional editorial records remain pending."
+  },
+  {
+    "id": "content-v18-subtables-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Subtables",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801040",
+    "status": "pending",
+    "reason": "Narrative examined: new SubTable fields cannot be created since v11, but existing converted subtables are still supported. The source explicitly postpones removal. Detailed relational redesign and list/code examples remain pending; no blanket SubTable removal or compulsory project conversion is published."
+  },
+  {
+    "id": "content-v18-legacy-file-apis-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "File and folder APIs on Mac",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801055",
+    "status": "pending",
+    "reason": "Narrative examined: Mac OS 9 file/folder APIs are deprecated since 16 R6 and renamed commands remain supported. Path to object / Object to path are alternatives. Atomic command summaries and cross-edition obsolescence differences (for example Document type v12 versus API family 16 R6) remain pending."
+  },
+  {
+    "id": "content-v18-numeric-standard-actions-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Code-based standard actions",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801006",
+    "status": "pending",
+    "reason": "Narrative and DOM list examined: converted standard actions are remapped transparently, while numeric code-based language APIs are deprecated from 16 R3. Atomic named-API replacements remain pending; do not turn automatic remapping into mandatory project conversion."
+  },
+  {
+    "id": "content-v18-resource-forks-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Mac Resources",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801058",
+    "status": "pending",
+    "reason": "Narrative and DOM list examined: resource-fork persistence is discouraged, Windows emulates it in .RSR, and write/create resource commands are removed. Those explicit v18 removal-table commands are cataloged under stable IDs. Additional STR# to XLIFF, reading/opening .RSR, icon and Resources-folder guidance remains pending; read support is not globally declared removed."
+  },
+  {
+    "id": "content-v18-summary-only-features-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Summary Table",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4850732",
+    "status": "pending",
+    "reason": "Summary-table rows are cross-checked against detailed sections; they do not independently establish introduction dates. Management of CPU priority, legacy networking/ServerNet and 4D Mobile/ORDA remain pending (Mobile explicitly deprecated from v18, not removed). v18-only 4D Write and 4D View removal rows have no exact removal date here and remain pending. Already cataloged repeated rows are not separate changes."
+  },
+  {
+    "id": "content-v19-remaining-deprecated-commands-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "Language: deprecated commands",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#5455489",
+    "status": "pending",
+    "reason": "Only the four Compiler-theme declarations and the separate OBJECT SET FONT parameter rule are cataloged from this cumulative deprecated-command section. Remaining command rows (backup, data entry, drag/drop, form events/forms, graphs, lists/list-box properties, objects, pictures, printing, mobile, SQL, string conversions, subrecords, document APIs, platform queries, user forms, sessions and mail) remain pending. Obsolete supported commands must not be reclassified as runtime removals."
+  },
+  {
+    "id": "content-v19-user-forms-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "User Forms",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#4801070",
+    "status": "pending",
+    "reason": "Narrative examined: user forms are deprecated since 17 R4 and explicitly remain supported for compatibility, with Dynamic Forms recommended. Not a removal. Separate feature/command summaries remain pending."
+  },
+  {
+    "id": "content-v19-http-variable-assignment-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "Dynamic assignment of variables received through HTTP",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#4801036",
+    "status": "pending",
+    "reason": "Narrative examined: compatibility-dependent assignment remains enabled by default for databases created before 13.4, even though automatic assignment is not maintained for newer databases. The v14 narrative must not be treated as a global removal. WEB GET VARIABLES and WEB GET BODY PART / WEB Get body part count are documented alternatives; conditional editorial records remain pending."
+  },
+  {
+    "id": "content-v19-subtables-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "Subtables",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#4801040",
+    "status": "pending",
+    "reason": "Narrative examined: new SubTable fields cannot be created since v11, but existing converted subtables are still supported. The source explicitly postpones removal. Detailed relational redesign and list/code examples remain pending; no blanket SubTable removal or compulsory project conversion is published."
+  },
+  {
+    "id": "content-v19-legacy-file-apis-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "File and folder APIs on Mac",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#4801055",
+    "status": "pending",
+    "reason": "Narrative examined: Mac OS 9 file/folder APIs are deprecated since 16 R6 and renamed commands remain supported. Path to object / Object to path are alternatives. Atomic command summaries and cross-edition obsolescence differences (for example Document type v12 versus API family 16 R6) remain pending."
+  },
+  {
+    "id": "content-v19-numeric-standard-actions-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "Code-based standard actions",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#4801006",
+    "status": "pending",
+    "reason": "Narrative and DOM list examined: converted standard actions are remapped transparently, while numeric code-based language APIs are deprecated from 16 R3. Atomic named-API replacements remain pending; do not turn automatic remapping into mandatory project conversion."
+  },
+  {
+    "id": "content-v19-resource-forks-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "Mac Resources",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#4801058",
+    "status": "pending",
+    "reason": "Narrative and DOM list examined: resource-fork persistence is discouraged, Windows emulates it in .RSR, and write/create resource commands are removed. Those explicit v18 removal-table commands are cataloged under stable IDs. Additional STR# to XLIFF, reading/opening .RSR, icon and Resources-folder guidance remains pending; read support is not globally declared removed."
+  },
+  {
+    "id": "content-v19-summary-only-features-en",
+    "source_id": "legacy-v19-deprecated-en",
+    "heading": "Summary Table",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html#5432985",
+    "status": "pending",
+    "reason": "Summary-table rows are cross-checked against detailed sections; they do not independently establish introduction dates. Management of CPU priority, legacy networking/ServerNet and 4D Mobile/ORDA remain pending (Mobile explicitly deprecated from v18, not removed). v18-only 4D Write and 4D View removal rows have no exact removal date here and remain pending. Already cataloged repeated rows are not separate changes."
+  },
+  {
+    "id": "content-v20-remaining-deprecated-commands-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Language: deprecated commands",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5802169",
+    "status": "pending",
+    "reason": "Only the four Compiler-theme declarations and the separate OBJECT SET FONT parameter rule are cataloged from this cumulative deprecated-command section. Remaining command rows (backup, data entry, drag/drop, form events/forms, graphs, lists/list-box properties, objects, pictures, printing, mobile, SQL, string conversions, subrecords, document APIs, platform queries, user forms, sessions and mail) remain pending. Obsolete supported commands must not be reclassified as runtime removals."
+  },
+  {
+    "id": "content-v20-user-forms-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "User Forms",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#4801070",
+    "status": "pending",
+    "reason": "Narrative examined: user forms are deprecated since 17 R4 and explicitly remain supported for compatibility, with Dynamic Forms recommended. Not a removal. Separate feature/command summaries remain pending."
+  },
+  {
+    "id": "content-v20-http-variable-assignment-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Dynamic assignment of variables received through HTTP",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#4801036",
+    "status": "pending",
+    "reason": "Narrative examined: compatibility-dependent assignment remains enabled by default for databases created before 13.4, even though automatic assignment is not maintained for newer databases. The v14 narrative must not be treated as a global removal. WEB GET VARIABLES and WEB GET BODY PART / WEB Get body part count are documented alternatives; conditional editorial records remain pending."
+  },
+  {
+    "id": "content-v20-subtables-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Subtables",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6434852",
+    "status": "pending",
+    "reason": "Narrative examined: new SubTable fields cannot be created since v11, but existing converted subtables are still supported. The source explicitly postpones removal. Detailed relational redesign and list/code examples remain pending; no blanket SubTable removal or compulsory project conversion is published."
+  },
+  {
+    "id": "content-v20-legacy-file-apis-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "File and folder APIs on Mac",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#4801055",
+    "status": "pending",
+    "reason": "Narrative examined: Mac OS 9 file/folder APIs are deprecated since 16 R6 and renamed commands remain supported. Path to object / Object to path are alternatives. Atomic command summaries and cross-edition obsolescence differences (for example Document type v12 versus API family 16 R6) remain pending."
+  },
+  {
+    "id": "content-v20-numeric-standard-actions-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Code-based standard actions",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#4801006",
+    "status": "pending",
+    "reason": "Narrative and DOM list examined: converted standard actions are remapped transparently, while numeric code-based language APIs are deprecated from 16 R3. Atomic named-API replacements remain pending; do not turn automatic remapping into mandatory project conversion."
+  },
+  {
+    "id": "content-v20-resource-forks-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Mac Resources",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#4801058",
+    "status": "pending",
+    "reason": "Narrative and DOM list examined: resource-fork persistence is discouraged, Windows emulates it in .RSR, and write/create resource commands are removed. Those explicit v18 removal-table commands are cataloged under stable IDs. Additional STR# to XLIFF, reading/opening .RSR, icon and Resources-folder guidance remains pending; read support is not globally declared removed."
+  },
+  {
+    "id": "content-v20-summary-only-features-en",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Summary Table",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6259911",
+    "status": "pending",
+    "reason": "Summary-table rows are cross-checked against detailed sections; they do not independently establish introduction dates. Management of CPU priority, legacy networking/ServerNet and 4D Mobile/ORDA remain pending (Mobile explicitly deprecated from v18, not removed). v18-only 4D Write and 4D View removal rows have no exact removal date here and remain pending. Already cataloged repeated rows are not separate changes."
+  },
+  {
+    "id": "content-v18-platform-interface-ambiguity-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Language: removed commands",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801076",
+    "status": "pending",
+    "reason": "All 31 unambiguous 17 R5 removal-table rows are cataloged atomically. The remaining _o_Get platform interface/_o_SET PLATFORM INTERFACE row is unresolved: it appears in the removal table, yet its replacement column says it can be used in converted applications with Automatic Platform. Preserve that contextual caveat; do not assert a universal removal or publish an unverified product-error issue."
+  },
+  {
+    "id": "content-v18-project-conversion-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Legacy technologies (project compliance)",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801012",
+    "status": "out_of_scope",
+    "reason": "Project export/conversion warnings, errors, automatic form-object conversions and reset compatibility settings are not conversion troubleshooting in this directory. Conversion is not mandatory. The two explicit post-opening runtime calls GET PICTURE FROM LIBRARY and SAVE LIST have separate project-only records with unknown introduction releases."
+  },
+  {
+    "id": "content-v18-project-form-conversion-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Form objects and properties",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801015",
+    "status": "out_of_scope",
+    "reason": "This section describes project export/conversion effects, not an independently evidenced post-opening blocker. Conversion/opening failures go to official 4D Support; binary-to-project conversion is not assumed mandatory."
+  },
+  {
+    "id": "content-v18-project-structure-conversion-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Database structure options",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801018",
+    "status": "out_of_scope",
+    "reason": "This section describes project export/conversion effects, not an independently evidenced post-opening blocker. Conversion/opening failures go to official 4D Support; binary-to-project conversion is not assumed mandatory."
+  },
+  {
+    "id": "content-v18-project-compatibility-reset-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Compatibility settings",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801024",
+    "status": "out_of_scope",
+    "reason": "This section describes project export/conversion effects, not an independently evidenced post-opening blocker. Conversion/opening failures go to official 4D Support; binary-to-project conversion is not assumed mandatory."
+  },
+  {
+    "id": "content-v18-remaining-project-toolbox-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Toolbox",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801021",
+    "status": "pending",
+    "reason": "GET PICTURE FROM LIBRARY and SAVE LIST are cataloged only for already opened projects. Remaining Toolbox rows (picture export, editable-by-user list option, LIST OF CHOICE LISTS, reserved group/user names) need separate runtime-versus-export analysis; no binary-mode removal is inferred."
+  },
+  {
+    "id": "content-v18-xslt-linked-pdf-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "XSLT commands",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801009",
+    "status": "pending",
+    "reason": "Three XSLT commands are cataloged atomically at 17 R5 from the removal table, with final-target caveat: the historical bundled PHP libxslt workaround is unavailable in v20 (separate LibXSLT removal record). PROCESS 4D TAGS is only suggested for text/HTML generation, not asserted as a general XSLT engine. The linked XSLT/PHP PDF has not been fetched or cataloged."
+  },
+  {
+    "id": "content-v18-quickdraw-font-context-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Mac OS QuickDraw fonts no longer supported",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801046",
+    "status": "pending",
+    "reason": "OBJECT SET FONT's string-name requirement is cataloged with unknown exact release. The narrative calls QuickDraw fonts deprecated while the summary table says removed; _o_Font name remains supported for compatibility. No global font-family removal is asserted. Resolve the contextual mismatch before publishing separate font-availability claims."
+  },
+  {
+    "id": "content-v18-quickdraw-plugin-context-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "API QuickDraw for plug-ins",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801049",
+    "status": "pending",
+    "reason": "Summary says QuickDraw plug-in API removed, but detailed prose describes compatibility via a GWorld offscreen area and separate old/new toolbox rules. Exact platform/release and API behavior require linked SDK evidence; no universal removed-API record is asserted."
+  },
+  {
+    "id": "content-v18-cpu-priority-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "Management of CPU priority",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4801064",
+    "status": "pending",
+    "reason": "CPU-priority changes are described as obsolete and counterproductive; the DOM list describes converted-database controls and explicitly dates renamed SET DATABASE PARAMETER scheduler selectors to 16 R2. The UI change's original date is unspecified. Atomic API/control records remain pending."
+  },
+  {
+    "id": "content-v18-mobile-en",
+    "source_id": "legacy-v18-deprecated-en",
+    "heading": "4D Mobile",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html#4850723",
+    "status": "pending",
+    "reason": "4D Mobile is explicitly deprecated from v18, with ORDA and 4D REST Server as alternatives. It is not stated removed. Connectivity-modernization records remain outside this blocker-first subset."
+  },
+  {
+    "id": "content-v20-object-notation-opening-failure-en",
     "source_id": "legacy-v20-deprecated-en",
     "heading": "Non-compliance with object notation",
     "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6291899",
     "status": "out_of_scope",
-    "reason": "Failure to convert or open is outside this reference: contact official 4D Support. Post-opening object-notation and compiler requirements need separate evidence-backed records; they have not yet been cataloged."
-  },
-  {
-    "id": "queue-interprocess-deprecation",
-    "source_id": "legacy-v20-deprecated-en",
-    "heading": "Interprocess variables",
-    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5868705",
-    "status": "pending",
-    "reason": "The cumulative v20 edition labels these deprecated, not removed. Exact introduction threshold and cross-edition alignment still need review; do not infer a v20 removal."
+    "reason": "The cannot-open/error -10537 path is excluded: contact official 4D Support. The first paragraph's post-opening code-compliance and permanent-option requirement is separately cataloged as chg-object-notation-compliance for successfully opened binary databases only."
   }
 ]
