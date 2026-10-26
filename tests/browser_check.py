@@ -5,11 +5,18 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
+from shutil import copytree
+import sys
 from threading import Thread
+from tempfile import TemporaryDirectory
 
 from playwright.sync_api import sync_playwright
+from cache_transition import transition
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from tools.publish import publish
+
 CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 PALETTE = {"v16": "#8331AE", "v17": "#3E8B93", "v18": "#EB8E5F",
            "v19": "#5682DF", "v20": "#E23089", "v21": "#3B69E9"}
@@ -48,11 +55,21 @@ def controls(page):
     })""")
 
 
-def run(base, screenshots):
+def run(base, screenshots, published):
     catalog = json.loads((ROOT / "site/data/catalog.json").read_text())
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(
             executable_path=str(CHROME) if CHROME.exists() else None, headless=True)
+        transition(browser, ROOT, ROOT / "site", expect_failure=True)
+        transition(browser, ROOT, published, expect_failure=False)
+        with TemporaryDirectory() as directory:
+            source, next_release = Path(directory) / "source", Path(directory) / "published"
+            copytree(ROOT / "site", source)
+            # A logic-only future release must also invalidate the importing app and CSS.
+            with (source / "logic.mjs").open("a") as stream:
+                stream.write("\n// Next-release cache regression fixture.\n")
+            publish(source, next_release)
+            transition(browser, ROOT, next_release, expect_failure=False, previous=published)
         context = browser.new_context(viewport={"width": 1280, "height": 1000}, locale="en")
         page = context.new_page()
         errors, failed = [], []
@@ -60,6 +77,12 @@ def run(base, screenshots):
         page.on("requestfailed", lambda request: failed.append(request.url))
         page.goto(base)
         page.wait_for_selector("[data-change-id]")
+        cdp = context.new_cdp_session(page)
+        cdp.send("Network.enable")
+        cdp.send("Network.setCacheDisabled", {"cacheDisabled": True})
+        page.reload()
+        page.wait_for_selector("[data-change-id]")
+        cdp.send("Network.setCacheDisabled", {"cacheDisabled": False})
         assert ids(page) == ["chg-colon-identifiers", "chg-bundled-php-dom-removal",
                              "chg-pdfcreator-driver-deprecation"]
         assert page.locator("#sort option").all_text_contents() == ["Severity", "Complexity"]
@@ -234,12 +257,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.screenshots:
         args.screenshots.mkdir(parents=True, exist_ok=True)
-    server = ThreadingHTTPServer(("127.0.0.1", 0), partial(Handler, directory=ROOT / "site"))
-    thread = Thread(target=server.serve_forever, daemon=True)
-    thread.start()
-    try:
-        run(f"http://127.0.0.1:{server.server_port}/migration/", args.screenshots)
-    finally:
-        server.shutdown()
-        server.server_close()
-        thread.join()
+    with TemporaryDirectory() as directory:
+        published = Path(directory)
+        publish(ROOT / "site", published)
+        server = ThreadingHTTPServer(("127.0.0.1", 0), partial(Handler, directory=published))
+        thread = Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            run(f"http://127.0.0.1:{server.server_port}/migration/", args.screenshots, published)
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join()

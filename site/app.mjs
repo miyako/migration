@@ -248,7 +248,7 @@ $('reset').addEventListener('click', () => {
 });
 render();
 try {
-  const response = await fetch('./data/catalog.json', { credentials: 'omit' });
+  const response = await fetch(new URL('./data/catalog.json', import.meta.url), { credentials: 'omit' });
   if (!response.ok) throw new Error('loadError');
   state.catalog = validateCatalog(await response.json());
 } catch {

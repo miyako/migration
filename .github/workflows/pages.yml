@@ -22,10 +22,10 @@ jobs:
           node-version: '22'
       - run: python3 -m unittest discover -s tests -v
       - run: node --test site/logic.test.mjs
-      - run: python3 -m tools.catalog
+      - run: python3 -m tools.publish
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

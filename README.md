@@ -154,10 +154,10 @@ Requirements: Python 3.12+ and Node 22+ for tests; **no package install** is nee
 The browser uses only native ES modules, CSS, and local JSON.
 
 ```sh
-python3 -m tools.catalog
+python3 -m tools.publish
 python3 -m unittest discover -s tests -v
 node --test site/logic.test.mjs
-python3 -m http.server 8000 --bind 127.0.0.1 --directory site
+python3 -m http.server 8000 --bind 127.0.0.1 --directory _site
 ```
 
 Open `http://127.0.0.1:8000/`. Use HTTP, not `file://`, because the app fetches its
@@ -166,10 +166,17 @@ or another GitHub Pages subpath. There is no service worker/offline-install clai
 search requires no model or network after the page and local assets have loaded.
 
 `.github/workflows/pages.yml` builds and validates pull requests without fetching
-sources. Pushes to `main` deploy the `site/` artifact using GitHub Pages Actions.
+sources. Pushes to `main` deploy the `_site/` artifact using GitHub Pages Actions.
 Select **Settings → Pages → Source → GitHub Actions** before the first deployment.
 Opening this foundation PR does not merge or deploy it. Generated `site/data/`
-is ignored and rebuilt from the committed editorial inputs.
+and `_site/` are ignored and rebuilt from the committed editorial inputs.
+The Python publisher generates a content-derived release directory for modules,
+CSS, SVG and catalog JSON, then points the root HTML at that release. Any runtime
+file change changes the whole release URL namespace; native module imports and
+catalog fetches stay within it. This prevents new markup from reusing fresh but
+incompatible modules at a previous release's stable URLs. No manual cache-query
+bump, runtime dependency or service worker is needed. Serve `site/` only for
+source development; publish `_site/`, not the unversioned source directory.
 
 ## Architecture and data contract
 
@@ -190,6 +197,7 @@ is ignored and rebuilt from the committed editorial inputs.
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
 | `tools/discover_docs.py` | Four-seed bounded modern Release Notes discovery/fetch; actual same-edition locale routes only |
 | `tools/catalog.py` | Fail-fast schema/domain validation, ID deduplication, overrides and deterministic publication |
+| `tools/publish.py` | Content-addressed, release-coherent static Pages artifact |
 | `site/` | One shared multilingual app; no on-demand classification or translation |
 
 Each change is **one actionable change**, not a whole release note. Editorially

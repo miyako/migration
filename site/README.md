@@ -1,10 +1,25 @@
 # Static migration directory
 
-Serve this directory with any static HTTP server after `python3 -m tools.catalog`.
+For source development, serve this directory after `python3 -m tools.catalog`.
+For publication, run `python3 -m tools.publish` and serve/upload `_site/` instead.
 No build dependencies, external assets, backend, or runtime AI/GitHub requests are
 required. `./data/catalog.json`, scripts, styles, and the version SVG use relative
 URLs, including under a GitHub Pages `/migration/` subpath. Missing or invalid
 data displays a localized actionable error, never a successful empty directory.
+
+The publisher gives the complete runtime asset set a shared content-derived
+`assets/<sha256>/` namespace. Root HTML points to that release's app, CSS and SVG;
+the app's native logic import and module-relative catalog URL resolve within the
+same namespace. Changes to HTML, modules, styles, SVG or data change all asset
+URLs automatically. This avoids a real HTTP-cache failure: new HTML without
+`#coverage` could previously reuse a still-fresh pre-UX `app.mjs` containing
+`renderCoverage()`, causing `area.replaceChildren` to throw. There is no stale
+renderer in current source and no null guard or restored dashboard is needed.
+GitHub Pages may still cache the root HTML for its normal lifetime; this change
+ensures newly fetched HTML cannot select assets from another release. It does
+not promise offline access or retention of previous releases on Pages.
+An already-open tab or cached legacy HTML cannot be updated retroactively;
+users seeing the old failure may need one force refresh after deployment.
 
 ```sh
 node --test site/logic.test.mjs
@@ -88,7 +103,15 @@ available, run:
 python3 tests/browser_check.py
 ```
 
-It serves its own ephemeral `/migration/` site and exercises actual DOM behavior:
+Generate the catalog first (`python3 -m tools.catalog`). The check builds and
+serves the actual publication artifact under an ephemeral `/migration/` site.
+It primes the actual pre-UX release (`fc6054b`, requiring repository history)
+with `Cache-Control: max-age=600`, switches the same origin to new HTML without
+clearing the browser cache, and verifies the obsolete module's real cache reuse
+and `replaceChildren` error. It then verifies a successful transition to the
+fixed artifact and a future logic-only release, including module/CSS/SVG/catalog
+requests and a cache-disabled hard reload with pageerror capture.
+It also exercises actual DOM behavior:
 version isolation, scoped checkbox actions, empty results, both sort orders with
 known and unknown classifications, all locales, both themes, mobile layout,
 version colors, evidence and failure states. Optional `--screenshots DIR` saves
