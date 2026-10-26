@@ -22,7 +22,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache"
 LANGUAGES = ("en", "fr", "de", "es", "ja")
-EXTRACTOR_VERSION = 2
+EXTRACTOR_VERSION = 3
 
 
 def load(path):
@@ -101,7 +101,8 @@ def extract(html, url):
                      for n in nodes if n.tag == "html"), "")
     # Legacy DOM contains malformed p/table nesting. Walk in document order rather
     # than relying on well-formed paragraph descendants.
-    scope = next((n for n in nodes if "entry-content" in n.attrs.get("class", "").split()), None)
+    modern_scope = next((n for n in nodes if "theme-doc-markdown" in n.attrs.get("class", "").split()), None)
+    scope = modern_scope or next((n for n in nodes if "entry-content" in n.attrs.get("class", "").split()), None)
     if scope is None:
         scope = next((n for n in nodes if n.tag == "article"), dom)
     navigation_scope = next((n for n in nodes if n.attrs.get("id") == "Title_list"), None)
@@ -132,15 +133,34 @@ def extract(html, url):
                 if target:
                     tabs.append({"label": target.text(), "url": urljoin(url, target.attrs["href"]),
                                  "selected": "selected" in n.attrs.get("class", "").split()})
+    heading_anchor = ""
     for n in nodes:
         if n not in active:
+            continue
+        ancestor = n
+        while ancestor is not scope and ancestor is not None:
+            if ancestor.tag in {"nav", "footer", "aside", "script", "style"}:
+                break
+            ancestor = ancestor.parent
+        if ancestor is not scope:
             continue
         if re.fullmatch(r"h[1-6]", n.tag):
             level = int(n.tag[1])
             headings = [(depth, text) for depth, text in headings if depth < level]
-            headings.append((level, n.text()))
-        if n.tag not in {"p", "tr", "pre"}:
+            headings.append((level, n.text().replace("\u200b", "").strip() if modern_scope else n.text()))
+            heading_anchor = n.attrs.get("id", "")
+        if n.tag not in ({"p", "tr", "pre", "li"} if modern_scope else {"p", "tr", "pre"}):
             continue
+        if modern_scope:
+            ancestors = []
+            parent = n.parent
+            while parent and parent is not scope:
+                ancestors.append(parent.tag)
+                parent = parent.parent
+            if (n.tag != "tr" and "table" in ancestors) or "pre" in ancestors:
+                continue
+            if n.tag == "li" and any(c.tag in {"p", "table", "pre"} for c in n.walk() if c is not n):
+                continue
         if legacy:
             ancestor = n.parent
             while ancestor and not ancestor.attrs.get("id", "").startswith("Paragraph_text_"):
@@ -159,6 +179,11 @@ def extract(html, url):
         if n.tag == "p" and any(c.tag in {"table", "tr", "pre"} for c in n.walk() if c is not n):
             continue
         text = n.code().strip() if n.tag == "pre" else n.text()
+        if modern_scope and n.tag == "li":
+            text = re.sub(r"\s+", " ", " ".join(
+                c.text() if isinstance(c, Node) else c for c in n.children
+                if not isinstance(c, Node) or c.tag not in {"ul", "ol"}
+            )).strip()
         if not text:
             continue
         cells = [c.text() for c in n.children if isinstance(c, Node) and c.tag in {"td", "th"}]
@@ -171,10 +196,11 @@ def extract(html, url):
             if first:
                 header = [c.text() for c in first.children if isinstance(c, Node) and c.tag in {"td", "th"}]
         anchor = (ancestor.attrs.get("id", "") if navigation_index else
-                  ancestor.attrs.get("id", "").removeprefix("Paragraph_text_") if legacy else n.attrs.get("id", ""))
+                  ancestor.attrs.get("id", "").removeprefix("Paragraph_text_") if legacy else
+                  n.attrs.get("id", "") or (heading_anchor if modern_scope else ""))
         block_id = hashlib.sha256(("\n".join(t for _, t in headings) + "\n" + n.tag + "\n" + text).encode()).hexdigest()[:16]
         block = {
-            "id": block_id, "kind": {"p": "paragraph", "tr": "table_row", "pre": "code"}[n.tag],
+            "id": block_id, "kind": {"p": "paragraph", "tr": "table_row", "pre": "code", "li": "list_item"}[n.tag],
             "headings": [t for _, t in headings], "text": text, "cells": cells,
             "table_header": header, "anchor": anchor,
             "url": url.split("#")[0] + ("#" + anchor if anchor else ""),
@@ -185,7 +211,28 @@ def extract(html, url):
                          target_url=urljoin(url, target.attrs["href"]) if target else None,
                          markers=[span.text() for span in n.walk() if "tdc_toc_upd" in span.attrs.get("class", "").split()])
         blocks.append(block)
+    metadata = {n.attrs.get("name"): n.attrs.get("content") for n in nodes if n.tag == "meta"}
+    documentation = None
+    if metadata.get("docusaurus_version"):
+        documentation = {
+            "version": metadata["docusaurus_version"],
+            "locale": metadata.get("docusaurus_locale"),
+            "canonical_url": next((urljoin(url, n.attrs["href"]) for n in nodes
+                                   if n.tag == "link" and n.attrs.get("rel") == "canonical"), None),
+            "channel_label": next((n.text() for n in nodes if
+                                   "theme-doc-version-badge" in n.attrs.get("class", "").split()), None),
+            "article_scope": modern_scope is not None,
+            "release_headings": [n.text().replace("\u200b", "").strip() for n in (modern_scope.walk() if modern_scope else [])
+                                 if n.tag == "h2"],
+            "locale_links": [{"language": n.attrs["hreflang"], "url": urljoin(url, n.attrs["href"])}
+                             for n in nodes if n.tag == "link" and n.attrs.get("rel") == "alternate"
+                             and n.attrs.get("hreflang") not in {None, "x-default"}],
+            "version_links": [{"label": n.text(), "url": urljoin(url, n.attrs["href"])}
+                              for n in nodes if n.tag == "a" and "dropdown__link" in n.attrs.get("class", "").split()
+                              and not n.attrs.get("lang") and "/Notes/updates" in n.attrs.get("href", "")],
+        }
     return {"extractor_version": EXTRACTOR_VERSION, "title": title, "language": language,
+            "documentation": documentation,
             "content_kind": "navigation_index" if navigation_index else "article",
             "navigation": {"heading": navigation_heading, "tabs": tabs} if navigation_index else None,
             "blocks": blocks, "links": links, "alternates": alternates}
@@ -211,6 +258,8 @@ def extraction_metadata(extracted, entry):
     if extracted["content_kind"] == "navigation_index":
         metadata["navigation_entry_count"] = len(extracted["blocks"])
         metadata["selected_tab"] = next((tab["label"] for tab in extracted["navigation"]["tabs"] if tab["selected"]), None)
+    if extracted.get("documentation"):
+        metadata["documentation"] = extracted["documentation"]
     if entry.get("manual_document_key"):
         pattern = "." + entry["manual_document_key"] + "." + entry["language"] + ".html"
         metadata["manual_document_urls"] = sorted({link["url"] for link in extracted["links"]
@@ -234,11 +283,16 @@ def initial_registry(config, locations=None):
         identifiers.add(seed["id"])
         if urlsplit(seed["url"]).scheme != "https" or not urlsplit(seed["url"]).netloc:
             raise ValueError(f"Source must use HTTPS: {seed['id']}")
-        if seed["family"] != "blog-overview" and ".en.html" not in seed["url"]:
+        modern = seed["family"] == "documentation-release-notes"
+        if modern:
+            route = documentation_route(seed["url"])
+            if route["language"] != "en" or route["channel"] != seed.get("documentation_channel"):
+                raise ValueError(f"Modern seed requires an English route with an explicit matching channel: {seed['id']}")
+        if seed["family"] != "blog-overview" and not modern and ".en.html" not in seed["url"]:
             raise ValueError(f"Legacy discovery requires an .en.html seed: {seed['id']}")
         for language in LANGUAGES if seed["family"] != "blog-overview" else ("en",):
             identifier = seed["id"] + "-" + language
-            location = locations.get(identifier)
+            location = None if modern and language == "en" else locations.get(identifier)
             if language != "en" and location is None:
                 continue
             entry = dict(seed)
@@ -246,8 +300,9 @@ def initial_registry(config, locations=None):
             entry["language"] = language
             entry["url"] = location["url"] if location else seed["url"]
             entry.update({
-                "publisher": "4D", "authority": "official_documentation_mirror" if seed["family"] != "blog-overview" else "official_publisher",
-                "host_operator": "4D Japan archive" if seed["family"] != "blog-overview" else "4D",
+                "publisher": "4D", "authority": "official_documentation" if modern else
+                "official_documentation_mirror" if seed["family"] != "blog-overview" else "official_publisher",
+                "host_operator": "4D" if modern or seed["family"] == "blog-overview" else "4D Japan archive",
                 "discovery": location["discovery"] if location else {"parent": None, "method": "provided_seed"},
                 "fetch": {"status": "not_fetched"},
             })
@@ -262,6 +317,8 @@ def merge_registry(configured, existing):
         previous = by_id.get(entry["id"], {})
         if previous.get("url") == entry["url"]:
             entry = {**previous, **{k: v for k, v in entry.items() if k != "fetch"}}
+            if entry.get("family") == "documentation-release-notes" and previous.get("fetch", {}).get("documentation"):
+                entry["edition"] = previous["edition"]
         elif previous:
             entry = {**entry, "url_history": previous.get("url_history", []) + [{
                 "url": previous["url"], "resolved_url": previous.get("resolved_url"),
@@ -279,6 +336,59 @@ class CurlResponse(io.BytesIO):
         self.status = metadata["http_code"]
         self.url = metadata["url_effective"]
         self.headers = headers
+
+
+def documentation_route(url):
+    parsed = urlsplit(url)
+    if parsed.scheme != "https" or parsed.netloc != "developer.4d.com" or parsed.query or parsed.fragment:
+        raise ValueError(f"Not an official release-note route: {url}")
+    match = re.fullmatch(r"/docs/(?:(fr|de|es|ja|pt)/)?(?:(\d+(?:-R\d+)?)/)?Notes/updates/?", parsed.path)
+    if not match:
+        raise ValueError(f"Not a release-note route: {url}")
+    return {"language": match[1] or "en", "version": match[2],
+            "channel": "versioned" if match[2] else "moving-current"}
+
+
+def source_availability(extracted, entry):
+    status = availability(extracted, entry["language"])
+    if status != "available" or entry.get("family") != "documentation-release-notes":
+        return status
+    documentation = extracted.get("documentation")
+    if not documentation or not documentation["article_scope"]:
+        return "documentation_unverified"
+    requested = documentation_route(entry["url"])
+    resolved = documentation_route(entry.get("resolved_url", entry["url"]))
+    if resolved["language"] != entry["language"] or documentation["locale"] != entry["language"]:
+        return "language_mismatch"
+    if (requested != resolved or (requested["version"] and documentation["version"] != requested["version"])
+            or documentation["canonical_url"] != entry.get("resolved_url", entry["url"])):
+        return "edition_mismatch"
+    return status
+
+
+def content_fingerprint(extracted):
+    return hashlib.sha256("\n".join(block["text"] for block in extracted["blocks"]).encode()).hexdigest()
+
+
+def verify_documentation_locale(extracted, entry):
+    if entry.get("family") != "documentation-release-notes" or entry["language"] == "en":
+        return
+    english_id = entry["id"].rsplit("-", 1)[0] + "-en"
+    path = CACHE / "extracts" / (english_id + ".json")
+    if not path.exists():
+        entry["fetch"].update(status="translation_unverified", error=f"Fetch {english_id} before verifying localized content.")
+        return
+    english = load(path)
+    if (english.get("documentation") or {}).get("version") != extracted["documentation"]["version"]:
+        entry["fetch"].update(status="translation_unverified", error=f"Refresh {english_id}: its cached documentation edition differs.")
+        return
+    entry["fetch"]["locale_comparison"] = {
+        "english_source_id": english_id, "english_content_sha256": content_fingerprint(english),
+        "localized_content_sha256": content_fingerprint(extracted),
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review.",
+    }
+    if content_fingerprint(extracted) == content_fingerprint(english):
+        entry["fetch"].update(status="locale_fallback", error="Article content is identical to English; not verified as a translation.")
 
 
 def open_source(request, transport):
@@ -348,7 +458,9 @@ def fetch_one(entry, refresh=False, transport="urllib"):
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(html, encoding="utf-8")
                 save(extracted_path, extracted)
-            status = availability(extracted, entry["language"])
+            status = source_availability(extracted, entry)
+            if status == "available" and entry.get("family") == "documentation-release-notes":
+                entry["edition"] = extracted["documentation"]["version"].replace("-R", " R")
             entry["title"] = extracted["title"]
             entry["fetch"] = {
                 "status": status, "checked_at": checked, "fetched_at": checked,
@@ -363,6 +475,8 @@ def fetch_one(entry, refresh=False, transport="urllib"):
             if status == "available" and entry.get("manual_document_key") and not entry["fetch"]["manual_document_urls"]:
                 entry["fetch"]["status"] = "manual_unverified"
                 entry["fetch"]["error"] = f"Expected same-edition manual parent {entry['manual_document_key']} is not linked"
+            if entry["fetch"]["status"] == "available":
+                verify_documentation_locale(extracted, entry)
             return entry, extracted["alternates"]
     except HTTPError as error:
         if error.code == 304:
@@ -373,13 +487,17 @@ def fetch_one(entry, refresh=False, transport="urllib"):
                 extracted = extract(path.read_text(encoding="utf-8"), entry.get("resolved_url", entry["url"]))
                 save(extracted_path, extracted)
                 entry["fetch"]["block_count"] = len(extracted["blocks"])
-            entry["fetch"]["status"] = availability(extracted, entry["language"])
+            entry["fetch"]["status"] = source_availability(extracted, entry)
+            if entry["fetch"]["status"] == "available" and entry.get("family") == "documentation-release-notes":
+                entry["edition"] = extracted["documentation"]["version"].replace("-R", " R")
             entry["fetch"].update(extraction_metadata(extracted, entry))
             if entry["fetch"]["status"] == "available" and entry.get("manual_document_key") and not entry["fetch"]["manual_document_urls"]:
                 entry["fetch"]["status"] = "manual_unverified"
                 entry["fetch"]["error"] = f"Expected same-edition manual parent {entry['manual_document_key']} is not linked"
             else:
                 entry["fetch"].pop("error", None)
+            if entry["fetch"]["status"] == "available":
+                verify_documentation_locale(extracted, entry)
             return entry, extracted["alternates"]
         entry["resolved_url"] = error.url
         entry["fetch"] = {**old, "status": "unavailable" if error.code in {404, 410} else "http_error",

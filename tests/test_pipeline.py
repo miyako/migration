@@ -12,8 +12,11 @@ from urllib.parse import urljoin
 from urllib.request import urlopen
 
 from tools.catalog import apply_overrides, bucket, build, merge_candidates, validate, verify_evidence
-from tools.ingest import availability, CurlResponse, DOM, extract, fetch_one, initial_registry, merge_registry, load, ROOT
+from tools.ingest import (availability, CurlResponse, DOM, extract, fetch_one, initial_registry,
+                          merge_registry, load, ROOT, documentation_route, source_availability,
+                          verify_documentation_locale, save, EXTRACTOR_VERSION)
 from tools.discover_archive import ArchiveNavigator, directory_links, document_identity, matching_documents
+from tools.discover_docs import linked_locales
 
 
 class Versions(unittest.TestCase):
@@ -177,16 +180,170 @@ class Extraction(unittest.TestCase):
             self.assertEqual(load(Path(directory) / "extracts/s.json")["blocks"][0]["text"], "Cached rule.")
 
 
+class ModernDocumentation(unittest.TestCase):
+    url = "https://developer.4d.com/docs/20/Notes/updates"
+
+    def setUp(self):
+        self.html = (ROOT / "tests/fixtures/modern-release-notes.html").read_text()
+        self.extracted = extract(self.html, self.url)
+        self.entry = {"id": "fixture-en", "family": "documentation-release-notes",
+                      "url": self.url, "resolved_url": self.url, "language": "en",
+                      "edition": "20", "documentation_channel": "versioned", "fetch": {"status": "not_fetched"}}
+
+    def test_article_heading_table_code_list_and_anchor_context(self):
+        blocks = self.extracted["blocks"]
+        self.assertFalse(any("noise" in b["text"] for b in blocks))
+        self.assertEqual([b["text"] for b in blocks if b["kind"] == "list_item"], ["Outer context", "Nested rule."])
+        self.assertEqual(sum(b["text"] == "A paragraph in a list." for b in blocks), 1)
+        row = next(b for b in blocks if b["cells"] == ["Example()", "New fixture behavior"])
+        self.assertEqual(row["table_header"], ["API", "Change"])
+        self.assertEqual(row["headings"], ["Release Notes", "4D 20.9 LTS", "Compatibility"])
+        self.assertEqual(row["url"], self.url + "#compatibility")
+        self.assertFalse(any(b["kind"] == "paragraph" and b["text"] == "Example()" for b in blocks))
+        self.assertEqual(next(b["text"] for b in blocks if b["kind"] == "code"), "if (x < 2)\n  run()")
+        self.assertEqual(blocks[-1]["url"], self.url + "#release-20")
+        self.assertIn({"text": "Details", "url": "https://developer.4d.com/docs/20/API/example#method"}, self.extracted["links"])
+
+    def test_locale_links_are_actual_version_routes_and_german_is_not_guessed(self):
+        source = {**self.entry, "fetch": {"checked_at": "2026-10-26T00:00:00+00:00", "sha256": "a" * 64}}
+        found, missing = linked_locales({"id": "fixture", "url": self.url}, self.extracted, source)
+        self.assertEqual(set(found), {"fixture-en", "fixture-fr", "fixture-es", "fixture-ja"})
+        self.assertEqual(found["fixture-fr"]["url"], "https://developer.4d.com/docs/fr/20/Notes/updates")
+        self.assertEqual(missing[0]["id"], "fixture-de")
+        self.assertEqual(missing[0]["status"], "not_linked")
+        self.assertEqual(missing[0]["supported_site_languages"], ["en", "es", "fr", "ja", "pt"])
+        self.assertNotIn("url", missing[0])
+        bad = deepcopy(self.extracted)
+        bad["documentation"]["locale_links"][1]["url"] = "https://developer.4d.com/docs/fr/19/Notes/updates"
+        with self.assertRaisesRegex(ValueError, "changes requested edition"):
+            linked_locales({"id": "fixture", "url": self.url}, bad, source)
+
+    def test_route_identity_does_not_collapse_current_and_versioned(self):
+        self.assertEqual(documentation_route("https://developer.4d.com/docs/Notes/updates"),
+                         {"language": "en", "version": None, "channel": "moving-current"})
+        self.assertEqual(documentation_route("https://developer.4d.com/docs/ja/21/Notes/updates"),
+                         {"language": "ja", "version": "21", "channel": "versioned"})
+        for url in ("https://developer.4d.com/docs/21/fr/Notes/updates",
+                    "https://example.test/docs/20/Notes/updates", self.url + "?locale=fr"):
+            with self.assertRaises(ValueError):
+                documentation_route(url)
+        current = deepcopy(self.extracted)
+        current["documentation"].update(version="21-R5", canonical_url="https://developer.4d.com/docs/Notes/updates")
+        entry = {**self.entry, "url": current["documentation"]["canonical_url"],
+                 "resolved_url": current["documentation"]["canonical_url"], "documentation_channel": "moving-current"}
+        self.assertEqual(source_availability(current, entry), "available")
+        self.assertNotEqual(self.extracted["documentation"]["version"], self.extracted["documentation"]["release_headings"][0])
+
+    def test_soft404_locale_fallback_and_stale_editions_are_rejected(self):
+        self.assertEqual(source_availability(self.extracted, self.entry), "available")
+        for path, value, expected in (
+            (("title",), "Page not found | 4D Docs", "soft_404"),
+            (("language",), "fr", "language_mismatch"),
+            (("documentation", "locale"), "fr", "language_mismatch"),
+            (("documentation", "version"), "19", "edition_mismatch"),
+            (("documentation", "canonical_url"), "https://developer.4d.com/docs/Notes/updates", "edition_mismatch"),
+            (("documentation", "article_scope"), False, "documentation_unverified"),
+        ):
+            bad = deepcopy(self.extracted)
+            target = bad if len(path) == 1 else bad[path[0]]
+            target[path[-1]] = value
+            self.assertEqual(source_availability(bad, self.entry), expected)
+        redirected = {**self.entry, "resolved_url": "https://developer.4d.com/docs/Notes/updates"}
+        self.assertEqual(source_availability(self.extracted, redirected), "edition_mismatch")
+
+    def test_english_body_is_not_translation_even_with_localized_metadata(self):
+        localized = deepcopy(self.extracted)
+        localized.update(language="fr")
+        localized["documentation"]["locale"] = "fr"
+        localized["documentation"]["canonical_url"] = "https://developer.4d.com/docs/fr/20/Notes/updates"
+        source = {**self.entry, "id": "fixture-fr", "language": "fr", "fetch": {"status": "available"}}
+        with tempfile.TemporaryDirectory() as directory, patch("tools.ingest.CACHE", Path(directory)):
+            verify_documentation_locale(localized, source)
+            self.assertEqual(source["fetch"]["status"], "translation_unverified")
+            save(Path(directory) / "extracts/fixture-en.json", self.extracted)
+            source["fetch"] = {"status": "available"}
+            verify_documentation_locale(localized, source)
+            self.assertEqual(source["fetch"]["status"], "locale_fallback")
+            localized["blocks"][0]["text"] = "Une règle fictive."
+            source["fetch"] = {"status": "available"}
+            verify_documentation_locale(localized, source)
+            self.assertEqual(source["fetch"]["status"], "available")
+
+    def test_fetched_provenance_and_conditional_revalidation(self):
+        from urllib.error import HTTPError
+        headers = Message()
+        headers["Content-Type"] = "text/html; charset=utf-8"
+        headers["ETag"] = '"fixture"'
+        response = CurlResponse(self.html.encode(), {"http_code": 200, "url_effective": self.url}, headers)
+        with tempfile.TemporaryDirectory() as directory, patch("tools.ingest.CACHE", Path(directory)):
+            with patch("tools.ingest.open_source", return_value=response):
+                source, _ = fetch_one(self.entry)
+            self.assertEqual(source["edition"], "20")
+            self.assertEqual(source["fetch"]["documentation"]["version"], "20")
+            with patch("tools.ingest.open_source", side_effect=HTTPError(self.url, 304, "", {}, None)):
+                cached, _ = fetch_one(source)
+            self.assertEqual(cached["fetch"]["status"], "available")
+            self.assertEqual(cached["fetch"]["documentation"], source["fetch"]["documentation"])
+            self.assertEqual(cached["url"], self.url)
+            self.assertEqual(cached["resolved_url"], self.url)
+
+    def test_committed_provenance_keeps_catalog_processing_unchanged(self):
+        entries = [s for s in load(ROOT / "data/registry.json") if s["family"] == "documentation-release-notes"]
+        self.assertEqual(len(entries), 16)
+        self.assertEqual({s["language"] for s in entries}, {"en", "fr", "es", "ja"})
+        self.assertTrue(all(s["fetch"]["status"] == "available" for s in entries))
+        current = next(s for s in entries if s["id"] == "docs-current-release-notes-en")
+        self.assertEqual(current["edition"], "21 R5")
+        self.assertIn("BETA", current["fetch"]["documentation"]["channel_label"])
+        self.assertEqual(load(ROOT / "data/latest.json")["release"], "21 R4")
+        self.assertTrue(all(s["authority"] == "official_documentation" and s["host_operator"] == "4D" for s in entries))
+        self.assertEqual(len(load(ROOT / "data/changes.json")), 3)
+
+    def test_refresh_configuration_keeps_observed_moving_edition_and_stable_ids(self):
+        config = load(ROOT / "data/sources.json")
+        locations = load(ROOT / "data/source-locations.json")["locations"]
+        existing = load(ROOT / "data/registry.json")
+        merged = merge_registry(initial_registry(config, locations), existing)
+        self.assertEqual(merged, existing)
+        current = next(source for source in merged if source["id"] == "docs-current-release-notes-en")
+        fixed = next(source for source in merged if source["id"] == "docs-v21-release-notes-en")
+        self.assertEqual(current["edition"], "21 R5")
+        self.assertNotEqual(current["id"], fixed["id"])
+        self.assertNotEqual(current["url"], fixed["url"])
+        bad = deepcopy(config)
+        bad["seeds"][0]["documentation_channel"] = "versioned"
+        with self.assertRaisesRegex(ValueError, "matching channel"):
+            initial_registry(bad, locations)
+
+    def test_actual_local_extracts_match_committed_fetch_metadata(self):
+        entries = [s for s in load(ROOT / "data/registry.json") if s["family"] == "documentation-release-notes"]
+        if not all((ROOT / ".cache/raw" / (s["id"] + ".html")).exists() for s in entries):
+            self.skipTest("Modern source snapshots are intentionally local/ignored")
+        for source in entries:
+            raw = (ROOT / ".cache/raw" / (source["id"] + ".html")).read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), source["fetch"]["sha256"])
+            extracted = extract(raw.decode(), source["resolved_url"])
+            self.assertEqual(extracted["extractor_version"], EXTRACTOR_VERSION)
+            self.assertEqual(source_availability(extracted, source), "available")
+            self.assertEqual(source["fetch"]["block_count"], len(extracted["blocks"]))
+            self.assertEqual(source["fetch"]["documentation"], extracted["documentation"])
+            self.assertTrue(extracted["blocks"])
+            self.assertTrue(any(b["kind"] == "table_row" and b["table_header"] for b in extracted["blocks"]))
+            self.assertTrue(all(b["headings"] for b in extracted["blocks"]))
+            if source["id"] == "docs-v20-release-notes-en":
+                self.assertTrue(any(b["kind"] == "code" for b in extracted["blocks"]))
+
+
 class Registry(unittest.TestCase):
-    def test_all_35_seeds_and_verified_legacy_locations(self):
+    def test_all_39_seeds_and_verified_locations(self):
         config = load(ROOT / "data/sources.json")
         locations = load(ROOT / "data/source-locations.json")["locations"]
         entries = initial_registry(config, locations)
-        self.assertEqual(len(config["seeds"]), 35)
-        self.assertEqual(len(entries), 139)
-        self.assertEqual(len({e["id"] for e in entries}), 139)
+        self.assertEqual(len(config["seeds"]), 39)
+        self.assertEqual(len(entries), 155)
+        self.assertEqual(len({e["id"] for e in entries}), 155)
         for language in ("en", "fr", "de", "es", "ja"):
-            self.assertEqual(sum(e["language"] == language for e in entries), 35 if language == "en" else 26)
+            self.assertEqual(sum(e["language"] == language for e in entries), 39 if language == "en" else 26 if language == "de" else 30)
         self.assertEqual(sum(e["family"] == "blog-overview" for e in entries), 9)
         self.assertEqual(sum(e["family"] == "upgrade" for e in entries), 5)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["edition"], "18.2")
@@ -195,7 +352,7 @@ class Registry(unittest.TestCase):
         self.assertTrue(french["url"].endswith("/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"))
         self.assertEqual(french["discovery"]["chain"][0], config["archive_root"])
         self.assertEqual(french["discovery"]["chain"][-1], french["url"])
-        self.assertEqual(len(initial_registry(config)), 35, "Never fabricate untraced locale URLs")
+        self.assertEqual(len(initial_registry(config)), 39, "Never fabricate untraced locale URLs")
         self.assertEqual(sum(e.get("manual") == "language-reference" for e in entries), 50)
         self.assertEqual(sum(e.get("manual") == "design-reference" for e in entries), 15)
         self.assertEqual(sum(e["family"] == "whats-new" for e in entries), 40)
@@ -305,10 +462,14 @@ class Publication(unittest.TestCase):
 
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
-        self.assertEqual(self.document["coverage"]["english_seeds"], 35)
-        self.assertEqual(self.document["coverage"]["registered_sources"], 139)
-        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 139})
-        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 84, "navigation_index": 55})
+        self.assertEqual(self.document["coverage"]["english_seeds"], 39)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 155)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 155})
+        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 100, "navigation_index": 55})
+        self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 16)
+        self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 4)
+        self.assertEqual(self.document["coverage"]["processed_source_ids"],
+                         ["legacy-v20-deprecated-en", "legacy-v20-deprecated-ja"])
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")

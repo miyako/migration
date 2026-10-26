@@ -11,19 +11,23 @@ Binary-to-project conversion is not assumed to be mandatory.
 
 ## What is actually covered
 
-The current snapshot covers **35 supplied English seeds**: 26 legacy documentation
-pages (including the distinct **Upgrade** family) and 9 official blog overviews.
+The current snapshot covers **39 supplied English seeds**: 26 legacy documentation
+pages (including the distinct **Upgrade** family), 9 official blog overviews, and
+4 current official documentation Release Notes pages.
 Each legacy seed's four other languages are located through actual archive
-directory links, for **139 registered source URLs**:
+directory links; modern documentation uses actual official `hreflang` routes,
+for **155 registered source URLs**:
 
 | Publication snapshot, 2026-10-26 | Count |
 |---|---:|
-| Available structural extracts | 139 |
-| Article surfaces / generated navigation index views | 84 / 55 |
+| Available structural extracts | 155 |
+| Article surfaces / generated navigation index views | 100 / 55 |
 | Currently unavailable registered source URLs | 0 |
 | Superseded guessed URLs that returned 404, retained as history | 34 |
 | Bounded archive directory indexes traced, separate from sources | 21 |
 | Actual blog language links queued for review, not fetched | 27 |
+| Modern Release Notes URLs, included in available sources | 16 |
+| German modern counterparts not advertised/linked, not HTTP failures | 4 |
 | Candidate actionable changes | 3 |
 | Human-reviewed changes | **0** |
 | Source pages used for the candidate sample, partially only | 2 |
@@ -42,8 +46,54 @@ translated slugs. For example, French v20 is
 not the English slug with `.fr.html`. All 34 failed guesses have now been replaced
 with verified linked locations under the same stable source IDs. Their real 404
 results remain in `url_history`; they are **not missing translations**. Including
-those superseded attempts, 173 distinct source URL locations have been checked
-over time (139 current + 34 superseded), separate from archive directory indexes.
+those superseded attempts, 189 distinct source URL locations have been checked
+over time (155 current + 34 superseded), separate from archive directory indexes.
+
+### Current official documentation Release Notes
+
+These sources are hosted by **4D at developer.4d.com**, not the 4D Japan legacy
+archive. All 16 URLs below returned available, same-locale, same-route-edition
+HTML on 2026-10-26, without redirects. Localized URLs are taken from each English
+page's actual `hreflang` links, with the **locale before the version**:
+
+| Route / observed document edition | English seed | French | Spanish | Japanese |
+|---|---|---|---|---|
+| Moving-current, **21 R5 BETA** | [en](https://developer.4d.com/docs/Notes/updates) | [fr](https://developer.4d.com/docs/fr/Notes/updates) | [es](https://developer.4d.com/docs/es/Notes/updates) | [ja](https://developer.4d.com/docs/ja/Notes/updates) |
+| Versioned **21** | [en](https://developer.4d.com/docs/21/Notes/updates) | [fr](https://developer.4d.com/docs/fr/21/Notes/updates) | [es](https://developer.4d.com/docs/es/21/Notes/updates) | [ja](https://developer.4d.com/docs/ja/21/Notes/updates) |
+| Versioned **20** | [en](https://developer.4d.com/docs/20/Notes/updates) | [fr](https://developer.4d.com/docs/fr/20/Notes/updates) | [es](https://developer.4d.com/docs/es/20/Notes/updates) | [ja](https://developer.4d.com/docs/ja/20/Notes/updates) |
+| Versioned **19** | [en](https://developer.4d.com/docs/19/Notes/updates) | [fr](https://developer.4d.com/docs/fr/19/Notes/updates) | [es](https://developer.4d.com/docs/es/19/Notes/updates) | [ja](https://developer.4d.com/docs/ja/19/Notes/updates) |
+
+All four pages advertise **en/fr/es/ja/pt**. **German is not advertised or linked**
+for any of these four editions: four `not_linked` discovery records preserve the
+checked English parent, timestamp, hash and advertised language set. They have no
+fabricated counterpart URL or HTTP status, are not registered fetch failures,
+and do not prove that no German material exists elsewhere. Portuguese is
+advertised but outside this application's requested en/fr/de/es/ja scope; its
+pages were not fetched. Existing blog discoveries remain queued and untouched.
+
+Unversioned and versioned sources keep independent stable IDs even if their
+content later matches. The requested URL, final URL, canonical URL, Docusaurus
+version/locale, visible version badge, actual version-navigation routes, and
+release-history headings are preserved. The moving page currently identifies
+**21-R5 / 21 R5 BETA**; this is **not** a released-latest verification and does not
+update `data/latest.json`'s separately verified public feature release **21 R4**.
+Versioned 21/20/19 pages contain separate LTS and patch histories (for example
+21.2, 20.9 and 19.8); document edition is not a blanket introduction threshold.
+
+The modern extractor isolates `theme-doc-markdown`, excluding global navigation,
+sidebars, mobile contents and feedback/footer material. It retains heading
+hierarchy and anchors, table rows with headers, nested list lead text and code.
+Soft 404s, locale redirects/fallbacks, canonical/edition mismatches, and missing
+article scope are not accepted as available translations. A localized article
+must differ from its cached English article; this whole-article fallback check
+does **not** claim complete or human-reviewed translation of every paragraph.
+
+These 16 sources are **fetched and structurally extracted, not catalog-processed**.
+No new actionable records, thresholds or review claims were generated: the
+catalog remains **3 candidates, 2 partially used legacy pages, 0 human-reviewed**.
+Actionable changes may later deduplicate across sources; provenance never does.
+
+### Legacy archive coverage
 
 The added **4D v16 - Upgrade** overview and all four localized counterparts are
 available and structurally extracted. The overview describes features added since
@@ -51,7 +101,7 @@ v15 R5 and links existing conversion/deprecation sources. New-feature headings
 do not automatically establish migration requirements; no new actionable records
 or human-review claims were added for this source.
 
-The latest registry expansion adds **13 English seeds and 52 verified locale
+The preceding legacy registry expansion added **13 English seeds and 52 verified locale
 counterparts**, with **no missing counterparts** in this snapshot:
 
 | Manual | Section family | Exact English editions | Registered URLs |
@@ -126,7 +176,7 @@ is ignored and rebuilt from the committed editorial inputs.
 |---|---|
 | `data/sources.json` | Independent, extensible seed registry: stable ID, family, edition, URL |
 | `data/registry.json` | Checked sources, language, publisher/authority, discovery provenance, fetch dates, HTTP/redirect status, resolved URL and SHA-256 |
-| `data/source-locations.json` | Verified translated document locations, exact document IDs, editions and archive link chains; unresolved discovery is explicit |
+| `data/source-locations.json` | Verified translated document locations, archive link chains or official documentation hreflang/hash provenance; unresolved discovery is explicit |
 | `data/archive-navigation.json` | Bounded index-fetch provenance and hashes; these navigation pages are not catalog sources |
 | `data/discoveries.json` | Actual bounded `hreflang` discoveries pending/accepted review |
 | `data/changes.json` | Publication-time editorial candidates with stable IDs and evidence |
@@ -137,6 +187,7 @@ is ignored and rebuilt from the committed editorial inputs.
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
 | `data/semantic-search.json` | Explicit unavailable state and pinned research provenance |
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
+| `tools/discover_docs.py` | Four-seed bounded modern Release Notes discovery/fetch; actual same-edition locale routes only |
 | `tools/catalog.py` | Fail-fast schema/domain validation, ID deduplication, overrides and deterministic publication |
 | `site/` | One shared multilingual app; no on-demand classification or translation |
 
@@ -196,6 +247,8 @@ python3 -m tools.ingest --refresh --id legacy-v20-deprecated-en
 # Optional explicit TLS-verifying transport, useful with macOS trust stores
 python3 -m tools.discover_archive --transport curl
 python3 -m tools.ingest --transport curl --id legacy-v20-deprecated-en
+# Fetch only four modern seeds and their actual linked app-language counterparts
+python3 -m tools.discover_docs --transport curl
 # After reviewing data/discoveries.json: explicitly register same-host blog locales
 python3 -m tools.ingest --accept-discoveries --transport curl
 # Match every short quote, heading, block and hash against the local extracts
@@ -230,6 +283,11 @@ not invented. Source location corrections preserve earlier attempts under the
 same stable ID.
 
 Only actual blog `hreflang` links are queued, never invented blog translations.
+Modern Release Notes discovery is separately bounded to four configured English
+seeds and at most four additional app languages per seed (16 actual URLs in this
+snapshot). It follows no article links, other versions, Portuguese pages or
+command-detail pages. Legacy archive discovery skips modern seeds and preserves
+their independently recorded locations/unresolved entries.
 No unbounded crawl runs. Conversion landing pages do not
 imply their linked details were processed.
 
@@ -317,3 +375,14 @@ necessary evidence excerpts, metadata, links and independently authored summarie
 are published; raw snapshots/extracts are excluded. No blanket license for
 third-party content or permission to republish whole source documents is implied.
 Generated summaries/translations are labeled separately from official wording.
+
+For the modern documentation, the observed [robots endpoint](https://developer.4d.com/robots.txt)
+returned HTTP 404 on 2026-10-26; this is not an affirmative reuse grant.
+The page footer states “© 2026 4D SAS - All rights reserved”.
+Its feedback links identify the public [4d/docs source repository](https://github.com/4d/docs),
+whose [`LICENSE-docs`](https://github.com/4d/docs/blob/main/LICENSE-docs)
+identifies **CC BY 4.0** (observed license blob
+`a6d7fd364bcc113164fb923e4eb53ae6fd75cae4`). That is documentation-repository
+provenance, not a blanket license for all website, archive or blog material.
+This project retains its conservative metadata/link/short-excerpt policy;
+whole documents and structural extracts remain local and ignored.

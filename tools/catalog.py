@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from .ingest import CACHE, LANGUAGES, ROOT, load, save
+from .ingest import CACHE, LANGUAGES, ROOT, documentation_route, load, save
 from .discover_archive import document_identity
 
 BUCKETS = [f"v{major}" for major in range(16, 22)] + ["latest"]
@@ -99,11 +99,49 @@ def validate(document):
     require(navigation["schema_version"] == 1, "Unsupported archive navigation schema")
     indexes = {page["url"]: page for page in navigation["pages"]}
     require(len(indexes) == len(navigation["pages"]) <= 24, "Invalid/over-limit archive indexes")
+    for unresolved in document["archive_unresolved"]:
+        if unresolved["status"] != "not_linked":
+            continue
+        parent = next((source for source in sources.values() if source["url"] == unresolved["parent"]), None)
+        require(parent is not None and parent["family"] == "documentation-release-notes"
+                and parent["language"] == "en" and unresolved["parent_sha256"] == parent["fetch"]["sha256"],
+                "Unlinked documentation locale needs checked English parent provenance")
+        require("url" not in unresolved and "http_status" not in unresolved and
+                unresolved["language"] not in unresolved["supported_site_languages"] and
+                unresolved["supported_site_languages"] == sorted({
+                    item["language"] for item in parent["fetch"]["documentation"]["locale_links"]}),
+                "Unlinked locale is discovery metadata, not a guessed URL or HTTP failure")
     for source in sources.values():
         for field in ("id", "family", "publisher", "authority", "edition", "language", "url", "discovery", "fetch"):
             require(field in source, f"Source missing {field}")
         require(source["language"] in LANGUAGES and url(source["url"]), "Invalid source language/URL")
         require(nonempty(source["fetch"]["status"]), "Missing source fetch status")
+        if source["family"] == "documentation-release-notes":
+            route = documentation_route(source["url"])
+            require(route["language"] == source["language"] and route["channel"] == source["documentation_channel"],
+                    "Documentation route locale/channel mismatch")
+            require(source["authority"] == "official_documentation" and source["host_operator"] == "4D",
+                    "Modern documentation must not be classified as the legacy mirror")
+            if source["discovery"]["method"] == "official_docs_hreflang":
+                discovery = source["discovery"]
+                parent = next((item for item in sources.values() if item["url"] == discovery["parent"]), None)
+                require(parent is not None and parent["language"] == "en" and
+                        discovery["parent_sha256"] == parent["fetch"]["sha256"],
+                        "Official locale discovery needs a checked English parent hash")
+                require({"language": source["language"], "url": source["url"]} in
+                        parent["fetch"]["documentation"]["locale_links"], "Locale URL is not linked by its parent")
+            if source["fetch"]["status"] == "available":
+                observed = source["fetch"]["documentation"]
+                require(documentation_route(source["resolved_url"]) == route and
+                        observed["locale"] == source["language"] and observed["article_scope"] and
+                        observed["canonical_url"] == source["resolved_url"] and
+                        source["edition"] == observed["version"].replace("-R", " R") and
+                        (route["version"] is None or observed["version"] == route["version"]),
+                        "Available documentation requires matching observed locale/edition/channel")
+                if source["language"] != "en":
+                    comparison = source["fetch"]["locale_comparison"]
+                    require(comparison["english_content_sha256"] != comparison["localized_content_sha256"],
+                            "English fallback cannot be an available translation")
         if source.get("manual"):
             require(nonempty(source["manual"]) and re.fullmatch(r"100-\d+", source.get("manual_document_key", "")),
                     "Manual identity requires a manual-root document key")
@@ -278,6 +316,9 @@ def build(verify=False):
         "processed_source_ids": sorted({e["source_id"] for c in changes for e in c["evidence"]}),
         "candidate_changes": sum(c["review_status"] == "candidate" for c in changes),
         "reviewed_changes": sum(c["review_status"] == "reviewed" for c in changes),
+        "modern_documentation_sources": sum(s["family"] == "documentation-release-notes" for s in registry),
+        "modern_unlinked_locales": sum(item["status"] == "not_linked" for item in
+                                      load(ROOT / "data/source-locations.json")["unresolved"]),
         "note": "Partial candidate sample only. Fetching/extracting a source is not reviewing or fully cataloging it. No results does not mean no upgrade issues.",
     }
     document = {"schema_version": 1, "generated_at": generated_at, "coverage": coverage,
