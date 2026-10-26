@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, isLatestAvailable, crossesVersion,
+import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateChecklist, validateCatalog, translations, translate } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
@@ -28,6 +28,29 @@ test('latest selection requires a verifiable released version', () => {
   assert.equal(isLatestAvailable({ release: '22', status: 'verified', verified_at: 'not a date' }), false);
   assert.equal(isLatestAvailable({ release: '21 R4', status: 'verified', channel: 'feature', verified_at: '2026-10-26' }), true);
   assert.deepEqual(VERSION_BUCKETS, ['v16', 'v17', 'v18', 'v19', 'v20', 'v21', 'latest']);
+});
+
+test('version menus prevent source greater than target and retain equal-version assessment', () => {
+  const latest = { release: '21 R4', status: 'verified', verified_at: '2026-10-26' };
+  for (const source of VERSION_BUCKETS) {
+    for (const target of VERSION_BUCKETS) {
+      if (VERSION_BUCKETS.indexOf(source) > VERSION_BUCKETS.indexOf(target)) continue;
+      for (const side of ['source', 'target']) {
+        const choices = versionChoices(side, source, target, latest);
+        assert.equal(choices.find(c => c.bucket === (side === 'source' ? source : target)).disabled, false);
+        for (const choice of choices) {
+          const from = side === 'source' ? choice.bucket : source;
+          const to = side === 'target' ? choice.bucket : target;
+          assert.equal(choice.disabled, VERSION_BUCKETS.indexOf(from) > VERSION_BUCKETS.indexOf(to));
+        }
+      }
+    }
+  }
+  assert.equal(versionChoices('target', 'v21', 'v21', latest).find(c => c.bucket === 'latest').disabled, false);
+  assert.equal(versionChoices('target', 'latest', 'latest', latest).find(c => c.bucket === 'v21').disabled, true);
+  for (const side of ['source', 'target']) {
+    assert.equal(versionChoices(side, 'v16', 'v21').find(c => c.bucket === 'latest').disabled, true);
+  }
 });
 
 test('restrictions and removals require crossings; deprecated records accumulate', () => {

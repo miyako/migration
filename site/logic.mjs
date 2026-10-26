@@ -18,6 +18,17 @@ export function isLatestAvailable(latest) {
     Number.isFinite(Date.parse(latest.verified_at)) && versionNumber(latest.release) !== null);
 }
 
+export function versionChoices(side, source, target, latest = null) {
+  if (!['source', 'target'].includes(side)) throw new TypeError('Unknown version selector');
+  const boundary = VERSION_BUCKETS.indexOf(side === 'source' ? target : source);
+  // "latest" follows v21 even when its concrete release belongs to the 21 R cycle.
+  return VERSION_BUCKETS.map((bucket, index) => ({
+    bucket,
+    disabled: (bucket === 'latest' && !isLatestAvailable(latest)) ||
+      (side === 'source' ? index > boundary : index < boundary),
+  }));
+}
+
 export function priorityForChange(change) {
   return ({ blocking: 0, critical: 1, high: 2, medium: 3, low: 4, informational: 5 })[change.criticality] ?? 6;
 }

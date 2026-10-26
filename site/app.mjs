@@ -1,6 +1,6 @@
 import {
-  LANGUAGES, VERSION_BUCKETS, translations, translate, filterChanges,
-  versionNumber, isLatestAvailable, validateCatalog, validateChecklist,
+  LANGUAGES, translations, translate, filterChanges,
+  versionNumber, versionChoices, isLatestAvailable, validateCatalog, validateChecklist,
 } from './logic.mjs';
 
 const $ = id => document.getElementById(id);
@@ -153,19 +153,21 @@ function renderCoverage() {
   if (coverage.note) area.append(line('coverageNote', coverage.note));
 }
 function renderSelectors() {
+  const available = isLatestAvailable(state.catalog?.latest);
+  for (const key of ['source', 'target']) {
+    if (state[key] === 'latest' && !available) state[key] = 'v21';
+  }
   for (const [id, key] of [['source-version', 'source'], ['target-version', 'target']]) {
     const select = $(id);
     select.replaceChildren();
-    for (const bucket of VERSION_BUCKETS) {
-      const available = isLatestAvailable(state.catalog?.latest);
+    for (const { bucket, disabled } of versionChoices(key, state.source, state.target, state.catalog?.latest)) {
       const option = node('option', bucket === 'latest'
         ? (available ? `${latestLabel(state.catalog.latest)} (${state.catalog.latest.release})` : t('latestUnavailable'))
         : bucket);
       option.value = bucket;
-      option.disabled = bucket === 'latest' && !available;
+      option.disabled = disabled;
       select.append(option);
     }
-    if (state[key] === 'latest' && !isLatestAvailable(state.catalog?.latest)) state[key] = 'v21';
     select.value = state[key];
   }
   const modules = [...new Set((state.catalog?.changes ?? []).flatMap(c => c.modules ?? []))]
@@ -387,6 +389,7 @@ for (const [id, key] of [
 ]) {
   $(id).addEventListener(id === 'search' ? 'input' : 'change', event => {
     state[key] = event.target.value;
+    if (key === 'source' || key === 'target') renderSelectors();
     renderChanges();
   });
 }

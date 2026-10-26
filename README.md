@@ -117,6 +117,8 @@ Selectors are v16–v21 and latest. Historical R cycles map to the **next** majo
 The 21 R cycle maps to latest until v22 exists. Exact releases and source
 editions (for example 18 versus 18.2, or 17.1) remain separate metadata.
 An overview's release title is not proof of a change's introduction threshold.
+Both menus disable choices that would place the source after the target.
+Equal versions remain selectable to assess existing deprecations.
 
 The browser matches a source/target interval plus applicability, not just the
 document edition. Lingering deprecations and explicit target requirements can
