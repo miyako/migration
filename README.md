@@ -1,11 +1,11 @@
 # 4D migration reference — initial proof of concept
 
-An evidence-backed, **partial** reference for planning 4D upgrades after successful
+An evidence-backed, **partial** quick directory of 4D upgrade changes after successful
 conversion/opening. A shared static interface supports English, French, German,
 Spanish and Japanese. It runs on GitHub Pages without a backend, accounts, paid
 services, external fonts, analytics, runtime GitHub API calls or AI calls.
 
-**This is not an exhaustive migration checklist or a support/troubleshooting tool.**
+**This is not a planner, an exhaustive migration checklist, or a support/troubleshooting tool.**
 If conversion or opening fails, contact [official 4D Support](https://www.4d.com/support).
 Binary-to-project conversion is not assumed to be mandatory.
 
@@ -151,7 +151,7 @@ independent source edition, platform (including unknown), extensible module
 labels, change type, criticality, stage, format/conditional applicability,
 action and its basis, short evidence excerpts/headings/anchors/block IDs/source
 hashes, confidence, and review status. Stages are syntax, compilation, runtime,
-modernization; criticality and user-entered effort are separate.
+modernization; criticality is classified separately from stage.
 Unknown thresholds use `{"exact": null, "bucket": null, "kind": "unknown"}`;
 unknown actions use `null` plus an explanatory `action_basis`. Unknown
 stage/criticality/platform values are explicit, never silently inferred.
@@ -263,7 +263,7 @@ Overrides are separate from ingestion and survive refetches.
 An offline build is byte-reproducible from identical committed inputs; its
 timestamp derives from recorded checks, not the build clock.
 
-### Clarifications, personal state and provenance
+### Clarifications, preferences and provenance
 
 Significant **confirmed catalog errors/source contradictions** belong in a
 manually created GitHub issue and `data/clarifications.json`: stable ID, title,
@@ -275,9 +275,11 @@ discovery error and its correction; this is not a 4D product defect. Model
 suspicions go to an editorial queue first; never automatically post them as
 established 4D bugs. Official support is separate.
 
-The checklist and effort notes stay in browser local storage keyed by stable
-change ID. Export/import JSON provides a personal backup; effort is user-entered,
-not invented time estimates. Storage/import errors are shown explicitly.
+The site is a quick directory, not a planner: no completion checkboxes, editable
+notes, effort estimates, or planner JSON import/export. Only language/theme
+preferences persist under `4d-migration-preferences-v1`; storage errors are shown
+explicitly. Retired checklist storage is ignored, not read, migrated, overwritten
+or cleared. Unrelated browser preferences remain untouched.
 Do not put credentials, customer source, private support material or personal
 notes in catalog commits or public issues.
 

@@ -1,14 +1,13 @@
 import {
   LANGUAGES, translations, translate, filterChanges,
-  versionNumber, versionChoices, isLatestAvailable, validateCatalog, validateChecklist,
+  versionNumber, versionChoices, isLatestAvailable, validateCatalog,
 } from './logic.mjs';
 
 const $ = id => document.getElementById(id);
-const STORAGE = '4d-migration-checklist-v1';
 const PREFS = '4d-migration-preferences-v1';
 const state = {
   language: LANGUAGES.includes(navigator.language?.slice(0, 2)) ? navigator.language.slice(0, 2) : 'en',
-  theme: 'system', catalog: null, loading: true, checklist: Object.create(null),
+  theme: 'system', catalog: null, loading: true,
   source: 'v16', target: 'v21', query: '', platform: 'all', module: 'all', sort: 'priority',
   message: null, error: false,
 };
@@ -16,10 +15,8 @@ try {
   const prefs = JSON.parse(localStorage.getItem(PREFS) ?? 'null');
   if (LANGUAGES.includes(prefs?.language)) state.language = prefs.language;
   if (['system', 'light', 'dark'].includes(prefs?.theme)) state.theme = prefs.theme;
-  const saved = localStorage.getItem(STORAGE);
-  if (saved) state.checklist = validateChecklist(JSON.parse(saved));
 } catch {
-  state.message = 'storageError';
+  state.message = 'preferencesError';
   state.error = true;
 }
 const t = (key, vars) => translate(state.language, key, vars);
@@ -87,18 +84,7 @@ function savePreferences() {
   try {
     localStorage.setItem(PREFS, JSON.stringify({ language: state.language, theme: state.theme }));
   } catch {
-    setMessage('storageError', true);
-  }
-}
-function checklistDocument() {
-  return { schema_version: 1, updated_at: new Date().toISOString(), items: state.checklist };
-}
-function saveChecklist() {
-  try {
-    localStorage.setItem(STORAGE, JSON.stringify(checklistDocument()));
-    setMessage('saved');
-  } catch {
-    setMessage('storageError', true);
+    setMessage('preferencesError', true);
   }
 }
 function applyTheme() {
@@ -250,29 +236,6 @@ function changeCard(change) {
   evidenceBody.append(evidenceList(change.evidence));
   evidence.append(evidenceBody);
   card.append(evidence);
-  const checklist = node('div', undefined, 'checklist-row');
-  const checkedLabel = node('label', undefined, 'check-label');
-  const check = document.createElement('input');
-  check.type = 'checkbox';
-  check.checked = state.checklist[change.id]?.checked ?? false;
-  check.setAttribute('aria-label', `${t('complete')}: ${locale?.one_line || change.id}`);
-  checkedLabel.append(check, document.createTextNode(t('complete')));
-  const effortLabel = node('label');
-  effortLabel.append(node('span', t('effort')));
-  const effort = document.createElement('textarea');
-  effort.rows = 2;
-  effort.maxLength = 10000;
-  effort.value = state.checklist[change.id]?.effort ?? '';
-  effort.setAttribute('aria-label', `${t('effort')}: ${locale?.one_line || change.id}`);
-  effortLabel.append(effort);
-  const update = () => {
-    state.checklist[change.id] = { checked: check.checked, effort: effort.value };
-    saveChecklist();
-  };
-  check.addEventListener('change', update);
-  effort.addEventListener('input', update);
-  checklist.append(checkedLabel, effortLabel);
-  card.append(checklist);
   return card;
 }
 function renderChanges() {
@@ -414,7 +377,6 @@ function render() {
   renderSources();
   renderView();
   setMessage(state.message, state.error);
-  $('export').disabled = !Object.keys(state.checklist).length;
 }
 
 $('filters').addEventListener('submit', event => event.preventDefault());
@@ -445,36 +407,6 @@ $('reset').addEventListener('click', () => {
   renderSelectors();
   renderChanges();
 });
-$('export').addEventListener('click', () => {
-  const blob = new Blob([JSON.stringify(checklistDocument(), null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = node('a');
-  a.href = url;
-  a.download = `4d-migration-checklist-${new Date().toISOString().slice(0, 10)}.json`;
-  document.body.append(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-  setMessage('exported');
-});
-$('import').addEventListener('click', () => $('import-file').click());
-$('import-file').addEventListener('change', async event => {
-  const file = event.target.files[0];
-  event.target.value = '';
-  if (!file) return;
-  if (file.size > 2 * 1024 * 1024) return setMessage('importTooLarge', true);
-  let text;
-  try { text = await file.text(); } catch { return setMessage('importReadError', true); }
-  let entries;
-  try { entries = validateChecklist(JSON.parse(text)); } catch { return setMessage('invalidImport', true); }
-  state.checklist = Object.assign(Object.create(null), state.checklist, entries);
-  saveChecklist();
-  if (!state.error) setMessage('imported');
-  renderChanges();
-  $('export').disabled = !Object.keys(state.checklist).length;
-});
-// Export must also become available after the first edit, without rebuilding a focused card.
-$('change-list').addEventListener('input', () => { $('export').disabled = false; });
 window.addEventListener('hashchange', renderView);
 render();
 try {

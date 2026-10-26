@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, versionChoices, isLatestAvailable, crossesVersion,
-  priorityForChange, stagePriorityForChange, filterChanges, validateChecklist, validateCatalog, translations, translate } from './logic.mjs';
+  priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
   id, threshold: { exact: '20 R3', bucket, kind: 'introduced' }, type: 'restriction',
@@ -112,10 +112,10 @@ test('unknown platform and module remain visible; specific nonmatches are filter
   assert.equal(filterChanges(records).length, 4);
 });
 
-test('priority sorts stage before severity, keeping user effort independent and input unmodified', () => {
+test('directory priority sorts stage before severity and leaves input unmodified', () => {
   const records = [
-    change('low', 'v18', { criticality: 'low', stage: 'syntax', effort: 'huge' }),
-    change('block', 'v20', { criticality: 'blocking', stage: 'testing', effort: 'tiny' }),
+    change('low', 'v18', { criticality: 'low', stage: 'syntax' }),
+    change('block', 'v20', { criticality: 'blocking', stage: 'testing' }),
     change('unknown', 'v19', { criticality: null }),
   ];
   assert.equal(priorityForChange(records[1]), 0);
@@ -133,20 +133,28 @@ test('priority sorts stage before severity, keeping user effort independent and 
     ['z-block', 'a-low', 'runtime-block', 'modernization-block']);
 });
 
-test('checklists validate atomically and preserve stable unknown IDs, without prototype pollution', () => {
-  const original = { schema_version: 1, items: { x: { checked: true, effort: '2 days / 試験' } } };
-  const result = validateChecklist(original);
-  assert.equal(result.x.effort, '2 days / 試験');
-  result.x.checked = false;
-  assert.equal(original.items.x.checked, true);
-  const special = validateChecklist(JSON.parse('{"schema_version":1,"items":{"__proto__":{"checked":true,"effort":"safe"}}}'));
-  assert.equal(Object.getPrototypeOf(special), null);
-  assert.equal(special.__proto__.checked, true);
-  for (const value of [null, {}, [], { schema_version: 2, items: {} }, { schema_version: 1, items: [] },
-    { schema_version: 1, items: { a: { checked: 'true', effort: '' } } },
-    { schema_version: 1, items: { a: { checked: true, effort: 10 } } },
-    { schema_version: 1, items: { a: { checked: true, effort: 'x'.repeat(10001) } } },
-  ]) assert.throws(() => validateChecklist(value), /invalidImport/);
+test('directory has no planner controls, API or storage access and retains preferences and filters', async () => {
+  const [html, app, logic, css] = await Promise.all(
+    ['index.html', 'app.mjs', 'logic.mjs', 'styles.css'].map(path =>
+      readFile(new URL(path, import.meta.url), 'utf8')));
+  for (const source of [html, app, logic, css]) {
+    assert.doesNotMatch(source, /checklist|textarea|check-label|button-group|\beffort\b|import-file|createObjectURL/i);
+    assert.doesNotMatch(source, /(?:type\s*=\s*["']|\.type\s*=\s*["'])(?:checkbox|file)["']/i);
+  }
+  for (const id of ['search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
+    assert.ok(html.includes(`id="${id}"`), id);
+  }
+  assert.match(app, /const PREFS = '4d-migration-preferences-v1'/);
+  assert.deepEqual([...app.matchAll(/localStorage\.(\w+)\(([^,\n)]+)/g)].map(match => match.slice(1)),
+    [['getItem', 'PREFS'], ['setItem', 'PREFS']]);
+  assert.match(app, /JSON\.stringify\(\{ language: state\.language, theme: state\.theme \}\)/);
+  for (const language of LANGUAGES) {
+    assert.ok(translations[language].preferencesError);
+    for (const key of ['checklist', 'localOnly', 'export', 'import', 'complete', 'effort', 'saved',
+      'storageError', 'exported', 'imported', 'invalidImport', 'importReadError', 'importTooLarge']) {
+      assert.equal(Object.hasOwn(translations[language], key), false, `${language}:${key}`);
+    }
+  }
 });
 
 test('all five dictionaries have every UI key, with the same placeholders', () => {

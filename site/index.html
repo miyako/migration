@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Evidence-led 4D migration planning, with offline search and a local checklist.">
+  <meta name="description" content="A quick directory of 4D migration changes, with concise multilingual summaries, local search and original evidence links.">
   <title>4D Migration Atlas</title>
   <link rel="stylesheet" href="./styles.css">
   <script type="module" src="./app.mjs"></script>
@@ -20,9 +20,9 @@
   </header>
   <main id="main" tabindex="-1">
     <section class="intro">
-      <span class="eyebrow" data-i18n="introLabel">PLAN WITH EVIDENCE</span>
+      <span class="eyebrow" data-i18n="introLabel">EVIDENCE-BASED DIRECTORY</span>
       <h1 data-i18n="headline">Know what changes. Keep the unknowns in view.</h1>
-      <p data-i18n="intro">Explore migration candidates, inspect their sources, and build a checklist that stays in your browser.</p>
+      <p data-i18n="intro">Browse migration changes, read concise summaries, and follow the original evidence.</p>
     </section>
     <aside class="scope-notice"><strong data-i18n="scopeTitle">Scope: an application already opened or converted</strong><p data-i18n="scope">Opening or conversion failures belong with official 4D support. A binary-to-project conversion is not assumed. This catalogue is not a guarantee of upgrade safety.</p><a href="https://www.4d.com/support" target="_blank" rel="noopener noreferrer" data-i18n="support">Official 4D support ↗</a></aside>
     <section id="coverage" class="coverage" aria-labelledby="coverage-title"></section>
@@ -45,7 +45,6 @@
       </form>
       <div class="search-note"><p data-i18n="offlineSearch">Keyword and identifier matching runs locally, without models. This is not semantic search.</p><p id="semantic-status"></p></div>
       <p class="muted" data-i18n="editorialNote">Generated candidate summaries and translations are not official translations. Structured conditions and actions are source/editorial metadata and may remain in English.</p>
-      <div class="checklist-toolbar"><div><strong data-i18n="checklist">Local checklist</strong><p data-i18n="localOnly">Stored only in this browser. Export a backup; clearing browser data removes it. Effort is your own estimate, independent of severity or stage.</p></div><div class="button-group"><button id="export" type="button" data-i18n="export">Export JSON</button><button id="import" type="button" class="secondary" data-i18n="import">Import JSON</button><input id="import-file" type="file" accept=".json,application/json" hidden></div></div>
       <p id="version-warning" class="warning" hidden data-i18n="versionWarning">Choose a target later than the source to see newly crossed changes. Existing deprecations and unknown thresholds remain visible.</p>
       <div id="change-list" class="card-list"></div>
     </section>
