@@ -98,8 +98,8 @@ def run(base, screenshots, published):
         page.wait_for_selector("[data-change-id]")
         cdp.send("Network.setCacheDisabled", {"cacheDisabled": False})
         severity = {"blocking": 0, "high": 1, "medium": 2, "low": 3, "unknown": 4}
-        assert len(catalog["changes"]) == 198
-        assert catalog["coverage"]["atomic_changes"] == 272
+        assert len(catalog["changes"]) == 202
+        assert catalog["coverage"]["atomic_changes"] == 276
         # The default v16 -> v21 interval must not newly cross v14 disabling.
         expected = [c["id"] for c in projected_records(catalog)]
         assert "chg-removed-graph-table" not in expected
@@ -307,7 +307,10 @@ def run(base, screenshots, published):
         by_id = {c["id"]: c for c in catalog["changes"]}
         for locale in ("fr", "ja", "de", "es", "en"):
             page.select_option("#language", locale)
-            for identifier in ("chg-colon-identifiers", "chg-group-legacy-resource-commands"):
+            for identifier in ("chg-colon-identifiers", "chg-group-legacy-resource-commands",
+                               "chg-project-save-list-call", "chg-project-standalone-designer-identity",
+                               "chg-project-users-blob-export", "chg-label-template-64bit-compatibility",
+                               "chg-project-deployed-users-preservation"):
                 page.fill("#search", identifier)
                 card = page.locator(f'[data-change-id="{identifier}"]')
                 card.locator(":scope > details").first.locator(":scope > summary").click()
@@ -319,6 +322,29 @@ def run(base, screenshots, published):
                     assert "After successful opening" not in text
                     assert "Editorial recommendation derived" not in text
                     assert "One feature migration with a shared remediation" not in text
+                if identifier in {"chg-project-standalone-designer-identity", "chg-project-users-blob-export",
+                                   "chg-label-template-64bit-compatibility", "chg-project-deployed-users-preservation"}:
+                    shown = card.locator(".evidence-list > li").evaluate_all(
+                        "items => items.map(item => [item.dataset.sourceId,item.dataset.sourceLanguage])")
+                    assert shown and all(sid.startswith("kb-") and language == "en" for sid, language in shown)
+                    links = card.locator(".evidence-list a").evaluate_all("links => links.map(a => a.href)")
+                    assert links and all(link.startswith("https://kb.4d.com/assetid=") for link in links)
+                    assert "(PDF p." in card.locator(".evidence-list").text_content()
+        page.select_option("#language", "en")
+        page.fill("#search", "")
+        shown_kb = page.locator(".evidence-list > li").evaluate_all(
+            "items => [...new Set(items.map(item => item.dataset.sourceId).filter(id => id.startsWith('kb-')))]")
+        assert set(shown_kb) == {s["id"] for s in catalog["sources"] if s["family"] == "original-kb-technote"}
+        page.select_option("#source-version", "v17")
+        page.select_option("#target-version", "v18")
+        for identifier in ("chg-project-save-list-call", "chg-project-standalone-designer-identity"):
+            page.fill("#search", identifier)
+            assert ids(page) == [identifier]
+            assert page.locator(".evidence-list > li").evaluate_all(
+                "items => items.every(item => !item.dataset.sourceId.startsWith('kb-'))")
+        assert page.locator('[data-evidence-disposition="unresolved"]').is_visible()
+        page.select_option("#source-version", "v16")
+        page.select_option("#target-version", "v21")
         page.fill("#search", "")
         obsolete_details = (
             "Supporting details retain their original language.",

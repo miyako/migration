@@ -152,7 +152,17 @@ function sourcePathReleaseKeys(source, from, to, latest = null) {
   // whereas exact targets/latest must never borrow a later edition.
   const pathMajor = release => release[0] + (release[1] ? 1 : 0);
   return String(source.edition ?? '').split(/\s*\/\s*/)
-    .map(edition => releaseKey(edition.replace(/(\d)-R/gi, '$1 R'))).filter(release => {
+    .flatMap(edition => {
+      // A KB's unspecified R edition describes a cycle, not an exact release.
+      // Admit it only when the entire cycle is within the requested path.
+      const cycle = /^(\d+)\s+R$/.exec(edition);
+      if (!cycle) return [releaseKey(edition.replace(/(\d)-R/gi, '$1 R'))];
+      const major = Number(cycle[1]);
+      const lower = releaseKey(`${major} R1`);
+      const upper = releaseKey(String(major + 1));
+      return pathMajor(start) <= major + 1 && compareRelease(start, lower) <= 0 &&
+        compareRelease(end, upper) >= 0 ? [lower] : [];
+    }).filter(release => {
     return release && pathMajor(release) >= pathMajor(start) && pathMajor(release) <= pathMajor(end) &&
       (/^v\d+$/.test(from) || compareRelease(release, start) >= 0) &&
       (/^v\d+$/.test(to) || compareRelease(release, end) <= 0);

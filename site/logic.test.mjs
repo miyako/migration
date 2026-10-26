@@ -31,9 +31,44 @@ const editorialChanges = editorialCatalog.changes;
 const editorialById = new Map(editorialChanges.flatMap(record =>
   [record.id, ...record.member_ids].map(id => [id, record])));
 
+test('original KB secondary evidence keeps edition context before locale preference', () => {
+  const sources = editorialCatalog.sources;
+  const latest = editorialCatalog.latest;
+  const lists = editorialById.get('chg-project-save-list-call');
+  const old = projectChangeForPath(lists, sources, 'v17', 'v18', latest);
+  assert.ok(old.evidence.length);
+  assert.ok(old.evidence.every(e => !e.source_id.startsWith('kb-')));
+  assert.equal(old.evidence_disposition, 'in_path');
+  const modern = projectChangeForPath(lists, sources, 'v16', 'v21', latest);
+  const english = evidenceForLanguage(modern.evidence, sources, 'en');
+  assert.ok(english.some(e => e.source_id === 'kb-78951-en' && e.pdf.page === 3));
+  assert.ok(english.some(e => e.source_id === 'kb-79155-en' && e.pdf.page === 12));
+  assert.ok(english.some(e => e.source_id === 'legacy-v18-deprecated-en'));
+  const french = evidenceForLanguage(modern.evidence, sources, 'fr');
+  assert.ok(french.length && french.every(e => e.source_id.endsWith('-fr')));
+  for (const language of LANGUAGES) {
+    const identity = projectChangeForPath(editorialById.get('chg-project-standalone-designer-identity'),
+      sources, 'v16', 'v21', latest);
+    const selected = evidenceForLanguage(identity.evidence, sources, language);
+    assert.equal(selected.length, 1);
+    assert.equal(selected[0].url, 'https://kb.4d.com/assetid=79155');
+    assert.equal(selected[0].pdf.page, 4);
+  }
+  const historicalIdentity = projectChangeForPath(editorialById.get('chg-project-standalone-designer-identity'),
+    sources, 'v17', 'v18', latest);
+  assert.equal(historicalIdentity.evidence_disposition, 'unresolved');
+  assert.deepEqual(historicalIdentity.evidence, []);
+  assert.equal(sourceMatchesPath({ edition: '19 R' }, 'v16', 'v19'), false);
+  assert.equal(sourceMatchesPath({ edition: '19 R' }, 'v16', 'v20'), true);
+  assert.equal(sourceMatchesPath({ edition: '20 R' }, 'v20', '20 R6'), false);
+  assert.equal(sourceMatchesPath({ edition: '20 R' }, 'v20', 'v21'), true);
+  assert.equal(sourceMatchesPath({ edition: '20 R' }, '20 R6', 'v21'), false);
+  assert.equal(sourceMatchesPath({ edition: '21 R' }, 'v21', 'latest', latest), false);
+});
+
 test('real catalog crosses historical removal buckets, not document editions or source-equal thresholds', () => {
-  assert.equal(editorialChanges.length, 198);
-  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 272);
+  assert.equal(editorialChanges.length, 202);
+  assert.equal(editorialChanges.flatMap(c => c.member_ids).length, 276);
   assert.equal(editorialChanges.filter(c => c.member_ids.length > 1).length, 28);
   assert.equal(editorialChanges.filter(c => c.member_ids.length > 1).flatMap(c => c.member_ids).length, 102);
   for (const [id, from, to, included] of [
@@ -129,7 +164,7 @@ test('Stage 2 compiler, ORDA and compatibility queries keep release and group bo
 
 test('group searches retain individual IDs, command aliases and unique membership', () => {
   const membership = editorialChanges.flatMap(c => c.member_ids);
-  assert.equal(new Set(membership).size, 272);
+  assert.equal(new Set(membership).size, 276);
   for (const id of membership) {
     const entity = editorialById.get(id);
     const target = entity.applicability?.target_releases?.[0] ?? (entity.applies_until ? 'v20' : 'v21');

@@ -142,7 +142,7 @@ def main():
     locations = {key: value for key, value in prior_locations["locations"].items() if not key.startswith("legacy-")}
     unresolved = [item for item in prior_locations["unresolved"] if not item["id"].startswith("legacy-")]
     for seed in config["seeds"]:
-        if seed["family"] not in {"blog-overview", "documentation-release-notes"}:
+        if seed["family"] not in {"blog-overview", "documentation-release-notes", "original-kb-technote"}:
             found, pending = navigator.resolve(seed)
             locations.update(retain_article_discovery(found, prior_locations["locations"]))
             unresolved.extend(pending)

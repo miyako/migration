@@ -17,7 +17,7 @@ class FeatureEntities(unittest.TestCase):
         atomic = {c["id"]: c for c in self.atomic}
         members = [mid for entity in self.entities for mid in entity["member_ids"]]
         self.assertEqual(Counter(members), Counter({mid: 1 for mid in atomic}))
-        self.assertEqual((len(atomic), len(self.entities), len(self.config["groups"])), (272, 198, 28))
+        self.assertEqual((len(atomic), len(self.entities), len(self.config["groups"])), (276, 202, 28))
         self.assertEqual(sum(len(e["member_ids"]) for e in self.entities if "members" in e), 102)
         for entity in self.entities:
             for member in entity.get("members", []):

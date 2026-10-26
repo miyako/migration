@@ -321,13 +321,14 @@ def initial_registry(config, locations=None):
         if urlsplit(seed["url"]).scheme != "https" or not urlsplit(seed["url"]).netloc:
             raise ValueError(f"Source must use HTTPS: {seed['id']}")
         modern = seed["family"] == "documentation-release-notes"
+        kb = seed["family"] == "original-kb-technote"
         if modern:
             route = documentation_route(seed["url"])
             if route["language"] != "en" or route["channel"] != seed.get("documentation_channel"):
                 raise ValueError(f"Modern seed requires an English route with an explicit matching channel: {seed['id']}")
-        if seed["family"] != "blog-overview" and not modern and ".en.html" not in seed["url"]:
+        if seed["family"] != "blog-overview" and not modern and not kb and ".en.html" not in seed["url"]:
             raise ValueError(f"Legacy discovery requires an .en.html seed: {seed['id']}")
-        for language in LANGUAGES if seed["family"] != "blog-overview" else ("en",):
+        for language in LANGUAGES if seed["family"] != "blog-overview" and not kb else ("en",):
             identifier = seed["id"] + "-" + language
             location = None if modern and language == "en" else locations.get(identifier)
             if language != "en" and location is None:
@@ -337,10 +338,10 @@ def initial_registry(config, locations=None):
             entry["language"] = language
             entry["url"] = location["url"] if location else seed["url"]
             entry.update({
-                "publisher": "4D", "authority": "official_documentation" if modern else
+                "publisher": "4D", "authority": "official_technical_note" if kb else "official_documentation" if modern else
                 "official_documentation_mirror" if seed["family"] != "blog-overview" else "official_publisher",
-                "host_operator": "4D" if modern or seed["family"] == "blog-overview" else "4D Japan archive",
-                "discovery": location["discovery"] if location else {"parent": None, "method": "provided_seed"},
+                "host_operator": "4D" if modern or kb or seed["family"] == "blog-overview" else "4D Japan archive",
+                "discovery": seed["discovery"] if kb else location["discovery"] if location else {"parent": None, "method": "provided_seed"},
                 "fetch": {"status": "not_fetched"},
             })
             result.append(entry)
@@ -428,7 +429,7 @@ def verify_documentation_locale(extracted, entry):
         entry["fetch"].update(status="locale_fallback", error="Article content is identical to English; not verified as a translation.")
 
 
-def open_source(request, transport):
+def open_source(request, transport, max_bytes=12_000_000):
     if transport == "urllib":
         return urlopen(request, timeout=35)
     # Some macOS Python installations lack intermediate certificates available
@@ -436,7 +437,7 @@ def open_source(request, transport):
     with tempfile.TemporaryDirectory(prefix="migration-fetch-") as folder:
         folder = Path(folder)
         command = ["curl", "--silent", "--show-error", "--location", "--max-time", "35",
-                   "--max-filesize", "12000000", "--max-redirs", "5",
+                   "--max-filesize", str(max_bytes), "--max-redirs", "5",
                    "--proto", "=https", "--proto-redir", "=https",
                    "--dump-header", str(folder / "headers"), "--output", str(folder / "body"),
                    "--write-out", "%{json}"]
@@ -455,6 +456,9 @@ def open_source(request, transport):
 
 
 def fetch_one(entry, refresh=False, transport="urllib"):
+    if entry.get("family") == "original-kb-technote":
+        from .kb import fetch_one as fetch_kb
+        return fetch_kb(entry, transport)
     entry = json.loads(json.dumps(entry))
     old = entry.get("fetch", {})
     path = CACHE / "raw" / (entry["id"] + ".html")

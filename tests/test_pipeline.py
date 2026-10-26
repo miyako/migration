@@ -329,7 +329,7 @@ class ModernDocumentation(unittest.TestCase):
         self.assertNotEqual(current["id"], fixed["id"])
         self.assertNotEqual(current["url"], fixed["url"])
         bad = deepcopy(config)
-        bad["seeds"][0]["documentation_channel"] = "versioned"
+        next(s for s in bad["seeds"] if s["id"] == "docs-current-release-notes")["documentation_channel"] = "versioned"
         with self.assertRaisesRegex(ValueError, "matching channel"):
             initial_registry(bad, locations)
 
@@ -353,16 +353,16 @@ class ModernDocumentation(unittest.TestCase):
 
 
 class Registry(unittest.TestCase):
-    def test_all_48_seeds_and_verified_locations(self):
+    def test_all_56_seeds_and_verified_locations(self):
         config = load(ROOT / "data/sources.json")
         locations = load(ROOT / "data/source-locations.json")["locations"]
         entries = initial_registry(config, locations)
-        self.assertEqual(len(config["seeds"]), 48)
-        self.assertEqual(len(entries), 200)
-        self.assertEqual(len({e["id"] for e in entries}), 200)
-        self.assertEqual(len({e["url"] for e in entries}), 200)
+        self.assertEqual(len(config["seeds"]), 56)
+        self.assertEqual(len(entries), 208)
+        self.assertEqual(len({e["id"] for e in entries}), 208)
+        self.assertEqual(len({e["url"] for e in entries}), 208)
         for language in ("en", "fr", "de", "es", "ja"):
-            self.assertEqual(sum(e["language"] == language for e in entries), 48 if language == "en" else 35 if language == "de" else 39)
+            self.assertEqual(sum(e["language"] == language for e in entries), 56 if language == "en" else 35 if language == "de" else 39)
         self.assertEqual(sum(e["family"] == "blog-overview" for e in entries), 9)
         self.assertEqual(sum(e["family"] == "upgrade" for e in entries), 5)
         self.assertEqual(next(e for e in entries if e["id"] == "legacy-v18-deprecated-ja")["edition"], "18.2")
@@ -371,7 +371,7 @@ class Registry(unittest.TestCase):
         self.assertTrue(french["url"].endswith("/Fonctionnalites-obsoletes-ou-supprimees.100-6259787.fr.html"))
         self.assertEqual(french["discovery"]["chain"][0], config["archive_root"])
         self.assertEqual(french["discovery"]["chain"][-1], french["url"])
-        self.assertEqual(len(initial_registry(config)), 48, "Never fabricate untraced locale URLs")
+        self.assertEqual(len(initial_registry(config)), 56, "Never fabricate untraced locale URLs")
         self.assertEqual(sum(e.get("manual") == "language-reference" for e in entries), 50)
         self.assertEqual(sum(e.get("manual") == "design-reference" for e in entries), 15)
         self.assertEqual(sum(e.get("manual") == "Design Reference" for e in entries), 25)
@@ -494,10 +494,10 @@ class Publication(unittest.TestCase):
 
     def test_catalog_valid_and_locally_published(self):
         validate(self.document)
-        self.assertEqual(self.document["coverage"]["english_seeds"], 48)
-        self.assertEqual(self.document["coverage"]["registered_sources"], 205)
-        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 205})
-        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 150, "navigation_index": 55})
+        self.assertEqual(self.document["coverage"]["english_seeds"], 56)
+        self.assertEqual(self.document["coverage"]["registered_sources"], 213)
+        self.assertEqual(self.document["coverage"]["fetch_status"], {"available": 213})
+        self.assertEqual(self.document["coverage"]["extraction_surfaces"], {"article": 150, "navigation_index": 55, "kb_pdf": 8})
         self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 20)
         self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 5)
         self.assertEqual(self.document["coverage"]["processed_source_ids"],
@@ -515,15 +515,15 @@ class Publication(unittest.TestCase):
                                    for detail in ("base64-decode", "is-editing-text")
                                    for lang in ("en", "fr", "de", "es", "ja")]
                                 + [source["id"] for source in self.document["sources"]
-                                   if source["id"].startswith("docs-") and any(
+                                   if source["id"].startswith(("docs-", "kb-")) and any(
                                        evidence["source_id"] == source["id"]
                                        for change in self.document["changes"] for evidence in change["evidence"])]))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
-        self.assertEqual(len(self.document["changes"]), 198)
-        self.assertEqual(self.document["coverage"]["atomic_changes"], 272)
-        self.assertEqual(self.document["coverage"]["visible_entities"], 198)
+        self.assertEqual(len(self.document["changes"]), 202)
+        self.assertEqual(self.document["coverage"]["atomic_changes"], 276)
+        self.assertEqual(self.document["coverage"]["visible_entities"], 202)
         self.assertEqual(self.document["coverage"]["grouped_entities"], 28)
 
     def test_offline_reproducible_build(self):

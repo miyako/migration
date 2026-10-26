@@ -17,12 +17,12 @@ class ContentBatch(unittest.TestCase):
 
     def test_stable_ids_atomicity_and_deduplication(self):
         self.assertEqual(len(self.changes), len(self.by_id))
-        self.assertEqual(len(merge_candidates(self.changes * 2)), 272)
+        self.assertEqual(len(merge_candidates(self.changes * 2)), 276)
         for identifier in ("chg-colon-identifiers", "chg-pdfcreator-driver-deprecation",
                            "chg-bundled-php-dom-removal"):
             self.assertIn(identifier, self.by_id)
         self.assertEqual(Counter(c["type"] for c in self.changes),
-                         {"removal": 83, "deprecation": 66, "restriction": 35, "behavior": 88})
+                         {"removal": 83, "deprecation": 66, "restriction": 36, "behavior": 91})
         self.assertIn("_o_DISABLE BUTTON", self.by_id["chg-removed-disable-button"]["identifiers"])
         self.assertIn("_o_ENABLE BUTTON", self.by_id["chg-removed-enable-button"]["identifiers"])
         self.assertNotIn("chg-removed-get-platform-interface", self.by_id)
@@ -115,7 +115,7 @@ class ContentBatch(unittest.TestCase):
                                    "chg-quickdraw-plugin-offscreen-drawing", "chg-database-rsr-explicit-open",
                                    "chg-legacy-network-layer-deprecation"}
         self.assertTrue(original_unknowns <= unknowns)
-        self.assertEqual(len(unknowns), 27)
+        self.assertEqual(len(unknowns), 31)
         for identifier in unknowns:
             self.assertEqual(self.by_id[identifier]["threshold"],
                              {"exact": None, "bucket": None, "kind": "unknown"})
