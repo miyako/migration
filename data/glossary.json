@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Concept and edition alignment seed, not a complete official glossary. Null means no official wording verified here. UI labels and candidate summaries are separately authored translations, not official quotations.",
+  "note": "Concept and edition alignment seed, not a complete official glossary. Null means no official wording verified here. All summaries remain agent-authored generated candidates, including German prose. Official German historical vocabulary is recorded below, not inferred from the authored summaries. The German v20 PHP section itself is in English; its URL does not establish an official German translation of that section.",
   "concepts": [
     {
       "id": "deprecated",
@@ -9,9 +9,9 @@
       "official": {
         "en": {"text": "Deprecated", "source_id": "legacy-v20-deprecated-en"},
         "ja": {"text": "廃止予定", "source_id": "legacy-v20-deprecated-ja"},
-        "fr": null,
-        "de": null,
-        "es": null
+        "fr": {"text": "Obsolète", "source_id": "legacy-v20-deprecated-fr"},
+        "de": {"text": "Überholt", "source_id": "legacy-v20-deprecated-de"},
+        "es": {"text": "Obsoleto", "source_id": "legacy-v20-deprecated-es"}
       }
     },
     {
@@ -21,11 +21,11 @@
       "official": {
         "en": {"text": "Removed", "source_id": "legacy-v20-deprecated-en"},
         "ja": {"text": "削除", "source_id": "legacy-v20-deprecated-ja"},
-        "fr": null,
-        "de": null,
-        "es": null
+        "fr": {"text": "Supprimée", "source_id": "legacy-v20-deprecated-fr"},
+        "de": {"text": "Entfernt", "source_id": "legacy-v20-deprecated-de"},
+        "es": {"text": "Eliminado", "source_id": "legacy-v20-deprecated-es"}
       }
     }
   ],
-  "identifier_policy": "Keep official API/command identifiers and historical aliases unchanged. A French command name can be an official localized identifier, not a generated translation. New German prose is not historical official terminology unless independently sourced."
+  "identifier_policy": "Keep official API/command identifiers and historical aliases unchanged. French localized names in candidate prose are anchored to matching official table rows; the English canonical identifier remains searchable. Apparent archive spellings _o_Crer fichier ressources and _o_FIWER TEMPORISATION WEB, and the French _o_Nom de police row aligned with English _o_Font number, are retained only in verbatim evidence, not silently promoted to corrected canonical aliases. New German prose is not historical official terminology. The German source uses both Überholt and Veraltet for deprecated, distinct from Entfernt. No summary is marked as an official or human-reviewed translation."
 }

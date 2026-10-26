@@ -287,7 +287,7 @@ class ModernDocumentation(unittest.TestCase):
             self.assertEqual(cached["url"], self.url)
             self.assertEqual(cached["resolved_url"], self.url)
 
-    def test_committed_provenance_keeps_catalog_processing_unchanged(self):
+    def test_committed_modern_provenance_is_separate_from_legacy_content(self):
         entries = [s for s in load(ROOT / "data/registry.json") if s["family"] == "documentation-release-notes"]
         self.assertEqual(len(entries), 16)
         self.assertEqual({s["language"] for s in entries}, {"en", "fr", "es", "ja"})
@@ -297,7 +297,8 @@ class ModernDocumentation(unittest.TestCase):
         self.assertIn("BETA", current["fetch"]["documentation"]["channel_label"])
         self.assertEqual(load(ROOT / "data/latest.json")["release"], "21 R4")
         self.assertTrue(all(s["authority"] == "official_documentation" and s["host_operator"] == "4D" for s in entries))
-        self.assertEqual(len(load(ROOT / "data/changes.json")), 3)
+        self.assertFalse(any(e["source_id"].startswith("docs-")
+                             for c in load(ROOT / "data/changes.json") for e in c["evidence"]))
 
     def test_refresh_configuration_keeps_observed_moving_edition_and_stable_ids(self):
         config = load(ROOT / "data/sources.json")
@@ -469,11 +470,12 @@ class Publication(unittest.TestCase):
         self.assertEqual(self.document["coverage"]["modern_documentation_sources"], 16)
         self.assertEqual(self.document["coverage"]["modern_unlinked_locales"], 4)
         self.assertEqual(self.document["coverage"]["processed_source_ids"],
-                         ["legacy-v20-deprecated-en", "legacy-v20-deprecated-ja"])
+                         sorted(f"legacy-v{v}-deprecated-{lang}"
+                                for v in (18, 19, 20) for lang in ("en", "fr", "de", "es", "ja")))
         self.assertEqual(self.document["coverage"]["superseded_url_probes"], 34)
         self.assertEqual(self.document["coverage"]["reviewed_changes"], 0)
         self.assertEqual(self.document["semantic_search"]["status"], "unavailable")
-        self.assertEqual(len(self.document["changes"]), 3)
+        self.assertEqual(len(self.document["changes"]), 68)
 
     def test_offline_reproducible_build(self):
         path = ROOT / "site/data/catalog.json"

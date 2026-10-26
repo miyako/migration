@@ -13,6 +13,47 @@ const change = (id, bucket = 'v20', extra = {}) => ({
   ...extra,
 });
 
+const editorialChanges = JSON.parse(await readFile(new URL('../data/changes.json', import.meta.url)));
+const editorialById = new Map(editorialChanges.map(record => [record.id, record]));
+
+test('real catalog crosses historical removal buckets, not document editions or source-equal thresholds', () => {
+  assert.equal(editorialChanges.length, 68);
+  for (const [id, from, to, included] of [
+    ['chg-removed-xslt-apply-transformation', 'v17', 'v18', true],
+    ['chg-removed-xslt-apply-transformation', 'v18', 'v20', false],
+    ['chg-removed-no-trace', 'v18', 'v19', true],
+    ['chg-removed-no-trace', 'v19', 'v21', false],
+    ['chg-colon-identifiers', 'v19', 'v20', true],
+    ['chg-colon-identifiers', 'v20', 'latest', false],
+    ['chg-bundled-php-zip-removal', 'v19', 'v20', true],
+    ['chg-bundled-php-zip-removal', 'v20', 'v21', false],
+    ['chg-pdfcreator-driver-deprecation', 'v20', 'v21', true],
+    ['chg-deprecated-c-integer', 'v20', 'v20', true],
+    ['chg-project-save-list-call', 'v20', 'v21', true],
+  ]) {
+    assert.equal(crossesVersion(editorialById.get(id), from, to, { release: '21 R4' }),
+      included, `${id}: ${from} → ${to}`);
+  }
+});
+
+test('real content search, severity and unknown remediation difficulty preserve semantics', () => {
+  assert.deepEqual(filterChanges(editorialChanges, {
+    source: 'v18', target: 'v19', query: 'OBJET FIXER ACTIVATION',
+  }).map(c => c.id), ['chg-removed-disable-button', 'chg-removed-enable-button']);
+  const modernPhp = filterChanges(editorialChanges, { source: 'v19', target: 'v20', query: 'PHP' });
+  assert.equal(modernPhp.length, 12);
+  assert.ok(modernPhp.every(c => c.id.startsWith('chg-bundled-php-')));
+  const lingering = filterChanges(editorialChanges, { source: 'v20', target: 'v21' });
+  assert.ok(lingering.some(c => c.id === 'chg-pdfcreator-driver-deprecation'));
+  assert.ok(!lingering.some(c => c.id.startsWith('chg-removed-')));
+  const sorted = filterChanges(editorialChanges);
+  assert.deepEqual(sorted.slice(0, 2).map(c => c.id),
+    ['chg-colon-identifiers', 'chg-object-notation-compliance']);
+  assert.ok(sorted.every(c => complexityForChange(c) === 'unknown'));
+  assert.deepEqual(filterChanges(editorialChanges, { sort: 'complexity' }).map(c => c.id),
+    sorted.map(c => c.id));
+});
+
 test('release buckets preserve major version and do not invent unknown versions', () => {
   for (const text of ['v20', '20.3', '20 R10', '4D v20 R3', 'v20R2']) assert.equal(versionBucket(text), 'v20');
   assert.equal(versionBucket('latest'), 'latest');
