@@ -2852,20 +2852,24 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:02+00:00",
-      "fetched_at": "2026-10-26T10:16:06+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d",
       "etag": "\"cdb1-5ce2371901b00\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:08 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
-      "previous_sha256": null,
-      "block_count": 56,
       "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 78,
       "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html",
-    "title": "Changes and updates"
+    "title": "Changes and updates",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v19-changes-fr",
@@ -2891,16 +2895,16 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:02+00:00",
-      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9",
       "etag": "\"e44a-5ce2371348d80\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:02 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 56,
+      "block_count": 78,
       "content_kind": "article"
     },
     "url_history": [
@@ -2922,7 +2926,11 @@
       }
     ],
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html",
-    "title": "Mises à jour et modifications"
+    "title": "Mises à jour et modifications",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v19-changes-de",
@@ -2948,16 +2956,16 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:02+00:00",
-      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "8e1046dfb2716b8a8cb21bcc808903ef94e40a194e6b12431a85bdb12b08f8a6",
       "etag": "\"d632-5ce2371cd2400\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:12 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 56,
+      "block_count": 77,
       "content_kind": "article"
     },
     "url_history": [
@@ -2979,7 +2987,11 @@
       }
     ],
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html",
-    "title": "Änderungen und Aktualisierungen"
+    "title": "Änderungen und Aktualisierungen",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v19-changes-es",
@@ -3005,16 +3017,16 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "3092a62583b5515434670c7270785b8ae50270e98af347cc3c05e6ceb574a82e",
       "etag": "\"d97e-5ce237228b180\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:18 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 56,
+      "block_count": 78,
       "content_kind": "article"
     },
     "url_history": [
@@ -3036,7 +3048,11 @@
       }
     ],
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html",
-    "title": "Cambios y actualizaciones"
+    "title": "Cambios y actualizaciones",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v19-changes-ja",
@@ -3062,20 +3078,24 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:16:06+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "4796aa788fabd4562a76437f8a82c92209f79966ebcd0aeb5f92f26204ff10ea",
       "etag": "\"eca8-5ce2372c14800\"",
       "last_modified": "Tue, 12 Oct 2021 08:15:28 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
-      "previous_sha256": null,
-      "block_count": 56,
       "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 78,
       "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html",
-    "title": "変更点とアップデートについて"
+    "title": "変更点とアップデートについて",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v18-changes-en",
@@ -3101,20 +3121,24 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:16:06+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "f888feb2bf1c0829af27b561089c4d8b1334d5402188ad1b456372926d657caf",
       "etag": "\"127d6-5a7a0575ef480\"",
       "last_modified": "Tue, 09 Jun 2020 05:53:06 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
-      "previous_sha256": null,
-      "block_count": 32,
       "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 53,
       "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html",
-    "title": "Changes and updates"
+    "title": "Changes and updates",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v18-changes-fr",
@@ -3140,16 +3164,16 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "ce3dac15d5244d9b0a0402e6836daea08bd42c381328e1191b15593e37d1137c",
       "etag": "\"24b0c-5a7a035657200\"",
       "last_modified": "Tue, 09 Jun 2020 05:43:36 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 32,
+      "block_count": 53,
       "content_kind": "article"
     },
     "url_history": [
@@ -3171,7 +3195,11 @@
       }
     ],
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Modifications-et-mises-a-jour.200-5049566.fr.html",
-    "title": "Modifications et mises à jour"
+    "title": "Modifications et mises à jour",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v18-changes-de",
@@ -3197,16 +3225,16 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "6448e4a46c8c207d6bceb49ec3df31fb71c988a9bbdd97184a2ef4a0547828fe",
       "etag": "\"12eb7-5a7a073be2380\"",
       "last_modified": "Tue, 09 Jun 2020 06:01:02 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
-      "block_count": 32,
+      "block_count": 53,
       "content_kind": "article"
     },
     "url_history": [
@@ -3228,7 +3256,11 @@
       }
     ],
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Anderungen-und-Aktualisierungen.200-5049566.de.html",
-    "title": "Änderungen und Aktualisierungen"
+    "title": "Änderungen und Aktualisierungen",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v18-changes-es",
@@ -3254,16 +3286,16 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:45:57+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "1ef0f9cb7b6d9d34ca5100b9f1233e7130874b4a29804365634e697edf119059",
       "etag": "\"12f3e-5a7a08f84bc00\"",
       "last_modified": "Tue, 09 Jun 2020 06:08:48 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 32,
+      "block_count": 53,
       "content_kind": "article"
     },
     "url_history": [
@@ -3285,7 +3317,11 @@
       }
     ],
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Cambios-y-actualizaciones.200-5049566.es.html",
-    "title": "Cambios y actualizaciones"
+    "title": "Cambios y actualizaciones",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v18-changes-ja",
@@ -3311,20 +3347,24 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T10:58:03+00:00",
-      "fetched_at": "2026-10-26T10:16:06+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
+      "fetched_at": "2026-10-26T12:51:47+00:00",
       "sha256": "1c9c7c0745deb9412f5850c675634950b90f1881f970de40a7a9bd5b042f4c79",
       "etag": "\"13997-5a7a0c8061100\"",
       "last_modified": "Tue, 09 Jun 2020 06:24:36 GMT",
-      "http_status": 304,
+      "http_status": 200,
       "redirected": false,
-      "previous_sha256": null,
-      "block_count": 32,
       "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 53,
       "content_kind": "article"
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.ja.html",
-    "title": "変更点とアップデートについて"
+    "title": "変更点とアップデートについて",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   },
   {
     "id": "legacy-v17-quick-table-en",
@@ -3350,12 +3390,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:30+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
       "fetched_at": "2026-10-26T12:35:30+00:00",
       "sha256": "95d4c18d8ed2aaf1564e74cdc5a9306fb9adab32f68f82dd0a54208e58f9439e",
       "etag": "\"6c00-5a45686026580\"",
       "last_modified": "Tue, 28 Apr 2020 09:33:26 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "en",
       "previous_sha256": null,
@@ -3365,8 +3405,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html",
     "title": "Quick table",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3393,12 +3433,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:30+00:00",
+      "checked_at": "2026-10-26T12:51:47+00:00",
       "fetched_at": "2026-10-26T12:35:30+00:00",
       "sha256": "907403134c136716819d94d8e7ffa3eb4fa47d2e2101fcfb77dc0d212255adfb",
       "etag": "\"702a-5a4565c864780\"",
       "last_modified": "Tue, 28 Apr 2020 09:21:50 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
@@ -3426,8 +3466,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Tableau-recapitulatif.200-3761902.fr.html",
     "title": "Tableau récapitulatif",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3454,12 +3494,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:30+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:30+00:00",
       "sha256": "f6d493738aab9ef501758be8f6364059db3b74e16dae16beae70328e52656f68",
       "etag": "\"6c50-5a456a355b880\"",
       "last_modified": "Tue, 28 Apr 2020 09:41:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
@@ -3487,8 +3527,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Ubersicht.200-3761902.de.html",
     "title": "Übersicht",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3515,12 +3555,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:30+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:30+00:00",
       "sha256": "d6ddeb54d90d4dff8524c27a5fd36f3e5fd85f9a69d1c80f4860ff8cab950aed",
       "etag": "\"6c63-5a456c0c79000\"",
       "last_modified": "Tue, 28 Apr 2020 09:49:52 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
@@ -3530,8 +3570,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.es.html",
     "title": "Quick table",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3558,12 +3598,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:30+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:30+00:00",
       "sha256": "ea0841b612ca801f03c6de448f5d89bdaaa03707850f7e5f9b0ec6f1e0b3de18",
       "etag": "\"6ff1-5a456fc625a00\"",
       "last_modified": "Tue, 28 Apr 2020 10:06:32 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "ja",
       "previous_sha256": null,
@@ -3573,8 +3613,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.ja.html",
     "title": "早見表",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3601,12 +3641,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:30+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:30+00:00",
       "sha256": "06d8094a2775b0be65d88acdc45d29d8f3c7f1b5f303badbb1849c22ab3cbbb4",
       "etag": "\"6661-56482ce1bae80\"",
       "last_modified": "Tue, 06 Feb 2018 03:30:50 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "en",
       "previous_sha256": null,
@@ -3616,8 +3656,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html",
     "title": "Quick table",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3644,12 +3684,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:31+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:31+00:00",
       "sha256": "2bc3c457ba0639ff37eb00622d9951b3907d4122b36bca1fa0e07e930c8ec477",
       "etag": "\"688a-56482a5d0bd80\"",
       "last_modified": "Tue, 06 Feb 2018 03:19:34 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
@@ -3677,8 +3717,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Tableau-recapitulatif.200-3072041.fr.html",
     "title": "Tableau récapitulatif",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3705,12 +3745,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:31+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:31+00:00",
       "sha256": "74dae928a478a253c9f8981eabe96ffe860c6a2ded4e88acebedef9656055f5b",
       "etag": "\"6771-56482eb137400\"",
       "last_modified": "Tue, 06 Feb 2018 03:38:56 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "de",
       "previous_sha256": null,
@@ -3738,8 +3778,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Ubersicht.200-3072041.de.html",
     "title": "Übersicht",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3766,12 +3806,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:31+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:31+00:00",
       "sha256": "38422ea1565c60d6dd807fb1a5a92a42c5bc97f221328d30c6fb064502dd15d8",
       "etag": "\"68f9-5648308484280\"",
       "last_modified": "Tue, 06 Feb 2018 03:47:06 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
@@ -3781,8 +3821,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.es.html",
     "title": "Quick table",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -3809,12 +3849,12 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T12:35:31+00:00",
+      "checked_at": "2026-10-26T12:51:48+00:00",
       "fetched_at": "2026-10-26T12:35:31+00:00",
       "sha256": "843cf9ee788464cf11286f8baeef6bc0f61b434f540aa378929ddbc3570c0fad",
       "etag": "\"69d3-564834368fa80\"",
       "last_modified": "Tue, 06 Feb 2018 04:03:38 GMT",
-      "http_status": 200,
+      "http_status": 304,
       "redirected": false,
       "detected_language": "ja",
       "previous_sha256": null,
@@ -3824,8 +3864,8 @@
     "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.ja.html",
     "title": "早見表",
     "catalog_scope": {
-      "status": "limited_context",
-      "note": "Selected architecture/status rows only. Systematic Changes/updates Quick-table processing is deferred to Stage 2."
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
     }
   },
   {
@@ -8339,5 +8379,1845 @@
     },
     "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.ja.html",
     "title": "v17プロダクトレンジで廃止予定または削除された機能"
+  },
+  {
+    "id": "legacy-design-v20-compatibility-en",
+    "family": "compatibility-settings",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-6602032",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html"
+      ],
+      "document_key": "300-6602324",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "66cb1918a05d2a6529a76f073adb64eba91bcee400fdb494e822931aa6661333",
+      "etag": "\"b4c2-609896f048280\"",
+      "last_modified": "Tue, 07 Nov 2023 05:42:18 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 31,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Design-Reference.100-6602032.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html",
+    "title": "Compatibility page",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v20-compatibility-fr",
+    "family": "compatibility-settings",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-6602032",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html"
+      ],
+      "document_key": "300-6602324",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "79790de2e82c53d10d4a8de20ba62f66d81c458b5d7c765e018a95873e1e0ae8",
+      "etag": "\"d11a-60986dbe8d200\"",
+      "last_modified": "Tue, 07 Nov 2023 02:38:00 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 31,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Mode-Developpement.100-6602032.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Page-Compatibilite.300-6602324.fr.html",
+    "title": "Page Compatibilité",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v20-compatibility-de",
+    "family": "compatibility-settings",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Seite-Kompatibilitat.300-6602324.de.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-6602032",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Seite-Kompatibilitat.300-6602324.de.html"
+      ],
+      "document_key": "300-6602324",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "0f88c512a2a18f422ffa2bac5cf1f74f447abddcf1d49c11e45ddc4f1bf8a59a",
+      "etag": "\"bcc6-6098b397f1d80\"",
+      "last_modified": "Tue, 07 Nov 2023 07:50:30 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 28,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Designmodus.100-6602032.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Seite-Kompatibilitat.300-6602324.de.html",
+    "title": "Seite Kompatibilität",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v20-compatibility-es",
+    "family": "compatibility-settings",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Pagina-Compatibilidad.300-6602324.es.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-6602032",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Pagina-Compatibilidad.300-6602324.es.html"
+      ],
+      "document_key": "300-6602324",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "f158a387eecf9be4003903acdb9ab1fafa6ca45d39a8dfc61676228ec8026683",
+      "etag": "\"c38c-6098d0a0e1e00\"",
+      "last_modified": "Tue, 07 Nov 2023 10:00:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 31,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Manual-de-Diseno.100-6602032.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Pagina-Compatibilidad.300-6602324.es.html",
+    "title": "Página Compatibilidad",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v20-compatibility-ja",
+    "family": "compatibility-settings",
+    "edition": "20.1",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.ja.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-6602032",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv20/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/",
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.ja.html"
+      ],
+      "document_key": "300-6602324",
+      "index_sha256": "fe7b7976093b7f35ccaa2b043f6fdbfd9cbb2f11cec6228feb585392a1c01700"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "b28d6e69e733596c97d7016fc99e82152d4ea4727e2c7a867fe13e25f54666ef",
+      "etag": "\"cd43-60990b2ebc380\"",
+      "last_modified": "Tue, 07 Nov 2023 14:22:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 31,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv20/4D/20.1/4D-Design-Reference.100-6602032.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.ja.html",
+    "title": "互換性ページ",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v19-compatibility-en",
+    "family": "compatibility-settings",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-5416591",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html"
+      ],
+      "document_key": "300-5416914",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "dd5499fd66b37b19a4b7973b08575cab09159bca0dedf57c861fa95aa474bc5a",
+      "etag": "\"cd2e-5ce26cb461480\"",
+      "last_modified": "Tue, 12 Oct 2021 12:14:58 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Design-Reference.100-5416591.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html",
+    "title": "Compatibility page",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v19-compatibility-fr",
+    "family": "compatibility-settings",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Page-Compatibilite.300-5416914.fr.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-5416591",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Page-Compatibilite.300-5416914.fr.html"
+      ],
+      "document_key": "300-5416914",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "07c79971f9a3c30dc128d54431180b21f9b28a52febbfb954752a223191d9fe6",
+      "etag": "\"e5b8-5ce244f0dc400\"",
+      "last_modified": "Tue, 12 Oct 2021 09:17:04 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Mode-Developpement.100-5416591.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Page-Compatibilite.300-5416914.fr.html",
+    "title": "Page Compatibilité",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v19-compatibility-de",
+    "family": "compatibility-settings",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Seite-Kompatibilitat.300-5416914.de.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-5416591",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Seite-Kompatibilitat.300-5416914.de.html"
+      ],
+      "document_key": "300-5416914",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "96a4ce73d2981162f7a1932088ac22818ae0b0575b50e2bcbdcf2e9f1bc4f369",
+      "etag": "\"d2b9-5ce2896d35800\"",
+      "last_modified": "Tue, 12 Oct 2021 14:23:28 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 23,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Designmodus.100-5416591.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Seite-Kompatibilitat.300-5416914.de.html",
+    "title": "Seite Kompatibilität",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v19-compatibility-es",
+    "family": "compatibility-settings",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Pagina-Compatibilidad.300-5416914.es.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-5416591",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Pagina-Compatibilidad.300-5416914.es.html"
+      ],
+      "document_key": "300-5416914",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "9085ff9f99ff93143520dee01fb4b0255e6408b3a0e4929abbc9a00f2dbb2051",
+      "etag": "\"da98-5ce2a627f2000\"",
+      "last_modified": "Tue, 12 Oct 2021 16:32:00 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Manual-de-Diseno.100-5416591.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Pagina-Compatibilidad.300-5416914.es.html",
+    "title": "Página Compatibilidad",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v19-compatibility-ja",
+    "family": "compatibility-settings",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.ja.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-5416591",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.ja.html"
+      ],
+      "document_key": "300-5416914",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:48+00:00",
+      "fetched_at": "2026-10-26T12:51:48+00:00",
+      "sha256": "8a9ba88f9d8a8ff57cd5b0d2ce9ef9f5b49251f7660d152f7c660f14e2ede3bf",
+      "etag": "\"dff8-5ce2e12df6100\"",
+      "last_modified": "Tue, 12 Oct 2021 20:56:04 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/4D-Design-Reference.100-5416591.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.ja.html",
+    "title": "互換性ページ",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v18-compatibility-en",
+    "family": "compatibility-settings",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4575411",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html"
+      ],
+      "document_key": "300-4575476",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "d54bc6881df7b5f218da673436cada07258a071f4d7d37926e76c9f303c58c4c",
+      "etag": "\"c735-5a7a338ae2d00\"",
+      "last_modified": "Tue, 09 Jun 2020 09:19:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 21,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Design-Reference.100-4575411.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html",
+    "title": "Compatibility page",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v18-compatibility-fr",
+    "family": "compatibility-settings",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Page-Compatibilite.300-4575476.fr.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4575411",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Page-Compatibilite.300-4575476.fr.html"
+      ],
+      "document_key": "300-4575476",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "d1e167090ce2bfb3e1605235afc79abc5bcce515f770a6a1c82eadb383dd5eae",
+      "etag": "\"df75-5a7a0faed1280\"",
+      "last_modified": "Tue, 09 Jun 2020 06:38:50 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 21,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Mode-Developpement.100-4575411.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Page-Compatibilite.300-4575476.fr.html",
+    "title": "Page Compatibilité",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v18-compatibility-de",
+    "family": "compatibility-settings",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Seite-Kompatibilitat.300-4575476.de.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4575411",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Seite-Kompatibilitat.300-4575476.de.html"
+      ],
+      "document_key": "300-4575476",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "ca1635d8e5a3b4f341be846d9bdbd6572a237cb9eab7a44295aa5be4e2c73ef4",
+      "etag": "\"cd13-5a7a4c1799880\"",
+      "last_modified": "Tue, 09 Jun 2020 11:09:06 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 21,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Designmodus.100-4575411.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Seite-Kompatibilitat.300-4575476.de.html",
+    "title": "Seite Kompatibilität",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v18-compatibility-es",
+    "family": "compatibility-settings",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Pagina-Compatibilidad.300-4575476.es.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4575411",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Pagina-Compatibilidad.300-4575476.es.html"
+      ],
+      "document_key": "300-4575476",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "1d96a59327412444ebc41fbb67f96919ded96105704d490cf796fa84aa71c633",
+      "etag": "\"cf5b-5a7a649325b80\"",
+      "last_modified": "Tue, 09 Jun 2020 12:58:38 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 20,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Manual-de-Diseno.100-4575411.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Pagina-Compatibilidad.300-4575476.es.html",
+    "title": "Página Compatibilidad",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v18-compatibility-ja",
+    "family": "compatibility-settings",
+    "edition": "18",
+    "url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.ja.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4575411",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/",
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.ja.html"
+      ],
+      "document_key": "300-4575476",
+      "index_sha256": "574bb42eed582195b26b03ff9875356dfd7383b9d78c135ace31a353a06829ca"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "be14d07e3273325a4c1089b1e6195485637993ea5aacf74697f6eda7bad77b97",
+      "etag": "\"d895-5a7a95fe97400\"",
+      "last_modified": "Tue, 09 Jun 2020 16:39:44 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 21,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv18/4D/18/4D-Design-Reference.100-4575411.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.ja.html",
+    "title": "互換性ページ",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v17-compatibility-en",
+    "family": "compatibility-settings",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4880454",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html"
+      ],
+      "document_key": "300-4880529",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "c999a48b8e62d6085ba19d04fd400d8a10ea7a8b75c3d4ff961831d45848af83",
+      "etag": "\"d2ac-5a459a2ec6800\"",
+      "last_modified": "Tue, 28 Apr 2020 13:16:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 27,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Design-Reference.100-4880454.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html",
+    "title": "Compatibility page",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v17-compatibility-fr",
+    "family": "compatibility-settings",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Page-Compatibilite.300-4880529.fr.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4880454",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Page-Compatibilite.300-4880529.fr.html"
+      ],
+      "document_key": "300-4880529",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "32285c68544117be9229cd1770a0cf2b6dc336785d9d83c10a857f04a0dbffff",
+      "etag": "\"e0ed-5a4574a775d80\"",
+      "last_modified": "Tue, 28 Apr 2020 10:28:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 27,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Mode-Developpement.100-4880454.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Page-Compatibilite.300-4880529.fr.html",
+    "title": "Page Compatibilité",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v17-compatibility-de",
+    "family": "compatibility-settings",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Seite-Kompatibilitat.300-4880529.de.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4880454",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Seite-Kompatibilitat.300-4880529.de.html"
+      ],
+      "document_key": "300-4880529",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "7286bc261f6c17612f0fac6e1f4508b1fee88c0dbfa41096cd7851c43b3fff7c",
+      "etag": "\"d630-5a45b427caf00\"",
+      "last_modified": "Tue, 28 Apr 2020 15:12:28 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Designmodus.100-4880454.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Seite-Kompatibilitat.300-4880529.de.html",
+    "title": "Seite Kompatibilität",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v17-compatibility-es",
+    "family": "compatibility-settings",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Pagina-Compatibilidad.300-4880529.es.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4880454",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Pagina-Compatibilidad.300-4880529.es.html"
+      ],
+      "document_key": "300-4880529",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "aa9a3314fcb1fa320ab6ccd63fc533b65fc12f511839786ad81a09ccc180f34b",
+      "etag": "\"d83e-5a45ce4ac5900\"",
+      "last_modified": "Tue, 28 Apr 2020 17:09:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Manual-de-Diseno.100-4880454.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Pagina-Compatibilidad.300-4880529.es.html",
+    "title": "Página Compatibilidad",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v17-compatibility-ja",
+    "family": "compatibility-settings",
+    "edition": "17.4",
+    "url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.ja.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-4880454",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv17/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/",
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.ja.html"
+      ],
+      "document_key": "300-4880529",
+      "index_sha256": "1d0c9ec2ea73574e897efed5b9d9c81fc5767126232f258f6646daabce8ea47a"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "4cda55f01c035c0b093e8ea0621b98c7c45933a0872c3c67e8bf15a446c596f4",
+      "etag": "\"ea09-5a4605c113300\"",
+      "last_modified": "Tue, 28 Apr 2020 21:17:32 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 27,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv17/4D/17.4/4D-Design-Reference.100-4880454.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.ja.html",
+    "title": "互換性ページ",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v16-compatibility-en",
+    "family": "compatibility-settings",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-3670638",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html"
+      ],
+      "document_key": "300-3670711",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "81d8356b12e86d16a6de9a6f0d275d17c227da989c85339f7446457bd1d55e00",
+      "etag": "\"c6a8-5648585192980\"",
+      "last_modified": "Tue, 06 Feb 2018 06:45:10 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Design-Reference.100-3670638.en.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html",
+    "title": "Compatibility page",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v16-compatibility-fr",
+    "family": "compatibility-settings",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Page-Compatibilite.300-3670711.fr.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-3670638",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Page-Compatibilite.300-3670711.fr.html"
+      ],
+      "document_key": "300-3670711",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "f415fb733b781a7963345b73ed3dbf43c90e33cae2a61f5f2315ccf62c79d232",
+      "etag": "\"d33f-56483a26b7d00\"",
+      "last_modified": "Tue, 06 Feb 2018 04:30:12 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Mode-Developpement.100-3670638.fr.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Page-Compatibilite.300-3670711.fr.html",
+    "title": "Page Compatibilité",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v16-compatibility-de",
+    "family": "compatibility-settings",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Seite-Kompatibilitat.300-3670711.de.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-3670638",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Seite-Kompatibilitat.300-3670711.de.html"
+      ],
+      "document_key": "300-3670711",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "1c1dfdd35bf9b5d7aed2eb22f64e1aa47903c2d2be8f61f14de9de287c5cc0ea",
+      "etag": "\"ca2c-56486d5fbd680\"",
+      "last_modified": "Tue, 06 Feb 2018 08:19:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Designmodus.100-3670638.de.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Seite-Kompatibilitat.300-3670711.de.html",
+    "title": "Seite Kompatibilität",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v16-compatibility-es",
+    "family": "compatibility-settings",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Pagina-Compatibilidad.300-3670711.es.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-3670638",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Pagina-Compatibilidad.300-3670711.es.html"
+      ],
+      "document_key": "300-3670711",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "87a0f355c01b5189f384673ed443123164e88b6ac2b355b6f8e5fce14001d4b4",
+      "etag": "\"d09a-5648826647180\"",
+      "last_modified": "Tue, 06 Feb 2018 09:53:26 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 25,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Manual-de-Diseno.100-3670638.es.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Pagina-Compatibilidad.300-3670711.es.html",
+    "title": "Página Compatibilidad",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-design-v16-compatibility-ja",
+    "family": "compatibility-settings",
+    "edition": "16.3",
+    "url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.ja.html",
+    "manual": "Design Reference",
+    "manual_document_key": "100-3670638",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv16/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/",
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.ja.html"
+      ],
+      "document_key": "300-3670711",
+      "index_sha256": "dfded7fd4585c659d1728676ddc402b5e1b4e34e1ebaaf7c737731201a4cd056"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:51:49+00:00",
+      "fetched_at": "2026-10-26T12:51:49+00:00",
+      "sha256": "1f7f4a1b5f040754cbe487ec0673d30c9421c7cd12a86325405675f7a5b7a739",
+      "etag": "\"d8b1-5648ac233ea80\"",
+      "last_modified": "Tue, 06 Feb 2018 13:00:10 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 26,
+      "content_kind": "article",
+      "manual_document_urls": [
+        "https://library.4d-japan.com/doc/4Dv16/4D/16.3/4D-Design-Reference.100-3670638.ja.html"
+      ]
+    },
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.ja.html",
+    "title": "互換性ページ",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-base64-decode-en",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html"
+      ],
+      "document_key": "301-5392926",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:29+00:00",
+      "fetched_at": "2026-10-26T12:54:29+00:00",
+      "sha256": "677a839ff23ed0ba6091304f8ca1a3168c8f8eeee30c45de9fd08916aa6a46f6",
+      "etag": "\"9f67-5ce270033e280\"",
+      "last_modified": "Tue, 12 Oct 2021 12:29:46 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 8,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-en",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html",
+          "parent_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d",
+          "document_key": "301-5392926"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html",
+    "title": "BASE64 DECODE",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-base64-decode-fr",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html"
+      ],
+      "document_key": "301-5392926",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:29+00:00",
+      "fetched_at": "2026-10-26T12:54:29+00:00",
+      "sha256": "e83667fcca58f20406a2a1aae79357de9164d627e964336bf756bc2243c9280f",
+      "etag": "\"9fec-5ce24a42b5100\"",
+      "last_modified": "Tue, 12 Oct 2021 09:40:52 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 8,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-fr",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html",
+          "parent_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9",
+          "document_key": "301-5392926"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/DECODER-BASE64.301-5392926.fr.html",
+    "title": "DECODER BASE64",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-base64-decode-de",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html"
+      ],
+      "document_key": "301-5392926",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:29+00:00",
+      "fetched_at": "2026-10-26T12:54:29+00:00",
+      "sha256": "911b1a093d6825e057c806fa21881d6efc26d0669b2e63bd652e2f47e547f6a3",
+      "etag": "\"9d1a-5ce28cc784100\"",
+      "last_modified": "Tue, 12 Oct 2021 14:38:28 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 7,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-de",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html",
+          "parent_sha256": "8e1046dfb2716b8a8cb21bcc808903ef94e40a194e6b12431a85bdb12b08f8a6",
+          "document_key": "301-5392926"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.de.html",
+    "title": "BASE64 DECODE",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-base64-decode-es",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html"
+      ],
+      "document_key": "301-5392926",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:29+00:00",
+      "fetched_at": "2026-10-26T12:54:29+00:00",
+      "sha256": "7f3823b6dd34379691ee8359fcf40886c8ef168cb5a6e43b68efc48ad1b7b8e2",
+      "etag": "\"9dfc-5ce2a99553600\"",
+      "last_modified": "Tue, 12 Oct 2021 16:47:20 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 8,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-es",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html",
+          "parent_sha256": "3092a62583b5515434670c7270785b8ae50270e98af347cc3c05e6ceb574a82e",
+          "document_key": "301-5392926"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.es.html",
+    "title": "BASE64 DECODE",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-base64-decode-ja",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html"
+      ],
+      "document_key": "301-5392926",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:29+00:00",
+      "fetched_at": "2026-10-26T12:54:29+00:00",
+      "sha256": "763f3c5c4fcd5c19268d1cb6df6e6779457aa3d072b1dfe206f2db24e500d1d0",
+      "etag": "\"9ea6-5ce2e4ac81f80\"",
+      "last_modified": "Tue, 12 Oct 2021 21:11:42 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 8,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-ja",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html",
+          "parent_sha256": "4796aa788fabd4562a76437f8a82c92209f79966ebcd0aeb5f92f26204ff10ea",
+          "document_key": "301-5392926"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.ja.html",
+    "title": "BASE64 DECODE",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-is-editing-text-en",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.en.html",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.en.html"
+      ],
+      "document_key": "301-5392552",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:29+00:00",
+      "fetched_at": "2026-10-26T12:54:29+00:00",
+      "sha256": "86d349154119a2c2c192ea6f04926ef631f1386df475ea637c8e771c4929361a",
+      "etag": "\"8457-5ce277b1b8200\"",
+      "last_modified": "Tue, 12 Oct 2021 13:04:08 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.en.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.en.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-en",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html",
+          "parent_sha256": "45042d6e280ed3ac07f29af28f252971eac6d786a5987406863831ef51dba31d",
+          "document_key": "301-5392552"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.en.html",
+    "title": "Is editing text",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-is-editing-text-fr",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html"
+      ],
+      "document_key": "301-5392552",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:30+00:00",
+      "fetched_at": "2026-10-26T12:54:30+00:00",
+      "sha256": "047c1a9747dfb033f648d01cf5f7f9b3eb45aecb5a432a54ccb8bc933524c10d",
+      "etag": "\"8749-5ce254425e800\"",
+      "last_modified": "Tue, 12 Oct 2021 10:25:36 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-fr",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Mises-a-jour-et-modifications.200-5418950.fr.html",
+          "parent_sha256": "d51e3aa2e9ee9e149afc086350de5efc2f887af0efd659208509ffefdfb587d9",
+          "document_key": "301-5392552"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Texte-en-edition.301-5392552.fr.html",
+    "title": "Texte en edition",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-is-editing-text-de",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.de.html",
+    "language": "de",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.de.html"
+      ],
+      "document_key": "301-5392552",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:30+00:00",
+      "fetched_at": "2026-10-26T12:54:30+00:00",
+      "sha256": "5abf8960e4d955c47f3330b6b2867a7a91770fec764a997322b146a874135052",
+      "etag": "\"8504-5ce2948ec9b00\"",
+      "last_modified": "Tue, 12 Oct 2021 15:13:16 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "de",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.de.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.de.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-de",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Anderungen-und-Aktualisierungen.200-5418950.de.html",
+          "parent_sha256": "8e1046dfb2716b8a8cb21bcc808903ef94e40a194e6b12431a85bdb12b08f8a6",
+          "document_key": "301-5392552"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.de.html",
+    "title": "Is editing text",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-is-editing-text-es",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.es.html",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.es.html"
+      ],
+      "document_key": "301-5392552",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:30+00:00",
+      "fetched_at": "2026-10-26T12:54:30+00:00",
+      "sha256": "29492fcb7ab9417fd267f4fa3d6eace7a3c64bf52e1ea7220c3d5137ab69d197",
+      "etag": "\"8573-5ce2b16fabd00\"",
+      "last_modified": "Tue, 12 Oct 2021 17:22:28 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.es.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.es.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-es",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Cambios-y-actualizaciones.200-5418950.es.html",
+          "parent_sha256": "3092a62583b5515434670c7270785b8ae50270e98af347cc3c05e6ceb574a82e",
+          "document_key": "301-5392552"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.es.html",
+    "title": "Is editing text",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "legacy-v19-detail-is-editing-text-ja",
+    "family": "changes-linked-detail",
+    "edition": "19",
+    "url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation_mirror",
+    "host_operator": "4D Japan archive",
+    "discovery": {
+      "method": "archive_directory_link",
+      "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+      "chain": [
+        "https://library.4d-japan.com/doc/",
+        "https://library.4d-japan.com/doc/4Dv19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/",
+        "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html"
+      ],
+      "document_key": "301-5392552",
+      "index_sha256": "4c130f3d42516491ee5170aaf65cb17bc00f40f9b725ac2caecc40d93ac454dd"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T12:54:30+00:00",
+      "fetched_at": "2026-10-26T12:54:30+00:00",
+      "sha256": "211f0414e7262d9751a63de79ffc8eb2f4db34ddbced9ef0f9284fac2e6680ec",
+      "etag": "\"86bf-5ce2eca55ee80\"",
+      "last_modified": "Tue, 12 Oct 2021 21:47:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 9,
+      "content_kind": "article"
+    },
+    "url_history": [
+      {
+        "url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html",
+        "resolved_url": "https://library.4d-japan.com/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html",
+        "fetch": {
+          "status": "unavailable",
+          "checked_at": "2026-10-26T12:53:40+00:00",
+          "http_status": 404,
+          "redirected": false,
+          "error": "HTTP Error 404: curl HTTP response"
+        },
+        "discovery": {
+          "method": "legacy_article_link",
+          "parent_source_id": "legacy-v19-changes-ja",
+          "parent": "https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.ja.html",
+          "parent_sha256": "4796aa788fabd4562a76437f8a82c92209f79966ebcd0aeb5f92f26204ff10ea",
+          "document_key": "301-5392552"
+        },
+        "disposition": "superseded_location"
+      }
+    ],
+    "resolved_url": "https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.ja.html",
+    "title": "Is editing text",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
   }
 ]

@@ -1,5 +1,5 @@
 import {
-  LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange,
+  LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
   versionNumber, versionChoices, versionColor, isLatestAvailable, validateCatalog,
 } from './logic.mjs';
 
@@ -91,8 +91,7 @@ function renderSelectors() {
   }
 }
 function optionsFor(key) {
-  const values = filterOptions(state.catalog?.changes ?? [], key);
-  return key === 'platforms' ? [...new Set(['windows', 'macos', ...values])] : values;
+  return filterOptions(state.catalog?.changes ?? [], key);
 }
 function renderCheckboxes() {
   for (const [id, key] of [['platform-options', 'platforms'], ['module-options', 'modules']]) {
@@ -109,7 +108,8 @@ function renderCheckboxes() {
         state[key] = [...area.querySelectorAll('input:checked')].map(input => input.value);
         renderChanges();
       });
-      label.append(checkbox, node('span', valueLabel(value)));
+      label.append(checkbox, node('span', key === 'modules' && value === 'unknown'
+        ? t('otherTopics') : valueLabel(value)));
       area.append(label);
     }
   }
@@ -120,6 +120,9 @@ function evidenceList(records = []) {
   for (const record of records) {
     const item = node('li');
     const source = state.catalog.sources.find(s => s.id === record.source_id);
+    item.dataset.sourceId = source.id;
+    item.dataset.sourceLanguage = source.language;
+    item.dataset.blockId = record.block_id;
     item.append(link(record.heading || t('evidence'), record.url || source?.url));
     item.append(node('p', `${t('sourceEdition')}: ${source?.edition ?? t('unknown')} · ${t('sourceLanguage')}: ${source?.language ?? t('unknown')}`, 'muted'));
     if (record.excerpt) {
@@ -146,7 +149,8 @@ function changeCard(change) {
       !['official_translation', 'human_reviewed'].includes(locale?.provenance)) {
     card.append(node('p', t('summaryCaveat'), 'muted summary-caveat'));
   }
-  const unchecked = [...new Set((change.evidence ?? []).map(record =>
+  const visibleEvidence = evidenceForLanguage(change.evidence ?? [], state.catalog.sources, state.language);
+  const unchecked = [...new Set(visibleEvidence.map(record =>
     state.catalog.sources.find(source => source.id === record.source_id)))]
     .filter(source => source?.fetch?.status !== 'available');
   if (unchecked.length) {
@@ -158,21 +162,23 @@ function changeCard(change) {
   const metadata = node('p', undefined, 'metadata');
   metadata.textContent = `${t('release')}: ${change.threshold?.exact ?? t('unknown')} · ${t('platform')}: ${listLabel(change.platforms)} · ${t('topics')}: ${listLabel(change.modules)}`;
   card.append(metadata);
-  if (change.identifiers?.length) card.append(node('p', `${t('identifiers')}: ${change.identifiers.join(' · ')}`));
+  const displayIdentifiers = locale?.identifiers ?? change.identifiers;
+  if (displayIdentifiers?.length) card.append(node('p', `${t('identifiers')}: ${displayIdentifiers.join(' · ')}`));
   const applicability = node('details');
   applicability.append(node('summary', t('applicability')));
   const dl = node('dl', undefined, 'detail-content');
   detail(dl, 'formats', listLabel(change.applicability?.formats));
-  detail(dl, 'conditions', change.applicability?.conditions?.join('\n'));
+  detail(dl, 'conditions', (locale?.conditions ?? change.applicability?.conditions)?.join('\n'));
   detail(dl, 'action', locale?.action || change.action);
-  if (change.action_basis) detail(dl, 'actionBasis', change.action_basis);
+  if (change.action_basis) detail(dl, 'actionBasis', locale?.action_basis ?? change.action_basis);
   if (change.applies_until != null) detail(dl, 'appliesUntil', change.applies_until);
-  if (change.notices?.length) detail(dl, 'notices', change.notices.join('\n'));
+  if (change.notices?.length) detail(dl, 'notices', (locale?.notices ?? change.notices).join('\n'));
   if (complexityForChange(change) !== 'unknown') detail(dl, 'complexityBasis', change.complexity.basis);
-  applicability.append(node('p', t('detailLanguageNote'), 'muted'), dl);
+  applicability.append(dl);
   card.append(applicability);
   const evidence = node('details');
-  evidence.append(node('summary', t('evidence')), evidenceList(change.evidence));
+  evidence.append(node('summary', t('evidence')), visibleEvidence.length
+    ? evidenceList(visibleEvidence) : node('p', t('evidenceUnavailable'), 'muted'));
   card.append(evidence);
   return card;
 }

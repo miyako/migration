@@ -42,6 +42,13 @@
     {"id":"blog-v16-r3","family":"blog-overview","edition":"16 R3","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r3/"},
     {"id":"blog-v16-r2","family":"blog-overview","edition":"16 R2","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r2/"},
     {"id":"legacy-v16-deprecated-features","family":"deprecated-removed-detail","edition":"16","url":"https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-or-removed-features-in-v16-product-range.200-3072042.en.html"},
-    {"id":"legacy-v17-deprecated-features","family":"deprecated-removed-detail","edition":"17","url":"https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.en.html"}
+    {"id":"legacy-v17-deprecated-features","family":"deprecated-removed-detail","edition":"17","url":"https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-or-removed-features-in-v17-product-range.200-3761903.en.html"},
+    {"id":"legacy-design-v20-compatibility","family":"compatibility-settings","edition":"20.1","url":"https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html","manual":"Design Reference","manual_document_key":"100-6602032"},
+    {"id":"legacy-design-v19-compatibility","family":"compatibility-settings","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html","manual":"Design Reference","manual_document_key":"100-5416591"},
+    {"id":"legacy-design-v18-compatibility","family":"compatibility-settings","edition":"18","url":"https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html","manual":"Design Reference","manual_document_key":"100-4575411"},
+    {"id":"legacy-design-v17-compatibility","family":"compatibility-settings","edition":"17.4","url":"https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html","manual":"Design Reference","manual_document_key":"100-4880454"},
+    {"id":"legacy-design-v16-compatibility","family":"compatibility-settings","edition":"16.3","url":"https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html","manual":"Design Reference","manual_document_key":"100-3670638"},
+    {"id":"legacy-v19-detail-base64-decode","family":"changes-linked-detail","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/BASE64-DECODE.301-5392926.en.html"},
+    {"id":"legacy-v19-detail-is-editing-text","family":"changes-linked-detail","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/Is-editing-text.301-5392552.en.html"}
   ]
 }

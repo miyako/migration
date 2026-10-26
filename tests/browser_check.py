@@ -84,15 +84,41 @@ def run(base, screenshots, published):
         page.wait_for_selector("[data-change-id]")
         cdp.send("Network.setCacheDisabled", {"cacheDisabled": False})
         severity = {"blocking": 0, "high": 1, "medium": 2, "low": 3, "unknown": 4}
-        assert len(catalog["changes"]) == 73
-        assert catalog["coverage"]["atomic_changes"] == 138
+        assert len(catalog["changes"]) == 119
+        assert catalog["coverage"]["atomic_changes"] == 192
         # The default v16 -> v21 interval must not newly cross v14 disabling.
         expected = [c["id"] for c in sorted(catalog["changes"],
                     key=lambda c: (severity[c["criticality"]], c["id"]))
                     if c["id"] != "chg-removed-graph-table"]
-        assert len(expected) == 72
+        assert len(expected) == 118
         assert ids(page) == expected
-        assert ids(page)[:2] == ["chg-colon-identifiers", "chg-object-notation-compliance"]
+        assert ids(page)[:3] == ["chg-colon-identifiers", "chg-group-v19-compiler-settings",
+                               "chg-object-notation-compliance"]
+        page.select_option("#source-version", "v18")
+        page.select_option("#target-version", "v19")
+        for query, entity in (
+            ("chg-v19-compiler-unicode-methods", "chg-group-v19-compiler-settings"),
+            ("entitySelection.average()", "chg-group-empty-entity-aggregates"),
+            ("chg-base64-decode-ok", "chg-group-base64-status"),
+            ("chg-base64-invalid-blob-empty", "chg-base64-invalid-blob-empty"),
+            ("chg-standard-xpath-option", "chg-standard-xpath-option"),
+        ):
+            page.fill("#search", query)
+            assert ids(page) == [entity]
+        page.select_option("#source-version", "v19")
+        assert ids(page) == []
+        page.select_option("#target-version", "v20")
+        for query in ("chg-macos-text-lf-option", "chg-macos-xml-lf-option",
+                      "chg-text-no-bom-option", "chg-xml-no-bom-option",
+                      "chg-windows-directwrite-option", "chg-new-field-null-mapping-default"):
+            page.fill("#search", query)
+            assert ids(page) == [query]
+        page.fill("#search", "chg-new-field-null-mapping-default")
+        for locale in ("fr", "de", "es", "ja"):
+            page.select_option("#language", locale)
+            assert ids(page) == ["chg-new-field-null-mapping-default"]
+            assert page.locator(".summary-caveat").count() == 1
+        page.select_option("#language", "en")
         # Real upgrade searches over the populated publication, not a fixture.
         page.select_option("#source-version", "v17")
         page.select_option("#target-version", "v18")
@@ -133,6 +159,9 @@ def run(base, screenshots, published):
         assert ids(page) == ["chg-group-4d-pack-migration"]
         page.select_option("#target-version", "v21")
         page.fill("#search", "OBJET FIXER ACTIVATION")
+        assert "chg-group-button-enabled-state" in ids(page)
+        # Word matching spans authored prose; the exact stable ID isolates the entity.
+        page.fill("#search", "chg-removed-enable-button")
         assert ids(page) == ["chg-group-button-enabled-state"]
         page.fill("#search", "")
         assert ids(page) == expected
@@ -188,14 +217,22 @@ def run(base, screenshots, published):
         after = controls(page)
         assert all(after[key] == before[key] for key in ("source", "target", "language", "theme"))
         assert after["query"] == "" and after["sort"] == "severity"
-        # Unknown platforms retain conditional records, not known macOS/Windows ones.
+        # Unknown platform facts remain eligible with either OS, without a third toggle.
         page.locator('[data-group=platforms][data-select=none]').click()
-        page.locator('[name=platforms][value=unknown]').check()
+        assert ids(page) == []
+        page.locator('[name=platforms][value=windows]').check()
+        assert {"chg-colon-identifiers", "chg-group-bundled-php-modules",
+                "chg-project-save-list-call"} <= set(ids(page))
+        assert "chg-pdfcreator-driver-deprecation" in ids(page)
+        assert "chg-group-macos-native-connectors" not in ids(page)
+        page.locator('[name=platforms][value=windows]').uncheck()
+        page.locator('[name=platforms][value=macos]').check()
         assert {"chg-colon-identifiers", "chg-group-bundled-php-modules",
                 "chg-project-save-list-call"} <= set(ids(page))
         assert "chg-pdfcreator-driver-deprecation" not in ids(page)
-        assert "chg-group-macos-native-connectors" not in ids(page)
         page.click("#reset")
+        page.select_option("#source-version", "v16")
+        page.select_option("#target-version", "v21")
         page.locator("[data-change-id]").first.get_by_text("Evidence", exact=True).click()
         assert page.locator(".evidence-list a").first.is_visible()
         assert page.locator(".evidence-list a").first.get_attribute("href").startswith("https://")
@@ -203,8 +240,55 @@ def run(base, screenshots, published):
         labels = {"en": ("Filters", "Complexity"), "fr": ("Filtres", "Complexité"),
                   "de": ("Filter", "Komplexität"), "es": ("Filtros", "Complejidad"),
                   "ja": ("フィルター", "対応の難易度")}
+        source_languages = {s["id"]: s["language"] for s in catalog["sources"]}
+        resource_group = next(c for c in catalog["changes"] if c["id"] == "chg-group-legacy-resource-commands")
+        obsolete_details = (
+            "Supporting details retain their original language.",
+            "Les détails complémentaires conservent leur langue d’origine.",
+            "Ergänzende Details bleiben in ihrer Originalsprache.",
+            "Los detalles complementarios conservan su idioma original.",
+            "補足の詳細は原文の言語で表示します。",
+        )
         for locale, (filters, complexity_label) in labels.items():
             page.select_option("#language", locale)
+            assert page.locator('[name=platforms]').evaluate_all(
+                "(boxes) => boxes.map(box => box.value)") == ["windows", "macos"]
+            assert page.locator('[name=platforms][value=linux], [name=platforms][value=unknown]').count() == 0
+            other_label = {"en": "Other", "fr": "Autres", "de": "Sonstige",
+                           "es": "Otros", "ja": "その他"}[locale]
+            topic = page.locator('[name=modules][value=unknown]')
+            assert topic.locator("..").inner_text() == other_label
+            before = controls(page)
+            page.locator('[data-group=modules][data-select=none]').click()
+            topic.check()
+            assert all(controls(page)[key] == before[key] for key in
+                       ("source", "target", "query", "sort", "platforms"))
+            assert set(ids(page)) == {record["id"] for record in catalog["changes"]
+                                     if record["modules"] == ["unknown"]
+                                     and record["id"] != "chg-removed-graph-table"}
+            page.locator('[data-group=modules][data-select=all]').click()
+            assert not any(sentence in page.locator("body").text_content() for sentence in obsolete_details)
+            for query in ("DELETE RESOURCE", "SUPPRIMER RESSOURCE"):
+                before = controls(page)
+                page.fill("#search", query)
+                assert "chg-group-legacy-resource-commands" in ids(page)
+                card = page.locator('[data-change-id="chg-group-legacy-resource-commands"]')
+                authored = card.evaluate("""card => {
+                  const copy = card.cloneNode(true);
+                  copy.querySelectorAll('.evidence-list').forEach(el => el.remove());
+                  return copy.textContent;
+                }""")
+                assert ("_o_SUPPRIMER RESSOURCE" if locale == "fr" else "_o_DELETE RESOURCE") in authored
+                assert ("_o_DELETE RESOURCE" if locale == "fr" else "_o_SUPPRIMER RESSOURCE") not in authored
+                expected = [e for e in resource_group["evidence"] if source_languages[e["source_id"]] == locale]
+                displayed = card.locator(".evidence-list > li").evaluate_all(
+                    "items => items.map(item => [item.dataset.sourceId, item.dataset.blockId, item.dataset.sourceLanguage])")
+                assert len(displayed) >= 11
+                assert displayed == [[e["source_id"], e["block_id"], locale] for e in expected]
+                assert all(controls(page)[key] == before[key] for key in before if key != "query")
+            page.fill("#search", "")
+            assert page.locator(".evidence-list > li").evaluate_all(
+                f"items => items.every(item => item.dataset.sourceLanguage === '{locale}' || item.dataset.sourceLanguage === 'en')")
             assert page.locator("html").get_attribute("lang") == locale
             assert page.locator("#filters-heading").inner_text() == filters
             assert page.locator("#sort option[value=complexity]").inner_text() == complexity_label
@@ -259,6 +343,12 @@ def run(base, screenshots, published):
                           complexity={"level": level, "basis": "Test-only documented procedure.",
                                       "evidence_source_ids": [record["evidence"][0]["source_id"]]})
             fixture["changes"].append(record)
+        # A deliberately synthetic modern-style entry has German summary text but
+        # only English source evidence; summary language must not drive selection.
+        english_support = [e for e in resource_group["evidence"] if source_languages[e["source_id"]] == "en"][:2]
+        fixture["changes"][0].update(evidence=deepcopy(english_support), modules=["unknown"],
+                                     platforms=["unknown"])
+        fixture["changes"][0]["identifiers"].append("fixture-modern-english-only")
         page.route("**/data/catalog.json", lambda route: route.fulfill(json=fixture))
         page.reload()
         page.wait_for_selector("[data-change-id]")
@@ -276,6 +366,27 @@ def run(base, screenshots, published):
         page.reload()
         page.wait_for_selector("[data-change-id]")
         assert "Complexity: Unknown" in page.locator(".card").first.inner_text()
+        page.fill("#search", "fixture-modern-english-only")
+        page.select_option("#language", "de")
+        assert ids(page) == ["unknown"]
+        assert page.locator(".evidence-list > li").evaluate_all(
+            "items => items.length === 2 && items.every(item => item.dataset.sourceLanguage === 'en')")
+        page.locator('[data-group=modules][data-select=none]').click()
+        page.locator('[name=modules][value=unknown]').check()
+        assert ids(page) == ["unknown"]
+        page.locator('[data-group=modules][data-select=all]').click()
+        fixture["changes"][0]["evidence"] = [
+            e for e in resource_group["evidence"] if source_languages[e["source_id"]] == "fr"][:1]
+        page.reload()
+        page.wait_for_selector("[data-change-id]")
+        page.fill("#search", "fixture-modern-english-only")
+        assert ids(page) == ["unknown"]
+        assert page.locator(".evidence-list").count() == 0
+        page.locator(".card > details").last.locator(":scope > summary").click()
+        assert "Keine Belege in dieser Sprache oder auf Englisch verfügbar." in page.locator(".card").inner_text()
+        fixture["changes"][0]["evidence"] = deepcopy(english_support)
+        page.select_option("#language", "en")
+        page.fill("#search", "")
         # Source errors stay contextual to evidence; invalid data and fetch failures are explicit.
         source = next(s for s in fixture["sources"] if s["id"] == fixture["changes"][0]["evidence"][0]["source_id"])
         source["fetch"].update(status="failed", error="Test source unavailable")

@@ -119,6 +119,17 @@ class ArchiveNavigator:
         return locations, unresolved
 
 
+def retain_article_discovery(discovered, previous):
+    """A directory refresh must not erase a more specific verified article link."""
+    return {
+        identifier: previous[identifier]
+        if previous.get(identifier, {}).get("url") == location["url"]
+        and previous[identifier]["discovery"]["method"] == "legacy_article_link"
+        else location
+        for identifier, location in discovered.items()
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--transport", choices=("urllib", "curl"), default="urllib")
@@ -133,7 +144,7 @@ def main():
     for seed in config["seeds"]:
         if seed["family"] not in {"blog-overview", "documentation-release-notes"}:
             found, pending = navigator.resolve(seed)
-            locations.update(found)
+            locations.update(retain_article_discovery(found, prior_locations["locations"]))
             unresolved.extend(pending)
     save(navigation_path, {"schema_version": 1, "root": navigator.root, "pages": list(navigator.pages.values())})
     save(ROOT / "data/source-locations.json", {"schema_version": 1, "locations": locations, "unresolved": unresolved})

@@ -17,8 +17,8 @@ class FeatureEntities(unittest.TestCase):
         atomic = {c["id"]: c for c in self.atomic}
         members = [mid for entity in self.entities for mid in entity["member_ids"]]
         self.assertEqual(Counter(members), Counter({mid: 1 for mid in atomic}))
-        self.assertEqual((len(atomic), len(self.entities), len(self.config["groups"])), (138, 73, 22))
-        self.assertEqual(sum(len(e["member_ids"]) for e in self.entities if "members" in e), 87)
+        self.assertEqual((len(atomic), len(self.entities), len(self.config["groups"])), (192, 119, 27))
+        self.assertEqual(sum(len(e["member_ids"]) for e in self.entities if "members" in e), 100)
         for entity in self.entities:
             for member in entity.get("members", []):
                 self.assertEqual(member, atomic[member["id"]])
@@ -82,12 +82,12 @@ class FeatureEntities(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "incompatible"):
             group_entities(self.atomic, config)
 
-    def test_linked_detail_provenance_and_limited_quick_table_context(self):
+    def test_linked_detail_provenance_and_systematic_partial_scope(self):
         document = build()
         details = [s for s in document["sources"] if s["discovery"]["method"] == "legacy_article_link"]
         self.assertEqual(len(details), 10)
-        quick = [s for s in document["sources"] if s.get("catalog_scope", {}).get("status") == "limited_context"]
-        self.assertEqual(len(quick), 10)
+        scoped = [s for s in document["sources"] if s.get("catalog_scope", {}).get("status") == "systematic_partial"]
+        self.assertEqual(len(scoped), 55)
         for field, value in (("parent_sha256", "0" * 64), ("document_key", "200-1")):
             invalid = deepcopy(document)
             source = next(s for s in invalid["sources"] if s["id"] == details[0]["id"])

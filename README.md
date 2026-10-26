@@ -11,47 +11,135 @@ Binary-to-project conversion is not assumed to be mandatory.
 
 ## What is actually covered
 
-The current snapshot registers **41 English seeds**: the original 39 supplied
+The current snapshot registers **48 English seeds**: the original 39 supplied
 seeds (26 legacy documentation pages, 9 blog overviews and 4 current official
-Release Notes pages), plus 2 actually linked v16/v17 product-range detail pages.
+Release Notes pages), 2 actually linked v16/v17 product-range detail pages,
+5 exact-edition Compatibility pages, and 2 bounded command-reference details.
 Each legacy seed's four other languages are located through actual archive
 directory links; modern documentation uses actual official `hreflang` routes,
-for **165 registered source URLs**:
+for **200 registered source URLs**:
 
 | Publication snapshot, 2026-10-26 | Count |
 |---|---:|
-| Available structural extracts | 165 |
-| Article surfaces / generated navigation index views | 110 / 55 |
+| Available structural extracts | 200 |
+| Article surfaces / generated navigation index views | 145 / 55 |
 | Currently unavailable registered source URLs | 0 |
 | Superseded guessed URLs that returned 404, retained as history | 34 |
+| Additional actual article links returning 404, directory-resolved with history retained | 10 |
 | Bounded archive directory indexes traced, separate from sources | 21 |
 | Actual blog language links queued for review, not fetched | 27 |
 | Modern Release Notes URLs, included in available sources | 16 |
 | German modern counterparts not advertised/linked, not HTTP failures | 4 |
-| Underlying atomic candidate facts | 138 |
-| Published feature entities / curated multi-member groups | 73 / 22 |
-| Entities visible for the default v16 → v21 interval | 72 |
+| Underlying atomic candidate facts | 192 |
+| Published feature entities / curated multi-member groups | 119 / 27 |
+| Entities visible for the default v16 → v21 interval | 118 |
 | Human-reviewed changes | **0** |
-| Evidence sources: substantive articles / limited Quick-table context | 25 / 10 |
+| Evidence sources, all partially used rather than exhaustive manuals | 80 |
 | Registered deprecated/removed overview/detail pages fetched and inspected | 35 |
-| Existing Quick-table pages fetched for selected architecture/status context | 10 |
+| Stage 2 Changes/Quick-table pages systematically dispositioned | 20 |
+| Stage 2 Compatibility pages / bounded command details, all five languages | 25 / 10 |
 | Bibliographic Previous documents children inspected, not registered as content sources | 10 |
 
-The first batch produced 68 candidates. Stage 1 adds **70 substantive atomic
-candidates** and reconciles existing evidence, for **138 distinct candidates**:
-67 removals, 58 deprecations and 13 restrictions after the GRAPH TABLE correction.
-These granular facts are **not 138 visitor cards**: the publication groups shared
-feature/remediation tasks into **73 entities** (27 removals, 36 deprecations,
-10 restrictions). Of these, 22 authored groups retain 87 atomic members, while
-51 facts remain separate because their scope or migration task differs.
+The first batch produced 68 candidates; Stage 1 added 70. Stage 2 adds **54 atomic
+candidates** and reconciles **12 existing facts**, preserving all 138 earlier IDs.
+The current 192 facts comprise 70 removals, 58 deprecations, 21 restrictions and
+43 behavior changes after the GRAPH TABLE override. These are **not 192 visitor
+cards**: 27 authored groups retain 100 members, with 92 distinct singletons,
+producing **119 feature entities**. Grouping requires the same feature and
+shared remediation, with compatible cutoff, type, stage, severity, platform and format.
 All 12 bundled PHP module removals, for example, are one entity. The default
-v16 → v21 interval shows 72 entities, excluding GRAPH TABLE's pre-start v14 rule.
+v16 → v21 interval shows 118 entities, excluding GRAPH TABLE's pre-start v14 rule.
 The total is an outcome of the documented rows, not a record quota. All have
 independently authored one-line and paragraph
 summaries in en/fr/de/es/ja, with **generated-candidate** provenance.
 Agent fact-checking is not human review. Official localized command names and
 short quotations remain distinct from authored prose; the glossary now records
 verified terminology in all five languages.
+
+### Stage 2: Changes, Quick tables and Compatibility settings
+
+The four existing registered families were processed from their **actual current
+URLs**, in en/fr/de/es/ja: v16 and v17 Quick tables, v18.2 Changes and updates,
+and v19 Changes and updates (**20 pages**). Another **25 pages** register the five
+Compatibility editions in the distinct `compatibility-settings` family:
+
+| English seed edition | Exact section type + ID | Verified Design Reference parent | en/fr/de/es/ja |
+|---|---|---|---|
+| [20.1](https://library.4d-japan.com/doc/4Dv20/4D/20.1/Compatibility-page.300-6602324.en.html) | `300-6602324` | `100-6602032` | 5 available |
+| [19](https://library.4d-japan.com/doc/4Dv19/4D/19/Compatibility-page.300-5416914.en.html) | `300-5416914` | `100-5416591` | 5 available |
+| [18](https://library.4d-japan.com/doc/4Dv18/4D/18/Compatibility-page.300-4575476.en.html) | `300-4575476` | `100-4575411` | 5 available |
+| [17.4](https://library.4d-japan.com/doc/4Dv17/4D/17.4/Compatibility-page.300-4880529.en.html) | `300-4880529` | `100-4880454` | 5 available |
+| [16.3](https://library.4d-japan.com/doc/4Dv16/4D/16.3/Compatibility-page.300-3670711.en.html) | `300-3670711` | `100-3670638` | 5 available |
+
+These are **five edition families in one source category**, not five new manual
+types. The exact localized slugs come from traced archive directory links in
+`data/source-locations.json`; every fetched page links its same-language,
+same-edition Design Reference parent. No suffix-only paths were guessed.
+The current extractor includes bare and nested list items, not merely the first
+two or three introductory paragraphs. Not every translation includes every
+option or amendment: for example, v18 Spanish lacks the object-notation item,
+and French/Japanese v20.1 EOL/BOM prose omits the English/Spanish XML milestone.
+Authored translations of supported facts do not imply complete official translations.
+
+The bounded detail set is **BASE64 DECODE** and **Is editing text**, five
+languages each. Their actual links in the v19 Changes article omit `/doc/` and
+returned genuine 404s. The existing archive directory workflow resolved the exact
+type/ID/language documents to available locations; all 10 failed **actual links**
+remain `superseded_location` history, distinct from the 34 old guessed probes.
+These details confirm invalid Base64 gives empty output and the editing-state
+guard's object limits. No unrelated reference crawl or technical PDF completeness
+is claimed. Directory refresh now preserves prior same-URL article-link
+provenance instead of replacing it with less specific directory discovery.
+
+All **55 Stage 2 pages** were fetched, structurally inspected, and used as evidence
+or reconciliation context. [`data/section-audit.json`](data/section-audit.json)
+dispositions **every one of their 1,564 extracted blocks** (including nested
+context and repeated lead blocks, not 1,564 independent changes). It retains block
+IDs, anchors, headings, source hashes, fact IDs and authored reasons without
+redistributing snapshots. `systematic_partial` explicitly does **not** mean an
+exhaustive manual or linked-reference audit.
+
+| Coherent additions or reconciliations | Evidence boundary |
+|---|---|
+| Compiler object notation + Unicode method storage | Mandatory for compilation in v19; one feature entity with two atomic requirements, distinct from v20's opened converted-binary rule |
+| Compiled v18 Rx projects | Recompile with v19; does not require binary-to-project conversion |
+| BLOB argument type checking | Actual compiler error; exact first release remains unknown |
+| Range checking | 17 R6 default enabled; `%R-`/`%R+` still supported, `%R*` restores enabled |
+| Base64 | Both commands stop setting OK in 18 R4; invalid single-BLOB decode now empties the BLOB, a distinct result-handling task |
+| Empty ORDA aggregate results | min/max/average return Undefined instead of Null from 18 R6; three atomic facts, one entity |
+| ORDA REST / shareable selections | Explicit `exposed` from 18 R5; `add()` requires alterable selections, with documented conditional alternatives |
+| Logs and backup readers | Request-log fields and microseconds at 17 R5; v19 names/columns/ISO times/server suffix grouped together; automatic path moves do not require manual conversion |
+| List-box editing clicks | 18 R6 On Clicked/On Double Clicked also fire during input; official editing-state guard retained |
+| Write Pro and View Pro | Actual event, date-object, localization, formula-filter, expression-freeze, tab and pagination behavior changes; undated paragraphs stay undated |
+| ICU and object indexes | Separate ICU 63.1 and 68.1 rebuilds; latter explicitly 18 R6. Rare object-index issue retains separate 16.4 HF1 / 17.1 / 17 R4 exceptions, not one fabricated major cutoff |
+| macOS packaging | Signing requirement and v19 Mac-generated client archives; not opening-failure troubleshooting |
+| Compatibility opt-ins/defaults | Object dates 16 R6, XPath 18 R3, text LF/BOM 19 R2 versus XML 19 R3, DirectWrite 19 R3, new-field NULL mapping 19 R4; new versus converted conditions remain explicit |
+| Quick-table cumulative rows | Existing IDs/evidence reconciled, architecture columns preserved; OLE Tools has an undated removal record rather than an edition-as-first-removal claim |
+| HTTP assignment / legacy networking | HTTP new-database unavailability starts 13.4, with v14 modernization separate; ServerNet's 14 R5 versus v15 source conflict leaves the original deprecation date unresolved |
+
+Compatibility is **not a checklist to turn every option on or off**. Existing
+ISO object dates stay unchanged; DirectWrite does not alter already-DirectWrite
+list boxes; NULL mapping defaults concern newly created fields. Old form, print,
+URL, drag/drop, formula execution, SQL join, nested-transaction, numeric-format
+and optional 15 R4 deployment-architecture settings retain explicit
+`retained_compatibility` dispositions rather than filler cards. QUIC in the
+**20.1 source edition** is beta/evaluation-only, not a production recommendation
+or a claim that current v21 QUIC remains beta.
+
+Automatic vertical-operator rewriting, optional Get call chain recompilation,
+library enhancements without a documented impact, and preserved binary creation
+are not fabricated mandatory fixes. Historical OS minimums are not current
+requirements. OCI's intermediate `/usr/local/lib` paragraph remains pending
+because its Windows link/platform context is unresolved and macOS OCI is removed
+in v19; that workaround is not recommended for the final target.
+
+The catalog now has **27 unknown atomic cutoffs**: the original ten remain, and
+17 Stage 2 paragraphs do not establish exact first releases. Unknown platform,
+stage or remedy remains explicit where appropriate. All **192 facts and 119
+entities have Unknown remediation complexity**, and **0 have named human review**.
+German MailAttachment.path prose is English in the official source; our German
+summary is authored, not an official German translation. Modern Release Notes
+remain fetched but **not catalog-processed**, reserved for the next stage.
 
 ### Content batch: deprecated/removed editions
 
@@ -67,12 +155,12 @@ articles these provide **25 partially used evidence sources**. The 10 original
 overview pages remain bibliography/structure inspections, not substantive manuals.
 The linked Quick tables already have stable `legacy-v16-quick-table` /
 `legacy-v17-quick-table` IDs in the distinct Changes/updates family: no duplicate
-sources were retained and systematic Quick-table processing is deferred to Stage 2.
-Ten existing Quick-table URLs are used **only for selected 32/64-bit context**
-(35 evidence sources in total): they distinguish legacy/32-bit deprecations
+sources were retained. Stage 1 used ten existing Quick-table URLs **only for
+selected 32/64-bit context** (35 evidence sources at that stage): they distinguish legacy/32-bit deprecations
 from already-unsupported 64-bit QuickDraw, XSLT, QuickTime, non-Unicode, PICT and
 Mac file API behavior. Those source editions are not invented first-removal dates.
-The registry explicitly labels this `limited_context` use.
+Stage 2 supersedes that `limited_context` label with `systematic_partial` and
+the full block dispositions above, without inventing first-removal dates.
 The Previous documents children are bibliographies; their linked older PDFs
 were not fetched or claimed cataloged.
 
@@ -138,7 +226,7 @@ pending/out-of-scope workflow:
 
 | Edition/section | Disposition |
 |---|---|
-| v16/v17 overview children, all five languages | Product-range details processed to the scoped extent described above; systematic Quick tables are Stage 2, older bibliographic PDFs are excluded |
+| v16/v17 overview children, all five languages | Product-range details processed to the scoped extent described above; Quick tables dispositioned in Stage 2, older bibliographic PDFs are excluded |
 | v18.2/v19/v20 deprecated-command rows | All individually named rows covered/reconciled; unenumerated “all Subrecords commands” requires the distinct Language Reference family rather than invented identifiers |
 | v18.2 platform-interface removal row | v12 deprecations covered; later removal versus converted-application/Automatic Platform caveat remains unresolved |
 | v18.2 project form/structure conversion and compatibility resets | Out of scope as conversion effects; post-opening Toolbox restrictions only partially covered |
@@ -146,7 +234,7 @@ pending/out-of-scope workflow:
 | v18.2 XSLT linked technical PDF | Not fetched; command removals and final-target caveat are cataloged |
 | Cumulative user forms, HTTP assignment, Mac file APIs, numeric actions | Scoped records complete; no redundant summary-level candidates added |
 | Subtables, resource forks/automatic `.RSR` loading, CPU UI, legacy network | Covered with explicitly unknown original dates and reasoned pending dispositions |
-| Summary-only 4D Write/View and OLE_Tools context | Pending exact release/architecture reconciliation; no edition-as-threshold or mandatory PHP workaround invented |
+| Summary-only 4D Write/View and OLE_Tools context | Stage 2 adds the documented concrete Write/View changes and an architecture-qualified OLE Tools removal; exact first OLE removal date remains unknown |
 | Already-removed 4D Pack routines in the v16 table | No new crossing: “obsolete since” is not a removal date; omitted with explicit dispositions |
 | v20 object-notation cannot-open path | Out of scope; contact official 4D Support |
 
@@ -159,7 +247,7 @@ subtable-feature deprecation, resource-fork storage deprecation, automatic `.RSR
 opening, CPU-priority UI, legacy networking, and old-toolbox GWorld drawing.
 Their paragraphs/dispositions explain the missing fact; neither Apple's dates
 nor neighboring API dates substitute for it. Platforms not stated
-by evidence stay **unknown**, as does remediation complexity for **all 138**
+by evidence stay **unknown**, as does remediation complexity for **all 192**
 records: no reliable difficulty classification was established. Many removed
 resource/web calls have no documented replacement in the table; the entries
 say so rather than inventing one. Current v21/latest behavior is not independently
@@ -177,10 +265,10 @@ translated slugs. For example, French v20 is
 not the English slug with `.fr.html`. All 34 failed guesses have now been replaced
 with verified linked locations under the same stable source IDs. Their real 404
 results remain in `url_history`; they are **not missing translations**. Including
-those superseded attempts, 199 distinct registered source URL locations have been checked
-over time (165 current + 34 superseded = 199), separate from archive directory indexes
-and the unregistered bibliographic children. The original 189-location count
-preceded the 10 actual linked feature-detail registrations.
+those superseded attempts and the ten actual broken detail links, **244 distinct
+registered source URL locations** have been checked over time (200 current +
+34 superseded guessed probes + 10 superseded actual links), separate from archive
+directory indexes and the unregistered bibliographic children.
 
 ### Current official documentation Release Notes
 
@@ -223,9 +311,8 @@ does **not** claim complete or human-reviewed translation of every paragraph.
 
 These 16 sources are **fetched and structurally extracted, not catalog-processed**.
 No actionable records in this batch are derived from modern Release Notes.
-The catalog contains **138 atomic candidates published as 73 feature entities,
-from 25 partially used articles plus 10 limited-context Quick-table pages,
-0 human-reviewed**.
+The catalog contains **192 atomic candidates published as 119 feature entities,
+from 80 partially used evidence pages, 0 human-reviewed**.
 Actionable changes may later deduplicate across sources; provenance never does.
 
 ### Legacy archive coverage
@@ -325,8 +412,9 @@ source development; publish `_site/`, not the unversioned source directory.
 | `data/changes.json` | Atomic editorial facts with stable IDs, exact member-level conditions and evidence |
 | `data/groups.json` | Explicit feature/remediation membership and independently authored five-language entity summaries/actions |
 | `data/overrides.json` | Manual, reasoned patches applied last; ingestion never rewrites them |
-| `data/glossary.json` | Concept/edition-aligned official wording where verified; unknowns explicit |
+| `data/glossary.json` | Concept/edition-aligned official wording and 133 evidence-bound English/French command-name mappings; unknowns explicit |
 | `data/dispositions.json` | Explicit exclusions and pending editorial questions, not confirmed public errors |
+| `data/section-audit.json` | Stage 2 block-by-block scope decisions and exact snapshot provenance; not exhaustive manual coverage |
 | `data/clarifications.json` | Curated confirmed-error register with evidence and dispositions |
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
 | `data/semantic-search.json` | Explicit unavailable state and pinned research provenance |
@@ -387,9 +475,16 @@ The browser matches a source/target interval plus applicability, not just the
 document edition. Lingering deprecations and explicit target requirements can
 remain relevant even when introduced before the source version. Optional
 `applies_until` bounds temporary workarounds; do not assume an intermediate
-workaround is required at the final target. Unknown platform/format records
-remain visible by default through an explicit Unknown checkbox. Unchecking all
-platforms or topics means no matches. Group Select all / Unselect all and Reset
+workaround is required at the final target. The platform selector contains only
+**Windows** and **macOS**. Unknown/missing platform applicability remains internal
+and eligible whenever either OS is selected, without inventing platform evidence.
+There are no Linux or Unknown platform checkboxes. No current fact is Linux-only;
+future Linux-only facts would remain in provenance but not match these supported
+visitor platform choices. Source mentions and CI runner operating systems are unchanged.
+The Topics filter labels its internal `unknown` category **Other** (Autres /
+Sonstige / Otros / その他); severity, complexity and factual uncertainty retain
+their Unknown labels. Unchecking all platforms or topics means no matches.
+Group Select all / Unselect all and Reset
 filters never change versions or language/theme. The version pair is visually
 primary, with the supplied 4D icon colored by version and explicit direction/text.
 Latest uses its resolved concrete major's color, not an invented next version.
@@ -398,7 +493,7 @@ Sort choices are **Severity** (highest first, unknown last; default) and
 **Complexity** (Simple → Moderate → Complex → Unknown). Complexity is the
 difficulty of applying documented remediation, independent of severity or stage,
 not comprehension difficulty or an effort estimate. Severity ties use stable ID;
-complexity ties use severity then stable ID. All 138 facts and 73 entities remain Unknown.
+complexity ties use severity then stable ID. All 192 facts and 119 entities remain Unknown.
 The optional schema-v1 `complexity` object has a typed `level`; known levels
 require a documented `basis` and `evidence_source_ids` referencing the record's
 evidence. Missing metadata means unknown; validators reject unsupported or

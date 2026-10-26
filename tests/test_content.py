@@ -17,12 +17,12 @@ class ContentBatch(unittest.TestCase):
 
     def test_stable_ids_atomicity_and_deduplication(self):
         self.assertEqual(len(self.changes), len(self.by_id))
-        self.assertEqual(len(merge_candidates(self.changes * 2)), 138)
+        self.assertEqual(len(merge_candidates(self.changes * 2)), 192)
         for identifier in ("chg-colon-identifiers", "chg-pdfcreator-driver-deprecation",
                            "chg-bundled-php-dom-removal"):
             self.assertIn(identifier, self.by_id)
         self.assertEqual(Counter(c["type"] for c in self.changes),
-                         {"removal": 67, "deprecation": 58, "restriction": 13})
+                         {"removal": 70, "deprecation": 58, "restriction": 21, "behavior": 43})
         self.assertIn("_o_DISABLE BUTTON", self.by_id["chg-removed-disable-button"]["identifiers"])
         self.assertIn("_o_ENABLE BUTTON", self.by_id["chg-removed-enable-button"]["identifiers"])
         self.assertNotIn("chg-removed-get-platform-interface", self.by_id)
@@ -108,12 +108,14 @@ class ContentBatch(unittest.TestCase):
         for suffix in ("c-integer", "c-string", "c-graph", "array-string"):
             self.assertEqual(self.by_id["chg-deprecated-" + suffix]["threshold"]["exact"], "12")
         unknowns = {c["id"] for c in self.changes if c["threshold"]["kind"] == "unknown"}
-        self.assertEqual(unknowns, {"chg-interprocess-variable-deprecation",
+        original_unknowns = {"chg-interprocess-variable-deprecation",
                                    "chg-project-picture-library-call", "chg-project-save-list-call",
                                    "chg-object-set-font-name-parameter", "chg-converted-subtables",
                                    "chg-resource-fork-storage", "chg-cpu-priority-settings",
                                    "chg-quickdraw-plugin-offscreen-drawing", "chg-database-rsr-explicit-open",
-                                   "chg-legacy-network-layer-deprecation"})
+                                   "chg-legacy-network-layer-deprecation"}
+        self.assertTrue(original_unknowns <= unknowns)
+        self.assertEqual(len(unknowns), 27)
         for identifier in unknowns:
             self.assertEqual(self.by_id[identifier]["threshold"],
                              {"exact": None, "bucket": None, "kind": "unknown"})
@@ -146,8 +148,8 @@ class ContentBatch(unittest.TestCase):
             self.assertEqual((c["threshold"]["exact"], c["type"], c["stage"]),
                              ("17 R4", "deprecation", "modernization"))
         http = self.by_id["chg-http-automatic-variable-assignment"]
-        self.assertEqual((http["threshold"]["exact"], http["type"]), ("14", "deprecation"))
-        self.assertIn("before 13.4", http["localizations"]["en"]["paragraph"])
+        self.assertEqual((http["threshold"]["exact"], http["type"]), ("13.4", "deprecation"))
+        self.assertIn("new databases in 13.4", http["localizations"]["en"]["paragraph"])
         self.assertIn("not a global v14 removal", http["localizations"]["en"]["paragraph"])
         for suffix in ("document-creator", "set-document-type", "set-document-creator", "map-file-types"):
             self.assertEqual(self.by_id["chg-deprecated-" + suffix]["threshold"]["exact"], "16 R6")
