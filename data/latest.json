@@ -1,0 +1,12 @@
+{
+  "release": "21 R4",
+  "bucket": "latest",
+  "verified_at": "2026-10-26",
+  "url": "https://us.4d.com/product-download",
+  "status": "verified",
+  "channel": "feature",
+  "released_at": "2026-10-12",
+  "excerpt": "4D 21 R4 - Released on 12 October 2026",
+  "corroborating_url": "https://blog.4d.com/4d-21-r4-is-here/",
+  "limitation": "Public feature-release channel; not an account-only hotfix/build check. LTS is a separate channel."
+}

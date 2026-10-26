@@ -1,0 +1,18 @@
+[
+  {
+    "id": "scope-successful-opening",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Non-compliance with object notation",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6291899",
+    "status": "out_of_scope",
+    "reason": "Failure to convert or open is outside this reference: contact official 4D Support. Post-opening object-notation and compiler requirements need separate evidence-backed records; they have not yet been cataloged."
+  },
+  {
+    "id": "queue-interprocess-deprecation",
+    "source_id": "legacy-v20-deprecated-en",
+    "heading": "Interprocess variables",
+    "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#5868705",
+    "status": "pending",
+    "reason": "The cumulative v20 edition labels these deprecated, not removed. Exact introduction threshold and cross-edition alignment still need review; do not infer a v20 removal."
+  }
+]

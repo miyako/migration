@@ -1,0 +1,89 @@
+[
+  {
+    "id": "chg-colon-identifiers",
+    "identifiers": [":", "ternary operator"],
+    "threshold": {"exact": "19 R4", "bucket": "v20", "kind": "introduced"},
+    "applies_until": null,
+    "platforms": ["unknown"],
+    "modules": ["language"],
+    "type": "restriction",
+    "criticality": "blocking",
+    "stage": "syntax",
+    "relevance": {"status": "conditional", "reason": "Relevant after successful opening if code or schema identifiers contain a colon. This is a syntax restriction, not a suggestion to modernize."},
+    "applicability": {"formats": ["binary", "project"], "conditions": ["Variable, field, constant, function, plugin or project method names contain ':'.", "Platform is not specified in the cited section. Verify continued applicability beyond the v20 source edition."]},
+    "action": "Rename affected identifiers to remove ':' and update their references before validating syntax in the target release.",
+    "action_basis": "Editorial recommendation derived from the documented prohibition; not a verbatim official instruction.",
+    "localizations": {
+      "en": {"one_line": "Remove colons from affected identifiers", "paragraph": "Since 19 R4 (upgrade bucket v20), colons are prohibited in variable, field, constant, function, plugin and project method names. If present, rename the affected identifiers and update references before syntax validation. The v20 source does not specify a platform; this candidate is not a complete syntax audit.", "provenance": "generated_candidate"},
+      "fr": {"one_line": "Retirer les deux-points des identifiants concernés", "paragraph": "Depuis 19 R4 (palier de migration v20), les deux-points sont interdits dans les noms de variables, champs, constantes, fonctions, plug-ins et méthodes projet. S'ils sont présents, renommez les identifiants et mettez à jour les références avant la validation syntaxique. La source v20 ne précise pas de plateforme ; cette fiche candidate ne constitue pas un audit syntaxique complet.", "provenance": "generated_candidate"},
+      "de": {"one_line": "Doppelpunkte aus betroffenen Bezeichnern entfernen", "paragraph": "Seit 19 R4 (Upgrade-Stufe v20) sind Doppelpunkte in Namen von Variablen, Feldern, Konstanten, Funktionen, Plug-ins und Projektmethoden unzulässig. Benennen Sie betroffene Bezeichner um und aktualisieren Sie die Verweise vor der Syntaxprüfung. Die v20-Quelle nennt keine Plattform; dieser ungeprüfte Eintrag ist keine vollständige Syntaxprüfung.", "provenance": "generated_candidate"},
+      "es": {"one_line": "Eliminar los dos puntos de los identificadores afectados", "paragraph": "Desde 19 R4 (grupo de migración v20), los nombres de variables, campos, constantes, funciones, plug-ins y métodos de proyecto no pueden contener dos puntos. Si los contienen, cambie los nombres y actualice las referencias antes de validar la sintaxis. La fuente v20 no especifica plataforma; esta ficha candidata no es una auditoría sintáctica completa.", "provenance": "generated_candidate"},
+      "ja": {"one_line": "該当する識別子からコロンを取り除く", "paragraph": "19 R4（移行区分 v20）以降、変数・フィールド・定数・関数・プラグイン・プロジェクトメソッドの名前にコロンは使用できません。該当する名前を変更し、参照箇所を更新してから構文を確認してください。出典の v20 文書には対象プラットフォームの指定がありません。この未レビューの候補だけで構文上の問題を網羅できるわけではありません。", "provenance": "generated_candidate"}
+    },
+    "evidence": [
+      {"source_id": "legacy-v20-deprecated-en", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6259897", "heading": "Colon no longer supported in identifiers", "excerpt": "the colon \":\" is no longer allowed in variable, field, constant, function, plugin and project method names.", "block_id": "3025cc5e083ddf18", "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"},
+      {"source_id": "legacy-v20-deprecated-ja", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html#6259897", "heading": "識別子としてのコロンは今後サポートされません", "excerpt": "4D v19 R4 以降、 三項演算子 のサポートをするようになった関係から、今後は変数名、フィールド名、定数名、関数名、プラグイン名、プロジェクトメソッド名にコロンは使えなくなりました。", "block_id": "6fc76df68bcf28a9", "source_sha256": "b65438b76ed30410c239e268d59d39af2499cafcea10c1fad718f27d0f40f0d5"}
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
+  },
+  {
+    "id": "chg-pdfcreator-driver-deprecation",
+    "identifiers": ["PDFCreator", "PDFCreator Printer name", "_o_PDFCreator Printer name"],
+    "threshold": {"exact": "20", "bucket": "v20", "kind": "introduced"},
+    "applies_until": null,
+    "platforms": ["windows"],
+    "modules": ["printing"],
+    "type": "deprecation",
+    "criticality": "low",
+    "stage": "modernization",
+    "relevance": {"status": "conditional", "reason": "Relevant to Windows applications that still use the PDFCreator driver. Deprecated is not removed and does not establish a syntax blocker."},
+    "applicability": {"formats": ["binary", "project"], "conditions": ["The application uses the PDFCreator driver on Windows.", "The evidence describes the v20 edition, not an independently verified removal in a later release."]},
+    "action": "Plan replacement of the deprecated PDFCreator driver with the native Windows PDF driver; assess existing printing behavior before changing it.",
+    "action_basis": "The source summary table names the native Windows PDF driver as the replacement.",
+    "localizations": {
+      "en": {"one_line": "Plan replacement of the deprecated PDFCreator driver", "paragraph": "The PDFCreator driver is deprecated from v20, not declared removed. The source recommends the native Windows PDF driver, available in Windows 10 and later, and records the renamed constant _o_PDFCreator Printer name. Plan and assess the printing replacement if your application uses this driver; this is modernization, not an established syntax blocker.", "provenance": "generated_candidate"},
+      "fr": {"one_line": "Prévoir le remplacement du pilote PDFCreator obsolète", "paragraph": "Le pilote PDFCreator est obsolète depuis v20, sans être déclaré supprimé. La source recommande le pilote PDF natif de Windows, disponible depuis Windows 10, et signale la constante renommée _o_PDFCreator Printer name. Si votre application utilise ce pilote, préparez et évaluez son remplacement ; il s'agit de modernisation, pas d'un blocage syntaxique établi.", "provenance": "generated_candidate"},
+      "de": {"one_line": "Den Ersatz des veralteten PDFCreator-Treibers planen", "paragraph": "Der PDFCreator-Treiber ist ab v20 veraltet, aber nicht als entfernt ausgewiesen. Die Quelle empfiehlt den nativen Windows-PDF-Treiber ab Windows 10 und nennt die umbenannte Konstante _o_PDFCreator Printer name. Planen und prüfen Sie den Ersatz, falls Ihre Anwendung diesen Treiber nutzt; dies ist Modernisierung, kein belegter Syntaxblocker.", "provenance": "generated_candidate"},
+      "es": {"one_line": "Planificar la sustitución del controlador PDFCreator obsoleto", "paragraph": "El controlador PDFCreator está obsoleto desde v20, pero no se declara eliminado. La fuente recomienda el controlador PDF nativo de Windows, disponible desde Windows 10, e indica la constante renombrada _o_PDFCreator Printer name. Si su aplicación usa este controlador, planifique y evalúe su sustitución; es modernización, no un bloqueo sintáctico demostrado.", "provenance": "generated_candidate"},
+      "ja": {"one_line": "廃止予定の PDFCreator ドライバーの置き換えを計画する", "paragraph": "PDFCreator ドライバーは v20 以降廃止予定ですが、削除されたとは記載されていません。出典は Windows 10 以降のネイティブ PDF ドライバーを代替として示し、定数名の _o_PDFCreator Printer name への変更も説明しています。このドライバーを使用している場合は印刷動作を確認しながら置き換えを計画してください。これは近代化の課題であり、構文上の障害と確定したものではありません。", "provenance": "generated_candidate"}
+    },
+    "evidence": [
+      {"source_id": "legacy-v20-deprecated-en", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6259904", "heading": "PDFCreator Driver", "excerpt": "The PDFCreator driver is deprecated as of 4D v20. Windows 10 and higher releases include a native PDF driver.", "block_id": "18ec3dfe896e1d37", "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"},
+      {"source_id": "legacy-v20-deprecated-ja", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html#6259904", "heading": "PDFCreator ドライバー", "excerpt": "PDFCreator ドライバーは4D v20 以降廃止予定となります。", "block_id": "51c0249ecbc27819", "source_sha256": "b65438b76ed30410c239e268d59d39af2499cafcea10c1fad718f27d0f40f0d5"}
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
+  },
+  {
+    "id": "chg-bundled-php-dom-removal",
+    "identifiers": ["PHP", "DOM", "FastCGI"],
+    "threshold": {"exact": "20", "bucket": "v20", "kind": "introduced"},
+    "applies_until": null,
+    "platforms": ["unknown"],
+    "modules": ["language", "php"],
+    "type": "removal",
+    "criticality": "high",
+    "stage": "runtime",
+    "relevance": {"status": "conditional", "reason": "Only applications depending on the DOM module in the PHP interpreter bundled with 4D are affected. This record does not cover other removed PHP modules."},
+    "applicability": {"formats": ["binary", "project"], "conditions": ["PHP code relies on the DOM module in the bundled interpreter.", "Platform is unspecified. Other removed PHP modules need separate actionable records."]},
+    "action": "Replace the bundled PHP DOM dependency using relevant 4D commands or evaluate an external FastCGI PHP interpreter with the required module.",
+    "action_basis": "The cited paragraph explicitly suggests relevant 4D commands or an external FastCGI-php interpreter.",
+    "localizations": {
+      "en": {"one_line": "Replace dependencies on the bundled PHP DOM module", "paragraph": "4D v20 removes DOM from its bundled PHP interpreter. If your PHP code uses that module, evaluate relevant 4D commands or an external FastCGI PHP interpreter providing the required functionality, as suggested by the source. This runtime change is conditional on that dependency; other removed PHP modules are not cataloged by this record.", "provenance": "generated_candidate"},
+      "fr": {"one_line": "Remplacer les dépendances au module DOM du PHP intégré", "paragraph": "4D v20 supprime DOM de son interpréteur PHP intégré. Si votre code PHP utilise ce module, évaluez les commandes 4D appropriées ou un interpréteur PHP FastCGI externe offrant les fonctions requises, comme le suggère la source. Ce changement à l'exécution dépend de cet usage ; les autres modules PHP supprimés ne sont pas couverts par cette fiche.", "provenance": "generated_candidate"},
+      "de": {"one_line": "Abhängigkeiten vom integrierten PHP-DOM-Modul ersetzen", "paragraph": "4D v20 entfernt DOM aus dem integrierten PHP-Interpreter. Falls Ihr PHP-Code dieses Modul nutzt, prüfen Sie passende 4D-Befehle oder einen externen FastCGI-PHP-Interpreter mit der benötigten Funktionalität, wie von der Quelle vorgeschlagen. Diese Laufzeitänderung betrifft nur entsprechende Abhängigkeiten; andere entfernte PHP-Module sind hier nicht erfasst.", "provenance": "generated_candidate"},
+      "es": {"one_line": "Sustituir las dependencias del módulo DOM de PHP integrado", "paragraph": "4D v20 elimina DOM de su intérprete PHP integrado. Si su código PHP utiliza este módulo, evalúe los comandos 4D pertinentes o un intérprete PHP FastCGI externo con las funciones necesarias, como sugiere la fuente. Este cambio de ejecución depende de dicho uso; esta ficha no cubre los demás módulos PHP eliminados.", "provenance": "generated_candidate"},
+      "ja": {"one_line": "内蔵 PHP の DOM モジュールへの依存を置き換える", "paragraph": "4D v20 では内蔵 PHP インタープリターから DOM モジュールが削除されています。PHP コードがこのモジュールに依存する場合は、出典の提案に従い、該当する 4D コマンドか、必要な機能を備えた外部の FastCGI PHP インタープリターを検討してください。これは該当する依存関係がある場合の実行時の変更です。他の削除された PHP モジュールは、この項目では整理していません。", "provenance": "generated_candidate"}
+    },
+    "evidence": [
+      {"source_id": "legacy-v20-deprecated-en", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html#6340155", "heading": "PHP modules disabled", "excerpt": "Several PHP modules have been removed from the included PHP interpreter in 4D v20, most of them because they are no longer needed or deprecated: DOM (Document Object Model)", "block_id": "fc58f013cf972cb6", "source_sha256": "51e317f2c98decccf6fe59560155235b6cb98a21fb087f2f4663792ac23eb484"},
+      {"source_id": "legacy-v20-deprecated-ja", "url": "https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.ja.html#6340155", "heading": "PHP モジュールの無効化", "excerpt": "4D v20 では内蔵されていたPHP インタープリターから複数のPHP モジュールが削除されています。", "block_id": "bc38805c110e6a7f", "source_sha256": "b65438b76ed30410c239e268d59d39af2499cafcea10c1fad718f27d0f40f0d5"}
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
+  }
+]

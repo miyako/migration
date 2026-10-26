@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    {"id":"legacy-v20-deprecated","family":"deprecated-removed","edition":"20","url":"https://library.4d-japan.com/doc/4Dv20/4D/20/Deprecated-or-Removed-Features.100-6259787.en.html"},
+    {"id":"legacy-v19-deprecated","family":"deprecated-removed","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/Deprecated-or-removed-features.200-5418956.en.html"},
+    {"id":"legacy-v18-deprecated","family":"deprecated-removed","edition":"18.2","url":"https://library.4d-japan.com/doc/4Dv18/4D/18.2/Deprecated-or-removed-features.200-5049565.en.html"},
+    {"id":"legacy-v17-deprecated","family":"deprecated-removed","edition":"17","url":"https://library.4d-japan.com/doc/4Dv17/4D/17/Deprecated-and-Removed-Features.100-3761900.en.html"},
+    {"id":"legacy-v16-deprecated","family":"deprecated-removed","edition":"16","url":"https://library.4d-japan.com/doc/4Dv16/4D/16/Deprecated-and-Removed-Features.100-3072039.en.html"},
+    {"id":"legacy-v19-changes","family":"changes-updates","edition":"19","url":"https://library.4d-japan.com/doc/4Dv19/4D/19/Changes-and-updates.200-5418950.en.html"},
+    {"id":"legacy-v18-changes","family":"changes-updates","edition":"18.2","url":"https://library.4d-japan.com/doc/4Dv18/4D/18.2/Changes-and-updates.200-5049566.en.html"},
+    {"id":"legacy-v17-quick-table","family":"changes-updates","edition":"17","url":"https://library.4d-japan.com/doc/4Dv17/4D/17/Quick-table.200-3761902.en.html"},
+    {"id":"legacy-v16-quick-table","family":"changes-updates","edition":"16","url":"https://library.4d-japan.com/doc/4Dv16/4D/16/Quick-table.200-3072041.en.html"},
+    {"id":"legacy-v18-conversion","family":"conversion-guide","edition":"18","url":"https://library.4d-japan.com/doc/4Dv18/4D/18/Conversion-to-4D-v18.100-4688867.en.html"},
+    {"id":"legacy-v17-conversion","family":"conversion-guide","edition":"17.1","url":"https://library.4d-japan.com/doc/4Dv17/4D/17.1/Conversion-to-4D-v17.100-4091984.en.html"},
+    {"id":"legacy-v16-conversion","family":"conversion-guide","edition":"16.3","url":"https://library.4d-japan.com/doc/4Dv16/4D/16.3/Conversion-to-4D-v16.100-3673248.en.html"},
+    {"id":"blog-v20","family":"blog-overview","edition":"20","url":"https://blog.4d.com/en-whats-new-in-4d-v20/"},
+    {"id":"blog-v19","family":"blog-overview","edition":"19","url":"https://blog.4d.com/en-whats-new-in-4d-v19/"},
+    {"id":"blog-v18","family":"blog-overview","edition":"18","url":"https://blog.4d.com/en-whats-new-in-4d-v18/"},
+    {"id":"blog-v17","family":"blog-overview","edition":"17","url":"https://blog.4d.com/en-whats-new-in-4d-v17/"},
+    {"id":"blog-v16-r6","family":"blog-overview","edition":"16 R6","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r6/"},
+    {"id":"blog-v16-r5","family":"blog-overview","edition":"16 R5","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r5/"},
+    {"id":"blog-v16-r4","family":"blog-overview","edition":"16 R4","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r4/"},
+    {"id":"blog-v16-r3","family":"blog-overview","edition":"16 R3","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r3/"},
+    {"id":"blog-v16-r2","family":"blog-overview","edition":"16 R2","url":"https://blog.4d.com/en-whats-new-in-4d-v16-r2/"}
+  ]
+}

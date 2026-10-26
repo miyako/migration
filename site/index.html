@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Evidence-led 4D migration planning, with offline search and a local checklist.">
+  <title>4D Migration Atlas</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">4D</span><div><strong data-i18n="appTitle">Migration Atlas</strong><span class="eyebrow" data-i18n="poc">Evidence-led · Proof of concept</span></div></div>
+    <div class="preferences">
+      <label><span data-i18n="language">Language</span><select id="language"><option value="en" lang="en">English</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="es" lang="es">Español</option><option value="ja" lang="ja">日本語</option></select></label>
+      <label><span data-i18n="theme">Appearance</span><select id="theme"><option value="system" data-i18n="system">System</option><option value="light" data-i18n="light">Light</option><option value="dark" data-i18n="dark">Dark</option></select></label>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="intro">
+      <span class="eyebrow" data-i18n="introLabel">PLAN WITH EVIDENCE</span>
+      <h1 data-i18n="headline">Know what changes. Keep the unknowns in view.</h1>
+      <p data-i18n="intro">Explore migration candidates, inspect their sources, and build a checklist that stays in your browser.</p>
+    </section>
+    <aside class="scope-notice"><strong data-i18n="scopeTitle">Scope: an application already opened or converted</strong><p data-i18n="scope">Opening or conversion failures belong with official 4D support. A binary-to-project conversion is not assumed. This catalogue is not a guarantee of upgrade safety.</p><a href="https://www.4d.com/support" target="_blank" rel="noopener noreferrer" data-i18n="support">Official 4D support ↗</a></aside>
+    <section id="coverage" class="coverage" aria-labelledby="coverage-title"></section>
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <nav class="view-nav" aria-label="Views" data-i18n-aria="views">
+      <a href="#changes" data-view="changes" data-i18n="changes">Changes</a>
+      <a href="#clarifications" data-view="clarifications" data-i18n="clarifications">Clarifications</a>
+      <a href="#sources" data-view="sources" data-i18n="sources">Sources</a>
+    </nav>
+    <section id="changes-view" aria-labelledby="changes-heading">
+      <div class="section-heading"><h2 id="changes-heading" data-i18n="changes">Changes</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+      <form id="filters" class="toolbar" role="search">
+        <label><span data-i18n="sourceVersion">From version</span><select id="source-version"></select></label>
+        <label><span data-i18n="targetVersion">To version</span><select id="target-version"></select></label>
+        <label class="search-field"><span data-i18n="search">Keyword or exact identifier</span><input id="search" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Command, identifier, or keyword"></label>
+        <label><span data-i18n="platform">Platform</span><select id="platform"><option value="all" data-i18n="allPlatforms">All platforms</option><option value="windows" data-i18n="windows">Windows</option><option value="macos" data-i18n="macos">macOS</option></select></label>
+        <label><span data-i18n="module">Module</span><select id="module"><option value="all" data-i18n="allModules">All modules</option></select></label>
+        <label><span data-i18n="sort">Sort</span><select id="sort"><option value="priority" data-i18n="priority">Stage, then severity</option><option value="version" data-i18n="release">Original release</option></select></label>
+        <button id="reset" type="button" class="secondary" data-i18n="reset">Reset filters</button>
+      </form>
+      <div class="search-note"><p data-i18n="offlineSearch">Keyword and identifier matching runs locally, without models. This is not semantic search.</p><p id="semantic-status"></p></div>
+      <p class="muted" data-i18n="editorialNote">Generated candidate summaries and translations are not official translations. Structured conditions and actions are source/editorial metadata and may remain in English.</p>
+      <div class="checklist-toolbar"><div><strong data-i18n="checklist">Local checklist</strong><p data-i18n="localOnly">Stored only in this browser. Export a backup; clearing browser data removes it. Effort is your own estimate, independent of severity or stage.</p></div><div class="button-group"><button id="export" type="button" data-i18n="export">Export JSON</button><button id="import" type="button" class="secondary" data-i18n="import">Import JSON</button><input id="import-file" type="file" accept=".json,application/json" hidden></div></div>
+      <p id="version-warning" class="warning" hidden data-i18n="versionWarning">Choose a target later than the source to see newly crossed changes. Existing deprecations and unknown thresholds remain visible.</p>
+      <div id="change-list" class="card-list"></div>
+    </section>
+    <section id="clarifications-view" aria-labelledby="clarifications-heading" hidden><h2 id="clarifications-heading" data-i18n="clarifications">Clarifications</h2><p data-i18n="clarificationsIntro">Open questions and documented dispositions are separate from migration changes. A resolved question does not imply human review of a change.</p><div id="clarification-list" class="card-list"></div></section>
+    <section id="sources-view" aria-labelledby="sources-heading" hidden><h2 id="sources-heading" data-i18n="sources">Sources</h2><p data-i18n="sourcesIntro">Registration is not proof of successful retrieval or complete coverage. Source editions and original release thresholds are distinct from version buckets.</p><div id="source-list" class="card-list"></div></section>
+    <footer><p data-i18n="footer">Static catalogue · No backend · No runtime GitHub calls · No on-demand AI</p></footer>
+  </main>
+  <noscript>This catalogue requires JavaScript. / Ce catalogue nécessite JavaScript. / JavaScript ist erforderlich. / Se requiere JavaScript. / JavaScript が必要です。</noscript>
+</body>
+</html>
