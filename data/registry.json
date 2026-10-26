@@ -1,5 +1,398 @@
 [
   {
+    "id": "kb-79155-en",
+    "family": "original-kb-technote",
+    "edition": "19 R6",
+    "url": "https://kb.4d.com/assetid=79155",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/79155_ChangesTransitioningProjectMode/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:14+00:00",
+      "fetched_at": "2026-10-26T15:13:14+00:00",
+      "sha256": "7a318b188cea5e9c29eb0b62d09bbcf1c94cedcac1fd946b5c48fc83f336ae1d",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 13,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=79155",
+    "title": "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+    "kb_document": {
+      "title": "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+      "displayed_version": "19",
+      "context": "PRODUCT: 4D | VERSION: 19 | PLATFORM: Mac & Win",
+      "published_on": "March 27, 2023",
+      "download_url": "https://kb.4d.com/DLTN/TN/2023/23-06_ChangesInProjectMode.zip",
+      "archive_sha256": "69a8e30b2885721196acf4aef26aa0f70634f50c50502e50b80792efe72dfa77",
+      "pdf_path": "23-06_ChangesInProjectMode/23-06_ChangesInProjectMode.pdf",
+      "pdf_sha256": "07dcc2aa821ef58f30bc9b7b8e3fc5a554ec4258f92791ad8c45665338c43d13",
+      "page_count": 13,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Erick Lui, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "edition_basis": "Displayed VERSION is 19; the cited list exception explicitly describes 19 R6. Conservatively scope this note to that later context, not a first-introduction threshold.",
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-78951-en",
+    "family": "original-kb-technote",
+    "edition": "19 R",
+    "url": "https://kb.4d.com/assetid=78951",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/78951_ManagingListsProjectMode/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:35+00:00",
+      "fetched_at": "2026-10-26T15:13:35+00:00",
+      "sha256": "847448505c40f6b3bfabf51a9df943f3f995f4c51189452f70eb209dac435024",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 11,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=78951",
+    "title": "Tech Note: Managing Lists in Project Mode",
+    "kb_document": {
+      "title": "Tech Note: Managing Lists in Project Mode",
+      "displayed_version": "19 R",
+      "context": "PRODUCT: 4D | VERSION: 19 R | PLATFORM: Mac & Win",
+      "published_on": "June 21, 2022",
+      "download_url": "https://kb.4d.com/DLTN/TN/2022/22-11_ManagingListsinPM.zip",
+      "archive_sha256": "910dcdf0a2d61ce7da99ebe704afc1931cbe9be7614275f91e2835be8d91642a",
+      "pdf_path": "22-11_ManagingListsinPM/22-11_ManagingListsinPM.pdf",
+      "pdf_sha256": "a6909b2d97959c441ede9edc87ea2dfa4f07dd7cb038e42117080b3e66fcbfc4",
+      "page_count": 11,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Erick Lui, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-79860-en",
+    "family": "original-kb-technote",
+    "edition": "20 R",
+    "url": "https://kb.4d.com/assetid=79860",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/79860_ForceLoginForRESTAuth/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:14+00:00",
+      "fetched_at": "2026-10-26T15:13:14+00:00",
+      "sha256": "1e84875833c10c7849a8e865005d7d4a79b5312e9183737ba8bafb3794ef4b8d",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 31,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=79860",
+    "title": "Tech Note: Force Login for REST Authentication in 4d",
+    "kb_document": {
+      "title": "Tech Note: Force Login for REST Authentication in 4d",
+      "displayed_version": "20 R",
+      "context": "PRODUCT: 4D Server | VERSION: 20 R | PLATFORM: Mac & Win",
+      "published_on": "October 31, 2025",
+      "download_url": "https://kb.4d.com/TN/2025/25-10_ForceLoginforRESTAuth.zip",
+      "archive_sha256": "468e7e08880e968a1250caac857033dfecd6c99e4b5f7f034b2786e1a977574c",
+      "pdf_path": "25-10_ForceLoginforRESTAuth/25-10_ForceLoginforRESTAuthentication.pdf",
+      "pdf_sha256": "d0c9d88c8b1d5035944c29841852e866b90204fb89b55dec1ae226723a10eecc",
+      "page_count": 31,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Abir HSAINI, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-77727-en",
+    "family": "original-kb-technote",
+    "edition": "16",
+    "url": "https://kb.4d.com/assetid=77727",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/77727_LabelWizard64BitIn4D/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:14+00:00",
+      "fetched_at": "2026-10-26T15:13:14+00:00",
+      "sha256": "f66bd53d361d513ffbe9f63458380a2243a0869ac11a02f70888835972f62a23",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 23,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=77727",
+    "title": "Tech Note: Label Wizard 64-bit in 4D",
+    "kb_document": {
+      "title": "Tech Note: Label Wizard 64-bit in 4D",
+      "displayed_version": "16",
+      "context": "PRODUCT: 4D | VERSION: 16 | PLATFORM: Mac & Win",
+      "published_on": "February 16, 2017",
+      "download_url": "https://kb.4d.com/DLTN/TN/2017/17-04_LabelWizard64bit.zip",
+      "archive_sha256": "34772f880c1c12a6e3578b210c4452292e6c26ee6383e61dbb496774dab061d2",
+      "pdf_path": "17-04_LabelWizard64bit/17-04_LabelWizard64bit.pdf",
+      "pdf_sha256": "3ef256d15c9aa41f067efd36f7227ec21c3cb05c15840bf4c3ee211ff846420d",
+      "page_count": 23,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Vance Villanueva, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-79127-en",
+    "family": "original-kb-technote",
+    "edition": "19",
+    "url": "https://kb.4d.com/assetid=79127",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/79127_XPathWith4D/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:14+00:00",
+      "fetched_at": "2026-10-26T15:13:14+00:00",
+      "sha256": "5387d83ecd5eb48836ac14e9077f9a058b3ddb9eb8b99e33addd84710b27757e",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 16,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=79127",
+    "title": "Tech Note: Hands-on practice with XPath with 4D",
+    "kb_document": {
+      "title": "Tech Note: Hands-on practice with XPath with 4D",
+      "displayed_version": "19",
+      "context": "PRODUCT: 4D | VERSION: 19 | PLATFORM: Mac & Win",
+      "published_on": "February 23, 2023",
+      "download_url": "https://kb.4d.com/DLTN/TN/2023/23-03_XPathWith4D.zip",
+      "archive_sha256": "bd87842841a7c980dbf8bc6cba4076b4c6c20f5f918b170a601772dbbb5c90a2",
+      "pdf_path": "23-03_XPathWith4D/23-03_XPathWith4D.pdf",
+      "pdf_sha256": "f3538045332f9ef9d8db6e0f84bc1c908c2128e2b381c3b18cdf2cd02a68cedb",
+      "page_count": 16,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Olivier Marolleau & Anouar Moustarih, Technical Services Engineer, 4D SAS & 4D Morocco.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-79456-en",
+    "family": "original-kb-technote",
+    "edition": "20",
+    "url": "https://kb.4d.com/assetid=79456",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/79456_UserAndGroupRestore/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:14+00:00",
+      "fetched_at": "2026-10-26T15:13:14+00:00",
+      "sha256": "cbb989a15e7459586f14dab350adcca22cefff8289071ec3fec15fe0b632c6a5",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 14,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=79456",
+    "title": "Tech Note: Maintaining 4D Users and Groups in Project Mode",
+    "kb_document": {
+      "title": "Tech Note: Maintaining 4D Users and Groups in Project Mode",
+      "displayed_version": "20",
+      "context": "PRODUCT: 4D | VERSION: 20 | PLATFORM: Mac & Win",
+      "published_on": "June 25, 2024",
+      "download_url": "https://kb.4d.com/DLTN/TN/2024/24-08_UserAndGroupRestore.zip",
+      "archive_sha256": "abab79f908b94f11d10578232091c2fdf67935929277dbf8ec32103f9fd0a10a",
+      "pdf_path": "24-08_UserAndGroupRestore/24-08_UserAndGroupRestore.pdf",
+      "pdf_sha256": "9fcd81f9cd6b125cdb696a8e64b4a3102180c69c92c0cc9617df6c13b645b269",
+      "page_count": 14,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Tai Bui, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-79748-en",
+    "family": "original-kb-technote",
+    "edition": "20 R8",
+    "url": "https://kb.4d.com/assetid=79748",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/79748_ManagingComponentDependencies/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:16+00:00",
+      "fetched_at": "2026-10-26T15:13:16+00:00",
+      "sha256": "4d40fa27b2a4d8877f08c14a2e4af3b0c0f66e30783ae20a56674a7e1e8f2b75",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 14,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=79748",
+    "title": "Tech Note: Managing Component Dependencies: Challenges and Solutions",
+    "kb_document": {
+      "title": "Tech Note: Managing Component Dependencies: Challenges and Solutions",
+      "displayed_version": "20 R8",
+      "context": "PRODUCT: 4D | VERSION: 20 R8 | PLATFORM: Mac & Win",
+      "published_on": "June 30, 2025",
+      "download_url": "https://kb.4d.com/DLTN/TN/2025/25-06_ManagingDependencies.zip",
+      "archive_sha256": "ad829a69cb085e2cd512c9539b5b05c461349695db7cbb3e879da96e4cea8058",
+      "pdf_path": "25-06_ManagingDependencies/25-06_ManagingDependencies.pdf",
+      "pdf_sha256": "a74dbd62d30ccaea2eae664471056b88de94aeef63d32612c14e6cd71a543d84",
+      "page_count": 14,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Abir HSAINI, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
+    "id": "kb-79295-en",
+    "family": "original-kb-technote",
+    "edition": "20",
+    "url": "https://kb.4d.com/assetid=79295",
+    "discovery": {
+      "method": "pinned_summary_index",
+      "repository": "miyako/4d-tech-notes-summary",
+      "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8",
+      "path": "technotes/79295_ReplaceIPVars/meta.json",
+      "parent": null
+    },
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_technical_note",
+    "host_operator": "4D",
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T15:13:17+00:00",
+      "fetched_at": "2026-10-26T15:13:17+00:00",
+      "sha256": "28874cf24b8ac969b643a57c655197b4e555407aeb4853b6648f5a71eb3710c8",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "block_count": 32,
+      "content_kind": "kb_pdf"
+    },
+    "resolved_url": "https://kb.4d.com/assetid=79295",
+    "title": "Tech Note: Replacing Interprocess Variables",
+    "kb_document": {
+      "title": "Tech Note: Replacing Interprocess Variables",
+      "displayed_version": "20",
+      "context": "PRODUCT: 4D | VERSION: 20 | PLATFORM: Mac & Win",
+      "published_on": "September 29, 2023",
+      "download_url": "https://kb.4d.com/DLTN/TN/2023/23-17_ReplaceIPVars.zip",
+      "archive_sha256": "cb4855ac808949755759b87cf218eb3084f30801693b03de40e2529033063736",
+      "pdf_path": "23-17_ReplaceIPVars/23-17_ReplaceIPVars.pdf",
+      "pdf_sha256": "ac69bcd994459fea7edb4a4ce8323bdcabd226e89b5f547dd4b9f66310be6e57",
+      "page_count": 32,
+      "language": "en",
+      "rights": "Original 4D document; no redistribution license established.",
+      "byline": "Tai Bui, Technical Services Engineer, 4D Inc.",
+      "copyright_observation": "No explicit copyright notice found in extracted PDF text; no license inferred."
+    },
+    "catalog_scope": {
+      "status": "limited_context",
+      "note": "Selected original PDF passages, not a full document audit. English only; no localized counterpart verified."
+    }
+  },
+  {
     "id": "docs-current-release-notes-en",
     "family": "documentation-release-notes",
     "edition": "21 R5",

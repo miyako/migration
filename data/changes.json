@@ -15054,14 +15054,14 @@
         "Source editions are historical observations, not verification of every later target release."
       ]
     },
-    "action": "For projects sharing object/collection values across processes, evaluate shared objects and collections and/or Storage; assess other variable uses separately.",
+    "action": "The v20 page describes interprocess variables as deprecated, not removed, without dating the original deprecation. Their use is discouraged in projects: they are unavailable to preemptive processes and unsuitable for concurrent handling of complex non-shared values. For sharing objects and collections, evaluate shared objects/collections and Storage; this is not a blanket substitute for every variable. The original KB note explicitly says replacement is not currently required; prioritize it only where preemptive execution or a concrete sharing requirement needs it, not as an upgrade blocker.",
     "action_basis": "The source recommends these tools for sharing object and collection values; the original deprecation release is unspecified.",
     "localizations": {
       "en": {
         "one_line": "Plan alternatives to interprocess variables in projects",
         "paragraph": "The v20 page describes interprocess variables as deprecated, not removed, without dating the original deprecation. Their use is discouraged in projects: they are unavailable to preemptive processes and unsuitable for concurrent handling of complex non-shared values. For sharing objects and collections, evaluate shared objects/collections and Storage; this is not a blanket substitute for every variable.",
         "provenance": "generated_candidate",
-        "action": "The v20 page describes interprocess variables as deprecated, not removed, without dating the original deprecation. Their use is discouraged in projects: they are unavailable to preemptive processes and unsuitable for concurrent handling of complex non-shared values. For sharing objects and collections, evaluate shared objects/collections and Storage; this is not a blanket substitute for every variable.",
+        "action": "The v20 page describes interprocess variables as deprecated, not removed, without dating the original deprecation. Their use is discouraged in projects: they are unavailable to preemptive processes and unsuitable for concurrent handling of complex non-shared values. For sharing objects and collections, evaluate shared objects/collections and Storage; this is not a blanket substitute for every variable. The original KB note explicitly says replacement is not currently required; prioritize it only where preemptive execution or a concrete sharing requirement needs it, not as an upgrade blocker.",
         "identifiers": [
           "interprocess variables",
           "Storage",
@@ -15078,7 +15078,7 @@
         "one_line": "Prévoir des alternatives aux variables interprocess dans les projets",
         "paragraph": "La page v20 présente les variables interprocess comme obsolètes, non supprimées, sans dater la dépréciation initiale. Elles sont déconseillées dans les projets : indisponibles en process préemptif et inadaptées aux valeurs complexes non partagées utilisées simultanément. Pour partager objets et collections, évaluer les objets/collections partagés et Storage, sans en faire un équivalent universel.",
         "provenance": "generated_candidate",
-        "action": "La page v20 présente les variables interprocess comme obsolètes, non supprimées, sans dater la dépréciation initiale. Elles sont déconseillées dans les projets : indisponibles en process préemptif et inadaptées aux valeurs complexes non partagées utilisées simultanément. Pour partager objets et collections, évaluer les objets/collections partagés et Storage, sans en faire un équivalent universel.",
+        "action": "La page v20 présente les variables interprocess comme obsolètes, non supprimées, sans dater la dépréciation initiale. Elles sont déconseillées dans les projets : indisponibles en process préemptif et inadaptées aux valeurs complexes non partagées utilisées simultanément. Pour partager objets et collections, évaluer les objets/collections partagés et Storage, sans en faire un équivalent universel. La note originale de la KB précise que le remplacement n'est pas actuellement obligatoire ; priorisez-le seulement pour un besoin réel d'exécution préemptive ou de partage, pas comme un blocage de mise à niveau.",
         "identifiers": [
           "interprocess variables",
           "Storage",
@@ -15095,7 +15095,7 @@
         "one_line": "Alternativen zu Interprozess-Variablen in Projekten planen",
         "paragraph": "Die v20-Seite nennt Interprozess-Variablen überholt, nicht entfernt, ohne den Beginn zu datieren. In Projekten sind sie nicht empfohlen: Sie stehen präemptiven Prozessen nicht zur Verfügung und eignen sich nicht für gleichzeitige Zugriffe auf komplexe nicht geteilte Werte. Für Objekte und Collections shared Objects/Collections und Storage prüfen; dies ist kein pauschaler Variablenersatz.",
         "provenance": "generated_candidate",
-        "action": "Die v20-Seite nennt Interprozess-Variablen überholt, nicht entfernt, ohne den Beginn zu datieren. In Projekten sind sie nicht empfohlen: Sie stehen präemptiven Prozessen nicht zur Verfügung und eignen sich nicht für gleichzeitige Zugriffe auf komplexe nicht geteilte Werte. Für Objekte und Collections shared Objects/Collections und Storage prüfen; dies ist kein pauschaler Variablenersatz.",
+        "action": "Die v20-Seite nennt Interprozess-Variablen überholt, nicht entfernt, ohne den Beginn zu datieren. In Projekten sind sie nicht empfohlen: Sie stehen präemptiven Prozessen nicht zur Verfügung und eignen sich nicht für gleichzeitige Zugriffe auf komplexe nicht geteilte Werte. Für Objekte und Collections shared Objects/Collections und Storage prüfen; dies ist kein pauschaler Variablenersatz. Die originale KB-Notiz erklärt ausdrücklich, dass ein Ersatz derzeit nicht erforderlich ist; priorisieren Sie ihn nur bei konkretem Bedarf an präemptiver Ausführung oder Datenteilung, nicht als Upgrade-Blockade.",
         "identifiers": [
           "interprocess variables",
           "Storage",
@@ -15112,7 +15112,7 @@
         "one_line": "Planificar alternativas a variables interproceso en proyectos",
         "paragraph": "La página v20 considera obsoletas las variables interproceso, no eliminadas, sin fechar el inicio de la obsolescencia. Se desaconsejan en proyectos: no están disponibles en procesos apropiativos y no son adecuadas para valores complejos no compartidos usados simultáneamente. Para compartir objetos y colecciones, evaluar objetos/colecciones compartidos y Storage, no como sustituto universal.",
         "provenance": "generated_candidate",
-        "action": "La página v20 considera obsoletas las variables interproceso, no eliminadas, sin fechar el inicio de la obsolescencia. Se desaconsejan en proyectos: no están disponibles en procesos apropiativos y no son adecuadas para valores complejos no compartidos usados simultáneamente. Para compartir objetos y colecciones, evaluar objetos/colecciones compartidos y Storage, no como sustituto universal.",
+        "action": "La página v20 considera obsoletas las variables interproceso, no eliminadas, sin fechar el inicio de la obsolescencia. Se desaconsejan en proyectos: no están disponibles en procesos apropiativos y no son adecuadas para valores complejos no compartidos usados simultáneamente. Para compartir objetos y colecciones, evaluar objetos/colecciones compartidos y Storage, no como sustituto universal. La nota original de la KB indica expresamente que el reemplazo no es obligatorio actualmente; priorícelo solo por necesidades concretas de ejecución apropiativa o de datos compartidos, no como bloqueo de actualización.",
         "identifiers": [
           "interprocess variables",
           "Storage",
@@ -15129,7 +15129,7 @@
         "one_line": "プロジェクトのインタープロセス変数の代替を計画する",
         "paragraph": "v20 の出典はインタープロセス変数を非推奨としていますが、削除とはせず、非推奨になった正確な時期も示していません。プロジェクトではプリエンプティブプロセスで使えず、非共有の複雑な値の同時操作にも適しません。オブジェクトやコレクションの共有には共有オブジェクト・共有コレクションと Storage を検討してください。すべての変数の単純な置換ではありません。",
         "provenance": "generated_candidate",
-        "action": "v20 の出典はインタープロセス変数を非推奨としていますが、削除とはせず、非推奨になった正確な時期も示していません。プロジェクトではプリエンプティブプロセスで使えず、非共有の複雑な値の同時操作にも適しません。オブジェクトやコレクションの共有には共有オブジェクト・共有コレクションと Storage を検討してください。すべての変数の単純な置換ではありません。",
+        "action": "v20 の出典はインタープロセス変数を非推奨としていますが、削除とはせず、非推奨になった正確な時期も示していません。プロジェクトではプリエンプティブプロセスで使えず、非共有の複雑な値の同時操作にも適しません。オブジェクトやコレクションの共有には共有オブジェクト・共有コレクションと Storage を検討してください。すべての変数の単純な置換ではありません。 KB の原文は現時点で置換が必須ではないと明記しています。アップグレードを妨げる条件としてではなく、プリエンプティブ実行や具体的なデータ共有の要件がある場合に優先してください。",
         "identifiers": [
           "interprocess variables",
           "Storage",
@@ -15223,6 +15223,25 @@
         "excerpt": "ブプロセスにおいて利用できないばかりか、配列、(非共有)オブジェクト、(非共有)コレクションなどの複雑な値を複数のプロセスが同時に扱うことに対応していないため、推奨されません。将来的にはコードのメンテナンスを難しくしていくことでしょう。プロセス間でオブジェクトやコレクションの値を共有するためには、今後は 共有オブジェクトおよびコレクション および Storage コマンドの使用が強く推奨されます。",
         "block_id": "bf64608cddd965a6",
         "source_sha256": "b65438b76ed30410c239e268d59d39af2499cafcea10c1fad718f27d0f40f0d5"
+      },
+      {
+        "source_id": "kb-79295-en",
+        "url": "https://kb.4d.com/assetid=79295",
+        "heading": "Tech Note: Replacing Interprocess Variables (PDF p. 15)",
+        "excerpt": "it is not currently a requirement to replace interprocess variables",
+        "block_id": "13e3228cc799bd6e",
+        "source_sha256": "28874cf24b8ac969b643a57c655197b4e555407aeb4853b6648f5a71eb3710c8",
+        "section_path": [
+          "Tech Note: Replacing Interprocess Variables",
+          "Tech Note: Replacing Interprocess Variables (PDF p. 15)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-17_ReplaceIPVars.zip",
+          "archive_sha256": "cb4855ac808949755759b87cf218eb3084f30801693b03de40e2529033063736",
+          "path": "23-17_ReplaceIPVars/23-17_ReplaceIPVars.pdf",
+          "sha256": "ac69bcd994459fea7edb4a4ce8323bdcabd226e89b5f547dd4b9f66310be6e57",
+          "page": 15
+        }
       }
     ],
     "confidence": "high",
@@ -16896,6 +16915,25 @@
         "excerpt": "GET PICTURE FROM LIBRARY - 動作しません。代わりに READ PICTURE FILE を使用してください。",
         "block_id": "30b8208dd734cd97",
         "source_sha256": "86e0d9bf533f698aa7b0ec7e9c05648b938a1bd63dad16cf8ed700106e106e02"
+      },
+      {
+        "source_id": "kb-79155-en",
+        "url": "https://kb.4d.com/assetid=79155",
+        "heading": "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 5)",
+        "excerpt": "the conversion takes all pictures from the picture library and stores the actual picture file on disk in the Resources folder.",
+        "block_id": "8b0f0786a67f2199",
+        "source_sha256": "7a318b188cea5e9c29eb0b62d09bbcf1c94cedcac1fd946b5c48fc83f336ae1d",
+        "section_path": [
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 5)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-06_ChangesInProjectMode.zip",
+          "archive_sha256": "69a8e30b2885721196acf4aef26aa0f70634f50c50502e50b80792efe72dfa77",
+          "path": "23-06_ChangesInProjectMode/23-06_ChangesInProjectMode.pdf",
+          "sha256": "07dcc2aa821ef58f30bc9b7b8e3fc5a554ec4258f92791ad8c45665338c43d13",
+          "page": 5
+        }
       }
     ],
     "confidence": "high",
@@ -16935,82 +16973,76 @@
         "project"
       ],
       "conditions": [
-        "A successfully opened project still calls SAVE LIST; binary databases are not classified as affected by this record.",
-        "Source editions are historical observations, not verification of every later target release."
+        "A successfully opened project calls SAVE LIST to persist changes, and its source is read-only. Binary databases and writable development contexts are not globally classified as affected."
       ]
     },
-    "action": "In an already opened project, remove dependence on SAVE LIST. Redesign list persistence; this row specifies no replacement.",
-    "action_basis": "The v18.2 project-compliance table explicitly describes runtime behavior, not a global binary-mode removal. No exact introduction release is given.",
+    "action": "If list changes must survive in read-only deployments, use writable storage, such as database records, and adapt the load/save code. Preserve ordinary loading when no changes are saved. Check source access and development mode before replacing code; the demo's custom methods are examples, not mandatory architecture.",
+    "action_basis": "The original KB PDFs qualify the older manual's blanket row. The 19 R6 development exception is explicit; neither publication year nor KB VERSION dates the first restriction.",
     "localizations": {
       "en": {
-        "one_line": "Replace SAVE LIST calls in projects",
-        "paragraph": "The v18.2 page says SAVE LIST does not work in projects. Redesign list persistence; this row specifies no replacement. This is a project-only runtime restriction, not evidence of removal from binary databases. The exact introduction release is unknown; project conversion is not assumed to be required.",
+        "one_line": "Persist project lists outside read-only source when needed",
+        "paragraph": "The older v18.2 table's project restriction needs runtime context: SAVE LIST cannot persist to read-only project source, such as a compiled .4DZ. The list note says LOAD LIST still works. A later note explicitly permits writable lists for 19 R6+ remote development mode with source access; do not treat every project or remote client as read-only. The first introduction remains unknown.",
         "provenance": "generated_candidate",
-        "action": "The v18.2 page says SAVE LIST does not work in projects. Redesign list persistence; this row specifies no replacement. This is a project-only runtime restriction, not evidence of removal from binary databases. The exact introduction release is unknown; project conversion is not assumed to be required.",
+        "action": "If list changes must survive in read-only deployments, use writable storage, such as database records, and adapt the load/save code. Preserve ordinary loading when no changes are saved. Check source access and development mode before replacing code; the demo's custom methods are examples, not mandatory architecture.",
         "identifiers": [
           "SAVE LIST"
         ],
         "conditions": [
-          "A successfully opened project still calls SAVE LIST; binary databases are not classified as affected by this record.",
-          "Source editions are historical observations, not verification of every later target release."
+          "A successfully opened project calls SAVE LIST to persist changes, and its source is read-only. Binary databases and writable development contexts are not globally classified as affected."
         ],
-        "action_basis": "The v18.2 project-compliance table explicitly describes runtime behavior, not a global binary-mode removal. No exact introduction release is given."
+        "action_basis": "The original KB PDFs qualify the older manual's blanket row. The 19 R6 development exception is explicit; neither publication year nor KB VERSION dates the first restriction."
       },
       "fr": {
-        "one_line": "Remplacer STOCKER LISTE dans les projets",
-        "paragraph": "La page v18.2 indique que STOCKER LISTE ne fonctionne pas dans les projets. Repenser la persistance des listes ; cette ligne ne précise aucun remplacement. Cette restriction d'exécution concerne les projets, pas une suppression prouvée dans les bases binaires. La version d'introduction exacte est inconnue ; la conversion en projet n'est pas imposée.",
+        "one_line": "Conserver les listes hors des sources de projet en lecture seule si nécessaire",
+        "paragraph": "La restriction de la table v18.2 doit être contextualisée : STOCKER LISTE ne peut pas enregistrer dans des sources de projet en lecture seule, notamment un .4DZ compilé. Le chargement reste possible. Une note ultérieure permet explicitement la modification des listes en développement distant 19 R6+ avec accès aux sources ; tous les projets ou clients distants ne sont donc pas en lecture seule. La date initiale reste inconnue.",
         "provenance": "generated_candidate",
-        "action": "La page v18.2 indique que STOCKER LISTE ne fonctionne pas dans les projets. Repenser la persistance des listes ; cette ligne ne précise aucun remplacement. Cette restriction d'exécution concerne les projets, pas une suppression prouvée dans les bases binaires. La version d'introduction exacte est inconnue ; la conversion en projet n'est pas imposée.",
+        "action": "Si les modifications doivent persister dans un déploiement en lecture seule, utilisez un stockage accessible en écriture, par exemple des enregistrements, et adaptez le code de chargement/enregistrement. Conservez le chargement ordinaire sans modification à enregistrer. Vérifiez l'accès aux sources et le mode développement ; les méthodes de démonstration ne sont pas une architecture imposée.",
         "conditions": [
-          "A successfully opened project still calls STOCKER LISTE; binary databases are not classified as affected by this record.",
-          "Les éditions sources sont des observations historiques, pas une vérification de chaque version cible ultérieure."
+          "Un projet ouvert avec succès appelle STOCKER LISTE pour conserver des modifications, avec des sources en lecture seule. Les bases binaires et les contextes de développement accessibles en écriture ne sont pas globalement concernés."
         ],
         "identifiers": [
           "STOCKER LISTE"
         ],
-        "action_basis": "Le tableau de conformité des projets v18.2 décrit explicitement le comportement à l’exécution, pas une suppression générale en mode binaire. La version exacte d’introduction n’est pas donnée."
+        "action_basis": "Les PDF originaux de la KB précisent la ligne trop générale du manuel ancien. L'exception de développement 19 R6 est explicite ; ni l'année de publication ni VERSION ne datent la restriction initiale."
       },
       "de": {
-        "one_line": "SAVE LIST in Projekten ersetzen",
-        "paragraph": "Laut v18.2-Seite funktioniert SAVE LIST in Projekten nicht. Persistenz der Listen neu entwerfen; die Zeile nennt keinen Ersatz. Dies ist eine projektspezifische Laufzeiteinschränkung, kein belegter Wegfall in Binärdatenbanken. Die genaue Einführungsversion ist unbekannt; eine Projektkonvertierung wird nicht vorausgesetzt.",
+        "one_line": "Projektlisten bei Bedarf außerhalb schreibgeschützter Quellen speichern",
+        "paragraph": "Die Projektrestriktion der v18.2-Tabelle braucht Laufzeitkontext: SAVE LIST kann nicht in schreibgeschützte Projektquellen wie eine kompilierte .4DZ schreiben. Laut Listennotiz funktioniert LOAD LIST weiterhin. Eine spätere Notiz erlaubt beschreibbare Listen im Remote-Entwicklungsmodus ab 19 R6 mit Quellzugriff; nicht jedes Projekt und jeder Remote-Client ist schreibgeschützt. Die erstmalige Einführung bleibt unbekannt.",
         "provenance": "generated_candidate",
-        "action": "Laut v18.2-Seite funktioniert SAVE LIST in Projekten nicht. Persistenz der Listen neu entwerfen; die Zeile nennt keinen Ersatz. Dies ist eine projektspezifische Laufzeiteinschränkung, kein belegter Wegfall in Binärdatenbanken. Die genaue Einführungsversion ist unbekannt; eine Projektkonvertierung wird nicht vorausgesetzt.",
+        "action": "Müssen Listenänderungen in schreibgeschützten Bereitstellungen erhalten bleiben, verwenden Sie beschreibbaren Speicher, etwa Datensätze, und passen Sie den Lade-/Speichercode an. Ohne zu speichernde Änderungen bleibt normales Laden bestehen. Prüfen Sie Quellzugriff und Entwicklungsmodus; die Demo-Methoden sind Beispiele, keine vorgeschriebene Architektur.",
         "identifiers": [
           "SAVE LIST"
         ],
         "conditions": [
-          "Ein erfolgreich geöffnetes Projekt ruft weiterhin SAVE LIST auf; binäre Datenbanken gelten in diesem Eintrag nicht als betroffen.",
-          "Die Quellenausgaben sind historische Bestandsaufnahmen, keine Überprüfung jeder späteren Zielversion."
+          "Ein erfolgreich geöffnetes Projekt verwendet SAVE LIST zur dauerhaften Speicherung und hat schreibgeschützte Quellen. Binärdatenbanken und beschreibbare Entwicklungsumgebungen sind nicht pauschal betroffen."
         ],
-        "action_basis": "Die Projektkompatibilitätstabelle für v18.2 beschreibt ausdrücklich das Laufzeitverhalten, keine allgemeine Entfernung im Binärmodus. Eine genaue Einführungsversion wird nicht genannt."
+        "action_basis": "Die originalen KB-PDFs präzisieren die pauschale ältere Handbuchzeile. Die Entwicklungsausnahme ab 19 R6 ist ausdrücklich belegt; Veröffentlichungsjahr und VERSION datieren nicht die erste Einschränkung."
       },
       "es": {
-        "one_line": "Sustituir SAVE LIST en proyectos",
-        "paragraph": "La página v18.2 indica que SAVE LIST no funciona en proyectos. Rediseñar la persistencia de listas; la fila no indica sustituto. Es una restricción de ejecución exclusiva de proyectos, no una eliminación demostrada en bases binarias. Se desconoce la versión exacta de introducción; no se exige convertir a proyecto.",
+        "one_line": "Guardar listas fuera del código de proyecto de solo lectura cuando sea necesario",
+        "paragraph": "La restricción de la tabla v18.2 requiere contexto: SAVE LIST no puede guardar en fuentes de proyecto de solo lectura, como un .4DZ compilado. La nota de listas indica que LOAD LIST sigue funcionando. Otra nota permite listas modificables en desarrollo remoto 19 R6+ con acceso a las fuentes; no todos los proyectos o clientes remotos son de solo lectura. La introducción exacta sigue siendo desconocida.",
         "provenance": "generated_candidate",
-        "action": "La página v18.2 indica que SAVE LIST no funciona en proyectos. Rediseñar la persistencia de listas; la fila no indica sustituto. Es una restricción de ejecución exclusiva de proyectos, no una eliminación demostrada en bases binarias. Se desconoce la versión exacta de introducción; no se exige convertir a proyecto.",
+        "action": "Si los cambios deben persistir en despliegues de solo lectura, use almacenamiento modificable, por ejemplo registros, y adapte el código de carga y guardado. Conserve la carga normal si no se guardan cambios. Compruebe el acceso a las fuentes y el modo de desarrollo; los métodos de ejemplo no son una arquitectura obligatoria.",
         "identifiers": [
           "SAVE LIST"
         ],
         "conditions": [
-          "Un proyecto que ya se ha abierto correctamente sigue llamando a SAVE LIST; este registro no clasifica las bases de datos binarias como afectadas.",
-          "Las ediciones de la fuente son observaciones históricas, no una verificación de cada versión de destino posterior."
+          "Un proyecto abierto correctamente usa SAVE LIST para persistir cambios y sus fuentes son de solo lectura. No se consideran afectadas globalmente las bases binarias ni los entornos de desarrollo modificables."
         ],
-        "action_basis": "La tabla de conformidad de proyectos de v18.2 describe explícitamente el comportamiento en ejecución, no una eliminación global en modo binario. No indica la versión exacta de introducción."
+        "action_basis": "Los PDF originales de la KB matizan la fila general del manual antiguo. La excepción de desarrollo 19 R6 es explícita; ni el año de publicación ni VERSION datan la primera restricción."
       },
       "ja": {
-        "one_line": "プロジェクトの SAVE LIST を置き換える",
-        "paragraph": "v18.2 の出典では、SAVE LIST はプロジェクトで動作しません。リストの保存処理を再設計する。この行は代替を指定していない。これはプロジェクト限定の実行時制限で、バイナリーデータベースからの削除を示すものではありません。正確な導入バージョンは不明です。プロジェクト形式への変換は前提にしません。",
+        "one_line": "必要な場合だけ読み取り専用のプロジェクトソース以外にリストを保存する",
+        "paragraph": "v18.2 の表の制限には実行環境の区別が必要です。SAVE LIST はコンパイル済み .4DZ など読み取り専用ソースには保存できませんが、技術ノートでは LOAD LIST は引き続き動作します。後のノートは、ソースにアクセスできる 19 R6 以降のリモート開発モードではリストを更新できると明記しています。全プロジェクトや全リモートクライアントへの一律の制限ではなく、最初の導入時期は不明です。",
         "provenance": "generated_candidate",
-        "action": "v18.2 の出典では、SAVE LIST はプロジェクトで動作しません。リストの保存処理を再設計する。この行は代替を指定していない。これはプロジェクト限定の実行時制限で、バイナリーデータベースからの削除を示すものではありません。正確な導入バージョンは不明です。プロジェクト形式への変換は前提にしません。",
+        "action": "読み取り専用の配布環境で変更を永続化する場合は、レコードなど書き込み可能な保存先を選び、読み込みと保存のコードを調整します。保存する変更がなければ通常の読み込みを維持します。置換前にソースへのアクセスと開発モードを確認してください。デモの独自メソッドは必須の構成ではありません。",
         "identifiers": [
           "SAVE LIST"
         ],
         "conditions": [
-          "正常に開けたプロジェクトが引き続き SAVE LIST を呼び出しています。この項目ではバイナリデータベースを対象としていません。",
-          "出典の各版は過去の状態を記録したもので、後続の移行先リリースをすべて検証したものではありません。"
+          "正常に開いたプロジェクトが SAVE LIST で変更を永続化し、そのソースが読み取り専用である場合が対象です。バイナリ形式や書き込み可能な開発環境への一律の制限ではありません。"
         ],
-        "action_basis": "v18.2 のプロジェクト適合表は実行時の動作を明示的に説明しており、バイナリモード全体での削除を意味しません。正確な導入リリースは示されていません。"
+        "action_basis": "KB の原文 PDF が旧マニュアルの一律の記述を限定しています。19 R6 の開発モードの例外は明記されていますが、公開年や VERSION は最初の制限の導入時期を示しません。"
       }
     },
     "evidence": [
@@ -17053,6 +17085,63 @@
         "excerpt": "SAVE LIST - プロジェクトから呼び出された場合にはランタイムにエラー",
         "block_id": "41d2835b56f20ff3",
         "source_sha256": "86e0d9bf533f698aa7b0ec7e9c05648b938a1bd63dad16cf8ed700106e106e02"
+      },
+      {
+        "source_id": "kb-78951-en",
+        "url": "https://kb.4d.com/assetid=78951",
+        "heading": "Tech Note: Managing Lists in Project Mode (PDF p. 3)",
+        "excerpt": "whenever 4D is opened in a read-only state such as a compiled .4DZ project or client-server mode from a remote client, lists can no longer be saved from the command SAVE LIST.",
+        "block_id": "d0adf19178b5a1f8",
+        "source_sha256": "847448505c40f6b3bfabf51a9df943f3f995f4c51189452f70eb209dac435024",
+        "section_path": [
+          "Tech Note: Managing Lists in Project Mode",
+          "Tech Note: Managing Lists in Project Mode (PDF p. 3)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2022/22-11_ManagingListsinPM.zip",
+          "archive_sha256": "910dcdf0a2d61ce7da99ebe704afc1931cbe9be7614275f91e2835be8d91642a",
+          "path": "22-11_ManagingListsinPM/22-11_ManagingListsinPM.pdf",
+          "sha256": "a6909b2d97959c441ede9edc87ea2dfa4f07dd7cb038e42117080b3e66fcbfc4",
+          "page": 3
+        }
+      },
+      {
+        "source_id": "kb-78951-en",
+        "url": "https://kb.4d.com/assetid=78951",
+        "heading": "Tech Note: Managing Lists in Project Mode (PDF p. 3)",
+        "excerpt": "LOAD LIST still works normally",
+        "block_id": "d0adf19178b5a1f8",
+        "source_sha256": "847448505c40f6b3bfabf51a9df943f3f995f4c51189452f70eb209dac435024",
+        "section_path": [
+          "Tech Note: Managing Lists in Project Mode",
+          "Tech Note: Managing Lists in Project Mode (PDF p. 3)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2022/22-11_ManagingListsinPM.zip",
+          "archive_sha256": "910dcdf0a2d61ce7da99ebe704afc1931cbe9be7614275f91e2835be8d91642a",
+          "path": "22-11_ManagingListsinPM/22-11_ManagingListsinPM.pdf",
+          "sha256": "a6909b2d97959c441ede9edc87ea2dfa4f07dd7cb038e42117080b3e66fcbfc4",
+          "page": 3
+        }
+      },
+      {
+        "source_id": "kb-79155-en",
+        "url": "https://kb.4d.com/assetid=79155",
+        "heading": "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 12)",
+        "excerpt": "If the database is in 19 R6 or newer, then having clients with development mode will allow lists to be readable and writeable without any change in code.",
+        "block_id": "b1d0a18bc0982260",
+        "source_sha256": "7a318b188cea5e9c29eb0b62d09bbcf1c94cedcac1fd946b5c48fc83f336ae1d",
+        "section_path": [
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 12)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-06_ChangesInProjectMode.zip",
+          "archive_sha256": "69a8e30b2885721196acf4aef26aa0f70634f50c50502e50b80792efe72dfa77",
+          "path": "23-06_ChangesInProjectMode/23-06_ChangesInProjectMode.pdf",
+          "sha256": "07dcc2aa821ef58f30bc9b7b8e3fc5a554ec4258f92791ad8c45665338c43d13",
+          "page": 12
+        }
       }
     ],
     "confidence": "high",
@@ -48203,6 +48292,44 @@
         "excerpt": "標準的なものではないとはいえ、お使いのコードが以前と同じように動くように以前の機能を保ちたい場合もあるかもしれません。この場合、このチェックを 外して ください。その一方で、これらの非標準の実装をコード内で使用しておらず、データベース内で拡張されたXPath 機能( DOM Find XML element コマンドの詳細に説明があります)を利用したい場合、この 標準XPath を使用する オプションが チェックされている ことを確認してください。",
         "block_id": "f8cd811f98b9ccba",
         "source_sha256": "8a9ba88f9d8a8ff57cd5b0d2ce9ef9f5b49251f7660d152f7c660f14e2ede3bf"
+      },
+      {
+        "source_id": "kb-79127-en",
+        "url": "https://kb.4d.com/assetid=79127",
+        "heading": "Tech Note: Hands-on practice with XPath with 4D (PDF p. 4)",
+        "excerpt": "DOM Find XML element($root; \"/root/test2\")",
+        "block_id": "76e07586daf3b8cb",
+        "source_sha256": "5387d83ecd5eb48836ac14e9077f9a058b3ddb9eb8b99e33addd84710b27757e",
+        "section_path": [
+          "Tech Note: Hands-on practice with XPath with 4D",
+          "Tech Note: Hands-on practice with XPath with 4D (PDF p. 4)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-03_XPathWith4D.zip",
+          "archive_sha256": "bd87842841a7c980dbf8bc6cba4076b4c6c20f5f918b170a601772dbbb5c90a2",
+          "path": "23-03_XPathWith4D/23-03_XPathWith4D.pdf",
+          "sha256": "f3538045332f9ef9d8db6e0f84bc1c908c2128e2b381c3b18cdf2cd02a68cedb",
+          "page": 4
+        }
+      },
+      {
+        "source_id": "kb-79127-en",
+        "url": "https://kb.4d.com/assetid=79127",
+        "heading": "Tech Note: Hands-on practice with XPath with 4D (PDF p. 3)",
+        "excerpt": "The second implementation of XPath was introduced in 4D v18R3, which can be called the standard XPath.",
+        "block_id": "303bb1becbd563ed",
+        "source_sha256": "5387d83ecd5eb48836ac14e9077f9a058b3ddb9eb8b99e33addd84710b27757e",
+        "section_path": [
+          "Tech Note: Hands-on practice with XPath with 4D",
+          "Tech Note: Hands-on practice with XPath with 4D (PDF p. 3)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-03_XPathWith4D.zip",
+          "archive_sha256": "bd87842841a7c980dbf8bc6cba4076b4c6c20f5f918b170a601772dbbb5c90a2",
+          "path": "23-03_XPathWith4D/23-03_XPathWith4D.pdf",
+          "sha256": "f3538045332f9ef9d8db6e0f84bc1c908c2128e2b381c3b18cdf2cd02a68cedb",
+          "page": 3
+        }
       }
     ],
     "confidence": "high",
@@ -53221,6 +53348,63 @@
           "4D 21 LTS",
           "動作の変更"
         ]
+      },
+      {
+        "source_id": "kb-79748-en",
+        "url": "https://kb.4d.com/assetid=79748",
+        "heading": "Tech Note: Managing Component Dependencies: Challenges and Solutions (PDF p. 3)",
+        "excerpt": "4D creates two JSON files: dependencies.json and environment4d.json",
+        "block_id": "368d72b7830ad188",
+        "source_sha256": "4d40fa27b2a4d8877f08c14a2e4af3b0c0f66e30783ae20a56674a7e1e8f2b75",
+        "section_path": [
+          "Tech Note: Managing Component Dependencies: Challenges and Solutions",
+          "Tech Note: Managing Component Dependencies: Challenges and Solutions (PDF p. 3)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2025/25-06_ManagingDependencies.zip",
+          "archive_sha256": "ad829a69cb085e2cd512c9539b5b05c461349695db7cbb3e879da96e4cea8058",
+          "path": "25-06_ManagingDependencies/25-06_ManagingDependencies.pdf",
+          "sha256": "a74dbd62d30ccaea2eae664471056b88de94aeef63d32612c14e6cd71a543d84",
+          "page": 3
+        }
+      },
+      {
+        "source_id": "kb-79748-en",
+        "url": "https://kb.4d.com/assetid=79748",
+        "heading": "Tech Note: Managing Component Dependencies: Challenges and Solutions (PDF p. 8)",
+        "excerpt": "If the main project runs in compiled mode, the developer must use compiled components only.",
+        "block_id": "ed8e4116e792d6f7",
+        "source_sha256": "4d40fa27b2a4d8877f08c14a2e4af3b0c0f66e30783ae20a56674a7e1e8f2b75",
+        "section_path": [
+          "Tech Note: Managing Component Dependencies: Challenges and Solutions",
+          "Tech Note: Managing Component Dependencies: Challenges and Solutions (PDF p. 8)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2025/25-06_ManagingDependencies.zip",
+          "archive_sha256": "ad829a69cb085e2cd512c9539b5b05c461349695db7cbb3e879da96e4cea8058",
+          "path": "25-06_ManagingDependencies/25-06_ManagingDependencies.pdf",
+          "sha256": "a74dbd62d30ccaea2eae664471056b88de94aeef63d32612c14e6cd71a543d84",
+          "page": 8
+        }
+      },
+      {
+        "source_id": "kb-79748-en",
+        "url": "https://kb.4d.com/assetid=79748",
+        "heading": "Tech Note: Managing Component Dependencies: Challenges and Solutions (PDF p. 8)",
+        "excerpt": "Once an update is initiated, a dialog suggests restarting the project to load the new version. If postponed, the update will occur at the next startup.",
+        "block_id": "ed8e4116e792d6f7",
+        "source_sha256": "4d40fa27b2a4d8877f08c14a2e4af3b0c0f66e30783ae20a56674a7e1e8f2b75",
+        "section_path": [
+          "Tech Note: Managing Component Dependencies: Challenges and Solutions",
+          "Tech Note: Managing Component Dependencies: Challenges and Solutions (PDF p. 8)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2025/25-06_ManagingDependencies.zip",
+          "archive_sha256": "ad829a69cb085e2cd512c9539b5b05c461349695db7cbb3e879da96e4cea8058",
+          "path": "25-06_ManagingDependencies/25-06_ManagingDependencies.pdf",
+          "sha256": "a74dbd62d30ccaea2eae664471056b88de94aeef63d32612c14e6cd71a543d84",
+          "page": 8
+        }
       }
     ],
     "confidence": "high",
@@ -56383,12 +56567,12 @@
         "The database method is deprecated in 20 R6, not removed. A settings button helps projects move to force-login REST mode; the optional mode introduced in 20 R5 is not a universal default."
       ]
     },
-    "action": "Review affected authentication code and the force-login migration path before changing existing REST access behavior.",
+    "action": "Review affected authentication code and the force-login migration path before changing existing REST access behavior. When adopting Force Login in an existing project, use the Web settings activation button for ds.authentify(); editing roles.json alone is insufficient. Expose authentify(), validate credentials and grant only appropriate privileges. The 20 R6 default concerns new projects, not an automatic switch of existing deployments.",
     "localizations": {
       "en": {
         "one_line": "Plan migration away from On REST Authentication",
         "paragraph": "The database method is deprecated in 20 R6, not removed. A settings button helps projects move to force-login REST mode; the optional mode introduced in 20 R5 is not a universal default.",
-        "action": "Review affected authentication code and the force-login migration path before changing existing REST access behavior.",
+        "action": "Review affected authentication code and the force-login migration path before changing existing REST access behavior. When adopting Force Login in an existing project, use the Web settings activation button for ds.authentify(); editing roles.json alone is insufficient. Expose authentify(), validate credentials and grant only appropriate privileges. The 20 R6 default concerns new projects, not an automatic switch of existing deployments.",
         "identifiers": [
           "On REST Authentication",
           "force login"
@@ -56402,7 +56586,7 @@
       "fr": {
         "one_line": "Préparer l'évolution de l'authentification REST",
         "paragraph": "La méthode base d'authentification REST devient obsolète en 20 R6, sans être supprimée. Un bouton des propriétés facilite le passage des projets au mode REST à connexion forcée ; ce mode optionnel introduit en 20 R5 n'est pas une valeur par défaut universelle.",
-        "action": "Examinez le code d'authentification concerné et la migration vers la connexion forcée avant de modifier le comportement des accès REST existants.",
+        "action": "Examinez le code d'authentification concerné et la migration vers la connexion forcée avant de modifier le comportement des accès REST existants. Pour adopter la connexion forcée dans un projet existant, utilisez le bouton d'activation des paramètres Web pour ds.authentify() ; modifier roles.json seul ne suffit pas. Exposez authentify(), validez les identifiants et accordez uniquement les privilèges appropriés. Le réglage par défaut de 20 R6 concerne les nouveaux projets, pas une bascule automatique des déploiements existants.",
         "identifiers": [
           "force login"
         ],
@@ -56415,7 +56599,7 @@
       "de": {
         "one_line": "REST-Authentifizierungsmethode und Force-Login-Migration prüfen",
         "paragraph": "Die Datenbankmethode wird in 20 R6 veraltet, aber nicht entfernt. Eine Einstellungsschaltfläche hilft Projekten beim Wechsel in den REST-Force-Login-Modus; der in 20 R5 eingeführte optionale Modus ist kein allgemeiner Standard.",
-        "action": "Prüfen Sie betroffenen Authentifizierungscode und den Force-Login-Migrationsweg, bevor Sie bestehendes REST-Zugriffsverhalten ändern.",
+        "action": "Prüfen Sie betroffenen Authentifizierungscode und den Force-Login-Migrationsweg, bevor Sie bestehendes REST-Zugriffsverhalten ändern. Verwenden Sie bei der Umstellung eines bestehenden Projekts auf Force Login die Aktivierungsschaltfläche der Web-Einstellungen für ds.authentify(); roles.json allein zu bearbeiten reicht nicht. Exponieren Sie authentify(), prüfen Sie Anmeldedaten und vergeben Sie nur passende Rechte. Der Standard ab 20 R6 betrifft neue Projekte, keine automatische Umstellung bestehender Installationen.",
         "identifiers": [
           "On REST Authentication",
           "force login"
@@ -56429,7 +56613,7 @@
       "es": {
         "one_line": "Revisar la migración de autenticación REST a inicio de sesión forzado",
         "paragraph": "El método de base de datos queda obsoleto en 20 R6, pero no se elimina. Un botón de ajustes ayuda a los proyectos a pasar al modo REST de inicio de sesión forzado; el modo opcional introducido en 20 R5 no es el predeterminado universal.",
-        "action": "Revise el código de autenticación afectado y la vía de migración antes de modificar el acceso REST existente.",
+        "action": "Revise el código de autenticación afectado y la vía de migración antes de modificar el acceso REST existente. Al adoptar Force Login en un proyecto existente, use el botón de activación de los ajustes Web para ds.authentify(); editar solo roles.json no basta. Exponga authentify(), valide las credenciales y conceda únicamente los privilegios adecuados. El valor predeterminado de 20 R6 afecta a proyectos nuevos, no cambia automáticamente los despliegues existentes.",
         "identifiers": [
           "On REST Authentication",
           "force login"
@@ -56443,7 +56627,7 @@
       "ja": {
         "one_line": "REST 認証メソッドと強制ログインへの移行を確認",
         "paragraph": "データベースメソッドは 20 R6 で非推奨になりましたが、削除されていません。設定ボタンでプロジェクトの REST 強制ログインモードへの移行を支援します。20 R5 導入のこの任意モードが全体の既定値になったわけではありません。",
-        "action": "既存の REST アクセス動作を変更する前に、該当する認証コードと強制ログインへの移行手順を確認してください。",
+        "action": "既存の REST アクセス動作を変更する前に、該当する認証コードと強制ログインへの移行手順を確認してください。 既存プロジェクトで Force Login を採用する場合は、Web 設定の ds.authentify() 有効化ボタンを使用します。roles.json の編集だけでは不十分です。authentify() を公開し、資格情報を検証して必要な権限だけを付与します。20 R6 の既定値は新規プロジェクトに関するもので、既存の配布環境が自動で切り替わるわけではありません。",
         "identifiers": [
           "On REST Authentication",
           "force login"
@@ -56511,6 +56695,63 @@
           "4D 20 R6",
           "ハイライト"
         ]
+      },
+      {
+        "source_id": "kb-79860-en",
+        "url": "https://kb.4d.com/assetid=79860",
+        "heading": "Tech Note: Force Login for REST Authentication in 4d (PDF p. 6)",
+        "excerpt": "Simply editing the roles.json file and adding \"forceLogin\": true is not sufficient to update the database.",
+        "block_id": "b89b0d77de0dcfff",
+        "source_sha256": "1e84875833c10c7849a8e865005d7d4a79b5312e9183737ba8bafb3794ef4b8d",
+        "section_path": [
+          "Tech Note: Force Login for REST Authentication in 4d",
+          "Tech Note: Force Login for REST Authentication in 4d (PDF p. 6)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/TN/2025/25-10_ForceLoginforRESTAuth.zip",
+          "archive_sha256": "468e7e08880e968a1250caac857033dfecd6c99e4b5f7f034b2786e1a977574c",
+          "path": "25-10_ForceLoginforRESTAuth/25-10_ForceLoginforRESTAuthentication.pdf",
+          "sha256": "d0c9d88c8b1d5035944c29841852e866b90204fb89b55dec1ae226723a10eecc",
+          "page": 6
+        }
+      },
+      {
+        "source_id": "kb-79860-en",
+        "url": "https://kb.4d.com/assetid=79860",
+        "heading": "Tech Note: Force Login for REST Authentication in 4d (PDF p. 7)",
+        "excerpt": "The authentify() function must be explicitly exposed in your datastore class to be accessible via REST.",
+        "block_id": "348955a753cd9a95",
+        "source_sha256": "1e84875833c10c7849a8e865005d7d4a79b5312e9183737ba8bafb3794ef4b8d",
+        "section_path": [
+          "Tech Note: Force Login for REST Authentication in 4d",
+          "Tech Note: Force Login for REST Authentication in 4d (PDF p. 7)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/TN/2025/25-10_ForceLoginforRESTAuth.zip",
+          "archive_sha256": "468e7e08880e968a1250caac857033dfecd6c99e4b5f7f034b2786e1a977574c",
+          "path": "25-10_ForceLoginforRESTAuth/25-10_ForceLoginforRESTAuthentication.pdf",
+          "sha256": "d0c9d88c8b1d5035944c29841852e866b90204fb89b55dec1ae226723a10eecc",
+          "page": 7
+        }
+      },
+      {
+        "source_id": "kb-79860-en",
+        "url": "https://kb.4d.com/assetid=79860",
+        "heading": "Tech Note: Force Login for REST Authentication in 4d (PDF p. 4)",
+        "excerpt": "Starting in 4D 20 R6 and later versions, Force Login becomes the default REST authentication mode in new projects.",
+        "block_id": "10ce38625abbbbeb",
+        "source_sha256": "1e84875833c10c7849a8e865005d7d4a79b5312e9183737ba8bafb3794ef4b8d",
+        "section_path": [
+          "Tech Note: Force Login for REST Authentication in 4d",
+          "Tech Note: Force Login for REST Authentication in 4d (PDF p. 4)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/TN/2025/25-10_ForceLoginforRESTAuth.zip",
+          "archive_sha256": "468e7e08880e968a1250caac857033dfecd6c99e4b5f7f034b2786e1a977574c",
+          "path": "25-10_ForceLoginforRESTAuth/25-10_ForceLoginforRESTAuthentication.pdf",
+          "sha256": "d0c9d88c8b1d5035944c29841852e866b90204fb89b55dec1ae226723a10eecc",
+          "page": 4
+        }
       }
     ],
     "confidence": "high",
@@ -64409,5 +64650,650 @@
     "review_status": "candidate",
     "notices": [],
     "action_basis": "The official bulletin documents fixes at 19.7 LTS build 288986, 20.2 LTS build 100956, 20 R2 HF1 build 100440 and 20 R3 onward. Built-in-password applications are especially relevant; other password implementations are not directly impacted by the second issue."
+  },
+  {
+    "id": "chg-project-standalone-designer-identity",
+    "identifiers": [
+      "CHANGE CURRENT USER",
+      "Designer"
+    ],
+    "complexity": {
+      "level": "unknown"
+    },
+    "threshold": {
+      "exact": null,
+      "bucket": null,
+      "kind": "unknown"
+    },
+    "applies_until": null,
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "modules": [
+      "language"
+    ],
+    "type": "behavior",
+    "criticality": "high",
+    "stage": "runtime",
+    "relevance": {
+      "status": "conditional",
+      "reason": "A successfully opened project runs standalone/single-user code that expects CHANGE CURRENT USER to change its identity; this is not the client/server case."
+    },
+    "applicability": {
+      "formats": [
+        "project"
+      ],
+      "conditions": [
+        "A successfully opened project runs standalone/single-user code that expects CHANGE CURRENT USER to change its identity; this is not the client/server case."
+      ]
+    },
+    "action": "Review custom login and user-dependent code in standalone projects. Do not rely on changing the current 4D user there; design and test application-level identity checks appropriate to the deployment, and test client/server separately.",
+    "action_basis": "The original KB demonstration distinguishes standalone and client/server behavior; its publication and VERSION field do not establish introduction.",
+    "localizations": {
+      "en": {
+        "one_line": "Review user-dependent code in standalone projects",
+        "paragraph": "The project-mode note says standalone/single-user projects remain Designer even after CHANGE CURRENT USER. The same form in client/server keeps the binary-mode behavior. This can change custom user-dependent UI or permission checks after opening; the note does not date the first release.",
+        "action": "Review custom login and user-dependent code in standalone projects. Do not rely on changing the current 4D user there; design and test application-level identity checks appropriate to the deployment, and test client/server separately.",
+        "conditions": [
+          "A successfully opened project runs standalone/single-user code that expects CHANGE CURRENT USER to change its identity; this is not the client/server case."
+        ],
+        "action_basis": "The original KB demonstration distinguishes standalone and client/server behavior; its publication and VERSION field do not establish introduction.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "CHANGE CURRENT USER",
+          "Designer"
+        ]
+      },
+      "fr": {
+        "one_line": "Vérifier le code dépendant de l'utilisateur en projet monoposte",
+        "paragraph": "La note sur les projets indique qu'en monoposte l'utilisateur reste Designer même après un appel de changement d'utilisateur. Le même formulaire en client/serveur conserve le comportement du mode binaire. Les interfaces et contrôles personnalisés peuvent donc changer après ouverture ; la première version n'est pas datée.",
+        "action": "Vérifiez la connexion personnalisée et le code dépendant de l'utilisateur dans les projets monopostes. N'y fondez pas l'identité sur le changement d'utilisateur 4D ; concevez et testez les contrôles applicatifs adaptés au déploiement et testez séparément le client/serveur.",
+        "conditions": [
+          "Un projet ouvert avec succès exécute en monoposte du code qui attend un changement d'identité 4D ; le cas client/serveur est distinct."
+        ],
+        "action_basis": "La démonstration originale de la KB distingue monoposte et client/serveur ; sa publication et VERSION ne datent pas l'introduction.",
+        "provenance": "generated_candidate",
+        "identifiers": []
+      },
+      "de": {
+        "one_line": "Benutzerabhängigen Code in Einzelplatzprojekten prüfen",
+        "paragraph": "Laut Projektnotiz bleibt ein Einzelplatzprojekt auch nach CHANGE CURRENT USER beim Designer. Dasselbe Formular behält im Client/Server-Betrieb das Binärverhalten. Benutzerabhängige Oberflächen oder eigene Berechtigungsprüfungen können sich nach dem Öffnen ändern; die erste Version ist nicht datiert.",
+        "action": "Prüfen Sie eigene Anmeldung und benutzerabhängigen Code in Einzelplatzprojekten. Verlassen Sie sich dort nicht auf einen Wechsel des aktuellen 4D-Benutzers; entwerfen und testen Sie passende anwendungsseitige Identitätsprüfungen und testen Sie Client/Server getrennt.",
+        "conditions": [
+          "Ein erfolgreich geöffnetes Projekt erwartet im Einzelplatzbetrieb einen Identitätswechsel durch CHANGE CURRENT USER; Client/Server ist ein anderer Fall."
+        ],
+        "action_basis": "Die originale KB-Demonstration unterscheidet Einzelplatz und Client/Server; Veröffentlichung und VERSION belegen keine Einführungsversion.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "CHANGE CURRENT USER",
+          "Designer"
+        ]
+      },
+      "es": {
+        "one_line": "Revisar el código dependiente del usuario en proyectos monopuesto",
+        "paragraph": "La nota de proyectos indica que en monopuesto se mantiene Designer incluso tras CHANGE CURRENT USER. El mismo formulario en cliente/servidor conserva el comportamiento binario. La interfaz o los controles personalizados pueden cambiar después de abrir; la primera versión no está fechada.",
+        "action": "Revise el inicio de sesión y el código dependiente del usuario en proyectos monopuesto. No base allí la identidad en cambiar el usuario actual de 4D; diseñe y pruebe controles de identidad de aplicación adecuados al despliegue y pruebe cliente/servidor por separado.",
+        "conditions": [
+          "Un proyecto abierto correctamente espera en monopuesto que CHANGE CURRENT USER cambie su identidad; el caso cliente/servidor es distinto."
+        ],
+        "action_basis": "La demostración original de la KB distingue monopuesto y cliente/servidor; la publicación y VERSION no establecen la introducción.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "CHANGE CURRENT USER",
+          "Designer"
+        ]
+      },
+      "ja": {
+        "one_line": "シングルユーザープロジェクトのユーザー依存コードを確認する",
+        "paragraph": "プロジェクトの技術ノートでは、スタンドアロン／シングルユーザー時は CHANGE CURRENT USER の実行後も Designer のままです。同じフォームでもクライアント／サーバーではバイナリ形式と同様に動作します。正常な起動後の独自 UI や権限判定に影響しますが、最初の導入バージョンは記載されていません。",
+        "action": "シングルユーザープロジェクトの独自ログインとユーザー依存コードを確認します。この環境では現在の 4D ユーザーの切り替えに依存せず、配布構成に適したアプリケーション側の本人確認を設計・検証し、クライアント／サーバーは別にテストしてください。",
+        "conditions": [
+          "正常に開いたシングルユーザープロジェクトが CHANGE CURRENT USER による識別情報の変更を期待する場合が対象で、クライアント／サーバーとは区別します。"
+        ],
+        "action_basis": "KB の原文の実例がスタンドアロンとクライアント／サーバーを区別しています。公開日と VERSION は導入時期の根拠ではありません。",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "CHANGE CURRENT USER",
+          "Designer"
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "kb-79155-en",
+        "url": "https://kb.4d.com/assetid=79155",
+        "heading": "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 4)",
+        "excerpt": "Note that this behavior is only specific to 4D standalone / single-user mode. Opening this form in client- server will behave as it did in binary mode.",
+        "block_id": "44fd7066a5881b48",
+        "source_sha256": "7a318b188cea5e9c29eb0b62d09bbcf1c94cedcac1fd946b5c48fc83f336ae1d",
+        "section_path": [
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 4)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-06_ChangesInProjectMode.zip",
+          "archive_sha256": "69a8e30b2885721196acf4aef26aa0f70634f50c50502e50b80792efe72dfa77",
+          "path": "23-06_ChangesInProjectMode/23-06_ChangesInProjectMode.pdf",
+          "sha256": "07dcc2aa821ef58f30bc9b7b8e3fc5a554ec4258f92791ad8c45665338c43d13",
+          "page": 4
+        }
+      }
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
+  },
+  {
+    "id": "chg-project-users-blob-export",
+    "identifiers": [
+      "USERS TO BLOB",
+      "BLOB TO USERS",
+      "directory.json"
+    ],
+    "complexity": {
+      "level": "unknown"
+    },
+    "threshold": {
+      "exact": null,
+      "bucket": null,
+      "kind": "unknown"
+    },
+    "applies_until": null,
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "modules": [
+      "language"
+    ],
+    "type": "restriction",
+    "criticality": "high",
+    "stage": "runtime",
+    "relevance": {
+      "status": "conditional",
+      "reason": "A successfully opened project uses USERS TO BLOB to export or transfer its users."
+    },
+    "applicability": {
+      "formats": [
+        "project"
+      ],
+      "conditions": [
+        "A successfully opened project uses USERS TO BLOB to export or transfer its users."
+      ]
+    },
+    "action": "Replace the affected binary-style user export/import workflow with explicit management of the active directory.json. Validate that saved user data is nonempty and usable; do not treat an empty BLOB as a successful user backup.",
+    "action_basis": "The original PDF documents the empty result and the different user-storage file; this is not a global removal of BLOB support.",
+    "localizations": {
+      "en": {
+        "one_line": "Replace project user export based on USERS TO BLOB",
+        "paragraph": "In project mode, the original note says USERS TO BLOB returns an empty BLOB, so feeding it to BLOB TO USERS does not update users. User information instead resides in directory.json. This affects custom user-management/export workflows, not every BLOB operation. The first release is unknown.",
+        "action": "Replace the affected binary-style user export/import workflow with explicit management of the active directory.json. Validate that saved user data is nonempty and usable; do not treat an empty BLOB as a successful user backup.",
+        "conditions": [
+          "A successfully opened project uses USERS TO BLOB to export or transfer its users."
+        ],
+        "action_basis": "The original PDF documents the empty result and the different user-storage file; this is not a global removal of BLOB support.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "USERS TO BLOB",
+          "BLOB TO USERS",
+          "directory.json"
+        ]
+      },
+      "fr": {
+        "one_line": "Remplacer l'export des utilisateurs de projet fondé sur un BLOB",
+        "paragraph": "En projet, la note originale indique que l'export des utilisateurs renvoie un BLOB vide ; sa réimportation ne met donc pas les utilisateurs à jour. Les informations sont stockées dans directory.json. Cela concerne les procédures personnalisées d'export et de gestion des utilisateurs, pas toutes les opérations BLOB. La première version est inconnue.",
+        "action": "Remplacez la procédure d'export/import héritée du binaire par une gestion explicite du fichier directory.json actif. Vérifiez que la sauvegarde des utilisateurs est non vide et exploitable ; ne considérez pas un BLOB vide comme une sauvegarde réussie.",
+        "conditions": [
+          "Un projet ouvert avec succès utilise l'export des utilisateurs vers un BLOB pour les sauvegarder ou les transférer."
+        ],
+        "action_basis": "Le PDF original documente le résultat vide et le fichier de stockage différent ; il ne décrit pas une suppression générale des BLOB.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "directory.json"
+        ]
+      },
+      "de": {
+        "one_line": "BLOB-basierten Benutzerexport in Projekten ersetzen",
+        "paragraph": "Im Projektmodus liefert USERS TO BLOB laut Originalnotiz einen leeren BLOB; dessen Übergabe an BLOB TO USERS aktualisiert keine Benutzer. Die Informationen liegen stattdessen in directory.json. Betroffen sind eigene Benutzerverwaltungs- und Exportabläufe, nicht alle BLOB-Operationen. Die erste Version bleibt unbekannt.",
+        "action": "Ersetzen Sie den betroffenen binären Benutzerexport/-import durch explizite Verwaltung der aktiven directory.json. Prüfen Sie, dass die Benutzersicherung nicht leer und verwendbar ist; ein leerer BLOB ist keine erfolgreiche Sicherung.",
+        "conditions": [
+          "Ein erfolgreich geöffnetes Projekt verwendet USERS TO BLOB zum Export oder Transfer seiner Benutzer."
+        ],
+        "action_basis": "Das Original-PDF dokumentiert das leere Ergebnis und die andere Benutzerdatei; es belegt keine allgemeine Entfernung der BLOB-Unterstützung.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "USERS TO BLOB",
+          "BLOB TO USERS",
+          "directory.json"
+        ]
+      },
+      "es": {
+        "one_line": "Reemplazar la exportación de usuarios de proyecto basada en BLOB",
+        "paragraph": "En modo proyecto, la nota original indica que USERS TO BLOB devuelve un BLOB vacío; pasarlo a BLOB TO USERS no actualiza usuarios. La información reside en directory.json. Afecta a flujos personalizados de exportación y gestión de usuarios, no a todas las operaciones BLOB. La primera versión es desconocida.",
+        "action": "Reemplace el flujo binario de exportación/importación por la gestión explícita del archivo directory.json activo. Verifique que la copia de usuarios no esté vacía y sea utilizable; un BLOB vacío no es una copia correcta.",
+        "conditions": [
+          "Un proyecto abierto correctamente usa USERS TO BLOB para exportar o transferir usuarios."
+        ],
+        "action_basis": "El PDF original documenta el resultado vacío y el archivo diferente; no es una eliminación general de la compatibilidad con BLOB.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "USERS TO BLOB",
+          "BLOB TO USERS",
+          "directory.json"
+        ]
+      },
+      "ja": {
+        "one_line": "BLOB に依存したプロジェクトのユーザー書き出しを置き換える",
+        "paragraph": "原文では、プロジェクト形式の USERS TO BLOB は空の BLOB を返し、それを BLOB TO USERS に渡してもユーザーを更新できません。ユーザー情報は directory.json に格納されます。独自のユーザー管理や書き出し処理が対象で、BLOB 全般の制限ではありません。最初のバージョンは不明です。",
+        "action": "影響するバイナリ形式由来の書き出し／読み込み処理を、実際に使用中の directory.json の明示的な管理に置き換えます。保存したユーザーデータが空でなく利用可能であることを確認し、空の BLOB を正常なバックアップとして扱わないでください。",
+        "conditions": [
+          "正常に開いたプロジェクトが USERS TO BLOB でユーザーを保存または転送する場合が対象です。"
+        ],
+        "action_basis": "原文 PDF が空の結果と異なる保存先を説明しており、BLOB サポート全体の削除ではありません。",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "USERS TO BLOB",
+          "BLOB TO USERS",
+          "directory.json"
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "kb-79155-en",
+        "url": "https://kb.4d.com/assetid=79155",
+        "heading": "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 5)",
+        "excerpt": "project mode will simply return an empty blob",
+        "block_id": "8b0f0786a67f2199",
+        "source_sha256": "7a318b188cea5e9c29eb0b62d09bbcf1c94cedcac1fd946b5c48fc83f336ae1d",
+        "section_path": [
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 5)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-06_ChangesInProjectMode.zip",
+          "archive_sha256": "69a8e30b2885721196acf4aef26aa0f70634f50c50502e50b80792efe72dfa77",
+          "path": "23-06_ChangesInProjectMode/23-06_ChangesInProjectMode.pdf",
+          "sha256": "07dcc2aa821ef58f30bc9b7b8e3fc5a554ec4258f92791ad8c45665338c43d13",
+          "page": 5
+        }
+      },
+      {
+        "source_id": "kb-79155-en",
+        "url": "https://kb.4d.com/assetid=79155",
+        "heading": "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 5)",
+        "excerpt": "project mode handles users in the directory.json file located in the Settings folder of the root project directory.",
+        "block_id": "8b0f0786a67f2199",
+        "source_sha256": "7a318b188cea5e9c29eb0b62d09bbcf1c94cedcac1fd946b5c48fc83f336ae1d",
+        "section_path": [
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode",
+          "Tech Note: 7 Changes to Check When Transitioning to Project Mode (PDF p. 5)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2023/23-06_ChangesInProjectMode.zip",
+          "archive_sha256": "69a8e30b2885721196acf4aef26aa0f70634f50c50502e50b80792efe72dfa77",
+          "path": "23-06_ChangesInProjectMode/23-06_ChangesInProjectMode.pdf",
+          "sha256": "07dcc2aa821ef58f30bc9b7b8e3fc5a554ec4258f92791ad8c45665338c43d13",
+          "page": 5
+        }
+      }
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
+  },
+  {
+    "id": "chg-label-template-64bit-compatibility",
+    "identifiers": [
+      ".4lb",
+      ".4lbp"
+    ],
+    "complexity": {
+      "level": "unknown"
+    },
+    "threshold": {
+      "exact": null,
+      "bucket": null,
+      "kind": "unknown"
+    },
+    "applies_until": null,
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "modules": [
+      "printing"
+    ],
+    "type": "behavior",
+    "criticality": "medium",
+    "stage": "runtime",
+    "relevance": {
+      "status": "conditional",
+      "reason": "The application uses legacy 32-bit .4lb label templates in the 64-bit Label Wizard on Windows or macOS."
+    },
+    "applicability": {
+      "formats": [
+        "binary",
+        "project"
+      ],
+      "conditions": [
+        "The application uses legacy 32-bit .4lb label templates in the 64-bit Label Wizard on Windows or macOS."
+      ]
+    },
+    "action": "Inventory old .4lb templates and verify label layout and print output in the target wizard. Recreate unreadable Windows-created templates and correct imported Mac layouts as needed, saving replacement templates as .4lbp. Do not assume all legacy files import unchanged.",
+    "action_basis": "The v16 PDF explicitly distinguishes template origin from destination platform; publication and VERSION are not a precise introduction date.",
+    "localizations": {
+      "en": {
+        "one_line": "Check legacy label templates in the 64-bit wizard",
+        "paragraph": "The v16 technical note says Mac-created legacy .4lb labels can open on both platforms but their dimensions and settings may differ; Windows-created .4lb labels cannot be read on either platform. The 64-bit wizard uses XML .4lbp files. This is label-document compatibility after successful opening, not database conversion failure; no exact introduction is established.",
+        "action": "Inventory old .4lb templates and verify label layout and print output in the target wizard. Recreate unreadable Windows-created templates and correct imported Mac layouts as needed, saving replacement templates as .4lbp. Do not assume all legacy files import unchanged.",
+        "conditions": [
+          "The application uses legacy 32-bit .4lb label templates in the 64-bit Label Wizard on Windows or macOS."
+        ],
+        "action_basis": "The v16 PDF explicitly distinguishes template origin from destination platform; publication and VERSION are not a precise introduction date.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          ".4lb",
+          ".4lbp"
+        ]
+      },
+      "fr": {
+        "one_line": "Vérifier les modèles d'étiquettes anciens dans l'assistant 64 bits",
+        "paragraph": "La note v16 indique que les .4lb anciens créés sur Mac s'ouvrent sur les deux plateformes, mais que dimensions et réglages peuvent différer ; ceux créés sous Windows ne sont lisibles sur aucune des deux. L'assistant 64 bits utilise les fichiers XML .4lbp. Il s'agit de documents d'étiquettes après ouverture réussie, pas d'un échec de conversion de base ; l'introduction exacte n'est pas établie.",
+        "action": "Inventoriez les modèles .4lb et vérifiez leur mise en page et l'impression dans l'assistant cible. Recréez les modèles Windows illisibles et corrigez les imports Mac si nécessaire, puis enregistrez les remplacements en .4lbp. Ne supposez pas un import inchangé.",
+        "conditions": [
+          "L'application utilise des modèles .4lb anciens 32 bits dans l'assistant d'étiquettes 64 bits sous Windows ou macOS."
+        ],
+        "action_basis": "Le PDF v16 distingue explicitement la plateforme d'origine de celle de destination ; publication et VERSION ne donnent pas de date d'introduction précise.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          ".4lb",
+          ".4lbp"
+        ]
+      },
+      "de": {
+        "one_line": "Alte Etikettenvorlagen im 64-Bit-Assistenten prüfen",
+        "paragraph": "Die v16-Notiz sagt, dass auf dem Mac erstellte alte .4lb-Dateien auf beiden Plattformen geöffnet werden können, Maße und Einstellungen aber abweichen können. Windows-erstellte .4lb-Dateien sind auf keiner Plattform lesbar. Der 64-Bit-Assistent verwendet XML-Dateien mit .4lbp. Dies betrifft Etikettendokumente nach erfolgreichem Öffnen, keine fehlgeschlagene Datenbankkonvertierung; die genaue Einführung ist nicht belegt.",
+        "action": "Erfassen Sie alte .4lb-Vorlagen und prüfen Sie Layout und Druckausgabe im Zielassistenten. Erstellen Sie unlesbare Windows-Vorlagen neu und korrigieren Sie Mac-Importe bei Bedarf; speichern Sie Ersatzvorlagen als .4lbp. Gehen Sie nicht von unverändertem Import aus.",
+        "conditions": [
+          "Die Anwendung nutzt alte 32-Bit-.4lb-Etikettenvorlagen im 64-Bit-Assistenten unter Windows oder macOS."
+        ],
+        "action_basis": "Das v16-PDF unterscheidet ausdrücklich Herkunfts- und Zielplattform; Veröffentlichung und VERSION belegen keinen genauen Einführungszeitpunkt.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          ".4lb",
+          ".4lbp"
+        ]
+      },
+      "es": {
+        "one_line": "Comprobar plantillas antiguas en el asistente de etiquetas de 64 bits",
+        "paragraph": "La nota v16 indica que los .4lb antiguos creados en Mac se abren en ambas plataformas, pero sus dimensiones y ajustes pueden variar; los creados en Windows no se leen en ninguna. El asistente de 64 bits usa archivos XML .4lbp. Es compatibilidad de documentos después de abrir correctamente la base, no un fallo de conversión; no se establece la introducción exacta.",
+        "action": "Inventaríe las plantillas .4lb y verifique diseño e impresión en el asistente de destino. Recree las plantillas Windows ilegibles y corrija las importadas de Mac cuando sea necesario; guarde los reemplazos como .4lbp. No presuponga una importación sin cambios.",
+        "conditions": [
+          "La aplicación usa plantillas .4lb antiguas de 32 bits en el asistente de etiquetas de 64 bits en Windows o macOS."
+        ],
+        "action_basis": "El PDF v16 distingue expresamente la plataforma de origen y de destino; publicación y VERSION no proporcionan una fecha exacta de introducción.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          ".4lb",
+          ".4lbp"
+        ]
+      },
+      "ja": {
+        "one_line": "64 ビットのラベルエディターで旧テンプレートを確認する",
+        "paragraph": "v16 の技術ノートでは、Mac で作成された旧 .4lb は両プラットフォームで開けますが、寸法や設定が変わる場合があります。Windows で作成された旧 .4lb はどちらでも読み込めません。64 ビットのエディターは XML 形式の .4lbp を使用します。正常なデータベース起動後のラベル文書の互換性であり、データベース変換失敗への対処ではありません。正確な導入時期は不明です。",
+        "action": "旧 .4lb テンプレートを洗い出し、移行先のエディターでレイアウトと印刷結果を確認します。読み込めない Windows 由来のテンプレートは再作成し、Mac 由来のものは必要に応じて修正して .4lbp で保存してください。変更なしで読み込めるとは限りません。",
+        "conditions": [
+          "Windows または macOS の 64 ビットのラベルエディターで旧 32 ビット .4lb テンプレートを使う場合が対象です。"
+        ],
+        "action_basis": "v16 の PDF は作成元と読み込み先のプラットフォームを明確に区別しています。公開日と VERSION は正確な導入時期ではありません。",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          ".4lb",
+          ".4lbp"
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "kb-77727-en",
+        "url": "https://kb.4d.com/assetid=77727",
+        "heading": "Tech Note: Label Wizard 64-bit in 4D (PDF p. 4)",
+        "excerpt": "As for “.4lb” files that were created in Windows, they cannot be read in either platform.",
+        "block_id": "da374c43596ac294",
+        "source_sha256": "f66bd53d361d513ffbe9f63458380a2243a0869ac11a02f70888835972f62a23",
+        "section_path": [
+          "Tech Note: Label Wizard 64-bit in 4D",
+          "Tech Note: Label Wizard 64-bit in 4D (PDF p. 4)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2017/17-04_LabelWizard64bit.zip",
+          "archive_sha256": "34772f880c1c12a6e3578b210c4452292e6c26ee6383e61dbb496774dab061d2",
+          "path": "17-04_LabelWizard64bit/17-04_LabelWizard64bit.pdf",
+          "sha256": "3ef256d15c9aa41f067efd36f7227ec21c3cb05c15840bf4c3ee211ff846420d",
+          "page": 4
+        }
+      },
+      {
+        "source_id": "kb-77727-en",
+        "url": "https://kb.4d.com/assetid=77727",
+        "heading": "Tech Note: Label Wizard 64-bit in 4D (PDF p. 4)",
+        "excerpt": "all objects are present but not exactly the same dimension and settings.",
+        "block_id": "da374c43596ac294",
+        "source_sha256": "f66bd53d361d513ffbe9f63458380a2243a0869ac11a02f70888835972f62a23",
+        "section_path": [
+          "Tech Note: Label Wizard 64-bit in 4D",
+          "Tech Note: Label Wizard 64-bit in 4D (PDF p. 4)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2017/17-04_LabelWizard64bit.zip",
+          "archive_sha256": "34772f880c1c12a6e3578b210c4452292e6c26ee6383e61dbb496774dab061d2",
+          "path": "17-04_LabelWizard64bit/17-04_LabelWizard64bit.pdf",
+          "sha256": "3ef256d15c9aa41f067efd36f7227ec21c3cb05c15840bf4c3ee211ff846420d",
+          "page": 4
+        }
+      },
+      {
+        "source_id": "kb-77727-en",
+        "url": "https://kb.4d.com/assetid=77727",
+        "heading": "Tech Note: Label Wizard 64-bit in 4D (PDF p. 8)",
+        "excerpt": "the Label files “.4lbp” are in XML format",
+        "block_id": "796a3bb0770ad486",
+        "source_sha256": "f66bd53d361d513ffbe9f63458380a2243a0869ac11a02f70888835972f62a23",
+        "section_path": [
+          "Tech Note: Label Wizard 64-bit in 4D",
+          "Tech Note: Label Wizard 64-bit in 4D (PDF p. 8)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2017/17-04_LabelWizard64bit.zip",
+          "archive_sha256": "34772f880c1c12a6e3578b210c4452292e6c26ee6383e61dbb496774dab061d2",
+          "path": "17-04_LabelWizard64bit/17-04_LabelWizard64bit.pdf",
+          "sha256": "3ef256d15c9aa41f067efd36f7227ec21c3cb05c15840bf4c3ee211ff846420d",
+          "page": 8
+        }
+      }
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
+  },
+  {
+    "id": "chg-project-deployed-users-preservation",
+    "identifiers": [
+      "directory.json",
+      "Get 4D file",
+      "Directory file"
+    ],
+    "complexity": {
+      "level": "unknown"
+    },
+    "threshold": {
+      "exact": null,
+      "bucket": null,
+      "kind": "unknown"
+    },
+    "applies_until": null,
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "modules": [
+      "deployment"
+    ],
+    "type": "behavior",
+    "criticality": "high",
+    "stage": "runtime",
+    "relevance": {
+      "status": "conditional",
+      "reason": "An update replaces project application/settings files at a deployment where users or groups have been maintained locally."
+    },
+    "applicability": {
+      "formats": [
+        "project"
+      ],
+      "conditions": [
+        "An update replaces project application/settings files at a deployment where users or groups have been maintained locally."
+      ]
+    },
+    "action": "Identify and back up the active directory.json before replacement; preserve or restore the customer copy in the correct Settings location and restart when it changes. If automating, use the appropriate standalone or Server lifecycle hooks, never remote-client hooks, and validate the restore policy instead of blindly copying demo timestamp logic.",
+    "action_basis": "The original PDF documents the deployment-loss scenario and a sample preservation strategy; the sample algorithm is guidance, not a universal mandatory architecture.",
+    "localizations": {
+      "en": {
+        "one_line": "Preserve deployed project users when replacing application files",
+        "paragraph": "Project users and groups live in directory.json; deploying a default copy can overwrite customer changes. The v20 note describes preserving the active file and distinguishes startup/shutdown on standalone versus Server, not remote clients. A replacement needs restart to apply. The first introduction is unknown; the demo's timestamp policy is not universally required.",
+        "action": "Identify and back up the active directory.json before replacement; preserve or restore the customer copy in the correct Settings location and restart when it changes. If automating, use the appropriate standalone or Server lifecycle hooks, never remote-client hooks, and validate the restore policy instead of blindly copying demo timestamp logic.",
+        "conditions": [
+          "An update replaces project application/settings files at a deployment where users or groups have been maintained locally."
+        ],
+        "action_basis": "The original PDF documents the deployment-loss scenario and a sample preservation strategy; the sample algorithm is guidance, not a universal mandatory architecture.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "directory.json",
+          "Get 4D file",
+          "Directory file"
+        ]
+      },
+      "fr": {
+        "one_line": "Préserver les utilisateurs déployés lors du remplacement des fichiers de projet",
+        "paragraph": "Les utilisateurs et groupes d'un projet sont dans directory.json ; déployer une copie par défaut peut écraser les changements du client. La note v20 préserve le fichier actif et distingue les événements de démarrage/arrêt monoposte et serveur, pas ceux du client distant. Un remplacement nécessite un redémarrage. La date initiale est inconnue ; la politique d'horodatage du démonstrateur n'est pas universelle.",
+        "action": "Identifiez et sauvegardez le directory.json actif avant remplacement ; préservez ou restaurez la copie du client dans le bon dossier Settings et redémarrez après modification. Automatisez avec les événements adaptés au monoposte ou au serveur, jamais au client distant, et validez la politique de restauration au lieu de copier aveuglément les horodatages de démonstration.",
+        "conditions": [
+          "Une mise à jour remplace des fichiers d'application ou de paramètres d'un projet dont les utilisateurs ou groupes ont été modifiés sur site."
+        ],
+        "action_basis": "Le PDF original documente le risque de perte au déploiement et un exemple de préservation ; cet algorithme n'est pas une architecture universelle imposée.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "directory.json"
+        ]
+      },
+      "de": {
+        "one_line": "Projektbenutzer beim Austausch bereitgestellter Dateien erhalten",
+        "paragraph": "Projektbenutzer und Gruppen stehen in directory.json; eine ausgelieferte Standardkopie kann Kundenänderungen überschreiben. Die v20-Notiz beschreibt die aktive Datei und unterschiedliche Start-/Beenden-Ereignisse für Einzelplatz und Server, nicht Remote-Clients. Ein Austausch braucht einen Neustart. Die erste Einführung bleibt unbekannt; die Zeitstempelstrategie der Demo ist nicht allgemein vorgeschrieben.",
+        "action": "Ermitteln und sichern Sie vor dem Austausch die aktive directory.json; erhalten oder restaurieren Sie die Kundenkopie am richtigen Settings-Ort und starten Sie nach Änderungen neu. Verwenden Sie bei Automatisierung passende Einzelplatz- oder Server-Ereignisse, nie Remote-Client-Ereignisse, und prüfen Sie die Wiederherstellungsstrategie statt die Demo-Zeitstempel blind zu übernehmen.",
+        "conditions": [
+          "Ein Update ersetzt Projektanwendungs- oder Einstellungsdateien einer Installation mit vor Ort gepflegten Benutzern oder Gruppen."
+        ],
+        "action_basis": "Das Original-PDF dokumentiert den möglichen Datenverlust und eine Beispielstrategie; deren Algorithmus ist keine universell vorgeschriebene Architektur.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "directory.json",
+          "Get 4D file",
+          "Directory file"
+        ]
+      },
+      "es": {
+        "one_line": "Preservar usuarios desplegados al reemplazar archivos del proyecto",
+        "paragraph": "Los usuarios y grupos del proyecto residen en directory.json; desplegar una copia predeterminada puede sobrescribir cambios del cliente. La nota v20 preserva el archivo activo y distingue eventos de inicio/cierre monopuesto y de servidor, no de clientes remotos. El reemplazo requiere reinicio. La introducción inicial es desconocida; la política de fechas del ejemplo no es universal.",
+        "action": "Identifique y respalde el directory.json activo antes del reemplazo; preserve o restaure la copia del cliente en la ubicación Settings correcta y reinicie tras cambiarla. Si automatiza, use los eventos adecuados de monopuesto o servidor, nunca de cliente remoto, y valide la política de restauración sin copiar ciegamente las fechas del ejemplo.",
+        "conditions": [
+          "Una actualización sustituye archivos de aplicación o ajustes de un proyecto cuyos usuarios o grupos se han modificado localmente."
+        ],
+        "action_basis": "El PDF original documenta la posible pérdida y una estrategia de ejemplo; ese algoritmo no es una arquitectura universal obligatoria.",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "directory.json",
+          "Get 4D file",
+          "Directory file"
+        ]
+      },
+      "ja": {
+        "one_line": "配布ファイルの置換時にプロジェクトのユーザー情報を保持する",
+        "paragraph": "プロジェクトのユーザーとグループは directory.json にあり、既定のコピーを配布すると顧客の変更を上書きする場合があります。v20 のノートは使用中のファイルの保持と、スタンドアロンとサーバーで異なる起動／終了処理を示し、リモートクライアントでの実行を除外しています。置換の反映には再起動が必要です。最初の導入時期は不明で、デモの日時比較は必須の方式ではありません。",
+        "action": "置換前に使用中の directory.json を特定してバックアップし、顧客のコピーを適切な Settings の場所で保持・復元して、変更後に再起動します。自動化ではスタンドアロンまたはサーバーに適したライフサイクル処理を使い、リモートクライアントでは実行しないでください。デモの日時判定をそのまま流用せず復元方針を検証します。",
+        "conditions": [
+          "現地でユーザーやグループを変更したプロジェクトのアプリケーションや設定ファイルを、更新時に置き換える場合が対象です。"
+        ],
+        "action_basis": "原文 PDF が配布時の損失と保持方法の一例を示しています。デモのアルゴリズム自体がすべての構成に必須という意味ではありません。",
+        "provenance": "generated_candidate",
+        "identifiers": [
+          "directory.json",
+          "Get 4D file",
+          "Directory file"
+        ]
+      }
+    },
+    "evidence": [
+      {
+        "source_id": "kb-79456-en",
+        "url": "https://kb.4d.com/assetid=79456",
+        "heading": "Tech Note: Maintaining 4D Users and Groups in Project Mode (PDF p. 6)",
+        "excerpt": "it is important to make sure that the “directory.json” file is maintained and not overwritten or deleted.",
+        "block_id": "f87705f4f39fa492",
+        "source_sha256": "cbb989a15e7459586f14dab350adcca22cefff8289071ec3fec15fe0b632c6a5",
+        "section_path": [
+          "Tech Note: Maintaining 4D Users and Groups in Project Mode",
+          "Tech Note: Maintaining 4D Users and Groups in Project Mode (PDF p. 6)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2024/24-08_UserAndGroupRestore.zip",
+          "archive_sha256": "abab79f908b94f11d10578232091c2fdf67935929277dbf8ec32103f9fd0a10a",
+          "path": "24-08_UserAndGroupRestore/24-08_UserAndGroupRestore.pdf",
+          "sha256": "9fcd81f9cd6b125cdb696a8e64b4a3102180c69c92c0cc9617df6c13b645b269",
+          "page": 6
+        }
+      },
+      {
+        "source_id": "kb-79456-en",
+        "url": "https://kb.4d.com/assetid=79456",
+        "heading": "Tech Note: Maintaining 4D Users and Groups in Project Mode (PDF p. 7)",
+        "excerpt": "The methods should not be executed on a remote client.",
+        "block_id": "3d85a542a8a1a010",
+        "source_sha256": "cbb989a15e7459586f14dab350adcca22cefff8289071ec3fec15fe0b632c6a5",
+        "section_path": [
+          "Tech Note: Maintaining 4D Users and Groups in Project Mode",
+          "Tech Note: Maintaining 4D Users and Groups in Project Mode (PDF p. 7)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2024/24-08_UserAndGroupRestore.zip",
+          "archive_sha256": "abab79f908b94f11d10578232091c2fdf67935929277dbf8ec32103f9fd0a10a",
+          "path": "24-08_UserAndGroupRestore/24-08_UserAndGroupRestore.pdf",
+          "sha256": "9fcd81f9cd6b125cdb696a8e64b4a3102180c69c92c0cc9617df6c13b645b269",
+          "page": 7
+        }
+      },
+      {
+        "source_id": "kb-79456-en",
+        "url": "https://kb.4d.com/assetid=79456",
+        "heading": "Tech Note: Maintaining 4D Users and Groups in Project Mode (PDF p. 10)",
+        "excerpt": "automatically restart the database if the restore is performed.",
+        "block_id": "a7ac2963585c6542",
+        "source_sha256": "cbb989a15e7459586f14dab350adcca22cefff8289071ec3fec15fe0b632c6a5",
+        "section_path": [
+          "Tech Note: Maintaining 4D Users and Groups in Project Mode",
+          "Tech Note: Maintaining 4D Users and Groups in Project Mode (PDF p. 10)"
+        ],
+        "pdf": {
+          "download_url": "https://kb.4d.com/DLTN/TN/2024/24-08_UserAndGroupRestore.zip",
+          "archive_sha256": "abab79f908b94f11d10578232091c2fdf67935929277dbf8ec32103f9fd0a10a",
+          "path": "24-08_UserAndGroupRestore/24-08_UserAndGroupRestore.pdf",
+          "sha256": "9fcd81f9cd6b125cdb696a8e64b4a3102180c69c92c0cc9617df6c13b645b269",
+          "page": 10
+        }
+      }
+    ],
+    "confidence": "high",
+    "review_status": "candidate",
+    "notices": []
   }
 ]

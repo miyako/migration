@@ -289,6 +289,27 @@ def validate(document):
             require(field in source, f"Source missing {field}")
         require(source["language"] in LANGUAGES and url(source["url"]), "Invalid source language/URL")
         require(nonempty(source["fetch"]["status"]), "Missing source fetch status")
+        if source["family"] == "original-kb-technote":
+            from .kb import kb_url
+            require(kb_url(source["url"]) and re.fullmatch(r"/assetid=\d+", urlsplit(source["url"]).path)
+                    and source["language"] == "en" and source["authority"] == "official_technical_note",
+                    "KB citations require an original English KB landing page")
+            discovery = source["discovery"]
+            require(discovery["method"] == "pinned_summary_index"
+                    and discovery.get("repository") == "miyako/4d-tech-notes-summary"
+                    and bool(re.fullmatch(r"[a-f0-9]{40}", discovery.get("revision", "")))
+                    and re.fullmatch(r"technotes/\d+_[^/]+/meta.json", discovery.get("path", "")),
+                    "KB discovery must retain a separate pinned index path")
+            if source["fetch"]["status"] == "available":
+                pdf = source["kb_document"]
+                require(kb_url(pdf["download_url"]) and pdf["language"] == "en"
+                        and all(nonempty(pdf.get(k)) for k in
+                                ("pdf_path", "byline", "published_on", "displayed_version",
+                                 "copyright_observation", "rights"))
+                        and all(re.fullmatch(r"[a-f0-9]{64}", pdf.get(k, "")) for k in
+                                ("pdf_sha256", "archive_sha256"))
+                        and isinstance(pdf["page_count"], int) and pdf["page_count"] > 0,
+                        "KB source requires original download, PDF identity and publication provenance")
         if source["family"] == "documentation-release-notes":
             route = documentation_route(source["url"])
             require(route["language"] == source["language"] and route["channel"] == source["documentation_channel"],
@@ -458,6 +479,17 @@ def validate(document):
                     "Missing evidence provenance")
             require(len(evidence["excerpt"]) <= 420, "Evidence excerpts must be short; link to original instead")
             require(bool(re.fullmatch(r"[a-f0-9]{64}", evidence["source_sha256"])), "Invalid source hash")
+            if source["family"] == "original-kb-technote":
+                pdf = evidence.get("pdf", {})
+                require(evidence["url"] == source["url"] and evidence["source_sha256"] == source["fetch"]["sha256"]
+                        and pdf.get("download_url") == source["kb_document"]["download_url"]
+                        and pdf.get("sha256") == source["kb_document"]["pdf_sha256"]
+                        and pdf.get("path") == source["kb_document"]["pdf_path"]
+                        and pdf.get("archive_sha256") == source["kb_document"]["archive_sha256"]
+                        and isinstance(pdf.get("page"), int)
+                        and 1 <= pdf["page"] <= source["kb_document"]["page_count"]
+                        and f"(PDF p. {pdf['page']})" in evidence["heading"],
+                        "KB evidence must distinguish landing citation from exact PDF page provenance")
         require(isinstance(change["notices"], list), "Invalid notices")
     atomic_ids = {member_id for change in document["changes"] for member_id in change.get("member_ids", [change["id"]])}
     clarifications = {c["id"]: c for c in document["clarifications"]}
@@ -510,6 +542,12 @@ def validate(document):
 
 def verify_evidence(document):
     sources = {s["id"]: s for s in document["sources"]}
+    kb_blocks = {}
+    for source in sources.values():
+        if source["family"] != "original-kb-technote" or source["fetch"]["status"] != "available":
+            continue
+        from .kb import verify_cached_document
+        kb_blocks[source["id"]] = verify_cached_document(source)
     for source in sources.values():
         if source["discovery"]["method"] != "legacy_article_link":
             continue
@@ -531,6 +569,11 @@ def verify_evidence(document):
             matches = [b for b in load(path)["blocks"] if b["id"] == evidence["block_id"]]
             require(len(matches) == 1, f"Evidence block not found for {change['id']}")
             block = matches[0]
+            if source["id"] in kb_blocks:
+                actual = next((b for b in kb_blocks[source["id"]]
+                               if b["id"] == evidence["block_id"]), None)
+                require(actual == block and evidence["pdf"]["page"] == block["page"],
+                        "KB evidence does not match the hashed original PDF page")
             require(evidence["excerpt"] in block["text"], "Excerpt is not verbatim in extracted block")
             require(evidence["heading"] in block["headings"], "Heading does not match evidence context")
             require(evidence["url"] == block["url"], "Evidence URL/anchor does not match resolved source")

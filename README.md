@@ -11,19 +11,21 @@ Binary-to-project conversion is not assumed to be mandatory.
 
 ## What is actually covered
 
-The current snapshot registers **48 English seeds**: the original 39 supplied
+The current snapshot registers **56 English seeds**: the original 39 supplied
 seeds (26 legacy documentation pages, 9 blog overviews and 4 current official
 Release Notes pages), 2 actually linked v16/v17 product-range detail pages,
-5 exact-edition Compatibility pages, and 2 bounded command-reference details.
+5 exact-edition Compatibility pages, 2 bounded command-reference details, and
+8 selected original KB technical notes (see the bounded KB batch below).
 Each legacy seed's four other languages are located through actual archive
 directory links; modern documentation uses actual official `hreflang` routes,
-for **205 registered source URLs**. Five are bounded derived links, not new seeds:
+for **213 registered source URLs**. The KB originals are English only; no localized
+counterpart URL was verified or invented. Five are bounded derived links, not new seeds:
 the advertised public 21 R4 revision in four locales and its linked TLS bulletin:
 
 | Publication snapshot, 2026-10-26 | Count |
 |---|---:|
-| Available structural extracts | 205 |
-| Article surfaces / generated navigation index views | 150 / 55 |
+| Available structural extracts | 213 |
+| Article surfaces / generated navigation index views / original KB PDFs | 150 / 55 / 8 |
 | Currently unavailable registered source URLs | 0 |
 | Superseded guessed URLs that returned 404, retained as history | 34 |
 | Additional actual article links returning 404, directory-resolved with history retained | 10 |
@@ -31,10 +33,10 @@ the advertised public 21 R4 revision in four locales and its linked TLS bulletin
 | Actual blog language links queued for review, not fetched | 27 |
 | Modern Release Notes URLs, including the bounded public revision | 20 |
 | German modern counterparts not advertised/linked, not HTTP failures | 5 |
-| Underlying atomic candidate facts | 272 |
-| Published feature entities / curated multi-member groups | 198 / 28 |
+| Underlying atomic candidate facts | 276 |
+| Published feature entities / curated multi-member groups | 202 / 28 |
 | Human-reviewed changes | **0** |
-| Evidence sources, all partially used rather than exhaustive manuals | 101 |
+| Evidence sources, all partially used rather than exhaustive manuals | 109 |
 | Systematically dispositioned Stage 2 + Stage 3 pages / extracted blocks | 76 / 3,777 |
 | Registered deprecated/removed overview/detail pages fetched and inspected | 35 |
 | Stage 2 Changes/Quick-table pages systematically dispositioned | 20 |
@@ -46,16 +48,17 @@ candidates** and reconciles **12 existing facts**, preserving all 138 earlier ID
 Stage 3 adds **80 atomic candidates** from the bounded modern notes and reconciles
 **22 earlier facts** (nine modern corroborations, 12 PHP-module bounds and the
 separate Legacy-network lifecycle), without deleting IDs. Four further facts
-receive clarification links only. The current 272 facts comprise 83 removals,
-66 deprecations, 35 restrictions and 88 behavior changes after the GRAPH TABLE
-override. These are **not 272 visitor cards**: 28 authored groups retain 102
-members, with 170 distinct singletons, producing **198 feature entities**.
+receive clarification links only. The KB batch adds four facts and reconciles six
+existing facts without new groups. The current 276 facts comprise 83 removals,
+66 deprecations, 36 restrictions and 91 behavior changes after the GRAPH TABLE
+override. These are **not 276 visitor cards**: 28 authored groups retain 102
+members, with 174 distinct singletons, producing **202 feature entities**.
 Grouping requires the same feature and
 shared remediation, with compatible cutoff, type, stage, severity, platform and format.
 All 12 bundled PHP module removals, for example, are one entity. The default
 v16 → v21 interval excludes GRAPH TABLE's pre-start v14 rule, current R-cycle
-changes, and superseded intermediate PHP-module work, showing **186 entities**.
-The same source to the public latest shows **195**.
+changes, and superseded intermediate PHP-module work, showing **190 entities**.
+The same source to the public latest shows **199**.
 The total is an outcome of the documented rows, not a record quota. All have
 independently authored one-line and paragraph
 summaries in en/fr/de/es/ja, with **generated-candidate** provenance.
@@ -140,7 +143,7 @@ requirements. OCI's intermediate `/usr/local/lib` paragraph remains pending
 because its Windows link/platform context is unresolved and macOS OCI is removed
 in v19; that workaround is not recommended for the final target.
 
-The catalog now has **27 unknown atomic cutoffs**: the original ten remain, and
+The Stage 2 snapshot has **27 unknown atomic cutoffs**: the original ten remain, and
 17 Stage 2 paragraphs do not establish exact first releases. Unknown platform,
 stage or remedy remains explicit where appropriate. At Stage 2 completion, all **192 facts and 119
 entities have Unknown remediation complexity**, and **0 have named human review**.
@@ -254,7 +257,7 @@ subtable-feature deprecation, resource-fork storage deprecation, automatic `.RSR
 opening, CPU-priority UI, legacy networking, and old-toolbox GWorld drawing.
 Their paragraphs/dispositions explain the missing fact; neither Apple's dates
 nor neighboring API dates substitute for it. Platforms not stated
-by evidence stay **unknown**, as does remediation complexity for **all 272**
+by evidence stay **unknown**, as does remediation complexity for **all 276**
 records: no reliable difficulty classification was established. Many removed
 resource/web calls have no documented replacement in the table; the entries
 say so rather than inventing one. Current v21/latest behavior is not independently
@@ -373,7 +376,7 @@ provenance remains in the catalog. Conditions and action rationales are authored
 in all five locales for old and new facts and groups, not translated at runtime.
 Original source quotations are never rewritten.
 
-The populated path checks below count eligible feature entities before search,
+The Stage 3 populated path checks below count eligible feature entities before search,
 with both visitor OS choices and all topics selected. Excluded citations count
 canonical evidence records across all source languages, before locale preference;
 they are retained internally, not displayed under a warning. Unresolved counts
@@ -394,6 +397,89 @@ unknown cutoffs can remain relevant on either interval. All **27 unknown exact
 atomic cutoffs** remain unknown. Twelve PHP module facts have the evidenced
 exclusive 20 R3 final-target bound; the exact 20.1 client/server pairing instead
 has a target-specific constraint, with no invented 20.2 end date.
+
+### Bounded original KB reference batch
+
+The Tech Note summary repository was used **only to discover originals**, pinned
+at revision `396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8`. Its paths/revision remain
+separate provenance in [`data/kb-audit.json`](data/kb-audit.json), never published
+as evidence URLs. The parent research screened 1,039 titles, found 66 keyword
+matches, additionally inspected 216 modern titles, verified 39 original landing
+pages and inspected 15 original PDFs. This is **not a full content audit of the
+1,039 notes** or a Tech Tip crawl. The integration independently fetched eight
+of those landings and their eight ZIP/PDF originals, inspected selected passages,
+and used all eight. The other seven research-verified PDFs were not fetched again;
+24 other researched landings still have no PDF inspection. All 31 unselected
+notes have explicit dispositions in the audit. No document/demo redistribution
+permission is inferred from the discovery repository's MIT license.
+
+| Original English KB citation | Actual use |
+|---|---|
+| [79155: project-mode changes](https://kb.4d.com/assetid=79155) | Standalone Designer identity, empty user BLOB, existing picture-library guidance, and the 19 R6+ remote-development list exception |
+| [78951: project lists](https://kb.4d.com/assetid=78951) | Read-only `.4DZ` list persistence and continued loading, not compulsory custom demo methods |
+| [79860: Force Login](https://kb.4d.com/assetid=79860) | Existing REST deprecation action: activation through Web settings, exposed authentication and appropriate privileges; editing `roles.json` alone is insufficient |
+| [77727: 64-bit labels](https://kb.4d.com/assetid=77727) | Mac-versus-Windows origin of old `.4lb` templates and XML `.4lbp` replacements, after successful database opening |
+| [79127: XPath](https://kb.4d.com/assetid=79127) | Existing 18 R3 standard-XPath fact, with the `"/root/test2"` example; not historical v17-to-v18 proof |
+| [79456: deployed users/groups](https://kb.4d.com/assetid=79456) | Preserve the active `directory.json` during application replacement; correct host lifecycle and restart, not blind demo timestamp logic |
+| [79748: component dependencies](https://kb.4d.com/assetid=79748) | Existing project dependency task: JSON files, compiled-host constraints and restart context; not proof of a new introduction cutoff |
+| [79295: interprocess variables](https://kb.4d.com/assetid=79295) | Existing deprecation action explicitly remains optional unless a concrete preemptive/sharing need requires replacement |
+
+The four new singleton facts cover **standalone project identity, project user-BLOB
+export, legacy label templates, and preserving deployed project users**. All 272
+prior IDs and all 28 groups, 102 memberships and group texts survive unchanged.
+Six existing facts gain evidence. Only three existing localization sets receive
+explicit protected-field edits: the overly broad list restriction is qualified
+in all five languages; REST migration and interprocess-variable records receive
+action-only guidance. The audit records each old/new localization fingerprint,
+affected fields and source/reason. All other baseline prose, conditions, rationale,
+overrides and group fingerprints are unchanged. New authored texts and conditions
+are complete in en/fr/de/es/ja, **not official KB translations**. Canonical command
+identifiers remain internally searchable; French prose does not invent official
+French names for commands absent from the verified bilingual map.
+
+Every citation opens the **original KB landing URL**. Its heading explicitly says
+`PDF p. N`; the quotation is from that PDF, not purported landing-page prose.
+Separate support metadata binds the original ZIP download, ZIP hash, PDF member
+path/hash, physical page, publication date, displayed VERSION and original byline.
+No explicit copyright statement was found in the extracted PDF text; that is not
+a license grant. `tools.kb` is a small adapter within the existing explicit
+ingestion/evidence workflow, not a discovery or model pipeline. `pdftotext` is
+needed only when fetching/verifying PDFs, not for offline publication or CI.
+Raw HTML/ZIP/PDF and full page extracts stay under ignored `.cache/`.
+The list ZIP exceeded the initial 12 MB transport cap and was retried with a
+bounded 64 MB ZIP cap; PDFs remain capped at 12 MB and demo contents are never
+extracted/executed. Nine note fetch attempts total (eight initial, one retry);
+no unavailable selected original, authentication bypass or TLS bypass.
+
+Neither publication date nor VERSION becomes an introduction threshold. The
+original 27 unknown cutoffs remain unknown, with four new unknowns (**31 total**).
+All 276 facts/202 entities retain Unknown remediation complexity and zero named
+human reviews. KB edition context is separate: the project note is conservatively
+scoped to its explicitly described 19 R6 context, with its displayed `19` retained;
+an unspecified `19 R`/`20 R` edition is usable only when the whole cycle is within
+the requested path. Later KB support cannot leak into v17-to-v18, and earlier
+manual support is retained. Evidence still uses only the current UI language,
+otherwise English fallback, after path selection. Source quotations stay English.
+
+| Current source → final target | Entities | Unresolved / partially supported |
+|---|---:|---:|
+| v16 → v21 | 190 | 0 / 0 |
+| v16 → public latest 21 R4 | 199 | 0 / 0 |
+| v17 → v18 | 83 | 14 / 1 |
+| v20 → public latest 21 R4 | 114 | 23 / 0 |
+| v21 → public latest 21 R4 | 78 | 61 / 0 |
+| v21 → v21 | 69 | 62 / 0 |
+
+These are relevance counts, not newly verified requirements. New KB-only facts
+remain explicitly unresolved on incompatible paths rather than borrowing later
+evidence. The existing 76-page/3,777-block Stage 2/3 audit and its pending entries
+are unchanged; the KB audit is separate, not eight exhaustively dispositioned
+manuals. The note's erroneous transparency/radio-group sentence is excluded.
+No superficial ServerNet, ICU, QUIC, FileHandle-offset or declaration-removal
+citations were added. Historical notarization/Write bridges and optional debt
+tools remain bounded dispositions, not new filler requirements. Current authored
+baseline guards are implemented; future affected-field/local-model inference
+remains unimplemented as described below.
 
 ### Legacy archive coverage
 
@@ -495,10 +581,12 @@ source development; publish `_site/`, not the unversioned source directory.
 | `data/glossary.json` | Concept/edition-aligned official wording and evidence-bound English/French command-name mappings; unknowns explicit |
 | `data/dispositions.json` | Explicit exclusions and pending editorial questions, not confirmed public errors |
 | `data/section-audit.json` | Stage 2/3 block-by-block scope decisions and exact snapshot provenance; not exhaustive manual coverage |
+| `data/kb-audit.json` | Bounded KB discovery/research counts, original PDF provenance, selected-note uses, exclusions and reasoned protected-field edits |
 | `data/clarifications.json` | Curated confirmed-error register with evidence and dispositions |
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
 | `data/semantic-search.json` | Explicit unavailable state and pinned research provenance |
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
+| `tools/kb.py` | Original KB landing/ZIP-PDF adapter; physical-page evidence and ignored original-document caches |
 | `tools/discover_docs.py` | Four-seed bounded modern discovery/fetch, plus an explicitly requested advertised public revision; actual locale links only |
 | `tools/catalog.py` | Fail-fast schema/domain validation, ID deduplication, overrides and deterministic publication |
 | `tools/publish.py` | Content-addressed, release-coherent static Pages artifact |
@@ -594,7 +682,7 @@ Sort choices are **Severity** (highest first, unknown last; default) and
 **Complexity** (Simple → Moderate → Complex → Unknown). Complexity is the
 difficulty of applying documented remediation, independent of severity or stage,
 not comprehension difficulty or an effort estimate. Severity ties use stable ID;
-complexity ties use severity then stable ID. All 272 facts and 198 entities remain Unknown.
+complexity ties use severity then stable ID. All 276 facts and 202 entities remain Unknown.
 The optional schema-v1 `complexity` object has a typed `level`; known levels
 require a documented `basis` and `evidence_source_ids` referencing the record's
 evidence. Missing metadata means unknown; validators reject unsupported or
@@ -621,6 +709,8 @@ python3 -m tools.ingest --refresh --id legacy-v20-deprecated-en
 # Optional explicit TLS-verifying transport, useful with macOS trust stores
 python3 -m tools.discover_archive --transport curl
 python3 -m tools.ingest --transport curl --id legacy-v20-deprecated-en
+# Selected original KB note and its linked ZIP/PDF (requires pdftotext)
+python3 -m tools.ingest --transport curl --id kb-78951-en
 # Fetch only four modern seeds and their actual linked app-language counterparts
 python3 -m tools.discover_docs --transport curl
 # Also refresh the exact publicly advertised revision, English before its locales

@@ -2,6 +2,63 @@
   "schema_version": 1,
   "archive_root": "https://library.4d-japan.com/doc/",
   "seeds": [
+    {
+      "id": "kb-79155",
+      "family": "original-kb-technote",
+      "edition": "19 R6",
+      "edition_basis": "Displayed VERSION is 19; the cited list exception explicitly describes 19 R6. Conservatively scope this note to that later context, not a first-introduction threshold.",
+      "url": "https://kb.4d.com/assetid=79155",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/79155_ChangesTransitioningProjectMode/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-78951",
+      "family": "original-kb-technote",
+      "edition": "19 R",
+      "url": "https://kb.4d.com/assetid=78951",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/78951_ManagingListsProjectMode/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-79860",
+      "family": "original-kb-technote",
+      "edition": "20 R",
+      "url": "https://kb.4d.com/assetid=79860",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/79860_ForceLoginForRESTAuth/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-77727",
+      "family": "original-kb-technote",
+      "edition": "16",
+      "url": "https://kb.4d.com/assetid=77727",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/77727_LabelWizard64BitIn4D/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-79127",
+      "family": "original-kb-technote",
+      "edition": "19",
+      "url": "https://kb.4d.com/assetid=79127",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/79127_XPathWith4D/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-79456",
+      "family": "original-kb-technote",
+      "edition": "20",
+      "url": "https://kb.4d.com/assetid=79456",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/79456_UserAndGroupRestore/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-79748",
+      "family": "original-kb-technote",
+      "edition": "20 R8",
+      "url": "https://kb.4d.com/assetid=79748",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/79748_ManagingComponentDependencies/meta.json", "parent": null}
+    },
+    {
+      "id": "kb-79295",
+      "family": "original-kb-technote",
+      "edition": "20",
+      "url": "https://kb.4d.com/assetid=79295",
+      "discovery": {"method": "pinned_summary_index", "repository": "miyako/4d-tech-notes-summary", "revision": "396a8ad68aac5dca8749ae30d6e4dd7cbbd649a8", "path": "technotes/79295_ReplaceIPVars/meta.json", "parent": null}
+    },
     {"id":"docs-current-release-notes","family":"documentation-release-notes","edition":"unknown","documentation_channel":"moving-current","url":"https://developer.4d.com/docs/Notes/updates"},
     {"id":"docs-v21-release-notes","family":"documentation-release-notes","edition":"21","documentation_channel":"versioned","url":"https://developer.4d.com/docs/21/Notes/updates"},
     {"id":"docs-v20-release-notes","family":"documentation-release-notes","edition":"20","documentation_channel":"versioned","url":"https://developer.4d.com/docs/20/Notes/updates"},

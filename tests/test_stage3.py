@@ -20,14 +20,14 @@ class ModernContent(unittest.TestCase):
         cls.entities = group_entities(cls.atomic, load(ROOT / "data/groups.json"))
 
     def test_original_ids_and_groups_survive_and_new_records_are_not_beta(self):
-        self.assertEqual(len(self.atomic), 272)
-        self.assertEqual(len(self.atomic[192:]), 80)
-        self.assertEqual(len(self.entities), 198)
+        self.assertEqual(len(self.atomic), 276)
+        self.assertEqual(len(self.atomic[192:272]), 80)
+        self.assertEqual(len(self.entities), 202)
         self.assertEqual(sum("members" in entity for entity in self.entities), 28)
         self.assertFalse(any(c["threshold"]["exact"] == "21 R5" for c in self.atomic))
         self.assertFalse(any("vector" in c["id"] for c in self.atomic[192:]))
         self.assertEqual(Counter(c["type"] for c in self.atomic),
-                         {"behavior": 88, "removal": 83, "deprecation": 66, "restriction": 35})
+                         {"behavior": 91, "removal": 83, "deprecation": 66, "restriction": 36})
         self.assertTrue(all(c["complexity"] == {"level": "unknown"} and c["review_status"] == "candidate"
                             for c in self.atomic))
 
