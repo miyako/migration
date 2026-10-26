@@ -1,0 +1,2110 @@
+{
+  "documents": {
+    "changes": {
+      "chg-colon-identifiers": {
+        "en": "06b80742c6f39f2918d6f5e53e0dd716e3388f1bf53c300464b02edd35585c73",
+        "fr": "5d7b7b1482b0efaab01b38dea9da3201f74d8ad7ca40c664edc9cc8e0e5978b6",
+        "de": "ff2a5afd56f4738a3bab4cc727bbc4cdd78b58177dae70cec0c17c1142341fb4",
+        "es": "b4c1ba1da10772160b4946670aa8190f75be5b1a605241e55c9cd3e1cbb60703",
+        "ja": "06fa0ddae6639bb945757e71aa55934088568b2d73e626af52161c817da06134"
+      },
+      "chg-pdfcreator-driver-deprecation": {
+        "en": "4a9e9b65f2d39244c32ae2d381a7712dc9e9243b611638a99351e997e839ac0b",
+        "fr": "267664ce373af982d8cccbc15a963179ed1a1f68a45a66661409a5b424bc774d",
+        "de": "bf11d8a45b394f6345e21c3cc9ae21169f33c16b412eb67078a4d71f15980dd3",
+        "es": "d6c496ea6b6837a09439c15ec669a343dea719ba651336048b27a7b53115ae94",
+        "ja": "9bfde3d70e40cc4151ac6b3b0c6db787065535daa52491b87458e9a480a019f4"
+      },
+      "chg-bundled-php-dom-removal": {
+        "en": "6f032df8dc7b32f381acfe32f5f330fbce8c5831ac786866483539b7b8fe7bc0",
+        "fr": "1ecfbb23c9dd9c605c558795bc335c0dc13e771e18e4b6620a8fe2b7b84e3a8a",
+        "de": "2fc9d0f7dd23409e4736705396ca483624de171600500b1494d083f946b2dd6c",
+        "es": "f5aa780ad879ed2e8324b86e1f0388ea67a7b02c8cfb0acec0a11b278d1675c5",
+        "ja": "a1bffb437379920f3e820760b21b7b38f4a3f9b01e232901760b7230e589bd01"
+      },
+      "chg-bundled-php-iconv-removal": {
+        "en": "4dbbd316680898e29db3dcac774573158a15bf622738dddf137902f51c8c8863",
+        "fr": "bcec8f321760a287eeac1f13f8e6fb849c3503e0394a9f6fbc065e927f396fcc",
+        "de": "b810423b04d98ca63c3c9af1d8a0cfcb9e80c569fb7b9aaa3787adccfc78401c",
+        "es": "b87588cd12a7dc248cd6b0a59cad8abc96c09e9e419dcc5636110be0568f781f",
+        "ja": "22d1ba12218ca54aeeb8ea9cdaac5246809eacf3709666a16454cc0b10053aac"
+      },
+      "chg-bundled-php-libxml-removal": {
+        "en": "7747499be33a07057a74ed7000ad2f3e4436d6bf207e4c5e9935e8e89264f66b",
+        "fr": "628cee293a220339a75576a21663993cc80621ddfd2ed4130e92b09ff4925b2c",
+        "de": "06a654c9075586236afaf8d93b2d0db64878aee75f41dcef0d68f04b7c36d9d7",
+        "es": "3c2938e5bb557212afde078de78d47ecdb90fe4d4360bafb11be9aa2e0a9ed60",
+        "ja": "101404925b38b94c4ae4953fd4898880467282467355e95d1de2026bf5fdfec5"
+      },
+      "chg-bundled-php-libxslt-removal": {
+        "en": "385aff1000f50113226152017a84378c8052638ea2976c115ea469f523a40f0d",
+        "fr": "64fb3c76ea9cc64628ecb48941d4147f959db9f64cc32496d3b81afd7182637e",
+        "de": "728841df7738b1f455ccd50e77eef7af5742a059ab8f143e847d234fb5a0ad94",
+        "es": "a98e3d034d56669705a9a9b99011020abbe08af74547fc0484b915ec9156a843",
+        "ja": "5bd8fbd5fdd6c9021784b33dabc16f26484c2ccedb9f22c9c38207631bc772c5"
+      },
+      "chg-bundled-php-simplexml-removal": {
+        "en": "a1ce5bc8e09708033c3e4283aecd34cb4f8140280894cc69f64ae145063e5d58",
+        "fr": "bd1610971b313e85d20d1feee6b0c1b21ba07ba567c15c945ee8f3937b6d61dc",
+        "de": "f11ceb59745d12a4e92dc07318d11533f57ffd1aa7f04a379107fc0fe9409ef3",
+        "es": "faf21898338e9ab138598c2367f83c9febcfc9f88e98922c3f8b41f4c8bcbc18",
+        "ja": "34aa8638264d9d0303dd5a91700b6c9c5987e8e16bfd2ddbb98a5178058a5440"
+      },
+      "chg-bundled-php-gd-removal": {
+        "en": "5844068b38b112e75271e8c2e0f4e0824883df363243b0aad44894946b286813",
+        "fr": "c0f240082b02bfb469925c0935d0b6c9f8448569503a4d7d3f7fa0c8e1f7a1c0",
+        "de": "5a567dedbd817092c9ba8d3e3768a2556ec88bbd833b28d92a5f57edcc2ebae4",
+        "es": "c40c037549f6c78e7c380fcd2fb8245ac90972482f1e53e81eb01dd6dff77d56",
+        "ja": "aef555b31910fbc21b80476eac935829a04cc719f67cfceb34127422c571f488"
+      },
+      "chg-bundled-php-xml-removal": {
+        "en": "8aada7e52658fcb29d6bb8e515dd99b48e10718474e0142375d4d4f0793813ca",
+        "fr": "8e9a8a3db41e00e4c67ec562cff53769d37a6b7b7072d109e6c3f3c906f62929",
+        "de": "39f545f9d3e7eebadc5d520aef25787768cd41088678ffb070f5a760e55c16ad",
+        "es": "72cda08db1ae95095d3849e0d096a76e39c04f093a19286ab9c32027e6df1d1b",
+        "ja": "5714e2242dbdcc07f5665b23091164180a8086d321060b73db8edf170aa0e958"
+      },
+      "chg-bundled-php-xmlreader-removal": {
+        "en": "fff0ba9d46f55ddf7cb34640be507098f81654ca77d19a90e673a12f9fe1aa06",
+        "fr": "738f74aaa33fc647a2c9a732eeb3147e323e9e99c7bf40086cc026a7c8bb3a33",
+        "de": "7545e1edbd6d86ea18b7658589808fc25de7052b910b9687a51fa9bebc25ca70",
+        "es": "30fd78ee4de2eb495bec06763140313e17b2af36549f2a43ca29344e346ac1cd",
+        "ja": "24738aa73bb21f7b0fa6947adc7af0b2fb0ae5d5c0c2b5bdc002c6aa380923cf"
+      },
+      "chg-bundled-php-xmlwriter-removal": {
+        "en": "2e2fffbaa6e97af8d96092790fff247281a52ad0f88385a708626a88b527daf4",
+        "fr": "28f5e1a0e235a0a2550ec6c8059bf65f56cb1c5472a43e43d5d800c6faecd103",
+        "de": "0d70eb2a3f16cdf77ecce540afe3acbe218ac26bf704db86fd2bfb22b07770c4",
+        "es": "1bc57f8cae3c3c0599238bdc6c241b60a431c4e0fbe39b356775ae957023ffe5",
+        "ja": "f7198e4fc9cfac47c02d3609728ee936609193115d9e5f7f787720ebdcce2e77"
+      },
+      "chg-bundled-php-wddx-removal": {
+        "en": "dc545d44237e62661a39dbbe608a15c92e056de764925b6a22043cab48ccf3af",
+        "fr": "a09e282dbac708ae982cbd572063696ccf3197bff1ac4dc221a075e32e5a64ec",
+        "de": "6629e74c5e01305cac8e62a2873c7ab7f121cc8e00f9f9544a2a11a2c7a750d3",
+        "es": "d2cb31ca92e0c9b837e7b88a78310fe320bf159415fa332640b06f70ff81da7e",
+        "ja": "1fae6cb409e448c35c18494d78b5d7a0608d8807a1f475c8f87f825b0d012de9"
+      },
+      "chg-bundled-php-zlib-removal": {
+        "en": "aaaeb3b671d57a6caa4e63232b0268d6067a5081d4c926eee04df9cf59b375c3",
+        "fr": "5afead57a1964c69d90990aaaf31b1fc4690aea8d58139b05b6ec97e487a716a",
+        "de": "b8fbe91b714415bfa172849a817273e195e4fb0d5bde1245adff8dea5f9c7560",
+        "es": "c75609e21a6d9a93150129f1c37aeac84900397fabee12c4c16df6a484b1ef6d",
+        "ja": "22644265b0e05e000d9126532f400e1ccea319d1f01490083b261cc197fcf4b4"
+      },
+      "chg-bundled-php-zip-removal": {
+        "en": "0f1d392a8a526b039f7349e359ab8a43f7ab8609f4935e6bdc491aa02a6b5b43",
+        "fr": "285f6a4114af65e97f48521b94aba803dd08444977e5b3bbcf18ab7108f5f3fe",
+        "de": "ab83293bc2454722d51f67f94d081e4f47e42b34e9ec8ba5bfe8175d8949c9d3",
+        "es": "f0040808dc50bdf7077e02a7fe8a5cb780b4f561b9772a3bd37022ea9b066c82",
+        "ja": "0d4eb95d3da1e22cb68e0099d67eccca0f91049566f4309fd122ee1c76f31289"
+      },
+      "chg-removed-add-data-segment": {
+        "en": "6fae3b247b3a7f39b06ae4bb7f3e9091d22e6b58e6662b24ab04fedd32cdeba6",
+        "fr": "a3b41cfdb3e03cdcf1bdeeba7d06a2d5179828720173718d6194afda7d5961f1",
+        "de": "fe7ec232265788796600f8e3d15aee352f19ed6bc8cd9fd8a9024aad877c77ab",
+        "es": "2ee681e1fce02d94fcfa203dc7a2ac8ac51d4bfc7ef126c9c6841dbf86478ad9",
+        "ja": "afd990db946dfe30e49e07efca1ea9f0191759184fdbbf062dcbd0e416b41681"
+      },
+      "chg-removed-graph-table": {
+        "en": "4ded75aeba688f077157671acb23425944c2f02f5f7c6ab8ae446e9b05d03516",
+        "fr": "3aac5eca1b3f4d52a8a3c1ea6280a4814dfc99c60abe8ac6f5a69d3eb02bf353",
+        "de": "714555eb1d3942880bebcbe92304963d4cd759092ce3ae38d653b832e0c1a6bf",
+        "es": "715a6f04b7b03675264106552c4eb866a70c91d73a795246c5abb3163d0ea319",
+        "ja": "079c84d3b967b2ea4d8559f5154997668a30ecd205a33ff9f1b1f9847843e3f5"
+      },
+      "chg-removed-picture-type-list": {
+        "en": "59ea28921e52187f183ef3f0ffd4b7f522d21a997c53ee6711b35ef0c4e2f67a",
+        "fr": "992f0b22ffd43c17f4f1b5867d31876cdb15f2150eb4a6f8b1d687abcb256301",
+        "de": "09dc87db0ec6078f6fae5927fbd1933975ba81dfbb36c2243eb21c24553a43fd",
+        "es": "653322e50e0c35287adc557cbdbc14fc3ac5fe884942b6fb26ea300f1ff545f2",
+        "ja": "6d10201dae85066f458531339f881fd16710a29701ae49dec4bdb570851db460"
+      },
+      "chg-removed-qt-compress-picture": {
+        "en": "be788be61c0082684c495cd0393081087b0640fbf4620acccf39b7cebb194fbf",
+        "fr": "6b10a65e19408a9ad3a01f420cf18fe4abddfeed2c8e38bb3ea6fd7a675eac2a",
+        "de": "71611a4a43ae8ba4a39aba2f8b022270c7ba4945c766f9d509b7ed44b689cecc",
+        "es": "59c8c02954354034984fb33d19770ac9bc1b347ff32166809f3b2602c60c9787",
+        "ja": "77375040bb4817497187fdea9754c3608d191a011bcc232562091a6c88d4f4bf"
+      },
+      "chg-removed-qt-compress-picture-file": {
+        "en": "59205a985d19138dde4601412b38f1341f2843b7e30b4f70518cc70538207171",
+        "fr": "232efb443e721c51a85df178a9e6c3efd4196ed08cac5bb41fa18909689f24b1",
+        "de": "bb0a95a8a4d3fb1e15cb62b3243217157d2b2da5f8af1b48f10dcb6b211b7775",
+        "es": "aee983c167c2a9743ae27d3793bf995aa7fb0c6c8370c66796bfb8c0870a00cc",
+        "ja": "b628ddf4e7a18098d9fd4f47dcb80c1e722777e6ae49cb62be2cd124158849c3"
+      },
+      "chg-removed-qt-load-compress-picture-from-file": {
+        "en": "5d12b2c4262ec0a9547c0886013635955113ee04a0c847c0a29cbbb8d46b74b9",
+        "fr": "32732c172a9d81dbc4a0a8f431927f3788e4c1b035cd772eed45e1518fc7dd11",
+        "de": "1a27a6e861b9c069b9e095e0e3602dcd0c00ac4198283dc9493f858a827da58d",
+        "es": "38c72b8d8b9391550da3296c888fb7f3fb6c3f2ccbc9cf817d7b9453d974b39f",
+        "ja": "e2283259105841e5f1f32c4e7c1865898602aabac91b2ff0e1c4ee3f83d787e2"
+      },
+      "chg-removed-save-picture-to-file": {
+        "en": "be83adb145bb7e6408fac196d387fe1d0f14d90362f6a707155419e7a0d7ec4c",
+        "fr": "d79f5c487d0f022508dadac74bf5ea70b743f1e3483452ba7551d0ad1a1a1001",
+        "de": "6eecf144ceba0778072655a8d3870911c646a1c041f80622ad57d3cf5fd26f78",
+        "es": "dc45da5c82c3492dbf81393ff8b186aba23ae24203b3a87cfaae28b5eb8880d8",
+        "ja": "1367ae05a4f592171f2a76bf4587a33f925a7a36ed8766b4e468c1606ec8e85b"
+      },
+      "chg-removed-array-to-string-list": {
+        "en": "e07f243783c2cf4fe318bb835854542251bdabf7ae8a1b642878346d0d85c366",
+        "fr": "33a11b5b78f6da4add79fb23a4c35fd37a71c631ac2671415cf0973ade7b4f6d",
+        "de": "8131eda7f05155650ff1fa4db03cd18e9b4db2f25106be33680c2bec22c9e2b3",
+        "es": "54fa44b1e80dd0338de3a1811bce11d115bec55f99486a5bac49722e96e38fb7",
+        "ja": "38daf89ad8bdf1725c8ab5ac88f79cf9f53b9541807dfb35321f6748c0a901cc"
+      },
+      "chg-removed-create-resource-file": {
+        "en": "4b4a9d144c0dd7a9f380f82c57c0a2782507fa45ebbfab450bc17525b598b673",
+        "fr": "fa76b16f0aa59306e62b98e55c422cf6be946b39547677655a58525e75bb0494",
+        "de": "d6138f5998446238bc200d77b4bad80e878524cd85c747ac0908b764f9b1f3df",
+        "es": "fb41e691bb19a1163c2d0a7c6a336fd713cd0115bf839838befb2bf2d5991e97",
+        "ja": "b94b2c1d140af07a956e8a23e91245c6b954a2b6fe96266b41eec954b0f6a427"
+      },
+      "chg-removed-delete-resource": {
+        "en": "27d4832b3ce83329e08f061886bf3be7904980664f2e2caa6aef6670aed7d583",
+        "fr": "8e1c53e4dbc389d1f162f53177d93781a5eb43470553310b494f64bfbabd4020",
+        "de": "d518e88b133fb1532f2902c5c1a188feec3ad5e639d4350354bc92575b1cbce3",
+        "es": "3c7eebf1d310ceaf66bea675fd01d1ec92312f3741272c1c0633b114403052bc",
+        "ja": "53f16296dc0dccc38cc9920993ab11feced45a515642b8f76bfec0e2d5525535"
+      },
+      "chg-removed-get-component-resource-id": {
+        "en": "c9f78fbe58f2d56f32c017cd26f432bfbf2414217f32e22f8d26281d2bbf09b6",
+        "fr": "b66081f00c01620d391aceaf98e164e965c5ea5fabb9c00f83106d53250bfa6b",
+        "de": "be81ad918df78cb264da6893949858f43946096c4902ac149c9de52e5a864833",
+        "es": "1727fc89628ffdfbd139c8953f8f541163c756cb51183fd0d71a9d8806dc2e86",
+        "ja": "fea5604cc3d23bb1bd82a1b9ebb2ac388e06e8cc50db5349822ac8a169895d6a"
+      },
+      "chg-removed-get-icon-resource": {
+        "en": "1ddfe50a76c52688c0379e001238116e399dd81a1bf57886e606c1a14a34aabb",
+        "fr": "d96fb8296074c2d1f45d027c5708d1769ddb7528bdaf78b8640b52081c0d0421",
+        "de": "6a06d4a0871464d344459b0ba1b3d4a4e892beb26c72775f37f43ecef92a646c",
+        "es": "edb3417a268de30122757dc965e041b0c7e3d6d0d84cd46a3a305f6296d12246",
+        "ja": "70aaedc9b3b854bc78aa537360a8f25f3b3eea82837135af28eff8911c002ebc"
+      },
+      "chg-removed-set-picture-resource": {
+        "en": "017e9980e92552ec94b1d959434d53a812791e01cd5aa8ef59c324cc14d04566",
+        "fr": "6812f3db86614b68e67e677de5a74d06b47fb7599116971673c2ee7e3b2b0f0f",
+        "de": "2e26acf3b8b18563cda9e23c5dd9a2ec9a348fcc71a5048622d876ae5c24262a",
+        "es": "c7c8d811c0d6afce05a78a894c07b97aec275d7ca85ca016bd890bdb226efd3b",
+        "ja": "8f54560179cff339141dd794e2e7d36fabc829d1a46d5b0d6067a6a32b6adf53"
+      },
+      "chg-removed-set-resource": {
+        "en": "cc5ca4f3b1467bc5f89f4c90c3d1bff48414a68bfa4c81a7531aff7f3423a250",
+        "fr": "03b47fce898c3eb9ee724128c89ef15972851ca86091b79864afce29252179fd",
+        "de": "a284e05d1aa6a183744ab988da1ab6bad04f6ccc4dd000232f6defc29ca6747d",
+        "es": "aa27e55da1254f234d1fb184e363f4308885d63bd09bfbae2526653a9ec0f703",
+        "ja": "5abd951742542fe02674983cf525d80ca14e1f99d324d3148800c07832937989"
+      },
+      "chg-removed-set-resource-name": {
+        "en": "938f6b81e57febd56fc68258a5884db2fcb26f18eae2055e166eb39d01bc96af",
+        "fr": "64cb8f802e3e665bb1f6d65eeff986e93b43371c52f76db0c4366f546c2cecb0",
+        "de": "3daa20db65d1a949b4d60354ddc9bff69a3a4e6555ca7d9ae6a9a91d6e773aaf",
+        "es": "b099e551f4a49bccc15d2458618a197d4ff8ec820b23e576f4b79c66c58e869d",
+        "ja": "7e684acdba65fa067bdc426718397f3a17eaf4823891dffc1c5464b8179b6203"
+      },
+      "chg-removed-set-resource-properties": {
+        "en": "0286db029572786fe7479f2d00331761242cc30e4fed0e56b155289d43a69e10",
+        "fr": "58037008f5facaab22f8275043f7a8e7be118f99def7676f72a5c43fe4554510",
+        "de": "93f65a64baa8b3feaf3e3f56ef38bc15f89f73d30670265910ca1a314b86bda8",
+        "es": "d0cb78b63e3798fa844e7302a8e072671a1b8beecb3ab70343f80960fb42068e",
+        "ja": "87e524572eb562eca18d62e83bc8d9c7a40812e48346b12f87f8bb3b7c96d9be"
+      },
+      "chg-removed-set-string-resource": {
+        "en": "f91fcadefc563c1b7341dec06c54d204fa15412192aa295763a38f9ea07f7dbd",
+        "fr": "a45a8abeee2d8d4d3dd3e30ac31c00a230e2475d3d3f8688e52b0c54238713fa",
+        "de": "7a5d008b2650405b9b0c6ae7528e089a57282b9094d4436f03c0feca549be680",
+        "es": "8da7b1f4aad9ee32cc36781414481c8787b76a2d860b27e50221b40fcb2fde4c",
+        "ja": "0461fc3c58457f2cdf6bc517153fd57afea40b92ca7a645cb0b4ad2f615f0a6f"
+      },
+      "chg-removed-set-text-resource": {
+        "en": "913e1c84a3bb0d82dd641fe61c670dec6743a250f801f78c1fc8ce4cfb4234ff",
+        "fr": "8ec35ce4e3b515659bd614888cd5a01d345045c1f1087b957e409688585d4006",
+        "de": "5990d4d2136ab7d6e2556bef1347594d66912c79dd5733ba903fcd3625ebf3d3",
+        "es": "6e6c40b1c7ab02d63b8bdf01a2b0bdfbd99b4376c4602bc896b7ed7015c905cc",
+        "ja": "51d8d880a132982a276a9fcf12602226c66aa576ab0af74296df8d345e870aab"
+      },
+      "chg-removed-convert-case": {
+        "en": "b7cd7074077ac62949dca1852ae9b2d80386cbfbab6e72961f05e5d9cee8fbd7",
+        "fr": "c305ec609fbb9695b2989463d710441f387d543887e0b1801b22cda0e31143c6",
+        "de": "18d3538efac333ea7aa6b086cd3ba7278916fc6b6a14641c9d9f2616a6da6aec",
+        "es": "9677295a8cfc17eed7321c403fe9bcc45f4db3f2ae8a431427f6d30f249be085",
+        "ja": "8fc37a13a59f813f160762f3b32ded04ca9e961304be4e96f322483ae8469d4f"
+      },
+      "chg-removed-iso-to-mac": {
+        "en": "31b5d41762b0be420377079256367d5eedf84cb402728d4b4423fd4859ee9e20",
+        "fr": "91966e440ede97b0c07118eea9b2b790890a07ed0b705964d8edb4b097bdfa6e",
+        "de": "45c2ec3f68c41a2994c1b95869b9eacbc7113d6aae3afeb4a9efd2a57e7a5f6c",
+        "es": "6e306958f6c575f1db7316447ea997812748d14d1e8d0dd099cc85f9fcb26993",
+        "ja": "c33fa3cd1ff8a23506b784e12bdfd0c17072aa5509afa005c7ab2ad5e23192ab"
+      },
+      "chg-removed-mac-to-iso": {
+        "en": "93581f60b7b7f53c23c4fddab4cd63a32e6332bfe37ff7c23da726e9b6ef6a2b",
+        "fr": "8c0fe19a4fd52961ec6bfde402c9dccbd84235a82b3108caa2c9ab56d432d603",
+        "de": "9a12f979765ee7575ab288a7e2edf735e8ef07d68892d89ae08561579a533610",
+        "es": "4c026cc69a74d61388e755bcdf569622a682ea942c6b9e02aa10a989f7bf3150",
+        "ja": "40a3ab1b096c5702698de20d7087ea8ac37518308636164dafbd6b713763983f"
+      },
+      "chg-removed-font-number": {
+        "en": "3639d16b30a8324808a80cdeec2b5b8ffac1953ba2ecbbb04cad347105dfff80",
+        "fr": "0f846bf14283335c2a4364674e971beff0f2d33cbcd10668316430246f6b067a",
+        "de": "1dde716898e3d148e27acb8b0f28dba53fa3cce03fca2c21dff4e61b1dfe4c76",
+        "es": "b8b92500438605989465107cd8ce5b55862ca2c914fa5b195101c2b594c756be",
+        "ja": "00ccd5e5d63f6b31a8c6a71ce755d6b082101426c890419ebe0015e359c8fa04"
+      },
+      "chg-removed-invert-background": {
+        "en": "a00e1c622fa35bdac413ad0fbca8e53cc843f5c3a1554d534f99f50a529bc777",
+        "fr": "f11c36d3f27d128410be396edee93d75cffba89d2513a007f59df99a448b8de8",
+        "de": "b02a171f0663549ad622db214b7df7962cb270643a1802476e8c58bf90cdf49d",
+        "es": "1636c5a2609cf0af119c243e96e9725b85511cafd9c2d5ac68f5c9727f214db5",
+        "ja": "502f15764a17b8806c46ad7df8f4312af55827f97ad57147c35e224c492c504c"
+      },
+      "chg-removed-set-cgi-executable": {
+        "en": "bdf406d98d24af0051c604748d72f728f1753832936310c6e4b9614c6ace256a",
+        "fr": "f190da96d5a639a1d067bc4fee63a89f8b0a3de774a62dbec5f1e001d01f754f",
+        "de": "5ddff4d4250768ee51904f434f6415d5ebee678d61fb8d274f71d6e5ea767add",
+        "es": "720216c5547872b5863020ea2b9c7e9d3b20cc8d904cccb0cdf1227695cd83ae",
+        "ja": "5dc3a7b1c25d007fc8f47e4a7df34f6486326a2cdccb3589c320e1cfb8cc7a01"
+      },
+      "chg-removed-set-web-display-limits": {
+        "en": "b5afd2263f47a1ef3efe8887ab8e0b5c66deb739ff001fc802ed28cf1e423c08",
+        "fr": "2e1f4df43cd3d36c26d3901d210ab58d11bed3601da79b03f4c73692c4d15236",
+        "de": "1de3a2d3ef2e1939d65ed6cecee528ac2d272a0dadf05b2ec9d91cddf45d205f",
+        "es": "74407814c23b2c3c2543451af13062bbac89f875ccfa4956d091f842895541c2",
+        "ja": "6e368def066a352284147f22414182c1258c62ad732c346479c2e13d30420e2e"
+      },
+      "chg-removed-set-web-timeout": {
+        "en": "8f652dd67806810e88f9fd4c8bb4c5bba27b28683700d4ece46b7920da5df15b",
+        "fr": "2e800425dad6618b3c7038c42e40faf9344b85a8be3ec420fae2e29f65a39139",
+        "de": "a84575f22f1ac030cf6bde9565d99c2f821f4afed8aed5abdb846c6e006bc878",
+        "es": "190b1a07830becd4cefbd908ba9fe68c5689ae49e793e2370c221d85e5bcf5c2",
+        "ja": "99b9a8cdb1117853f9938d71373d65b0e4c1da03208e4f2894c4d748bfe63783"
+      },
+      "chg-removed-web-context": {
+        "en": "6d28fbccc3e3e51d34166142ce0ff8c9518ed6106afd54823af10f6b4fc9526a",
+        "fr": "a4ac0741d61bc8e338d49b41abd9b9a29b90bb41287b5fb1b87139e78576b1bc",
+        "de": "f87ceab108b7b3b0bf9171ab92271dfe4bcf04cc0c0618f07f8e4ae26d793bde",
+        "es": "75a439cedf84be878802503b3d8153b1c4fff70c4c71cf4947627bc54cd214eb",
+        "ja": "f5e107c86674b71f3cec9bff35234ed3a8cb189ecf6e055b67a9c3f64a1f3d39"
+      },
+      "chg-removed-open-external-window": {
+        "en": "781131ee7e249514771d721042573b23e217e1910768584f0660e72ceee62797",
+        "fr": "e45cf643c2a0cdc5b98b02c485a43e3d28cd4ce56fdd95ed43ddc4ad4a761122",
+        "de": "9d63369f990acd97373ca8350a3067d389330a638067f34fb7c65c8ff0346e7a",
+        "es": "d929d10625339c6db6f562d71f645dd4735e0f31525bfd2e001a1fd4144d5ce4",
+        "ja": "43bd743ed03a6bdb3be6a10dcd4cf294d2eca4114ace5c810a35f7bdbb5a8913"
+      },
+      "chg-removed-xslt-apply-transformation": {
+        "en": "2056fca3a99bb76f2c1530e0070b6c67c8fc80d4f8102a3a98f91c4bcd19bb31",
+        "fr": "32f08b645a2589f63fffd594528ac9814624c0943d8277ae896f9708707bd7e8",
+        "de": "ff65c62bf75f9afd447cd024fcf08e729806a00b5b6c349f4ecdfdfc6750bf30",
+        "es": "c48e05b3dfeadd9757372450e122a5da36479d05057b006a68036d5e35d1fb1b",
+        "ja": "318dd5a99c4bceaf4eb027a22ee2550830da53901f8e21093958fa843421881b"
+      },
+      "chg-removed-xslt-get-error": {
+        "en": "61cdacf62501302ffb8468f8861e5d9d38289d8e4a17ebce8e58bd76327e672b",
+        "fr": "79bdde28982bef61cd3828e0532d4492bf6570cb64f401c59edf79b96fe1cb1b",
+        "de": "b9fdf5ea8dc7127207062d92958bbe2fc7e80dfde2b10659d3701a64ba38c39a",
+        "es": "c23ad25339d03eaf4e028e4ee3e46ca6e30dc15d913a02bc8379b41562b37124",
+        "ja": "5c7efaa32c018ff905a61aa8e826ab35d6c3fa67d7be4f967117e80b6ce7ddb9"
+      },
+      "chg-removed-xslt-set-parameter": {
+        "en": "3a222c9cada44c32dd575cb88a7d28db6840efeadf2f84f9570fabf70596981c",
+        "fr": "943f51dd2802c30bd578a6562c725a91d2f77158d7805c674fcc8bc644cfddd1",
+        "de": "f5496f1adcb9aeb4049875dcc520fb49a0f131654b5eeca075c1597238757afa",
+        "es": "11168408fe00d7688b932d4207c8ee09ba8d10f9482a62aacfc23eec76cea56d",
+        "ja": "c629df58826805b7a3575ad4829f0d1706b1102ad8e91c0613b4c295046cde32"
+      },
+      "chg-removed-no-trace": {
+        "en": "fb6e74a4baa2c71ef93d2451a994dbd7c5964c81b9c6c9ab05c6c3ef885f93cf",
+        "fr": "953cda040ac621106900598027185a46cf3b42f9d481fc7d5c3076a00d4763fa",
+        "de": "2862d4a0d5b62a06edef137ad4e7245b559cf41766f9a2d084d6508bbede44e1",
+        "es": "9db6990b14acc9f485fc485988e174ce68cad601463b76d8500d1f7e8a1fa56f",
+        "ja": "183fbd5336f446f0891dfcd41bdd9de6899b2135d36a9705c0c7696246e54881"
+      },
+      "chg-removed-disable-button": {
+        "en": "e44e37b3c7e8f50135fe38722b24bbca3e37e696d50cd6aa521832b0d94b74f5",
+        "fr": "8991e3d11db3ce969ab507a346733d7c0f58be0b77c79b14b5547068d7587a94",
+        "de": "6cb4e8fbffb7c4375961d3f8fda699939eb66e27604b01f19f8be214353916cc",
+        "es": "74bbef05060e18f9aefa7b701e25393de9c1785d4be73845d003b0569e3a7c05",
+        "ja": "a7d155d0f5efb1ef2fab4ba1517373d24c5e46c04a21ec9897107f374e6bab6b"
+      },
+      "chg-removed-enable-button": {
+        "en": "c3820d18b22bcd4d8fe9c97ae5b73c7353ae5e55099161f63cfd7cd1458cd792",
+        "fr": "8790f35a027fea7e1edd9d2d8c65802cf8dac681187e49e3165c7ec2f0a9dddd",
+        "de": "1e4b7bbf1264e007c84a3581a053ca89c336baea84b851713cd8dc833300a5d9",
+        "es": "c878f39e6e5fce14c56d6dc41d7c86548446ff0b1df674b5705a659a3cab9b46",
+        "ja": "04c397ea17dd3d2eb02de668efb55df63f659e05891456c79a00e2e689b7b436"
+      },
+      "chg-32-bit-distribution-ended": {
+        "en": "b4d28aa9ebbab971a3b1777283056391818e76ea57a83a235bf890fcfcc21d9e",
+        "fr": "c72f30d4510b66594a224c791084109c868334fd9787af6d91566256b234696a",
+        "de": "58af7c300566eb582682b99619aa1410939be809a67819f010e6e6387554bb52",
+        "es": "1b6d275ceedd7a28945a2a83cd044df05a468f3ece837ab68b059205e770b426",
+        "ja": "a18fc31bbc369889d5c2de2f28a5372cc6dac646cd12f8b3e7ee73e59e5ccc2a"
+      },
+      "chg-quicktime-support-removal": {
+        "en": "8143fadb9c241b4e7938a3e7e51a1865e7f9aafa44cca191d2a6577c4978d8ce",
+        "fr": "a7c460d57386c73d164e14841d8b85804c6a3d9739df9a340931ed962f8a6dc1",
+        "de": "7a14344518fdf930144e7a38b6138304522bf33826ba80df767feb6689126f6c",
+        "es": "4b51c304f650c863db75ecbe2376d33b7e24ac56a9296dbc6cf55093fffce539",
+        "ja": "94df8df3c7167dcda0c8c567eb800ad0e8ea24e7f8b6d228c88f74ba31534930"
+      },
+      "chg-float-field-type-removal": {
+        "en": "b7c587f7883c92ea02c2c9728ba5a3fa7b4a12cf48dc2e6da1d71162f832a2d0",
+        "fr": "ead5adaf50a8884d0a73efa75c871bae5c05817392e2b027bb447d2c54f57cd1",
+        "de": "7cdccd9d4ecbcd318bf1ea579b8081b94fac8d3818ced55d96f4ce3d070b9ccb",
+        "es": "f087596e0caa405a471d086dd0c34fb226c8850c74ded6a0ca9eb8cbdd4cc3cb",
+        "ja": "fcca11f28e1b9661d24427ace9ccbd80b9500aca5a4c567ebf9b36b5bf1437a2"
+      },
+      "chg-non-unicode-mode-removal": {
+        "en": "2ecc7e493fddf248c247100179f45320229522dd7c58ec72c23228b48cf0bec4",
+        "fr": "96cae5e91721001092a02cac94c49333a8cece3d67fad9e5693fe618a7c20079",
+        "de": "781141552bd56c741d233df2c857e1bfd5b054c5d96a69f2be93ab4963df9ca7",
+        "es": "588eb08bf1489d0eb7ae291b58eb00e265a1405f4214d5206b149e95b99abfb8",
+        "ja": "954d0a8b3d9bccc5a03777e00fa085ede1e876b8d16b76014a23aeb21ef41b16"
+      },
+      "chg-pict-rendering-removal": {
+        "en": "1cd1e15f5eb61aa4c3cfe87ad52e87998b6cde2a82a2a05f601e1cea2b762559",
+        "fr": "ef24006d2d0936428327532d18fcf3f696649a068e3ffda3c9fef8d9945d6e59",
+        "de": "968788009c783ee428f31b9845758d0da1c27fdc2f7b21169248c3d52897e78c",
+        "es": "fb90ed360b43b93b19dbecb327e6f5a4ebbcaf2949647a6335252566b9316bd3",
+        "ja": "c3107dc8508951fc0130bcd39501e1c412ca8816e9a98f0ae55bf515d9ccf921"
+      },
+      "chg-databaseoutsidepackage-ignored": {
+        "en": "968d617bfebe7c4a524f98c68148ae87f4f239a61001a2d42403f8002455b0a0",
+        "fr": "159289ae27f4c47b19c2bedded420de6021b733a80e8b258381ef06f40089ea6",
+        "de": "befe0cdc73cdc7eedad4ba8f3f05dc50bed55e8fb1d0aa514391d33673db7f66",
+        "es": "547417cbdab6d3349796beb78a272e44277bb2286d3d0409e67b532bd7f6b959",
+        "ja": "6799e25385736c6f504dfa88e5c041ad55e73cb8e906eed6904aa66ec660c960"
+      },
+      "chg-windows-right-to-left-settings-ignored": {
+        "en": "281d88b63742bffddfe07a7e7a6ea587b404ed8b0253eace98140bab2531bbac",
+        "fr": "56474734a8a21c06619708ca318119d28ce1ad5ec44552206fd7ebe1e4688f2b",
+        "de": "46fec1ed1b5c68229d0968f4d59a1ad9fe8f39e10a3554d137cb0962cd86ac8d",
+        "es": "4c119d6dc8acc68edc4a777b17b63e7337168d9a834e0184a9ab7b2c0c1fd488",
+        "ja": "6878d7ee723e4b9d5e2f271466a5a1eade1df4f0ded374d059d550363b65b21d"
+      },
+      "chg-odbc-pro-removal": {
+        "en": "6172dd2e098866d2d16c4832838afda93ae452ba2d0dc8cef257e4800d34b03c",
+        "fr": "7931d4a4402f3d752d4b9cc4a609a5124179632328fd4aa3247ec1c33270a1b3",
+        "de": "997ffdb4897c5be63dddb8f7ffd08db45366f9cd7eb09af23cd50de90d1ea77c",
+        "es": "b560e0addb00f1bafe46f08f1c798fe061a25dc1a6fb0002c9b5e4263dc77b1e",
+        "ja": "4470a0110712c8cac1c3da85536fb9a4dd62b7f77890184605076599555ac4e6"
+      },
+      "chg-oci-macos-removal": {
+        "en": "a9748d6e22b0375da95acdf4819753e8053e8f9437432977562ee18d807d423d",
+        "fr": "897cc8849a10846728c7ea8018c5ff23cb2887bb33abc8a13db194fc2a2fba83",
+        "de": "6da0462409c714750a2accba357bda3b5f99a1f7ac53d649ce79f628a01780d4",
+        "es": "dbbc4061fce7d00c5e3a3252e5ae0a568f2cf452fbd7f25b74153704f87a7767",
+        "ja": "3c3d9e72d75d99164bc862f3957506da7958b888a33ae14ad61f89759921dcf8"
+      },
+      "chg-odbc-driver-macos-removal": {
+        "en": "eda28a4edceb88b4b6ba5a3eac8f5cc872b63cd63a3820dbc06156b9235e0490",
+        "fr": "83d26b6b30808f1936615644981e57c95353e1df45f793f12c0cc9922cb8cb67",
+        "de": "527b4db4dae733da1414a4164fd042bb2a4224533d02a3405521c44ac31783ea",
+        "es": "245607f65833aa7af9d08a8532f09787a8487d2e26c41b8d1d3b8449e4594118",
+        "ja": "4f062a40aef79d0193642738d1ebd754bb34d6df2df3a4dada0a44f598c6d8fe"
+      },
+      "chg-object-notation-compliance": {
+        "en": "d9e7741177b8ddc3a639d05543e69d1abc361adba6b673278447d18a25048c7a",
+        "fr": "27cb160854993715e25caf7370168783c0f40a7eec40f8bdf6850327c944bd69",
+        "de": "908800d7f79cc28ff461069b4ee013bd73bf2ce0f4c65e7b55f67bc8c792c9ad",
+        "es": "dd4c2f3aa7bce43056c55ecf7f7923937ac085d792af94bd0593583334a4d19a",
+        "ja": "f63f88071e5949288759f7a5095a07de12c7b2513a16629edd96d672fca58129"
+      },
+      "chg-interprocess-variable-deprecation": {
+        "en": "ffdd4bb202fb7edd128687b17ef2d72267a56a50b1aef4439637ffe427a7db3d",
+        "fr": "40b454f3a23c5bca068e45df80fa0a88c781dacc3f8c07c5595a4f8cdf26a7c4",
+        "de": "d5b52d98288b1f2f6f6ab9c8bb2b984981d993ea94fabca69f3517ed6f584260",
+        "es": "8e75e1ed59c8b8b137d6fd092dcfed774bdc0c7686dab8462c07e6eeffdbd457",
+        "ja": "682742a9efa5fabf01c9d7fb2d58e7e925a211f9a3d309f162023e1e825abb1e"
+      },
+      "chg-write-pro-generic-page-break-deprecation": {
+        "en": "f617d90928a93eca1492eb9d22dec673705ff2bf3aa5b908afc417891ab8a93c",
+        "fr": "df5da5d389ee23e25996a48cf9a4fbde3828caf6d7ec9f749837c3805f65f968",
+        "de": "f8b5848b76a78e51b9903ebce66c22938ea57ea3f4bb2b3feb9eec125c9ac28d",
+        "es": "0d19b0aaf7f3575e7767cb04085d16229c9c9125752df45cb19daeb1bdbd18ee",
+        "ja": "e0b491669adf4dfe5a9b9852d3db0b79b286fb0bb1a22008ac0b0e2cde686fa0"
+      },
+      "chg-deprecated-array-string": {
+        "en": "e8b2ff37d2b3cd229ed125ab41a1745ceb6a7e37f0d7b1e728be3e40ad73b57d",
+        "fr": "c1fa3acbf7914316894e07e729ccad7ec401d7ae58163e4982d17535ee04a191",
+        "de": "8e244f3f29a0cfc56b02bc823a6642f56995e100611a74fe8c81cda94c174085",
+        "es": "6bf43fb3a855827beaaf1445dc29cdaf1489839a168165663412deda9cf2a0ec",
+        "ja": "bd057e1fcd2fc7026cc65b00ecd14aa1c15a0d2b3821428acfeafb3aca73259b"
+      },
+      "chg-deprecated-c-graph": {
+        "en": "410e1bab08131bfeae5a0611ff964220a26d3840710e370db4bf493804261304",
+        "fr": "45e7848181057d7455a715002651e6e6f320b9c30e348f49408ae00fba1d4500",
+        "de": "03d2b0ca088affd1fad2263af9d17b86e9d14c468e624d9272f506f9ed3c3ce0",
+        "es": "655fa98f62f464cf23f3d8217aeb56c0a8701d44a27129258044ff34f761bc17",
+        "ja": "cddd66096207d5227ec1960fa5bf6b4ca9ed121715d31d486442f1bbccf97f5f"
+      },
+      "chg-deprecated-c-integer": {
+        "en": "69658fb40c724590fc37d16170553ccbc4d706b8f3af75dbc96d36130be4d456",
+        "fr": "8d138cb942231dd2303dd727375bf0d8c72490e7f7aeba8ff576e94ff769704b",
+        "de": "dc57e12406e0724c06623bf85b8873a97a03d34d33e0d6198711fe456a522a67",
+        "es": "5abc91927d790a4c1b0dd738bd55c4587b17ab96521d6553bbceaf48dc14c033",
+        "ja": "389cd5b19f723e76283127985d54d63a1d15ef0456bd384d756536e9a6222b17"
+      },
+      "chg-deprecated-c-string": {
+        "en": "a384c760a7696c2ea7b2337b001e472a1dc3020295336aa424ac4f2ccb61c80b",
+        "fr": "9d2b87f8af8c44e918a8f6c211297e1337dff871b805d82a0bc8b4cc282244b9",
+        "de": "f75f7dd6ff8db62cbecfb25e9be6a50dd5f147b8ecc1cb0500485a3d836f2129",
+        "es": "b7f4cfe9fc4ffb7d394bbc2950b3072fbb340d4fffc606f785ddd3e8115335c7",
+        "ja": "79d76c5d1c130b16fad3b14b1560383b34924a7f84f6b01f31ea3748be1059c7"
+      },
+      "chg-project-picture-library-call": {
+        "en": "ed99b3fcb9eebad1c7475ea89b8588a31b67fcfb06f490f82ed54c49c9620545",
+        "fr": "87344c890bd66f20b458f38938c81a9c41217eb627bf0d5a0102644d0e9af29d",
+        "de": "f429af3328cde3358956e13ab9e76e92ee9b2d6c625e00f8e4931ea52310cc33",
+        "es": "5b3eec5905c1c19d972474fb9ade3a29193d7be67f0175c6e4266e9cb09d398b",
+        "ja": "7c8982ca4430446183bdcde6ff2dc0e9c0479797ea247cb58b114103fe9daf82"
+      },
+      "chg-project-save-list-call": {
+        "en": "85d3638821fce76d722bb0b2e20280c777e1178a9f913b4fed667824aea6ddcd",
+        "fr": "9aa7d98b6c2df0666ce97e9ef04e04d01a5e6960bbbb637d3f271fae2ac34e59",
+        "de": "5f3b192bc5903f455051129020e37f8932f599bbbf9091874c94a69d04413286",
+        "es": "1fc5e058a595a0d3592873bbf8d381d2b3967e80bf02aceace12a6ed93909e89",
+        "ja": "e3b18cb7e06b0f67b4b511a97c667fae224b89dce9aa71a41f79235642ec7258"
+      },
+      "chg-object-set-font-name-parameter": {
+        "en": "4f569a9e5477e19add70cc0bb72d7f5f36206e5104f0b2d10b78d2fc0cddc65d",
+        "fr": "f87a3c8e218dccd2c114baa54d8f68a37b0501b8f56a968f5fd5a34e62934413",
+        "de": "ca62174842df6fed5fabc7ed8c4e8c1ef1d92fcab6131ddb927bd46de0509d97",
+        "es": "15d495425297dfcbe6e0757c81273403254a1b0f113df7069e927cba8194606d",
+        "ja": "6ee3bebb634e200ca2d0787c962dce8ab8974b0dc0c60185d84ca6290659df04"
+      },
+      "chg-deprecated-data-segment-list": {
+        "en": "98f215f1beed6af29a0e66a0744379bc678ba3e8e0d7a6e34441ec13bab6e507",
+        "fr": "1ca00c4fe825345af1b0e682b94b953d17234853d384f0d6d0351a90d8ffc515",
+        "de": "9685ab1fcbb35edf1157dc56acad57d9670208d9f9a834099405b76f16d75d6f",
+        "es": "163189dc3ea38a0a2a1a03953240bbb24f178966b4cd6f865c5e6c75424136ca",
+        "ja": "0fcd23d66009a5197587ee614b4dfb1a2154f29679530ae77423b15f238a0fde"
+      },
+      "chg-deprecated-integrate-log-file": {
+        "en": "931764879805268dee2f352bb239bff8bdf048fd2782a1cc6950f537c03e9ce8",
+        "fr": "9387a54a2654d057625fe53e2be55cb025d6f3ca37aa09cd8ecb71f370934028",
+        "de": "0b08b8246d6ccda6d47c1c44d415a5be8de8e90d8429863c9d599243d07fe31c",
+        "es": "46e36a2528891bcea3a171c0b096b68a8a9b07b303287d12200897c69ef6eba3",
+        "ja": "4b9f58340f788593572ac2d22b17861857f4e6dfcf386f8a1a328f5337ae5d4d"
+      },
+      "chg-deprecated-add-subrecord": {
+        "en": "f30727e356364892cfd1fa5a80366d7d1acc9473752088f3bce31ceac339b58d",
+        "fr": "d97cffdbe457a2c8bbfdc7f8d677771d1f35f26a10f37111769816a6416f0535",
+        "de": "7e4d8deb9705f880dbfecb30616edc128ce5e071d9eac33fa0614414fbe4dacf",
+        "es": "f7172a240853b7d1e98a2e38000c6ac69a65046399bbce3b7e38f0e0236b19fb",
+        "ja": "d117b904eaabca38f917d62d28689c6b90aae3d81287b01de7a31a33fd3a8602"
+      },
+      "chg-deprecated-modify-subrecord": {
+        "en": "25967635d24cb70868aaa917aa84d99065eadf09402f26c595ea686027bc2e4b",
+        "fr": "eaf83dfd2648f5cded1b388d8ce780da96cc278010b6ed1845aa08f2cf1e40be",
+        "de": "5c1ea66d7aee3bafa910bf8512a99f2252ebb94772646625e09d23f05c8b72ad",
+        "es": "4c1abc72331816bf565fdea14eddc2f0d69700b1a5adf973f4d75754d2a37249",
+        "ja": "668e1265e644f56c51ca699b199a5748f4e48ffc820f71121d206e60af203f3e"
+      },
+      "chg-deprecated-drag-and-drop-properties": {
+        "en": "92cc1c875ac444220be8ddc9d667c97d5535121c9802fcf9d81b4d6ffe7b262a",
+        "fr": "4df3c816521c8d12a2fb4d94474413a3595f97913ad6eb92aa71db209178f0fe",
+        "de": "f005f81b3dc48ca173627c79959cb7f6dc9b61c3660fd0a4da1775310f2f17c8",
+        "es": "a6404dd78fb942a07a70dceb9882c02fb4ea9803c2060d48f44ef9a9b0020cea",
+        "ja": "0faf09920920b79c565d890a7b2d19248bf0db27930256a15a2816a9495b1944"
+      },
+      "chg-deprecated-during": {
+        "en": "a6afc528481e43db3b864cf3939444b861a46fa2e13488c86e3d0b194fc52d58",
+        "fr": "122063b3722a18bf55c9cda41b4f1d859d8f586d3da3d9992c5514969f39d63d",
+        "de": "574c61f1b30385f68664f9543b3c08dcfb504038fb02bbdb8b976bf2853430ca",
+        "es": "0ec9f2d063fd4bbb20c09ad786fdb0c6502e5d83b659413dc3c34741f5404630",
+        "ja": "6f826eb34d8dcbc9e4e02c81ec4aec9a4286c54ea63c58298b81a7da77fff699"
+      },
+      "chg-deprecated-graph-area": {
+        "en": "0f243d56ddd9abfff2aa1f071be46f4cc043b758d3821bb6cd7f9344095511e2",
+        "fr": "0993f6de45706732c3ad59037b4a71e086b560163f4d9d7a84ce9faa68b66b3d",
+        "de": "1de53b73f85787de7229d5af6ca101cafe371bf982124fc406037f88744aab0c",
+        "es": "3ec879c749f86a6e49d7774a671cc9017e9ce5bdd34a4447d3efb9235f6394a5",
+        "ja": "89d6674ae137a3bd965d412eaedd60b9ca15fceafd172f58604c895c5ae7df38"
+      },
+      "chg-deprecated-redraw-list": {
+        "en": "df44e629257b664d269cc8e2781d5164e9f165faf8660ae2027800c5d8e3ae4e",
+        "fr": "8f3692fe767f14e8511f8181bb90af945622a887406b5375b8a756cb88fb4425",
+        "de": "a48d5ffb74ed861e752e5c678be9f6d63f82f04c5d20ff5f732ddd572b102dc7",
+        "es": "ac87b754f4e7037c0041165883f6ad514d2f0eb19a5ea0e7ac4069a3569d9edc",
+        "ja": "86cc829cca0399d65880fcf15b8234e47aaf7230dc35ca49844b9a08380c2588"
+      },
+      "chg-deprecated-listbox-footer-height": {
+        "en": "a673469b54c3fd46827ee6bd1b5568adc2b5fd48524643cbf0ab8f27f2906910",
+        "fr": "f825d743071c89d19ce13b66e96d754fa0cd68d32e13dd9c0ecce439dc747b56",
+        "de": "29a572c7f843e777b1899c924152b52d895c6c082686c851de4d717a3e971f53",
+        "es": "b5377f040c7ce2ef89160c9dfb0429c6b7c96544e205705d0f206d127f35c818",
+        "ja": "2afc8b7dbc369def0c5d643cdf185ea28bee97a831ba832f1eabd08d76bbfc3c"
+      },
+      "chg-deprecated-listbox-header-height": {
+        "en": "868cb19a2957eda2cefc0a097e02f66eebda41c8148c11ce2f00adfc902c86ae",
+        "fr": "64e028e75b7bbe49490cb7901aabfbf0467792fdc7458b75b5b556d58cc276bf",
+        "de": "be9114cffd242105a1514b2c83085bf70958b53a4b6ffd0ecd508eae50a0d1ac",
+        "es": "2e2cab04e5b806b319b1a3e2ac926425948e999611265ca080554135fdb8edae",
+        "ja": "a2cf647cbf6472dd832ea29dcfbfaa80e7ecf6ebe18db915624629b7539161cf"
+      },
+      "chg-deprecated-object-get-action": {
+        "en": "b189eb7033fc7d7801bc69e7bd2f8fd8071c74e7d646802989333797fb816723",
+        "fr": "0851e7df459061a4960ddab2b0eb718bee1395d8d53dd767efe9f46b4b75dbc3",
+        "de": "8df37a7cf4c6f9072adb356d4ac5ddfcafb2ec65b267a21265bcd53fe1380ac9",
+        "es": "ee9ec8fb7864df84f760627ea8618b5de931ec02efaf4aeb946c7ec06c008094",
+        "ja": "fe8eb75668f957bcf1f74b3d5c42416ae9c91eb644e11399666f985e57a4e1cb"
+      },
+      "chg-deprecated-object-set-color": {
+        "en": "ae12495b44e65f05b5ac27f90fb40f23ff1580161380900244a7db0afd7fb6a8",
+        "fr": "2d00b3c89d626f0d3933afff7809438beb46b30fc1cfbc686184cceffcb93534",
+        "de": "5102fe3859acba1721252c982a1653ba9504538119e98f3060b957a7b4086deb",
+        "es": "91a25ea33454c6d8638514584674f448824f797b2a894b0871724efb7b12498a",
+        "ja": "ad8eaacc193f6ba7b18dc96a365c73e3c15d2ad2bcd20835135d299ac841a360"
+      },
+      "chg-deprecated-picture-to-gif": {
+        "en": "bf4302f386d5dcffbe75c8960047f5dfe58f0764a7c96d8b9c35e1488171c873",
+        "fr": "7c44acbd01aef3e73204b839d78dc42e6ac10a150b45580704aa03781380a721",
+        "de": "7e30ff02c695afdb7142a5c6b73ac9d99b28432e04f3b27641fba2f23e9ffb89",
+        "es": "6f6442a9e8a9200e88b84ca9d495aace4728cb71e24b50ec9609483a8f2ab617",
+        "ja": "f26b102cfd513067501f4d22f68cf20487099897a269d39faa60bddf529a4906"
+      },
+      "chg-deprecated-page-setup": {
+        "en": "55b0f5939b96d09d1d4b71bacf420344d5ca9971fcc277283d209cefa357874a",
+        "fr": "2be4c753b66c2a292ea9197e9522f24e8ebb4c34bacad3652c829801452b9a68",
+        "de": "aa4088cb3e60a8f2c12819798fea720f21bf61f45ffd630ed9a07304884c7671",
+        "es": "8aeb2dfc4e74bc0a009f0d741fc7f4b6993769e0e335449072365c5cdcfa7d87",
+        "ja": "83e22335bad38b0361641bdf0193df954a0488e528d090f865078951106f57a4"
+      },
+      "chg-deprecated-mobile-return-selection": {
+        "en": "bdda6676c240b88f28328ed98d9208e8cd65d71bcdf68c59bc365ffa75c1455a",
+        "fr": "6fdc528594fe09330512545b81f15399af9a30c4a4ee8b4845181c006cd5e297",
+        "de": "2c47bc31c0833531b3376101f5379f5cbbbaa3535254e7567825e1d1fc51cdc0",
+        "es": "860fab0ed289157409e4e5dbb05e1f934432ba4454c615d86d58f2408062de10",
+        "ja": "45f9af84ad957025c448ed1a7544a54f5a0c1d5fe3c7d9fd6a38f43cd0f10b63"
+      },
+      "chg-deprecated-use-external-database": {
+        "en": "5374458493762bfd66697932d2b9c1f2c835773de43f3d5599665a5c1daae801",
+        "fr": "d0cf7dfbdfdebd0079faa11c1f1a418996c89f240c593f87ef56e28837affcdf",
+        "de": "900a90da3443023c979e22f31107ee3f9218d08e5ce4c861e3099f3f0edd6190",
+        "es": "fdafedbf1bc691bdfc824cb9cde036d71358f130b2ca0dfee38635b766211501",
+        "ja": "24be333b8b21c9c5ca9c53f87fbb5ad6b8aca0d22ec2cbfe2b9bb9c2b5113af6"
+      },
+      "chg-deprecated-use-internal-database": {
+        "en": "315c96293fd7c06827647708c3d881eaa08fb147bbfaa95d8b5a1084ee18d498",
+        "fr": "fa2d101ddbd524bd644aeb55c4ec180153c5938adf968d4a3262f01339ed08f7",
+        "de": "c03227a25448654773eb9b37e6af20a1b7f70cb8dbf88c931f9c1190b3043ccb",
+        "es": "5842df291103765ac553ff3a0daadf85bf73c6285ac2492024bf6748ddbf83a0",
+        "ja": "4fccf108a5a3e2739f0697c77936e6f9e865d666a620a2d014a10e12a2ef3212"
+      },
+      "chg-deprecated-mac-to-win": {
+        "en": "02a2beb956943d639eeaa2a155f7cd89112220f72c2d9681d0ee8f00e396c700",
+        "fr": "fd440135d16746730f5d0c0a98ea696dd4f2edaf4fda6fb79e49524b44a2ef86",
+        "de": "4877aa02e3df4ec324fb12c24b7f913d1f3cd1fcc4cb4d30157bbfc966671576",
+        "es": "35e8024088c5e44c4e09c1a91fbcd60ade68a6e94e3f04eebb59775ffa8e9719",
+        "ja": "cd9fbde4ecd070ecb10957b42e8a6d8d3cca4e4479256b11c601c9e19480b485"
+      },
+      "chg-deprecated-win-to-mac": {
+        "en": "8470f1c2d6d742188766edd4e1b7333741444e7175e48fba4b71b06e2d4c3ae4",
+        "fr": "9a805d669871268c7b88a353f09f329ff5dc0ee29e0963cfa7cf45efdcf22021",
+        "de": "8375c409024fbb375a9459bedfa8a276802d053dd252db84d4925b2825c3dd6e",
+        "es": "7cb802983d49fb4189859e8f38f585d408087f957b8a4c15b98caf2306050ac8",
+        "ja": "fdc7b2886013bdfbff72684d254f17175f594d1c3f98fc6d178d6622c8bcc2d6"
+      },
+      "chg-deprecated-document-type": {
+        "en": "10bec0821e79d65724e301280cf1a63cbf5f6729d853647858b8a336f753644a",
+        "fr": "76e3415c26cfd51f9e8411d04fd0f2f0a8f77abd62ce4cdd9d84fdfa32133880",
+        "de": "6e7278a7191abd36fce4e4ee34e66b124414e424b9bb8f0c5529b08b5caee491",
+        "es": "3c86f82d71b5adb54803cddfbcdd02303ace3494e389657b4c6d0b545a9d9cad",
+        "ja": "598ef59e2119e538c3e802abcb74b9fe23a615b9b0474cb3ccb53de23727f0ac"
+      },
+      "chg-deprecated-document-creator": {
+        "en": "4a09e09316bb3c293011907adc5b8c61a2696c16fa4e4c87552219b452f0c11e",
+        "fr": "5de57b3e0726ef555c3dd985372358e9c8c60a9e83c249d12e35798923292517",
+        "de": "0d6fbbe1fcbe4aaa0cbe87b5e1c3ab3d7cc5e880d6789ad5b23a49d80b59a0cd",
+        "es": "f75666e3593197f59232f412f1ca80ce719e737c0158d3f0250eb5c48693e443",
+        "ja": "453cbb9a60f0c03e333721c666e8d5403fcf848ffe8bf9ff7834c3b8f8e3c43d"
+      },
+      "chg-deprecated-set-document-type": {
+        "en": "e58a5ffc2b58957e8fcd36ed73f636a8d0a40693edc925186e245bc46a366d38",
+        "fr": "6858085c3045b5aff61d01744291556922b550b0d0b3f38791f81ed200c2241f",
+        "de": "cd039d4ed3a61eab467452373a1430447b7b4652566ce9176f419a2186035ce4",
+        "es": "3c9024cb2a52b319361b2146e35cb710d0a1af9a2c7c24674bc49cb152a0ad10",
+        "ja": "311426ecb3cbc0ba4f31e26f678630f6b6abbf188021bf93a39d3218e2596f30"
+      },
+      "chg-deprecated-set-document-creator": {
+        "en": "d35c599ec68b638bde5e988eb4d0d4c09c9fd2bebbf5664332cc010d62158aa6",
+        "fr": "6491931e1999a95cc57cb9b9c0f9825f07b41e193916623bdb0f3da699ed68b0",
+        "de": "a36171e9c1857b49f6961542d6ddc7354b6d2e4365ce7e24114d76561e108ceb",
+        "es": "2da7cae72280db8080d06e581eff1e39161e5d5977095aef43aa4911774f83cf",
+        "ja": "1c763524416daab0800ba23ddc3021665ed28f3e041707047ca703b57ce6346c"
+      },
+      "chg-deprecated-map-file-types": {
+        "en": "abc166681e88f47295d19cdc05833bbfee09468c9232bb4fcec9367747a29ee5",
+        "fr": "1e8a92462236eecd9b8e4acaf70c69494e71f0a1b069f9bdf9f8fb9d9790ec92",
+        "de": "b078698a6b1db4ec9cce04a3d436e869e239026db9031c0b4376140c4b36d71e",
+        "es": "7d78bfcc60483ab8f082a5c8823e34b428bd86242a2e697ea853482183da7197",
+        "ja": "d1c8d96e6c01ef4107cea0cd6143862e7348e86337b88e505a148e4a895fa799"
+      },
+      "chg-deprecated-font-name": {
+        "en": "cc827b61354a77d5161919999a8e42d08eac16b8e6ce76599c248074a791a276",
+        "fr": "e091b185b786c8e89018e3a0d982ed6db772a25df451f62c7cffab0ab26bd868",
+        "de": "9c1a606c7620862b16a017d6d3530c3b2374c5cc77af16011e9dea4caf1c0c06",
+        "es": "7687bd35677d5f91d082473c17c55c206d8ed76f697ff8d2df04f8bb6849c191",
+        "ja": "a0a05d7c5ea59c4b3e415332b88e3c9f885b718253a8bc0752ab2dc8189776ad"
+      },
+      "chg-deprecated-gestalt": {
+        "en": "d762a0ab7b9cbf5a2471f30e15cfc3660fd7252b8c7e3d7929359c6c0d532543",
+        "fr": "87467fc29d94f5ff91884d79a6af61fa155eeffedbf2b7e0e716b9a1077bec7d",
+        "de": "6b127e504df8a8e67a1b2a049a2bd2dcfa255f40a94fe41d3f35dbd60e070e5b",
+        "es": "68c98f45446dc03165975d0191b27a9384806099205d8112f31345be1f5c7388",
+        "ja": "2e92f89adc572ddbd490a28fe518f58c496c16f83479607eb0cbcf2b0c2162e0"
+      },
+      "chg-deprecated-platform-properties": {
+        "en": "5d703bffed871bdb9985246346f0c8e2bf86f3eb4ab59dc262993647326222ad",
+        "fr": "0e3286c8758b42d45127cfb4ac2d6124c7abb33b296b75cfd2d5eba7c8304b7c",
+        "de": "18bd4f4e9c2de58931f071c430ae2dc15769512a4f70dacf970c7ecd7f654087",
+        "es": "2633cb506c48b32ca3f63e448062a97f3fc46ca71f1d2959e564c1310585cb33",
+        "ja": "610f516efebecc75bda17d1fcffe98bb9836d59d309c14683528cba47f8cf2af"
+      },
+      "chg-deprecated-create-user-form": {
+        "en": "988fde43716130742cedac57fcbd8509fc3b87b741bced456e4dd21cfdff63f1",
+        "fr": "39fd19119c76bf055e6f5c83fdbcb22cd63ebcea13defa42e27de3c69541acb7",
+        "de": "397b21cb83a57bda5e1285e0ef21af31db56bd9e20bc5f36069e842ac3029175",
+        "es": "8e8ae91d9bbe6942f1dacab3eba290ff0892db86f96f0bf9eb06a194893ea188",
+        "ja": "e52362d7042f1b4828a56cad2dbd53e7419a977d245a32cacbbdfa67db9c8124"
+      },
+      "chg-deprecated-delete-user-form": {
+        "en": "ca8ed4a75555a2bd14790ad897999d79c03ff7eaa18a0b858439d6d1b8d3ab10",
+        "fr": "7609bb8f0a084822bd5d0b25b449f82d1b1d0d3b3349af7508fc8f692eaa15df",
+        "de": "bc716a3da1c9130a8dcca72bd2943f7df9293ba63aea9156a2b85d2ddbda8bcc",
+        "es": "2723a23adcaae6a2fc979c5e63e8c10fc5c15828d55598305a6dbab2ed21e62c",
+        "ja": "b0777ac8b2eb6dd25f1d97159bda68ce50ab5b91e26f59283189dcdc8941bf6f"
+      },
+      "chg-deprecated-edit-form": {
+        "en": "8d0babaa99c48f3c74e639535c63fd12b243577a8ebb8bb4296c2d63af78f1e8",
+        "fr": "3bf3f7777b24f8c5c2757163b54c272447e0f873683165646765cb9ac5080553",
+        "de": "1b7824a739ae2f061e76ab4a04679b56cb452fd4b4cf78d8d3d4c930d2ff6cb7",
+        "es": "7ee0707c924846889aaa984c4018518d212fd6c4c7728bd3291d59cbd68cd5cb",
+        "ja": "e4cafe94e24c5efcb65ada935939245559794ce29ffca6e80eff22344c61d5b2"
+      },
+      "chg-deprecated-list-user-forms": {
+        "en": "5fc7dcf61d61255850dcc77404440d2260824e875182552ef5af35ce827fad4a",
+        "fr": "1d00dd3d2dafc9108b35e448e425600da9f059896454f2cf773ba10c04be796f",
+        "de": "7baeb13287e21a38f2f86d4c9d11d2e0a75695ae60b9d42eeeefacb8490530bb",
+        "es": "5c3567df762eaad7518cfc4135a93bceef3fa3ee943918dee05edc6791e6e336",
+        "ja": "7dbf21c11c9eb589b1aedd6783f26e91e170987c2204355d3fb71322b6916c56"
+      },
+      "chg-deprecated-web-session-process-count": {
+        "en": "166229f02ddd2db163d320e3c8567c9af8c09938d8b569aff2401d39afd6d651",
+        "fr": "b95e6cd7e714a9e07cf359bc893554a55108e49ca43aa56cfff1c9deaa037cd6",
+        "de": "4dd92d571b6c1a7ebbd06818c73799068e7997c6bb8c18101b3733ac81a7a8f4",
+        "es": "e62dafc91d52e431b68073eb8e355987e35a0c05ff3f3265054f633c6e60243c",
+        "ja": "ae8d0f2da9d49652f404d3513fa9e79bcc2ab9ddce63381ea7c379e8869e107b"
+      },
+      "chg-deprecated-listbox-display-hor-scrollbar": {
+        "en": "d758a08209b3241619f32c28b3f55d10bd02fca313db9d7ced2c5b6954f83d91",
+        "fr": "6c424325a334a819c37ac3199d02eb5a6655221335acbc7eac77b02758170aa8",
+        "de": "bc358120c730fa0448583f130f3dd1d59293c3bb751ec3d77d847a8a9edc84f9",
+        "es": "5619985fb20cdb596efc30cc09d1b07b90c4c20dd8a2b16e42a43beaa786b0a3",
+        "ja": "43c7fe01e4516aecd2084713e6496eefc8caee570f8f000f3998f257c1f2e339"
+      },
+      "chg-deprecated-listbox-display-ver-scrollbar": {
+        "en": "d9d96c94cbc2b298d94649dc47c6f581ef5567670ef528789f26c910f6bd2d61",
+        "fr": "0d54c0a6c2ad3783172b815373044907aaa1d55709f44cfd41dce1d4797464eb",
+        "de": "1ede945c37b14c550cb502ba6abeb9514cf8adba1d5fde6c7c8360d70fa235e3",
+        "es": "024f2509841a3bd6f5e35a7351f563d84a9df170fc7cae98ef77f077219c010e",
+        "ja": "56c8c4773adc13ef2619b0efaa810bb9b26bf5b7dcbbe5e88e3602aa10a32ab9"
+      },
+      "chg-deprecated-listbox-hor-scrollbar-position": {
+        "en": "bb3a025725c5087bb65e0a4ff201831a8b043e291ea8213774c79b84d8f4d197",
+        "fr": "eeb9b7f4fa36da57dc04609d1e8d2861ae2573df4a36f1b3798460093ce5de65",
+        "de": "0d62e976661524338ef77fea7718bb4b3979b78eb31b576b4461e6f44100bdf7",
+        "es": "908138563c206fba8150d5a2068f54625384fc2ac7dd45eccf3f89c22f0af4d5",
+        "ja": "4cd59bd1c9fbf56afccb1e1e56ee844cc8b0ffd16cb8c0991e6617cbf21c7a16"
+      },
+      "chg-deprecated-listbox-ver-scrollbar-position": {
+        "en": "8741c92cd0e8de1edf5ee30172c0da0fc2d7f57f615edc324f0f1ca3f704da42",
+        "fr": "885ef7b58e5d0f06a3c7f9983f42ec87d15cdff670a7c5edfc7a4a5ab2ae5252",
+        "de": "9fee87dd50ad8756bfb6d805f574ca073429f2cb077c82fc88ef5ccb26e339fb",
+        "es": "98c42cb5d7805da0e5fccbaf015ee073d52ea595a22e86a962d59a3d68e35c72",
+        "ja": "5623ba30172bbc86de8337ed938d4fd6464792b0e171ab6c67e40de150d3528c"
+      },
+      "chg-form-get-parameter-disabled": {
+        "en": "70d1b8d0b64048726ad8337c3925c3c4575799a27f8fd8cf17829134eef8b9fc",
+        "fr": "97a3c75195519e0b753ea4b21ce67e7863e4d0699e2d25fe620b6c8a1fc61149",
+        "de": "d8296baa42361f8d839232155eeb3e87084265af08386cdf49e42f0caedda3ad",
+        "es": "f0953554dad2e419eae92bd7428dbc395c78649bdeb8301c6f412d49ce48cef2",
+        "ja": "00b4c3abb2b5ce767196aaf71aa9efa2e8885957b0d166e47d2c87e8fc08f297"
+      },
+      "chg-http-automatic-variable-assignment": {
+        "en": "ab175cc3cf93ba1106dbee720714927f87d882857e883994e8927449d07ec62d",
+        "fr": "925baaf96a7bbbc95509b7cfe267cac60261633906ad9783e1c36bd58f36902c",
+        "de": "cf45c1334a056d1bd88d03fda468ff1a8cf9de908207a28a7a3e933491cebf19",
+        "es": "9d764a5b2d8030260a0cf9f5c483629629199fa74f49b3cdf9a6bf0d5b079bf6",
+        "ja": "a89f3a4ac91d6121d133926269f7401bab2a876a3259112c82e1e30da3b5bd12"
+      },
+      "chg-numeric-standard-actions": {
+        "en": "a6797283ad452bf3a16869db9e84df9ced331f05e8b7b86541c942212ba46dcc",
+        "fr": "b5d0c9198949c394ccec74e1002c0b786bc652d7e8022d6b50c5f7e69d148a6b",
+        "de": "4f7960f3aa81fd93de3641206b623f3ce3eaca8a78538cd6fd95315568cdf4e8",
+        "es": "39106729ea1ac0603c5cfda8e5e7cc8be9959d196de67ed53d5a28d82bbf18e3",
+        "ja": "e8b7437b1bc78b1b46d6bd7d13750adbaee6b778b078b9c724f9cf85c8959e4f"
+      },
+      "chg-converted-subtables": {
+        "en": "056f267cbfa4ab28c0808d632cbae5928066c63ec09e040a7cfd460c06b4268a",
+        "fr": "0462a1c3dfd47794b4a13e6cb9b7db387600ccd3665297a100b7a739927aaa5f",
+        "de": "cab61e5ade730fe7d991ab103f8fb05c5c5f2c102c47816298083e2b98a8ada7",
+        "es": "fdafc716f98c81152b5c6d8e57d770457503fb724d711d3cbfc32d42deccfa48",
+        "ja": "e2e91c531c813a3622a2c746f3bd918b9ac4c4551c4d14904c0565d197b38a81"
+      },
+      "chg-resource-fork-storage": {
+        "en": "f9100b6f65941390c938999536c793316572680d9bf10475e60b892f61c6a9f8",
+        "fr": "45c7b11442b7af0b2cf74793b8c95cd28229c749453f2a452d3d3a6231fa8da4",
+        "de": "182c15e9a9039c625dc6cda31a57bb58f7e9cd8f5a317dfe344120e8e00efca0",
+        "es": "8a118d2f050470b1e8761f31a922ddf9e4e5558d2ac688eb5d917bc5fedcc902",
+        "ja": "3d30edacefddb217eaec904419693700a1f72bb050d4949d297a004fbe3f9489"
+      },
+      "chg-deprecated-remote-scheduler": {
+        "en": "f73be88f9a1ab7156210f169d132c35b2fb43a0cc3372247db57cb9079e25cd2",
+        "fr": "938d88630fecdb622c596c72a5d70ff273cbb71f348d51de4c2ae85af95cea47",
+        "de": "8acb60eba301e9c718a92c1902e7054a2a31b5cebc6d786660220449e56dc5e3",
+        "es": "e5bc8f91b0574b93b46457ad63885157f680b9b61224577ce01c5411bf8f1b1c",
+        "ja": "f7748ab0ba75c184f025f08e9f5dd0f9859152db5392341a7ff9efd64fcf4d00"
+      },
+      "chg-deprecated-local-scheduler": {
+        "en": "8dd0ef09ff562a0ca30eae2462525bc3f24618b93b9b982aa8d0adcdbadab516",
+        "fr": "85a0590b1a59db28c4dacde3d0bdcc4ebef52b54f28b4c60c5123f88f18257a6",
+        "de": "3d3311af9c93a08a456c54aba14634087b1117774e82e71d7a86e71f53f4c621",
+        "es": "1d8c2471e940ba8bef99d88c819c0741b3d783ef57d33b3ad038715e93299b18",
+        "ja": "1ee656d87b3fd273ea04159241a77d490741fa957ba3cdfa5ea4d491e56ebf56"
+      },
+      "chg-deprecated-server-scheduler": {
+        "en": "52b8b163fbd8ceaf94c18bc5b4d4f0b8d54952b57859ed48152b6bf27851420a",
+        "fr": "e05c1d5c10fbd8002329f9e7bbaaf170ab19d34efca7d0478df1c77cc52f4b7a",
+        "de": "e953c64ffb8b337ddc0d682275fad1b80d84ba6427ce753396b11dee1e2be433",
+        "es": "cf6e4ce72e9c919c7d7d325e227887b758879eec1e0d97e274775aafb0d1396f",
+        "ja": "5c5ca4baa9f4326ffb7c58b76158f9d235bd0d204f54b3afaa033a983fed3b61"
+      },
+      "chg-cpu-priority-settings": {
+        "en": "1a8dc734ec4d8bf0e495ff3956897983a7a76bcf34370e863e9b9256408f3dcc",
+        "fr": "f701ce852b90535e7510af0d78d878d1115b3ee6dd3dc8e0f4da33953362e4c0",
+        "de": "d2c1df764982eed01eca8a859fd1432d666a5757902b7a46f97e4e6bf0bf5712",
+        "es": "3eea21c038a7cf8023ccc0bf3de3f23980edd6261bad90d61eea75b848bb3b13",
+        "ja": "e83879f21bb37f59dadded3200204d783d339f5b08d513b9be9858f43637ef89"
+      },
+      "chg-mobile-feature-deprecation": {
+        "en": "fac84909c21018f6808177f0e5d7b347471e509aa0e3af13e6f100e6269023bc",
+        "fr": "fe46953c51b24208bb5c5e106041cec1f2dab75a4cb5434b5706d5e0954a4256",
+        "de": "49a00cd5f28b9cfefdb74eea09a586478eb6355b5edc477c14c71be1a66ca195",
+        "es": "49b7b169feb5d1f10da004d875c1d93c89b1e809aa113bdc46b0b9bdbdcb8e1e",
+        "ja": "0645b50a9eb4d23546d562862b8f952761df5d0a725605fb2454f0668a17936c"
+      },
+      "chg-altura-desktop-64bit-removal": {
+        "en": "0c77f89af1683e145e6c4e56b34278ba3ff578e609ddc415f16cc9610ffc21b0",
+        "fr": "6e6b48cf531182f565e490b3bbb5aeea269e159c13ccb421039bcfe72ba805a4",
+        "de": "66af55db5f5de3a04a85e1c94dcd9bb03e3995dcfd10ffd6b5d30d97b3d2a767",
+        "es": "a23519cb9aadd90a15c00bcfd67fbb09f5b643a0f16d10d0c325a9678e59ebf9",
+        "ja": "230521c62a1daf08a8f908a70957a1b0c86a44c3dd5c91400025564eea277958"
+      },
+      "chg-altura-server-64bit-removal": {
+        "en": "53a652d63dbd55b90dab331c3f5e8ef253adc8420eaed70c0303d5d539e759c9",
+        "fr": "5f1fcdaf38040d2ec88d38129a6ea7509f363392b6c74d409a3bffd2832b80f7",
+        "de": "c1126b0ec2905409213068886d7ce5a760b91f73c5e54468895b316a378f8e60",
+        "es": "594aa895383b8be1762054e924e5fee72d6f67ded6fa48ca384d005e20da7a0c",
+        "ja": "e9c31c4a08f73f1448593eef0fcc61b952b2edf47a503288d863a13dc86942ae"
+      },
+      "chg-4d-pack-distribution-removal": {
+        "en": "7588aad2afcc5f59748f383f4e134036e84d8a6a673688ae5289ab8179bcd54a",
+        "fr": "f5b863e1b1d9fa15f940be47666b5b47116174e57422510d203248201e3455e0",
+        "de": "f3860cddc5b78744c6969c58f97aaffc5fc335b40966bdcce828d51ce90deb90",
+        "es": "aba0041aa0799cec998e1ec3e6ba11b8a97274fed4be2e989ea7614a61335e17",
+        "ja": "15b3e2c9b36ca1c418c91d742a2c1e032d140b4210a38277e92bf42b78e33860"
+      },
+      "chg-4d-pack-blob-to-print-settings-unavailable": {
+        "en": "7228337d58b93c647f7e88162439f7bbeb3d65ea2ef0f07a7612baede30e0a6a",
+        "fr": "6dfe1ccead349183467bc4cd42e3b5c7071d205067008a661df8b513b0a97293",
+        "de": "30e76672fb2f8f076bf8c90cbb4e5e7a417ec27894ab8b3a7c9ad4fea7da9a2f",
+        "es": "a7ec11c20a9a07c581a2f8315a7ba572d43e96206b2681b33390065fc5634fd8",
+        "ja": "814cc1cf9e0d9b1b96fac38c2c1509a1edaa0c24085696cccc8909938f904173"
+      },
+      "chg-4d-pack-print-settings-to-blob-unavailable": {
+        "en": "c039b7a6d47d2e933c3a065388165cc9f9c6452687a8508d991d83a8d2b94dac",
+        "fr": "9360583f3ffa842a12d13f6372fad4ca48dabc561b98e103f36933d4aff1da96",
+        "de": "8b2ee7e6153d86e0fb812ee11d33fd6aa7cf018b2281031ada92acd79c0450cd",
+        "es": "58bc1a2f92515e977bf1c36e17e951f7d16e89171d643508b68141d613d4045f",
+        "ja": "3e9a373c05511ae1d95cced54e8a4403e937fb6af7ec30d70609f7e2a6b85c2b"
+      },
+      "chg-4d-pack-is-picture-deprecated-unavailable": {
+        "en": "3f81b8a117baa481383b4110e4c717314d55b77413ce10d69cf9e1f2071e8168",
+        "fr": "543251fc6f1aab2b9ea57af236235205790eafa2f99bd4a9b319eb7a825cf591",
+        "de": "0dea11835cca461d60402ee21ddeb32b54aaf192052e218d623affaafd4f706f",
+        "es": "88a4b3dfb37d4ab276d42641d29a8baa747c1dbd9d822ab5343af84a66c00857",
+        "ja": "9acc202119179d1d6e9b5b1da1a9c19e3e38dc2176891d72db9a30d93aaf5545"
+      },
+      "chg-4d-pack-normal-screen-unavailable": {
+        "en": "5168edd76bfc2d5ed2c5eced60428e9eb5ae593ce8a11f7dc36bb7fe465e504e",
+        "fr": "f9262a05e8d70f48ec55b58d5cf63603860fc7d78e999c30f7cd062172fb16c9",
+        "de": "534a76811188d6123a1c10c178acfc05b8687d6e5dc7c013eb2990478b9c49e3",
+        "es": "ba904c88022bb7f4e817610ec8118699d59ffdd8f54438931bdf18bba3528235",
+        "ja": "9a60386ffd6eaa3cb059e6e913889d05f533d04d4f5c86ff590a4c856362a70a"
+      },
+      "chg-4d-pack-full-screen-unavailable": {
+        "en": "d5808a5c62d068ba7f68ec767108a3239290c984f2aee46a5d759bf3b5dfe995",
+        "fr": "bd9ef9078dba2e77b5c7f29e16a10efb044019abbc45c6bf2991996e411e6690",
+        "de": "d77e28df9f9e378a8fdc76781c216817e7b24cf1da8107453766ecd85676b6cd",
+        "es": "025bfdefb199fa6253f29e4b032b6626e561f1de21176b29d23415983de09da5",
+        "ja": "7b8d04927c578c2343918ada41c6a5e66534b709229c3a2c83ce39cee9c44374"
+      },
+      "chg-4d-pack-get-field-infos-unavailable": {
+        "en": "b625dfacee4ef7a70cd726d780dca97f5520a3f51874ffd1917c769a0c634e4c",
+        "fr": "4f574a6997f8eb3c177df716f0de7464df6e49eaa87800a4c7fdf495088d453b",
+        "de": "3d3a459a0b99c6ccf11ed78b971de997356b176fcd69f7be6097d32a9f2623c5",
+        "es": "e7a02cb058dfc97b4e15961f123e527a1561d06c61a533ff366417f185eef6a5",
+        "ja": "dd75e1771bae35a25df41899dd8bf732ecef19d03f0d6721375354a186fbc957"
+      },
+      "chg-4d-pack-get-table-infos-unavailable": {
+        "en": "e29af90062d92b69b83809a9c85b328a184190315f7a7b3587ef4545356b58b3",
+        "fr": "eb6e2ac884384cd3fc784cb3b075d4c754ef23fae2c08cf6d0b2e7cd95665f8c",
+        "de": "13306c4c6a744de075549674cb313fcb2deeabb41a04b444fe7a0924dc32e30f",
+        "es": "918803500dc2b871e8a97201a2026f9ab2eee9252ac154bd6279eb55aa9c9b70",
+        "ja": "00a3f3c4fc50ad087a9de2e8a70d2ba7da6de24af729e2cee5a5f5985a4c5654"
+      },
+      "chg-4d-pack-get-tips-state-unavailable": {
+        "en": "b0be84166c537435cd2018c09cc8fafe79e642b4d5cdeb7f75f7e013c23a92a2",
+        "fr": "4d31a9849e1f216500c13aef646f960a0434f881306b234d39f8bd3600e180e2",
+        "de": "32a79f41d3f23f8f3a5f4c685b33ae74d77cee3cfcf2c0e391aed3935eaf6bcd",
+        "es": "e18eb665ab42d28c551e107c78757a94cf8b087d3fe221f581d68dfe599657c5",
+        "ja": "b1807e48042ca61283b8c9d2167caf257e894e4f9aeea46aba724ae021c0c100"
+      },
+      "chg-4d-pack-set-tips-state-unavailable": {
+        "en": "2972809d8fbc5df63428722335b942af7d4b6181ca6869ed57c41b6340dbf668",
+        "fr": "572c53cfd2fe02b7e24a990b55f457302ce6d20c3d0586365345e87a72c5521b",
+        "de": "99c80ad5410b6159d7d2b66f3d089b77a0327dcdcc085fa247bf8217e0425bce",
+        "es": "4b6bd57105f7aee415ebe2db698990b0cdae8745fa6a82d8851e2457442720ad",
+        "ja": "e1b08cd43a9a4a05b8e3ca3143f3e4cbd6248c6e6c3d6f5283ad0fb4c72c8b4d"
+      },
+      "chg-ftp-progress-disabled": {
+        "en": "66f273c9e97c07b892265d5c39fb8b25d29eaf3698d349e754175eb68d346532",
+        "fr": "cd7fba59c0ab8b7f4262fba25d485ce9353a27e5078632a64848cd111df49a14",
+        "de": "90fd5a7eed24b80f054343f522d86791bf4e03ae1ba54daaa591c2075feb4eb3",
+        "es": "e3756961f4853c98ce70089de29f33eba80c28c282a18ab6ec120dc22f27caaa",
+        "ja": "3189d9e9b8e1a897f6b3f591ef395c7c7514245a8ad5fa9f81415eb5ac3b7418"
+      },
+      "chg-ftp-append-progress-parameter": {
+        "en": "5ddba40bd9ba4d7e27f114c97a7bf6a82ed576f9afde0f848c63953fed17a532",
+        "fr": "a6621c5572d218eac63d5c3111daa1cba08929d249180d1c7f43dc9b31ff0b6e",
+        "de": "d97e15bf41e9efe86eb269277fb767861bbbbbe2c7bf4c1e4026cfc3009c20c2",
+        "es": "19cbec0125ba62dd5f8a88861340ce5bec89c500f25c3b1905b8a56000b0bdc2",
+        "ja": "deab09603094f398896574f32e9e8b5951e263378dc80909b3e15f38242e91a0"
+      },
+      "chg-ftp-receive-progress-parameter": {
+        "en": "5c76daeae1026d9eb07b19936573fc18c91ba754e083a5dff3f0b491375148f2",
+        "fr": "964e017d23a234146d3fb4c39455e656a32adef149fa20374150965297a45491",
+        "de": "301f428d4f7bc401bdfb74bc758b7c1dd84e452961658df25481b650b79cf130",
+        "es": "94946b7e72b1919b71ddf20595d0713eaa135985999c831bb055a65441758482",
+        "ja": "19b343f66624156780dd4f97787ec49234e8be54c5f92cd2fc0b4c3e3d3cf658"
+      },
+      "chg-ftp-send-progress-parameter": {
+        "en": "bc2c8f5c42e0dc0d2a7ac250a2a20b2fe228c3631aae7cf35bce6fca857ea2a5",
+        "fr": "5e3d7ca1ea423b12d8bb29b867ff14f6be008cb1973e819e21f4f09a7de25b5d",
+        "de": "93d2dabb05d6b962fbe5edbe4de2435b5a2f65552642b8af2807deded0b12a3e",
+        "es": "7c0040b17c9dfd94a7d29b6f2e637934709b0e09d0224094f0285980ddfd9d1f",
+        "ja": "e8419aae38916000a201c3f780367b1de6e1d36ec6a96b2d57f1428e9febf98e"
+      },
+      "chg-get-platform-interface-deprecation": {
+        "en": "2ad5ba70aabceb85d20e6de6262dc656362aed26c728e63d8e401e720ea108ea",
+        "fr": "440cf18754dfef907f4e5dbd2fe80149d7e4ecfc236b582957239e60bd7d14da",
+        "de": "04686afc9d9a3c0df869b173b1b155e9ac1164f24ad6377b9db11b84108a0359",
+        "es": "8e3c5564b1e5925d7110a3bb7e3e9ba86450fe1af5731fff28cb9b510eaad70a",
+        "ja": "3231b2c2ad0b185bb107a7eee2bc7efa4f700b57757b85c1398188e261f63df1"
+      },
+      "chg-set-platform-interface-deprecation": {
+        "en": "96ddc306f42578cb5c038d50ed64672ef3002105db56818bbbec175596ce7d71",
+        "fr": "6f2e2ddcc8ba4cc55791a4f7293737604dac88fe879da695a129463449b92eef",
+        "de": "1e9e61ab3a44f4cf63aec181f173300aad1c3fd0ede976cc4185e77275f694e9",
+        "es": "912df15499eee3d99c72dba6ecdf5281f4266fd2bf49aec68d056355d66004d2",
+        "ja": "a0e2beaa20f663dc0603bb0caa044a0f9e159a9cbf54ba1c951eaee154d0979b"
+      },
+      "chg-quickdraw-plugin-offscreen-drawing": {
+        "en": "301b4f0d683f20a6a5a7295f81bc5eb95af4336dd3cdab63c5ff0cdd965bfe50",
+        "fr": "f73667912a65115b2cbfc630a416296eee03f166d3dd803cd36fab5cae27f074",
+        "de": "7a0463498649d0e762702f98e8b07b5c423db9c22626402402ef0ef82a431d3a",
+        "es": "980124a162f1abcec900307b83421ba838326043f02da00800655e84f113fe4a",
+        "ja": "df2c6cb552a14be09c87d8a367b7ac2977f6e8873c0578f758424ead4e1c99bd"
+      },
+      "chg-internet-commands-pop3-deprecation": {
+        "en": "444d0ffa0e8217874a3b4ccf65256274d92390d9f24c6ae687acca7e0468b611",
+        "fr": "39d52ad8a44bdb22d7a93c64fc587be45d618981a8a13320ff09be5e069b0d6a",
+        "de": "d04e1a85667afc3d705332011b9a05d5e1f4a9f4bcc93042679b7397c67d33ad",
+        "es": "8a47f520d3f5943affe86e095cf248862902c7b3553e22b523618aeede3afff6",
+        "ja": "ef48ea5486859fc5b33549d8b19f93e50aab92aa860d0fb662d58573f1489833"
+      },
+      "chg-internet-commands-smtp-deprecation": {
+        "en": "1bf37484ed83959365476b87edb870a2594cfb99d0d50efd7d969beab6c26555",
+        "fr": "78c88286259ecd40f6442a74412f99c450396a1691b11e661a77a540d6d0524d",
+        "de": "283797c44dc7371ce66347578918452c56779200d77aa6c4525b84949c8adf12",
+        "es": "f686cd362d7618e6bf3401ba76735f64d01f3a04f8ea0f48d3696e9d500e3c70",
+        "ja": "97d77fdc66cbb82edbce45bb3a111e7c2bf052096215ef89b5a4129c14b8905a"
+      },
+      "chg-internet-commands-imap-deprecation": {
+        "en": "d0eb65e4ac145e95f3c81a6cd49be759926370cce3382e18638746dced238bf8",
+        "fr": "3db381a21e872c35d6a2866c8ea7c79d2af737ea42544bf2ae734dc762a31eeb",
+        "de": "964ba705b564853958036db941ea4ee04a38433327b1b23e308f77210b259616",
+        "es": "b253ae380fc7b42699cd3d0e52aa22b76a3e417aa6d483b69740ee0c697505fe",
+        "ja": "bec4424cf808862e47a553a63e8f01e4efb3e69e056a5adac91c9406e922d50d"
+      },
+      "chg-database-rsr-explicit-open": {
+        "en": "0d08cea91ad23024201e33e8395dadb4df4e3a6c6abc028a27342562848ee18f",
+        "fr": "2efb22f88a1e518114b6d8bb0958dd78e2378e3f98fdaea787196e57f743fef1",
+        "de": "51d00aedd54339eb50c5186839e85f9b2b53631164e38d75538ff89a497d3390",
+        "es": "f777c6cf4a244852031ab5d692b8eb70a8ec1ff23bd89e25d8a792c3ad0b73bb",
+        "ja": "63f3605c0dbeb68364cbda491c3f118bec8004bf820c3907f980dfdecdb8d567"
+      },
+      "chg-legacy-network-layer-deprecation": {
+        "en": "2b774245c614f8b6a1d0185be0a944f45ce7e634cf5ae6b8ae6e333bd79327dd",
+        "fr": "bd0bd665e4ca226679aa3cb5a87b1eb84950dc69eade83c2438171b2368a69b3",
+        "de": "84e3c2c9068ee879fe08c1f77c19cac37029073479eaeeb591aa74ca4354c548",
+        "es": "92d3290078a6b6f62044d3a6f316548bf35b84bc19b742368eee79308e41661d",
+        "ja": "1cc4923f25d01b55172a8c981cdc4cbdba9df66a64d56dbe72b23f4cf337b174"
+      },
+      "chg-v19-project-recompile": {
+        "en": "e1df583c012e44c8ca541aaacc972ea8126953cbacf4e532ed49253e175a660c",
+        "fr": "72fbab9507dc35f9cee8dac20e93676cfc48960b19a753122881e8fb7ea894bf",
+        "de": "296c47f58481efe659380bcf4231de4bfa70901255082c51e1543b51b7b65eb5",
+        "es": "d7e8edba53ac93e35499b68c4589d1ff5a54f284aea2889795dab9d1298d3f61",
+        "ja": "e43c5c4e4c8c4d72238d7180a0e9ffbb0de290ec7a8c1a2a2e8a4a19929de15c"
+      },
+      "chg-v19-compiler-object-notation": {
+        "en": "790a9eaea2e8fe0934a9068afffa544e4fab8bce3fe5d1a167aaa564e0e0a588",
+        "fr": "d61f668843038c5bf575d55af44703bda4a1c730ac713c63b56263ad5b5e2a33",
+        "de": "3f05dd6b5c301eeebbb7c31399d52f19dcdfe2976742d3fa53f9ce46fe08d232",
+        "es": "4c1bb6850180f1a14b525b7f205fe20464f174f25f1d38d56a909df805f066ad",
+        "ja": "24c292112626ef4c16628f121d6f1a6b99a696a7a27c4d73298d2c6257006b22"
+      },
+      "chg-v19-compiler-unicode-methods": {
+        "en": "b496ffc95fe57aac1ff2d831601d584f0b6f10ea9b9fdfc3925b088ea8557945",
+        "fr": "eeabdba94aa9df08c37ebb0083ad330c5d79aeeb1218dce8e4beb7b6d2407b81",
+        "de": "dc643c48ada8fc31bc6542e54670f2e5d6b64ae9868623b7e284e15cce51b9a1",
+        "es": "9f213e558063cff5568ffa57bf6fc2656586c5a7dced29bf79a12742c634cbbf",
+        "ja": "6b0185b07c16f4e7aacf6ad8b5fc3ffbb0464908235899e2fde58b1dee2f1e44"
+      },
+      "chg-blob-parameter-type-check": {
+        "en": "6df37abfb2a1a7307af7ab3614f97abcb198c2288efc1384d87bd10a7f01b464",
+        "fr": "f34b054316abd403ce26c13024d73916476af89bbf614bec2fbff5f32ef07f8a",
+        "de": "e0834fcd591134335c0f73200ef7c94283820cd84dc45760923250c4a01917d4",
+        "es": "052fc61dc4c33696fb6bd0f52398d4e922abc014e8baf453406a051b8135dbdd",
+        "ja": "378f7ac354b79587a19615f97a2b81431c4397be813612ac88a28d4e5adea4b7"
+      },
+      "chg-range-checking-default": {
+        "en": "af5152bea9732effa8dc2823261939c703b2037e8c299d12d485ff27e7f781d8",
+        "fr": "a9d47e38e7ac32b7ec13c4cae9f71ed52113b7f8001c7ed9a0e42b90a7af516c",
+        "de": "aee2a42b5cf8596ccc4c9324ad0a9c8f0906a6c7e0b53cb37d1115f0f4cd115f",
+        "es": "15824c1fe8580d5244580a29a3392fc0cf409011fdafe05c34868d3cf6454d18",
+        "ja": "94ef80ae9654465283516d6260366eddf1f60e0d8fb08c17b672cc37eb710e1d"
+      },
+      "chg-base64-encode-ok": {
+        "en": "c5d96dd228992cec4c104baa2603ba30b7b8f8cee37c284fd8b326d5e11240c2",
+        "fr": "61eafb0dae57e8e129ce406e3363a675bdcdde3dfceb2092faffe86dc393ec52",
+        "de": "9aed313613095aa907c4a9247a0916edb75fc83c2aa13ab0ec975545be0e1dc2",
+        "es": "a22ba5d4ad78aeaeb38b0cad026bc703bccf10a8ee8cce84450ba908015e92d1",
+        "ja": "7a16695496e072d825f38acba1dd8f0746b780548d18887847e3b2863099f15f"
+      },
+      "chg-base64-decode-ok": {
+        "en": "a57b7cbecb67bfe5dfad21a21598c3f13aac1e8e5b0ff2bbe6c66e816441070b",
+        "fr": "a1b644e1a3a0edc450ed002c66e3457b58b7f7d303ef73675df2a2f91051d178",
+        "de": "e160b468fff23a4fee8f74cddb265adf23aed7a4d5ac67d795add6dceecd1013",
+        "es": "3ba7f62527ea0772364e792de3fdf76467635f24660325d4102e319fa1797f8c",
+        "ja": "3b4a722e489463b7cdbdc459706f3a9441d09c8c71e93f3a11022a4c0a5da268"
+      },
+      "chg-base64-invalid-blob-empty": {
+        "en": "6cd6d99ba228606ac6a25f2e796047bf7d61df122bf0c541db2383efc21a11e2",
+        "fr": "6904d75932d730748f9252cff7d68f9b4414c311a8ecb9cbabaa9fbb6581f373",
+        "de": "6dab899e9c35aa955e4f3d19439ed2e134e3ac2ae202853af90b52af47c45403",
+        "es": "c59c8fc688d512aab6c2367c6745a78026f2348c9a5c3f5323015b5ae813739b",
+        "ja": "e59a11e8d5170b5ce6cc93ad6f1f23446593353ce85e922041c9fce969df34af"
+      },
+      "chg-entity-min-empty-undefined": {
+        "en": "75f0e54ad70f228e376d042288f236bc25f6568e660bafd519c7dcd333882bdc",
+        "fr": "d77e587e7ad0b9b063ceddede83dfcf7792f0a9959bff6ba69000928a9270610",
+        "de": "c9213f0e1090fd03be010a510210812cc77757f1cce03f2aff673a9f890533ec",
+        "es": "6485859bf7c5c9d1ee1768cbd9276659ee051cf490f14b08a70dd080f0c217c4",
+        "ja": "e9814586d1d97e0b26a6d6143b02629c5657e421f2bc21d3b54ee52c469d795e"
+      },
+      "chg-entity-max-empty-undefined": {
+        "en": "0d04b4c5ebb30af814661da24b33a09cbbaa6ef202a7be5746be715964585b46",
+        "fr": "4f08fd08a5511ccef10970eedd8a9ae9a1f645742aab63a980ca547eac12f278",
+        "de": "0231f63e08451947909fbd602d3e563e01acf31b00555319556429ae45832b45",
+        "es": "c8eb0c48c8e5acf8551324e86c4c7044095829bb3a92cdec9f945f22a94d2782",
+        "ja": "b858e98e8192d3d6506f444c9d2aeabe88ce33f532e63f97824694ffd77d7f3b"
+      },
+      "chg-entity-average-empty-undefined": {
+        "en": "0ad178387596f1a4c405182d790ca16c48e3b90cdbc9ec0d10fe3ad0afb11681",
+        "fr": "ae74623c35c8f50afe901a1e8fa53601630913e3f4bed2e452aa195a328c7230",
+        "de": "150ff94592d8431b391038a08c5baabc98df32e2f635e5dd0ab75f40339102f6",
+        "es": "ffff0e228f6093248c9457dedc6a9129bf13a3deb3e116bec0dbec4e7644b877",
+        "ja": "19f4cc4abc374ceba2ec7fa76d2506420b731f665c260c27a07996afc28f328c"
+      },
+      "chg-orda-rest-explicit-exposure": {
+        "en": "9c169f870460a1a82913f2e12edd8572b9a5f3b4758f213a78e555382cd96afb",
+        "fr": "9d72006c2bc5f6e4986b5a20a50655eefecce34a19220fb4aca9caea9bf2b704",
+        "de": "fddbb1520276ad84a03990abc838cabb4a20b744935ccc0e944b9fde57871c0f",
+        "es": "78b2de81360e9951aa8b93f6fae3b34bbd6cf3a8570f1f2e9da0a8f582e0edf4",
+        "ja": "369bbc47963fb9bcdb5ee4fd7d8d3f09b0e72ae2091540646135b304d6791b16"
+      },
+      "chg-shareable-entity-add-restriction": {
+        "en": "5d2243239c1edb1d74580bd2f918a7e090bdf0ad1beffe8ac804ddeda898f611",
+        "fr": "85e3928ae8523388997d7f48f9d0c0a03c3eb52c9fcb03f46f5c6bf810522a6c",
+        "de": "40d7a14d294b338d5977a44cb1085ba065522300ba42ef488d7705fed711d00d",
+        "es": "ca1bb8efa4e7bd960be77eead0f51296bb6a59ea54105c7fc82f01e31dfc7928",
+        "ja": "1c53059e0ec7cf4e629084932964668b30bae00262352d0a2fec99a8b1440dce"
+      },
+      "chg-listbox-editing-click-events": {
+        "en": "6292a8e08d5d105e4e14b35ae733ae14269052428c16cd7245a11b998ecdda79",
+        "fr": "8a1cb32cc0b976b9a92fbef09eb10f4b958af4293c2f009abb175d9cbe2576c4",
+        "de": "d6b78bdd44c4c3fae4049fd9487b500f9c82c3b80fa4deced712830491f44769",
+        "es": "59a58b561623fe2ba5d15d917d9a97e68b25c5f48b77b7965e64b5376866e8e0",
+        "ja": "bf73e601cb183c0ecad7a79a9d577f51df98a727dcd4a0470d516cb7f03e1edc"
+      },
+      "chg-path-all-objects-value": {
+        "en": "db5f68dd6cb8277d308eaea75e75737195bc47885eb081d1df40fe204e95760e",
+        "fr": "482103f28df286c126274743d060cc39ab89370a41f5da2c8da193a02c85cb82",
+        "de": "2fc5a6d8c4c1290cda4ab9ed639d31167af7d0088ee6e3bbde35c8fa9c7d38ce",
+        "es": "bf87bfbda6c54b1c3b4db994c2a726ef31ba022b898a6a9d09e6bc694ebd96b4",
+        "ja": "4c9d7c572ef42f2bcd19ec4ce6ccbdf3d4b5120ffc4ada3f352c86394bc2edf0"
+      },
+      "chg-mail-attachment-posix-path": {
+        "en": "0227589e2b5e90b12f2ddf8295eabf2a49986a8703261d3a6e53d2b507432a02",
+        "fr": "cfdc74b8884e1a47291a8d8ca4a6a8d5544fb118953ddfe378abcfcd4abd3c23",
+        "de": "023386cb0c15050f2cdf44c45e9b28e5ec06ac789a38a12a530630eefa8b4080",
+        "es": "b459a6b0ed237e197400b85e7335c7bc2c8eeb068d1370036b11da7b67d1dd23",
+        "ja": "54b80a832da52ccfcb3c637b6222f9d685118a78061b950e6d209d3192d0da80"
+      },
+      "chg-requests-log-fields": {
+        "en": "8d2ff0d99bc5fb03dae3641af379a622a1086ec66877587f3a7241ae5e7cbfab",
+        "fr": "760c26d488318c64eec59311716fbdad6bfe5d0fc57245bd62821a962db2a412",
+        "de": "cf6b455701699d80fd9553a3b1ceb2b57b70b4779987641508d02ededdb8009e",
+        "es": "f1d4966ecb12d04da3281c6065960796a10beffb28be70e8864c9df65377f884",
+        "ja": "57f33dd1d89830f3d1e51da04b3ce3aba40328a224945c61384def3b53338db1"
+      },
+      "chg-requests-log-microseconds": {
+        "en": "92d8265f2c449ab1353c13314579ceccff33800b5e36d1c33b89fbdaf080fd30",
+        "fr": "d7999884ff30a0d6e977228b089ce00ffe057cced109876dd16b45524d01da2d",
+        "de": "05764612a89fe15becfb7f06f24ec63f96e40b706a665542c62faf5cf3330898",
+        "es": "354fa7592bfe6211687fe0ccdf83c4b40b21933ad1dd742a90d8f7f6461256a9",
+        "ja": "509edfe7de35770bc547d49f3aa8c1d27d71b497717573fa519bbd450bff656d"
+      },
+      "chg-debug-log-columns-v19": {
+        "en": "dc43c66c7cd89a35e8e6c0a8c4de25398054a7db8eeff64d974817dd6113c3f3",
+        "fr": "e3826c00c5ed577ae2a9dd98d22ac53557b4b9244d0a0748fa7de873c22ba5f8",
+        "de": "c585fe5febdf60544f76e1e7197812a481ba0d26668ccb51fd7ad79fcb55dc3e",
+        "es": "5e80bcfbea14ee83248d267086aa95ef24424116ff78d64dd63c19b278d86d30",
+        "ja": "a151883e5ff808a40b6e8bcf197b17400d7d80f5449aadda45b66638420675b6"
+      },
+      "chg-diagnostic-log-name-v19": {
+        "en": "5e61b196d02cfcd26cdb8bf95632df47c335c6b8113b7b44e70c5e9694d73a6f",
+        "fr": "fd8fc4a00a1be652a077eeac4165fd88a810b02c7089182cd32dccc679cdb13b",
+        "de": "7aeba562406897d1ae16c162c1c4d7e4a4182c8ac2efc294a8010ccc19f23f10",
+        "es": "5c681c7d4627be30dc70849920c5b3073ca05dcac31755c5704af38d657357e7",
+        "ja": "b5eb5838c84fe62f0c41ec974874e043a0a08590fdd1dd6484c8c8b1f8a75ae0"
+      },
+      "chg-log-time-iso8601-v19": {
+        "en": "6eee70ba99ac61ef6878bab2688a9aebe11991d80f509120b6c70cbf49e50428",
+        "fr": "3e35fb448d63af851bb2d64ac07ebe5c6634b8e61708728c7365a4fe40c4a7ec",
+        "de": "71bf2ae22d6cea33ac4ad063484bcaaf9d2dec7dbe09c146f3bacf09c2a5bb44",
+        "es": "7f0d5b67895c61153bdb3202f1e7aacd14b49808f70a5fb9831a0d1bb7efc343",
+        "ja": "a139b57cb4ae465226b8e363b3f33f100e17917b25922b55ed7c09310d746ae6"
+      },
+      "chg-server-log-suffix-v19": {
+        "en": "de61afb317e504158b2685aa7fc6f0d11fd1e2dde68fb61a006da481f4e2db81",
+        "fr": "c86a38cb7e68f095ad9bbaeb6f423fecbc0f35bbdb5de99c294de09fe17d6b30",
+        "de": "5b42d6303e043b1f9de15b94e30c0e6866310cada3257a36153fd18c1ca113b2",
+        "es": "0d19826b9fe3bc95cf909f2824131facd37e8a4b832eaa00f4456ca6d5bbdf11",
+        "ja": "8b23c0ccd806237d7f5916fc10989f0c978c3948ebd3feed8c7687f0daec29c8"
+      },
+      "chg-settings-files-automatic-move": {
+        "en": "0a17b14aabf490c919f74231b567f02e8b2f8b074d0b07cf00e7d4fa51c82280",
+        "fr": "051c94c5758de2e53f1c5a27f8b2c042c9bc606e786633e1736678f5e79439b5",
+        "de": "6678758e125aa8cee6cea092d500e07973925b747c8ac6584c8d4a01d7dbd8e0",
+        "es": "39ad752391092b14974b683071b753334691d6db36a23b55c45a1f330ccc2b8a",
+        "ja": "af8650bc7e7dd05f3e7ce869e4cd67667e7eafab75d02756f1a3675876ec014d"
+      },
+      "chg-logs-default-location-v18": {
+        "en": "ac5533b9a9b610b5e45e07543493030e6558fd57238f2d1a90306e1f14d230a0",
+        "fr": "654769d9ad0b69e0de8077f53a7679e3ffb05e9a70f9c994807b8f82fa147b66",
+        "de": "8a28b0067811f45444be35c86f47dad255743543f6fa21cd71f72e1eb0fa5c92",
+        "es": "2f96a98122030b0fc4f23ee22d87ae64217b89fcf410fbbd04a24316fe1f0566",
+        "ja": "ddf25d55c401f70812f31a111cc8d31f818d558ed5c9e469ae13bc6af6ba3104"
+      },
+      "chg-backup-history-json": {
+        "en": "c1b4d9ffab5c243719c3d2e12d9c839ac78671f8abfe2f6d71678debdc31410a",
+        "fr": "fe9a333dc9c3a182c40ac080ced52ac7a10444beec96ea88d361c298fbc97037",
+        "de": "41ef20cde6d01a363fae690a9f9974c1645060abab673472147a6674a1032954",
+        "es": "ae06b20146d6bb39df656efec9a00dff8ce6c3b3f443a027792d9a53156580df",
+        "ja": "cd2426d48cc89ff8cc47640ff0d745b6d7266797f3f9156cebaeabc5963e5b37"
+      },
+      "chg-backup-restore-data-subfolder": {
+        "en": "f9f0b909997b4d37a5f49c9220b561bfefe83ab5d5a5e48d2c4000052131d27b",
+        "fr": "bf8f2eb2fecd46f21b35044a701b80ce1119cd9cb5a80a7adc9fb80f5e796fc8",
+        "de": "9da222384f0e8609c614875ff2e5df1aa9df0ecf1fa08f3e30688c9ba0a2a104",
+        "es": "ddee87269fe71ad05edf3626fbe0284e7f6bbfcb32c3d5be8ea8e259c8b0ebf1",
+        "ja": "462bd33faa323215038fe57d621b9d413c4ef10142de986076252edda6a6fb68"
+      },
+      "chg-scalar-session-samesite-strict": {
+        "en": "bdac17f3ae544b0b99310e2f196e22783d54681f22f607ab8c8575798b189858",
+        "fr": "2b348051f7b211f6c9f16257c92450c5d4987450ca04bfbf85bd873c9bdf9df4",
+        "de": "83b52281390869032db13e306dfc39ab58693f5c87e4cdb4bc44a343de8a7a6e",
+        "es": "519cf2cbc82e6d126ecc7ac5dcf81a123175a911d36d71003232e877d738d6e2",
+        "ja": "51c681e1e8ed818abd8941c797f0ff72f454be637b5a06e862a92c25afa24206"
+      },
+      "chg-macos-client-archive-build": {
+        "en": "5dd81363e40d2ed7bdac24455ba3b7664f74f7ecb041b352064df7f96df9c926",
+        "fr": "981e49eb1a13feda5c53a1d6598fcea2c3467e1a55eb34b89617e12fd20b8b72",
+        "de": "b3be930afb97243b0e56afeb61e6ae10bf73f663be5609de3593d8a5f78e7435",
+        "es": "dce5adfb4c9009786a99d57e192b3ce68e98f7d8a99d9bd4690ff743fb6da977",
+        "ja": "30783a3139d4cf9ad894a5a2c0b5085bcdc882a4daa48d72247cc14f6b4cd65a"
+      },
+      "chg-macos-application-signing": {
+        "en": "0dd5ae5b873f7bd144750d8004ef243ac8055082639b13f3f3ca8964797fb223",
+        "fr": "a7a13fd8acb4ffee8fa9dcd26c1b637a4c681c04e8fae6ee377dfc613aa9fcdd",
+        "de": "3160db9df302eaee0909e0ac61bdab44ccdd11b2d3dfcb34d793fd66305b5ff1",
+        "es": "3473191ef82fa185b784515f9dce256a93ce10d191b2857a01f6765c0fdfca92",
+        "ja": "b9111cdf1b650a50af232d3e7e52e01ca0ef36926b15834a311e566238e87843"
+      },
+      "chg-local-project-client-plugins": {
+        "en": "dd72512784f21fb47a9c6d99c417e3689568937959d9ed0452304428fc5fc7a8",
+        "fr": "5ffec4bd05bed35a2d22dc5604d324b9936c7eb681ba8d6a382760240e5c4794",
+        "de": "1900497eb73439c0b3df63d4df4938a42a1ea44c8b76edf737f2c8dff27d60cb",
+        "es": "25fdf6a9de5852801a33c5df10f276f30a91d06c4aeb09fb86d9f7c39ed81887",
+        "ja": "38697aeadb52727797c31ac76197f7955db1194cc277f83248be1aec503bfe98"
+      },
+      "chg-remote-debugger-default-port": {
+        "en": "94fc4b1d5a8ec34db71b71c0e44c144bcdc7df7bcbcba1cfb4258f3440f41c1f",
+        "fr": "98ed634f556856bf1d212b69a126c97be3a8b0f7222e8132a7a8af09b930a683",
+        "de": "3aa7925118e6a0955513316df54d4879df039563bbd1c73fca2b2aa07b881191",
+        "es": "a2e97d5d7bdcbaa8b9f83236c87df9ff28b184c191334b61a3c8fc261ac909fd",
+        "ja": "5a822dd1e3a0fe12c8fc1224d5b279df72e6dad3f903ecfbcbf53bfa88534e68"
+      },
+      "chg-write-pro-formula-filtering": {
+        "en": "44cd547466c6303851c172e498032cd350d27af9dd027c79d1d70a5a7600d8b7",
+        "fr": "8c5336fc8cbfcc0b8b871b638010c26ed74e6e9d129684459dc894cb41297470",
+        "de": "60069e1be48dc0a0185748a6b36cf1457ba3297273d2635473ece5efeb451c9b",
+        "es": "9a33d8c46fd853e2cb6777e20fded2856ea256202920f750985611393b04a38a",
+        "ja": "d3e338c0207c9e323029f08ea4e320568a859ce950666754c5f40e3ddf9159a0"
+      },
+      "chg-write-pro-freeze-recalculation": {
+        "en": "3ed64bf30798436b3d124bb839799a2db6b73007f21db8dc99c3b6befcd841e1",
+        "fr": "3ad8fec2d6895f3b1b8291fb755ec145d7dd62a78a226a99d7a019d35442be4c",
+        "de": "db4700dbbec126956f7748e14e58db5e3bcfa9b790de8ee4613abba4dee1e92f",
+        "es": "7c835b407a47be0bfa344e39a5f5dc80d277f7267815d549fda51dc2943c315a",
+        "ja": "f9eca530d3d893693af672670e51cfdd1fa8196f76b1d15d14793cf11a4741ce"
+      },
+      "chg-write-pro-page-expressions-not-frozen": {
+        "en": "6a0d760df748a341055f108541f524f4347158e1de7fbc137d727e664c61b2fb",
+        "fr": "12f09ed41c6d84328c1ca71da0cdb106801f2e3c2baa864b1879b003e1c73836",
+        "de": "b7b941e6663416664bd6852566e20a17d9e841ef4546dd72384c2e8ede8b84d7",
+        "es": "c5bc14f48ab30fb7ea920f62252c4040000f6f91142d78ac4a60bc0b8a903c58",
+        "ja": "327ef1419beab6961270ded529855558a571f89054494e3bb1f7fa7d96962578"
+      },
+      "chg-write-pro-table-pagination": {
+        "en": "22f0069862ecbace4af786813f2838649d792a779590ef066ed988b32f3b7151",
+        "fr": "a8ba18fec721c1427601792df215464c8c8517435c49166d50443480c8838669",
+        "de": "4ac3e1cdf2a39704f0c7671a56dc1bff6826d83a07c7a7adcc0fb4cf7a9b8805",
+        "es": "79074bdc9b2341e82e5b1070dfe6b93fa7083452bc0605213fab76bace99ff78",
+        "ja": "d2a178fde6844e317def77f9560e79e3de3edba2baf5f3c5160b80cd5332b825"
+      },
+      "chg-write-pro-default-tab-offset": {
+        "en": "b90886a773bcc579b857c96eba91535854cfe5cf1a5aa01f493c23be717fec0c",
+        "fr": "a314dc9c54d9b60f5e1d75265d6842f998e567d76cad3f0a9172ac7b44ea1b5b",
+        "de": "69374b50fe2284cd1dc560cb4c6be3a58df01f7b38b2bd5204b1188e52d2c036",
+        "es": "e6e2157940af3fe972156cb499056b9a0b5ada0eee02d2f6268a3e07c1a3813d",
+        "ja": "d9c3be30f9dd925ec3373b0a90c3c7a00c306fea517b4d78432e845badeefdd6"
+      },
+      "chg-write-pro-decimal-tab-separator": {
+        "en": "221be4dbb66853f963122ab2d4843f55aa9e1479ae12bc0d53de7932bbaea0c8",
+        "fr": "c269eaeda60640c7cf96167a8168649fa3cfd5d86414e44352db2b6a2b84090b",
+        "de": "5bbf01cf223b1ed9f3d51e47b414e99f3b4729888bf65b7d8b7cca557d896f47",
+        "es": "03f758dc60f351f5f873844e2b7017fe725f2c1c58b21900b6037bc3f4467790",
+        "ja": "ab9ff43295fa7caf26154acc31ef8998d13b71381384cdf23e5cdfcc849617c7"
+      },
+      "chg-subform-resize-no-timer": {
+        "en": "056d3fd28ee4e76f9cc64cce1b8f7ae75748f3ef938877a92dfc1ba6c894fcfc",
+        "fr": "3f351cfbcae0c493ace3953be3bff5066902f2f630a1f169eb286c217654678b",
+        "de": "053ecec48313deedb57464dffd3c12256ddd7d4879e5737de15a41bd74965757",
+        "es": "427028892cd021ff1c074dbd85d59a01e72f51a24477e3403036db8d9c93ee06",
+        "ja": "0c40484b2a3f8570d213ef150c3a0b43f5f067505d9f16a0804946500f65e17e"
+      },
+      "chg-view-pro-data-change-event": {
+        "en": "c397de2488f381208d1d631f267a3ac8c4f9dd86f2cfc259a4256a3162978b64",
+        "fr": "43b6fc3592aa2cad8e84d15d0d7a2d4f10980573b83cac242982b70166b368fc",
+        "de": "3f50bd27d3fe7c76ee2cd54654ae4acf0317a03afbfc4d38637d1b78bc990030",
+        "es": "a83def0e82d63a570c98dbd62caa2668cb6584da170234e2ee15f308f569718a",
+        "ja": "f644c0118edf29f2e543a7e5b1ddd72d8740751dade3d541af76211bbb0cbe23"
+      },
+      "chg-view-pro-date-object-format": {
+        "en": "2d669bfea22618cfc73ad8a2028c75cd516d1538ea0d08ac7a416e666764d53f",
+        "fr": "89f6bb832a2770dc833fb6a7d27f211dac725063b019de0381d26a084f4b6c28",
+        "de": "4cf56f8519e9eb1d1fc2f6e019b997e9bce1b83d23ce64a5b50a6e22b15d6bad",
+        "es": "96a291bfa098139ce9257e4b9fddd4f2e92a315acbd7be13407b80e99849c938",
+        "ja": "f3040aac031930876458dce790042f3da2cc4ba569f600a25d4e086eb6232196"
+      },
+      "chg-view-pro-default-localization": {
+        "en": "4a6add7348d9165ad04183cce9eee7e5ed3910644a0ded584bcb8e224c8de1a0",
+        "fr": "597c857f5c92fd4802b92ea4d23e50049cede7b6b57781f4c1f9a663c29c3340",
+        "de": "641611d7c45b6d7946286ed0f4ed0ae2ca22f206a381d53c614676142cf9e3f1",
+        "es": "c2891daeda02757779923889a856dfb6305037c7b08a8e25e1ffcbcf29f83589",
+        "ja": "0a2f45a84ea82dea41899c28a58d1a79aaa9096cde822d813942b601e6869cd0"
+      },
+      "chg-icu-63-index-rebuild": {
+        "en": "c13ec265219a56f08962877e6415926b0e01597c725f7d1989ac0ab57ee8c23b",
+        "fr": "b647aca79337066f67dd1ea9af896d97a280acc0be2986ca7d971518f852ce73",
+        "de": "28891fbbfd3ec0121289c8ec869cad5adc516b1cf846b94053f8e15d3eb917bd",
+        "es": "5f1093c4d49b392943a9ba14be971d18b83a30e7a2aea611d889ee8c2b143861",
+        "ja": "9733d820c722afb83a9836a176b895d2fb645aa39659239f8cfaf5e0f61937b0"
+      },
+      "chg-icu-68-index-rebuild": {
+        "en": "91caf0f75f899cff094265b342b962995d6c08d9f18b0adf65412c8aa8400bd9",
+        "fr": "b941af67669362ddb5b561bc25002b9e4c09e48d4b9f095598034b036096d29d",
+        "de": "66ff56a1746fd7b0224862904642256cb20fb252fe84eb62d5e62101f06462e7",
+        "es": "2e7c65bf985b3e38fe85f8a803b92acb06d3d054e427323d30cfba6309ca2b17",
+        "ja": "253217a598f8786a4d62ff1862db9257848794d951c552c8c1fcfa28df8de3bd"
+      },
+      "chg-object-index-rare-corruption": {
+        "en": "42f6964813321d31227d35c195d185807e85edd469d7d3c2525eb240ee2bc67f",
+        "fr": "88b253531cb1f79259dcc35e4ab96ff7d2da5e679a4338196d7973f31a60f78b",
+        "de": "96dbc5efe8321e5e930faa242667125d320399fb251f695fbdfe6ecc0349cbe9",
+        "es": "c3575d513aa36b8d947b116eab1de88b9c7c107d2308c9a210039acaa163fe94",
+        "ja": "de5548092e96e0c9d8f2b056d935e69bbff2f3af6561475f8323ebb7d6b64c17"
+      },
+      "chg-high-resolution-picture-suffix": {
+        "en": "b9dc91258b7482dc4c8eca273ea7a2e742443402740fdc2d65ad5d7561a86512",
+        "fr": "55e65b47684a90b04fbcf35aac41ba10562c1913628420dcab51f74dbe3ddf3d",
+        "de": "7dd72cd78c7a4bf6b600860aa133f1d2dde9c476ba101750891131cede36e9c4",
+        "es": "57a89a0d53adb939b4e5c42ba4594907527db9c5611bfaeccd190f1c050013f8",
+        "ja": "4339c68e0e6e1a1784b1d89cff3408044859dd839d074f8492e3872a3cc5d148"
+      },
+      "chg-object-date-type-option": {
+        "en": "354447c77d8da0f3eaae7017bfbff8a81f872e7a33c378a4d73ea662e9c79510",
+        "fr": "6c4dd41f61c852f5be7fb2c5ab8d510c1d7ea9a464453c6757a4868ce2d47cde",
+        "de": "496d8ed8fbabfe1109570118bfa9a72c5e91309a1081c2ebc2340e510202f7c6",
+        "es": "24c8b600c6916a555575770c17b3a135ef81f312cf25786285d6618f206d24ab",
+        "ja": "339e3ce5a53205128217f5757c9ef5efbedfa91da5d240123cc1d961e7fa01c8"
+      },
+      "chg-standard-xpath-option": {
+        "en": "d3f71a74280752673a56761328f42584d72a4d4d2dba2ea4cfd397af30a60f3f",
+        "fr": "44b58c8813f7e75bdd4402b9d2514e2baf52255ebf14d885a3a7d92e8a8a0104",
+        "de": "e8c58e0b3d5f8e475e741bf928859be82fd30b7f473f2ce0267311873fa695d4",
+        "es": "a6b17046bc8662d80c8a00ef8b0b8cde6a150773626ef5dc4f9eb724cab01991",
+        "ja": "f16b73bcc73477429dcf9b9dec8a1fd08df722480e3bd3824b840274626950df"
+      },
+      "chg-macos-text-lf-option": {
+        "en": "89289ac8e8165318c7590ff5d2b0dc8d7384b2ac40faf5bb59bb8214e48a9db6",
+        "fr": "c9f0a299d4c345517c5dc2cae801c82eb9a0e23a67411ca3df20b345a2d7a86a",
+        "de": "f22729efa2ac87193ce9fd8125532c4b62293461d3b7fef6c792f3d5a1ad410e",
+        "es": "6c0d633a0c2bc5a02197aefeecc9f77babb55d816004b8b9f98270fad67b5164",
+        "ja": "06845da8ecf63941b2222e467add11f8e7c41fd7d8df7413305c4dbc6068c5a3"
+      },
+      "chg-text-no-bom-option": {
+        "en": "ba4927fc2d69f7d68d754923432aba3acf4466b7f0fef4e83dc933fe0f6641f4",
+        "fr": "f14b6062587b756ecff2cb29b81fbc875c41364b12cc4e23f403fee75d2dfadd",
+        "de": "0829c500632056874db3d376ba0a6762d16d0651ab6d1be72a92287c4d438b3e",
+        "es": "13310e30e44719ba55b53c05e5e22e4dc897b2f075514ff9e2e12ee966ead7b4",
+        "ja": "7e963c165e1cebc053c3411a37a7e041f374bdd8da1376e322bcc5022aad704c"
+      },
+      "chg-macos-xml-lf-option": {
+        "en": "d0ef6d74a764f7f73c383182e55d65058efcc42f23d5fb74d7884ebcc1e6d9be",
+        "fr": "123d216964e8c82bd6d36e9925e5ed84c3f38eacdd8366c8b0cdd6a6ce0245b7",
+        "de": "904b7f5dacc54095e9a8f7961d188cfb4ff63995b7ade9a59eb4b8bfd93fe104",
+        "es": "5cc3a3420cc695e2ad30664d82ba6584cc9d3c062394c48b5e6bb44fae3f4a36",
+        "ja": "ef601bc1c1c3afc1237c116293d77463a17bed9f27566c014febb81b954af3fe"
+      },
+      "chg-xml-no-bom-option": {
+        "en": "1936ab7197feea55993deaaf0d4ce02a3bb7dc17266b05f912cf9f474fdf7838",
+        "fr": "c7219e62825721fa8aaad4411177eedd23db91a44a46088f61c32a6a145064ee",
+        "de": "4d113ecf25fac504c7bbae9f80f2298de0ef48effe08094cb4ca1951b4d8339f",
+        "es": "e722fdbe822f0269d3104c2133cbe24b895dd23bdaaf7dbdf78a9f5bc770f0f8",
+        "ja": "189f45a625a3ea0d91d3be0e5aa98028944c9c783a715324fabe365176ca6365"
+      },
+      "chg-windows-directwrite-option": {
+        "en": "752f9aefb9c9edea77b359cd632c1d9e2d0bac8f99c6d5d014ad5d70dea686d2",
+        "fr": "db5df059f141ea958fb19a0633a57bc5d72653d7d2f723784562bae9e44d14a7",
+        "de": "5b34c3223072d02cf0b85b61efca10395c077e67531b695cfea8f1fd3bae48ad",
+        "es": "5d305c33789de47fe25283293a2f9609b95a468ebc930d0c44d4a4129c08d094",
+        "ja": "cc4945bf8d0c1fddf3bc8cc116a5ae07f7f7e384c02303b62fb9c98bf68da334"
+      },
+      "chg-new-field-null-mapping-default": {
+        "en": "e7d38398d4897fb7321c745d7346bf895899b3ffd285a1cd483c022bf2eb850c",
+        "fr": "a268e579b9aa0ed573fdde94f16e3bc46ea93efe4ec0b58f9727694fcd0bfce0",
+        "de": "79aed3ab58cdde72fd02c4dcffc870a7d3fb2aec2179b2c48b48b8b7d448a2f8",
+        "es": "34cd21858af76bbcc2cbca7a2e1fd8e17b71098c7b76cdce57a04e066b7972d9",
+        "ja": "6804c845882bb6cf00d699dd25a81f3af0f18e6c2a839dfb86fe8b04553483a4"
+      },
+      "chg-ole-tools-legacy-removal": {
+        "en": "706d534482ac4ddfab00307e61107cdcf589134f98f51f7258d3e421799031d3",
+        "fr": "f1e7f25696c24c6834f3cc200e76d68b382ded23ff731099e35f7e30371c00a6",
+        "de": "b246821ea93dfc5501c3cba9097db0eda022d4724745fda221e2acfc2c3da563",
+        "es": "f13a8fcd146594f717fa259d78d5c17f81ab6cc8a06bf39af3617134b2ddf0f8",
+        "ja": "9671ad1a159357fac9e68f512fb99a28484cea631d790a77d321a80a96287af3"
+      },
+      "chg-rest-entityset-release-post": {
+        "en": "30b99c97722d268d665b2165d95ed1cf5c794fe6378a45d7f0ec6ebc6fc39c22",
+        "fr": "4e19a8a37ef28bb2798cdad8dd2172c20efb42a844bb8c74b30de987bbef939a",
+        "de": "a5d6530f1ec6a75442daa055438f455d0584000adf0bb31e1036dd6e82550865",
+        "es": "f6eac90bae6bebb121ed40a7a550d2ccd87e4823e5a2dfc43359685eb2cbaa81",
+        "ja": "07353b868a1d1dfcbf53b0786a712515077b55fd4bbc860d578e3398aa12b0ba"
+      },
+      "chg-json-validate-schema-version": {
+        "en": "c9f236a9bbe1ea832191d3ebbf515ebb290ae3c2dbc407fc7610a1a75521141a",
+        "fr": "6fc322d45063ab3201373b8858c532c9466576f04124ae0ccbd0a9f1ea4c4da2",
+        "de": "cb191160378d109acb8b50901d5a6cdc9f54daea4231bd0db2040ead9bd40540",
+        "es": "c91c1d576535676afbd5d8a429c6018043f78c5a0c2df765a0f789908ae121af",
+        "ja": "437ff675a9ac76a9db613e26926eb8fe1ae6f8144b1a44b488baea1e288683b3"
+      },
+      "chg-formula-class-identity": {
+        "en": "313baa3b8386ccdda02c77910ef18aa0fd5161ced5b558193148e82da00fdd9c",
+        "fr": "92b50b63cc922de524230caeb87dc43e539cf044f17916ef22ee0e26f9ab99e1",
+        "de": "ace7fbd527ea1b0d6e1a9b5ea5cab2db929ece12d5bcc1a7e4221de1ec9798d7",
+        "es": "9cb68aaae95ddc04a1bd8b656acda2799a3f128a5a090963d8b7df11f23e20b3",
+        "ja": "bfea671580fb018efae7adfd4f2cd3a71f60849b3664791bac0b797c457eb8a8"
+      },
+      "chg-live-checker-command-diagnostics": {
+        "en": "18d4f8653faa8b8947161d8c32328dbb2bf2add59dcfa8a2242b5eeb9077c3cf",
+        "fr": "47faa1d342286cf7f143ed469e686131593e59d50418b7ff83b7e9d3bf312a73",
+        "de": "f3cfa7f113bc45d8083b0a4aded81b3801d6fbc9b0db57f4486e501c68c10d97",
+        "es": "b585a4d7c0a48d3449d1387431cc05ba47db1247bc61e2d2487c9ff9690a0c7a",
+        "ja": "f6c76f95bbcdc20d544ad134b4367e4ad47b57a277f2b999dbd356cb75b76835"
+      },
+      "chg-php-settings-page-removed": {
+        "en": "d652819f8a07f6aa02954f6c1107f309f684b12102939733b9617a96a1a2a169",
+        "fr": "5e5831c23dd6b7e15e71f91731196c6d043441e5e949efbee40a1a5e4e65aee7",
+        "de": "61fbe0738711942f5f9e399737be4bf0908f6b3c6edc9e08fada8ef6e36f9f18",
+        "es": "d55c03d544f7a8cae52fb166a526a718a8b876a445732919634f715ec10ddf71",
+        "ja": "88defd08862bf4cd32590335a6eb6abfabe20787405005f0dddb127176a9b881"
+      },
+      "chg-legacy-network-layer-removal": {
+        "en": "37e6de61b5672b3973cd534de14c14d119fff53cf01efc05ddb721ed6e3331ae",
+        "fr": "5cbafddf4c3d7dafca64bee17c3f45458efb5fe3a834b6c147fae8dc4d54411c",
+        "de": "c30abf172e1b2cb3a4032ddac5e78367eaf7f2c4a22c585aa186eac3d6fda703",
+        "es": "f5f9c3178cffa7c1109f4f56b059aa821cd417aed0b9bd2a9f4c3b4572f43db5",
+        "ja": "4158c377a9c6c00f4c290ee720d16d9c75b5f6946f1b5c6d0e75dded4ebdc116"
+      },
+      "chg-fluent-style-sheet-context": {
+        "en": "c3bd8f02bd7b84d8d88b0efe78b15a804a309b4126d90bec37ac8a17090487a6",
+        "fr": "cf5019dd9b77dad52c5584e65e6000273724187a273d1dc1cfe89d46f67cbddd",
+        "de": "bbedbd8bbf9c32de9803585492ed2ce93ff197fc26eea8586c49b908bd0facf5",
+        "es": "f9345d1fe0b2e32429e855d0824adf1dd01e9e8673e41104a8e2d7ddc9892ad1",
+        "ja": "a503cba2353a2027d0b6dc06e33ef44197b0b51742896cf36be6a6f6e9e6881f"
+      },
+      "chg-liquid-glass-form-theme": {
+        "en": "6779774cd70384565b9596bce29be2a37c809c81a5f8bc7e8eb606240e6dad65",
+        "fr": "ce4eab6853f263e5055a261578fa49bc16f9c08b82349db6179f09959767a494",
+        "de": "139eac63f85fdc2b790e59a9e8366987089e901359509dbf2215d328e4c1ed72",
+        "es": "894bcb2161ea20cfe265db36c4146e777584049a148c388c1e7b8850201c02a7",
+        "ja": "8e2a186b42eec790f200f339589f0d40500c97a8dec6cee1a0d95316d5a0017c"
+      },
+      "chg-write-pro-list-margins": {
+        "en": "24c54e462ada841c252d1e24604f0bb7d06959ec989b2f2386641480f58e0ca9",
+        "fr": "c2dd9e74624235ea12542be6a676b586f5aa104cf63f1d0f75b6ca93fca9141b",
+        "de": "82d95bcacc3548d69ac851cdca269482ff1db846424ae7fada7c47223ffae883",
+        "es": "bff21a38eb7dcc5f29461776c2b3f975bc1baac785944d6aac0690edf768e0aa",
+        "ja": "4bde46018fa78971cb25e7017b0a8a32dd1cf27f4c1dc7f478a37a64f479eb24"
+      },
+      "chg-icu-77-index-rebuild": {
+        "en": "51d31d2ec91b717548dcdfc56e35eb405d33cdb7971246ec6771b2e7877879f9",
+        "fr": "3f4d712b8e598fe7d83831925276c40962fcf3964f89e6368d7ad23c3d4b6657",
+        "de": "761b11575a610c273ee2870623b09c925e4b005fadbaf429becb703e2f48b58f",
+        "es": "30cd49072d340cbe025628b5f0e9dea4130d188134d04af3777a777bf92d9138",
+        "ja": "ca09c4f6ffaf4bf4c69362d1d551e8fcae1b06877c5192c30aee28e5157302e3"
+      },
+      "chg-soap-scalable-preemptive": {
+        "en": "74bc80a60881d7fad24929e5828f83341dac7def80f4e12d6de09e535f171279",
+        "fr": "464377eaff8ffe7dd991a16503d55958f446405ca8f3c40aee9e5c2b9732de55",
+        "de": "aa995b19bf0cd5122ed7871c4867882317912b2dcd3c111552122f7c373bcbb3",
+        "es": "5a454ea461b430988b738564c107c765a16e64b8a79150de8fae91fb137ef184",
+        "ja": "ba0cddbd7a586c08a88c887621b512a18bd856870dd7ebbd656078c2b604951e"
+      },
+      "chg-legacy-web-url-processing-removal": {
+        "en": "24c970757d10c1af9f9cfa7660605c18582921ff3beaf73305671b4848fcf13b",
+        "fr": "bf2a1b468c160861d937a16ff60ef93f51f76fa0ebcfa515fa7467ec74f6e43c",
+        "de": "c31a2bee94697ec6d5f106737c4274c0d7c1114c382c8c19a500af9be45580ba",
+        "es": "0865127cd29199c04f4c105797cdcabb574da2e5ae9f8ffe87019957d135ca30",
+        "ja": "de92d64c3aa21a3c8f33b93846a79699ac99646a0669bf55e1362e6d756f7e15"
+      },
+      "chg-scalable-web-process-recycling": {
+        "en": "cbc37ef0e071b0bd3067dee1d842db68af82f7f99f8ed85c8326adcf989539e9",
+        "fr": "c9415af80d06bd4b5593b56d38ecad4c56fb651cbaf62c50d9565a724b016bbe",
+        "de": "35b895ce043678eb83248d9ba0908ba62624fa6c9e7f137b3a6daa745af429eb",
+        "es": "65f71a928d6244ae5e5ba178b745bb6a6308df082c678b6fffbe3eeb33dcb2e3",
+        "ja": "43316ce08d582223fa0c191698021d593d18ff9c5199783b113288e1de7bbd5f"
+      },
+      "chg-process-activity-web-sessions": {
+        "en": "66df67d035c1d56abc973281532c90992c3e6852a1bb33f6a578afd2369748aa",
+        "fr": "1fc0d8b367215c60858cb7dc3559273c2b8d988e375af02f45fd36a570d2336a",
+        "de": "d7ae33d09e47107332fc1a9b53926e624bb45c81c532971352ab7eebdd434aa3",
+        "es": "95bde47733d9bf61d453882811166a52685bffa2f143a210a36e189c861ec2dc",
+        "ja": "1c01c99e3608a8ae5679f7a1c55ef84a965e5f97b79ca8c7277680f7cbf683ad"
+      },
+      "chg-php-command-deprecation": {
+        "en": "5c50913cef645bf8181825122e5afe87a0d9a792ce4b9530284172776c7fd393",
+        "fr": "315afcba0243dc4fd0e3a65043b5cc3ed4833f47643b6a109e4386387cc24044",
+        "de": "d5985cb6dfcbab81c3caf02a1ca3ff561f05c33969450c4a7722ac7649120104",
+        "es": "32898a768f325b12d6e9c1eebbed5ff6895b4618a4cde2d661f89591e114fbe6",
+        "ja": "626d3135591f74caeffbc55ab2c5b28f5d124cd175d4fc76db08458494ac85fb"
+      },
+      "chg-local-process-name-semantics": {
+        "en": "3584c902fe1b31fe60da3851ae177e795e2a9545cd81e7a8b110ed3bafbf823b",
+        "fr": "b304b13b0be39fa6e390166f22fd545f2093b8a67c3a445236ce1cd93d7ba6c7",
+        "de": "a48884b64ea1cd66703e2c2e83f74b7b3c4d369ec110d222f05b5424ddeaf4cc",
+        "es": "277a833476c406e8747d29e586876c0c9305d35163d25721729b9c6a82810b67",
+        "ja": "34e6c5ae0b05dd70232370e537296e8916041e723ad3a569e6564294577873f0"
+      },
+      "chg-bundled-components-project-dependencies": {
+        "en": "0b5e1c899fd701075989b1e1ed5e620d9149a282ad926d46ef667d81c2e66736",
+        "fr": "9e220d55265bae04fe21482b53857cda8df613a1728752494e36e5ad76617251",
+        "de": "547924738838935a832c734c8aa7106d5aa19949afb6158b368e14cabf76e1c1",
+        "es": "fd578ba619f9c1593cc760a9a13f485b17b6103922820100aacfdd12abd1b247",
+        "ja": "4e7e64addc348ba426ee73a883caf17cba53c2f7d38e00c2a85a694b15f74a32"
+      },
+      "chg-bundled-components-binary-installation": {
+        "en": "3f82f606408117a4357ac3da40aff19b0beb7b2c1677db3967bb40736b88d06c",
+        "fr": "2f24f8a8ebeb65ea68da2de0a1c71fd4b49580aad76a2448e1183c0b09b9a9f1",
+        "de": "a63d1b84dfafad64be9465b9a6a7798cc521102a68ed6491b243e7571e007fef",
+        "es": "b501c9f85aef5c5c84c51736b5c1122dcc4d4a60901ff42ba9665bf0e72ebee5",
+        "ja": "e0b159859add699c2ff5b74ea94240912e46cbe1fa7a9b9bea958efb54c6496f"
+      },
+      "chg-tcp-udp-log-name": {
+        "en": "f3d5253e9395720f0a1092e06695460c553001069bbf1a9dee8511ffab4eb3e9",
+        "fr": "47fbb44f25914a50d104f5299fa1a18a166b90db9f511540d9e1166237deb4ad",
+        "de": "920fc548b921be168cd746fed7a9c2e5c44e42459f02fe214ea9c762e5068298",
+        "es": "7cab51aa6212fef271e21f553c9dfa9b6615ae52e6a4335befb383f59b09bca8",
+        "ja": "90ca076b48f7d204c6b41f1a4bf1b5406e50a67da2035f8580242d28c3673fcc"
+      },
+      "chg-external-formula-paste-values": {
+        "en": "b9a02cff0f4e987868322f691878ca563368c3cbb42bd3419f9945ce57325b34",
+        "fr": "cb6fd16308cb24aa7cc875d7dccaee4b83ed192e2e55c222170d060a019e12e8",
+        "de": "6444733e99a431a4dd772a3522ba037d1f63918fd51d23ea07b6293e09c2b65e",
+        "es": "1ef2645bda55ad7b43f88a256b28b033701c427b4be678684534938ed429240a",
+        "ja": "63e13482600e59028294ef199fca3e255884b7a962957863a685381337846111"
+      },
+      "chg-printer-only-font-startup": {
+        "en": "6240ecc02bac7a15274b94571535c1f4551756b8fa717bb698e2591e2d5111e9",
+        "fr": "9029826d5f6a8dfb6ffee50d3c92ad2876d3c96c434706921b02cef047422af1",
+        "de": "eb409937ef315472d2f3d2e04650c8b74f4728c407f57c4bbb29c0cf278bbd37",
+        "es": "e97e8d7852259d2d5fcdffe22a4cf4e4ec32d8e99638787d98b6d8a50f3c0064",
+        "ja": "61bfb6611ddac954ea3d5d8ef784ff24a7038e96fb41f2222b02d5481e1692eb"
+      },
+      "chg-mecab-library-removal": {
+        "en": "11f028e220a4d86675c244f90404084b6aeb1340b3cb97b71816a0151b8193df",
+        "fr": "99fcc17b698dd05d05d107e53b09785f560fb2e5875485eabbba9510439e0851",
+        "de": "57c8eaf08401165bf1a01aed83be3ce6af61884d059a0bc950077ab1bb3f6d8a",
+        "es": "5d0a8541a0d65f9c0bf91e07008c9737c3710dade04e812c4365f0a945fce9e9",
+        "ja": "637af3f3fdee43fa217312c93e927c3e9279990f7e94d836d3c2879652edb9fb"
+      },
+      "chg-cs-class-assignment-check": {
+        "en": "00a90b2a00a7c7c8d5c1cb0a9f5806954ffbc31b2ed9a8494e7a9f8f51a21839",
+        "fr": "b77f31f74456082510967d13b34608e201407be973fcb7116940255c40f7d683",
+        "de": "75b2c32a120aee3a80bfd6c0d53fa3b30a2a661e7d64e08fc632bc23b237504b",
+        "es": "8ca1574fad15970fa4870eab71b3ee93317e6d49f18ac7308acf240eaf6a8062",
+        "ja": "9d329bdc11ab6a3b4c4f8f46c5bb48cf80e5c98f2e2eabc5821313cf424adf10"
+      },
+      "chg-promoted-process-privilege-check": {
+        "en": "a8e128a1fe6b995c0fbe56eb5a991aac104b3f4eb83f3cda693a6992e0fa8a94",
+        "fr": "b34c58fba22575c78259df8721950e72b029b865fbc55efaea7d2368d4062f49",
+        "de": "b14df4455ffd50fea296c2c95c84d746f9cc1d8b6c89f0f7152276b764e395dc",
+        "es": "19499124814f34c9abb38723eb9e8bed847856222c789975fe9fe41384a84bb4",
+        "ja": "78a0d5fe2723cda7c5a4334948425b6d09972044481074b671fbf66790eee9ee"
+      },
+      "chg-time-negative-expression": {
+        "en": "a7a6d8f309d05dcf2edff4031d2429671c635e6cd36af4babec06bef074d1128",
+        "fr": "21969ab79cc795e723a5b2ac8f810ba230cd0fe25b6e3957fb5a3274dd076bb6",
+        "de": "76aa058b92accc1b681b8f02f67ff7df65b2089128fc168ce4e7b596145bf65d",
+        "es": "137ec48489acc299830f277b70383ee8beebac3d538455a126423d16cb489ba5",
+        "ja": "27669513bd8749ee9edb22b890136fefe8141394b53f08508e8b0909f72a64f2"
+      },
+      "chg-view-pro-callback-completion": {
+        "en": "d1ba57dbab6b817a7a6551d75206b9281e409830fb65322cf2360b8536e035fa",
+        "fr": "b50bc795c00186f16922b8fc4761aabe08e1664cc915d07fe7124ba3a6d58911",
+        "de": "82031b44dfac5a764e9a1d394ab0af286383208b9c4d4a582d32f81626ed26b3",
+        "es": "ded145f01250dad7982aefd55db568505923b2a38c9d16f3bef440dd3eda83c3",
+        "ja": "3b8c70ca1dc16b53f1a8a465be5996df4c535e6d89ddd19717a71f6ff7ecb845"
+      },
+      "chg-component-build-backward-constraint": {
+        "en": "fd084681277437e062da02d17d50b939de78c0ea8aee90a3d411d4cb97c0fcae",
+        "fr": "7aac44435a7bdc4b24d29baa195d6f97b3b1ec5d0b5f3cafaa6e67bd05cdb2b6",
+        "de": "b08c028e630ca558f1353118db8d76743745526733cc5342f0f790dd31a80873",
+        "es": "d8c9e4b9256e6f401deabc6029266359a212ea3f5a912446c65c9c68d3d3976e",
+        "ja": "cf817187ddbdea1540179fa7b21b489f704230788ee5a12ac0e603944b749878"
+      },
+      "chg-form-property-expression-checking": {
+        "en": "de3af51ccb6115b693b13d2130429a486cc3278e153a87dd359ba8f743f6837f",
+        "fr": "c2b7de046604575f672c06732b19575636b53289fdf16035b6a9ff466858d5bd",
+        "de": "d5715c482717991ff58b7d502dc38df22e90bf6495c4847c9e469ce6b8bdf32f",
+        "es": "80dfd876f9c5655fe74c2bfe3f6ae774749986bab89ba3793c83feac5cbfab59",
+        "ja": "c74e6820b153a1e769d290a502585e898bcb4385b17cc956d4b628fd4c8f2636"
+      },
+      "chg-file-path-syntax-checking": {
+        "en": "6891adece811fc0b851cf8a9ec452a33a2082ee1c016f5ce97fba32640f6c07f",
+        "fr": "fa34cd9284c59d47a7204e553198a665fa13fadd95a22011e7dffed05bd19800",
+        "de": "4ef7ec040c0bce796f8ad586b2ad6a6880bb97027c0a08f800430752bac9edd5",
+        "es": "c746448a1b2f30940dfd3261f9a47426bc3d354f11f6ee2668857d3926661b4b",
+        "ja": "c1cef9748ac32eb37e6738659681b980eabf9ae17af63833576c747e9a1399a8"
+      },
+      "chg-rest-describe-permission-removal": {
+        "en": "e97830d2ae4614b8a76091581f6c6eed2c58dec9eeba65cdd53da58f0d8ed6b8",
+        "fr": "25bfe865964fb77f035151792ce565cea449838714721f6ee23d749c7e34eaa7",
+        "de": "00cd176c2798562657f42400fb37b224bb744ddcdb4b24bf41be8095717d3e30",
+        "es": "eadc8e67a9d643297e64fb3dabfc1e723ae4f8961f00405eea04819e175fcdd1",
+        "ja": "07cc9416ef6b0d9867dcc4897f9c7578f61f6897faaa152738fcc816dc089314"
+      },
+      "chg-deprecated-last-error-stack": {
+        "en": "8e0911ea2cf84a37227925b987b3719cd8e332aec7eeee63870743800d4df0a2",
+        "fr": "5564726ece9f392a6d30be1d733d3ee25d9b8cff85bc0e8b7ace2c410076c188",
+        "de": "efc4dde5f2bce8be3abb1a59a50f60d184dfec32c887e0c75f7b64cd19788a61",
+        "es": "be5919f97ecc4e5d0a3f5dafc0cc3ab24deb4965132a18d6d89344f1b6655992",
+        "ja": "efafa9cff7da38494ba6e1fabef5f226971cd7596172fd8036038b9b03353a8f"
+      },
+      "chg-deprecated-serial-information": {
+        "en": "7e72b2da5376dc01d63e193664bffaed1bc9354956313437e945f316cacd2cb7",
+        "fr": "7757b24f99f72a64017bd7a5c46d653a269af06d93a50207b61f1cb67b71d150",
+        "de": "270e65bb47f7e933d70484db86d9afdcc0a781014f2ed1a12162123ab37473bd",
+        "es": "b5d323c50e38b6fd7a3d6a0550b434041a1d0583ad98be4a6097fa28b484079e",
+        "ja": "5260db7d11f284c68be8d55bb53c8f79b6ecf593d188582e117960d270b17042"
+      },
+      "chg-deprecated-process-properties": {
+        "en": "bd2bc372b4afc77a918e1ca666ddaf0bb980373b401b8e66a73050e6f58d7057",
+        "fr": "1fc72c5322429ab94e8163168a59651471ab18cfbd46531dc007a63410f0f644",
+        "de": "23b005cf688cbc854df3d34113f7bfe6b0c34a087ad0e00d8a66200e5098958b",
+        "es": "fa8018f2286f4c8f8fda39196a1635416167cc8f13aecbe9b604350bacdca7aa",
+        "ja": "ba7ad34e1e572768e67ff9aea14b3ddcb8dffc76ae377fa84838cdf7a83775b3"
+      },
+      "chg-deprecated-screen-depth": {
+        "en": "9eb8f0a4898c3a90ae060e844b5c348af0ca26351cc8a0d52f2a53711a47ba81",
+        "fr": "bfe154334a0a0e00ec6d39d6aa0a6e75cf1d24cf74c03bbfeaef3ce2325257cb",
+        "de": "da1566dce71c365e3b5428753f2f23f25ecbf18550746256f364cbd13fdae68b",
+        "es": "03312499347d13bffccecd9c1f798d70ea0efa9480b92c61c9d2e50f24b10724",
+        "ja": "325c2c8779b9e916e21c40f30c75d8be40ffd9814571b63e4129720db8acd5e8"
+      },
+      "chg-direct-typing-new-projects": {
+        "en": "39a5e1d26daad8ce5ca6c832a7fdbdae3afdf7f7886eded36b1c4561a79e818a",
+        "fr": "80b3b1a44608a3e1d2af6537154533d8fd6966393faec9bf7e74676b8706bc1e",
+        "de": "c6b24c5950e10a5fd29f92141ac2e62ab125e4419a0aa28ca338dc3f484ed942",
+        "es": "701b143f04e1fa29c9a0a609e0505f375948967b490953316b8c4563b830e5d3",
+        "ja": "eb6bda1407d3c3c6092b63fc39e2defd4baa5a34121368bb21fbdab960a6df85"
+      },
+      "chg-rest-authentication-method-deprecation": {
+        "en": "acd80c7b22c508f40264f0098808941ae7ee7ead4c22c5f10681f9123c784127",
+        "fr": "ffb8e38511c7fdb473f5dbb8c531c3f753a8becae248cf62cbf1a4cabc59fd5b",
+        "de": "59162e2e3dcf52ad1bbbe1b8b588b45b0cb6b4f85474b1e71e41bc2c83502f13",
+        "es": "b1f92a94c45c5ec385106e632b4b1cb57bc09f1d37d813d9304347a26f347cfa",
+        "ja": "8f7c56907f550e696d0d4063e42d039561e81ad0bac3c020289b89f632d10912"
+      },
+      "chg-forms-scroll-chaining": {
+        "en": "88cd4c337ab643dd93b0858e187763bb50ea703fdf57aead6acb45385838dbde",
+        "fr": "a6f9a74ce42becf5b82a37772cb115e4da495bf20039c64ab3c7813b3cf0ac8e",
+        "de": "30810f5663eb9a37e1523b3a0e448ec569c4e5863e4275bb2c7a55b1c92d22dd",
+        "es": "12b9c7bfb195b3634bb09fdfe5785c476c6709fa016f4425a56ea3f051a3d95f",
+        "ja": "6a24c8e7a1d95d6a4e700d1fc7ba4f46beaeee98eba9ceaefaf237b692dc261b"
+      },
+      "chg-rest-catalog-singletons": {
+        "en": "62c5b329f2a175df815076791d6cc57bdb1b2af1a9cb62c69bf89e360b4d76df",
+        "fr": "243749e35f9331d68a7d430793b9b636aea198496fe148daa3609b0b351667ad",
+        "de": "6e6041cb546bfa761cd9613567f10158e69dbfd77ffb4b7616a3156bf0fc7da2",
+        "es": "59efc41781890022418ddfbf1352d8eb7d133a85a237ccb51a43e24174904f96",
+        "ja": "6949db904bdda122224a66188112ad96a588f81f16003bd6113b2ecceed960a5"
+      },
+      "chg-installer-plugin-bundling-removal": {
+        "en": "fa6b352ede491ee811fd66daeeb41ab7db2426a35c16ff56bf48cd781c4bee2b",
+        "fr": "4e661425089dda79d6514e90fe0e80ca6939c32faf3e10e8903cc14f3fdd0095",
+        "de": "b48a5327dc95d41e1f54478b304ae8f9911ee06c9935e4a0f7e0753eab58b074",
+        "es": "6d26b9c02af895a4813a4a686fa504ed6f4104fb45215e264c1eee61220c8a2c",
+        "ja": "77634b7dc70e3346b1d2c36cf208284b7681552f2dc72ede9ce004336ebd8bb6"
+      },
+      "chg-project-catalog-editor-file": {
+        "en": "9242803803002c7a0de40b5c08d0470a6f72ea81cca45fb5c0cf15ac2ee41222",
+        "fr": "1c5b215df90da6141c5c7bac6d0b7730831fc26fd400e9196a44b135080a1778",
+        "de": "41934d9c4e4d3a0a01dfb422944844e8812fd2ba2a7f060639177af993269145",
+        "es": "f7ff0033599ccc1292e05440123c66d0743880970542d712b9cd6f8a2aa5175f",
+        "ja": "1262e96f760342ec717e8afe7093c51852ec4248aee5414eed598776516b35c6"
+      },
+      "chg-legacy-parameter-declaration-warnings": {
+        "en": "debb80ebbeb80af945f66e78dcef3f17bb477726382f249bcc06a53e488b5be8",
+        "fr": "664e67f5ed101b07158b53df833c8ed5fd1039fb8496d624331193228ffc83bb",
+        "de": "160c624e22ecea799e4854f9cef3760940d172ce245c74e44b64681f5cf3b62b",
+        "es": "e792507a9c7476743f039a2bbc44f9319d4e7fb833640c1eff06c1bbe92f9126",
+        "ja": "e83669a74755cb2672de9bafcab8814fa95b421314ac81fb06aa6d5a378a471f"
+      },
+      "chg-openssl-security-level-two": {
+        "en": "0239457648c4211a226e069c3ce0f59dbf5a28d38a45aca8f1dce78e41162916",
+        "fr": "1e88ae8b50fc5ce9dd35f9beb00e85e7bcb16d4cfbce240c1d4c71d634aae27e",
+        "de": "f423c41a971a20501e72042c0b9a3624eb43f58a5884801cc79a27169708b547",
+        "es": "20ccfef3ac18c981d32660c10d1658171f5b7a76e9c1d124876bb3ec0ce274cc",
+        "ja": "b15316982bd41f4987ff27213afa4dc78b6c9e5e29a9223966cf930196118411"
+      },
+      "chg-open-datastore-password-default": {
+        "en": "cc235e953d4cb2d77e1ae1f18186571f6dc66442f3319c1a04762a16cc215d4d",
+        "fr": "47c31c85c6896944523615b5b0ead3ba31f82c0dc8c980fa951072cc18c98a3d",
+        "de": "82720cd503ea9f586418aeac54d1e5879ff7043173de74df340b92968bad4f54",
+        "es": "274d813368e5e985114e2915d7bf90421655d12aea1186c7dcb94820fe5da36a",
+        "ja": "61948185c41e5bdce060480341ff7d583e6ab584ac9d46ff94777d5963469fb9"
+      },
+      "chg-compiled-error-catching": {
+        "en": "d01e211ac601e58d4131d26d0daad3e919cc28e2156a5c7c574f037b30534574",
+        "fr": "c5ff6a1274ac730adaa8be216d754aff9c08644a715a0cb15d49b3e8e4353b71",
+        "de": "2562c88c7649fead7b5ff71ddeaedb5569a0b4511523afd3d95f2744f10955d9",
+        "es": "dfa8c19b467eff6e6f6249f301803dc79dd63c4da22992262a715e0c97a6d8c8",
+        "ja": "5a026055d67aacc2bb464a033f14369fdf5a491e155bfd252efecd41a1353247"
+      },
+      "chg-internal-php-interpreter-removal": {
+        "en": "043a194477ee9eed4e0f0b1bcac9fb10a5f2372799b1e1ff2f40ab85cd292bf7",
+        "fr": "c15e898f83d1ddf6e3e8afc03ee53a736ed437dd6d7ff23192c686114e037df4",
+        "de": "9d92dbf543de6bbea8f9c6f7f231d2c8b8f0c63a2e8216269c964cd1315097d2",
+        "es": "f23e65b6ece3ea8ac66616de4cb21b2adeeab1976a5425080a20014708ce5bec",
+        "ja": "b65246263e55a79e521af3e7d90a67ae6fc93783e07ccd0bfc139d06466fd105"
+      },
+      "chg-filehandle-zero-offset": {
+        "en": "e1bbe74aaa0bc52ed3c439c23d81c4eedfbe82c2f01ae279ac72845e6ed919ee",
+        "fr": "634334ce50e1628514e73d09d2dd9ee1ba3d9d02addaffebba27a194beb09395",
+        "de": "d18b545594ada441b86f60c3de5c11483de0a9b13d440b11ec4787831488b49a",
+        "es": "96b80437d60aba561069f4c4897200d31d10a3eaf593ef487e11f04102578110",
+        "ja": "795d5203037154c96a00c8512a6db939ea732a491b84c681175dd2c287e5d86e"
+      },
+      "chg-client-minimum-20-2": {
+        "en": "dcede9e176f5556930bf69cdfe797bac8ba79b8410c53cef9789e7fc1d23f61e",
+        "fr": "032f180192370dc1045f0fee68e4aa6996b6376c278172e2f1edc028314b619c",
+        "de": "780abbd70dab57cb876ee0152480060fd6610997d509bce27612b62c36125320",
+        "es": "36a703ad0c70882e56fa42c682faf0666dcacd8dbf22dbdd5b901f5228ac6a65",
+        "ja": "29a529b624153cf7c3719adabe02753bc9b7dd25b1ef1e3f1a5a5e31a0f49aef"
+      },
+      "chg-client-minimum-20-7": {
+        "en": "6303a6a0b2a50e791ca0e9681860031b392d2c8c6d377e57fda4ff8a8ff31737",
+        "fr": "3245a4c6a8c89a2c7ac7af22cc3bbe31acfbc5cd5828fe4e62cff5f7099eb8d4",
+        "de": "253746f12142f56c18675add0d9aa1be05fcab380fa9e2675d81560a52f33a08",
+        "es": "7b656d5d0ab5ca6c9b81c2f9ad74065f71625f523482ccfbb949d904e5662c4c",
+        "ja": "755cdcb00bb37f9abd2e4d98f9ec73d9bf7a62251e0df496fca3ff5d52096b68"
+      },
+      "chg-client-minimum-20-9": {
+        "en": "0aa9cbc8eb0846f329080b4ea5fc341d42deb7fc94b9b9631a3e3166e4bfe25a",
+        "fr": "4882845502c27c613178e31fbe3edda298ebbc8749b2a98ec4b0592b27380324",
+        "de": "76899b5ef4d73f9afd172fa0adb2f52574d8eaa840d6126e6f1149b4cd7588ac",
+        "es": "37e197a0a7fe418a6dc3bc1eff094dead5d3f87708f9b100a6821c1e69766979",
+        "ja": "9c2360c763c8dae03ac5ccba028099cf4ffe12a642970a748c8f8b15270602dd"
+      },
+      "chg-windows-server-2012-r2-support": {
+        "en": "7b41724988a363c18f4ba01461bd549a5ea7df6078144ff6e7ffa825b71eefed",
+        "fr": "66e5ded86a3415c37317fa3bd35de843c953d225eed0d9a1ab6268b39a809c7d",
+        "de": "b2716587190e5ec1fd17b8a08c74bbb9768b111d9b1b6bb6c115ccf1d9774b16",
+        "es": "f59036c380ef91fceffb183b07168a49bb39821b8e3c74994955c53db1b5e10c",
+        "ja": "f9ff14866f8cf84997df283ec3d02baf69304613f6d8e90d3d641b484cb5dc82"
+      },
+      "chg-icu-20-index-rebuild": {
+        "en": "bfc036160e9c9c648b0489c3bd78c1e37f486304ddcb0d8afa26f410f0c2a3eb",
+        "fr": "6df73a63c7a2c0954a8ea3b9065cb9ed943e8efe8b9c010e6d05644d51e0a8ca",
+        "de": "740f5c26902cb0d058ac5121ecaad7b9880104dd1bf1a572a3673e7005b142de",
+        "es": "fe1b2e6756e998c31f25e59e1ec1cb563ba0d4fe58b1deb21b7d53f09f835e64",
+        "ja": "9bc2f6046dcc42f257308947b50e3dd2ccb6e7766e521c9e9c6654d2f4a6d996"
+      },
+      "chg-icu-73-index-rebuild": {
+        "en": "1f6eeffc0a2de605a22eb02e4c65f8416de76695a70041f6056be8ec4116bace",
+        "fr": "e714315ad52c4d81a54b6322546564a110892016ab27bb29610f948b24261328",
+        "de": "c220ea6f16a3f8b501602eec50882eb85df4943ffb107c744f655f40911cbdc2",
+        "es": "13e7525e15f028ec8b9aed7d7563fe0a3261552846076ce9d2226e144190aef7",
+        "ja": "9edd06ec26a3de55986f0849d18ce724c33cbcc39af7accea970be124e6b6d71"
+      },
+      "chg-icu-20-1-client-server-pair": {
+        "en": "210055228501746ae47df556f7aa86da663b04716656024fc7dce212148f5187",
+        "fr": "09f7201b1e8829cbaa56c82dddaeaa8ea51b2b628c39cca45ad330c171fddf79",
+        "de": "907c500881a0b17b078acee65863dd3223ef326e4dd18b03063bc5f0615d8fb8",
+        "es": "bee3f2f3266c2bdd255ad93f9a8d6599e5d57fd19506ff4427ec22113b3f2864",
+        "ja": "8be561a388ada3d3a83f9ae14eed00e6960166d1e396574288f43d358faed667"
+      },
+      "chg-http-header-lowercase": {
+        "en": "60f0ebe2cef65ff8b492fb293cf598759ffe8cf0eb184ce21cdd09beff05e020",
+        "fr": "2a2c7893c9c9882c97085b7f363d134be0ba8edcd8a8f06f43989ec74c058ebc",
+        "de": "2d48381d81918b808ff990ec418437daa6e0d169adcf66742ae71d74fbd02a23",
+        "es": "3d68db778c4f017479501557ce373c31689ddd12df586aed37cbe2fb71f0d0cd",
+        "ja": "2c0fd985f35e25055927a23631e1b15445be34c120062b2c028a1779f8891207"
+      },
+      "chg-http-certificate-validation": {
+        "en": "52540cfb7744a10039b78a513009f0bae4b44f0213daf6af6497c7a7f69c8c7b",
+        "fr": "c631c4808f4da420bab41fbae79899fb949451a1cde28e00239ecea0f57612c6",
+        "de": "89a2996a5c8df994127fe8cb4366c52af8fea07d7a5f4ad7d8a800a97c1b904a",
+        "es": "00e3850e6f93e8947568c1e3eefeceb5ce5955efcfc8a027e6f316a50c3bcb1b",
+        "ja": "ddfd38de2601a65e9f6d8fec46802212c4f39db41b41bda0536317d546737d2a"
+      },
+      "chg-minimum-tls-obsolete-versions": {
+        "en": "eac329862102da9de567c28c055742067258bd3697b97483ae76004ab2ba4f2b",
+        "fr": "44c86cad269f3501f95a93b4b4dc59564e3455abb4629266b6fdf15f62ea3d46",
+        "de": "8b8df1db4a8f64907b5da1570b0bef29c0f6986194e31ecf9d574bee902e5d77",
+        "es": "48892ff35b388b1b057720bbe124cd1b40eb1bb42aabc3aa0f8598968695c0d8",
+        "ja": "a896338031154c92e0f404f8e6dcba7e0a33186c28ead460525cc1ee6e629087"
+      },
+      "chg-object-get-type-3d-controls": {
+        "en": "39bd0158ccd21243983f8b671a40f6f4aba855e9b338ca89ce7057bdd6180976",
+        "fr": "91833849ac69796eb84cdb0e86ced223d8efbe4c32b17a0c6dc4ea99efdfaa92",
+        "de": "c865ff8b13ab51db8af14ab498f2c594cf1d23d0afa2100bb4b23f19ac8853c9",
+        "es": "368a2f54e8c6059c4051cb3280d86cde1d06e867d09f1294d1d7c64c7fd641d4",
+        "ja": "93e181711bc34129ccca8c9e76cae2d5adbf737a59d2782c7c1bf796589c1fe1"
+      },
+      "chg-mobile-component-installation": {
+        "en": "70d8a9903365f40f84abaea981782ba59aedccb2deec0d88c7fd54b236bcccbe",
+        "fr": "30163d8be49f4074dd4fb94374eb4fc81fa6b1ffffd87e624aa939d98cdfa2f6",
+        "de": "b2d1594e65ef17cec602621f9dca9b8f7c4ce8c53cad100a60d209406adab045",
+        "es": "564d3f54a01ff4adcdedee35d7209a922a7244351d0a5ef4a6674e8fbd7add83",
+        "ja": "816d074e4417603cb031b5ff9f397b02ec7df9506cea307793cc7fb2bd4adf9d"
+      },
+      "chg-bevel-popup-standard-action": {
+        "en": "806f13f5524f55a499f6475e5969e1272960a2c83dcb7cc632c01a7e72584f8f",
+        "fr": "9f6a2567f618d3e6d2a699395da736f411ab0509d5e6b982d0184b730659b5f0",
+        "de": "388241d550e30339537083be9d54b8726d80adbd800d83f8fb293ef211f68c28",
+        "es": "4345d4c277d12f86050472d565bbe0aafdbe4824c1e060cad42f39d7f4f6977d",
+        "ja": "31bf7243ec686de12d8398b319b4b4c225f54ec9db087d43f71a1871941970f1"
+      },
+      "chg-cef-blocking-dialogs": {
+        "en": "6a8f66616b8a21906bef65b98df76c1a67d8483376363288b370f9858a01d82d",
+        "fr": "1e588c2c84c0dcfedd94cd8ab05db2a4348da403833e564a751e4bbaf50e025d",
+        "de": "d30ff76dac93bd4eafa20153fda9a99b7df2fdb589350a05be4d9f8612174cc4",
+        "es": "11e508e8552e76c724d65043991a27d3e5425da99f15d33602b438c400a052d1",
+        "ja": "743cffefcf2c0d6fdde7e8b327468e8cc8044f1791bf9bb82db10610e7929973"
+      },
+      "chg-listbox-drag-selection": {
+        "en": "1404e605aee3c79c2b5d171f08bb2817c0f13ddfc0924b1f5f40b18813d505bc",
+        "fr": "6377ff25e130911271f179e0dc727d7f7e2b1016785574e59a0e4144cbf40e38",
+        "de": "2c78f5cd5fae640a5666a5b5dbdac56986538f2b2470beda4208aa880fce3d62",
+        "es": "943fdf91f02ea89888df6abb7e1723548624e973344b0ffd6d0dbbf3cdedde8c",
+        "ja": "d75747561c9159aa2c74cc5b934276c83ae6bd721c91c4289ca4369a85687f27"
+      },
+      "chg-build-number-branch-identity": {
+        "en": "c398751fa7dde0f5ad2e8b0f9454c17d9a404b03412bae7c725a526053faf3f5",
+        "fr": "09d3271bab707d83be4a37e28e2487ed9947a4c0a53ab516462c573ed302b893",
+        "de": "f7b33d538fbf267ce61cda6a4e5874801a68ade4c93e444a3d57c6eff41f0877",
+        "es": "2472113728f5294adf32a6afbd928e028904be86f5b585c2d2f58875d458c4fa",
+        "ja": "9424913fd831b6f92d412405f71c853a1844bf31c3d0b0e7d4ca56175346bfb6"
+      },
+      "chg-mobile-rest-project-method-removal": {
+        "en": "486ecf12263ddea980cba654861a7a31ed4149d9fbfffc3f3d0989979a0658c5",
+        "fr": "44e7ed6151d96e3a8396536fdcdfcc1fbf87ffeefd3cef082b34e1e8e4ed202a",
+        "de": "7b0708f6e5b5c4aa4ba3b5495eee474c4dd37dbd7be7fb84f9463af5634f34c9",
+        "es": "5a1ffe5c00eea6b35a34e1a6b46c56e8097d128764ef14c6eee5d52b41605383",
+        "ja": "3615d99dad2e0bb40acd09b4e23b36f4dcdcb31ee3d313b00887aa560c17a984"
+      },
+      "chg-silicon-component-recompile-19-r6": {
+        "en": "8cf2ab3ae5050406a016e15ceff6042b570ee56e272d6704e7fc4708c0f09dd3",
+        "fr": "b99f217213c67c6f8029c9ef8bcc13673fb59124afa3a1ec824e4c3e77ee4626",
+        "de": "8c11ae094d764f30c89435b0be70588dc9f25b63a423065d0591fb730b56fa70",
+        "es": "a751b711b6ca0d071e9ebad7f4d3de225bd9747b3e954fab61a94d602a18d07a",
+        "ja": "eb98aa59e34794643ada045b24db681e9f9096f2f6885e0f350322b96ce63818"
+      },
+      "chg-diagnostic-log-info-default": {
+        "en": "a9c72fbda20b81641c4b861344444e66d2bb47ee1ff887859126b3efdaa64800",
+        "fr": "e925981e53f9393f0ff9b4abcb1698db111372aab9debee54313b359a06a229e",
+        "de": "50d9c384f0be87be04b97f71c52a8252833b99a8b922674048ab5400e9516b6f",
+        "es": "eeebf7cc302aa520dbe8d2ce2deb3b440544867bea6b4d3b122a118276b75267",
+        "ja": "2f1a3549455c696a50527e217ab6f4c940917007f811ff1729bd5a20430ca69f"
+      },
+      "chg-use-nonshared-no-error": {
+        "en": "2b1159b9aa02177bc0e024857ca82dd8c59140a97df5e629cad9b24379e31268",
+        "fr": "c80da5f93aca1e3abaef4a9c4802931ab0379dc479181d201b546dda11aad451",
+        "de": "ab690bb17354b7075411931dbc67d375b4e099d8129f459a1698bf79f0f91fd0",
+        "es": "5a318ec3f4864ff9cd3006c8c65baf78706ba381e723c16bc3c6c0784df2e337",
+        "ja": "d6a9c2e913eb8f91e90372a9fd2a8c4e6b97b0286267606a044173067eb96ab8"
+      },
+      "chg-sql-data-source-command-renames": {
+        "en": "e5943536a95b5030cf1a53e2b6d7a6da620fa88d7d4797f5bc08e00d90fdcb7a",
+        "fr": "4cca51468847ef07c3dc3a74ed16990278b7f92500402868939567ea6347a6cb",
+        "de": "f6a5c83bed7889342f8794b1754fa170d3db813d4fa294e3a6350709ca3d7d5a",
+        "es": "d1c1d10d20e51fbdf36169dc26dce5195d9c330b36f75eeeebea8846628ac526",
+        "ja": "7678f967f22cb2ae77b067655fd4e86448a58b3b8f04580bde4912ecf4e9fe15"
+      },
+      "chg-webview2-url-history": {
+        "en": "d08785403b4c9e6b344c289584dd5b7f97907fa597da79d62dc030983de83bd3",
+        "fr": "7df2e4ae67b029473212c131719700cd37bd9a856bc6277408fd7e8a02254471",
+        "de": "444f7f4ab50a682808dbf1df6c4ae4d1b67b9d8181bfb2d4cac78ea517245062",
+        "es": "7f7aeebe659bb47b07342e1d0ecf7db8ea6528890ee5a0b4eafbdf70b6f520d9",
+        "ja": "b15823361c9b61dcd6a777f39ca32826f6e6d43fbe9dec6f3b6c74540145b351"
+      },
+      "chg-webview2-progress-variable": {
+        "en": "8d8881e26cea6ca7cd41eac0be3b951dfc82b53dbd10a3950e7b77b0c7aa86be",
+        "fr": "be5803c3d0a4195b648c212ab2485b0aaef03b3725c13b6f87c8dc16332219ff",
+        "de": "efb1f8ab34335a3e0fe7c04120c84379f21aaa69fb603df327e48adb5e27b3b4",
+        "es": "85aca217e09ed8c71ae34fb09c39658b67066027a66567850618e7f203b1e162",
+        "ja": "f2a473085ebe7c3a7879f0d15f614a0bf17e330ba2ffb20af22617c4f1054e58"
+      },
+      "chg-web-area-zoom-renames": {
+        "en": "e9e31bffab8ac994f7922bd8905e3604b275790359a717093e135d15adf8b4b8",
+        "fr": "3b3bc8949897f523346eab7d200be4196584b8fda8364f46489efdbe6532243a",
+        "de": "e30c9d1e34ca81af90d9b3506fa3b5afc84856619a92e584af13bba30f82fab0",
+        "es": "ffe2873cdf03dfae337728cc1897556f88a54fa3671b8470388c5076d57929d9",
+        "ja": "e0160b3f96dbc53c7946bcb34086a2a844df0b8eca608e85e40b0aacb3feab1c"
+      },
+      "chg-web-area-local-file-cors": {
+        "en": "1b2294a18e42a828706505d187b6457b7f2a2d64b2d970f4e31c1bb44ccff8dc",
+        "fr": "4f333fe5debc160b6072d7b3f3d9e32e1bba39678f0861b0ff54da425130a3cd",
+        "de": "e14b698ae13ffec02145ff4aa604d1f6c3e7dde13894780ec87d7fb3c40cdfc5",
+        "es": "161dbf901d5814931690169df47fc00f6e279837a84eb17f3d64e6b4272dba01",
+        "ja": "a932eb6fda8b71731b213fdf3311af3aa4293e6e261f7714e52ac4b2758e0c5e"
+      },
+      "chg-web-area-external-drop-denied": {
+        "en": "795b1ea1a922720ba91e20d50ae452fa24168ff99fbd581e9bda0e986981ed0d",
+        "fr": "011a233be1eaab02751c4d2f7392c8bc54a87cd463eadc0d00ae2a70773ddccb",
+        "de": "90d0064bf8e94e20dbd5ffbde61e593de0ebfd4c468889b038a3bd46673c2b3b",
+        "es": "eb13c8dc32e24256ba12c6b81e14a25c5fda55aeb676d623cf64549eb95c19c7",
+        "ja": "bcb80e428cf762d01aab9533b536377460ac59c74f221cd807c5d691bc1ec4b4"
+      },
+      "chg-optional-parameters-recompile": {
+        "en": "d97635a57f1107df66c7992e1d913f71193b59a583deded9639eef459ca6bb98",
+        "fr": "b00d770cef373e73eac74774d3a725d8820520324cbc22e052eb6829c795a632",
+        "de": "d78587ff85389df1650aeaaa5ceaccbdd372b0d51321a862015853f1d4adb7c3",
+        "es": "58eb98550a782028326cae8582a13bd94e78e2071ee7459588944aacabe0a8b6",
+        "ja": "0193ff945f6763606a126c956e3195eae795f44c958e301e89ffe2492a8ddd98"
+      },
+      "chg-bcrypt-backward-authentication": {
+        "en": "53676f855358cbf8ce59fa7e3c9e539a1b1423ea63de10901cf855720064dbf9",
+        "fr": "789a536243bff0cb74dcb21ba8d2d01c0265fd658d413422698cfe4babed19d2",
+        "de": "5bc17f6a622de63b5c10f8180acf47f3c5f17a8e0be455c6ff45284b2fa111b3",
+        "es": "d6505f32529cde1760e0bf76da5e8a9999a4fbad7c923896831195e14d4ad400",
+        "ja": "97161031b922e273409166c1d61261cf0724c7e7bdd436c76c79653d0e915a52"
+      },
+      "chg-runtime-explorer-shortcut-removal": {
+        "en": "83948427566465d7e7cda88ad31930aabc57d2676cc755a3b8726f438dff5497",
+        "fr": "38ed53c8f11d91c746f5062b32f66fe192ebe951c5b03a6f955036601986be82",
+        "de": "d4d4e44b83e52023fead5d3944055543ebf77560976feb1fe5fffae59902d16b",
+        "es": "f5179984696ded6b557eb2f62db07706a2c037fa46e528acad0bf19d127c521a",
+        "ja": "1780f488ae1c62b81c90dc1d89e7b7c657264fff7f6b5092175546788a24b0b0"
+      },
+      "chg-server-debugger-cooperative": {
+        "en": "07293e759e11de5a9771fd86290a1f64ae38e5db1f52e2a53bace1115dd2c2c1",
+        "fr": "978da9215aa6642ba830f6d0df809e3113a77ab21dd428b1d98f152569048086",
+        "de": "1fe504482eba2f804d688b38eea36bea7649fae0830d5b487537643374876246",
+        "es": "84cfff4c6bff3adcfe08f4eddb47c5ec6af88809a300242792597ffddb5c5c63",
+        "ja": "c2cf0f15e1c76154452fd8fb544853a6256297d196af8e47a3845ee8432769f8"
+      },
+      "chg-silicon-count-parameters-recompile": {
+        "en": "3a5cf72dabe7fbd8415b1a6428d8ebccb3e7fd553cbc5be9a2a446647030ffce",
+        "fr": "aed0bcf432cd3c3685622f821e207c1e1d21d58c6e7d0f05b5d1b65faea61f2d",
+        "de": "ea16255f8dc081f7c078d943b8c277c79f7c8093e58ce4cccbff7a318fa9fa39",
+        "es": "73e5cf1235fbdb6baec11afc5f3af0887c7e2b631294711bd6722fba94163cda",
+        "ja": "0dd283d83daf8f312154e078b703dee293550a9e24f26944b8ad7c67202469ab"
+      },
+      "chg-alias-selection-constant-rename": {
+        "en": "4d83b998b488d310dbd127f4c50ed9762794cacf8311d83558e53756b415e121",
+        "fr": "c3f4c7120265a8d56ad3f1c0affa76180c2609256ddd843c52ad8c15a1fe3084",
+        "de": "1b243f027a6ea5c4318b2f189c5dfd484a8d9eb18944210cedbfc863043bb4e2",
+        "es": "6a1a24ab31cabb7d0dd4cc41413d8ed2b248cbc0daad227945d096f6fc34f2ec",
+        "ja": "037eca0f2d585dede3681fcb28e5891f15ee54a65f05562eddd6dd7f6fb72a6c"
+      },
+      "chg-rest-digest-constant-rename": {
+        "en": "ef4f36dcf614e49f0d2cb2ec3cf49f13672753f80541bdea9a5e04f885b520a8",
+        "fr": "f3f1f2bc75ea64d82c18fdb607a50975881d137462675b9b332373329fcd692a",
+        "de": "866261bbf017399f412212125a3493f4511912c6dfd8fcee2d90fdba90702a5c",
+        "es": "228e6cfd2b3289ebb8953af242f42e403e8ee5a15691d81a7c8fb2c5bb3cccbb",
+        "ja": "f6b6d694b4a71fa8f3b96f83f071b21531201db076cca01424b7ff7250465bb8"
+      },
+      "chg-tls-authentication-branch-fixes": {
+        "en": "1d491ee77e137bc51d2501f181b96f04754340cfe3cb2f14dbce6d18ca1ea652",
+        "fr": "06ed1f350902303c5932db4ffdeefb0cbcc736b87a545915878832fbb1dab40d",
+        "de": "db0352b522aa3b29d0f88f3c8b77b308b8345088b490d5337a97805cd398e5c7",
+        "es": "9205513c73fe49fab204dac8e6c098fd042ffebb0696d68960290bdb6b973a39",
+        "ja": "2e0219295bb0fe4315f8090fe16e9f23c597ad46e6dc42063bff6d4f124ff634"
+      }
+    },
+    "groups": {
+      "chg-group-bundled-php-modules": {
+        "en": "82acc421ab31967644e90a2f683f07e3b2a98606b9549ac722df61d103173314",
+        "fr": "5e369f8b3b8bcbe29fba53a90a99213b8266c11ab606a3fcc0b87f925eca23a5",
+        "de": "1d2c0501b4862544374258ef65921cfa24d98d650917f20fff397a785fa7e9b2",
+        "es": "8b2c64b65919974a0dc63f07ab5ca187e40719fac7c8dbc7f43338382a06c0c1",
+        "ja": "f00a87bc106aec1f82e6815b4243a869aa9a9c800443bf60802ea4ccf756cade"
+      },
+      "chg-group-legacy-resource-commands": {
+        "en": "a32a262e4e4318f9270e462824ff6b41990c1b70fdea4b33913bb63a0e127e5f",
+        "fr": "4dda1e891af42090c6109b16c66683c421fd0f749bc33ecd8f30a8b03b3e94f8",
+        "de": "cb00435783653569ac9b7f67ecc37600fe5f69d0fd649c2c0b561472bf3ce87e",
+        "es": "8fa588ca1d46675be7964ff85326d7563c799decf9e642d910433e43d2b8f469",
+        "ja": "321c2b1f0d33da0fa9fe4f7f300418ecfd8d08cfd7b0be46a02b3273655908ea"
+      },
+      "chg-group-xslt-processing": {
+        "en": "6cc5f3b4f10b7436a8e7eaefe9c63ec1e7b1f64af95dff1a279cf42aed8333fa",
+        "fr": "f1647e80ba849306b3cc7abe71eeb9347ede1a9a9548b947290f40b7407d806b",
+        "de": "c734539f142821e90c23d8578342dfbe80799f239815f567389993301c7a4b32",
+        "es": "d78d948d90632914ebf10816aa850ef3ec29389adae2fc2bb70a99387906b43d",
+        "ja": "ed17d1318d76a3a9d6c984c3bc92bb42898199ae7f6308b61b087abc53498d57"
+      },
+      "chg-group-button-enabled-state": {
+        "en": "eda9319534a30d03c657cfbca6fa66ea380ad35b152b78084523b81e60694440",
+        "fr": "70490617012d5420c6b975f43a0dfd10728fccfd5b47e6fd1ab09d000051d3f1",
+        "de": "d77672a15e4d81ffa9fc294a1789e2a142ef887533ac2fbf66c75161687f4a2c",
+        "es": "34d88329737b3a69fb84b5abb24f646b6bfa6ac87331b3cdd0e65fc112367a59",
+        "ja": "b947d80f7855c8ebf64c1297b77855a69a2a40448058a6cd0159a5cf5eee2b52"
+      },
+      "chg-group-legacy-picture-apis": {
+        "en": "0c0fc8b99673c667060c204a208be1a014ff6b0c2798477b216068c8d1fd20b7",
+        "fr": "20055846c2811116344ff46f02e01d37057b48422c2a392c820d2d02a4b41b0e",
+        "de": "850b107d98ba0aff7acaa784501c49bf88695b8b3421fc103e8117ada68b7959",
+        "es": "615df3d8b3fc19f18406d6ed9e0b5900b94592d8c86089ee676c2f108450bcdb",
+        "ja": "2512d0e90570337010c2f0b619d4eb2eeb8c531de644aee513dc30be88c32bc9"
+      },
+      "chg-group-text-declarations": {
+        "en": "1ae3ead5453dc943ceb9f17c4b69da5ad05a2abf35bea076e0a9a0caaf97edcf",
+        "fr": "9e595e180c7f9b3c6c3fc34db318420d56f2f566721f72b5720cadf38ad20ef6",
+        "de": "5be97fff072751ab65dfdbf961165763f1e669c0314437871f5ea1bae3860f94",
+        "es": "ca59f2b6fd91d743ce8bb25458e9fc831f13e5c3eb84ac3681296a77f91d2391",
+        "ja": "c8bd99ec90f811aa31c7d318312c0a9586fc51c778fcf49ea944c2664da35a89"
+      },
+      "chg-group-svg-graphs": {
+        "en": "0a7d7bd3c0d2ef4dbd798ec4d4cddca45115894283eb9b75f9f1d9030d34deda",
+        "fr": "5ea981f3c0668091d4d021a97cba8a9317677e9e862c4dfe11d09ec2916e4ae1",
+        "de": "1a3e6e141c07bf79594ffda302e4de24ceb71d7f062e6d429441788397c6a312",
+        "es": "12d99e1229ef42acf3794d1bfc768260b241c67724bba7f01fcc3237b14b17a0",
+        "ja": "5351d18dd97e582eb6cf3ea81063f8f6e1911ff430237845c11899a97243e3f2"
+      },
+      "chg-group-listbox-property-access": {
+        "en": "79f2202acef057008f89e73c078ba8a78e73feb55f9cca621b26a9d17a247cd0",
+        "fr": "03ca1799787e3788d6b743cab9b4bbcd0d1777acdd95164e9dc9faf9771cde36",
+        "de": "c0bbe482ce0370347c8beec8f4b8625e4a0a7ee4b77ff3e77a56e9b11c84d889",
+        "es": "5cd12da0cbc01c2c88ed3fdab411347647ed8124ca98c1e7b16af326da1bea7d",
+        "ja": "039db5b950cbbbac61c203edf08a5a2b115856be106604f629cf6154e3b93b81"
+      },
+      "chg-group-mac-file-apis": {
+        "en": "15d3712b441079859ccdf044d8fed16b2cc852108fb0368568c3a335ae80bc6a",
+        "fr": "a93c914d2affcb2453525920af5bae82ffba008f18f552f26951b72e57494374",
+        "de": "a6edab2367469fdbd8c6160bd10a3e7ce7acc4f8fb688cbbbd3f772b1d281200",
+        "es": "dd1f80dd95e8dc3a14987ffdc775973326f9fc2611d3c88f5f1e9c1090cf3f4b",
+        "ja": "c76c7b8895c2a32db2b05e97a51df6c00543d5de34527884f43c6d7eddc66d8b"
+      },
+      "chg-group-user-forms": {
+        "en": "fdb37fa9d7f3346f3024fc43c0e9fe3517997577cf19bef0d42f5bc3f19ef3e1",
+        "fr": "83badf30ee6663d334db131392ec906625f9c00c16bf61797a883d1608d3e657",
+        "de": "0d5742774e8639b53b35f3f3c7876782e697b36051c003e8c41ae91f8ab7b25c",
+        "es": "0e17eb653b87c5cb3dbda7c15086b99d601bfaa7f1a635e3f0be94a8deb80105",
+        "ja": "6d3ea26a6e6fca5888acbb0fa1d271b821c31c79016970017e31a31dd985c465"
+      },
+      "chg-group-sql-session-commands": {
+        "en": "ab816569ab6c7e98e72869d61bf5a1f9b5f86632c9988095eabd104f676ef2ba",
+        "fr": "5e24a45930384593de86ed53d388389c024147823384f85176b428de466475d6",
+        "de": "1f542f510cf8068f50b2735776bbe69c927e198b9b5019779957877382c4c5ec",
+        "es": "869e5e758be348e6b5f6d451f4b62f30af50e88a1c50ae859d41f772d45d5f04",
+        "ja": "e3711b14d11e6e43a4b80c227361608078134a681c4c562b1a2e9383dc327894"
+      },
+      "chg-group-legacy-mac-windows-text": {
+        "en": "8268a171acf6bbbc86121b795a82393993c62e93a6eb1fcecf708c74610c3394",
+        "fr": "db0e2f6e495156337a23b738fbca904751ed633467a13262bbaa2c606074e9e8",
+        "de": "f6ac75d56efaad359c7fe6aac977a96613613fab7738408fd4704e18b34cecd3",
+        "es": "116fd98225218be3c1e04a099ea0b88040f66c0943d50c6b458edc62fb8a20ad",
+        "ja": "139d7d619203585a2222021f8cfa262b40f233431e5d1ee28fd0d8b2d40919c3"
+      },
+      "chg-group-removed-legacy-text-conversions": {
+        "en": "dd2a0141169f04e14e6a8cce123a9381debce4499c5fc44b8302ef1a8f49d14f",
+        "fr": "72bf264a028ea81e2ab46767200f2884e0aaadf15b72256f0bab1f62e85505c4",
+        "de": "92cdec44b698f58a9f6f36a6f0faf080d1f76c6d448da894c773de2e2f21f5dc",
+        "es": "2e4cb710f92ec35aed3e2f87f9cb399bcca089cbc965a6471bbfc58f331b4179",
+        "ja": "f36f583cacf8038bcbadb2b2b95b0ea951c0494e18bffa16bde7443ac21ac5cc"
+      },
+      "chg-group-4d-pack-migration": {
+        "en": "4d395c24f76dc9b747c03b56f62f856c3af3143b5262b406610bc658286aef6a",
+        "fr": "2858fe2b3c56d24197ff5b6249b915d8412a20ede7a0a0a9647b168dfed54b77",
+        "de": "cdb0d5bd180238f64b3c9f23a5e57913d00a13fce986c970c03ae25535b0951f",
+        "es": "956211d141cad12c1ea75f34b22fae98b459e83e693c6eecc4c6982dd53bbf23",
+        "ja": "798a8b57008b83e3a36c8f0734d0079242422a1c522484614c948787974ee6f9"
+      },
+      "chg-group-scheduler-settings": {
+        "en": "c14dc16468d989d9c1a89eafd47164c97db7ad2d1199ed911e29cba144938477",
+        "fr": "85e71842f7af10f275417b2c61e38522ffb652e0411eabd1c66bc2a00499bedc",
+        "de": "13d5130d1372f8bfd1f1b798165ee650beaaa4899d78f05951e199f2e6c4b70d",
+        "es": "1bb511168f653024fec0032bbdc184c3aab6232579b93aed512e4bea2ae8e244",
+        "ja": "cfbbfea3e4a2201429633001e68ace55d331c7224c8dadac7645f9003825a00f"
+      },
+      "chg-group-ftp-progress": {
+        "en": "eb362533d4197acf3b0efe41163b66f79247b839615478b8d5add0ec7e5692a6",
+        "fr": "ea84ebe39ceb60a47a6aee31847acb094a8ad8b8f7a73f09a29129ab29703eae",
+        "de": "40af6f3af1904ff86c87cc8aa08bf5e2624fe87374458a57135d4d4fb8c8edc8",
+        "es": "d00b96191c61f5a7516965468e168341f28e74e995e88566efeddabdd5c23596",
+        "ja": "54360e348ee16b3607ef2b4f66e3a2ba552796130039573e2e537039c207eff8"
+      },
+      "chg-group-platform-interface-compatibility": {
+        "en": "3a4554f3893a96e2367e0d0ecd16ada7ffc007155aca24680dd22d73845743ef",
+        "fr": "ca4a79acf383646dcccdf7a069d410f2b3ef3ef153e242a0f21582a00c293b2f",
+        "de": "851d5e79cbb251f29973a251ff76b8b5f0f32cdcebed9b42932951562b1e8c77",
+        "es": "e97e2a3085af0a57792e825f6f2f494ae6e9f3a77b8388fa0d32ba70da1259db",
+        "ja": "5dcc26b9573c3e8c57ac808e8f1da77412efb0f1738fbe127235ac02746d2977"
+      },
+      "chg-group-macos-native-connectors": {
+        "en": "89eedbcbfd4abea81e3ebca0d73cb3ca98ae2b47a1e1148c8c4351cdc03567c9",
+        "fr": "785d4b7e364934d799d14031379331b40e0e4fd65084c870f2ce69107db3472c",
+        "de": "7a8cab55da37ab9b6dc49f37e302a22a2a2652d581428517f6a0bbab1a116c2b",
+        "es": "d6bc3d7fe222bdf81d9ee44a074d3d912747e70f645c28003ca3efe5bf72aca8",
+        "ja": "9886186a8f20cb65383de030759647b11d82244461356c914714d78556665499"
+      },
+      "chg-group-standard-action-strings": {
+        "en": "c8ee8e6843e1bc7320a34afee3a8708a9438bb3aa3c40284d570a8004cc58f30",
+        "fr": "3927a3dacb9327b027249f0e73eb490191fd89623ca73a77b11b3f60c090ea23",
+        "de": "4334b5c0b50dd37ce69bc8cdc65dd7384579e09cce7db1fd223e02a2e0852952",
+        "es": "d1934a752b347981ea961f5d03acacc2ec9ccaee9eebc58df8ef9031a64ab580",
+        "ja": "cf490cb628ddfeb35996739e2a91fb70038ea8387489dbf659b327257e905537"
+      },
+      "chg-group-related-record-editing": {
+        "en": "0e6c970ff52faf82e46c351726da8448a41efc8bd67dc686211d8afd63b0cc62",
+        "fr": "df5be1f6228f95c92bd82544bce613ac33781a5062627f8432cf4b314b2d27a3",
+        "de": "5abf57dab2180302082bc945d5f31f0404e8927430e5f76e71b2355f21a4e7c6",
+        "es": "8791ce55cec0350eef2573abade74cf79f4dce7224bf73a1237c9ae6289c76af",
+        "ja": "0d5d96106f80781c863f5fdf0616bf6c8e1441e82426a41d51eb4f46670d394f"
+      },
+      "chg-group-system-information": {
+        "en": "82cd731770dfe971a163a9eb02f532c2137f805d51e377fde85209649804a985",
+        "fr": "96c60d077497f1b963e7e07e58cced161d8331aa53c42cd1ec70fa2f987b8a2c",
+        "de": "c2fb1990f98c507177dcbdae6cc7847ec788340650e9fe2353d44831b3f114fd",
+        "es": "20e78d109932a9d7c24c8d11897eb51e1f166b60469c5663d2d29fe33ddd175c",
+        "ja": "0cfe70d9d1a7e22f640eba97fc641e3ef2094988226af35e2feb902c97fc9378"
+      },
+      "chg-group-legacy-mobile-rest": {
+        "en": "12faa7e6c5a51ef03ffb8488f7fde4050ba42ea541641608ac8fe8dcc6fcb3ee",
+        "fr": "b76246b2f1db31d66b5fed9471d9539cfeb3c40ece726942a20651bdbfef31e0",
+        "de": "c095229ad95dbcaaf15bdfdee18a9941cb7e82aa2ad02886ca4f63df23b6740a",
+        "es": "84133f4447d7b1ba4ca1d3bca83c05aac9b6a94d36cef9b9ae57daab5f493896",
+        "ja": "2cba086aa51ae591b9e7645295d3fca7058cebdaa42e715856f82a99ec25f7ce"
+      },
+      "chg-group-v19-compiler-settings": {
+        "en": "ec8639748b9bd70c6747350a54b8064f38addc6812f81b101bf9db83b5773a61",
+        "fr": "3d891d142101b6932ad9bc6fae7a5535e90c1694dda0693699c98d246b7f8bc2",
+        "de": "affc0a45ca31b03703cd82af618448993d166877cffc8314b6aa17c0824d7159",
+        "es": "aeb6398bc1f70d22b539af0e2830f0ce63ec9b716425d97d7395568ac2eb5d8c",
+        "ja": "89626749e47f8aab61431ca96de38055b296840eba10e250a10eedb01ea577ce"
+      },
+      "chg-group-base64-status": {
+        "en": "950a5e5470bb534161f4389d22ec30517939d3752e032ab05ee3406d8ef54a36",
+        "fr": "c8a4294fe82321fd8d7bb02e14b2527231ec13ab51129b8e5f0d863e0e278504",
+        "de": "b236d1ae1a076b9752ca11af780be6aacaabab6ea58c40a9aa84212d7c78c4b3",
+        "es": "ee1da59ba5e7cc6d8554edb0fe8b8ac46b05cb83011672aa583f440933e745ef",
+        "ja": "b9e590340eec243aa5390c6cab81895f7356088fa34f4686421a6f6be8ed5af5"
+      },
+      "chg-group-empty-entity-aggregates": {
+        "en": "22b4f7c00da87e3619ffa26e22ddb657a24cce35a20f1cfa7edb315b84c43dc6",
+        "fr": "6925ab0ee4278e8aca979e1e30d5bccc769bd2ac0facb47e2f69d7ae84ee1205",
+        "de": "da4e22adb58b5b63c70be7d042bc6a1a58615fb63c4bfb43461f39ec2032355a",
+        "es": "6d721164166c5c6526b17af0b276442f3d60a147e964a3270ad3ef567f42b766",
+        "ja": "0b0ddb67757b0152b076c220cea3da6eb4dce2ced2d1a356a26f59d8d3005db9"
+      },
+      "chg-group-requests-log-format": {
+        "en": "3a2bce750590dd6ef213df7719f06261cdbd83417d43081ba3f01d5b23b28f18",
+        "fr": "55a8e461271c9e884c83364399c3f727a71809de66051ee659f04567776fb7d5",
+        "de": "4bf5c33deba4d0882e178c40dc145577c1f834e03ac80e80e812933e826f8927",
+        "es": "aa3e2304a5273eaeb23b1c18f9c9a03f910e4546b8f8063a80d41b6b71593693",
+        "ja": "eac39830541d0d53305ae36b1bb1ed6999fe515e063838ea17b4c3d34b256a35"
+      },
+      "chg-group-v19-log-format": {
+        "en": "b57b41aa00168fbd50cc755ea22244140098dacec4b9a818c1029d857210b0d4",
+        "fr": "a29fb08b984ee9ef4f0e8b63df741c4aa134738c653255009adf5c321636248b",
+        "de": "0147290b5994a48af56e4207499fc96729e52d7c0a700d2290f7c19c46b1980a",
+        "es": "5734f877d6187a0c1d75e5ca10f22ad032cd0c2a040e256414c00cc3ce0f9c78",
+        "ja": "cb4e9bbe2892d7b51d40f8e3597cda3b7d66829bc62e8fbd843968b23c1684df"
+      },
+      "chg-group-windows-system-webview2-state": {
+        "en": "203808a0c5602dd1d66a201abed95a735dd092060a2db9805fc81ecce0bf731f",
+        "fr": "82680aa6952fb58b184aff2b96de2e581a38a2e4e0a160156282cc462c65c84a",
+        "de": "abff5f0e4260e8c1d8f3a74fd214eaf2ae313dccc0e1625adc979bd165aac5b1",
+        "es": "1f2e61a0442da3f2f9de054b258cae08ded5bb4cef020a916a8ae052f128f069",
+        "ja": "283c79fc3a00db8caf1fc1eb7f874a5f9954fec1f4b8993f893666fad6306307"
+      }
+    }
+  },
+  "overrides_sha256": "b26caafb216a175c1d40af67191aa06483842e23fa78d654538199a1a23383a5",
+  "groups_sha256": "36a2478f4770f73229ff802df05864b059c08a2d03939e50fc9da9060365e793"
+}

@@ -1,6 +1,6 @@
 import {
   LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
-  versionNumber, versionChoices, versionColor, isLatestAvailable, validateCatalog,
+  versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath,
 } from './logic.mjs';
 
 const $ = id => document.getElementById(id);
@@ -150,6 +150,11 @@ function changeCard(change) {
     card.append(node('p', t('summaryCaveat'), 'muted summary-caveat'));
   }
   const visibleEvidence = evidenceForLanguage(change.evidence ?? [], state.catalog.sources, state.language);
+  if (['partial', 'unresolved'].includes(change.evidence_disposition)) {
+    const warning = node('p', t('pathEvidenceUnavailable'), 'warning path-evidence-warning');
+    warning.dataset.evidenceDisposition = change.evidence_disposition;
+    card.append(warning);
+  }
   const unchecked = [...new Set(visibleEvidence.map(record =>
     state.catalog.sources.find(source => source.id === record.source_id)))]
     .filter(source => source?.fetch?.status !== 'available');
@@ -168,9 +173,9 @@ function changeCard(change) {
   applicability.append(node('summary', t('applicability')));
   const dl = node('dl', undefined, 'detail-content');
   detail(dl, 'formats', listLabel(change.applicability?.formats));
-  detail(dl, 'conditions', (locale?.conditions ?? change.applicability?.conditions)?.join('\n'));
-  detail(dl, 'action', locale?.action || change.action);
-  if (change.action_basis) detail(dl, 'actionBasis', locale?.action_basis ?? change.action_basis);
+  detail(dl, 'conditions', locale?.conditions?.join('\n'));
+  detail(dl, 'action', locale?.action);
+  if (change.action_basis) detail(dl, 'actionBasis', locale?.action_basis);
   if (change.applies_until != null) detail(dl, 'appliesUntil', change.applies_until);
   if (change.notices?.length) detail(dl, 'notices', (locale?.notices ?? change.notices).join('\n'));
   if (complexityForChange(change) !== 'unknown') detail(dl, 'complexityBasis', change.complexity.basis);
@@ -192,11 +197,13 @@ function renderChanges() {
     area.append(node('p', t(state.loading ? 'loading' : 'loadError')));
     return;
   }
-  const filtered = filterChanges(catalog.changes, {
+  const projected = catalog.changes.map(change =>
+    projectChangeForPath(change, catalog.sources, state.source, state.target, catalog.latest)).filter(Boolean);
+  const filtered = filterChanges(projected, {
     ...state, platforms: state.platforms ?? optionsFor('platforms'), modules: state.modules ?? optionsFor('modules'),
   }, catalog.latest);
   $('result-count').textContent = t('resultCount', { count: filtered.length, total: catalog.changes.length });
-  $('version-warning').hidden = !(versionNumber(state.target, catalog.latest) <= versionNumber(state.source, catalog.latest));
+  $('version-warning').hidden = state.target !== state.source;
   if (!filtered.length) {
     const empty = node('div', undefined, 'empty');
     empty.append(node('h3', t('noResults')), node('p', t('emptyDirectory')));

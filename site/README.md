@@ -72,16 +72,22 @@ One-line and paragraph summaries are available in English, French, German,
 Spanish, and Japanese, with an explicit fallback notice if needed. Unchecked
 summaries have a short, actionable source-verification caveat, not a review
 dashboard. Evidence links and original excerpts remain on each record.
-The visible evidence list uses the actual source locale matching the UI, or
-English if there is no evidence in that locale. It retains distinct citations,
+The visible evidence list first selects sources compatible with the chosen
+upgrade path and applicable group members, then uses the actual source locale
+matching the UI, or English if there is no compatible evidence in that locale.
+Moving beta documentation is not substituted for a historical edition.
+Later-edition-only support is explicitly unresolved for that path, not silently
+presented as path verification. It retains distinct citations,
 including support for grouped members, rather than choosing only one URL. If
 neither locale nor English evidence exists, a localized unavailable message is
 shown. All evidence in other languages remains in data and searchable provenance;
 source excerpts are not rewritten. A displayed source's retrieval error remains
 contextual to its evidence, rather than endorsing an unchecked claim.
 
-Authored locale fields provide display identifiers and actions, plus localized
-applicability wording where command names differ. French displays official French
+Authored locale fields provide display identifiers, actions, **every condition
+and action rationale**, not just wording where command names differ. Missing
+localized applicability prose is invalid catalog data, not permission to fall
+back to raw English editorial metadata. French displays official French
 command names; en/de/es/ja display English names. Groups combine their members'
 localized identifier lists, while raw bilingual aliases and member IDs remain
 searchable. The evidence-bound command-name glossary records both official source
@@ -97,8 +103,14 @@ the root README, not in visitor navigation. No source data is removed.
 
 Original exact release and source edition stay distinct from migration buckets.
 Historical R cycles map to the next major; current-cycle R releases map to latest.
-Removals/restrictions require crossing the bucket; deprecations accumulate through
-the target. Unknown release thresholds remain eligible. Equal versions are
+Removals/restrictions use exact release ordering within the coarse selector
+boundaries; deprecations accumulate through the target. Same-major patch/HF/build
+changes remain conditional because v20 alone does not prove a specific patch is
+installed. Backports retain one canonical fact with exact branch alternatives.
+v21 → latest 21 R4 crosses 21 R3; v21 → v21 does not. Public latest caps out
+21 R5 beta. Exclusive `applies_until` bounds concern the final target, so old
+module-level PHP work is superseded by whole-interpreter removal at 20 R3.
+Unknown release thresholds remain eligible. Equal versions are
 allowed for existing deprecations. Version menus prevent source after target.
 Latest requires a parseable concrete release, verified status, and verification
 date; the label distinguishes feature releases from LTS.

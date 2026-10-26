@@ -15,8 +15,8 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:40+00:00",
-      "fetched_at": "2026-10-26T11:27:05+00:00",
+      "checked_at": "2026-10-26T13:53:01+00:00",
+      "fetched_at": "2026-10-26T13:48:59+00:00",
       "sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
       "etag": "\"6ad0a924-ae20\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
@@ -24,7 +24,7 @@
       "redirected": false,
       "detected_language": "en",
       "previous_sha256": null,
-      "block_count": 82,
+      "block_count": 81,
       "content_kind": "article",
       "documentation": {
         "version": "21-R5",
@@ -86,7 +86,11 @@
       }
     },
     "resolved_url": "https://developer.4d.com/docs/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-current-release-notes-fr",
@@ -102,23 +106,23 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/Notes/updates",
       "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-      "checked_at": "2026-10-26T11:30:40+00:00",
+      "checked_at": "2026-10-26T13:53:01+00:00",
       "language": "fr",
       "requested_channel": "moving-current",
       "requested_version": null
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:44+00:00",
-      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "checked_at": "2026-10-26T13:53:06+00:00",
+      "fetched_at": "2026-10-26T13:49:07+00:00",
       "sha256": "44ee53c91af63ebed8307f987b4b81742099909ebccde3e67f49cf7830202806",
-      "etag": "\"6ad0a926-b3b1\"",
-      "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
+      "etag": "\"6ad0a925-b3b1\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:25 GMT",
       "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 77,
+      "block_count": 76,
       "content_kind": "article",
       "documentation": {
         "version": "21-R5",
@@ -180,13 +184,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-current-release-notes-en",
-        "english_content_sha256": "a83119a9ae5f39f0bfd8916c11ac8f259d7cb9c346a727a47e50cc6d9ad09ee7",
-        "localized_content_sha256": "29ddc4338d1a19d078b065bd168735ae738aef0de1824f6cba6920f746d429bf",
+        "english_content_sha256": "ab3e3bef593d1f9d5016668525e7ab679353e67aae47b5cdbbfe771b792a0e6e",
+        "localized_content_sha256": "2c9a9674894495e3ab4f08d30653fcacb4e1915a8a407cdec2e709e561aeacbc",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/fr/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-current-release-notes-es",
@@ -202,15 +210,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/Notes/updates",
       "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-      "checked_at": "2026-10-26T11:30:40+00:00",
+      "checked_at": "2026-10-26T13:53:01+00:00",
       "language": "es",
       "requested_channel": "moving-current",
       "requested_version": null
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:44+00:00",
-      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "checked_at": "2026-10-26T13:53:06+00:00",
+      "fetched_at": "2026-10-26T13:49:07+00:00",
       "sha256": "7cd670d3c2b18d5e342fd2bc26a70524128c4e5d0c8c356b6c017edaebb26c20",
       "etag": "\"6ad0a923-b189\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
@@ -218,7 +226,7 @@
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 77,
+      "block_count": 76,
       "content_kind": "article",
       "documentation": {
         "version": "21-R5",
@@ -280,13 +288,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-current-release-notes-en",
-        "english_content_sha256": "a83119a9ae5f39f0bfd8916c11ac8f259d7cb9c346a727a47e50cc6d9ad09ee7",
-        "localized_content_sha256": "f21615d42589fc72fd55ed9664de0d39a07dfae07fd7c1d57c1248ae2d79f05f",
+        "english_content_sha256": "ab3e3bef593d1f9d5016668525e7ab679353e67aae47b5cdbbfe771b792a0e6e",
+        "localized_content_sha256": "b8160d25c9959b0a2c13e573c196ecb229c1cc3c2d0c6da666c15efab95fe902",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/es/Notes/updates",
-    "title": "Notas del lanzamiento | 4D Docs"
+    "title": "Notas del lanzamiento | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-current-release-notes-ja",
@@ -302,15 +314,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/Notes/updates",
       "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
-      "checked_at": "2026-10-26T11:30:40+00:00",
+      "checked_at": "2026-10-26T13:53:01+00:00",
       "language": "ja",
       "requested_channel": "moving-current",
       "requested_version": null
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:44+00:00",
-      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "checked_at": "2026-10-26T13:53:06+00:00",
+      "fetched_at": "2026-10-26T13:49:07+00:00",
       "sha256": "be142f6c71eee6cc4322ce82b274f438eaabd266ca555f9f56e5a72bf52a4cae",
       "etag": "\"6ad0a922-c593\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:22 GMT",
@@ -318,7 +330,7 @@
       "redirected": false,
       "detected_language": "ja",
       "previous_sha256": null,
-      "block_count": 77,
+      "block_count": 76,
       "content_kind": "article",
       "documentation": {
         "version": "21-R5",
@@ -380,13 +392,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-current-release-notes-en",
-        "english_content_sha256": "a83119a9ae5f39f0bfd8916c11ac8f259d7cb9c346a727a47e50cc6d9ad09ee7",
-        "localized_content_sha256": "52bbbab91841ba24795701e3ecb15134532f53a7b1df0094759b0f975db0b73d",
+        "english_content_sha256": "ab3e3bef593d1f9d5016668525e7ab679353e67aae47b5cdbbfe771b792a0e6e",
+        "localized_content_sha256": "61e4e3a50d8f2ed8dd94589f89543ecd7618900ba656825f0f614028151815dc",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/ja/Notes/updates",
-    "title": "リリースノート | 4D Docs"
+    "title": "リリースノート | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v21-release-notes-en",
@@ -404,8 +420,8 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:41+00:00",
-      "fetched_at": "2026-10-26T11:27:07+00:00",
+      "checked_at": "2026-10-26T13:53:03+00:00",
+      "fetched_at": "2026-10-26T13:49:01+00:00",
       "sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
       "etag": "\"6ad0a928-1343d\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:28 GMT",
@@ -474,7 +490,11 @@
       }
     },
     "resolved_url": "https://developer.4d.com/docs/21/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v21-release-notes-fr",
@@ -490,15 +510,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/21/Notes/updates",
       "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-      "checked_at": "2026-10-26T11:30:41+00:00",
+      "checked_at": "2026-10-26T13:53:03+00:00",
       "language": "fr",
       "requested_channel": "versioned",
       "requested_version": "21"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:44+00:00",
-      "fetched_at": "2026-10-26T11:27:12+00:00",
+      "checked_at": "2026-10-26T13:53:06+00:00",
+      "fetched_at": "2026-10-26T13:49:07+00:00",
       "sha256": "ae25278208e069202b91c6b38a14cbb61449b6297b3eba7a7f149ea979d0edea",
       "etag": "\"6ad0a926-14f26\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
@@ -567,13 +587,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v21-release-notes-en",
-        "english_content_sha256": "b879f526e02c1599db29fb99b5714f7a4d050135d5cc6f974941a6fa63542ba1",
-        "localized_content_sha256": "9c7960ae9cf434a9b55a665eff351edb27b206c5065f3ffd0c63ec1b77740d0b",
+        "english_content_sha256": "70ae028308efd2ada246e39b8a8b57c953eea5fe705c6b069a310269a1847fb6",
+        "localized_content_sha256": "821fa59c10dd61769fd68997566d0e3d7bfb4a33bdcc89d8befc775e11bde798",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/fr/21/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v21-release-notes-es",
@@ -589,18 +613,18 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/21/Notes/updates",
       "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-      "checked_at": "2026-10-26T11:30:41+00:00",
+      "checked_at": "2026-10-26T13:53:03+00:00",
       "language": "es",
       "requested_channel": "versioned",
       "requested_version": "21"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:45+00:00",
-      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "checked_at": "2026-10-26T13:53:07+00:00",
+      "fetched_at": "2026-10-26T13:49:09+00:00",
       "sha256": "f2cbbaf8dc7bf968e1c5dac8a729c759f7bf21ab3e09a4b829829072d9fb69e5",
-      "etag": "\"6ad0a924-14745\"",
-      "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
+      "etag": "\"6ad0a923-14745\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
       "http_status": 304,
       "redirected": false,
       "detected_language": "es",
@@ -666,13 +690,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v21-release-notes-en",
-        "english_content_sha256": "b879f526e02c1599db29fb99b5714f7a4d050135d5cc6f974941a6fa63542ba1",
-        "localized_content_sha256": "dae55a38e66c6206e48e138f28d8130356709a022cc84ee05c89c6773ca9929d",
+        "english_content_sha256": "70ae028308efd2ada246e39b8a8b57c953eea5fe705c6b069a310269a1847fb6",
+        "localized_content_sha256": "c910167b472a7380b83c51ba8ce355c256832f22de7fd443c3edcea882f480c7",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/es/21/Notes/updates",
-    "title": "Notas del lanzamiento | 4D Docs"
+    "title": "Notas del lanzamiento | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v21-release-notes-ja",
@@ -688,15 +716,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/21/Notes/updates",
       "parent_sha256": "1874627ad288f822bd905da28853ba2a849d23ec2f3d6544f14fbcb6acb22d07",
-      "checked_at": "2026-10-26T11:30:41+00:00",
+      "checked_at": "2026-10-26T13:53:03+00:00",
       "language": "ja",
       "requested_channel": "versioned",
       "requested_version": "21"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:45+00:00",
-      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "checked_at": "2026-10-26T13:53:07+00:00",
+      "fetched_at": "2026-10-26T13:49:09+00:00",
       "sha256": "67ae7e32484fe722f215d781917ef8a2d50ad3acced9baa6eeb283ca7bcdd23a",
       "etag": "\"6ad0a923-17d2c\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
@@ -765,13 +793,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v21-release-notes-en",
-        "english_content_sha256": "b879f526e02c1599db29fb99b5714f7a4d050135d5cc6f974941a6fa63542ba1",
-        "localized_content_sha256": "82c2661de27e9c6e0925ec37e58abeaa23a80d7f89b41ff1c58e9b2753f5f379",
+        "english_content_sha256": "70ae028308efd2ada246e39b8a8b57c953eea5fe705c6b069a310269a1847fb6",
+        "localized_content_sha256": "0565088720d49bf5e975aa852df2186f99305c3126d85a8f4b222097f450b544",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/ja/21/Notes/updates",
-    "title": "リリースノート | 4D Docs"
+    "title": "リリースノート | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v20-release-notes-en",
@@ -789,8 +821,8 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:42+00:00",
-      "fetched_at": "2026-10-26T11:27:09+00:00",
+      "checked_at": "2026-10-26T13:53:04+00:00",
+      "fetched_at": "2026-10-26T13:49:03+00:00",
       "sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
       "etag": "\"6ad0a921-13bad\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
@@ -798,7 +830,7 @@
       "redirected": false,
       "detected_language": "en",
       "previous_sha256": null,
-      "block_count": 175,
+      "block_count": 174,
       "content_kind": "article",
       "documentation": {
         "version": "20",
@@ -866,7 +898,11 @@
       }
     },
     "resolved_url": "https://developer.4d.com/docs/20/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v20-release-notes-fr",
@@ -882,23 +918,23 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/20/Notes/updates",
       "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-      "checked_at": "2026-10-26T11:30:42+00:00",
+      "checked_at": "2026-10-26T13:53:04+00:00",
       "language": "fr",
       "requested_channel": "versioned",
       "requested_version": "20"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:45+00:00",
-      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "checked_at": "2026-10-26T13:53:07+00:00",
+      "fetched_at": "2026-10-26T13:49:09+00:00",
       "sha256": "8e2820fb299ff446b5afe7abf013721090712ed7ee6b5b5a6da76b9071385e0e",
-      "etag": "\"6ad0a925-1563e\"",
-      "last_modified": "Thu, 15 Oct 2026 10:21:25 GMT",
+      "etag": "\"6ad0a924-1563e\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
       "http_status": 304,
       "redirected": false,
       "detected_language": "fr",
       "previous_sha256": null,
-      "block_count": 176,
+      "block_count": 175,
       "content_kind": "article",
       "documentation": {
         "version": "20",
@@ -966,13 +1002,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v20-release-notes-en",
-        "english_content_sha256": "ad1f8e5e9a724768865bef2e154300c669a871acd9868bb8a87292654625ec4c",
-        "localized_content_sha256": "79aa5527a0f791da1d9d4c0e399957e314ddac57ecb045d67407d82c13ba52fb",
+        "english_content_sha256": "b74541aa63941e42174501877faf08e0067d16c0a4e9217296901f74c910bc77",
+        "localized_content_sha256": "48e7c402202f77e0afa2ec22f26903eeece79e2c58e595ce9a3e8cedf268317a",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/fr/20/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v20-release-notes-es",
@@ -988,15 +1028,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/20/Notes/updates",
       "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-      "checked_at": "2026-10-26T11:30:42+00:00",
+      "checked_at": "2026-10-26T13:53:04+00:00",
       "language": "es",
       "requested_channel": "versioned",
       "requested_version": "20"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:45+00:00",
-      "fetched_at": "2026-10-26T11:27:14+00:00",
+      "checked_at": "2026-10-26T13:53:07+00:00",
+      "fetched_at": "2026-10-26T13:49:09+00:00",
       "sha256": "6ca537ff9fcc07a6fcd91170c3d0c2d49440948a6fb64bc6080941db25dfc7ca",
       "etag": "\"6ad0a923-14ee6\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:23 GMT",
@@ -1004,7 +1044,7 @@
       "redirected": false,
       "detected_language": "es",
       "previous_sha256": null,
-      "block_count": 178,
+      "block_count": 177,
       "content_kind": "article",
       "documentation": {
         "version": "20",
@@ -1072,13 +1112,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v20-release-notes-en",
-        "english_content_sha256": "ad1f8e5e9a724768865bef2e154300c669a871acd9868bb8a87292654625ec4c",
-        "localized_content_sha256": "6b9820dd94d18d3b710bd51ce4876f8289320f8531ab3c502b54fceee8c6a3fd",
+        "english_content_sha256": "b74541aa63941e42174501877faf08e0067d16c0a4e9217296901f74c910bc77",
+        "localized_content_sha256": "aacd8be1ec3fb8768bc2c4432208504d3616c9fb2967484a80c8277e815079b5",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/es/20/Notes/updates",
-    "title": "Notas del lanzamiento | 4D Docs"
+    "title": "Notas del lanzamiento | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v20-release-notes-ja",
@@ -1094,15 +1138,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/20/Notes/updates",
       "parent_sha256": "528976fccb1dd572488d6d1989d0c363350b6b979f37027457dbeb0e6a606648",
-      "checked_at": "2026-10-26T11:30:42+00:00",
+      "checked_at": "2026-10-26T13:53:04+00:00",
       "language": "ja",
       "requested_channel": "versioned",
       "requested_version": "20"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:46+00:00",
-      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "checked_at": "2026-10-26T13:53:08+00:00",
+      "fetched_at": "2026-10-26T13:49:11+00:00",
       "sha256": "cb84c8812e2ad0f0c5e837e5ccbc4222531c11de5ca208d8e0ccc81e9ffde467",
       "etag": "\"6ad0a921-1797c\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
@@ -1110,7 +1154,7 @@
       "redirected": false,
       "detected_language": "ja",
       "previous_sha256": null,
-      "block_count": 178,
+      "block_count": 177,
       "content_kind": "article",
       "documentation": {
         "version": "20",
@@ -1178,13 +1222,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v20-release-notes-en",
-        "english_content_sha256": "ad1f8e5e9a724768865bef2e154300c669a871acd9868bb8a87292654625ec4c",
-        "localized_content_sha256": "97e440a009272eadc2f13ef5132699723f9a5c74f0a5d9ad6749985b26c70f13",
+        "english_content_sha256": "b74541aa63941e42174501877faf08e0067d16c0a4e9217296901f74c910bc77",
+        "localized_content_sha256": "f827b61dda921109601ba4eb75e3f44dbbd4af71fa8d25760ceb3bb839882602",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/ja/20/Notes/updates",
-    "title": "リリースノート | 4D Docs"
+    "title": "リリースノート | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v19-release-notes-en",
@@ -1202,11 +1250,11 @@
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:43+00:00",
-      "fetched_at": "2026-10-26T11:27:11+00:00",
+      "checked_at": "2026-10-26T13:53:05+00:00",
+      "fetched_at": "2026-10-26T13:49:05+00:00",
       "sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-      "etag": "\"6ad0a922-8a17\"",
-      "last_modified": "Thu, 15 Oct 2026 10:21:22 GMT",
+      "etag": "\"6ad0a921-8a17\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
       "http_status": 304,
       "redirected": false,
       "detected_language": "en",
@@ -1275,7 +1323,11 @@
       }
     },
     "resolved_url": "https://developer.4d.com/docs/19/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v19-release-notes-fr",
@@ -1291,15 +1343,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/19/Notes/updates",
       "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-      "checked_at": "2026-10-26T11:30:43+00:00",
+      "checked_at": "2026-10-26T13:53:05+00:00",
       "language": "fr",
       "requested_channel": "versioned",
       "requested_version": "19"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:46+00:00",
-      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "checked_at": "2026-10-26T13:53:08+00:00",
+      "fetched_at": "2026-10-26T13:49:11+00:00",
       "sha256": "208646aa9d00ab9eae638ef74b261bc7680501de51f1959f35d96bdb08ad0dae",
       "etag": "\"6ad0a926-8e0d\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
@@ -1371,13 +1423,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v19-release-notes-en",
-        "english_content_sha256": "98bc3d7774afb97865a11f1f341cfec3f12eb6495215de92162ff6e4cc933fd8",
-        "localized_content_sha256": "08cad46cdf9f28ee2b5f4bcf553474eee22e3b939283db759d2ae9829e874b2e",
+        "english_content_sha256": "af6041d65c025c3b2258b435911874c0c39441c3f5dac4a44f8e140c2dae90d7",
+        "localized_content_sha256": "668e04f9b7930ee778b1dc1218e9cf46d4eda3a393380cec6dc55458136af175",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/fr/19/Notes/updates",
-    "title": "Release Notes | 4D Docs"
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v19-release-notes-es",
@@ -1393,15 +1449,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/19/Notes/updates",
       "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-      "checked_at": "2026-10-26T11:30:43+00:00",
+      "checked_at": "2026-10-26T13:53:05+00:00",
       "language": "es",
       "requested_channel": "versioned",
       "requested_version": "19"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:46+00:00",
-      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "checked_at": "2026-10-26T13:53:08+00:00",
+      "fetched_at": "2026-10-26T13:49:11+00:00",
       "sha256": "8bf7499298254a2235dfa39567c95ade706fb0f478c2736765313f31efe8929c",
       "etag": "\"6ad0a924-8ca6\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
@@ -1473,13 +1529,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v19-release-notes-en",
-        "english_content_sha256": "98bc3d7774afb97865a11f1f341cfec3f12eb6495215de92162ff6e4cc933fd8",
-        "localized_content_sha256": "043d8b5f0c2111e75abab927a797143177cde8afc925cc097e31b1eedd634804",
+        "english_content_sha256": "af6041d65c025c3b2258b435911874c0c39441c3f5dac4a44f8e140c2dae90d7",
+        "localized_content_sha256": "a4ec179fa903a8049610a25160640550c4c3c8edd199b5be635cb8fa3c3847f5",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/es/19/Notes/updates",
-    "title": "Notas del lanzamiento | 4D Docs"
+    "title": "Notas del lanzamiento | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "docs-v19-release-notes-ja",
@@ -1495,15 +1555,15 @@
       "method": "official_docs_hreflang",
       "parent": "https://developer.4d.com/docs/19/Notes/updates",
       "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d",
-      "checked_at": "2026-10-26T11:30:43+00:00",
+      "checked_at": "2026-10-26T13:53:05+00:00",
       "language": "ja",
       "requested_channel": "versioned",
       "requested_version": "19"
     },
     "fetch": {
       "status": "available",
-      "checked_at": "2026-10-26T11:30:46+00:00",
-      "fetched_at": "2026-10-26T11:27:16+00:00",
+      "checked_at": "2026-10-26T13:53:08+00:00",
+      "fetched_at": "2026-10-26T13:49:11+00:00",
       "sha256": "2c0c68b60005fe006812ca26cf681eb461d9a13e49ad3449aae3578dc46193f2",
       "etag": "\"6ad0a921-92dc\"",
       "last_modified": "Thu, 15 Oct 2026 10:21:21 GMT",
@@ -1575,13 +1635,17 @@
       },
       "locale_comparison": {
         "english_source_id": "docs-v19-release-notes-en",
-        "english_content_sha256": "98bc3d7774afb97865a11f1f341cfec3f12eb6495215de92162ff6e4cc933fd8",
-        "localized_content_sha256": "5ddef1430b256610eb26a4d0db80fbab0cc5da9c3485d924bfa6eba5e48b84c0",
+        "english_content_sha256": "af6041d65c025c3b2258b435911874c0c39441c3f5dac4a44f8e140c2dae90d7",
+        "localized_content_sha256": "62d3e81ca0b4baa26d4058ab1fa247505d931176ee8d29a9646549c649dcf4ad",
         "scope": "Whole-article fallback detection only; not a human translation-completeness review."
       }
     },
     "resolved_url": "https://developer.4d.com/docs/ja/19/Notes/updates",
-    "title": "リリースノート | 4D Docs"
+    "title": "リリースノート | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
   },
   {
     "id": "legacy-v20-deprecated-en",
@@ -10218,6 +10282,445 @@
     "catalog_scope": {
       "status": "systematic_partial",
       "note": "Every extracted block dispositioned in data/section-audit.json; context/retained defaults are not new facts and unresolved sections remain explicit."
+    }
+  },
+  {
+    "id": "docs-tls-bulletin-en",
+    "family": "release-notes-linked-detail",
+    "edition": "19.7 / 20.2 / 20 R2 HF1 / 20 R3",
+    "language": "en",
+    "url": "https://blog.4d.com/security-bulletin-two-cves-and-how-to-stay-secure/",
+    "publisher": "4D",
+    "authority": "official_publisher",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_release_note_link",
+      "parent": "https://developer.4d.com/docs/19/Notes/updates",
+      "parent_sha256": "485c16857835266d1ab352315ec0c8301b77dccada610ab369e7af680b80e52d"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T13:53:17+00:00",
+      "fetched_at": "2026-10-26T13:53:17+00:00",
+      "sha256": "b0b6a8db49c78a46dbd8cbe1dee527fbd5bb7ad0f1918474fb566f927cb09ca7",
+      "etag": null,
+      "last_modified": null,
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": "d543c694330d886606eafad21dba064e5f759165eb90499f22ee70e739fe57d0",
+      "block_count": 15,
+      "content_kind": "article"
+    },
+    "resolved_url": "https://blog.4d.com/security-bulletin-two-cves-and-how-to-stay-secure/",
+    "title": "Security bulletin: Two CVEs and how to stay secure - 4D Blog",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
+  },
+  {
+    "id": "docs-public-release-notes-en",
+    "family": "documentation-release-notes",
+    "edition": "21 R4",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/21-R4/Notes/updates",
+    "language": "en",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_version_link",
+      "parent": "https://developer.4d.com/docs/Notes/updates",
+      "parent_sha256": "aacb927635e540ac252bf7d68d54ce7c6c62a9bb485305f8bf6593ef53165dae",
+      "label": "21 R4",
+      "checked_at": "2026-10-26T13:53:10+00:00"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T13:53:10+00:00",
+      "fetched_at": "2026-10-26T13:53:10+00:00",
+      "sha256": "115543d8ac762e90b4b3c58d4b0004648e170f5259aa7e7e6018ad7cd26ebdf9",
+      "etag": "\"6ad0a928-9724\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:28 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "en",
+      "previous_sha256": null,
+      "block_count": 65,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R4",
+        "locale": "en",
+        "canonical_url": "https://developer.4d.com/docs/21-R4/Notes/updates",
+        "channel_label": "Version: 21 R4",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "Library table"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21-R4/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/19/Notes/updates"
+          }
+        ]
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/21-R4/Notes/updates",
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
+  },
+  {
+    "id": "docs-public-release-notes-fr",
+    "family": "documentation-release-notes",
+    "edition": "21 R4",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates",
+    "language": "fr",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/21-R4/Notes/updates",
+      "parent_sha256": "115543d8ac762e90b4b3c58d4b0004648e170f5259aa7e7e6018ad7cd26ebdf9",
+      "checked_at": "2026-10-26T13:53:10+00:00",
+      "language": "fr",
+      "requested_channel": "versioned",
+      "requested_version": "21-R4"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T13:53:12+00:00",
+      "fetched_at": "2026-10-26T13:53:12+00:00",
+      "sha256": "d7ee496e2e81de09ed8387c2f70ee4052190fbb95cec7151125e5c66e87b1925",
+      "etag": "\"6ad0a926-a0f0\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:26 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "fr",
+      "previous_sha256": null,
+      "block_count": 65,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R4",
+        "locale": "fr",
+        "canonical_url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates",
+        "channel_label": "Version : 21 R4",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "Tableau des bibliothèques"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21-R4/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/fr/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/fr/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/fr/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/fr/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-public-release-notes-en",
+        "english_content_sha256": "9bc268dc83e061e445713056e641f7e2202dd64c3e9bbf0e3532d647b0b5632a",
+        "localized_content_sha256": "6d75af2803e44bf5994063297efea88196deef91189847908bc3a5c9a1e57408",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates",
+    "title": "Release Notes | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
+  },
+  {
+    "id": "docs-public-release-notes-es",
+    "family": "documentation-release-notes",
+    "edition": "21 R4",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates",
+    "language": "es",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/21-R4/Notes/updates",
+      "parent_sha256": "115543d8ac762e90b4b3c58d4b0004648e170f5259aa7e7e6018ad7cd26ebdf9",
+      "checked_at": "2026-10-26T13:53:10+00:00",
+      "language": "es",
+      "requested_channel": "versioned",
+      "requested_version": "21-R4"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T13:53:13+00:00",
+      "fetched_at": "2026-10-26T13:53:13+00:00",
+      "sha256": "64df7fbac55b331c28e706ba1e4846c98ea9e442d77e46011bc457e16ed9c034",
+      "etag": "\"6ad0a924-9ff5\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:24 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "es",
+      "previous_sha256": null,
+      "block_count": 65,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R4",
+        "locale": "es",
+        "canonical_url": "https://developer.4d.com/docs/es/21-R4/Notes/updates",
+        "channel_label": "Versión: 21 R4",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "Tabla de la librería"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21-R4/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/es/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/es/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/es/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/es/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-public-release-notes-en",
+        "english_content_sha256": "9bc268dc83e061e445713056e641f7e2202dd64c3e9bbf0e3532d647b0b5632a",
+        "localized_content_sha256": "8d58eff04438e9479012e7ac7aaa6b050d41934fc3d6958f2252bed7316039fd",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/es/21-R4/Notes/updates",
+    "title": "Notas del lanzamiento | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
+    }
+  },
+  {
+    "id": "docs-public-release-notes-ja",
+    "family": "documentation-release-notes",
+    "edition": "21 R4",
+    "documentation_channel": "versioned",
+    "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates",
+    "language": "ja",
+    "publisher": "4D",
+    "authority": "official_documentation",
+    "host_operator": "4D",
+    "discovery": {
+      "method": "official_docs_hreflang",
+      "parent": "https://developer.4d.com/docs/21-R4/Notes/updates",
+      "parent_sha256": "115543d8ac762e90b4b3c58d4b0004648e170f5259aa7e7e6018ad7cd26ebdf9",
+      "checked_at": "2026-10-26T13:53:10+00:00",
+      "language": "ja",
+      "requested_channel": "versioned",
+      "requested_version": "21-R4"
+    },
+    "fetch": {
+      "status": "available",
+      "checked_at": "2026-10-26T13:53:15+00:00",
+      "fetched_at": "2026-10-26T13:53:15+00:00",
+      "sha256": "9bcfb7c3ee3c5a88825437ddaf13ae2e8144d33610b804553f695f3930e27046",
+      "etag": "\"6ad0a922-ae49\"",
+      "last_modified": "Thu, 15 Oct 2026 10:21:22 GMT",
+      "http_status": 200,
+      "redirected": false,
+      "detected_language": "ja",
+      "previous_sha256": null,
+      "block_count": 65,
+      "content_kind": "article",
+      "documentation": {
+        "version": "21-R4",
+        "locale": "ja",
+        "canonical_url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates",
+        "channel_label": "バージョン: 21 R4",
+        "article_scope": true,
+        "release_headings": [
+          "4D 21 R4",
+          "4D 21 R3",
+          "4D 21 R2",
+          "ライブラリの一覧"
+        ],
+        "locale_links": [
+          {
+            "language": "en",
+            "url": "https://developer.4d.com/docs/21-R4/Notes/updates"
+          },
+          {
+            "language": "fr",
+            "url": "https://developer.4d.com/docs/fr/21-R4/Notes/updates"
+          },
+          {
+            "language": "es",
+            "url": "https://developer.4d.com/docs/es/21-R4/Notes/updates"
+          },
+          {
+            "language": "ja",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "language": "pt",
+            "url": "https://developer.4d.com/docs/pt/21-R4/Notes/updates"
+          }
+        ],
+        "version_links": [
+          {
+            "label": "21 R5 BETA",
+            "url": "https://developer.4d.com/docs/ja/Notes/updates"
+          },
+          {
+            "label": "21 R4",
+            "url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates"
+          },
+          {
+            "label": "21",
+            "url": "https://developer.4d.com/docs/ja/21/Notes/updates"
+          },
+          {
+            "label": "20",
+            "url": "https://developer.4d.com/docs/ja/20/Notes/updates"
+          },
+          {
+            "label": "19",
+            "url": "https://developer.4d.com/docs/ja/19/Notes/updates"
+          }
+        ]
+      },
+      "locale_comparison": {
+        "english_source_id": "docs-public-release-notes-en",
+        "english_content_sha256": "9bc268dc83e061e445713056e641f7e2202dd64c3e9bbf0e3532d647b0b5632a",
+        "localized_content_sha256": "b9afa4f79421c276d6e4be769c3e335e9a71271005c0b030848c17c92c876c0f",
+        "scope": "Whole-article fallback detection only; not a human translation-completeness review."
+      }
+    },
+    "resolved_url": "https://developer.4d.com/docs/ja/21-R4/Notes/updates",
+    "title": "リリースノート | 4D Docs",
+    "catalog_scope": {
+      "status": "systematic_partial",
+      "note": "Every extracted block has a snapshot-bound Stage 3 disposition. Linked new-feature/bug lists and complete manuals are not claimed processed; beta and unresolved final-target advice stay explicit."
     }
   }
 ]

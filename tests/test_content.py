@@ -17,12 +17,12 @@ class ContentBatch(unittest.TestCase):
 
     def test_stable_ids_atomicity_and_deduplication(self):
         self.assertEqual(len(self.changes), len(self.by_id))
-        self.assertEqual(len(merge_candidates(self.changes * 2)), 192)
+        self.assertEqual(len(merge_candidates(self.changes * 2)), 272)
         for identifier in ("chg-colon-identifiers", "chg-pdfcreator-driver-deprecation",
                            "chg-bundled-php-dom-removal"):
             self.assertIn(identifier, self.by_id)
         self.assertEqual(Counter(c["type"] for c in self.changes),
-                         {"removal": 70, "deprecation": 58, "restriction": 21, "behavior": 43})
+                         {"removal": 83, "deprecation": 66, "restriction": 35, "behavior": 88})
         self.assertIn("_o_DISABLE BUTTON", self.by_id["chg-removed-disable-button"]["identifiers"])
         self.assertIn("_o_ENABLE BUTTON", self.by_id["chg-removed-enable-button"]["identifiers"])
         self.assertNotIn("chg-removed-get-platform-interface", self.by_id)

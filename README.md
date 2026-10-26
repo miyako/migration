@@ -17,24 +17,25 @@ Release Notes pages), 2 actually linked v16/v17 product-range detail pages,
 5 exact-edition Compatibility pages, and 2 bounded command-reference details.
 Each legacy seed's four other languages are located through actual archive
 directory links; modern documentation uses actual official `hreflang` routes,
-for **200 registered source URLs**:
+for **205 registered source URLs**. Five are bounded derived links, not new seeds:
+the advertised public 21 R4 revision in four locales and its linked TLS bulletin:
 
 | Publication snapshot, 2026-10-26 | Count |
 |---|---:|
-| Available structural extracts | 200 |
-| Article surfaces / generated navigation index views | 145 / 55 |
+| Available structural extracts | 205 |
+| Article surfaces / generated navigation index views | 150 / 55 |
 | Currently unavailable registered source URLs | 0 |
 | Superseded guessed URLs that returned 404, retained as history | 34 |
 | Additional actual article links returning 404, directory-resolved with history retained | 10 |
 | Bounded archive directory indexes traced, separate from sources | 21 |
 | Actual blog language links queued for review, not fetched | 27 |
-| Modern Release Notes URLs, included in available sources | 16 |
-| German modern counterparts not advertised/linked, not HTTP failures | 4 |
-| Underlying atomic candidate facts | 192 |
-| Published feature entities / curated multi-member groups | 119 / 27 |
-| Entities visible for the default v16 → v21 interval | 118 |
+| Modern Release Notes URLs, including the bounded public revision | 20 |
+| German modern counterparts not advertised/linked, not HTTP failures | 5 |
+| Underlying atomic candidate facts | 272 |
+| Published feature entities / curated multi-member groups | 198 / 28 |
 | Human-reviewed changes | **0** |
-| Evidence sources, all partially used rather than exhaustive manuals | 80 |
+| Evidence sources, all partially used rather than exhaustive manuals | 101 |
+| Systematically dispositioned Stage 2 + Stage 3 pages / extracted blocks | 76 / 3,777 |
 | Registered deprecated/removed overview/detail pages fetched and inspected | 35 |
 | Stage 2 Changes/Quick-table pages systematically dispositioned | 20 |
 | Stage 2 Compatibility pages / bounded command details, all five languages | 25 / 10 |
@@ -42,13 +43,19 @@ for **200 registered source URLs**:
 
 The first batch produced 68 candidates; Stage 1 added 70. Stage 2 adds **54 atomic
 candidates** and reconciles **12 existing facts**, preserving all 138 earlier IDs.
-The current 192 facts comprise 70 removals, 58 deprecations, 21 restrictions and
-43 behavior changes after the GRAPH TABLE override. These are **not 192 visitor
-cards**: 27 authored groups retain 100 members, with 92 distinct singletons,
-producing **119 feature entities**. Grouping requires the same feature and
+Stage 3 adds **80 atomic candidates** from the bounded modern notes and reconciles
+**22 earlier facts** (nine modern corroborations, 12 PHP-module bounds and the
+separate Legacy-network lifecycle), without deleting IDs. Four further facts
+receive clarification links only. The current 272 facts comprise 83 removals,
+66 deprecations, 35 restrictions and 88 behavior changes after the GRAPH TABLE
+override. These are **not 272 visitor cards**: 28 authored groups retain 102
+members, with 170 distinct singletons, producing **198 feature entities**.
+Grouping requires the same feature and
 shared remediation, with compatible cutoff, type, stage, severity, platform and format.
 All 12 bundled PHP module removals, for example, are one entity. The default
-v16 → v21 interval shows 118 entities, excluding GRAPH TABLE's pre-start v14 rule.
+v16 → v21 interval excludes GRAPH TABLE's pre-start v14 rule, current R-cycle
+changes, and superseded intermediate PHP-module work, showing **186 entities**.
+The same source to the public latest shows **195**.
 The total is an outcome of the documented rows, not a record quota. All have
 independently authored one-line and paragraph
 summaries in en/fr/de/es/ja, with **generated-candidate** provenance.
@@ -135,11 +142,11 @@ in v19; that workaround is not recommended for the final target.
 
 The catalog now has **27 unknown atomic cutoffs**: the original ten remain, and
 17 Stage 2 paragraphs do not establish exact first releases. Unknown platform,
-stage or remedy remains explicit where appropriate. All **192 facts and 119
+stage or remedy remains explicit where appropriate. At Stage 2 completion, all **192 facts and 119
 entities have Unknown remediation complexity**, and **0 have named human review**.
 German MailAttachment.path prose is English in the official source; our German
 summary is authored, not an official German translation. Modern Release Notes
-remain fetched but **not catalog-processed**, reserved for the next stage.
+are processed within the separate bounded Stage 3 scope below.
 
 ### Content batch: deprecated/removed editions
 
@@ -247,7 +254,7 @@ subtable-feature deprecation, resource-fork storage deprecation, automatic `.RSR
 opening, CPU-priority UI, legacy networking, and old-toolbox GWorld drawing.
 Their paragraphs/dispositions explain the missing fact; neither Apple's dates
 nor neighboring API dates substitute for it. Platforms not stated
-by evidence stay **unknown**, as does remediation complexity for **all 192**
+by evidence stay **unknown**, as does remediation complexity for **all 272**
 records: no reliable difficulty classification was established. Many removed
 resource/web calls have no documented replacement in the table; the entries
 say so rather than inventing one. Current v21/latest behavior is not independently
@@ -266,9 +273,11 @@ not the English slug with `.fr.html`. All 34 failed guesses have now been replac
 with verified linked locations under the same stable source IDs. Their real 404
 results remain in `url_history`; they are **not missing translations**. Including
 those superseded attempts and the ten actual broken detail links, **244 distinct
-registered source URL locations** have been checked over time (200 current +
+registered source URL locations** had been checked through Stage 2 (200 then-current +
 34 superseded guessed probes + 10 superseded actual links), separate from archive
-directory indexes and the unregistered bibliographic children.
+directory indexes and the unregistered bibliographic children. The five bounded
+Stage 3 derived URLs bring that running total to **249** (205 current + 44
+superseded locations), separate from public-latest verification pages.
 
 ### Current official documentation Release Notes
 
@@ -309,11 +318,82 @@ article scope are not accepted as available translations. A localized article
 must differ from its cached English article; this whole-article fallback check
 does **not** claim complete or human-reviewed translation of every paragraph.
 
-These 16 sources are **fetched and structurally extracted, not catalog-processed**.
-No actionable records in this batch are derived from modern Release Notes.
-The catalog contains **192 atomic candidates published as 119 feature entities,
-from 80 partially used evidence pages, 0 human-reviewed**.
-Actionable changes may later deduplicate across sources; provenance never does.
+### Stage 3: bounded modern release-note processing
+
+All four original families above were inspected in their **16 actual en/fr/es/ja
+pages**, including Highlights, Behavior changes, historical R sections and
+library tables. The moving document is beta; its 21 R5-only vector precision,
+corner-radius and OpenSSL 4.0.1 changes are **not published requirements**.
+The advertised [21 R4 public revision](https://developer.4d.com/docs/21-R4/Notes/updates)
+and its own linked French, Spanish and Japanese pages provide a bounded public
+pin within the current family. Its OpenSSL row is **4.0 at 21 R4**, not the
+moving beta's 4.0.1. The official TLS bulletin is one bounded linked detail,
+not a general security or command-manual crawl. The notes' library version rows
+without a documented migration consequence remain context, not invented work.
+
+The 80 additions include v21 ICU rebuilding, compiled scalable-session SOAP
+thread safety/privileges, legacy web URL and network removal, external component
+provisioning for projects versus binaries, PHP's distinct interpreter removal,
+command deprecation and settings-page removal, JSON schema validation, formula
+class identity, REST entity-set release, exact LTS client minima, TLS/key changes,
+zero-based FileHandle offsets, preserved negative times, component distribution,
+and the documented form, web-area, logging and language behavior changes.
+Repeated cumulative/backport paragraphs add evidence to one stable fact, not a
+new entity. Existing ICU 68.1, empty aggregate, colon, NULL-mapping, DirectWrite
+and XML-setting facts are reconciled. A new two-member Windows WebView2 group
+combines history/progress state handling; all 27 earlier groups retain their IDs,
+assignments and original summaries/actions. No mandatory binary-to-project conversion
+or universal optional-setting change is inferred.
+
+Every extracted block in the 20 release-note pages and linked bulletin has a
+disposition in `data/section-audit.json`: **2,213 blocks**, comprising 443 cataloged
+support/context blocks, 400 contextual blocks, 12 automatic-preservation fixes,
+1,353 out-of-scope blocks and **five pending blocks**. Those five are two
+historical OS/printing caveats repeated across available locales; their final-target
+resolution is not established. The combined audit has 100 pending blocks; the
+separate editorial disposition register has 70 pending entries, including these
+five, not 70 distinct product defects. `systematic_partial` means the bounded
+pages were systematically dispositioned, **not** that the whole manual, linked
+new-feature posts, fixed-bug lists or all command documentation were processed.
+Optional features, automatic fixes, withdrawn/intermediate advice and unresolved
+OS printing caveats are separate decisions, not filler migration records.
+Official locale completeness is checked per supporting block rather than
+assumed from a translated page title. German modern summaries are original
+generated candidates with real English evidence fallback, not invented German
+public documentation. All facts and entities remain **Unknown complexity,
+generated candidates, and 0 named human reviews**.
+
+The two confirmed presentation defects reported during this batch are tracked
+in the clarification workflow: cumulative later-edition citations leaked into
+historical upgrade paths, and missing localized conditions/rationales exposed
+raw English editorial prose. Path-compatible sources and applicable member
+evidence are selected before locale preference; only later-edition support is
+explicitly unresolved, never silently called path verification. Full original
+provenance remains in the catalog. Conditions and action rationales are authored
+in all five locales for old and new facts and groups, not translated at runtime.
+Original source quotations are never rewritten.
+
+The populated path checks below count eligible feature entities before search,
+with both visitor OS choices and all topics selected. Excluded citations count
+canonical evidence records across all source languages, before locale preference;
+they are retained internally, not displayed under a warning. Unresolved counts
+are applicable entities without in-path support, not newly verified requirements.
+
+| Source → final target | Entities | Unresolved / partially supported | Excluded citations |
+|---|---:|---:|---:|
+| v16 → v21 | 186 | 0 / 0 | 73 |
+| v16 → public latest 21 R4 | 195 | 0 / 0 | 107 |
+| v17 → v18 | 79 | 10 / 1 | 1,055 |
+| v20 → public latest 21 R4 | 110 | 24 / 0 | 1,112 |
+| v21 → public latest 21 R4 | 74 | 57 / 0 | 1,415 |
+| v21 → v21 | 65 | 58 / 0 | 1,377 |
+
+The v21-to-latest interval includes the documented 21 R3/R4 changes; the equal
+v21 interval does not newly cross them. Continuing deprecations and explicitly
+unknown cutoffs can remain relevant on either interval. All **27 unknown exact
+atomic cutoffs** remain unknown. Twelve PHP module facts have the evidenced
+exclusive 20 R3 final-target bound; the exact 20.1 client/server pairing instead
+has a target-specific constraint, with no invented 20.2 end date.
 
 ### Legacy archive coverage
 
@@ -412,14 +492,14 @@ source development; publish `_site/`, not the unversioned source directory.
 | `data/changes.json` | Atomic editorial facts with stable IDs, exact member-level conditions and evidence |
 | `data/groups.json` | Explicit feature/remediation membership and independently authored five-language entity summaries/actions |
 | `data/overrides.json` | Manual, reasoned patches applied last; ingestion never rewrites them |
-| `data/glossary.json` | Concept/edition-aligned official wording and 133 evidence-bound English/French command-name mappings; unknowns explicit |
+| `data/glossary.json` | Concept/edition-aligned official wording and evidence-bound English/French command-name mappings; unknowns explicit |
 | `data/dispositions.json` | Explicit exclusions and pending editorial questions, not confirmed public errors |
-| `data/section-audit.json` | Stage 2 block-by-block scope decisions and exact snapshot provenance; not exhaustive manual coverage |
+| `data/section-audit.json` | Stage 2/3 block-by-block scope decisions and exact snapshot provenance; not exhaustive manual coverage |
 | `data/clarifications.json` | Curated confirmed-error register with evidence and dispositions |
 | `data/latest.json` | Evidence-backed concrete feature-release resolution |
 | `data/semantic-search.json` | Explicit unavailable state and pinned research provenance |
 | `tools/ingest.py` | Incremental fetching, structural extraction and local review diffs |
-| `tools/discover_docs.py` | Four-seed bounded modern Release Notes discovery/fetch; actual same-edition locale routes only |
+| `tools/discover_docs.py` | Four-seed bounded modern discovery/fetch, plus an explicitly requested advertised public revision; actual locale links only |
 | `tools/catalog.py` | Fail-fast schema/domain validation, ID deduplication, overrides and deterministic publication |
 | `tools/publish.py` | Content-addressed, release-coherent static Pages artifact |
 | `site/` | One shared multilingual app; no on-demand classification or translation |
@@ -437,7 +517,7 @@ grouping. Every atomic fact belongs to exactly one published entity; grouped
 entities retain ordered `member_ids`, full `members`, unioned identifiers/evidence
 and all member-level conditions/provenance. Group IDs are separate stable IDs,
 not replacements for atomic history. Publication rejects duplicate membership,
-unknown IDs, or mixed exact cutoffs, type, stage, severity, platform, format,
+unknown IDs, or mixed exact cutoffs/backport alternatives, validity bounds, type, stage, severity, platform, format,
 review state or complexity. Similar prose alone does not establish a group.
 Differing cutoffs or deprecation/removal status remain separate entities.
 All group line/paragraph/action texts are authored in en/fr/de/es/ja, candidate
@@ -454,6 +534,15 @@ modernization; criticality is classified separately from stage.
 Unknown thresholds use `{"exact": null, "bucket": null, "kind": "unknown"}`;
 unknown actions use `null` plus an explanatory `action_basis`. Unknown
 stage/criticality/platform values are explicit, never silently inferred.
+
+Visitor-facing prose lives in each `localizations[language]`: `conditions`,
+`action`, and, when a rationale exists, `action_basis`, as well as line/paragraph
+summaries and display identifiers. Raw structured conditions/reasons remain
+internal editorial metadata. Validation rejects absent localized fields rather
+than rendering raw English as if localized. Reasoned overrides apply before
+grouping; grouped localizations carry their independently authored conditions
+and rationale. Invariant APIs stay unchanged, French command prose uses verified
+French names only, and the other four modes use English command names only.
 
 `validate()` in `tools/catalog.py` is the executable schema contract. Publication
 fails on missing evidence, incorrect buckets, duplicate IDs, invalid provenance,
@@ -474,8 +563,20 @@ Equal versions remain selectable to assess existing deprecations.
 The browser matches a source/target interval plus applicability, not just the
 document edition. Lingering deprecations and explicit target requirements can
 remain relevant even when introduced before the source version. Optional
-`applies_until` bounds temporary workarounds; do not assume an intermediate
-workaround is required at the final target. The platform selector contains only
+`threshold.alternatives` preserves exact branch backports (patch, HF and build
+identity included) in one canonical fact. Build numbers are never compared
+across branches. A **major-only selector is coarse**: v20 does not prove 20.3
+or 20.7 HF2 is already installed. Same-major patch changes are conservatively
+included with conditional instructions, while later R cycles are not treated
+as already present in the major baseline. Thus v21 → latest 21 R4 includes
+21 R3, v21 → v21 does not, and 21 R5 beta is capped out by public latest.
+
+`applies_until` is an **exclusive final-target** release bound, not an
+intermediate traversal instruction. The twelve bundled-PHP-module facts retain
+their v20 evidence and IDs but expire at 20 R3, where the separate whole internal
+interpreter removal supersedes that narrower remedy. Do not force module-level
+intermediate work at a later final target. Group compatibility includes bounds.
+The platform selector contains only
 **Windows** and **macOS**. Unknown/missing platform applicability remains internal
 and eligible whenever either OS is selected, without inventing platform evidence.
 There are no Linux or Unknown platform checkboxes. No current fact is Linux-only;
@@ -493,7 +594,7 @@ Sort choices are **Severity** (highest first, unknown last; default) and
 **Complexity** (Simple → Moderate → Complex → Unknown). Complexity is the
 difficulty of applying documented remediation, independent of severity or stage,
 not comprehension difficulty or an effort estimate. Severity ties use stable ID;
-complexity ties use severity then stable ID. All 192 facts and 119 entities remain Unknown.
+complexity ties use severity then stable ID. All 272 facts and 198 entities remain Unknown.
 The optional schema-v1 `complexity` object has a typed `level`; known levels
 require a documented `basis` and `evidence_source_ids` referencing the record's
 evidence. Missing metadata means unknown; validators reject unsupported or
@@ -522,6 +623,8 @@ python3 -m tools.discover_archive --transport curl
 python3 -m tools.ingest --transport curl --id legacy-v20-deprecated-en
 # Fetch only four modern seeds and their actual linked app-language counterparts
 python3 -m tools.discover_docs --transport curl
+# Also refresh the exact publicly advertised revision, English before its locales
+python3 -m tools.discover_docs --transport curl --public-release "21 R4"
 # After reviewing data/discoveries.json: explicitly register same-host blog locales
 python3 -m tools.ingest --accept-discoveries --transport curl
 # Match every short quote, heading, block and hash against the local extracts
@@ -564,9 +667,11 @@ an actual duplicated German user-form row); it does not flatten a whole manual.
 
 Only actual blog `hreflang` links are queued, never invented blog translations.
 Modern Release Notes discovery is separately bounded to four configured English
-seeds and at most four additional app languages per seed (16 actual URLs in this
-snapshot). It follows no article links, other versions, Portuguese pages or
-command-detail pages. Legacy archive discovery skips modern seeds and preserves
+seeds (16 actual URLs) and an explicitly requested, actually advertised public
+revision (four further URLs). One manually registered, actually linked official
+TLS bulletin clarifies the branch fixes. This is not an automatic article,
+other-version, Portuguese or command-detail crawl.
+Legacy archive discovery skips modern seeds and preserves
 their independently recorded locations/unresolved entries.
 No unbounded crawl runs. Conversion landing pages do not
 imply their linked details were processed.
@@ -607,8 +712,9 @@ Significant **confirmed catalog errors/source contradictions** belong in a
 manually created GitHub issue and `data/clarifications.json`: stable ID, title,
 pending/resolved/superseded status, affected change IDs, issue URL, evidence and
 disposition. Link the clarification IDs from affected changes' `notices`.
-The repository preserves two resolved clarifications: translated-slug discovery
-and GRAPH TABLE's earlier disabling. These are catalog corrections, not 4D
+The repository preserves three resolved clarifications: translated-slug discovery,
+GRAPH TABLE's earlier disabling, and path-scoped evidence/localized applicability.
+These are catalog corrections, not 4D
 product defects; resolution does not mean human content review. Clarification
 notices remain attached to affected facts/entities, without adding a visitor
 dashboard or live API access. Model
@@ -625,6 +731,38 @@ embeddings, with no paid external/cloud inference. An embedder is not a generato
 different tasks may use different models. No model is selected, installed or
 executed by this content batch, and this automated inference pipeline does **not**
 exist yet. Current agent-authored content is explicitly identified as such.
+
+**The version-controlled authored catalog is the authoritative baseline**, not
+disposable output to regenerate when a local model is introduced. This includes
+existing frontier/agent-authored summaries, translations, conditions and action
+rationales, as well as curated groups and corrections. Model, tokenizer, prompt
+or schema revisions must not invalidate that authored text or its assignments.
+Future source additions or substantive evidence changes may propose reviewable
+patches **only for affected facts, locales and fields**. A corroborating URL,
+retrieval timestamp, HTML-only formatting change or override-only edit must not
+rewrite summaries or translations. An explicit, narrowly scoped regeneration
+option may create a reviewable PR; it must never silently replace the catalog.
+
+`data/groups.json` is a durable editorial contract: stable group IDs, active
+member assignments and all authored language fields survive candidate/model
+changes. Models may propose **new** assignments in a reviewable diff; uncertain
+new facts stay singleton candidates pending review. Do not dissolve/rebuild
+groups, merge by similarity or overwrite group prose after a model revision.
+Only an explicit reasoned editorial change may alter an established assignment.
+Generated proposals and curated content need separate provenance. Threshold,
+status, remediation, platform, format and validity-bound compatibility guards,
+unique active membership, stable IDs and no-dropped-fact checks still apply.
+The fixed curated-group fixture and synthetic candidate-swap tests guard current
+deterministic behavior; they are **not an implemented inference pipeline**.
+
+Future caches should use per-field provenance/fingerprints and stable source IDs
+to distinguish authored baseline from new proposals. Source removal must flag
+stale support and affected review/exclusion explicitly, retaining provenance and
+remaining independent support; it must not erase or retranslate unrelated text.
+Human corrections and overrides are strongest and always win. Current schema,
+committed baseline fixtures, final overrides and deterministic grouping provide
+storage/validation safeguards only. Automatic affected-field detection,
+model-result reconciliation and source-removal inference remain unimplemented.
 
 Keep cheap deterministic catalog/group publication separate from expensive
 source inference. Override-only edits must not regenerate source-derived prose;

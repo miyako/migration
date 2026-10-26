@@ -1,12 +1,33 @@
 {
   "release": "21 R4",
   "bucket": "latest",
-  "verified_at": "2026-10-26",
-  "url": "https://us.4d.com/product-download",
+  "verified_at": "2026-10-26T14:15:14+00:00",
+  "url": "https://blog.4d.com/4d-21-r4-is-here/",
   "status": "verified",
   "channel": "feature",
   "released_at": "2026-10-12",
-  "excerpt": "4D 21 R4 - Released on 12 October 2026",
-  "corroborating_url": "https://blog.4d.com/4d-21-r4-is-here/",
-  "limitation": "Public feature-release channel; not an account-only hotfix/build check. LTS is a separate channel."
+  "excerpt": "4D 21 R4 is now officially available",
+  "published_at": "2026-10-12T09:44:57+00:00",
+  "corroborating_url": "https://us.4d.com/product-download/Feature-Release",
+  "corroborating_excerpt": "4D 21 R4 - Released on 12 October 2026",
+  "documentation_url": "https://developer.4d.com/docs/21-R4/Notes/updates",
+  "limitation": "The public announcement and public download-page release label were checked. Download files remain login-gated; account-only hotfixes/builds were not checked. Moving-current documentation is 21 R5 BETA and does not establish public latest. LTS is a separate channel.",
+  "public_verification": {
+    "announcement": {
+      "requested_url": "https://blog.4d.com/4d-21-r4-is-here/",
+      "resolved_url": "https://blog.4d.com/4d-21-r4-is-here/",
+      "http_status": 200,
+      "checked_at": "2026-10-26T14:15:14+00:00",
+      "sha256": "082e404585ec90ce8381582e6ee52f0ef28213b11d194b6374d0573a4bb0629e",
+      "excerpt": "4D 21 R4 is now officially available"
+    },
+    "download": {
+      "requested_url": "https://us.4d.com/product-download",
+      "resolved_url": "https://us.4d.com/product-download/Feature-Release",
+      "http_status": 200,
+      "checked_at": "2026-10-26T14:15:14+00:00",
+      "sha256": "336739b7801627ee8ed1b22886e3e09f61e90f17b495624eee4ae8d421865686",
+      "excerpt": "4D 21 R4 - Released on 12 October 2026"
+    }
+  }
 }

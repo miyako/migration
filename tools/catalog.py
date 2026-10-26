@@ -19,11 +19,21 @@ CRITICALITIES = ["blocking", "high", "medium", "low", "unknown"]
 COMPLEXITIES = ["simple", "moderate", "complex", "unknown"]
 
 
-def bucket(release, current_major=21):
-    match = re.fullmatch(r"(?:4D\s*)?v?(\d+)(?:\.\d+)*(?:\s+R(\d+))?", release.strip(), re.I)
-    if not match:
+def release_key(release):
+    """Order base/patch, R-cycle, hotfix and build releases without rewriting provenance."""
+    match = re.fullmatch(
+        r"(?:4D\s*)?v?(\d+)((?:\.\d+){0,3})(?:\s*R(\d+))?"
+        r"(?:\s*HF\s*(\d+))?(?:\s*(?:build\s*(\d+)|\(build\s*(\d+)\)))?",
+        release.strip() if isinstance(release, str) else "", re.I)
+    if match is None:
         raise ValueError(f"Invalid exact release: {release!r}")
-    major, r = int(match[1]), match[2]
+    patches = [int(part) for part in match[2].split(".") if part]
+    return (int(match[1]), int(match[3] or 0), *(patches + [0] * (3 - len(patches))),
+            int(match[4] or 0), int(match[5] or match[6] or 0))
+
+
+def bucket(release, current_major=21):
+    major, r, *_ = release_key(release)
     if r:
         return "latest" if major == current_major else f"v{major + 1}"
     return f"v{major}"
@@ -75,6 +85,7 @@ def apply_overrides(candidates, overrides):
                 raise ValueError("Overrides cannot change stable IDs")
             change = deep_merge(change, override["patch"])
             change["editorial_override"] = {"reason": override["reason"]}
+        validate_version_applicability(change)
         result.append(change)
     return result
 
@@ -82,6 +93,8 @@ def apply_overrides(candidates, overrides):
 def group_entities(changes, config):
     """Project explicit feature groups without deleting or reclassifying atomic facts."""
     require(config.get("schema_version") == 1, "Unsupported group schema version")
+    for change in changes:
+        validate_version_applicability(change)
     by_id = {c["id"]: c for c in changes}
     owners, groups = {}, {}
     compatible = ("threshold", "applies_until", "type", "stage", "criticality", "platforms",
@@ -99,6 +112,8 @@ def group_entities(changes, config):
         first = members[0]
         require(all(all(member.get(key) == first.get(key) for key in compatible)
                     and member["applicability"]["formats"] == first["applicability"]["formats"]
+                    and member["applicability"].get("target_releases") ==
+                    first["applicability"].get("target_releases")
                     for member in members), "Group members have incompatible cutoff/status/platform/format metadata")
         require(first.get("complexity", {"level": "unknown"}) == {"level": "unknown"},
                 "Group difficulty needs separate evidence; do not infer it from members")
@@ -107,15 +122,16 @@ def group_entities(changes, config):
                 and all(nonempty(text.get("action")) and text.get("provenance") == "generated_candidate"
                         for text in definition["localizations"].values()),
                 "Group needs complete authored localizations and actions")
+        validate_localized_applicability({**definition, "action_basis": definition["reason"]})
         extra_ids = definition.get("evidence_from", [])
         require(set(extra_ids) <= by_id.keys(), "Group evidence references an unknown fact")
         entity = deepcopy(first)
         entity.update(id=identifier, member_ids=list(member_ids), members=deepcopy(members),
                       localizations=deepcopy(definition["localizations"]),
                       action=definition["localizations"]["en"]["action"],
-                      action_basis=definition["reason"])
+                      action_basis=definition["localizations"]["en"]["action_basis"])
         entity.pop("editorial_override", None)
-        entity["applicability"]["conditions"] = list(definition["conditions"])
+        entity["applicability"]["conditions"] = list(definition["localizations"]["en"]["conditions"])
         entity["relevance"] = {"status": "conditional", "reason": definition["reason"]}
         entity["confidence"] = min((m["confidence"] for m in members),
                                    key={"low": 0, "medium": 1, "high": 2}.__getitem__)
@@ -160,6 +176,94 @@ def nonempty(value):
     return isinstance(value, str) and bool(value.strip())
 
 
+def invariant_identifier(value, identifiers):
+    """Only whole technical identifiers may be shared; surrounding prose must be authored."""
+    return value in identifiers or bool(re.fullmatch(r"_o_[A-Za-z][A-Za-z0-9_ ]*", value, re.I))
+
+
+def validate_localized_applicability(change):
+    localizations = change.get("localizations")
+    require(isinstance(localizations, dict) and set(localizations) == set(LANGUAGES),
+            f"Missing localization for {change['id']}")
+    english = localizations["en"]
+    require(isinstance(english, dict), f"Invalid English localization for {change['id']}")
+    identifiers = change.get("identifiers", [])
+    for language, text in localizations.items():
+        label = f"{change['id']} ({language})"
+        require(isinstance(text, dict), f"Invalid localization for {label}")
+        conditions = text.get("conditions")
+        require(isinstance(conditions, list) and bool(conditions)
+                and all(nonempty(condition) for condition in conditions),
+                f"Missing localized conditions for {label}")
+        require(nonempty(text.get("action")), f"Missing localized action for {label}")
+        if "action_basis" in change or "action_basis" in text:
+            require(nonempty(text.get("action_basis")), f"Missing localized action basis for {label}")
+        if language != "en":
+            require(all(condition not in english.get("conditions", [])
+                        or invariant_identifier(condition, identifiers) for condition in conditions),
+                    f"English fallback is not translated conditions for {label}")
+            if "action_basis" in change:
+                basis = text["action_basis"]
+                require(basis != english.get("action_basis") or invariant_identifier(basis, identifiers),
+                        f"English fallback is not a translated action basis for {label}")
+
+
+def validate_version_applicability(change):
+    applicability = change.get("applicability", {})
+    if "target_releases" in applicability:
+        targets = applicability["target_releases"]
+        require(isinstance(targets, list) and bool(targets)
+                and all(nonempty(value) for value in targets) and len(set(targets)) == len(targets),
+                "Target releases must be distinct exact release strings")
+        for target in targets:
+            release_key(target)
+    threshold = change["threshold"]
+    alternatives = threshold.get("alternatives")
+    require("alternatives" not in threshold or isinstance(alternatives, list),
+            "Threshold alternatives must be an exact release list")
+    if threshold["kind"] == "unknown":
+        require(threshold["exact"] is None and threshold["bucket"] is None and alternatives is None,
+                "Unknown threshold must not invent exact releases or buckets")
+        releases = []
+    else:
+        require(threshold["kind"] in {"introduced", "target_requirement"}, "Invalid threshold kind")
+        require(nonempty(threshold["exact"]) and threshold["bucket"] == bucket(threshold["exact"]),
+                f"Incorrect bucket for {change['id']}")
+        # Alternatives are exact branch cutoffs, not replacement provenance or inferred ranges.
+        require(alternatives is None or
+                (isinstance(alternatives, list) and bool(alternatives)
+                 and all(nonempty(value) for value in alternatives)
+                 and len(set(alternatives)) == len(alternatives)
+                 and threshold["exact"] in alternatives),
+                "Threshold alternatives must be distinct exact releases including the primary exact release")
+        releases = [release_key(value) for value in
+                    (alternatives if alternatives is not None else [threshold["exact"]])]
+    bound = change.get("applies_until")
+    if bound is not None:
+        require(nonempty(bound), "Invalid applies_until release")
+        if bound != "latest":
+            until = release_key(bound)
+            require(all(release < until for release in releases),
+                    "Exclusive applies_until must follow every threshold alternative")
+
+
+def validate_documentation_version_link(source, sources):
+    discovery = source["discovery"]
+    parent = next((item for item in sources.values() if item["url"] == discovery.get("parent")), None)
+    require(parent is not None and parent["family"] == "documentation-release-notes"
+            and parent["language"] == "en" and parent.get("documentation_channel") == "moving-current"
+            and parent["fetch"]["status"] == "available"
+            and nonempty(discovery.get("parent_sha256"))
+            and discovery["parent_sha256"] == parent["fetch"].get("sha256"),
+            "Official version discovery needs a checked moving-current English parent hash")
+    route = documentation_route(source["url"])
+    require(source["language"] == "en" and route["language"] == "en" and route["channel"] == "versioned"
+            and discovery.get("label") == route["version"].replace("-R", " R")
+            and {"label": discovery.get("label"), "url": source["url"]} in
+            parent["fetch"].get("documentation", {}).get("version_links", []),
+            "Version URL and release label must be advertised together by their parent")
+
+
 def validate(document):
     require(document["schema_version"] == 1, "Unsupported schema version")
     sources = {s["id"]: s for s in document["sources"]}
@@ -191,6 +295,8 @@ def validate(document):
                     "Documentation route locale/channel mismatch")
             require(source["authority"] == "official_documentation" and source["host_operator"] == "4D",
                     "Modern documentation must not be classified as the legacy mirror")
+            if source["discovery"]["method"] == "official_docs_version_link":
+                validate_documentation_version_link(source, sources)
             if source["discovery"]["method"] == "official_docs_hreflang":
                 discovery = source["discovery"]
                 parent = next((item for item in sources.values() if item["url"] == discovery["parent"]), None)
@@ -279,21 +385,16 @@ def validate(document):
                 require([m["id"] for m in members] == member_ids,
                         "Grouped entity must retain every member's facts in order")
                 require(all(all(m[key] == change[key] for key in
-                                ("threshold", "type", "stage", "criticality", "platforms", "complexity"))
+                                ("threshold", "applies_until", "type", "stage", "criticality", "platforms", "complexity"))
                             and m["applicability"]["formats"] == change["applicability"]["formats"]
+                            and m["applicability"].get("target_releases") ==
+                            change["applicability"].get("target_releases")
                             for m in members), "Published group metadata must match every member")
+                for member in members:
+                    validate_localized_applicability(member)
             else:
                 require(member_ids == [identifier], "Ungrouped entity must retain its stable atomic ID")
-        threshold = change["threshold"]
-        if threshold["kind"] == "unknown":
-            require(threshold["exact"] is None and threshold["bucket"] is None,
-                    "Unknown threshold must not invent an exact release or bucket")
-        else:
-            require(nonempty(threshold["exact"]) and threshold["bucket"] == bucket(threshold["exact"]),
-                    f"Incorrect bucket for {identifier}")
-            require(threshold["kind"] in {"introduced", "target_requirement"}, "Invalid threshold kind")
-        if change["applies_until"] is not None:
-            require(change["applies_until"] in BUCKETS, "Invalid applies_until bucket")
+        validate_version_applicability(change)
         require(change["stage"] in STAGES, "Invalid stage")
         require(change["criticality"] in CRITICALITIES, "Invalid criticality")
         complexity = change.get("complexity", {"level": "unknown"})
@@ -327,18 +428,12 @@ def validate(document):
                 set(applicability["formats"]) <= {"binary", "project", "unknown"}, "Invalid format applicability")
         require(isinstance(applicability["conditions"], list) and bool(applicability["conditions"]) and
                 all(nonempty(x) for x in applicability["conditions"]), "Missing applicability conditions")
-        require(set(change["localizations"]) == set(LANGUAGES), f"Missing localization for {identifier}")
+        validate_localized_applicability(change)
         for language, text in change["localizations"].items():
             if "identifiers" in text:
                 require(isinstance(text["identifiers"], list)
                         and all(nonempty(name) for name in text["identifiers"]),
                         "Localized display identifiers must be an explicit list")
-            if "conditions" in text:
-                require(isinstance(text["conditions"], list)
-                        and all(nonempty(condition) for condition in text["conditions"]),
-                        "Localized applicability conditions must be an explicit list")
-            if "action_basis" in text:
-                require(nonempty(text["action_basis"]), "Invalid localized action basis")
             require(all(nonempty(text.get(k)) for k in ("one_line", "paragraph", "provenance")),
                     f"Incomplete {language} localization for {identifier}")
             require(text["provenance"] in {"generated_candidate", "human_reviewed", "official_translation"},
