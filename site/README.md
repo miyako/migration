@@ -38,20 +38,31 @@ interface shows only the matching-entry count, without a catalog total or a
 catalog/upgrade mode selector. Applicability conditions, exclusive end bounds
 and exact target-release constraints remain available on each card.
 
-Routine compatibility and automatic-behavior checks are hidden by default.
-**Include routine checks** reveals them within the same upgrade path, search,
+Routine compatibility checks, deferred modernization and optional adoption
+guidance are hidden by default where reviewed.
+**Include routine and advisory items** reveals them within the same upgrade path, search,
 platform/topic filters and sorting. Keyword and semantic search use the same
-visibility rule; neither silently brings hidden checks back. Included routine
-cards carry a localized badge. Reset filters returns to the pruned default, and
+visibility rule; neither silently brings hidden items back. Included items
+carry localized Routine check, Deferred modernization or Optional adoption
+badges. Reset filters returns to the pruned default, and
 the checkbox is not persisted; language and theme remain the only preferences.
 The reference URL list is unaffected.
 
 `data/default-visibility.json` records an explicit editorial reason and reviewed
-entity membership for each routine classification. The publisher rejects
+entity membership for each classification. Configuration schema v2 separates
+11 routine checks from 7 deferred-modernization and 9 optional-adoption entries.
+The 16 advisory exclusions apply only to the reviewed concrete targets **21**
+and **21 R4**, not earlier, unknown or future releases. Latest resolves to its
+actual release before matching; advancing latest requires another review before
+these entries can be hidden there. A future target therefore reveals the
+advisory entries even when the checkbox remains unchecked.
+The publisher rejects
 unknown IDs, unsupported metadata and changed group membership rather than
 silently hiding newly added migration work. Unclassified entries stay visible,
-regardless of severity. Concrete code, data, configuration and deployment
-changes are retained; classification is not a severity or difficulty estimate.
+regardless of severity. Required code, data, security, configuration and deployment
+work remains visible. Supported-command modernization and optional compatibility
+settings are deferred, not declared unnecessary or safe to enable without
+testing. Classification is not a severity or difficulty estimate.
 
 The supplied 4D glyph and white
 ring are preserved in `4d.svg`; only its inner circle inherits the version color.

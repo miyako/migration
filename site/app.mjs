@@ -1,6 +1,7 @@
 import {
   LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
   versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath, referencesForLanguage,
+  defaultVisibilityCategory,
 } from './logic.mjs';
 import { corpusRows, hybridFilter } from './semantic.mjs';
 import { searchLabels } from './search-labels.mjs';
@@ -239,8 +240,11 @@ function changeCard(change) {
   for (const [key, value] of [['criticality', change.criticality], ['complexity', complexityForChange(change)]]) {
     top.append(node('span', `${t(key)}: ${valueLabel(value)}`, `badge${key === 'criticality' && ['blocking', 'critical'].includes(value) ? ' severe' : ''}`));
   }
-  if (change.default_visibility?.category === 'routine_check') {
-    top.append(node('span', t('routineCheck'), 'badge'));
+  const visibility = defaultVisibilityCategory(change, state.target, state.catalog.latest);
+  if (visibility) {
+    const label = { routine_check: 'routineCheck', deferred_modernization: 'deferredModernization',
+      optional_adoption: 'optionalAdoption' }[visibility];
+    top.append(node('span', t(label), 'badge'));
   }
   card.append(top, node('h3', locale?.one_line || change.id));
   if (!change.localizations[state.language]) card.append(node('p', t('fallback'), 'muted'));

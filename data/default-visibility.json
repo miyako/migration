@@ -1,49 +1,249 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "routine_checks": {
     "chg-client-minimum-20-2": {
-      "member_ids": ["chg-client-minimum-20-2"],
+      "member_ids": [
+        "chg-client-minimum-20-2"
+      ],
       "reason": "Server 20.2 and later requires clients at least 20.2. This is routine LTS client/server version alignment, with no application-specific remediation."
     },
     "chg-client-minimum-20-7": {
-      "member_ids": ["chg-client-minimum-20-7"],
+      "member_ids": [
+        "chg-client-minimum-20-7"
+      ],
       "reason": "Server 20.7 and later requires clients at least 20.7. This is routine LTS client/server version alignment, with no application-specific remediation."
     },
     "chg-client-minimum-20-9": {
-      "member_ids": ["chg-client-minimum-20-9"],
+      "member_ids": [
+        "chg-client-minimum-20-9"
+      ],
       "reason": "Server 20.9 and later requires clients at least 20.9. This is routine LTS client/server version alignment, with no application-specific remediation."
     },
     "chg-windows-server-2012-r2-support": {
-      "member_ids": ["chg-windows-server-2012-r2-support"],
+      "member_ids": [
+        "chg-windows-server-2012-r2-support"
+      ],
       "reason": "Windows Server 2012 R2 compatibility ends at 20.2. This is a supported-OS prerequisite; the entry documents no additional application-specific adaptation."
     },
     "chg-icu-63-index-rebuild": {
-      "member_ids": ["chg-icu-63-index-rebuild"],
+      "member_ids": [
+        "chg-icu-63-index-rebuild"
+      ],
       "reason": "The ICU 63.1 update automatically rebuilds indexes. Allowing upgrade time is routine maintenance, not manual repair or a data transformation. The first 4D release remains unknown."
     },
     "chg-icu-68-index-rebuild": {
-      "member_ids": ["chg-icu-68-index-rebuild"],
+      "member_ids": [
+        "chg-icu-68-index-rebuild"
+      ],
       "reason": "ICU 68.1 at 18 R6 automatically rebuilds indexes. This is an upgrade-duration notice, not selective corrective reindexing."
     },
     "chg-icu-20-index-rebuild": {
-      "member_ids": ["chg-icu-20-index-rebuild"],
+      "member_ids": [
+        "chg-icu-20-index-rebuild"
+      ],
       "reason": "The v20 ICU update automatically rebuilds indexes. No application changes or manual rebuild are prescribed."
     },
     "chg-icu-73-index-rebuild": {
-      "member_ids": ["chg-icu-73-index-rebuild"],
+      "member_ids": [
+        "chg-icu-73-index-rebuild"
+      ],
       "reason": "ICU 73.2 at 20.1 automatically rebuilds indexes. This is routine upgrade timing, distinct from the separate target-20.1 client/server version constraint."
     },
     "chg-icu-77-index-rebuild": {
-      "member_ids": ["chg-icu-77-index-rebuild"],
+      "member_ids": [
+        "chg-icu-77-index-rebuild"
+      ],
       "reason": "ICU 77.1 automatically rebuilds indexes. Allowing time and verifying completion is routine upgrade maintenance, not a specific manual repair."
     },
     "chg-icu-20-1-client-server-pair": {
-      "member_ids": ["chg-icu-20-1-client-server-pair"],
+      "member_ids": [
+        "chg-icu-20-1-client-server-pair"
+      ],
       "reason": "Matching 20.1 clients and Server 20.1 is ordinary exact-version alignment for that final target, not a mandatory intermediate upgrade step."
     },
     "chg-legacy-network-layer-removal": {
-      "member_ids": ["chg-legacy-network-layer-removal"],
+      "member_ids": [
+        "chg-legacy-network-layer-removal"
+      ],
       "reason": "At 21 R3, projects and binary databases automatically switch to ServerNet. This entry recommends connection testing but specifies no manual migration procedure or code change. The earlier, separately documented manual network-layer migration remains visible."
+    }
+  },
+  "advisory_items": {
+    "chg-deprecated-c-integer": {
+      "member_ids": [
+        "chg-deprecated-c-integer"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "The historical C_INTEGER deprecation and v21 C_XXX declaration deprecation describe modernization, not documented removal or a mandatory rewrite at the reviewed targets."
+    },
+    "chg-php-command-deprecation": {
+      "member_ids": [
+        "chg-php-command-deprecation"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "v21 deprecates the PHP commands without removing them. The separate bundled-interpreter removal and external-PHP deployment requirements remain visible."
+    },
+    "chg-deprecated-last-error-stack": {
+      "member_ids": [
+        "chg-deprecated-last-error-stack"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "v21 deprecates GET LAST ERROR STACK in favor of Last errors, without documenting behavior loss or mandatory replacement at the reviewed targets."
+    },
+    "chg-deprecated-serial-information": {
+      "member_ids": [
+        "chg-deprecated-serial-information"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "v21 deprecates GET SERIAL INFORMATION in favor of License info. Replacing an existing supported call is deferred modernization at the reviewed targets."
+    },
+    "chg-deprecated-process-properties": {
+      "member_ids": [
+        "chg-deprecated-process-properties"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "v21 deprecates PROCESS PROPERTIES in favor of Process info, without documenting removal or compulsory rewriting at the reviewed targets."
+    },
+    "chg-deprecated-screen-depth": {
+      "member_ids": [
+        "chg-deprecated-screen-depth"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "v21 classifies SET SCREEN DEPTH as deprecated rather than removed. This entry is retirement advice, not a documented newly failing operation at the reviewed targets."
+    },
+    "chg-legacy-parameter-declaration-warnings": {
+      "member_ids": [
+        "chg-legacy-parameter-declaration-warnings"
+      ],
+      "category": "deferred_modernization",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "v21 reports warnings, not compilation errors, for legacy parameter declarations. Prototype modernization can be deferred while preserving calling conventions."
+    },
+    "chg-object-date-type-option": {
+      "member_ids": [
+        "chg-object-date-type-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Storing object dates as date values is enabled explicitly through a compatibility option or per-process setting. An existing application need not adopt the mixed-type transition merely to upgrade."
+    },
+    "chg-standard-xpath-option": {
+      "member_ids": [
+        "chg-standard-xpath-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Converted applications retain the previous XPath implementation by default; the documentation permits leaving the option unchecked to preserve existing code."
+    },
+    "chg-macos-text-lf-option": {
+      "member_ids": [
+        "chg-macos-text-lf-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Converted projects adopt LF text output only by selecting the compatibility option. The new-project default does not force existing applications to change output conventions."
+    },
+    "chg-text-no-bom-option": {
+      "member_ids": [
+        "chg-text-no-bom-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Converted projects explicitly opt into BOM-free Unicode text output. Existing encoding-detection behavior need not change solely to upgrade."
+    },
+    "chg-macos-xml-lf-option": {
+      "member_ids": [
+        "chg-macos-xml-lf-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Converted projects explicitly opt into LF XML output. Existing output conventions remain unchanged when the compatibility option is not adopted."
+    },
+    "chg-xml-no-bom-option": {
+      "member_ids": [
+        "chg-xml-no-bom-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "BOM-free XML output is an explicit adoption choice for converted projects, not a compulsory upgrade behavior change."
+    },
+    "chg-windows-directwrite-option": {
+      "member_ids": [
+        "chg-windows-directwrite-option"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Older applications retain their rendering default. DirectWrite form-layout adaptation is required only when adopting that compatibility option."
+    },
+    "chg-new-field-null-mapping-default": {
+      "member_ids": [
+        "chg-new-field-null-mapping-default"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "Converted databases opt into the new default for subsequently created fields. Existing fields are not rewritten and adoption is not compulsory."
+    },
+    "chg-fluent-style-sheet-context": {
+      "member_ids": [
+        "chg-fluent-style-sheet-context"
+      ],
+      "category": "optional_adoption",
+      "target_releases": [
+        "21",
+        "21 R4"
+      ],
+      "reason": "The stylesheet-query behavior changes only when the Fluent UI preview is enabled. Enabling Fluent is not an upgrade requirement; its compatibility guidance matters when opting in."
     }
   }
 }
