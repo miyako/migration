@@ -1,7 +1,7 @@
 import {
   LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
-  versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath, referencesForLanguage,
-  defaultVisibilityCategory, partitionChanges,
+  versionChoices, versionColor, versionIconColors, isLatestAvailable, validateCatalog, projectChangeForPath, referencesForLanguage,
+  defaultVisibilityCategory, partitionChanges, topicAvailability, matchesTopics,
 } from './logic.mjs';
 import { corpusRows, hybridFilter } from './semantic.mjs';
 import { searchLabels } from './search-labels.mjs';
@@ -186,6 +186,10 @@ function renderSelectors() {
     const color = versionColor(state[key], state.catalog?.latest);
     icon.hidden = color === null;
     icon.style.color = color ?? '';
+    const colors = versionIconColors(state[key], state.catalog?.latest);
+    for (const part of ['background', 'foreground', 'border']) {
+      icon.style.setProperty(`--version-${part}`, colors?.[part] ?? '');
+    }
   }
 }
 function optionsFor(key) {
@@ -208,8 +212,21 @@ function renderCheckboxes() {
       });
       label.append(checkbox, node('span', key === 'modules' && value === 'unknown'
         ? t('otherTopics') : valueLabel(value)));
+      if (key === 'modules') label.append(node('span', undefined, 'topic-count'));
       area.append(label);
     }
+  }
+}
+function updateTopicAvailability(changes = [], matchingOptions = optionsFor('modules')) {
+  const options = optionsFor('modules');
+  const checkboxes = [...$('module-options').querySelectorAll('input')];
+  const numberFormat = new Intl.NumberFormat(state.language);
+  for (const { value, count, disabled } of topicAvailability(changes, options, state.modules ?? options, matchingOptions)) {
+    const checkbox = checkboxes.find(input => input.value === value);
+    checkbox.disabled = disabled;
+    checkbox.dataset.count = String(count);
+    checkbox.closest('label').classList.toggle('disabled', disabled);
+    checkbox.closest('label').querySelector('.topic-count').textContent = `(${numberFormat.format(count)})`;
   }
 }
 function evidenceList(records = []) {
@@ -303,6 +320,7 @@ function renderChanges() {
   $('sort-hint').textContent = t(state.sort === 'complexity' ? 'complexityDirection' : 'severityDirection');
   const catalog = state.catalog;
   if (!catalog) {
+    updateTopicAvailability();
     $('result-count').textContent = '';
     area.append(node('p', t(state.loading ? 'loading' : 'loadError')));
     return;
@@ -312,10 +330,14 @@ function renderChanges() {
   const filters = {
     ...state, platforms: state.platforms ?? optionsFor('platforms'), modules: state.modules ?? optionsFor('modules'),
   };
-  const lexical = filterChanges(projected, filters, catalog.latest);
-  const filtered = meaning.enabled && meaning.scores && state.query.trim()
-    ? hybridFilter(filterChanges(projected, { ...filters, query: '' }, catalog.latest),
+  const topicFilters = { ...filters, modules: optionsFor('modules') };
+  const lexical = filterChanges(projected, topicFilters, catalog.latest);
+  const topicCandidates = meaning.enabled && meaning.scores && state.query.trim()
+    ? hybridFilter(filterChanges(projected, { ...topicFilters, query: '' }, catalog.latest),
       lexical, meaning.scores, catalog.semantic_search.threshold) : lexical;
+  const matchingOptions = filterOptions(projected, 'modules');
+  updateTopicAvailability(topicCandidates, matchingOptions);
+  const filtered = topicCandidates.filter(change => matchesTopics(change, filters.modules, matchingOptions));
   const buckets = partitionChanges(filtered);
   $('result-count').textContent = t('resultCount', { count: buckets.upgrade.length });
   $('version-warning').hidden = state.target !== state.source;

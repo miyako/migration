@@ -81,8 +81,10 @@ work remains visible. Supported-command modernization and optional compatibility
 settings are deferred, not declared unnecessary or safe to enable without
 testing. Classification is not a severity or difficulty estimate.
 
-The supplied 4D glyph and white
-ring are preserved in `4d.svg`; only its inner circle inherits the version color.
+The supplied 4D glyph and circle geometry are preserved in `4d.svg`. Versions
+through v20 use white lettering and a white ring around the version color.
+v21 reverses this to blue lettering on white, with a blue ring to distinguish
+the white disc from the light selector panel while retaining contrast in dark mode.
 `VERSION_COLORS` contains the supplied v15-v21 palette without adding a v15
 selector. Latest uses its concrete major's color; an unknown future major has
 no invented color. Explicit text labels and an accessible direction arrow do
@@ -101,6 +103,13 @@ provenance remains intact. `all` platform applicability matches either OS.
 The Topics checkbox for internal `unknown` is labeled Other / Autres / Sonstige /
 Otros / その他. Its filtering semantics are unchanged; other Unknown labels,
 including severity, complexity and evidence uncertainty, are not renamed.
+Topic counts cover all three result sections after version, visibility, search
+(including semantic matches when ready), and platform filters, independently of
+the selected topics. Each count is the number of matching entries for that topic
+alone, not an additive total or a count of atomic group members. Unchecked topics
+with zero matches are natively disabled; checked topics stay enabled even at
+zero so they can always be removed. Counts and availability update with filters
+and semantic results; Select all still selects every topic.
 
 The two sort choices are **Severity** (default, highest first, unknown last) and
 **Complexity** (Simple, Moderate, Complex, Unknown). Complexity means difficulty

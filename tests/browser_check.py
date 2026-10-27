@@ -334,6 +334,11 @@ def run(base, screenshots, published):
             rgb = tuple(int(color[i:i + 2], 16) for i in (1, 3, 5))
             assert actual == f"rgb{rgb}"
             assert page.input_value("#source-version") == version
+            assert page.locator("#source-icon").evaluate("""el => {
+              const style = getComputedStyle(el);
+              return ['background', 'foreground', 'border'].map(
+                part => style.getPropertyValue('--version-' + part).trim());
+            }""") == (["#fff", color, color] if version == "v21" else [color, "#fff", "#fff"])
         page.select_option("#target-version", "latest")
         assert "21 R4" in page.locator("#target-version option:checked").inner_text()
         assert page.locator("#target-icon").evaluate("el => getComputedStyle(el).color") == "rgb(59, 105, 233)"
@@ -354,7 +359,8 @@ def run(base, screenshots, published):
                 if action == "none":
                     assert ids(page) == []
                     assert page.locator(".empty").is_visible()
-            checkbox = page.locator(f'[name="{group}"]').first
+            checkbox = page.locator(f'[name="{group}"]' +
+                                    (':not([data-count="0"])' if group == "modules" else "")).first
             before = controls(page)
             checkbox.uncheck()
             after = controls(page)
@@ -365,6 +371,34 @@ def run(base, screenshots, published):
         after = controls(page)
         assert all(after[key] == before[key] for key in ("source", "target", "language", "theme"))
         assert after["query"] == "" and after["sort"] == "severity"
+        # Topic facets ignore their own OR selection, but track all other filters.
+        page.fill("#search", "chg-internal-php-interpreter-removal")
+        zero_topic = page.locator('[name=modules][data-count="0"]').first
+        assert zero_topic.is_checked() and zero_topic.is_enabled()
+        zero_topic.uncheck()
+        assert zero_topic.is_disabled()
+        assert "disabled" in zero_topic.locator("..").get_attribute("class")
+        page.locator('[data-group=modules][data-select=none]').click()
+        assert ids(page) == []
+        assert page.locator('[name=modules][data-count="0"]:enabled').count() == 0
+        php_topic = page.locator('[name=modules][value=php]')
+        assert php_topic.get_attribute("data-count") == "1"
+        assert php_topic.is_enabled()
+        php_topic.focus()
+        page.keyboard.press("Space")
+        assert ids(page) == ["chg-internal-php-interpreter-removal"]
+        assert php_topic.evaluate("el => el === document.activeElement")
+        page.fill("#search", "no-such-command")
+        assert php_topic.get_attribute("data-count") == "0" and php_topic.is_enabled()
+        php_topic.uncheck()
+        assert php_topic.is_disabled()
+        page.fill("#search", "")
+        assert php_topic.is_enabled()
+        page.locator('[data-group=platforms][data-select=none]').click()
+        assert page.locator('[name=modules]:enabled').count() == 0
+        page.locator('[name=platforms][value=windows]').check()
+        assert php_topic.is_enabled()
+        page.click("#reset")
         # Unknown platform facts remain eligible with either OS, without a third toggle.
         page.locator('[data-group=platforms][data-select=none]').click()
         assert ids(page) == []
@@ -510,14 +544,20 @@ def run(base, screenshots, published):
             other_label = {"en": "Other", "fr": "Autres", "de": "Sonstige",
                            "es": "Otros", "ja": "その他"}[locale]
             topic = page.locator('[name=modules][value=unknown]')
-            assert topic.locator("..").inner_text() == other_label
+            assert topic.locator("..").locator("span").first.inner_text() == other_label
+            assert topic.locator("..").locator(".topic-count").inner_text().startswith("(")
             before = controls(page)
             page.locator('[data-group=modules][data-select=none]').click()
-            topic.check()
+            other_ids = {record["id"] for record in projected_records(catalog)
+                         if record["modules"] == ["unknown"]}
+            assert topic.get_attribute("data-count") == str(len(other_ids))
+            if other_ids:
+                topic.check()
+            else:
+                assert topic.is_disabled()
             assert all(controls(page)[key] == before[key] for key in
                        ("source", "target", "query", "sort", "platforms"))
-            assert set(ids(page)) == {record["id"] for record in projected_records(catalog)
-                                     if record["modules"] == ["unknown"]}
+            assert set(ids(page)) == other_ids
             page.locator('[data-group=modules][data-select=all]').click()
             assert not any(sentence in page.locator("body").text_content() for sentence in obsolete_details)
             for query in ("DELETE RESOURCE", "SUPPRIMER RESSOURCE"):
@@ -547,6 +587,8 @@ def run(base, screenshots, published):
             for theme in ("light", "dark"):
                 page.select_option("#theme", theme)
                 assert page.locator("html").get_attribute("data-theme") == theme
+                assert page.locator("#target-icon").evaluate("""el =>
+                  getComputedStyle(el).getPropertyValue('--version-background').trim()""") == "#fff"
                 check(page, """() => {
                   const luminance = color => {
                     const channels = color.match(/\\d+/g).slice(0, 3).map(
@@ -672,6 +714,40 @@ def run(base, screenshots, published):
         assert errors == [], errors
         assert failed == [], failed
         context.close()
+        # Controlled worker responses exercise asynchronous facet updates without
+        # downloading a model or depending on GPU availability.
+        semantic_context = browser.new_context(locale="en")
+        semantic_context.add_init_script("""Object.defineProperty(navigator, 'gpu', {
+          value: {requestAdapter: async () => ({})}
+        });
+        window.Worker = class {
+          constructor() { window.testWorker = this; }
+          postMessage(message) { this.lastMessage = message; }
+          terminate() {}
+        };""")
+        semantic_page = semantic_context.new_page()
+        semantic_page.goto(base)
+        semantic_page.wait_for_selector("[data-change-id]")
+        semantic_page.fill("#search", "no-such-command")
+        semantic_page.locator('[data-group=modules][data-select=none]').click()
+        assert semantic_page.locator('[name=modules]:enabled').count() == 0
+        semantic_page.evaluate("window.testWorker.onmessage({data: {type: 'ready'}})")
+        semantic_page.wait_for_function("window.testWorker.lastMessage.type === 'search'")
+        semantic_page.evaluate("""window.testWorker.onmessage({data: {
+          type: 'results', sequence: window.testWorker.lastMessage.sequence,
+          scores: [['chg-internal-php-interpreter-removal', 0.9]]
+        }})""")
+        semantic_topic = semantic_page.locator('[name=modules][value=php]')
+        assert semantic_topic.get_attribute("data-count") == "1"
+        assert semantic_topic.is_enabled() and not semantic_topic.is_checked()
+        semantic_topic.check()
+        assert ids(semantic_page) == ["chg-internal-php-interpreter-removal"]
+        semantic_page.evaluate("window.testWorker.onmessage({data: {type: 'error', error: 'Test failure'}})")
+        assert ids(semantic_page) == []
+        assert semantic_topic.get_attribute("data-count") == "0" and semantic_topic.is_enabled()
+        semantic_topic.uncheck()
+        assert semantic_topic.is_disabled()
+        semantic_context.close()
         browser.close()
     print("Browser checks passed: /migration/, hierarchy, scoped controls, sort, unknowns, "
           "5 locales, themes, mobile, version icons, persistence and errors.")
