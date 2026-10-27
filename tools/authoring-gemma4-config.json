@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "model": {
+    "repository": "ggml-org/gemma-4-E4B-it-GGUF",
+    "revision": "a69f018d7678a2b9f5e705f8903d6fb29b9b25dc",
+    "base_model": "google/gemma-4-E4B-it-qat-q4_0-unquantized",
+    "base_revision": "476025a01dbf99361c062bbeca3d6a76bb4c4566",
+    "instruction_model": "google/gemma-4-E4B-it",
+    "instruction_revision": "ee0ef6023621cff504d758262d4e04895a5af4a2",
+    "file": "gemma-4-E4B-it-Q4_0.gguf",
+    "sha256": "a555b900214b477d8880e7832e0b8925e139b0159640036b09fe472b6f2097f2",
+    "bytes": 4590807392,
+    "license": "Apache-2.0",
+    "quantization": "QAT Q4_0; token_embd Q8_0",
+    "url": "https://huggingface.co/ggml-org/gemma-4-E4B-it-GGUF/resolve/a69f018d7678a2b9f5e705f8903d6fb29b9b25dc/gemma-4-E4B-it-Q4_0.gguf"
+  },
+  "runtime": {
+    "repository": "ggml-org/llama.cpp",
+    "tag": "b11910",
+    "revision": "63b4b303bd87456adc2f09d56c7e1f74e9e26673",
+    "license": "MIT",
+    "platform": "macos-arm64",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11910/llama-b11910-bin-macos-arm64.tar.gz",
+    "sha256": "457f53b710cbdd65ce4e662d4e1aa49accee700110e99a5a49a818d47fc9152f",
+    "bytes": 16295423
+  },
+  "generation": {
+    "seed": 42,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 64,
+    "min_p": 0,
+    "max_tokens": 1800,
+    "context_size": 8192,
+    "threads": 4,
+    "gpu_layers": 99,
+    "timeout_seconds": 240,
+    "attempts": 2,
+    "enable_thinking": false,
+    "system_suffix": ""
+  }
+}

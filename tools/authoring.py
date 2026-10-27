@@ -23,6 +23,8 @@ from urllib.request import ProxyHandler, Request, build_opener
 from .ingest import LANGUAGES, ROOT, load
 
 CONFIG = ROOT / "tools/authoring-config.json"
+MODEL_CONFIGS = {"qwen3-4b": CONFIG,
+                 "gemma4-e4b": ROOT / "tools/authoring-gemma4-config.json"}
 HOME = ROOT / ".cache/authoring"
 FIELDS = ("one_line", "paragraph", "conditions", "action", "action_basis")
 PROTECTED = tuple(sorted((ROOT / "data").glob("*.json")))
@@ -32,8 +34,7 @@ quotes. Use ONLY the supplied quotes, not prior knowledge or catalog assumptions
 Do not infer a first release from a source edition. Unknown means unknown.
 Do not invent platforms, replacements, mandatory work, or complexity.
 Keep code/API identifiers exactly as the supplied glossary specifies.
-Return only the requested JSON object. All prose requires manual review.
-/no_think"""
+Return only the requested JSON object. All prose requires manual review."""
 
 
 def require(condition, message):
@@ -44,6 +45,16 @@ def require(condition, message):
 def digest(value):
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
                                      separators=(",", ":")).encode()).hexdigest()
+
+
+def model_config(name="qwen3-4b"):
+    require(name in MODEL_CONFIGS, "Unknown local authoring model")
+    return load(MODEL_CONFIGS[name])
+
+
+def installation_path(config):
+    name = "installed.json" if config == load(CONFIG) else f"installed-{digest(config)}.json"
+    return safe_path(HOME / "dependencies" / name)
 
 
 def file_hash(path):
@@ -367,14 +378,17 @@ def http_json(url, payload=None, timeout=5):
 
 @contextmanager
 def runtime(config, folder):
+    started = time.monotonic()
     deps = safe_path(HOME / "dependencies")
     model = dependency_path(deps / config["model"]["file"])
     executable = dependency_path(deps / "llama-b11910/llama-server")
     require(model.is_file() and executable.is_file(),
-            "Pinned dependencies missing; run python3 -m tools.authoring setup --download")
+            "Pinned dependencies missing; run python3 -m tools.authoring setup --download "
+            "with the same --model selection")
     require(file_hash(model) == config["model"]["sha256"], "GGUF checksum mismatch")
-    installed = load(deps / "installed.json")
-    require(installed["config_sha256"] == digest(config), "Dependency lock changed; rerun setup")
+    installed = load(installation_path(config))
+    require(installed["config_sha256"] == digest(config),
+            "Dependency lock changed; rerun setup with the same --model selection")
     require(file_hash(executable) == installed["executable_sha256"], "Runtime executable checksum mismatch")
     for relative, checksum in installed["runtime_files"].items():
         path = dependency_path(deps / relative)
@@ -420,6 +434,7 @@ def runtime(config, folder):
                     "Local runtime identity/isolation check failed")
             write(folder / "runtime.json", {"command": command,
                   "version": version.stdout + version.stderr, "props": props,
+                  "startup_seconds": time.monotonic() - started,
                   "template_sha256": text_hash(props["chat_template"]),
                   "installed": installed})
             yield base
@@ -440,7 +455,8 @@ class Client:
     def generate(self, stage, instruction, data, schema):
         settings = self.config["generation"]
         payload = {
-            "messages": [{"role": "system", "content": SYSTEM + "\n" + instruction},
+            "messages": [{"role": "system", "content": SYSTEM +
+                          settings.get("system_suffix", "\n/no_think") + "\n" + instruction},
                          {"role": "user", "content": "DATA:\n" +
                           json.dumps(data, ensure_ascii=False)}],
             "response_format": {"type": "json_schema",
@@ -593,7 +609,8 @@ def check_proposal(proposal):
     require(proposal["schema_version"] == 1 and proposal["status"] == "candidate" and proposal["review_required"] is True and
             proposal["publication_allowed"] is False, "Proposal lost its mandatory review gates")
     provenance = proposal["provenance"]
-    require(provenance["config"] == load(CONFIG), "Proposal model/runtime configuration has changed")
+    require(provenance["config"] in [load(path) for path in MODEL_CONFIGS.values()],
+            "Proposal model/runtime configuration has changed")
     key, current, delta = prepare(provenance["input"], provenance["previous"], provenance["config"])
     require(current == provenance and proposal["proposal_id"] == "proposal-" + key and
             proposal["delta"] == delta,
@@ -654,7 +671,7 @@ def setup(config):
     require(executable.is_file(), "Pinned archive is missing llama-server")
     runtime_files = {str(p.relative_to(deps)): file_hash(p)
                      for p in (deps / "llama-b11910").rglob("*") if p.is_file()}
-    write(deps / "installed.json", {"config_sha256": digest(config),
+    write(installation_path(config), {"config_sha256": digest(config),
           "executable_sha256": file_hash(executable), "runtime_files": runtime_files})
 
 
@@ -663,17 +680,19 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     install = commands.add_parser("setup", help="Explicit public dependency download; no source data sent")
     install.add_argument("--download", action="store_true", required=True)
+    install.add_argument("--model", choices=MODEL_CONFIGS, default="qwen3-4b")
     sample = commands.add_parser("example", help="Write a queue input referencing existing evidence, not a new fact")
     sample.add_argument("--case", choices=("base64", "unknown", "insufficient", "listbox"), required=True)
     draft = commands.add_parser("propose", help="Generate an unpublishable review-only draft")
     draft.add_argument("--input", type=Path, required=True)
     draft.add_argument("--previous", type=Path)
+    draft.add_argument("--model", choices=MODEL_CONFIGS, default="qwen3-4b")
     check = commands.add_parser("check", help="Refuse stale/conflicting proposals; NEVER apply them")
     check.add_argument("--proposal", type=Path, required=True)
     args = parser.parse_args()
     try:
         if args.command == "setup":
-            setup(load(CONFIG))
+            setup(model_config(args.model))
             print("Pinned local dependencies verified.")
         elif args.command == "example":
             path = HOME / "inputs" / f"{args.case}.json"
@@ -683,7 +702,8 @@ def main():
             check_proposal(load(args.proposal))
             print("Preconditions match. Still an unverified candidate; manual review required. Nothing applied.")
         else:
-            path, cached = run(load(args.input), load(args.previous) if args.previous else None)
+            path, cached = run(load(args.input), load(args.previous) if args.previous else None,
+                               model_config(args.model))
             print(json.dumps({"proposal": str(path.relative_to(ROOT)), "cache_hit": cached}))
     except (ValueError, KeyError, TypeError, OSError, subprocess.SubprocessError) as error:
         parser.exit(1, f"Authoring refused: {error}\n")

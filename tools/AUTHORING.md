@@ -200,6 +200,187 @@ actual inference, not inferred from a model card. License references:
 [runtime license](https://github.com/ggml-org/llama.cpp/blob/63b4b303bd87456adc2f09d56c7e1f74e9e26673/LICENSE).
 No weights or binaries are committed or published.
 
+### Optional Gemma 4 E4B comparison
+
+**The measured comparison did not justify replacing Qwen.** More machine-complete
+Gemma results included accepted unsupported or irrelevant prose. The Qwen
+config/default above is unchanged. `--model gemma4-e4b` explicitly opts
+into `tools/authoring-gemma4-config.json`; it is a **local inference model**, not
+a Copilot subagent selection. Gemma E4B has **4.5B effective parameters / about
+8B including per-layer embeddings**, not the footprint of an ordinary 4B model.
+The comparison downloads one text GGUF only: no projector, audio/vision encoder,
+assistant/drafter, full-precision weights or extra context assets.
+
+| Optional dependency | Immutable pin |
+|---|---|
+| GGUF | `ggml-org/gemma-4-E4B-it-GGUF` at `a69f018d7678a2b9f5e705f8903d6fb29b9b25dc` |
+| File | `gemma-4-E4B-it-Q4_0.gguf`, 4,590,807,392 bytes |
+| SHA-256 | `a555b900214b477d8880e7832e0b8925e139b0159640036b09fe472b6f2097f2` |
+| Actual QAT source | `google/gemma-4-E4B-it-qat-q4_0-unquantized` at `476025a01dbf99361c062bbeca3d6a76bb4c4566` |
+| Official instruction model | `google/gemma-4-E4B-it` at `ee0ef6023621cff504d758262d4e04895a5af4a2` |
+| Quantization | QAT-derived Q4_0, token embedding Q8_0 |
+| License/access | Apache-2.0, public/ungated; same MIT llama.cpp/runtime pin as Qwen |
+
+The repository's immutable [`.src_sha`](https://huggingface.co/ggml-org/gemma-4-E4B-it-GGUF/blob/a69f018d7678a2b9f5e705f8903d6fb29b9b25dc/.src_sha)
+and [`convert.log`](https://huggingface.co/ggml-org/gemma-4-E4B-it-GGUF/blob/a69f018d7678a2b9f5e705f8903d6fb29b9b25dc/convert.log)
+establish that this Q4 file comes from the QAT source, **not** ordinary
+post-training quantization of the primary checkpoint. The official Google's QAT
+GGUF is a different, larger artifact; it was not downloaded or benchmarked.
+Runtime `b11910` contains the Gemma4 architecture, E4B layer count and per-layer
+embedding support; native loading and generation, not that source inspection
+alone, establish actual compatibility.
+
+Gemma uses its embedded vendor template with thinking disabled and native system
+roles. No Qwen `/no_think` suffix is injected. Its pinned official
+`generation_config.json` supplies temperature 1.0, top-p 0.95 and top-k 64;
+the [QAT source's generation config](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-unquantized/blob/476025a01dbf99361c062bbeca3d6a76bb4c4566/generation_config.json)
+confirms those same values. Min-p is explicitly zero so the runtime's default
+does not silently truncate
+that distribution. Seed/context/token/retry budgets remain 42/8192/1800/two.
+These vendor-decoding differences are disclosed, not a pure architecture
+benchmark. Prompts, source inputs and acceptance guards are otherwise unchanged.
+
+Actual native compatibility was established on this M1 Pro before the comparison:
+`/health` responded, the runtime recognized `gemma4`/7.46B text parameters,
+offloaded **43/43 layers** to Metal and emitted a real schema-shaped classification.
+The GGUF template SHA-256 is
+`603a42db292c25278e9b23d94c7abbe77453f13e26a053c43c5c2f900b4136f7`.
+It matches the pinned official template **except for its final newline**, not a
+different guessed formatter. The 4,590,807,392-byte download/setup took 262.17 s;
+first native startup took 6.55 s, compatibility execution 8.30 s/~3.74GB maxRSS.
+There was no template/runtime correction or model/precision sweep.
+
+The shared machine had 152GiB free disk and reported 56% available memory, with
+about 5.7GiB pre-existing swap. Only one inference server runs at a time; the
+compatibility check was below the explicit 8GiB server-RSS budget and reported
+48% available memory afterwards. No other user's processes were stopped or
+changed. RSS is not a precise measure of total unified-memory pressure, especially
+with lazy per-layer embeddings. "Cold" below means a fresh server process, **not**
+a forcibly purged OS file cache; warm measurements reuse one server for four
+original cases, not proposals. Vendor decoding and output lengths differ, so
+elapsed times are fixture observations, not standardized throughput benchmarks.
+
+```sh
+python3 -m tools.authoring setup --model gemma4-e4b --download
+python3 -m tools.authoring example --case base64
+python3 -m tools.authoring propose --model gemma4-e4b \
+  --input .cache/authoring/inputs/base64.json
+python3 -m tools.authoring_evaluate --model gemma4-e4b --label UNIQUE_COLD_LABEL
+python3 -m tools.authoring_evaluate --model gemma4-e4b --label UNIQUE_RESERVE_LABEL \
+  --definitions tests/fixtures/authoring-reserve-cases.json
+python3 -m tools.authoring_evaluate --model gemma4-e4b --warm \
+  --label UNIQUE_WARM_LABEL --cases base64 unknown insufficient listbox
+```
+
+Default Qwen setup/propose commands still select Qwen. Its original dependency
+lock remains `installed.json`; optional Gemma has a separate config-fingerprinted
+installation lock. The shared runtime bytes are the same verified release.
+Read-only `check` recognizes only exact committed registered configs, and still
+refuses stale code/data/config and never approves or applies text. Historical
+captures remain replayable evidence, not current-precondition approval.
+
+Cold evaluation uses ordinary proposal/cache logic; cache hits are labeled and
+must not be counted as inference timing. `--warm` explicitly starts one runtime
+for the selected cases, records startup time, executes the same generation and
+validation without proposal reuse, and writes **raw benchmark records only**.
+It never overwrites a proposal. Both modes keep exact requests/refusals and
+protected-data snapshots under the ignored authoring cache.
+
+#### Actual comparison: completion is not correctness
+
+The original ten and reserve four remain byte-frozen. No extra held-outs were
+needed because there was **no prompt, model or precision tuning** after observing
+Gemma results. All accepted five-locale bodies were inspected against their exact
+source excerpts. Fresh Qwen accepted bodies match its prior capture; warm accepted
+bodies match cold bodies. Matching bytes identifies repeated outputs only, not a
+proxy for factual correctness.
+
+| Cold 14-case observation | Qwen default | Optional Gemma |
+|---|---:|---:|
+| Machine-complete / guard-refused | 7 / 7 | 9 / 5 |
+| Generated drafts | 3 | 5 |
+| Source-consistent complete review drafts | 3 | 1 |
+| Correct insufficient decisions | 4 | 3 |
+| Incorrect insufficient decisions | 0 | 1 |
+| Unsupported material claim accepted | 0 identified | 1 |
+| Other accepted task failures | 0 identified | 3 |
+| Source-inspected task outcomes | 7/14 | 4/14 |
+| Proposed type matches | 13/14 | 11/14 |
+
+These assessments are bounded **review-draft** outcomes, not human approval or a
+general model ranking. Material-delta repeats Base64, so it is not an independent
+quality observation. Platform, severity/criticality and complexity are still
+unknown by construction. Both models fail the optional-remedy authoring case.
+
+Gemma's critical accepted failure illustrates why citations/schema are insufficient:
+
+> Source: “If toDecode contains an invalid base64 contents, an empty text or blob
+> value is returned.”
+>
+> Generated condition: “toDecode contains an empty text or blob value”
+
+It mistakes an **output** for an additional **input condition**, and all five
+locales repeat that unsupported meaning. Structural checks and read-only
+precondition `check` accept the candidate; neither establishes entailment.
+Gemma also selects the generic introduction for OK-variable and writes no actual
+OK behavior anywhere. Its Base64 and duplicate delta drafts preserve the behavior
+but retain English `called on` in Spanish. Those are failures, not successful
+five-language authoring. List-box is wrongly declined; a safe no-draft result is
+not a correct decision when optional guard evidence is present.
+
+Gemma's Japanese-events draft does capture the primary click-during-editing
+change, 18 R6 and official French `Sur clic` / `Sur double clic` aliases. Its
+event-order sentences and list-box terminology still need editing. French aliases
+are restored by the same deterministic glossary mechanism, not credited as model
+discovery.
+
+Other genuine failures and guard limitations remain separately disclosed.
+Gemma infers removal from the irrelevant rhetorical lead-in and misclassifies
+PDFCreator as removed; downstream numeric-marker refusals do not detect/prove
+those semantic errors. Both models miss the shared parser's unsupported
+`à partir de` / `prior to` cutoff cues. Gemma's Japanese version-only condition
+trips a script heuristic; `min`/`max`/`average` and `Undefined`/`Null` in the
+aggregate case are legitimate code, not untranslated prose. Bilingual
+`interprocess variables` is refused even alongside its Japanese translation.
+Those are limited/overstrict language rules, **not automatically model semantic
+errors**. The aggregate Japanese `18 R6以前` also blurs the source's exclusive
+“prior to” boundary; removing a false-positive guard would not establish a correct
+complete draft. No guard was relaxed for either model.
+
+| Measurement | Qwen | Gemma |
+|---|---|---|
+| Cold frozen ten | 169.47s, ~4.10GB maxRSS | 296.98s, ~4.46GB maxRSS |
+| Cold reserve four | 59.88s, ~4.09GB | 109.81s, ~4.68GB |
+| Cold 14 total | 229.35s | 406.79s |
+| Warm original four, including one startup | 64.60s, ~4.11GB | 78.53s, ~4.29GB |
+| Warm startup component | 2.79s | 5.59s |
+
+Warm outcomes do not improve quality or count as new cases. After all runs,
+available memory returned to 56%; system swap was 6,427.94MiB versus the initial
+5,713.81MiB, a 714.13MiB increase during shared-machine activity that cannot be
+attributed solely to inference. This cost is not hidden behind the lower effective
+parameter name. All native servers were shut down; the optional 4.59GB weight
+remains ignored locally for reproducibility.
+
+`tests/fixtures/authoring-gemma4-results.json` records per-case source assessments,
+pins and measurements. `authoring-gemma4-native.json.gz` losslessly preserves all
+six cohorts, **28 cold runs + eight warm cases**, exact requests/raw bodies,
+candidate proposals, refusals, runtime/template metadata/logs, vendor/conversion
+records and compatibility execution. Read it with the same gzip/JSON inspection
+pattern above using `gemma4-cold-frozen` and a case name. Cold responses were
+116/116 schema-shaped for Gemma and 96/96 for Qwen; that is **not a factual score**.
+No existing capture is overwritten. Replay tests explicitly preserve the known
+accepted empty-input error and incorrect decline, rather than asserting them as
+good output. Green CI never means these model bodies are publication-ready.
+
+Comparison regression commands passed: **56 offline authoring tests**, full
+Python discovery **168 tests / nine existing skips**, search-runtime build,
+**48 Node tests**, local publication build and diff checks. Explicit Gemma/Qwen
+CLI cache selection and read-only Gemma proposal preconditions were exercised.
+Default config, generation stages/guards, frozen inputs, existing captures,
+canonical data, authored/curated fixtures, site/search, packages and workflows
+remain unchanged.
+
 Setup keeps artifacts under ignored `.cache/authoring/dependencies`, checks their
 size and SHA-256 before extraction, checks archive paths/links, and records hashes
 of runtime files. Inference rechecks the GGUF, executable and runtime dependency
@@ -394,7 +575,7 @@ authoritative facts or used to assert the model generalizes. Ordinary CI runs
 offline tests and replay validation only:
 
 ```sh
-python3 -m unittest tests.test_authoring tests.test_authoring_reliability -v
+python3 -m unittest tests.test_authoring tests.test_authoring_reliability tests.test_authoring_models -v
 python3 -m unittest discover -s tests -v
 npm ci --no-audit --no-fund
 npm run build:search-runtime

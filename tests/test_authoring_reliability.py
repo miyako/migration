@@ -157,7 +157,7 @@ class ReliabilityTests(unittest.TestCase):
                              self.report["reserve"]["frozen_input_sha256"][case["name"]])
             a.validate_input(value)
 
-    def test_final_native_proposals_replay_with_all_review_preconditions(self):
+    def test_historical_native_results_replay_with_unchanged_field_preconditions(self):
         for section in ("selected", "reserve"):
             record = self.report[section]
             evaluation = self.native["evaluations"][record["evaluation"].split("/")[-1]]
@@ -166,7 +166,6 @@ class ReliabilityTests(unittest.TestCase):
                              self.report["selected"]["implementation_sha256"])
             self.assertEqual(manifest["stages_sha256"], self.report["selected"]["stages_sha256"])
             self.assertEqual(a.digest(manifest["config"]), self.report["selected"]["config_sha256"])
-            self.assertEqual(a.file_hash(a.ROOT / "tools/authoring.py"), manifest["implementation_sha256"])
             self.assertEqual(a.file_hash(a.ROOT / "tools/authoring_stages.py"), manifest["stages_sha256"])
             completed = drafted = insufficient = 0
             for case in evaluation["outcomes"]:
@@ -176,7 +175,8 @@ class ReliabilityTests(unittest.TestCase):
                     continue
                 completed += 1
                 proposal = run["proposal"]
-                a.check_proposal(proposal)
+                self.assertEqual(proposal["provenance"]["protected_sha256"], a.snapshot())
+                a.validate_result(proposal["result"], proposal["provenance"]["input"])
                 self.assertEqual(proposal["status"], "candidate")
                 self.assertTrue(proposal["review_required"])
                 self.assertFalse(proposal["publication_allowed"])
@@ -218,6 +218,12 @@ class ReliabilityTests(unittest.TestCase):
             self.assertEqual(responses, record["parseable_and_schema_shaped"])
             self.assertEqual(rejected, record["rejected_stage_attempts"])
             self.assertGreater(record["refused_cases"], 0)
+
+    def test_historical_native_proposal_is_stale_after_code_changes_not_applied(self):
+        case = self.report["selected"]["cases"][0]
+        proposal = self.native["runs"][case["run"]]["proposal"]
+        with self.assertRaisesRegex(ValueError, "precondition conflict"):
+            a.check_proposal(proposal)
 
     def test_recorded_optional_action_distortion_is_not_a_quality_success(self):
         case = next(row for row in self.report["selected"]["cases"] if row["name"] == "listbox")
