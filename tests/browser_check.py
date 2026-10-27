@@ -49,6 +49,7 @@ def controls(page):
       target: document.querySelector('#target-version').value,
       query: document.querySelector('#search').value,
       sort: document.querySelector('#sort').value,
+      includeRoutine: document.querySelector('#include-routine').checked,
       language: document.querySelector('#language').value,
       theme: document.querySelector('#theme').value,
       platforms: [...document.querySelectorAll('[name=platforms]:checked')].map(c => c.value),
@@ -56,15 +57,16 @@ def controls(page):
     })""")
 
 
-def projected_records(catalog, source="v16", target="v21"):
+def projected_records(catalog, source="v16", target="v21", include_routine=False):
     script = """import {filterChanges, projectChangeForPath} from './site/logic.mjs';
       let input = ''; for await (const chunk of process.stdin) input += chunk;
-      const {catalog, source, target} = JSON.parse(input);
+      const {catalog, source, target, includeRoutine} = JSON.parse(input);
       const records = catalog.changes.map(change =>
         projectChangeForPath(change, catalog.sources, source, target, catalog.latest)).filter(Boolean);
-      console.log(JSON.stringify(filterChanges(records, {source, target}, catalog.latest)));"""
+      console.log(JSON.stringify(filterChanges(records, {source, target, includeRoutine}, catalog.latest)));"""
     result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=ROOT,
-                            input=json.dumps({"catalog": catalog, "source": source, "target": target}),
+                            input=json.dumps({"catalog": catalog, "source": source, "target": target,
+                                              "includeRoutine": include_routine}),
                             text=True, capture_output=True, check=True)
     return json.loads(result.stdout)
 
@@ -110,6 +112,38 @@ def run(base, screenshots, published):
         assert ids(page)[:3] == ["chg-colon-identifiers", "chg-cs-class-assignment-check",
                                "chg-group-v19-compiler-settings"]
         assert page.locator("#browse-mode, #catalog-note").count() == 0
+        assert not page.is_checked("#include-routine")
+        expanded = projected_records(catalog, include_routine=True)
+        assert len(expanded) == 190
+        routine_ids = {c["id"] for c in expanded if c.get("default_visibility", {}).get("category") == "routine_check"}
+        assert routine_ids and set(expected).isdisjoint(routine_ids)
+        assert set(expected) | routine_ids == {c["id"] for c in expanded}
+        assert "chg-client-minimum-20-7" in routine_ids
+        assert len(expected) == 181
+        before = controls(page)
+        page.check("#include-routine")
+        assert ids(page) == [c["id"] for c in expanded]
+        assert all(controls(page)[key] == before[key] for key in before if key != "includeRoutine")
+        routine_id = "chg-client-minimum-20-7"
+        page.fill("#search", routine_id)
+        assert ids(page) == [routine_id]
+        assert "Routine check" in page.locator(".card-top").inner_text()
+        page.uncheck("#include-routine")
+        assert ids(page) == []
+        page.check("#include-routine")
+        assert ids(page) == [routine_id]
+        for group in ("platforms", "modules"):
+            page.locator(f'[data-group="{group}"][data-select="none"]').click()
+            assert ids(page) == []
+            assert page.is_checked("#include-routine")
+            page.locator(f'[data-group="{group}"][data-select="all"]').click()
+            assert ids(page) == [routine_id]
+        page.select_option("#sort", "complexity")
+        page.click("#reset")
+        assert not page.is_checked("#include-routine")
+        assert page.input_value("#search") == ""
+        assert page.input_value("#sort") == "severity"
+        assert ids(page) == expected
         assert not page.locator(".references").evaluate("el => el.open")
         before = controls(page)
         page.locator(".references > summary").click()
@@ -121,10 +155,15 @@ def run(base, screenshots, published):
         assert page.locator("#reference-list a").evaluate_all(
             "links => links.every(link => link.textContent === link.href && "
             "link.target === '_blank' && link.rel === 'noopener noreferrer')")
-        assert page.locator("#result-count").inner_text() == "190 matching entries"
+        assert page.locator("#result-count").inner_text() == f"{len(expected)} matching entries"
         page.select_option("#target-version", "latest")
+        latest_expected = [c["id"] for c in projected_records(catalog, target="latest")]
+        assert len(latest_expected) == 189
+        assert ids(page) == latest_expected
+        assert page.locator("#result-count").inner_text() == f"{len(latest_expected)} matching entries"
+        page.check("#include-routine")
         assert len(ids(page)) == 199
-        assert page.locator("#result-count").inner_text() == "199 matching entries"
+        page.uncheck("#include-routine")
         page.select_option("#target-version", "v21")
         assert page.locator("#source-version").is_enabled()
         assert page.locator("#target-version").is_enabled()
@@ -139,13 +178,18 @@ def run(base, screenshots, published):
             assert ids(page) == expected
         page.click("#reset")
         assert ids(page) == expected
-        count_labels = {"en": "190 matching entries", "fr": "190 entrées correspondantes",
-                        "de": "190 passende Einträge", "es": "190 entradas coincidentes",
-                        "ja": "該当する項目：190 件"}
+        count_labels = {"en": f"{len(expected)} matching entries", "fr": f"{len(expected)} entrées correspondantes",
+                        "de": f"{len(expected)} passende Einträge", "es": f"{len(expected)} entradas coincidentes",
+                        "ja": f"該当する項目：{len(expected)} 件"}
         for locale in ("en", "fr", "de", "es", "ja"):
             page.select_option("#language", locale)
             assert ids(page) == expected
             assert page.locator("#result-count").inner_text() == count_labels[locale]
+            assert not page.is_checked("#include-routine")
+            assert page.locator("#include-routine").locator("..").inner_text().strip() != "includeRoutine"
+            page.check("#include-routine")
+            assert len(ids(page)) == 190
+            page.uncheck("#include-routine")
             sources = [s for s in catalog["sources"] if s["language"] == locale]
             assert page.locator(".references").evaluate("el => el.open")
             assert page.locator("#reference-list a").count() == len(sources)
@@ -158,8 +202,10 @@ def run(base, screenshots, published):
             page.set_viewport_size({"width": 320, "height": 1000})
             check(page, "() => document.documentElement.scrollWidth <= innerWidth",
                   f"No reference-list overflow: {locale}")
+        page.check("#include-routine")
         page.reload()
         page.wait_for_selector("[data-change-id]")
+        assert not page.is_checked("#include-routine")
         assert page.input_value("#language") == "ja"
         page.select_option("#language", "en")
         page.set_viewport_size({"width": 1280, "height": 1000})
@@ -339,7 +385,11 @@ def run(base, screenshots, published):
         for identifier in ("chg-json-validate-schema-version", "chg-legacy-network-layer-removal",
                            "chg-rest-entityset-release-post"):
             page.fill("#search", identifier)
+            if identifier == "chg-legacy-network-layer-removal":
+                assert ids(page) == []
+                page.check("#include-routine")
             assert identifier in ids(page), identifier
+            page.uncheck("#include-routine")
         page.fill("#search", "chg-internal-php-interpreter-removal")
         assert ids(page) == []
         page.select_option("#target-version", "v21")
@@ -352,12 +402,15 @@ def run(base, screenshots, published):
             page.fill("#search", identifier)
             assert ids(page) == [identifier]
         page.fill("#search", "chg-icu-77-index-rebuild")
+        assert ids(page) == []
+        page.check("#include-routine")
         page.select_option("#language", "de")
         assert ids(page) == ["chg-icu-77-index-rebuild"]
         shown = page.locator(".evidence-list > li").evaluate_all(
             "items => items.map(item => [item.dataset.sourceId,item.dataset.blockId,item.dataset.sourceLanguage])")
         assert len({sid for sid, _, _ in shown}) >= 2
         assert all(language == "en" for _, _, language in shown)
+        page.uncheck("#include-routine")
         # Actual old singleton and curated-group conditions/rationales in all locales.
         page.select_option("#source-version", "v16")
         page.select_option("#target-version", "v21")

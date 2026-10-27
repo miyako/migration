@@ -169,6 +169,17 @@ test('only path-eligible members can produce a grouped semantic hit', () => {
   assert.deepEqual(filterChanges(projected, {platforms:[]}), []);
   assert.deepEqual(filterChanges(projected, {modules:[]}), []);
 });
+test('semantic matches cannot reintroduce routine checks unless explicitly included', () => {
+  const actionable = catalog.changes.find(c => !c.default_visibility);
+  const routine = { ...actionable, id: 'routine', member_ids: ['routine-member'],
+    default_visibility: { category: 'routine_check', reason: 'Standard minimum version.' } };
+  const scores = new Map([['routine-member', 1]]);
+  const filters = { source: 'unknown', target: 'unknown' };
+  const records = [actionable, routine];
+  assert.deepEqual(hybridFilter(filterChanges(records, filters), [], scores, .74), []);
+  assert.deepEqual(hybridFilter(filterChanges(records, { ...filters, includeRoutine: true }),
+    [], scores, .74).map(c => c.id), ['routine']);
+});
 test('all locales index the same stable atomic IDs, never unprojected group prose', () => {
   for (const language of ['en','fr','de','es','ja']) {
     const rows = corpusRows(catalog, language);
@@ -192,7 +203,7 @@ test('retrieval fixture expectations retain stable IDs and actual version eligib
     assert.ok(item.rationale && ['development','holdout'].includes(item.split));
     const projected = catalog.changes.map(c =>
       projectChangeForPath(c,catalog.sources,item.source,item.target,catalog.latest)).filter(Boolean);
-    const eligible = filterChanges(projected,{source:item.source,target:item.target},catalog.latest);
+    const eligible = filterChanges(projected,{source:item.source,target:item.target,includeRoutine:true},catalog.latest);
     for (const id of item.expected_entity_ids) assert.ok(eligible.some(c => c.id === id),`${item.id}: ${id}`);
   }
   for (const language of ['en','fr','de','es','ja']) {

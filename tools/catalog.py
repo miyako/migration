@@ -169,6 +169,41 @@ def require(condition, message):
         raise ValueError(message)
 
 
+def apply_default_visibility(changes, config):
+    require(isinstance(config, dict) and set(config) == {"schema_version", "routine_checks"}
+            and config["schema_version"] == 1
+            and isinstance(config["routine_checks"], dict),
+            "Invalid default visibility configuration")
+    by_id = {change["id"]: change for change in changes}
+    require(set(config["routine_checks"]) <= by_id.keys(),
+            "Default visibility references unknown entity IDs")
+    result = deepcopy(changes)
+    for change in result:
+        classification = config["routine_checks"].get(change["id"])
+        if classification is None:
+            require(change["id"] not in config["routine_checks"],
+                    "Invalid routine check classification")
+            continue
+        require(isinstance(classification, dict)
+                and set(classification) == {"reason", "member_ids"}
+                and nonempty(classification["reason"])
+                and classification["member_ids"] == change["member_ids"],
+                "Routine check classification needs a reason and the reviewed entity membership")
+        change["default_visibility"] = {
+            "category": "routine_check", "reason": classification["reason"],
+        }
+    return result
+
+
+def validate_default_visibility(change):
+    if "default_visibility" not in change:
+        return
+    visibility = change["default_visibility"]
+    require(isinstance(visibility, dict) and set(visibility) == {"category", "reason"}
+            and visibility["category"] == "routine_check" and nonempty(visibility["reason"]),
+            "Invalid default visibility metadata")
+
+
 def url(value):
     return isinstance(value, str) and urlsplit(value).scheme == "https" and bool(urlsplit(value).netloc)
 
@@ -414,9 +449,11 @@ def validate(document):
                             for m in members), "Published group metadata must match every member")
                 for member in members:
                     validate_localized_applicability(member)
+                    validate_default_visibility(member)
             else:
                 require(member_ids == [identifier], "Ungrouped entity must retain its stable atomic ID")
         validate_version_applicability(change)
+        validate_default_visibility(change)
         require(change["stage"] in STAGES, "Invalid stage")
         require(change["criticality"] in CRITICALITIES, "Invalid criticality")
         complexity = change.get("complexity", {"level": "unknown"})
@@ -585,7 +622,9 @@ def catalog_document(verify=False):
                              load(ROOT / "data/overrides.json"))
     if verify:
         verify_evidence({"sources": registry, "changes": atomic})
-    changes = group_entities(atomic, load(ROOT / "data/groups.json"))
+    changes = apply_default_visibility(
+        group_entities(atomic, load(ROOT / "data/groups.json")),
+        load(ROOT / "data/default-visibility.json"))
     # Reproducible offline builds: derive the publication timestamp from committed
     # inputs, not the current clock. Fetch timestamps still record actual requests.
     timestamps = [s["fetch"].get("checked_at", "") for s in registry]
