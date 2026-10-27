@@ -45,7 +45,6 @@ def ids(page):
 
 def controls(page):
     return page.evaluate("""() => ({
-      mode: document.querySelector('#browse-mode').value,
       source: document.querySelector('#source-version').value,
       target: document.querySelector('#target-version').value,
       query: document.querySelector('#search').value,
@@ -110,7 +109,7 @@ def run(base, screenshots, published):
         assert ids(page) == expected
         assert ids(page)[:3] == ["chg-colon-identifiers", "chg-cs-class-assignment-check",
                                "chg-group-v19-compiler-settings"]
-        assert page.input_value("#browse-mode") == "upgrade"
+        assert page.locator("#browse-mode, #catalog-note").count() == 0
         assert not page.locator(".references").evaluate("el => el.open")
         before = controls(page)
         page.locator(".references > summary").click()
@@ -122,71 +121,31 @@ def run(base, screenshots, published):
         assert page.locator("#reference-list a").evaluate_all(
             "links => links.every(link => link.textContent === link.href && "
             "link.target === '_blank' && link.rel === 'noopener noreferrer')")
-        assert page.locator("#result-count").inner_text() == (
-            "190 entries match this upgrade and filters · 202 in catalog")
+        assert page.locator("#result-count").inner_text() == "190 matching entries"
         page.select_option("#target-version", "latest")
         assert len(ids(page)) == 199
-        assert page.locator("#result-count").inner_text() == (
-            "199 entries match this upgrade and filters · 202 in catalog")
-        page.select_option("#source-version", "v21")
+        assert page.locator("#result-count").inner_text() == "199 matching entries"
         page.select_option("#target-version", "v21")
-        assert page.locator("#version-warning").is_visible()
-        before = controls(page)
-        page.select_option("#browse-mode", "catalog")
-        assert all(controls(page)[key] == before[key] for key in before if key != "mode")
-        assert len(ids(page)) == 202
-        assert set(ids(page)) == {c["id"] for c in catalog["changes"]}
-        assert page.locator("#result-count").inner_text() == "202 entries shown · 202 in catalog"
-        assert page.locator("#source-version").is_disabled()
-        assert page.locator("#target-version").is_disabled()
-        assert page.locator("#catalog-note").is_visible()
-        assert not page.locator("#version-warning").is_visible()
-        assert page.locator(".path-evidence-warning").count() == 0
-        for query, entity in (
-            ("_o_GRAPH TABLE", "chg-removed-graph-table"),
-            ("chg-bundled-php-zip-removal", "chg-group-bundled-php-modules"),
-            ("chg-icu-20-1-client-server-pair", "chg-icu-20-1-client-server-pair"),
-        ):
-            page.fill("#search", query)
-            assert ids(page) == [entity]
-            assert page.locator(".evidence-list > li").count() > 0
-            page.locator(".card > details").first.locator(":scope > summary").click()
-            if entity == "chg-group-bundled-php-modules":
-                assert "Before target release" in page.locator(".card dl").inner_text()
-                assert "20 R3" in page.locator(".card dl").inner_text()
-            if entity == "chg-icu-20-1-client-server-pair":
-                assert "Applies only to target releases" in page.locator(".card dl").inner_text()
-                assert "20.1" in page.locator(".card dl").inner_text()
-        page.select_option("#sort", "complexity")
-        page.select_option("#browse-mode", "upgrade")
-        assert page.input_value("#source-version") == "v21"
-        assert page.input_value("#target-version") == "v21"
-        assert page.input_value("#sort") == "complexity"
-        assert page.input_value("#search") == "chg-icu-20-1-client-server-pair"
-        assert ids(page) == []
         assert page.locator("#source-version").is_enabled()
         assert page.locator("#target-version").is_enabled()
-        assert page.locator("#version-warning").is_visible()
-        assert not page.locator("#catalog-note").is_visible()
-        page.select_option("#browse-mode", "catalog")
         for group in ("platforms", "modules"):
             page.locator(f'[data-group="{group}"][data-select="none"]').click()
             assert ids(page) == []
+            assert page.locator("#result-count").inner_text() == "0 matching entries"
             assert page.locator("#reference-list a").count() == 58
             assert set(page.locator("#reference-list a").evaluate_all(
                 "links => links.map(link => link.href)")) == english_urls
             page.locator(f'[data-group="{group}"][data-select="all"]').click()
-            assert ids(page) == ["chg-icu-20-1-client-server-pair"]
+            assert ids(page) == expected
         page.click("#reset")
-        assert page.input_value("#browse-mode") == "catalog"
-        assert len(ids(page)) == 202
+        assert ids(page) == expected
+        count_labels = {"en": "190 matching entries", "fr": "190 entrées correspondantes",
+                        "de": "190 passende Einträge", "es": "190 entradas coincidentes",
+                        "ja": "該当する項目：190 件"}
         for locale in ("en", "fr", "de", "es", "ja"):
             page.select_option("#language", locale)
-            assert page.input_value("#browse-mode") == "catalog"
-            assert len(ids(page)) == 202
-            assert "202" in page.locator("#result-count").inner_text()
-            assert page.locator("#catalog-note").is_visible()
-            assert "catalogNote" not in page.locator("#catalog-note").inner_text()
+            assert ids(page) == expected
+            assert page.locator("#result-count").inner_text() == count_labels[locale]
             sources = [s for s in catalog["sources"] if s["language"] == locale]
             assert page.locator(".references").evaluate("el => el.open")
             assert page.locator("#reference-list a").count() == len(sources)
@@ -198,10 +157,9 @@ def run(base, screenshots, published):
                 assert source["edition"] in item.inner_text()
             page.set_viewport_size({"width": 320, "height": 1000})
             check(page, "() => document.documentElement.scrollWidth <= innerWidth",
-                  f"No catalog-mode overflow: {locale}")
+                  f"No reference-list overflow: {locale}")
         page.reload()
         page.wait_for_selector("[data-change-id]")
-        assert page.input_value("#browse-mode") == "upgrade"
         assert page.input_value("#language") == "ja"
         page.select_option("#language", "en")
         page.set_viewport_size({"width": 1280, "height": 1000})

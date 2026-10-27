@@ -169,21 +169,6 @@ test('only path-eligible members can produce a grouped semantic hit', () => {
   assert.deepEqual(filterChanges(projected, {platforms:[]}), []);
   assert.deepEqual(filterChanges(projected, {modules:[]}), []);
 });
-test('catalog semantic search includes historical and superseded members without bypassing other filters', () => {
-  const filters = {mode:'catalog', source:'v21', target:'v21'};
-  const eligible = filterChanges(catalog.changes, filters, catalog.latest);
-  const scores = new Map([
-    ['chg-removed-graph-table', .9], ['chg-bundled-php-zip-removal', .9],
-    ['chg-icu-20-1-client-server-pair', .9],
-  ]);
-  assert.deepEqual(hybridFilter(eligible, [], scores, .74).map(c => c.id).sort(), [
-    'chg-group-bundled-php-modules', 'chg-icu-20-1-client-server-pair', 'chg-removed-graph-table',
-  ]);
-  assert.deepEqual(hybridFilter(filterChanges(catalog.changes, {...filters, platforms:[]}),
-    [], scores, .74), []);
-  assert.deepEqual(hybridFilter(filterChanges(catalog.changes, {...filters, modules:[]}),
-    [], scores, .74), []);
-});
 test('all locales index the same stable atomic IDs, never unprojected group prose', () => {
   for (const language of ['en','fr','de','es','ja']) {
     const rows = corpusRows(catalog, language);

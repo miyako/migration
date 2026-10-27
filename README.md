@@ -61,10 +61,7 @@ All 12 bundled PHP module removals, for example, are one entity. The default
 v16 → v21 interval excludes GRAPH TABLE's pre-start v14 rule, current R-cycle
 changes, and superseded intermediate PHP-module work, showing **190 entities**.
 The same source to the public latest shows **199**.
-These are upgrade-path counts, not catalog completeness counts. The separate
-**All catalog entries** mode bypasses version applicability to browse all 202
-entities (with search and other filters clear), including historical and
-superseded instructions. **For my upgrade** remains the default.
+The interface shows only the matching-entry count, not the catalog total.
 The total is an outcome of the documented rows, not a record quota. All have
 independently authored one-line and paragraph
 summaries in en/fr/de/es/ja, with **generated-candidate** provenance.

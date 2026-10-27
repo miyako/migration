@@ -144,46 +144,12 @@ test('real content search, severity and unknown remediation difficulty preserve 
     sorted.map(c => c.id));
 });
 
-test('catalog browsing includes all 202 entities independently of the selected version path', () => {
-  const allIds = editorialChanges.map(c => c.id).sort();
-  for (const [source, target] of [['v16', 'latest'], ['v21', 'v21'], ['v16', 'v17']]) {
-    const records = filterChanges(editorialChanges, { mode: 'catalog', source, target }, editorialCatalog.latest);
-    assert.equal(records.length, 202);
-    assert.deepEqual(records.map(c => c.id).sort(), allIds);
-    const php = records.find(c => c.id === 'chg-group-bundled-php-modules');
-    assert.equal(php.members.length, 12);
-    assert.equal(php.applies_until, '20 R3');
-    assert.deepEqual(records.find(c => c.id === 'chg-icu-20-1-client-server-pair')
-      .applicability.target_releases, ['20.1']);
-  }
+test('upgrade filtering keeps applicability counts independent of catalog totals', () => {
   const upgrade = target => editorialChanges.map(c =>
     projectChangeForPath(c, editorialCatalog.sources, 'v16', target, editorialCatalog.latest))
     .filter(Boolean);
   assert.equal(filterChanges(upgrade('v21')).length, 190);
   assert.equal(filterChanges(upgrade('latest'), { target: 'latest' }, editorialCatalog.latest).length, 199);
-});
-
-test('catalog browsing preserves search, scoped filters, sorting and source data', () => {
-  const original = JSON.stringify(editorialChanges);
-  const filters = { mode: 'catalog', source: 'v21', target: 'v21' };
-  for (const [query, entity] of [
-    ['_o_GRAPH TABLE', 'chg-removed-graph-table'],
-    ['chg-bundled-php-zip-removal', 'chg-group-bundled-php-modules'],
-    ['chg-icu-20-1-client-server-pair', 'chg-icu-20-1-client-server-pair'],
-  ]) {
-    assert.deepEqual(filterChanges(editorialChanges, { ...filters, query }).map(c => c.id), [entity]);
-  }
-  for (const key of ['platforms', 'modules']) {
-    assert.deepEqual(filterChanges(editorialChanges, { ...filters, [key]: [] }), []);
-  }
-  const windowsPhp = filterChanges(editorialChanges, { ...filters, platforms: ['windows'], modules: ['php'] });
-  assert.ok(windowsPhp.some(c => c.id === 'chg-group-bundled-php-modules'));
-  assert.ok(windowsPhp.every(c => c.modules.includes('php') &&
-    c.platforms.some(value => ['windows', 'all', 'unknown'].includes(value))));
-  const severity = filterChanges(editorialChanges, filters);
-  assert.deepEqual(filterChanges(editorialChanges, { ...filters, sort: 'complexity' }).map(c => c.id),
-    severity.map(c => c.id));
-  assert.equal(JSON.stringify(editorialChanges), original);
 });
 
 test('Stage 2 compiler, ORDA and compatibility queries keep release and group boundaries', () => {
@@ -849,7 +815,7 @@ test('directory has no planner controls, API or storage access and retains prefe
     assert.doesNotMatch(source, /checklist|textarea|check-label|button-group|\beffort\b|import-file|createObjectURL/i);
     assert.doesNotMatch(source, /(?:type\s*=\s*["']|\.type\s*=\s*["'])file["']/i);
   }
-  for (const id of ['browse-mode', 'search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
+  for (const id of ['search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
     assert.ok(html.includes(`id="${id}"`), id);
   }
   assert.match(app, /const PREFS = '4d-migration-preferences-v1'/);
@@ -878,8 +844,25 @@ test('all five dictionaries have every UI key, with the same placeholders', () =
       assert.deepEqual([...translations[language][key].matchAll(/\{\w+\}/g)].map(m => m[0]).sort(),
         [...translations.en[key].matchAll(/\{\w+\}/g)].map(m => m[0]).sort(), `${language}:${key}`);
     }
-    assert.ok(translate(language, 'resultCount', { count: 3, total: 10 }).includes('3'));
-    assert.ok(translate(language, 'catalogResultCount', { count: 202, total: 202 }).includes('202'));
+    assert.ok(translate(language, 'resultCount', { count: 3 }).includes('3'));
+  }
+});
+
+test('result counts display only matches and the catalog mode selector is absent', async () => {
+  const [html, app] = await Promise.all(['index.html', 'app.mjs'].map(path =>
+    readFile(new URL(path, import.meta.url), 'utf8')));
+  assert.doesNotMatch(html, /browse-mode|catalog-note/);
+  assert.doesNotMatch(app, /catalogResultCount|total: catalog\.changes\.length/);
+  for (const language of LANGUAGES) {
+    assert.deepEqual([...translations[language].resultCount.matchAll(/\{\w+\}/g)].map(m => m[0]), ['{count}']);
+    for (const key of ['browseMode', 'forMyUpgrade', 'allCatalogEntries', 'catalogResultCount', 'catalogNote']) {
+      assert.equal(Object.hasOwn(translations[language], key), false, `${language}:${key}`);
+    }
+    for (const count of [0, 1, 190, 199]) {
+      const label = translate(language, 'resultCount', { count });
+      assert.ok(label.includes(String(count)));
+      assert.ok(!label.includes('202'));
+    }
   }
 });
 
