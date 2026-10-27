@@ -32,6 +32,8 @@ p:last-child{margin-bottom:0}
 main{max-width:1140px;margin:auto;padding:2rem 1.25rem}
 fieldset{min-width:0;margin:0;border:1px solid var(--line);border-radius:var(--radius)}
 legend{font-weight:700;padding:0 .4rem}
+.browse-control{max-width:500px;margin-bottom:1rem}
+.version-selectors:disabled{opacity:.65}
 .version-selectors{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:1rem;padding:1.2rem 1.4rem 1.5rem;background:var(--accent-soft);border:2px solid var(--accent);margin-bottom:1.5rem}
 .version-control{display:flex;gap:.75rem;align-items:center;min-width:0}
 .version-control label{flex:1;min-width:0}
@@ -53,6 +55,11 @@ legend{font-weight:700;padding:0 .4rem}
 #reset{justify-self:start}
 .section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
 .section-heading>span{font-size:.9rem;color:var(--muted)}
+.references{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1.5rem}
+.references>summary{cursor:pointer;font-weight:650;color:var(--accent);min-height:44px}
+.reference-links{padding-left:1.4rem;display:grid;gap:1rem}
+.reference-links p{margin-bottom:.2rem}
+.reference-links li{overflow-wrap:anywhere}
 .card-list{display:grid;gap:1rem}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;overflow-wrap:anywhere}
 .card-top{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem}
