@@ -57,10 +57,11 @@ override. These are **not 276 visitor cards**: 28 authored groups retain 102
 members, with 174 distinct singletons, producing **202 feature entities**.
 Grouping requires the same feature and
 shared remediation, with compatible cutoff, type, stage, severity, platform and format.
-All 12 bundled PHP module removals, for example, are one entity. The default
+All 12 bundled PHP module removals, for example, are one entity. The
 v16 → v21 interval excludes GRAPH TABLE's pre-start v14 rule, current R-cycle
-changes, and superseded intermediate PHP-module work, showing **190 entities**.
-The same source to the public latest shows **199**.
+changes, and superseded intermediate PHP-module work, matching **190 entities**
+before editorial visibility filtering. The same source to the public latest
+matches **199** before that filtering.
 The interface shows only the matching-entry count, not the catalog total.
 The total is an outcome of the documented rows, not a record quota. All have
 independently authored one-line and paragraph
@@ -68,6 +69,27 @@ summaries in en/fr/de/es/ja, with **generated-candidate** provenance.
 Agent fact-checking is not human review. Official localized command names and
 short quotations remain distinct from authored prose; the glossary now records
 verified terminology in all five languages.
+
+### Default directory focus
+
+An entry-by-entry review classifies **11 singleton entities** as routine checks:
+the 20.2/20.7/20.9 client minimums, the Windows Server 2012 R2 support boundary,
+five automatic ICU index-rebuild notices, the target-20.1 client/server pair,
+and the automatic 21 R3 switch from Legacy networking to ServerNet.
+`data/default-visibility.json` records a specific editorial reason and the
+reviewed membership for each. No facts, source evidence or translations are
+deleted or reclassified as human-reviewed.
+
+These checks are hidden by default and remain available through **Include
+routine checks**, including during keyword and semantic searches. The default
+v16 → v21 list shows **181 entries**; the same source to latest shows **189**.
+These are technical snapshot counts, not catalog totals shown to visitors.
+All 28 groups remain visible, as do concrete code/data/configuration/deployment
+changes, corrective object-field reindexing, signing, packaging and
+architecture-specific rebuilding. The separate historical Legacy networking
+entry stays visible because it includes manual configuration and restarts.
+Automatic ICU rebuilding can still affect downtime; hiding its routine notice
+does not imply that operational planning is unnecessary.
 
 ### Stage 2: Changes, Quick tables and Compatibility settings
 

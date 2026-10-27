@@ -19,7 +19,7 @@ try {
       Float32Array.from({ length: bytes.length / 4 }, (_, i) => bytes.readFloatLE(i * 4)));
     const vector = await encoder.encode(config.query_prefix + item.query);
     const scores = scoreFacts(manifest.languages[item.language].ids, indexes.get(item.language), vector);
-    const filters = { source: item.source, target: item.target };
+    const filters = { source: item.source, target: item.target, includeRoutine: true };
     const projected = catalog.changes.map(c => projectChangeForPath(c, catalog.sources,
       item.source, item.target, catalog.latest)).filter(Boolean);
     const eligible = filterChanges(projected, filters, catalog.latest);

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "routine_checks": {
+    "chg-client-minimum-20-2": {
+      "member_ids": ["chg-client-minimum-20-2"],
+      "reason": "Server 20.2 and later requires clients at least 20.2. This is routine LTS client/server version alignment, with no application-specific remediation."
+    },
+    "chg-client-minimum-20-7": {
+      "member_ids": ["chg-client-minimum-20-7"],
+      "reason": "Server 20.7 and later requires clients at least 20.7. This is routine LTS client/server version alignment, with no application-specific remediation."
+    },
+    "chg-client-minimum-20-9": {
+      "member_ids": ["chg-client-minimum-20-9"],
+      "reason": "Server 20.9 and later requires clients at least 20.9. This is routine LTS client/server version alignment, with no application-specific remediation."
+    },
+    "chg-windows-server-2012-r2-support": {
+      "member_ids": ["chg-windows-server-2012-r2-support"],
+      "reason": "Windows Server 2012 R2 compatibility ends at 20.2. This is a supported-OS prerequisite; the entry documents no additional application-specific adaptation."
+    },
+    "chg-icu-63-index-rebuild": {
+      "member_ids": ["chg-icu-63-index-rebuild"],
+      "reason": "The ICU 63.1 update automatically rebuilds indexes. Allowing upgrade time is routine maintenance, not manual repair or a data transformation. The first 4D release remains unknown."
+    },
+    "chg-icu-68-index-rebuild": {
+      "member_ids": ["chg-icu-68-index-rebuild"],
+      "reason": "ICU 68.1 at 18 R6 automatically rebuilds indexes. This is an upgrade-duration notice, not selective corrective reindexing."
+    },
+    "chg-icu-20-index-rebuild": {
+      "member_ids": ["chg-icu-20-index-rebuild"],
+      "reason": "The v20 ICU update automatically rebuilds indexes. No application changes or manual rebuild are prescribed."
+    },
+    "chg-icu-73-index-rebuild": {
+      "member_ids": ["chg-icu-73-index-rebuild"],
+      "reason": "ICU 73.2 at 20.1 automatically rebuilds indexes. This is routine upgrade timing, distinct from the separate target-20.1 client/server version constraint."
+    },
+    "chg-icu-77-index-rebuild": {
+      "member_ids": ["chg-icu-77-index-rebuild"],
+      "reason": "ICU 77.1 automatically rebuilds indexes. Allowing time and verifying completion is routine upgrade maintenance, not a specific manual repair."
+    },
+    "chg-icu-20-1-client-server-pair": {
+      "member_ids": ["chg-icu-20-1-client-server-pair"],
+      "reason": "Matching 20.1 clients and Server 20.1 is ordinary exact-version alignment for that final target, not a mandatory intermediate upgrade step."
+    },
+    "chg-legacy-network-layer-removal": {
+      "member_ids": ["chg-legacy-network-layer-removal"],
+      "reason": "At 21 R3, projects and binary databases automatically switch to ServerNet. This entry recommends connection testing but specifies no manual migration procedure or code change. The earlier, separately documented manual network-layer migration remains visible."
+    }
+  }
+}

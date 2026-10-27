@@ -283,7 +283,16 @@ try {
   assert.equal(await page.locator('[data-change-id]').count(),0);
   await page.locator('#reset').click();
   assert.equal(await page.locator('#search').inputValue(),'');
-  assert.equal(await page.locator('[data-change-id]').count(),190);
+  assert.equal(await page.locator('#include-routine').isChecked(),false);
+  const defaultIds = await page.evaluate(async workerUrl => {
+    const catalog = await (await fetch(new URL('./data/catalog.json',workerUrl))).json();
+    const {filterChanges,projectChangeForPath} = await import(new URL('./logic.mjs',workerUrl));
+    return filterChanges(catalog.changes.map(c =>
+      projectChangeForPath(c,catalog.sources,'v16','v21',catalog.latest)).filter(Boolean))
+      .map(c => c.id);
+  },workerUrl);
+  assert.deepEqual(await page.locator('[data-change-id]').evaluateAll(cards =>
+    cards.map(c => c.dataset.changeId)),defaultIds);
   for (const theme of ['light','dark']) {
     await page.locator('#theme').selectOption(theme);
     await page.setViewportSize({width:390,height:844});

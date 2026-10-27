@@ -105,7 +105,7 @@ const PREFS = '4d-migration-preferences-v1';
 const state = {
   language: LANGUAGES.includes(navigator.language?.slice(0, 2)) ? navigator.language.slice(0, 2) : 'en',
   theme: 'system', catalog: null, loading: true,
-  source: 'v16', target: 'v21', query: '', platforms: null, modules: null, sort: 'severity',
+  source: 'v16', target: 'v21', query: '', platforms: null, modules: null, sort: 'severity', includeRoutine: false,
   message: null, error: false,
 };
 try {
@@ -239,6 +239,9 @@ function changeCard(change) {
   for (const [key, value] of [['criticality', change.criticality], ['complexity', complexityForChange(change)]]) {
     top.append(node('span', `${t(key)}: ${valueLabel(value)}`, `badge${key === 'criticality' && ['blocking', 'critical'].includes(value) ? ' severe' : ''}`));
   }
+  if (change.default_visibility?.category === 'routine_check') {
+    top.append(node('span', t('routineCheck'), 'badge'));
+  }
   card.append(top, node('h3', locale?.one_line || change.id));
   if (!change.localizations[state.language]) card.append(node('p', t('fallback'), 'muted'));
   if (locale?.paragraph) card.append(node('p', locale.paragraph, 'card-body'));
@@ -340,6 +343,7 @@ function render() {
   document.documentElement.lang = state.language;
   document.title = `4D · ${t('appTitle')}`;
   $('language').value = state.language;
+  $('include-routine').checked = state.includeRoutine;
   applyTheme();
   for (const element of document.querySelectorAll('[data-i18n]')) element.textContent = t(element.dataset.i18n);
   for (const element of document.querySelectorAll('[data-i18n-aria]')) element.setAttribute('aria-label', t(element.dataset.i18nAria));
@@ -353,6 +357,10 @@ function render() {
 }
 
 $('filters').addEventListener('submit', event => event.preventDefault());
+$('include-routine').addEventListener('change', event => {
+  state.includeRoutine = event.target.checked;
+  renderChanges();
+});
 for (const [id, key] of [
   ['source-version', 'source'], ['target-version', 'target'], ['sort', 'sort'], ['search', 'query'],
 ]) {
@@ -383,10 +391,11 @@ $('theme').addEventListener('change', event => {
   savePreferences();
 });
 $('reset').addEventListener('click', () => {
-  Object.assign(state, { query: '', platforms: null, modules: null, sort: 'severity' });
+  Object.assign(state, { query: '', platforms: null, modules: null, sort: 'severity', includeRoutine: false });
   $('search').value = '';
   queryMeaning();
   $('sort').value = state.sort;
+  $('include-routine').checked = state.includeRoutine;
   renderCheckboxes();
   renderChanges();
 });

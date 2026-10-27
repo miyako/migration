@@ -36,6 +36,10 @@
       <p id="version-warning" class="warning" hidden data-i18n="versionWarning">Choose a later target to see new changes. Existing deprecations and changes with unknown versions remain visible.</p>
       <section class="toolbar" aria-labelledby="filters-heading">
         <h2 id="filters-heading" data-i18n="filters">Filters</h2>
+        <div class="routine-filter">
+          <label><input id="include-routine" type="checkbox" aria-describedby="routine-hint"><span data-i18n="includeRoutine">Include routine checks</span></label>
+          <p id="routine-hint" class="muted" data-i18n="routineHint">Routine compatibility and automatic-behavior checks are hidden by default. Include them to search or browse these entries.</p>
+        </div>
         <label class="search-field"><span data-i18n="search">Keyword or exact identifier</span><input id="search" type="search" maxlength="1000" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Command, identifier, or keyword"></label>
         <div class="meaning-search">
           <p id="meaning-notice" class="muted"></p>

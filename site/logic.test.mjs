@@ -148,8 +148,56 @@ test('upgrade filtering keeps applicability counts independent of catalog totals
   const upgrade = target => editorialChanges.map(c =>
     projectChangeForPath(c, editorialCatalog.sources, 'v16', target, editorialCatalog.latest))
     .filter(Boolean);
-  assert.equal(filterChanges(upgrade('v21')).length, 190);
-  assert.equal(filterChanges(upgrade('latest'), { target: 'latest' }, editorialCatalog.latest).length, 199);
+  assert.equal(filterChanges(upgrade('v21'), { includeRoutine: true }).length, 190);
+  assert.equal(filterChanges(upgrade('latest'), { target: 'latest', includeRoutine: true }, editorialCatalog.latest).length, 199);
+  assert.equal(filterChanges(upgrade('v21')).length, 181);
+  assert.equal(filterChanges(upgrade('latest'), { target: 'latest' }, editorialCatalog.latest).length, 189);
+  for (const target of ['v21', 'latest']) {
+    const records = upgrade(target);
+    const pruned = filterChanges(records, { target }, editorialCatalog.latest);
+    const included = filterChanges(records, { target, includeRoutine: true }, editorialCatalog.latest);
+    assert.deepEqual(pruned.map(c => c.id), included.filter(c => !c.default_visibility).map(c => c.id));
+    assert.ok(pruned.some(c => c.id === 'chg-object-index-rare-corruption'));
+    assert.ok(pruned.some(c => c.id === 'chg-legacy-network-layer-deprecation'));
+  }
+});
+
+test('the client 20.7 minimum is opt-in in every language without changing authored content', () => {
+  const record = editorialById.get('chg-client-minimum-20-7');
+  assert.equal(record.default_visibility.category, 'routine_check');
+  for (const query of ['chg-client-minimum-20-7', ...LANGUAGES.map(language => record.localizations[language].one_line)]) {
+    assert.deepEqual(filterChanges([record], { query }), []);
+    assert.deepEqual(filterChanges([record], { query, includeRoutine: true }).map(c => c.id), [record.id]);
+  }
+});
+
+test('routine checks are hidden by explicit metadata, not severity, and remain available on request', () => {
+  const routine = change('routine', 'v20', {
+    default_visibility: { category: 'routine_check', reason: 'Standard minimum version.' },
+  });
+  const actionable = change('actionable', 'v20', { criticality: 'low' });
+  assert.deepEqual(filterChanges([routine, actionable]).map(c => c.id), ['actionable']);
+  assert.deepEqual(filterChanges([routine], { query: 'routine' }), []);
+  assert.deepEqual(filterChanges([routine, actionable], { includeRoutine: true }).map(c => c.id),
+    ['routine', 'actionable']);
+  assert.deepEqual(filterChanges([routine], { includeRoutine: true, platforms: [] }), []);
+  assert.deepEqual(filterChanges([routine], { includeRoutine: true, modules: [] }), []);
+  assert.deepEqual(filterChanges([routine], { includeRoutine: true, target: 'v19' }), []);
+  assert.deepEqual(filterChanges([routine], { includeRoutine: true, source: 'v20' }), []);
+  assert.deepEqual(filterChanges([routine], { includeRoutine: true, query: 'no-such-command' }), []);
+});
+
+test('invalid default visibility metadata fails catalog validation instead of silently hiding entries', () => {
+  const record = change('metadata');
+  const document = { schema_version: 1, sources: [], changes: [record],
+    coverage: {}, latest: {}, semantic_search: {} };
+  for (const metadata of [null, true, [], {}, { category: 'important', reason: 'Keep' },
+    { category: 'routine_check', reason: ' ' }, { category: 'routine_check', reason: 'Routine', extra: true }]) {
+    record.default_visibility = metadata;
+    assert.throws(() => validateCatalog(document), /invalidCatalog/);
+  }
+  record.default_visibility = { category: 'routine_check', reason: 'Standard minimum version.' };
+  assert.equal(validateCatalog(document), document);
 });
 
 test('Stage 2 compiler, ORDA and compatibility queries keep release and group boundaries', () => {
@@ -202,7 +250,7 @@ test('group searches retain individual IDs, command aliases and unique membershi
   for (const id of membership) {
     const entity = editorialById.get(id);
     const target = entity.applicability?.target_releases?.[0] ?? (entity.applies_until ? 'v20' : 'v21');
-    assert.ok(filterChanges(editorialChanges, { source: 'unknown', target, query: id })
+    assert.ok(filterChanges(editorialChanges, { source: 'unknown', target, query: id, includeRoutine: true })
       .some(c => c.id === entity.id), id);
   }
   for (const query of ['DOM', 'LibXSLT', 'XMLreader', 'chg-bundled-php-zip-removal']) {
@@ -815,7 +863,7 @@ test('directory has no planner controls, API or storage access and retains prefe
     assert.doesNotMatch(source, /checklist|textarea|check-label|button-group|\beffort\b|import-file|createObjectURL/i);
     assert.doesNotMatch(source, /(?:type\s*=\s*["']|\.type\s*=\s*["'])file["']/i);
   }
-  for (const id of ['search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
+  for (const id of ['include-routine', 'search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
     assert.ok(html.includes(`id="${id}"`), id);
   }
   assert.match(app, /const PREFS = '4d-migration-preferences-v1'/);

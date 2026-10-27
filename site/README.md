@@ -38,6 +38,21 @@ interface shows only the matching-entry count, without a catalog total or a
 catalog/upgrade mode selector. Applicability conditions, exclusive end bounds
 and exact target-release constraints remain available on each card.
 
+Routine compatibility and automatic-behavior checks are hidden by default.
+**Include routine checks** reveals them within the same upgrade path, search,
+platform/topic filters and sorting. Keyword and semantic search use the same
+visibility rule; neither silently brings hidden checks back. Included routine
+cards carry a localized badge. Reset filters returns to the pruned default, and
+the checkbox is not persisted; language and theme remain the only preferences.
+The reference URL list is unaffected.
+
+`data/default-visibility.json` records an explicit editorial reason and reviewed
+entity membership for each routine classification. The publisher rejects
+unknown IDs, unsupported metadata and changed group membership rather than
+silently hiding newly added migration work. Unclassified entries stay visible,
+regardless of severity. Concrete code, data, configuration and deployment
+changes are retained; classification is not a severity or difficulty estimate.
+
 The supplied 4D glyph and white
 ring are preserved in `4d.svg`; only its inner circle inherits the version color.
 `VERSION_COLORS` contains the supplied v15-v21 palette without adding a v15
