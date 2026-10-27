@@ -234,3 +234,12 @@ version isolation, scoped checkbox actions, empty results, both sort orders with
 known and unknown classifications, all locales, both themes, mobile layout,
 version colors, evidence and failure states. Optional `--screenshots DIR` saves
 desktop/mobile previews outside the repository.
+
+For cross-browser SVG rendering regressions, install the development-only tools
+with `python3 -m pip install playwright pillow` and
+`python3 -m playwright install chromium firefox webkit`, then run
+`python3 tests/version_icons_check.py` after catalog generation. This checks
+actual glyph, background and ring pixels in both selectors at desktop/mobile
+sizes in explicit light/dark and system themes. The glyph's fill and stroke are
+specified directly on its path: stylesheets inside externally referenced SVG
+symbols are not reliable across browser engines.
