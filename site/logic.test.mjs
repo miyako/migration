@@ -5,7 +5,8 @@ import { execFileSync } from 'node:child_process';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, releaseKey, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
   complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor, evidenceForLanguage,
-  sourceMatchesPath, evidenceForPath, projectChangeForPath, referencesForLanguage, partitionChanges } from './logic.mjs';
+  sourceMatchesPath, evidenceForPath, projectChangeForPath, referencesForLanguage, partitionChanges,
+  versionIconColors, topicAvailability } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
   id, threshold: { exact: /^v\d+$/.test(bucket) ? bucket.slice(1) : null, bucket, kind: 'introduced' }, type: 'restriction',
@@ -30,6 +31,57 @@ const editorialCatalog = JSON.parse(await readFile(new URL('./data/catalog.json'
 const editorialChanges = editorialCatalog.changes;
 const editorialById = new Map(editorialChanges.flatMap(record =>
   [record.id, ...record.member_ids].map(id => [id, record])));
+
+test('only v21 reverses the icon palette, including latest resolved to major 21', () => {
+  for (const [version, color] of Object.entries(VERSION_COLORS)) {
+    assert.deepEqual(versionIconColors(version), version === 'v21'
+      ? { background: '#fff', foreground: color, border: color }
+      : { background: color, foreground: '#fff', border: '#fff' });
+  }
+  assert.deepEqual(versionIconColors('latest', { release: '21 R4' }), versionIconColors('v21'));
+  assert.equal(versionIconColors('latest', { release: '22' }), null);
+  assert.equal(versionIconColors('latest'), null);
+});
+
+test('topic availability preserves OR semantics, wildcard/missing topics and removable zero selections', () => {
+  const records = [change('multi', 'v20', { modules: ['language', 'orda'] }),
+    change('wildcard', 'v20', { modules: ['all'] }),
+    change('missing', 'v20', { modules: [] })];
+  const options = ['language', 'orda', 'php', 'unknown'];
+  assert.deepEqual(topicAvailability(records, options, ['php']), [
+    { value: 'language', count: 2, disabled: false },
+    { value: 'orda', count: 2, disabled: false },
+    { value: 'php', count: 0, disabled: false },
+    { value: 'unknown', count: 1, disabled: false },
+  ]);
+  assert.deepEqual(topicAvailability([], ['language', 'php'], ['php']), [
+    { value: 'language', count: 0, disabled: true }, { value: 'php', count: 0, disabled: false },
+  ]);
+  for (const value of options) {
+    assert.equal(topicAvailability(records, options).find(option => option.value === value).count,
+      filterChanges(records, { modules: [value] }).length);
+  }
+});
+
+test('real topic counts agree with result entries after path, visibility, query and platform filters', () => {
+  const options = filterOptions(editorialChanges, 'modules');
+  for (const source of ['v16', 'v20', 'v21']) {
+    const projected = editorialChanges.map(c =>
+      projectChangeForPath(c, editorialCatalog.sources, source, 'v21', editorialCatalog.latest)).filter(Boolean);
+    for (const platforms of [[], ['windows'], ['macos']]) {
+      for (const query of ['', 'PHP', 'no-such-command']) {
+        for (const includeRoutine of [false, true]) {
+          const filters = { source, target: 'v21', platforms, query, includeRoutine, modules: options };
+          const candidates = filterChanges(projected, filters, editorialCatalog.latest);
+          for (const { value, count } of topicAvailability(candidates, options, [], filterOptions(projected, 'modules'))) {
+            assert.equal(count, filterChanges(projected, { ...filters, modules: [value] },
+              editorialCatalog.latest).length, `${source}/${platforms}/${query}/${includeRoutine}/${value}`);
+          }
+        }
+      }
+    }
+  }
+});
 
 test('reference URLs include every registered source in the selected language without fallback', () => {
   const original = JSON.stringify(editorialCatalog.sources);

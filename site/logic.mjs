@@ -9,6 +9,14 @@ export function versionColor(value, latest = null) {
   return VERSION_COLORS[versionBucket(value === 'latest' ? latest?.release : value)] ?? null;
 }
 
+export function versionIconColors(value, latest = null) {
+  const color = versionColor(value, latest);
+  if (!color) return null;
+  return versionBucket(value === 'latest' ? latest?.release : value) === 'v21'
+    ? { background: '#fff', foreground: color, border: color }
+    : { background: color, foreground: '#fff', border: '#fff' };
+}
+
 // Release identity stays in threshold.exact; this is only a major-version bucket.
 export function versionBucket(value) {
   if (value === 'latest') return 'latest';
@@ -234,6 +242,18 @@ function matchesOptions(values, selected, options, includeUnknown = false) {
     : selected.includes(value));
 }
 
+export function matchesTopics(change, selected, options) {
+  return matchesOptions(change.modules, selected, options);
+}
+
+export function topicAvailability(changes, options, selected = options,
+  matchingOptions = filterOptions(changes, 'modules')) {
+  return options.map(value => {
+    const count = changes.filter(change => matchesTopics(change, [value], matchingOptions)).length;
+    return { value, count, disabled: count === 0 && !selected.includes(value) };
+  });
+}
+
 export function crossesVersion(change, source, target, latest = null) {
   const resolve = value => releaseKey(value === 'latest' ? latest?.release : value);
   const from = resolve(source);
@@ -293,7 +313,7 @@ export function filterChanges(changes, filters = {}, latest = null) {
     if (!includeRoutine && defaultVisibilityCategory(change, target, latest)) return false;
     if (!matchesOptions(change.platforms, platforms.filter(value => platformOptions.includes(value)),
       platformOptions, true)) return false;
-    if (!matchesOptions(change.modules, modules, moduleOptions)) return false;
+    if (!matchesTopics(change, modules, moduleOptions)) return false;
     const searchable = [
       change.id, ...(change.visible_member_ids ?? change.member_ids ?? []), ...(change.identifiers ?? []),
       change.action, change.threshold?.exact,
