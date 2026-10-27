@@ -480,8 +480,8 @@ manuals. The note's erroneous transparency/radio-group sentence is excluded.
 No superficial ServerNet, ICU, QUIC, FileHandle-offset or declaration-removal
 citations were added. Historical notarization/Write bridges and optional debt
 tools remain bounded dispositions, not new filler requirements. Current authored
-baseline guards are implemented; future affected-field/local-model inference
-remains unimplemented as described below.
+baseline guards are implemented; the local generative authoring requirement
+is retired as described below.
 
 ### Legacy archive coverage
 
@@ -819,59 +819,61 @@ dashboard or live API access. Model
 suspicions go to an editorial queue first; never automatically post them as
 established 4D bugs. Official support is separate.
 
-### Future on-demand local-model update contract
+### Editorial updates; local generative authoring retired
 
-The eventual inference pipeline is **on demand**, not weekly or scheduled:
-manual GitHub Actions dispatch and/or path-scoped changes to source-registry URLs
-and editorial overrides are the intended triggers. Small local model(s) would run
-on the publishing/Actions runner for classification, summaries, translation and
-embeddings, with no paid external/cloud inference. An embedder is not a generator;
-different tasks may use different models. The content-generation inference
-pipeline does **not** exist yet. Current agent-authored content is explicitly
-identified as such. The separately implemented search encoder below does not
-generate or modify that content.
+**The local generative authoring requirement is cancelled for now.** Updates are
+infrequent, and the measured factual/multilingual unreliability and human review
+cost of the tested Qwen3-4B-Instruct-2507 and Gemma 4 E4B configurations do not
+justify a production authoring pipeline. This is a decision about those tested
+configurations and this project's needs, not a claim about all local LLMs.
+[Draft PR #15](https://github.com/miyako/migration/pull/15) preserves the
+**historical experiments and results**; it is unmerged, and its experimental
+tools are not shipped here.
+
+Occasional updates may use agent/frontier-assisted authoring with human review.
+Only approved content proceeds through deterministic GitHub Actions validation
+and publication; deterministic navigation/catalog index builds are distinct
+from the separately controlled semantic-vector rebuild described below.
+Optional source-change detection may flag editorial attention only, never
+automatically rewrite content. There is no unattended generative authoring or
+blanket regeneration. The existing browser-local EmbeddingGemma 2 semantic
+search remains unchanged: an embedder is not a generator and does not author
+or modify catalog content.
 
 **The version-controlled authored catalog is the authoritative baseline**, not
-disposable output to regenerate when a local model is introduced. This includes
+disposable output to regenerate after a model change. This includes
 existing frontier/agent-authored summaries, translations, conditions and action
 rationales, as well as curated groups and corrections. Model, tokenizer, prompt
 or schema revisions must not invalidate that authored text or its assignments.
-Future source additions or substantive evidence changes may propose reviewable
-patches **only for affected facts, locales and fields**. A corroborating URL,
-retrieval timestamp, HTML-only formatting change or override-only edit must not
-rewrite summaries or translations. An explicit, narrowly scoped regeneration
-option may create a reviewable PR; it must never silently replace the catalog.
+Editors should scope source additions or substantive evidence changes to
+reviewable patches **only for affected facts, locales and fields**. A corroborating
+URL, retrieval timestamp, HTML-only formatting change or override-only edit must not
+rewrite summaries or translations. Any assisted revision requires an explicit,
+narrowly scoped editorial decision and human review; it must never silently
+replace the catalog.
 
 `data/groups.json` is a durable editorial contract: stable group IDs, active
 member assignments and all authored language fields survive candidate/model
-changes. Models may propose **new** assignments in a reviewable diff; uncertain
-new facts stay singleton candidates pending review. Do not dissolve/rebuild
+changes. Editorial updates may propose **new** assignments in a reviewable diff;
+uncertain new facts stay singleton candidates pending review. Do not dissolve/rebuild
 groups, merge by similarity or overwrite group prose after a model revision.
 Only an explicit reasoned editorial change may alter an established assignment.
-Generated proposals and curated content need separate provenance. Threshold,
+Assisted proposals and curated content need separate provenance. Threshold,
 status, remediation, platform, format and validity-bound compatibility guards,
 unique active membership, stable IDs and no-dropped-fact checks still apply.
 The fixed curated-group fixture and synthetic candidate-swap tests guard current
 deterministic behavior; they are **not an implemented inference pipeline**.
 
-Future caches should use per-field provenance/fingerprints and stable source IDs
-to distinguish authored baseline from new proposals. Source removal must flag
-stale support and affected review/exclusion explicitly, retaining provenance and
+Retain provenance and stable source IDs to distinguish authored baseline from
+new proposals. Source removal must flag stale support and affected review/exclusion
+explicitly, retaining provenance and
 remaining independent support; it must not erase or retranslate unrelated text.
 Human corrections and overrides are strongest and always win. Current schema,
 committed baseline fixtures, final overrides and deterministic grouping provide
-storage/validation safeguards only. Automatic affected-field detection,
-model-result reconciliation and source-removal inference remain unimplemented.
-
-Keep cheap deterministic catalog/group publication separate from expensive
-source inference. Override-only edits must not regenerate source-derived prose;
-human edits/overrides always win and must never be overwritten. Future generated
-artifacts must retain stable source/fact IDs and source hashes plus pinned model
-and tokenizer revisions, prompt/schema versions and generation parameters.
-Removing a source must remove unsupported published claims while preserving
-historical provenance and any independently supported multi-source facts.
-Deterministic validation remains mandatory. Browser query embeddings
-are implemented separately below, not as part of content-generation inference.
+storage/validation safeguards only, not a promise of future generative tooling.
+Editors must remove unsupported published claims while preserving historical
+provenance and any independently supported multi-source facts. Deterministic
+validation remains mandatory.
 
 The site is a quick directory, not a planner: no completion checkboxes, editable
 notes, effort estimates, or planner JSON import/export. Only language/theme
