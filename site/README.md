@@ -33,19 +33,10 @@ python3 -m unittest discover -s tests
 
 ## Visitor interface
 
-The default **For my upgrade** mode filters by current/target versions. The
-**All catalog entries** mode bypasses version applicability and shows all 202
-published entities when search and other filters are clear, including historical,
-superseded and exact-target-only instructions. It disables the version selectors
-without changing their values; switching back restores the same upgrade path.
-Catalog browsing keeps full group membership and source evidence rather than
-projecting them onto the inactive path. Applicability conditions, exclusive
-end bounds and exact target-release constraints remain available on each card.
-Search (including semantic search), platform/topic filters and sorting work in
-both modes and are preserved when switching. Reset filters keeps the current
-mode; the mode is not persisted across visits. Result counts distinguish entries
-matching the upgrade and filters from entries shown across the whole catalog,
-and explicitly label the full catalog total.
+Current/target versions filter the directory by upgrade applicability. The
+interface shows only the matching-entry count, without a catalog total or a
+catalog/upgrade mode selector. Applicability conditions, exclusive end bounds
+and exact target-release constraints remain available on each card.
 
 The supplied 4D glyph and white
 ring are preserved in `4d.svg`; only its inner circle inherits the version color.
