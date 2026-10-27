@@ -21,7 +21,9 @@
   <main id="main" tabindex="-1">
     <h1 data-i18n="directoryTitle">Find your migration changes</h1>
     <form id="filters" role="search" data-i18n-aria="filters" aria-label="Filters">
-      <fieldset class="version-selectors">
+      <label class="browse-control"><span data-i18n="browseMode">Browse</span><select id="browse-mode" aria-describedby="catalog-note"><option value="upgrade" data-i18n="forMyUpgrade">For my upgrade</option><option value="catalog" data-i18n="allCatalogEntries">All catalog entries</option></select></label>
+      <p id="catalog-note" class="muted" hidden data-i18n="catalogNote">Includes historical and superseded entries. Check each entry’s applicability before following its instructions.</p>
+      <fieldset id="version-selectors" class="version-selectors">
         <legend data-i18n="versions">Versions</legend>
         <div class="version-control">
           <svg id="source-icon" class="version-icon" aria-hidden="true" viewBox="0 0 1024 1024"><use href="./4d.svg#version-mark"></use></svg>
@@ -59,6 +61,11 @@
       </section>
     </form>
     <p id="message" class="message" role="status" aria-live="polite"></p>
+    <details class="references">
+      <summary data-i18n="referenceUrls">Reference URLs</summary>
+      <p class="muted" data-i18n="referenceUrlsNote">All registered sources in the selected language, independent of filters. This is not an exhaustive documentation list.</p>
+      <div id="reference-list"></div>
+    </details>
     <section aria-labelledby="changes-heading">
       <div class="section-heading"><h2 id="changes-heading" data-i18n="changes">Changes</h2><span id="result-count" role="status" aria-live="polite"></span></div>
       <div id="change-list" class="card-list"></div>

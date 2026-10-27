@@ -276,11 +276,11 @@ export function crossesVersion(change, source, target, latest = null) {
 export function filterChanges(changes, filters = {}, latest = null) {
   const platformOptions = filterOptions(changes, 'platforms');
   const moduleOptions = filterOptions(changes, 'modules');
-  const { source = 'v16', target = 'v21', platforms = platformOptions,
+  const { mode = 'upgrade', source = 'v16', target = 'v21', platforms = platformOptions,
     modules = moduleOptions, query = '', sort = 'severity' } = filters;
   const terms = query.normalize('NFKC').toLocaleLowerCase().trim().split(/\s+/u).filter(Boolean);
   return changes.filter(change => {
-    if (!crossesVersion(change, source, target, latest)) return false;
+    if (mode !== 'catalog' && !crossesVersion(change, source, target, latest)) return false;
     if (!matchesOptions(change.platforms, platforms.filter(value => platformOptions.includes(value)),
       platformOptions, true)) return false;
     if (!matchesOptions(change.modules, modules, moduleOptions)) return false;
@@ -301,6 +301,13 @@ export function filterChanges(changes, filters = {}, latest = null) {
     return (sort === 'complexity' ? complexityOrder || severityOrder : severityOrder) ||
       (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   });
+}
+
+export function referencesForLanguage(sources, language) {
+  return sources.filter(source => source.language === language)
+    .sort((a, b) => a.title.localeCompare(b.title, language) ||
+      a.edition.localeCompare(b.edition, language, { numeric: true }) ||
+      a.id.localeCompare(b.id));
 }
 
 export function validateCatalog(data) {
@@ -342,6 +349,13 @@ export function validateCatalog(data) {
 
 export const translations = {
   en: {
+    referenceUrls: 'Reference URLs',
+    referenceUrlsNote: 'All registered sources in the selected language, independent of filters. This is not an exhaustive documentation list.',
+    noReferences: 'No reference URLs are registered in this language.',
+    browseMode: 'Browse', forMyUpgrade: 'For my upgrade', allCatalogEntries: 'All catalog entries',
+    catalogNote: 'Includes historical and superseded entries. Check each entry’s applicability before following its instructions.',
+    catalogResultCount: '{count} entries shown · {total} in catalog',
+    targetReleases: 'Applies only to target releases',
     directoryTitle: 'Find your migration changes', versions: 'Versions', filters: 'Filters', topics: 'Topics',
     versionDirection: 'From current version to target version', otherTopics: 'Other',
     selectAll: 'Select all', unselectAll: 'Unselect all',
@@ -391,7 +405,7 @@ export const translations = {
     sourceVersion: 'From version', targetVersion: 'To version', search: 'Keyword or exact identifier', searchPlaceholder: 'Command, identifier, or keyword', platform: 'Platform', allPlatforms: 'All platforms', module: 'Module', allModules: 'All modules', sort: 'Sort', priority: 'Stage, then severity', release: 'Original release', reset: 'Reset filters',
     offlineSearch: 'Keyword and identifier matching runs locally, without models. This is not semantic search.', semanticUnavailable: 'Semantic search unavailable', semanticReason: 'Reason',
     preferencesError: 'Language/theme preferences could not be loaded or saved. Your current selection still applies to this page.',
-    versionWarning: 'Choose a target later than the source to see newly crossed changes. Existing deprecations and unknown thresholds remain visible.', resultCount: '{count} of {total} changes', noResults: 'No matching records', noResultsBody: 'No results does not mean a safe upgrade. Check your filters, source coverage, and unresolved questions.',
+    versionWarning: 'Choose a target later than the source to see newly crossed changes. Existing deprecations and unknown thresholds remain visible.', resultCount: '{count} entries match this upgrade and filters · {total} in catalog', noResults: 'No matching records', noResultsBody: 'No results does not mean a safe upgrade. Check your filters, source coverage, and unresolved questions.',
     candidate: 'Candidate · not human-reviewed', reviewed: 'Reviewed (catalogue status)', reviewUnknown: 'Review status unknown', generated_candidate: 'Generated candidate', human_reviewed: 'Human-reviewed', provenance: 'Text provenance', reviewStatus: 'Review status', stage: 'Stage', criticality: 'Severity', type: 'Type', bucket: 'Version bucket', identifiers: 'Identifiers', applicability: 'Applicability & action', formats: 'Application formats', conditions: 'Conditions', action: 'Action', relevance: 'Scope relevance', evidence: 'Evidence', sourceEdition: 'Source edition', sourceLanguage: 'Source language', confidence: 'Confidence', notices: 'Notices', appliesUntil: 'Before target release', fallback: 'Translation unavailable; showing English or catalogue text.', noEvidence: 'No evidence recorded.', sourceId: 'Source ID', family: 'Family', fetchedAt: 'Retrieved at', checksum: 'SHA-256', originalUrl: 'Registered URL', resolvedUrl: 'Resolved URL', excerpt: 'Original source excerpt', noChanges: 'No changes published yet.',
     clarificationsIntro: 'Open questions and documented dispositions are separate from migration changes. A resolved question does not imply human review of a change.', noClarifications: 'No clarifications published', noClarificationsBody: 'No recorded questions does not mean there are no uncertainties.', disposition: 'Disposition', relatedChanges: 'Related change IDs', issue: 'Tracking issue ↗', status: 'Status',
     sourcesIntro: 'Registration is not proof of successful retrieval or complete coverage. Source editions and original release thresholds are distinct from version buckets.', noSources: 'No sources published', noSourcesBody: 'Coverage cannot yet be assessed.',
@@ -399,6 +413,13 @@ export const translations = {
     blocking: 'Blocking', critical: 'Critical', high: 'High', medium: 'Medium', low: 'Low', informational: 'Informational', restriction: 'Restriction', removed: 'Removed', deprecated: 'Deprecated', deprecation: 'Deprecation', introduced: 'Introduced', behavior: 'Behavior', syntax: 'Syntax', compilation: 'Compilation', runtime: 'Runtime', deployment: 'Deployment', testing: 'Testing', design: 'Design', languageModule: 'Language', all: 'All', binary: 'Binary', project: 'Project', in_scope: 'In scope', out_of_scope: 'Out of scope', conditional: 'Conditional', available: 'Available', failed: 'Failed', pending: 'Pending', resolved: 'Resolved', superseded: 'Superseded', unverified: 'Unverified', verified: 'Verified', missing: 'Missing', blocked: 'Blocked', error: 'Error', fetched: 'Retrieved', partial: 'Partial', not_attempted: 'Not attempted',
   },
   fr: {
+    referenceUrls: 'URL de référence',
+    referenceUrlsNote: 'Toutes les sources enregistrées dans la langue sélectionnée, indépendamment des filtres. Cette liste documentaire n’est pas exhaustive.',
+    noReferences: 'Aucune URL de référence n’est enregistrée dans cette langue.',
+    browseMode: 'Parcourir', forMyUpgrade: 'Pour ma mise à niveau', allCatalogEntries: 'Toutes les entrées du catalogue',
+    catalogNote: 'Inclut les entrées historiques et remplacées. Vérifiez les conditions de chaque entrée ; il ne s’agit pas d’une liste de tâches de mise à niveau.',
+    catalogResultCount: '{count} entrées affichées · {total} dans le catalogue',
+    targetReleases: 'Applicable uniquement aux versions cibles',
     directoryTitle: 'Trouvez les changements pour votre migration', versions: 'Versions', filters: 'Filtres', topics: 'Thèmes',
     versionDirection: 'De la version actuelle à la version cible', otherTopics: 'Autres',
     selectAll: 'Tout sélectionner', unselectAll: 'Tout désélectionner',
@@ -448,7 +469,7 @@ export const translations = {
     sourceVersion: 'Version de départ', targetVersion: 'Version cible', search: 'Mot-clé ou identifiant exact', searchPlaceholder: 'Commande, identifiant ou mot-clé', platform: 'Plateforme', allPlatforms: 'Toutes les plateformes', module: 'Module', allModules: 'Tous les modules', sort: 'Tri', priority: 'Étape, puis gravité', release: 'Version d’origine', reset: 'Réinitialiser les filtres',
     offlineSearch: 'La recherche par mots-clés et identifiants s’effectue localement, sans modèle. Ce n’est pas une recherche sémantique.', semanticUnavailable: 'Recherche sémantique indisponible', semanticReason: 'Motif',
     preferencesError: 'Impossible de charger ou d’enregistrer les préférences de langue et de thème. Votre sélection actuelle reste appliquée à cette page.',
-    versionWarning: 'Choisissez une cible postérieure à la source pour voir les nouveaux changements traversés. Les dépréciations existantes et les seuils inconnus restent visibles.', resultCount: '{count} changements sur {total}', noResults: 'Aucun résultat', noResultsBody: 'L’absence de résultats ne signifie pas une migration sans risque. Vérifiez les filtres, la couverture et les questions ouvertes.',
+    versionWarning: 'Choisissez une cible postérieure à la source pour voir les nouveaux changements traversés. Les dépréciations existantes et les seuils inconnus restent visibles.', resultCount: '{count} entrées correspondent à cette mise à niveau et aux filtres · {total} dans le catalogue', noResults: 'Aucun résultat', noResultsBody: 'L’absence de résultats ne signifie pas une migration sans risque. Vérifiez les filtres, la couverture et les questions ouvertes.',
     candidate: 'Candidat · sans revue humaine', reviewed: 'Revu (état du catalogue)', reviewUnknown: 'État de revue inconnu', generated_candidate: 'Candidat généré', human_reviewed: 'Revu par un humain', provenance: 'Provenance du texte', reviewStatus: 'État de revue', stage: 'Étape', criticality: 'Gravité', type: 'Type', bucket: 'Groupe de versions', identifiers: 'Identifiants', applicability: 'Applicabilité et action', formats: 'Formats d’application', conditions: 'Conditions', action: 'Action', relevance: 'Pertinence pour le périmètre', evidence: 'Preuves', sourceEdition: 'Édition source', sourceLanguage: 'Langue source', confidence: 'Confiance', notices: 'Avertissements', appliesUntil: 'Avant la version cible', fallback: 'Traduction indisponible ; texte anglais ou du catalogue affiché.', noEvidence: 'Aucune preuve enregistrée.', sourceId: 'Identifiant source', family: 'Famille', fetchedAt: 'Récupéré le', checksum: 'SHA-256', originalUrl: 'URL enregistrée', resolvedUrl: 'URL résolue', excerpt: 'Extrait original de la source', noChanges: 'Aucun changement publié.',
     clarificationsIntro: 'Les questions ouvertes et leurs conclusions sont séparées des changements. Une question résolue n’implique pas de revue humaine d’un changement.', noClarifications: 'Aucune clarification publiée', noClarificationsBody: 'L’absence de questions enregistrées ne signifie pas l’absence d’incertitudes.', disposition: 'Conclusion', relatedChanges: 'Identifiants des changements liés', issue: 'Ticket de suivi ↗', status: 'État',
     sourcesIntro: 'L’enregistrement ne prouve ni une récupération réussie ni une couverture complète. Les éditions sources et versions d’origine sont distinctes des groupes de versions.', noSources: 'Aucune source publiée', noSourcesBody: 'La couverture ne peut pas encore être évaluée.',
@@ -456,6 +477,13 @@ export const translations = {
     blocking: 'Bloquant', critical: 'Critique', high: 'Élevé', medium: 'Moyen', low: 'Faible', informational: 'Informatif', restriction: 'Restriction', removed: 'Supprimé', deprecated: 'Déprécié', deprecation: 'Dépréciation', introduced: 'Introduit', behavior: 'Comportement', syntax: 'Syntaxe', compilation: 'Compilation', runtime: 'Exécution', deployment: 'Déploiement', testing: 'Tests', design: 'Conception', languageModule: 'Langage', all: 'Tous', binary: 'Binaire', project: 'Projet', in_scope: 'Dans le périmètre', out_of_scope: 'Hors périmètre', conditional: 'Conditionnel', available: 'Disponible', failed: 'Échec', pending: 'En attente', resolved: 'Résolu', superseded: 'Remplacé', unverified: 'Non vérifié', verified: 'Vérifié', missing: 'Manquant', blocked: 'Bloqué', error: 'Erreur', fetched: 'Récupéré', partial: 'Partiel', not_attempted: 'Non tenté',
   },
   de: {
+    referenceUrls: 'Referenz-URLs',
+    referenceUrlsNote: 'Alle registrierten Quellen in der gewählten Sprache, unabhängig von den Filtern. Dies ist keine vollständige Dokumentationsliste.',
+    noReferences: 'In dieser Sprache sind keine Referenz-URLs registriert.',
+    browseMode: 'Ansicht', forMyUpgrade: 'Für mein Upgrade', allCatalogEntries: 'Alle Katalogeinträge',
+    catalogNote: 'Enthält historische und abgelöste Einträge. Prüfen Sie die Bedingungen jedes Eintrags, bevor Sie dessen Anweisungen befolgen.',
+    catalogResultCount: '{count} Einträge angezeigt · {total} im Katalog',
+    targetReleases: 'Gilt nur für Zielversionen',
     directoryTitle: 'Änderungen für Ihre Migration finden', versions: 'Versionen', filters: 'Filter', topics: 'Themen',
     versionDirection: 'Von der aktuellen Version zur Zielversion', otherTopics: 'Sonstige',
     selectAll: 'Alle auswählen', unselectAll: 'Alle abwählen',
@@ -505,7 +533,7 @@ export const translations = {
     sourceVersion: 'Ausgangsversion', targetVersion: 'Zielversion', search: 'Stichwort oder genaue Kennung', searchPlaceholder: 'Befehl, Kennung oder Stichwort', platform: 'Plattform', allPlatforms: 'Alle Plattformen', module: 'Modul', allModules: 'Alle Module', sort: 'Sortierung', priority: 'Phase, dann Schweregrad', release: 'Ursprüngliche Version', reset: 'Filter zurücksetzen',
     offlineSearch: 'Stichwort- und Kennungssuche erfolgen lokal, ohne Modelle. Dies ist keine semantische Suche.', semanticUnavailable: 'Semantische Suche nicht verfügbar', semanticReason: 'Grund',
     preferencesError: 'Sprach- und Darstellungseinstellungen konnten nicht geladen oder gespeichert werden. Die aktuelle Auswahl gilt weiterhin für diese Seite.',
-    versionWarning: 'Wählen Sie eine Zielversion nach der Ausgangsversion, um neu überschrittene Änderungen zu sehen. Bestehende Abkündigungen und unbekannte Schwellen bleiben sichtbar.', resultCount: '{count} von {total} Änderungen', noResults: 'Keine passenden Einträge', noResultsBody: 'Keine Ergebnisse bedeuten kein sicheres Upgrade. Prüfen Sie Filter, Quellenabdeckung und offene Fragen.',
+    versionWarning: 'Wählen Sie eine Zielversion nach der Ausgangsversion, um neu überschrittene Änderungen zu sehen. Bestehende Abkündigungen und unbekannte Schwellen bleiben sichtbar.', resultCount: '{count} Einträge passen zu diesem Upgrade und den Filtern · {total} im Katalog', noResults: 'Keine passenden Einträge', noResultsBody: 'Keine Ergebnisse bedeuten kein sicheres Upgrade. Prüfen Sie Filter, Quellenabdeckung und offene Fragen.',
     candidate: 'Kandidat · nicht menschlich geprüft', reviewed: 'Geprüft (Katalogstatus)', reviewUnknown: 'Prüfstatus unbekannt', generated_candidate: 'Generierter Kandidat', human_reviewed: 'Menschlich geprüft', provenance: 'Textherkunft', reviewStatus: 'Prüfstatus', stage: 'Phase', criticality: 'Schweregrad', type: 'Typ', bucket: 'Versionsgruppe', identifiers: 'Kennungen', applicability: 'Anwendbarkeit und Maßnahme', formats: 'Anwendungsformate', conditions: 'Bedingungen', action: 'Maßnahme', relevance: 'Umfangsrelevanz', evidence: 'Belege', sourceEdition: 'Quellausgabe', sourceLanguage: 'Quellsprache', confidence: 'Vertrauen', notices: 'Hinweise', appliesUntil: 'Vor Zielversion', fallback: 'Übersetzung nicht verfügbar; englischer oder Katalogtext wird angezeigt.', noEvidence: 'Keine Belege erfasst.', sourceId: 'Quellen-ID', family: 'Familie', fetchedAt: 'Abgerufen am', checksum: 'SHA-256', originalUrl: 'Registrierte URL', resolvedUrl: 'Aufgelöste URL', excerpt: 'Originalquellenauszug', noChanges: 'Noch keine Änderungen veröffentlicht.',
     clarificationsIntro: 'Offene Fragen und dokumentierte Entscheidungen sind von Änderungen getrennt. Eine geklärte Frage bedeutet keine menschliche Prüfung einer Änderung.', noClarifications: 'Keine Klärungen veröffentlicht', noClarificationsBody: 'Keine erfassten Fragen bedeuten nicht, dass keine Unsicherheiten bestehen.', disposition: 'Entscheidung', relatedChanges: 'Verknüpfte Änderungs-IDs', issue: 'Nachverfolgung ↗', status: 'Status',
     sourcesIntro: 'Registrierung belegt weder erfolgreichen Abruf noch vollständige Abdeckung. Quellausgaben und ursprüngliche Versionsschwellen sind von Versionsgruppen zu unterscheiden.', noSources: 'Keine Quellen veröffentlicht', noSourcesBody: 'Die Abdeckung kann noch nicht bewertet werden.',
@@ -513,6 +541,13 @@ export const translations = {
     blocking: 'Blockierend', critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig', informational: 'Informativ', restriction: 'Einschränkung', removed: 'Entfernt', deprecated: 'Abgekündigt', deprecation: 'Abkündigung', introduced: 'Eingeführt', behavior: 'Verhalten', syntax: 'Syntax', compilation: 'Kompilierung', runtime: 'Laufzeit', deployment: 'Bereitstellung', testing: 'Tests', design: 'Entwurf', languageModule: 'Sprache', all: 'Alle', binary: 'Binär', project: 'Projekt', in_scope: 'Im Umfang', out_of_scope: 'Außerhalb des Umfangs', conditional: 'Bedingt', available: 'Verfügbar', failed: 'Fehlgeschlagen', pending: 'Ausstehend', resolved: 'Geklärt', superseded: 'Ersetzt', unverified: 'Unverifiziert', verified: 'Verifiziert', missing: 'Fehlend', blocked: 'Blockiert', error: 'Fehler', fetched: 'Abgerufen', partial: 'Teilweise', not_attempted: 'Nicht versucht',
   },
   es: {
+    referenceUrls: 'URL de referencia',
+    referenceUrlsNote: 'Todas las fuentes registradas en el idioma seleccionado, independientemente de los filtros. Esta lista de documentación no es exhaustiva.',
+    noReferences: 'No hay URL de referencia registradas en este idioma.',
+    browseMode: 'Explorar', forMyUpgrade: 'Para mi actualización', allCatalogEntries: 'Todas las entradas del catálogo',
+    catalogNote: 'Incluye entradas históricas y sustituidas. Revise las condiciones de cada entrada; no es una lista de tareas de actualización.',
+    catalogResultCount: '{count} entradas mostradas · {total} en el catálogo',
+    targetReleases: 'Se aplica solo a las versiones de destino',
     directoryTitle: 'Encuentre los cambios para su migración', versions: 'Versiones', filters: 'Filtros', topics: 'Temas',
     versionDirection: 'De la versión actual a la versión de destino', otherTopics: 'Otros',
     selectAll: 'Seleccionar todo', unselectAll: 'Deseleccionar todo',
@@ -562,7 +597,7 @@ export const translations = {
     sourceVersion: 'Versión de origen', targetVersion: 'Versión de destino', search: 'Palabra clave o identificador exacto', searchPlaceholder: 'Comando, identificador o palabra clave', platform: 'Plataforma', allPlatforms: 'Todas las plataformas', module: 'Módulo', allModules: 'Todos los módulos', sort: 'Orden', priority: 'Etapa y luego gravedad', release: 'Versión original', reset: 'Restablecer filtros',
     offlineSearch: 'La búsqueda de palabras clave e identificadores se ejecuta localmente, sin modelos. No es una búsqueda semántica.', semanticUnavailable: 'Búsqueda semántica no disponible', semanticReason: 'Motivo',
     preferencesError: 'No se pudieron cargar o guardar las preferencias de idioma y tema. La selección actual sigue aplicada a esta página.',
-    versionWarning: 'Elija un destino posterior al origen para ver cambios nuevos atravesados. Las obsolescencias existentes y los umbrales desconocidos siguen visibles.', resultCount: '{count} de {total} cambios', noResults: 'No hay registros coincidentes', noResultsBody: 'La ausencia de resultados no significa una actualización segura. Revise los filtros, la cobertura y las preguntas abiertas.',
+    versionWarning: 'Elija un destino posterior al origen para ver cambios nuevos atravesados. Las obsolescencias existentes y los umbrales desconocidos siguen visibles.', resultCount: '{count} entradas coinciden con esta actualización y los filtros · {total} en el catálogo', noResults: 'No hay registros coincidentes', noResultsBody: 'La ausencia de resultados no significa una actualización segura. Revise los filtros, la cobertura y las preguntas abiertas.',
     candidate: 'Candidato · sin revisión humana', reviewed: 'Revisado (estado del catálogo)', reviewUnknown: 'Estado de revisión desconocido', generated_candidate: 'Candidato generado', human_reviewed: 'Revisado por una persona', provenance: 'Procedencia del texto', reviewStatus: 'Estado de revisión', stage: 'Etapa', criticality: 'Gravedad', type: 'Tipo', bucket: 'Grupo de versiones', identifiers: 'Identificadores', applicability: 'Aplicabilidad y acción', formats: 'Formatos de aplicación', conditions: 'Condiciones', action: 'Acción', relevance: 'Relevancia para el alcance', evidence: 'Pruebas', sourceEdition: 'Edición de la fuente', sourceLanguage: 'Idioma de la fuente', confidence: 'Confianza', notices: 'Avisos', appliesUntil: 'Antes de la versión de destino', fallback: 'Traducción no disponible; se muestra el texto inglés o del catálogo.', noEvidence: 'No hay pruebas registradas.', sourceId: 'ID de fuente', family: 'Familia', fetchedAt: 'Recuperado el', checksum: 'SHA-256', originalUrl: 'URL registrada', resolvedUrl: 'URL resuelta', excerpt: 'Extracto original de la fuente', noChanges: 'Todavía no hay cambios publicados.',
     clarificationsIntro: 'Las preguntas abiertas y sus conclusiones están separadas de los cambios. Una pregunta resuelta no implica la revisión humana de un cambio.', noClarifications: 'No hay aclaraciones publicadas', noClarificationsBody: 'La ausencia de preguntas registradas no implica que no existan incertidumbres.', disposition: 'Conclusión', relatedChanges: 'IDs de cambios relacionados', issue: 'Incidencia de seguimiento ↗', status: 'Estado',
     sourcesIntro: 'El registro no demuestra una recuperación correcta ni una cobertura completa. Las ediciones de las fuentes y las versiones originales son distintas de los grupos de versiones.', noSources: 'No hay fuentes publicadas', noSourcesBody: 'La cobertura aún no puede evaluarse.',
@@ -570,6 +605,13 @@ export const translations = {
     blocking: 'Bloqueante', critical: 'Crítico', high: 'Alto', medium: 'Medio', low: 'Bajo', informational: 'Informativo', restriction: 'Restricción', removed: 'Eliminado', deprecated: 'Obsoleto', deprecation: 'Obsolescencia', introduced: 'Introducido', behavior: 'Comportamiento', syntax: 'Sintaxis', compilation: 'Compilación', runtime: 'Ejecución', deployment: 'Despliegue', testing: 'Pruebas', design: 'Diseño', languageModule: 'Lenguaje', all: 'Todos', binary: 'Binario', project: 'Proyecto', in_scope: 'Dentro del alcance', out_of_scope: 'Fuera del alcance', conditional: 'Condicional', available: 'Disponible', failed: 'Fallido', pending: 'Pendiente', resolved: 'Resuelto', superseded: 'Sustituido', unverified: 'Sin verificar', verified: 'Verificado', missing: 'Ausente', blocked: 'Bloqueado', error: 'Error', fetched: 'Recuperado', partial: 'Parcial', not_attempted: 'No intentado',
   },
   ja: {
+    referenceUrls: '参照 URL 一覧',
+    referenceUrlsNote: '選択した言語で登録されているすべての出典です。フィルターの影響は受けません。すべてのドキュメントを網羅した一覧ではありません。',
+    noReferences: 'この言語の参照 URL は登録されていません。',
+    browseMode: '表示範囲', forMyUpgrade: '今回のアップグレード', allCatalogEntries: 'カタログの全項目',
+    catalogNote: '過去の項目や後の変更により不要になった項目も含みます。各項目の適用条件を確認してください。アップグレードのチェックリストではありません。',
+    catalogResultCount: '{count} 件を表示 · カタログ全体 {total} 件',
+    targetReleases: '次の移行先バージョンにのみ適用',
     directoryTitle: '移行に関係する変更を探す', versions: 'バージョン', filters: 'フィルター', topics: '分野',
     versionDirection: '現在のバージョンから移行先のバージョンへ', otherTopics: 'その他',
     selectAll: 'すべて選択', unselectAll: 'すべて選択解除',
@@ -619,7 +661,7 @@ export const translations = {
     sourceVersion: '移行元バージョン', targetVersion: '移行先バージョン', search: 'キーワード・正確な識別子', searchPlaceholder: 'コマンド、識別子、キーワード', platform: 'プラットフォーム', allPlatforms: 'すべてのプラットフォーム', module: 'モジュール', allModules: 'すべてのモジュール', sort: '並び順', priority: '工程順・重大度順', release: '元のリリース', reset: '絞り込みをリセット',
     offlineSearch: 'キーワードと識別子の検索はモデルを使わずローカルで実行します。意味検索ではありません。', semanticUnavailable: '意味検索は利用できません', semanticReason: '理由',
     preferencesError: '言語・表示設定を読み込むか保存することができませんでした。現在の選択はこのページに引き続き適用されます。',
-    versionWarning: '新たに跨ぐ変更を表示するには、移行元より後の移行先を選択してください。既存の非推奨項目と閾値不明の項目は引き続き表示されます。', resultCount: '{total} 件中 {count} 件', noResults: '該当する記録はありません', noResultsBody: '結果がないことは、安全なアップグレードを意味しません。絞り込み、出典の網羅範囲、未解決の疑問を確認してください。',
+    versionWarning: '新たに跨ぐ変更を表示するには、移行元より後の移行先を選択してください。既存の非推奨項目と閾値不明の項目は引き続き表示されます。', resultCount: '今回のアップグレードとフィルターに一致：{count} 件 · カタログ全体 {total} 件', noResults: '該当する記録はありません', noResultsBody: '結果がないことは、安全なアップグレードを意味しません。絞り込み、出典の網羅範囲、未解決の疑問を確認してください。',
     candidate: '候補 · 人によるレビュー未実施', reviewed: 'レビュー済み（カタログの状態）', reviewUnknown: 'レビュー状況不明', generated_candidate: '自動生成された候補', human_reviewed: '人によるレビュー済み', provenance: '文章の来歴', reviewStatus: 'レビュー状況', stage: '工程', criticality: '重大度', type: '種別', bucket: 'バージョン区分', identifiers: '識別子', applicability: '適用条件と対応', formats: 'アプリケーション形式', conditions: '条件', action: '対応', relevance: '対象範囲との関連', evidence: '根拠', sourceEdition: '出典の版', sourceLanguage: '出典の言語', confidence: '確信度', notices: '注意事項', appliesUntil: 'この移行先バージョンより前まで', fallback: '翻訳がありません。英語またはカタログの原文を表示します。', noEvidence: '根拠は記録されていません。', sourceId: '出典 ID', family: '分類', fetchedAt: '取得日時', checksum: 'SHA-256', originalUrl: '登録 URL', resolvedUrl: '解決後の URL', excerpt: '出典の原文抜粋', noChanges: '変更はまだ公開されていません。',
     clarificationsIntro: '未解決の疑問とその判断は、変更項目とは別に管理します。疑問の解決は、変更の人によるレビューを意味しません。', noClarifications: '確認事項は公開されていません', noClarificationsBody: '疑問の記録がないことは、不確実性がないことを意味しません。', disposition: '判断・対応', relatedChanges: '関連する変更 ID', issue: '追跡用 Issue ↗', status: '状態',
     sourcesIntro: '登録済みでも、取得成功や完全な網羅を意味しません。出典の版および元のリリース閾値は、バージョン区分と区別します。', noSources: '出典は公開されていません', noSourcesBody: '網羅範囲はまだ評価できません。',

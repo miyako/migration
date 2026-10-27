@@ -1,6 +1,6 @@
 import {
   LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
-  versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath,
+  versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath, referencesForLanguage,
 } from './logic.mjs';
 import { corpusRows, hybridFilter } from './semantic.mjs';
 import { searchLabels } from './search-labels.mjs';
@@ -105,7 +105,7 @@ const PREFS = '4d-migration-preferences-v1';
 const state = {
   language: LANGUAGES.includes(navigator.language?.slice(0, 2)) ? navigator.language.slice(0, 2) : 'en',
   theme: 'system', catalog: null, loading: true,
-  source: 'v16', target: 'v21', query: '', platforms: null, modules: null, sort: 'severity',
+  mode: 'upgrade', source: 'v16', target: 'v21', query: '', platforms: null, modules: null, sort: 'severity',
   message: null, error: false,
 };
 try {
@@ -164,6 +164,9 @@ function applyTheme() {
   $('theme').value = state.theme;
 }
 function renderSelectors() {
+  $('browse-mode').value = state.mode;
+  $('version-selectors').disabled = state.mode === 'catalog';
+  $('catalog-note').hidden = state.mode !== 'catalog';
   const available = isLatestAvailable(state.catalog?.latest);
   for (const key of ['source', 'target']) {
     if (state[key] === 'latest' && !available) state[key] = 'v21';
@@ -273,6 +276,9 @@ function changeCard(change) {
   detail(dl, 'conditions', locale?.conditions?.join('\n'));
   detail(dl, 'action', locale?.action);
   if (change.action_basis) detail(dl, 'actionBasis', locale?.action_basis);
+  if (change.applicability?.target_releases?.length) {
+    detail(dl, 'targetReleases', change.applicability.target_releases.join(' · '));
+  }
   if (change.applies_until != null) detail(dl, 'appliesUntil', change.applies_until);
   if (change.notices?.length) detail(dl, 'notices', (locale?.notices ?? change.notices).join('\n'));
   if (complexityForChange(change) !== 'unknown') detail(dl, 'complexityBasis', change.complexity.basis);
@@ -294,7 +300,7 @@ function renderChanges() {
     area.append(node('p', t(state.loading ? 'loading' : 'loadError')));
     return;
   }
-  const projected = catalog.changes.map(change =>
+  const projected = state.mode === 'catalog' ? catalog.changes : catalog.changes.map(change =>
     projectChangeForPath(change, catalog.sources, state.source, state.target, catalog.latest)).filter(Boolean);
   const filters = {
     ...state, platforms: state.platforms ?? optionsFor('platforms'), modules: state.modules ?? optionsFor('modules'),
@@ -303,13 +309,36 @@ function renderChanges() {
   const filtered = meaning.enabled && meaning.scores && state.query.trim()
     ? hybridFilter(filterChanges(projected, { ...filters, query: '' }, catalog.latest),
       lexical, meaning.scores, catalog.semantic_search.threshold) : lexical;
-  $('result-count').textContent = t('resultCount', { count: filtered.length, total: catalog.changes.length });
-  $('version-warning').hidden = state.target !== state.source;
+  $('result-count').textContent = t(state.mode === 'catalog' ? 'catalogResultCount' : 'resultCount',
+    { count: filtered.length, total: catalog.changes.length });
+  $('version-warning').hidden = state.mode === 'catalog' || state.target !== state.source;
   if (!filtered.length) {
     const empty = node('div', undefined, 'empty');
     empty.append(node('h3', t('noResults')), node('p', t('emptyDirectory')));
     area.append(empty);
   } else area.append(...filtered.map(changeCard));
+}
+function renderReferences() {
+  const area = $('reference-list');
+  area.replaceChildren();
+  if (!state.catalog) {
+    area.append(node('p', t(state.loading ? 'loading' : 'loadError')));
+    return;
+  }
+  const sources = referencesForLanguage(state.catalog.sources, state.language);
+  if (!sources.length) {
+    area.append(node('p', t('noReferences'), 'muted'));
+    return;
+  }
+  const list = node('ul', undefined, 'reference-links');
+  for (const source of sources) {
+    const item = node('li');
+    item.dataset.referenceId = source.id;
+    item.append(node('p', `${source.title} · ${t('sourceEdition')}: ${source.edition}`),
+      link(source.url, source.url));
+    list.append(item);
+  }
+  area.append(list);
 }
 function render() {
   document.documentElement.lang = state.language;
@@ -322,18 +351,20 @@ function render() {
   renderSelectors();
   renderCheckboxes();
   renderChanges();
+  renderReferences();
   renderMeaning();
   setMessage(state.message, state.error);
 }
 
 $('filters').addEventListener('submit', event => event.preventDefault());
 for (const [id, key] of [
-  ['source-version', 'source'], ['target-version', 'target'], ['sort', 'sort'], ['search', 'query'],
+  ['browse-mode', 'mode'], ['source-version', 'source'], ['target-version', 'target'],
+  ['sort', 'sort'], ['search', 'query'],
 ]) {
   $(id).addEventListener(id === 'search' ? 'input' : 'change', event => {
     state[key] = event.target.value;
     if (key === 'query') queryMeaning();
-    if (key === 'source' || key === 'target') renderSelectors();
+    if (['mode', 'source', 'target'].includes(key)) renderSelectors();
     renderChanges();
   });
 }

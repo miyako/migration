@@ -33,7 +33,21 @@ python3 -m unittest discover -s tests
 
 ## Visitor interface
 
-Current/target versions are the primary controls. The supplied 4D glyph and white
+The default **For my upgrade** mode filters by current/target versions. The
+**All catalog entries** mode bypasses version applicability and shows all 202
+published entities when search and other filters are clear, including historical,
+superseded and exact-target-only instructions. It disables the version selectors
+without changing their values; switching back restores the same upgrade path.
+Catalog browsing keeps full group membership and source evidence rather than
+projecting them onto the inactive path. Applicability conditions, exclusive
+end bounds and exact target-release constraints remain available on each card.
+Search (including semantic search), platform/topic filters and sorting work in
+both modes and are preserved when switching. Reset filters keeps the current
+mode; the mode is not persisted across visits. Result counts distinguish entries
+matching the upgrade and filters from entries shown across the whole catalog,
+and explicitly label the full catalog total.
+
+The supplied 4D glyph and white
 ring are preserved in `4d.svg`; only its inner circle inherits the version color.
 `VERSION_COLORS` contains the supplied v15-v21 palette without adding a v15
 selector. Latest uses its concrete major's color; an unknown future major has
@@ -102,7 +116,13 @@ operation without inventing a command identifier.
 
 Technical audit information (source registry/provenance, coverage, pipeline
 counts, review state, and clarification register) stays in repository data and
-the root README, not in visitor navigation. No source data is removed.
+the root README, not in visitor navigation. A collapsed **Reference URLs**
+disclosure above the results lists every registered source in the selected UI
+language, including sources not cited by published entries. Each item shows the
+source title, edition and clickable registered URL. It uses the static catalog,
+does not follow version/search/platform/topic filters, and does not substitute
+English sources for missing translations. The list is not an exhaustive
+documentation directory. No source data is removed.
 
 ## Version semantics and state
 

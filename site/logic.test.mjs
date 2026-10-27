@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, releaseKey, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
   complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor, evidenceForLanguage,
-  sourceMatchesPath, evidenceForPath, projectChangeForPath } from './logic.mjs';
+  sourceMatchesPath, evidenceForPath, projectChangeForPath, referencesForLanguage } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
   id, threshold: { exact: /^v\d+$/.test(bucket) ? bucket.slice(1) : null, bucket, kind: 'introduced' }, type: 'restriction',
@@ -30,6 +30,32 @@ const editorialCatalog = JSON.parse(await readFile(new URL('./data/catalog.json'
 const editorialChanges = editorialCatalog.changes;
 const editorialById = new Map(editorialChanges.flatMap(record =>
   [record.id, ...record.member_ids].map(id => [id, record])));
+
+test('reference URLs include every registered source in the selected language without fallback', () => {
+  const original = JSON.stringify(editorialCatalog.sources);
+  const cited = new Set(editorialChanges.flatMap(change => change.evidence.map(e => e.source_id)));
+  const counts = { en: 58, fr: 40, de: 35, es: 40, ja: 40 };
+  for (const language of LANGUAGES) {
+    const sources = referencesForLanguage(editorialCatalog.sources, language);
+    assert.equal(sources.length, counts[language]);
+    assert.deepEqual(sources.map(s => s.id).sort(),
+      editorialCatalog.sources.filter(s => s.language === language).map(s => s.id).sort());
+    assert.ok(sources.some(s => !cited.has(s.id)), 'Uncited sources must not disappear');
+    assert.ok(sources.every(s => s.title && s.edition && /^https?:\/\//.test(s.url)));
+  }
+  assert.deepEqual(referencesForLanguage(editorialCatalog.sources.filter(s => s.language === 'en'), 'ja'), []);
+  assert.equal(JSON.stringify(editorialCatalog.sources), original);
+});
+
+test('reference titles sort by language, then numeric edition and stable ID', () => {
+  const sources = [
+    { id: 'later', language: 'en', title: 'Release notes', edition: '20' },
+    { id: 'b', language: 'en', title: 'Release notes', edition: '9' },
+    { id: 'a', language: 'en', title: 'Release notes', edition: '9' },
+    { id: 'first', language: 'en', title: 'Compatibility', edition: '21' },
+  ];
+  assert.deepEqual(referencesForLanguage(sources, 'en').map(s => s.id), ['first', 'a', 'b', 'later']);
+});
 
 test('original KB secondary evidence keeps edition context before locale preference', () => {
   const sources = editorialCatalog.sources;
@@ -116,6 +142,48 @@ test('real content search, severity and unknown remediation difficulty preserve 
   assert.ok(sorted.every(c => complexityForChange(c) === 'unknown'));
   assert.deepEqual(filterChanges(editorialChanges, { sort: 'complexity' }).map(c => c.id),
     sorted.map(c => c.id));
+});
+
+test('catalog browsing includes all 202 entities independently of the selected version path', () => {
+  const allIds = editorialChanges.map(c => c.id).sort();
+  for (const [source, target] of [['v16', 'latest'], ['v21', 'v21'], ['v16', 'v17']]) {
+    const records = filterChanges(editorialChanges, { mode: 'catalog', source, target }, editorialCatalog.latest);
+    assert.equal(records.length, 202);
+    assert.deepEqual(records.map(c => c.id).sort(), allIds);
+    const php = records.find(c => c.id === 'chg-group-bundled-php-modules');
+    assert.equal(php.members.length, 12);
+    assert.equal(php.applies_until, '20 R3');
+    assert.deepEqual(records.find(c => c.id === 'chg-icu-20-1-client-server-pair')
+      .applicability.target_releases, ['20.1']);
+  }
+  const upgrade = target => editorialChanges.map(c =>
+    projectChangeForPath(c, editorialCatalog.sources, 'v16', target, editorialCatalog.latest))
+    .filter(Boolean);
+  assert.equal(filterChanges(upgrade('v21')).length, 190);
+  assert.equal(filterChanges(upgrade('latest'), { target: 'latest' }, editorialCatalog.latest).length, 199);
+});
+
+test('catalog browsing preserves search, scoped filters, sorting and source data', () => {
+  const original = JSON.stringify(editorialChanges);
+  const filters = { mode: 'catalog', source: 'v21', target: 'v21' };
+  for (const [query, entity] of [
+    ['_o_GRAPH TABLE', 'chg-removed-graph-table'],
+    ['chg-bundled-php-zip-removal', 'chg-group-bundled-php-modules'],
+    ['chg-icu-20-1-client-server-pair', 'chg-icu-20-1-client-server-pair'],
+  ]) {
+    assert.deepEqual(filterChanges(editorialChanges, { ...filters, query }).map(c => c.id), [entity]);
+  }
+  for (const key of ['platforms', 'modules']) {
+    assert.deepEqual(filterChanges(editorialChanges, { ...filters, [key]: [] }), []);
+  }
+  const windowsPhp = filterChanges(editorialChanges, { ...filters, platforms: ['windows'], modules: ['php'] });
+  assert.ok(windowsPhp.some(c => c.id === 'chg-group-bundled-php-modules'));
+  assert.ok(windowsPhp.every(c => c.modules.includes('php') &&
+    c.platforms.some(value => ['windows', 'all', 'unknown'].includes(value))));
+  const severity = filterChanges(editorialChanges, filters);
+  assert.deepEqual(filterChanges(editorialChanges, { ...filters, sort: 'complexity' }).map(c => c.id),
+    severity.map(c => c.id));
+  assert.equal(JSON.stringify(editorialChanges), original);
 });
 
 test('Stage 2 compiler, ORDA and compatibility queries keep release and group boundaries', () => {
@@ -781,7 +849,7 @@ test('directory has no planner controls, API or storage access and retains prefe
     assert.doesNotMatch(source, /checklist|textarea|check-label|button-group|\beffort\b|import-file|createObjectURL/i);
     assert.doesNotMatch(source, /(?:type\s*=\s*["']|\.type\s*=\s*["'])file["']/i);
   }
-  for (const id of ['search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
+  for (const id of ['browse-mode', 'search', 'source-version', 'target-version', 'platform', 'module', 'sort', 'language', 'theme']) {
     assert.ok(html.includes(`id="${id}"`), id);
   }
   assert.match(app, /const PREFS = '4d-migration-preferences-v1'/);
@@ -811,6 +879,7 @@ test('all five dictionaries have every UI key, with the same placeholders', () =
         [...translations.en[key].matchAll(/\{\w+\}/g)].map(m => m[0]).sort(), `${language}:${key}`);
     }
     assert.ok(translate(language, 'resultCount', { count: 3, total: 10 }).includes('3'));
+    assert.ok(translate(language, 'catalogResultCount', { count: 202, total: 202 }).includes('202'));
   }
 });
 
