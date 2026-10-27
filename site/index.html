@@ -69,9 +69,21 @@
       <div id="reference-list"></div>
     </details>
     <section aria-labelledby="changes-heading">
-      <div class="section-heading"><h2 id="changes-heading" data-i18n="changes">Changes</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+      <div class="section-heading"><h2 id="changes-heading" data-i18n="upgradeChanges">Upgrade changes</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+      <p id="deprecation-notice" class="muted" hidden><a id="review-deprecations" href="#deprecations" data-i18n="existingDeprecations">Existing deprecations</a></p>
+      <p id="undated-warning" class="warning" hidden><span data-i18n="undatedWarning">Some matching requirements have no established introduction version and may still need work.</span> <a id="review-undated" href="#undated-changes" data-i18n="reviewUndated">Review undated requirements</a></p>
       <div id="change-list" class="card-list"></div>
     </section>
+    <details id="deprecations" class="secondary-changes" hidden>
+      <summary><span data-i18n="existingDeprecations">Existing deprecations</span><span id="deprecation-count" class="secondary-count"></span></summary>
+      <p class="muted" data-i18n="deprecationsNote">Deprecations in effect by the target version are listed separately. They are not necessarily harmless or optional; verify support and restrictions in the evidence.</p>
+      <div id="deprecation-list" class="card-list"></div>
+    </details>
+    <details id="undated-changes" class="secondary-changes" hidden>
+      <summary><span data-i18n="undatedChanges">Version not established</span><span id="undated-count" class="secondary-count"></span></summary>
+      <p class="muted" data-i18n="undatedNote">The introduction version is not established for these requirements. They may need code, data, security or deployment work; their presence does not prove they predate your source version.</p>
+      <div id="undated-list" class="card-list"></div>
+    </details>
   </main>
   <noscript>This catalogue requires JavaScript. / Ce catalogue nécessite JavaScript. / JavaScript ist erforderlich. / Se requiere JavaScript. / JavaScript が必要です。</noscript>
 </body>

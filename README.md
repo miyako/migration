@@ -91,7 +91,14 @@ In particular, advancing latest requires another review.
 
 Hidden items remain available through **Include routine and advisory items**,
 including during keyword and semantic searches. The default
-v16 → v21 list shows **166 entries**; the same source to latest shows **173**.
+v16 → v21 path matches **166 entries**; the same source to latest matches **173**.
+The interface now separates the v16 → v21 results into **105 Upgrade changes**,
+**31 Existing deprecations** and **30 Version not established** requirements.
+The main list/count excludes the two separately expandable sections, but their
+full cards and evidence remain available with visible navigation and an undated
+requirements warning. Search and filters apply equally to all three sections.
+For v21 → v21, zero main-list entries means no confirmed newly crossed changes,
+not that the 61 secondary requirements need no attention.
 These are technical snapshot counts, not catalog totals shown to visitors.
 All 28 groups remain visible, as do required code/data/security/configuration/deployment
 changes, corrective object-field reindexing, signing, packaging and
