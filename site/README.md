@@ -38,6 +38,23 @@ interface shows only the matching-entry count, without a catalog total or a
 catalog/upgrade mode selector. Applicability conditions, exclusive end bounds
 and exact target-release constraints remain available on each card.
 
+After path, visibility, keyword/semantic and platform/topic filtering, matches
+are partitioned without duplication into three sections. **Upgrade changes** is
+the main list. Known-date deprecations appear under **Existing deprecations**;
+unknown introduction cutoffs take precedence and appear under **Version not
+established**, even for removed or deprecated features. No entry is made
+optional simply by being moved to a section.
+
+The two secondary sections are initially collapsed, have their own matching
+counts, and retain the selected sort and full cards/evidence. Links above the
+main list open them; a prominent warning points to matching undated requirements,
+which can include compiler, signing, security or data-repair work. Nonempty search
+automatically opens secondary sections containing matches. Empty sections are
+hidden. The main count covers only Upgrade changes; if that list is empty while
+secondary results remain, the empty message explicitly directs the user to them.
+For the default v16 → v21 path this means 105 main entries, 31 deprecations and
+30 undated requirements. v21 → v21 has zero main entries, not zero potential work.
+
 Routine compatibility checks, deferred modernization and optional adoption
 guidance are hidden by default where reviewed.
 **Include routine and advisory items** reveals them within the same upgrade path, search,

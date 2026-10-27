@@ -313,6 +313,17 @@ export function filterChanges(changes, filters = {}, latest = null) {
   });
 }
 
+export function partitionChanges(changes) {
+  const buckets = { upgrade: [], deprecations: [], undated: [] };
+  for (const change of changes) {
+    const bucket = change.threshold?.kind === 'unknown' ? 'undated' :
+      (['deprecated', 'deprecation'].includes(change.type) || change.threshold?.kind === 'deprecated')
+        ? 'deprecations' : 'upgrade';
+    buckets[bucket].push(change);
+  }
+  return buckets;
+}
+
 export function referencesForLanguage(sources, language) {
   return sources.filter(source => source.language === language)
     .sort((a, b) => a.title.localeCompare(b.title, language) ||
@@ -374,6 +385,14 @@ export function validateCatalog(data) {
 
 export const translations = {
   en: {
+    upgradeChanges: 'Upgrade changes', existingDeprecations: 'Existing deprecations',
+    undatedChanges: 'Version not established',
+    deprecationsNote: 'Deprecations in effect by the target version are listed separately. They are not necessarily harmless or optional; verify support and restrictions in the evidence.',
+    undatedNote: 'The introduction version is not established for these requirements. They may need code, data, security or deployment work; their presence does not prove they predate your source version.',
+    undatedWarning: 'Some matching requirements have no established introduction version and may still need work.',
+    reviewUndated: 'Review undated requirements',
+    noUpgradeChanges: 'No confirmed upgrade changes match',
+    secondaryResultsRemain: 'Review the separate deprecations and undated requirements below. An empty main list does not mean no work is needed.',
     includeRoutine: 'Include routine and advisory items', routineCheck: 'Routine check',
     deferredModernization: 'Deferred modernization', optionalAdoption: 'Optional adoption',
     routineHint: 'Routine checks, deferred modernization and optional adoption guidance are hidden by default where reviewed. Include them to search or browse these entries. Check the guidance before enabling compatibility options.',
@@ -438,6 +457,14 @@ export const translations = {
     blocking: 'Blocking', critical: 'Critical', high: 'High', medium: 'Medium', low: 'Low', informational: 'Informational', restriction: 'Restriction', removed: 'Removed', deprecated: 'Deprecated', deprecation: 'Deprecation', introduced: 'Introduced', behavior: 'Behavior', syntax: 'Syntax', compilation: 'Compilation', runtime: 'Runtime', deployment: 'Deployment', testing: 'Testing', design: 'Design', languageModule: 'Language', all: 'All', binary: 'Binary', project: 'Project', in_scope: 'In scope', out_of_scope: 'Out of scope', conditional: 'Conditional', available: 'Available', failed: 'Failed', pending: 'Pending', resolved: 'Resolved', superseded: 'Superseded', unverified: 'Unverified', verified: 'Verified', missing: 'Missing', blocked: 'Blocked', error: 'Error', fetched: 'Retrieved', partial: 'Partial', not_attempted: 'Not attempted',
   },
   fr: {
+    upgradeChanges: 'Changements de mise à niveau', existingDeprecations: 'Dépréciations existantes',
+    undatedChanges: 'Version non établie',
+    deprecationsNote: 'Les dépréciations en vigueur dans la version cible sont présentées séparément. Elles ne sont pas forcément sans risque ou facultatives ; vérifiez la prise en charge et les restrictions dans les sources.',
+    undatedNote: 'La version d’introduction de ces exigences n’est pas établie. Elles peuvent nécessiter des travaux de code, de données, de sécurité ou de déploiement ; rien ne prouve qu’elles précèdent votre version de départ.',
+    undatedWarning: 'Certaines exigences correspondantes n’ont pas de version d’introduction établie et peuvent nécessiter une intervention.',
+    reviewUndated: 'Consulter les exigences non datées',
+    noUpgradeChanges: 'Aucun changement confirmé de mise à niveau ne correspond',
+    secondaryResultsRemain: 'Consultez les dépréciations et les exigences non datées ci-dessous. Une liste principale vide ne signifie pas qu’aucune intervention n’est nécessaire.',
     includeRoutine: 'Inclure les vérifications courantes et les conseils', routineCheck: 'Vérification courante',
     deferredModernization: 'Modernisation différée', optionalAdoption: 'Adoption facultative',
     routineHint: 'Les vérifications courantes, les modernisations différables et les options facultatives sont masquées par défaut pour les versions examinées. Incluez-les pour rechercher ou consulter ces entrées. Consultez les conseils avant d’activer des options de compatibilité.',
@@ -502,6 +529,14 @@ export const translations = {
     blocking: 'Bloquant', critical: 'Critique', high: 'Élevé', medium: 'Moyen', low: 'Faible', informational: 'Informatif', restriction: 'Restriction', removed: 'Supprimé', deprecated: 'Déprécié', deprecation: 'Dépréciation', introduced: 'Introduit', behavior: 'Comportement', syntax: 'Syntaxe', compilation: 'Compilation', runtime: 'Exécution', deployment: 'Déploiement', testing: 'Tests', design: 'Conception', languageModule: 'Langage', all: 'Tous', binary: 'Binaire', project: 'Projet', in_scope: 'Dans le périmètre', out_of_scope: 'Hors périmètre', conditional: 'Conditionnel', available: 'Disponible', failed: 'Échec', pending: 'En attente', resolved: 'Résolu', superseded: 'Remplacé', unverified: 'Non vérifié', verified: 'Vérifié', missing: 'Manquant', blocked: 'Bloqué', error: 'Erreur', fetched: 'Récupéré', partial: 'Partiel', not_attempted: 'Non tenté',
   },
   de: {
+    upgradeChanges: 'Upgrade-Änderungen', existingDeprecations: 'Bestehende Abkündigungen',
+    undatedChanges: 'Version nicht belegt',
+    deprecationsNote: 'Für die Zielversion geltende Abkündigungen werden separat aufgeführt. Sie sind nicht zwangsläufig harmlos oder optional; prüfen Sie Unterstützung und Einschränkungen in den Quellen.',
+    undatedNote: 'Für diese Anforderungen ist die Einführungsversion nicht belegt. Sie können Code-, Daten-, Sicherheits- oder Bereitstellungsarbeiten erfordern; sie liegen nicht nachweislich vor Ihrer Ausgangsversion.',
+    undatedWarning: 'Bei einigen passenden Anforderungen ist die Einführungsversion nicht belegt. Sie können dennoch Arbeiten erfordern.',
+    reviewUndated: 'Undatierte Anforderungen prüfen',
+    noUpgradeChanges: 'Keine bestätigten Upgrade-Änderungen passen',
+    secondaryResultsRemain: 'Prüfen Sie die separaten Abkündigungen und undatierten Anforderungen unten. Eine leere Hauptliste bedeutet nicht, dass keine Arbeiten nötig sind.',
     includeRoutine: 'Routineprüfungen und Empfehlungen einbeziehen', routineCheck: 'Routineprüfung',
     deferredModernization: 'Aufschiebbare Modernisierung', optionalAdoption: 'Optionale Umstellung',
     routineHint: 'Routineprüfungen, aufschiebbare Modernisierungen und optionale Umstellungen sind für geprüfte Zielversionen standardmäßig ausgeblendet. Beziehen Sie sie zum Suchen oder Anzeigen ein. Lesen Sie die Hinweise, bevor Sie Kompatibilitätsoptionen aktivieren.',
@@ -566,6 +601,14 @@ export const translations = {
     blocking: 'Blockierend', critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig', informational: 'Informativ', restriction: 'Einschränkung', removed: 'Entfernt', deprecated: 'Abgekündigt', deprecation: 'Abkündigung', introduced: 'Eingeführt', behavior: 'Verhalten', syntax: 'Syntax', compilation: 'Kompilierung', runtime: 'Laufzeit', deployment: 'Bereitstellung', testing: 'Tests', design: 'Entwurf', languageModule: 'Sprache', all: 'Alle', binary: 'Binär', project: 'Projekt', in_scope: 'Im Umfang', out_of_scope: 'Außerhalb des Umfangs', conditional: 'Bedingt', available: 'Verfügbar', failed: 'Fehlgeschlagen', pending: 'Ausstehend', resolved: 'Geklärt', superseded: 'Ersetzt', unverified: 'Unverifiziert', verified: 'Verifiziert', missing: 'Fehlend', blocked: 'Blockiert', error: 'Fehler', fetched: 'Abgerufen', partial: 'Teilweise', not_attempted: 'Nicht versucht',
   },
   es: {
+    upgradeChanges: 'Cambios de actualización', existingDeprecations: 'Obsolescencias existentes',
+    undatedChanges: 'Versión no establecida',
+    deprecationsNote: 'Las obsolescencias vigentes en la versión de destino se muestran por separado. No son necesariamente inocuas ni opcionales; verifique el soporte y las restricciones en las fuentes.',
+    undatedNote: 'No se ha establecido la versión de introducción de estos requisitos. Pueden exigir trabajo de código, datos, seguridad o despliegue; no se ha demostrado que sean anteriores a la versión de origen.',
+    undatedWarning: 'Algunos requisitos coincidentes no tienen una versión de introducción establecida y pueden requerir trabajo.',
+    reviewUndated: 'Revisar los requisitos sin fecha',
+    noUpgradeChanges: 'No coinciden cambios de actualización confirmados',
+    secondaryResultsRemain: 'Revise las obsolescencias y los requisitos sin fecha que aparecen por separado abajo. Una lista principal vacía no significa que no haya trabajo pendiente.',
     includeRoutine: 'Incluir comprobaciones rutinarias y recomendaciones', routineCheck: 'Comprobación rutinaria',
     deferredModernization: 'Modernización aplazable', optionalAdoption: 'Adopción opcional',
     routineHint: 'Las comprobaciones rutinarias, modernizaciones aplazables y opciones voluntarias se ocultan por defecto en los destinos revisados. Inclúyalas para buscar o consultar estas entradas. Revise las recomendaciones antes de activar opciones de compatibilidad.',
@@ -630,6 +673,14 @@ export const translations = {
     blocking: 'Bloqueante', critical: 'Crítico', high: 'Alto', medium: 'Medio', low: 'Bajo', informational: 'Informativo', restriction: 'Restricción', removed: 'Eliminado', deprecated: 'Obsoleto', deprecation: 'Obsolescencia', introduced: 'Introducido', behavior: 'Comportamiento', syntax: 'Sintaxis', compilation: 'Compilación', runtime: 'Ejecución', deployment: 'Despliegue', testing: 'Pruebas', design: 'Diseño', languageModule: 'Lenguaje', all: 'Todos', binary: 'Binario', project: 'Proyecto', in_scope: 'Dentro del alcance', out_of_scope: 'Fuera del alcance', conditional: 'Condicional', available: 'Disponible', failed: 'Fallido', pending: 'Pendiente', resolved: 'Resuelto', superseded: 'Sustituido', unverified: 'Sin verificar', verified: 'Verificado', missing: 'Ausente', blocked: 'Bloqueado', error: 'Error', fetched: 'Recuperado', partial: 'Parcial', not_attempted: 'No intentado',
   },
   ja: {
+    upgradeChanges: 'アップグレードで跨ぐ変更', existingDeprecations: '既存の非推奨項目',
+    undatedChanges: '導入バージョン未確定',
+    deprecationsNote: '移行先で非推奨となっている項目を分けて表示します。影響がない、または対応が任意とは限りません。出典で利用可否と制約を確認してください。',
+    undatedNote: 'これらの要件は導入バージョンが確定していません。コード・データ・セキュリティ・配布の対応が必要な場合があります。移行元より前から存在していたとは断定できません。',
+    undatedWarning: '該当する要件の一部は導入バージョンが未確定です。対応が必要な場合があります。',
+    reviewUndated: 'バージョン未確定の要件を確認',
+    noUpgradeChanges: '該当する導入時期が確定した変更はありません',
+    secondaryResultsRemain: '下の非推奨項目と導入バージョン未確定の要件も確認してください。主な一覧が空でも、対応が不要とは限りません。',
     includeRoutine: '基本的な確認事項・推奨事項も表示', routineCheck: '基本的な確認事項',
     deferredModernization: '後から対応できる更新', optionalAdoption: '任意の機能採用',
     routineHint: '確認済みの移行先では、基本的な確認事項・後から対応できる更新・任意機能の採用に関する項目は初期状態で非表示です。検索・閲覧するにはチェックを入れてください。互換性オプションを有効にする前に説明を確認してください。',

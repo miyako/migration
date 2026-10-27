@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import { LANGUAGES, VERSION_BUCKETS, versionBucket, versionNumber, releaseKey, versionChoices, isLatestAvailable, crossesVersion,
   priorityForChange, stagePriorityForChange, filterChanges, validateCatalog, translations, translate,
   complexityForChange, COMPLEXITY_LEVELS, filterOptions, VERSION_COLORS, versionColor, evidenceForLanguage,
-  sourceMatchesPath, evidenceForPath, projectChangeForPath, referencesForLanguage } from './logic.mjs';
+  sourceMatchesPath, evidenceForPath, projectChangeForPath, referencesForLanguage, partitionChanges } from './logic.mjs';
 
 const change = (id, bucket = 'v20', extra = {}) => ({
   id, threshold: { exact: /^v\d+$/.test(bucket) ? bucket.slice(1) : null, bucket, kind: 'introduced' }, type: 'restriction',
@@ -160,6 +160,39 @@ test('upgrade filtering keeps applicability counts independent of catalog totals
     assert.ok(pruned.some(c => c.id === 'chg-object-index-rare-corruption'));
     assert.ok(pruned.some(c => c.id === 'chg-legacy-network-layer-deprecation'));
   }
+});
+
+test('result buckets preserve every match and isolate deprecations and undated requirements', () => {
+  for (const [source, count] of [['v16', 105], ['v17', 101], ['v18', 75], ['v19', 57], ['v20', 30], ['v21', 0]]) {
+    const records = filterChanges(editorialChanges.map(c =>
+      projectChangeForPath(c, editorialCatalog.sources, source, 'v21', editorialCatalog.latest)).filter(Boolean),
+    { source, target: 'v21' }, editorialCatalog.latest);
+    const buckets = partitionChanges(records);
+    assert.equal(buckets.upgrade.length, count, source);
+    assert.equal(buckets.deprecations.length, 31, source);
+    assert.equal(buckets.undated.length, 30, source);
+    const all = Object.values(buckets).flat();
+    assert.equal(new Set(all.map(c => c.id)).size, records.length);
+    assert.deepEqual(all.map(c => c.id).sort(), records.map(c => c.id).sort());
+    for (const values of Object.values(buckets)) {
+      assert.deepEqual(values, records.filter(c => values.includes(c)), 'Keep the selected sort in each bucket');
+    }
+    assert.ok(buckets.undated.some(c => c.id === 'chg-macos-application-signing'));
+    assert.ok(buckets.undated.some(c => c.id === 'chg-object-index-rare-corruption'));
+  }
+});
+
+test('unknown introduction takes precedence over deprecation and all other filters apply before bucketing', () => {
+  const undated = change('undated', 'unknown', { type: 'deprecated',
+    threshold: { kind: 'unknown', exact: null, bucket: null } });
+  const deprecated = change('deprecated', 'v18', { type: 'deprecation' });
+  const upgrade = change('upgrade');
+  const buckets = partitionChanges([undated, upgrade, deprecated]);
+  assert.deepEqual(buckets, { upgrade: [upgrade], deprecations: [deprecated], undated: [undated] });
+  assert.deepEqual(partitionChanges(filterChanges([undated, deprecated, upgrade], { platforms: [] })),
+    { upgrade: [], deprecations: [], undated: [] });
+  assert.deepEqual(partitionChanges(filterChanges([undated, deprecated, upgrade], { query: 'undated' })),
+    { upgrade: [], deprecations: [], undated: [undated] });
 });
 
 test('advisory exclusions are bounded to reviewed targets and do not suppress future or unknown support', () => {

@@ -217,9 +217,10 @@ try {
       const actual = await page.locator('[data-change-id]').evaluateAll(cards => cards.map(c => c.dataset.changeId));
       const allowed = await page.evaluate(async ({workerUrl,source,target,sort}) => {
         const catalog = await (await fetch(new URL('./data/catalog.json',workerUrl))).json();
-        const {filterChanges,projectChangeForPath} = await import(new URL('./logic.mjs',workerUrl));
-        return filterChanges(catalog.changes.map(c => projectChangeForPath(c,catalog.sources,source,target,catalog.latest))
-          .filter(Boolean),{source,target,sort},catalog.latest).map(c => c.id);
+        const {filterChanges,projectChangeForPath,partitionChanges} = await import(new URL('./logic.mjs',workerUrl));
+        return Object.values(partitionChanges(filterChanges(catalog.changes.map(c =>
+          projectChangeForPath(c,catalog.sources,source,target,catalog.latest))
+          .filter(Boolean),{source,target,sort},catalog.latest))).flat().map(c => c.id);
       },{workerUrl,source,target,sort});
       assert.deepEqual(actual,allowed.filter(id => actual.includes(id)),'Semantic matches respect path and selected sort');
     }
@@ -286,10 +287,10 @@ try {
   assert.equal(await page.locator('#include-routine').isChecked(),false);
   const defaultIds = await page.evaluate(async workerUrl => {
     const catalog = await (await fetch(new URL('./data/catalog.json',workerUrl))).json();
-    const {filterChanges,projectChangeForPath} = await import(new URL('./logic.mjs',workerUrl));
-    return filterChanges(catalog.changes.map(c =>
+    const {filterChanges,projectChangeForPath,partitionChanges} = await import(new URL('./logic.mjs',workerUrl));
+    return Object.values(partitionChanges(filterChanges(catalog.changes.map(c =>
       projectChangeForPath(c,catalog.sources,'v16','v21',catalog.latest)).filter(Boolean))
-      .map(c => c.id);
+    )).flat().map(c => c.id);
   },workerUrl);
   assert.deepEqual(await page.locator('[data-change-id]').evaluateAll(cards =>
     cards.map(c => c.dataset.changeId)),defaultIds);

@@ -1,7 +1,7 @@
 import {
   LANGUAGES, translations, translate, filterChanges, filterOptions, complexityForChange, evidenceForLanguage,
   versionChoices, versionColor, isLatestAvailable, validateCatalog, projectChangeForPath, referencesForLanguage,
-  defaultVisibilityCategory,
+  defaultVisibilityCategory, partitionChanges,
 } from './logic.mjs';
 import { corpusRows, hybridFilter } from './semantic.mjs';
 import { searchLabels } from './search-labels.mjs';
@@ -297,6 +297,9 @@ function changeCard(change) {
 function renderChanges() {
   const area = $('change-list');
   area.replaceChildren();
+  for (const id of ['deprecation-list', 'undated-list']) $(id).replaceChildren();
+  for (const id of ['deprecations', 'undated-changes', 'undated-warning', 'deprecation-notice']) $(id).hidden = true;
+  for (const id of ['deprecation-count', 'undated-count']) $(id).textContent = '';
   $('sort-hint').textContent = t(state.sort === 'complexity' ? 'complexityDirection' : 'severityDirection');
   const catalog = state.catalog;
   if (!catalog) {
@@ -313,13 +316,27 @@ function renderChanges() {
   const filtered = meaning.enabled && meaning.scores && state.query.trim()
     ? hybridFilter(filterChanges(projected, { ...filters, query: '' }, catalog.latest),
       lexical, meaning.scores, catalog.semantic_search.threshold) : lexical;
-  $('result-count').textContent = t('resultCount', { count: filtered.length });
+  const buckets = partitionChanges(filtered);
+  $('result-count').textContent = t('resultCount', { count: buckets.upgrade.length });
   $('version-warning').hidden = state.target !== state.source;
-  if (!filtered.length) {
+  $('undated-warning').hidden = buckets.undated.length === 0;
+  $('deprecation-notice').hidden = buckets.deprecations.length === 0;
+  for (const [key, section, list, count] of [
+    ['deprecations', 'deprecations', 'deprecation-list', 'deprecation-count'],
+    ['undated', 'undated-changes', 'undated-list', 'undated-count'],
+  ]) {
+    const records = buckets[key];
+    $(section).hidden = records.length === 0;
+    $(count).textContent = t('resultCount', { count: records.length });
+    $(list).append(...records.map(changeCard));
+    if (state.query.trim() && records.length) $(section).open = true;
+  }
+  if (!buckets.upgrade.length) {
     const empty = node('div', undefined, 'empty');
-    empty.append(node('h3', t('noResults')), node('p', t('emptyDirectory')));
+    empty.append(node('h3', t('noUpgradeChanges')), node('p',
+      t(filtered.length ? 'secondaryResultsRemain' : 'emptyDirectory')));
     area.append(empty);
-  } else area.append(...filtered.map(changeCard));
+  } else area.append(...buckets.upgrade.map(changeCard));
 }
 function renderReferences() {
   const area = $('reference-list');
@@ -361,6 +378,12 @@ function render() {
 }
 
 $('filters').addEventListener('submit', event => event.preventDefault());
+for (const [link, section] of [['review-undated', 'undated-changes'], ['review-deprecations', 'deprecations']]) {
+  $(link).addEventListener('click', () => {
+    $(section).open = true;
+    $(section).querySelector('summary').focus();
+  });
+}
 $('include-routine').addEventListener('change', event => {
   state.includeRoutine = event.target.checked;
   renderChanges();

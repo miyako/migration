@@ -57,16 +57,17 @@ def controls(page):
     })""")
 
 
-def projected_records(catalog, source="v16", target="v21", include_routine=False):
-    script = """import {filterChanges, projectChangeForPath} from './site/logic.mjs';
+def projected_records(catalog, source="v16", target="v21", include_routine=False, bucket=None):
+    script = """import {filterChanges, projectChangeForPath, partitionChanges} from './site/logic.mjs';
       let input = ''; for await (const chunk of process.stdin) input += chunk;
-      const {catalog, source, target, includeRoutine} = JSON.parse(input);
+      const {catalog, source, target, includeRoutine, bucket} = JSON.parse(input);
       const records = catalog.changes.map(change =>
         projectChangeForPath(change, catalog.sources, source, target, catalog.latest)).filter(Boolean);
-      console.log(JSON.stringify(filterChanges(records, {source, target, includeRoutine}, catalog.latest)));"""
+      const buckets = partitionChanges(filterChanges(records, {source, target, includeRoutine}, catalog.latest));
+      console.log(JSON.stringify(bucket ? buckets[bucket] : Object.values(buckets).flat()));"""
     result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=ROOT,
                             input=json.dumps({"catalog": catalog, "source": source, "target": target,
-                                              "includeRoutine": include_routine}),
+                                              "includeRoutine": include_routine, "bucket": bucket}),
                             text=True, capture_output=True, check=True)
     return json.loads(result.stdout)
 
@@ -112,6 +113,27 @@ def run(base, screenshots, published):
         assert ids(page)[:3] == ["chg-colon-identifiers", "chg-cs-class-assignment-check",
                                "chg-group-v19-compiler-settings"]
         assert page.locator("#browse-mode, #catalog-note").count() == 0
+        assert page.locator("#deprecations > summary").is_visible()
+        assert page.locator("#undated-changes > summary").is_visible()
+        assert not page.locator("#deprecations").evaluate("el => el.open")
+        assert not page.locator("#undated-changes").evaluate("el => el.open")
+        assert page.locator("#undated-warning").is_visible()
+        page.click("#review-undated")
+        assert page.locator("#undated-changes").evaluate("el => el.open")
+        assert page.locator('#undated-list [data-change-id="chg-macos-application-signing"]').is_visible()
+        page.locator("#undated-changes > summary").click()
+        for source, count in (("v16", 105), ("v17", 101), ("v18", 75),
+                              ("v19", 57), ("v20", 30), ("v21", 0)):
+            page.select_option("#source-version", source)
+            assert page.locator("#change-list [data-change-id]").count() == count
+            assert page.locator("#result-count").inner_text() == f"{count} matching entries"
+            assert page.locator("#deprecation-list [data-change-id]").count() == 31
+            assert page.locator("#undated-list [data-change-id]").count() == 30
+            assert page.locator("#undated-warning").is_visible()
+        assert page.locator("#change-list .empty").is_visible()
+        assert "does not mean no work" in page.locator("#change-list .empty").inner_text()
+        page.select_option("#source-version", "v16")
+        expected_main = projected_records(catalog, bucket="upgrade")
         assert not page.is_checked("#include-routine")
         expanded = projected_records(catalog, include_routine=True)
         assert len(expanded) == 190
@@ -164,12 +186,13 @@ def run(base, screenshots, published):
         assert page.locator("#reference-list a").evaluate_all(
             "links => links.every(link => link.textContent === link.href && "
             "link.target === '_blank' && link.rel === 'noopener noreferrer')")
-        assert page.locator("#result-count").inner_text() == f"{len(expected)} matching entries"
+        assert page.locator("#result-count").inner_text() == f"{len(expected_main)} matching entries"
         page.select_option("#target-version", "latest")
         latest_expected = [c["id"] for c in projected_records(catalog, target="latest")]
         assert len(latest_expected) == 173
         assert ids(page) == latest_expected
-        assert page.locator("#result-count").inner_text() == f"{len(latest_expected)} matching entries"
+        latest_main = projected_records(catalog, target="latest", bucket="upgrade")
+        assert page.locator("#result-count").inner_text() == f"{len(latest_main)} matching entries"
         page.check("#include-routine")
         assert len(ids(page)) == 199
         page.uncheck("#include-routine")
@@ -187,9 +210,9 @@ def run(base, screenshots, published):
             assert ids(page) == expected
         page.click("#reset")
         assert ids(page) == expected
-        count_labels = {"en": f"{len(expected)} matching entries", "fr": f"{len(expected)} entrées correspondantes",
-                        "de": f"{len(expected)} passende Einträge", "es": f"{len(expected)} entradas coincidentes",
-                        "ja": f"該当する項目：{len(expected)} 件"}
+        count_labels = {"en": f"{len(expected_main)} matching entries", "fr": f"{len(expected_main)} entrées correspondantes",
+                        "de": f"{len(expected_main)} passende Einträge", "es": f"{len(expected_main)} entradas coincidentes",
+                        "ja": f"該当する項目：{len(expected_main)} 件"}
         for locale in ("en", "fr", "de", "es", "ja"):
             page.select_option("#language", locale)
             assert ids(page) == expected
