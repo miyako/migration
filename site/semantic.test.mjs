@@ -169,16 +169,21 @@ test('only path-eligible members can produce a grouped semantic hit', () => {
   assert.deepEqual(filterChanges(projected, {platforms:[]}), []);
   assert.deepEqual(filterChanges(projected, {modules:[]}), []);
 });
-test('semantic matches cannot reintroduce routine checks unless explicitly included', () => {
+test('semantic matches cannot reintroduce routine or advisory items unless explicitly included', () => {
   const actionable = catalog.changes.find(c => !c.default_visibility);
   const routine = { ...actionable, id: 'routine', member_ids: ['routine-member'],
+    threshold: { kind: 'unknown', exact: null, bucket: null }, applies_until: null, applicability: {},
     default_visibility: { category: 'routine_check', reason: 'Standard minimum version.' } };
-  const scores = new Map([['routine-member', 1]]);
-  const filters = { source: 'unknown', target: 'unknown' };
-  const records = [actionable, routine];
+  const advisory = { ...routine, id: 'advisory', member_ids: ['advisory-member'],
+    default_visibility: { category: 'optional_adoption', reason: 'Opt-in option.', target_releases: ['21'] } };
+  const scores = new Map([['routine-member', 1], ['advisory-member', 1]]);
+  const filters = { source: 'unknown', target: 'v21' };
+  const records = [actionable, routine, advisory];
   assert.deepEqual(hybridFilter(filterChanges(records, filters), [], scores, .74), []);
   assert.deepEqual(hybridFilter(filterChanges(records, { ...filters, includeRoutine: true }),
-    [], scores, .74).map(c => c.id), ['routine']);
+    [], scores, .74).map(c => c.id).sort(), ['advisory', 'routine']);
+  assert.deepEqual(hybridFilter(filterChanges(records, { ...filters, target: '22' }),
+    [], scores, .74).map(c => c.id), ['advisory']);
 });
 test('all locales index the same stable atomic IDs, never unprojected group prose', () => {
   for (const language of ['en','fr','de','es','ja']) {

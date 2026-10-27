@@ -80,16 +80,27 @@ and the automatic 21 R3 switch from Legacy networking to ServerNet.
 reviewed membership for each. No facts, source evidence or translations are
 deleted or reclassified as human-reviewed.
 
-These checks are hidden by default and remain available through **Include
-routine checks**, including during keyword and semantic searches. The default
-v16 → v21 list shows **181 entries**; the same source to latest shows **189**.
+The action-first default also defers **7 supported-modernization entries**
+(C_INTEGER, PHP commands, GET LAST ERROR STACK, GET SERIAL INFORMATION,
+PROCESS PROPERTIES, SET SCREEN DEPTH and legacy parameter warnings), plus
+**9 optional-adoption entries** (object dates, XPath, text/XML LF and BOM options,
+DirectWrite, new-field NULL mapping and Fluent stylesheet queries).
+These 16 additional exclusions are limited to reviewed targets **21** and
+**21 R4**. Unknown, earlier or future targets do not inherit them automatically.
+In particular, advancing latest requires another review.
+
+Hidden items remain available through **Include routine and advisory items**,
+including during keyword and semantic searches. The default
+v16 → v21 list shows **166 entries**; the same source to latest shows **173**.
 These are technical snapshot counts, not catalog totals shown to visitors.
-All 28 groups remain visible, as do concrete code/data/configuration/deployment
+All 28 groups remain visible, as do required code/data/security/configuration/deployment
 changes, corrective object-field reindexing, signing, packaging and
 architecture-specific rebuilding. The separate historical Legacy networking
 entry stays visible because it includes manual configuration and restarts.
 Automatic ICU rebuilding can still affect downtime; hiding its routine notice
 does not imply that operational planning is unnecessary.
+Optional compatibility guidance must still be checked before enabling an option;
+deferring it assumes an existing application is not adopting the option.
 
 ### Stage 2: Changes, Quick tables and Compatibility settings
 

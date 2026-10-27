@@ -273,6 +273,15 @@ export function crossesVersion(change, source, target, latest = null) {
   });
 }
 
+export function defaultVisibilityCategory(change, target, latest = null) {
+  const visibility = change.default_visibility;
+  if (!visibility) return null;
+  if (visibility.category === 'routine_check') return visibility.category;
+  const to = releaseKey(target === 'latest' ? latest?.release : target);
+  return to && visibility.target_releases.some(value =>
+    compareRelease(releaseKey(value), to) === 0) ? visibility.category : null;
+}
+
 export function filterChanges(changes, filters = {}, latest = null) {
   const platformOptions = filterOptions(changes, 'platforms');
   const moduleOptions = filterOptions(changes, 'modules');
@@ -281,7 +290,7 @@ export function filterChanges(changes, filters = {}, latest = null) {
   const terms = query.normalize('NFKC').toLocaleLowerCase().trim().split(/\s+/u).filter(Boolean);
   return changes.filter(change => {
     if (!crossesVersion(change, source, target, latest)) return false;
-    if (!includeRoutine && change.default_visibility?.category === 'routine_check') return false;
+    if (!includeRoutine && defaultVisibilityCategory(change, target, latest)) return false;
     if (!matchesOptions(change.platforms, platforms.filter(value => platformOptions.includes(value)),
       platformOptions, true)) return false;
     if (!matchesOptions(change.modules, modules, moduleOptions)) return false;
@@ -313,10 +322,15 @@ export function referencesForLanguage(sources, language) {
 
 function validDefaultVisibility(change) {
   const visibility = change.default_visibility;
-  return visibility === undefined || Boolean(visibility && typeof visibility === 'object' &&
-    !Array.isArray(visibility) && Object.keys(visibility).length === 2 &&
-    visibility.category === 'routine_check' &&
-    typeof visibility.reason === 'string' && visibility.reason.trim());
+  if (visibility === undefined) return true;
+  if (!visibility || typeof visibility !== 'object' || Array.isArray(visibility) ||
+      typeof visibility.reason !== 'string' || !visibility.reason.trim()) return false;
+  if (visibility.category === 'routine_check') return Object.keys(visibility).length === 2;
+  const targets = visibility.target_releases;
+  return Object.keys(visibility).length === 3 &&
+    ['deferred_modernization', 'optional_adoption'].includes(visibility.category) &&
+    Array.isArray(targets) && targets.length > 0 && new Set(targets).size === targets.length &&
+    targets.every(value => releaseKey(value));
 }
 
 export function validateCatalog(data) {
@@ -360,8 +374,9 @@ export function validateCatalog(data) {
 
 export const translations = {
   en: {
-    includeRoutine: 'Include routine checks', routineCheck: 'Routine check',
-    routineHint: 'Routine compatibility and automatic-behavior checks are hidden by default. Include them to search or browse these entries.',
+    includeRoutine: 'Include routine and advisory items', routineCheck: 'Routine check',
+    deferredModernization: 'Deferred modernization', optionalAdoption: 'Optional adoption',
+    routineHint: 'Routine checks, deferred modernization and optional adoption guidance are hidden by default where reviewed. Include them to search or browse these entries. Check the guidance before enabling compatibility options.',
     referenceUrls: 'Reference URLs',
     referenceUrlsNote: 'All registered sources in the selected language, independent of filters. This is not an exhaustive documentation list.',
     noReferences: 'No reference URLs are registered in this language.',
@@ -423,8 +438,9 @@ export const translations = {
     blocking: 'Blocking', critical: 'Critical', high: 'High', medium: 'Medium', low: 'Low', informational: 'Informational', restriction: 'Restriction', removed: 'Removed', deprecated: 'Deprecated', deprecation: 'Deprecation', introduced: 'Introduced', behavior: 'Behavior', syntax: 'Syntax', compilation: 'Compilation', runtime: 'Runtime', deployment: 'Deployment', testing: 'Testing', design: 'Design', languageModule: 'Language', all: 'All', binary: 'Binary', project: 'Project', in_scope: 'In scope', out_of_scope: 'Out of scope', conditional: 'Conditional', available: 'Available', failed: 'Failed', pending: 'Pending', resolved: 'Resolved', superseded: 'Superseded', unverified: 'Unverified', verified: 'Verified', missing: 'Missing', blocked: 'Blocked', error: 'Error', fetched: 'Retrieved', partial: 'Partial', not_attempted: 'Not attempted',
   },
   fr: {
-    includeRoutine: 'Inclure les vérifications courantes', routineCheck: 'Vérification courante',
-    routineHint: 'Les vérifications courantes de compatibilité et de comportements automatiques sont masquées par défaut. Incluez-les pour rechercher ou consulter ces entrées.',
+    includeRoutine: 'Inclure les vérifications courantes et les conseils', routineCheck: 'Vérification courante',
+    deferredModernization: 'Modernisation différée', optionalAdoption: 'Adoption facultative',
+    routineHint: 'Les vérifications courantes, les modernisations différables et les options facultatives sont masquées par défaut pour les versions examinées. Incluez-les pour rechercher ou consulter ces entrées. Consultez les conseils avant d’activer des options de compatibilité.',
     referenceUrls: 'URL de référence',
     referenceUrlsNote: 'Toutes les sources enregistrées dans la langue sélectionnée, indépendamment des filtres. Cette liste documentaire n’est pas exhaustive.',
     noReferences: 'Aucune URL de référence n’est enregistrée dans cette langue.',
@@ -486,8 +502,9 @@ export const translations = {
     blocking: 'Bloquant', critical: 'Critique', high: 'Élevé', medium: 'Moyen', low: 'Faible', informational: 'Informatif', restriction: 'Restriction', removed: 'Supprimé', deprecated: 'Déprécié', deprecation: 'Dépréciation', introduced: 'Introduit', behavior: 'Comportement', syntax: 'Syntaxe', compilation: 'Compilation', runtime: 'Exécution', deployment: 'Déploiement', testing: 'Tests', design: 'Conception', languageModule: 'Langage', all: 'Tous', binary: 'Binaire', project: 'Projet', in_scope: 'Dans le périmètre', out_of_scope: 'Hors périmètre', conditional: 'Conditionnel', available: 'Disponible', failed: 'Échec', pending: 'En attente', resolved: 'Résolu', superseded: 'Remplacé', unverified: 'Non vérifié', verified: 'Vérifié', missing: 'Manquant', blocked: 'Bloqué', error: 'Erreur', fetched: 'Récupéré', partial: 'Partiel', not_attempted: 'Non tenté',
   },
   de: {
-    includeRoutine: 'Routineprüfungen einbeziehen', routineCheck: 'Routineprüfung',
-    routineHint: 'Routineprüfungen zur Kompatibilität und zu automatischen Abläufen sind standardmäßig ausgeblendet. Beziehen Sie sie ein, um diese Einträge zu suchen oder anzuzeigen.',
+    includeRoutine: 'Routineprüfungen und Empfehlungen einbeziehen', routineCheck: 'Routineprüfung',
+    deferredModernization: 'Aufschiebbare Modernisierung', optionalAdoption: 'Optionale Umstellung',
+    routineHint: 'Routineprüfungen, aufschiebbare Modernisierungen und optionale Umstellungen sind für geprüfte Zielversionen standardmäßig ausgeblendet. Beziehen Sie sie zum Suchen oder Anzeigen ein. Lesen Sie die Hinweise, bevor Sie Kompatibilitätsoptionen aktivieren.',
     referenceUrls: 'Referenz-URLs',
     referenceUrlsNote: 'Alle registrierten Quellen in der gewählten Sprache, unabhängig von den Filtern. Dies ist keine vollständige Dokumentationsliste.',
     noReferences: 'In dieser Sprache sind keine Referenz-URLs registriert.',
@@ -549,8 +566,9 @@ export const translations = {
     blocking: 'Blockierend', critical: 'Kritisch', high: 'Hoch', medium: 'Mittel', low: 'Niedrig', informational: 'Informativ', restriction: 'Einschränkung', removed: 'Entfernt', deprecated: 'Abgekündigt', deprecation: 'Abkündigung', introduced: 'Eingeführt', behavior: 'Verhalten', syntax: 'Syntax', compilation: 'Kompilierung', runtime: 'Laufzeit', deployment: 'Bereitstellung', testing: 'Tests', design: 'Entwurf', languageModule: 'Sprache', all: 'Alle', binary: 'Binär', project: 'Projekt', in_scope: 'Im Umfang', out_of_scope: 'Außerhalb des Umfangs', conditional: 'Bedingt', available: 'Verfügbar', failed: 'Fehlgeschlagen', pending: 'Ausstehend', resolved: 'Geklärt', superseded: 'Ersetzt', unverified: 'Unverifiziert', verified: 'Verifiziert', missing: 'Fehlend', blocked: 'Blockiert', error: 'Fehler', fetched: 'Abgerufen', partial: 'Teilweise', not_attempted: 'Nicht versucht',
   },
   es: {
-    includeRoutine: 'Incluir comprobaciones rutinarias', routineCheck: 'Comprobación rutinaria',
-    routineHint: 'Las comprobaciones rutinarias de compatibilidad y comportamiento automático se ocultan por defecto. Inclúyalas para buscar o consultar estas entradas.',
+    includeRoutine: 'Incluir comprobaciones rutinarias y recomendaciones', routineCheck: 'Comprobación rutinaria',
+    deferredModernization: 'Modernización aplazable', optionalAdoption: 'Adopción opcional',
+    routineHint: 'Las comprobaciones rutinarias, modernizaciones aplazables y opciones voluntarias se ocultan por defecto en los destinos revisados. Inclúyalas para buscar o consultar estas entradas. Revise las recomendaciones antes de activar opciones de compatibilidad.',
     referenceUrls: 'URL de referencia',
     referenceUrlsNote: 'Todas las fuentes registradas en el idioma seleccionado, independientemente de los filtros. Esta lista de documentación no es exhaustiva.',
     noReferences: 'No hay URL de referencia registradas en este idioma.',
@@ -612,8 +630,9 @@ export const translations = {
     blocking: 'Bloqueante', critical: 'Crítico', high: 'Alto', medium: 'Medio', low: 'Bajo', informational: 'Informativo', restriction: 'Restricción', removed: 'Eliminado', deprecated: 'Obsoleto', deprecation: 'Obsolescencia', introduced: 'Introducido', behavior: 'Comportamiento', syntax: 'Sintaxis', compilation: 'Compilación', runtime: 'Ejecución', deployment: 'Despliegue', testing: 'Pruebas', design: 'Diseño', languageModule: 'Lenguaje', all: 'Todos', binary: 'Binario', project: 'Proyecto', in_scope: 'Dentro del alcance', out_of_scope: 'Fuera del alcance', conditional: 'Condicional', available: 'Disponible', failed: 'Fallido', pending: 'Pendiente', resolved: 'Resuelto', superseded: 'Sustituido', unverified: 'Sin verificar', verified: 'Verificado', missing: 'Ausente', blocked: 'Bloqueado', error: 'Error', fetched: 'Recuperado', partial: 'Parcial', not_attempted: 'No intentado',
   },
   ja: {
-    includeRoutine: '基本的な確認事項も表示', routineCheck: '基本的な確認事項',
-    routineHint: '通常の互換性確認や自動処理の確認事項は初期状態では非表示です。これらの項目を検索・閲覧するにはチェックを入れてください。',
+    includeRoutine: '基本的な確認事項・推奨事項も表示', routineCheck: '基本的な確認事項',
+    deferredModernization: '後から対応できる更新', optionalAdoption: '任意の機能採用',
+    routineHint: '確認済みの移行先では、基本的な確認事項・後から対応できる更新・任意機能の採用に関する項目は初期状態で非表示です。検索・閲覧するにはチェックを入れてください。互換性オプションを有効にする前に説明を確認してください。',
     referenceUrls: '参照 URL 一覧',
     referenceUrlsNote: '選択した言語で登録されているすべての出典です。フィルターの影響は受けません。すべてのドキュメントを網羅した一覧ではありません。',
     noReferences: 'この言語の参照 URL は登録されていません。',

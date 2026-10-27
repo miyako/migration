@@ -150,8 +150,8 @@ test('upgrade filtering keeps applicability counts independent of catalog totals
     .filter(Boolean);
   assert.equal(filterChanges(upgrade('v21'), { includeRoutine: true }).length, 190);
   assert.equal(filterChanges(upgrade('latest'), { target: 'latest', includeRoutine: true }, editorialCatalog.latest).length, 199);
-  assert.equal(filterChanges(upgrade('v21')).length, 181);
-  assert.equal(filterChanges(upgrade('latest'), { target: 'latest' }, editorialCatalog.latest).length, 189);
+  assert.equal(filterChanges(upgrade('v21')).length, 166);
+  assert.equal(filterChanges(upgrade('latest'), { target: 'latest' }, editorialCatalog.latest).length, 173);
   for (const target of ['v21', 'latest']) {
     const records = upgrade(target);
     const pruned = filterChanges(records, { target }, editorialCatalog.latest);
@@ -159,6 +159,21 @@ test('upgrade filtering keeps applicability counts independent of catalog totals
     assert.deepEqual(pruned.map(c => c.id), included.filter(c => !c.default_visibility).map(c => c.id));
     assert.ok(pruned.some(c => c.id === 'chg-object-index-rare-corruption'));
     assert.ok(pruned.some(c => c.id === 'chg-legacy-network-layer-deprecation'));
+  }
+});
+
+test('advisory exclusions are bounded to reviewed targets and do not suppress future or unknown support', () => {
+  for (const id of ['chg-deprecated-c-integer', 'chg-standard-xpath-option']) {
+    const record = editorialById.get(id);
+    for (const [target, latest, hidden] of [
+      ['v21', null, true], ['21', null, true], ['latest', editorialCatalog.latest, true],
+      ['latest', { release: '21 R5' }, false], ['latest', { release: '22' }, false],
+      ['latest', null, false], ['unknown', null, false], ['v20', null, false],
+    ]) {
+      const filters = { source: 'v16', target, query: id };
+      assert.equal(filterChanges([record], filters, latest).length, hidden ? 0 : 1, `${id}:${target}`);
+      assert.equal(filterChanges([record], { ...filters, includeRoutine: true }, latest).length, 1);
+    }
   }
 });
 
@@ -192,11 +207,18 @@ test('invalid default visibility metadata fails catalog validation instead of si
   const document = { schema_version: 1, sources: [], changes: [record],
     coverage: {}, latest: {}, semantic_search: {} };
   for (const metadata of [null, true, [], {}, { category: 'important', reason: 'Keep' },
-    { category: 'routine_check', reason: ' ' }, { category: 'routine_check', reason: 'Routine', extra: true }]) {
+    { category: 'routine_check', reason: ' ' }, { category: 'routine_check', reason: 'Routine', extra: true },
+    { category: 'optional_adoption', reason: 'Optional' },
+    ...[[], null, ['latest'], ['21', '21'], [21]].map(targets =>
+      ({ category: 'optional_adoption', reason: 'Optional', target_releases: targets }))]) {
     record.default_visibility = metadata;
     assert.throws(() => validateCatalog(document), /invalidCatalog/);
   }
   record.default_visibility = { category: 'routine_check', reason: 'Standard minimum version.' };
+  assert.equal(validateCatalog(document), document);
+  record.default_visibility = {
+    category: 'deferred_modernization', reason: 'Supported deprecation.', target_releases: ['21', '21 R4'],
+  };
   assert.equal(validateCatalog(document), document);
 });
 

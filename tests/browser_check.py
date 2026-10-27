@@ -115,11 +115,11 @@ def run(base, screenshots, published):
         assert not page.is_checked("#include-routine")
         expanded = projected_records(catalog, include_routine=True)
         assert len(expanded) == 190
-        routine_ids = {c["id"] for c in expanded if c.get("default_visibility", {}).get("category") == "routine_check"}
+        routine_ids = {c["id"] for c in expanded if c.get("default_visibility")}
         assert routine_ids and set(expected).isdisjoint(routine_ids)
         assert set(expected) | routine_ids == {c["id"] for c in expanded}
         assert "chg-client-minimum-20-7" in routine_ids
-        assert len(expected) == 181
+        assert len(expected) == 166
         before = controls(page)
         page.check("#include-routine")
         assert ids(page) == [c["id"] for c in expanded]
@@ -130,6 +130,15 @@ def run(base, screenshots, published):
         assert "Routine check" in page.locator(".card-top").inner_text()
         page.uncheck("#include-routine")
         assert ids(page) == []
+        for identifier, badge in (("chg-deprecated-c-integer", "Deferred modernization"),
+                                  ("chg-standard-xpath-option", "Optional adoption")):
+            page.fill("#search", identifier)
+            assert ids(page) == []
+            page.check("#include-routine")
+            assert ids(page) == [identifier]
+            assert badge in page.locator(".card-top").inner_text()
+            page.uncheck("#include-routine")
+        page.fill("#search", routine_id)
         page.check("#include-routine")
         assert ids(page) == [routine_id]
         for group in ("platforms", "modules"):
@@ -158,7 +167,7 @@ def run(base, screenshots, published):
         assert page.locator("#result-count").inner_text() == f"{len(expected)} matching entries"
         page.select_option("#target-version", "latest")
         latest_expected = [c["id"] for c in projected_records(catalog, target="latest")]
-        assert len(latest_expected) == 189
+        assert len(latest_expected) == 173
         assert ids(page) == latest_expected
         assert page.locator("#result-count").inner_text() == f"{len(latest_expected)} matching entries"
         page.check("#include-routine")
@@ -444,7 +453,14 @@ def run(base, screenshots, published):
         page.fill("#search", "")
         shown_kb = page.locator(".evidence-list > li").evaluate_all(
             "items => [...new Set(items.map(item => item.dataset.sourceId).filter(id => id.startsWith('kb-')))]")
+        expected_kb = {e["source_id"] for c in projected_records(catalog) for e in c["evidence"]
+                       if e["source_id"].startswith("kb-")}
+        assert set(shown_kb) == expected_kb
+        page.check("#include-routine")
+        shown_kb = page.locator(".evidence-list > li").evaluate_all(
+            "items => [...new Set(items.map(item => item.dataset.sourceId).filter(id => id.startsWith('kb-')))]")
         assert set(shown_kb) == {s["id"] for s in catalog["sources"] if s["family"] == "original-kb-technote"}
+        page.uncheck("#include-routine")
         page.select_option("#source-version", "v17")
         page.select_option("#target-version", "v18")
         for identifier in ("chg-project-save-list-call", "chg-project-standalone-designer-identity"):

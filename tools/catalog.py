@@ -18,6 +18,7 @@ BUCKETS = [f"v{major}" for major in range(16, 22)] + ["latest"]
 STAGES = ["syntax", "compilation", "runtime", "modernization", "unknown"]
 CRITICALITIES = ["blocking", "high", "medium", "low", "unknown"]
 COMPLEXITIES = ["simple", "moderate", "complex", "unknown"]
+ADVISORY_CATEGORIES = {"deferred_modernization", "optional_adoption"}
 
 
 def release_key(release):
@@ -170,28 +171,37 @@ def require(condition, message):
 
 
 def apply_default_visibility(changes, config):
-    require(isinstance(config, dict) and set(config) == {"schema_version", "routine_checks"}
-            and config["schema_version"] == 1
-            and isinstance(config["routine_checks"], dict),
+    require(isinstance(config, dict) and set(config) == {"schema_version", "routine_checks", "advisory_items"}
+            and config["schema_version"] == 2
+            and isinstance(config["routine_checks"], dict) and isinstance(config["advisory_items"], dict),
             "Invalid default visibility configuration")
     by_id = {change["id"]: change for change in changes}
-    require(set(config["routine_checks"]) <= by_id.keys(),
+    require(not (config["routine_checks"].keys() & config["advisory_items"].keys()),
+            "Default visibility classifications must not overlap")
+    classifications = {**config["routine_checks"], **config["advisory_items"]}
+    require(set(classifications) <= by_id.keys(),
             "Default visibility references unknown entity IDs")
     result = deepcopy(changes)
     for change in result:
-        classification = config["routine_checks"].get(change["id"])
-        if classification is None:
-            require(change["id"] not in config["routine_checks"],
-                    "Invalid routine check classification")
+        if change["id"] not in classifications:
             continue
+        classification = classifications[change["id"]]
+        advisory = change["id"] in config["advisory_items"]
+        keys = {"reason", "member_ids", "category", "target_releases"} if advisory else {"reason", "member_ids"}
         require(isinstance(classification, dict)
-                and set(classification) == {"reason", "member_ids"}
+                and set(classification) == keys
                 and nonempty(classification["reason"])
                 and classification["member_ids"] == change["member_ids"],
-                "Routine check classification needs a reason and the reviewed entity membership")
+                "Default visibility classification needs a reason and the reviewed entity membership")
         change["default_visibility"] = {
-            "category": "routine_check", "reason": classification["reason"],
+            "category": classification["category"] if advisory else "routine_check",
+            "reason": classification["reason"],
         }
+        if advisory:
+            require(isinstance(classification["category"], str)
+                    and classification["category"] in ADVISORY_CATEGORIES, "Invalid advisory category")
+            change["default_visibility"]["target_releases"] = deepcopy(classification["target_releases"])
+        validate_default_visibility(change)
     return result
 
 
@@ -199,9 +209,20 @@ def validate_default_visibility(change):
     if "default_visibility" not in change:
         return
     visibility = change["default_visibility"]
-    require(isinstance(visibility, dict) and set(visibility) == {"category", "reason"}
-            and visibility["category"] == "routine_check" and nonempty(visibility["reason"]),
+    require(isinstance(visibility, dict) and nonempty(visibility.get("reason")),
             "Invalid default visibility metadata")
+    if visibility.get("category") == "routine_check":
+        require(set(visibility) == {"category", "reason"}, "Invalid routine visibility metadata")
+        return
+    require(set(visibility) == {"category", "reason", "target_releases"}
+            and isinstance(visibility.get("category"), str)
+            and visibility["category"] in ADVISORY_CATEGORIES,
+            "Invalid advisory visibility metadata")
+    targets = visibility["target_releases"]
+    require(isinstance(targets, list) and bool(targets) and all(nonempty(value) for value in targets)
+            and len(set(targets)) == len(targets), "Advisory visibility needs distinct reviewed target releases")
+    for target in targets:
+        release_key(target)
 
 
 def url(value):
